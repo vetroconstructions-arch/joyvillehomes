@@ -33,7 +33,7 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
         try {
             // Setup Web3Forms payload
             const payload = {
-                access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Will be replaced by environment variable in production
+                access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "", // Fetched securely from environment
                 subject: `New Lead: ${source} - ${projectName}`,
                 from_name: formData.name,
                 ...formData,

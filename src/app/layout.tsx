@@ -96,7 +96,7 @@ export default function RootLayout({
           </PageTransition>
           <MobileStickyCTA />
         </div>
-        <GoogleAnalytics gaId="G-XXXXXX" />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ""} />
       </body>
     </html>
   );
