@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { blogs, getBlogBySlug } from '@/data/blogs';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, Calendar, User, Clock, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Facebook, Twitter, Linkedin } from 'lucide-react';
 import Navbar from '@/components/Navigation';
 
 // Pre-render all blog routes at build time

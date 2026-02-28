@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { MapPin, Navigation2, Building2, Train, Car, Briefcase, ShoppingBag, HeartPulse, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { MapPin, Navigation2, Briefcase, ShoppingBag, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Prime Location in Pune | Joyville Homes Hinjewadi Connectivity",
@@ -72,7 +73,7 @@ export default function LocationPage() {
                     Strategic <span className="text-[#1D4F9C] italic text-gradient">Advantage</span>
                 </h1>
                 <p className="text-[#1A1A1A] text-lg max-w-3xl mx-auto font-light leading-relaxed">
-                    When you invest in a Shapoorji Pallonji property in Pune, location is paramount. Joyville Homes offers unrivaled connectivity to the city's largest IT Hubs and crucial transit corridors.
+                    When you invest in a Shapoorji Pallonji property in Pune, location is paramount. Joyville Homes offers unrivaled connectivity to the city&apos;s largest IT Hubs and crucial transit corridors.
                 </p>
             </header>
 
@@ -116,9 +117,9 @@ export default function LocationPage() {
             </div>
 
             <section className="max-w-7xl mx-auto px-6 text-center">
-                <a href="/" className="inline-flex items-center gap-4 px-10 py-5 bg-[#1D4F9C] text-[#FFFFFF] font-semibold uppercase tracking-[0.2em] text-xs hover:bg-[#323334] transition-colors duration-500 shadow-[0_0_30px_rgba(197,160,89,0.2)]">
+                <Link href="/" className="inline-flex items-center gap-4 px-10 py-5 bg-[#1D4F9C] text-[#FFFFFF] font-semibold uppercase tracking-[0.2em] text-xs hover:bg-[#323334] transition-colors duration-500 shadow-[0_0_30px_rgba(197,160,89,0.2)]">
                     Explore Projects <ArrowRight size={16} />
-                </a>
+                </Link>
             </section>
         </article>
     );

@@ -1,13 +1,14 @@
-// Wait, creating a sub-component is safer. Let me cancel this edit and write the file.
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getProjectBySlug, projects } from '@/data/projects';
 import { MapPin, ArrowLeft, CheckCircle2, Activity, Shield, Key, Map, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import FAQSection from '@/components/FAQSection';
 import BrochureButton from '@/components/BrochureButton';
 import EMICalculator from '@/components/EMICalculator';
 import ProjectClientWrapper from '@/components/ProjectClientWrapper';
+import StickyProjectTabs from '@/components/StickyProjectTabs';
 
 // Pre-render all project routes at build time
 export async function generateStaticParams() {
@@ -120,21 +121,19 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             {/* Feature Image Banner */}
             <div className="max-w-7xl mx-auto px-6 mb-24">
                 <div className="w-full aspect-[21/9] lg:aspect-[3/1] relative overflow-hidden rounded-sm border border-[#1D4F9C]/60 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                    <div className="absolute inset-0 bg-cover bg-center mix-blend-luminosity opacity-80" style={{ backgroundImage: `url(${project.image})` }} />
+                    <Image
+                        src={project.image}
+                        alt={`${project.title} Hero Banner`}
+                        fill
+                        className="object-cover mix-blend-luminosity opacity-80"
+                        sizes="100vw"
+                        priority={true}
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#FFFFFF] via-transparent to-transparent pointer-events-none" />
                 </div>
             </div>
 
-            {/* Sticky Scrollspy Navigation (Desktop only) */}
-            <div className="sticky top-20 z-40 bg-[#EEF2F6]/90 backdrop-blur-md border-y border-[#1D4F9C]/60 mb-16 hidden md:block shadow-xl">
-                <div className="max-w-7xl mx-auto px-6 flex items-center gap-8 overflow-x-auto no-scrollbar">
-                    {['Overview', 'Amenities', 'Specifications', 'Floor-Plans', 'Financing', 'Gallery', 'Location'].map((section) => (
-                        <a key={section} href={`#${section.toLowerCase()}`} className="py-5 text-[#1A1A1A] hover:text-[#1D4F9C] tracking-[0.15em] uppercase text-[10px] font-medium whitespace-nowrap transition-colors border-b-2 border-transparent hover:border-[#1D4F9C]">
-                            {section.replace('-', ' ')}
-                        </a>
-                    ))}
-                </div>
-            </div>
+            <StickyProjectTabs />
 
             {/* Main Content Layout */}
             <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-16">
@@ -218,7 +217,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
                         <div className="mb-12 relative group rounded-sm overflow-hidden border border-[#1D4F9C]/60 cursor-pointer">
                             <div className="aspect-[16/9] bg-[#EEF2F6] relative">
-                                <div className="absolute inset-0 bg-cover bg-center opacity-70 group-hover:opacity-100 transition-opacity duration-500" style={{ backgroundImage: `url(${project.masterLayout})` }} />
+                                <Image src={project.masterLayout} alt={`${project.title} Conceptual Master Layout`} fill className="object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500" sizes="(max-width: 1200px) 100vw, 1200px" />
                             </div>
                             <div className="absolute inset-0 bg-gradient-to-t from-[#F4F6F9] via-transparent to-transparent flex items-end p-6">
                                 <div className="text-[#1D4F9C] flex items-center gap-2 text-xs tracking-widest uppercase bg-[#FFFFFF]/80 px-4 py-2 backdrop-blur-md rounded-full border border-[#1D4F9C]/60">
@@ -251,7 +250,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                             {project.gallery.map((img, idx) => (
                                 <div key={idx} className="aspect-square relative overflow-hidden rounded-sm group">
-                                    <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100" style={{ backgroundImage: `url(${img})` }} />
+                                    <Image src={img} alt={`${project.title} Gallery Image ${idx + 1}`} fill className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100" sizes="(max-width: 768px) 50vw, 33vw" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#FFFFFF]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
                                         <span className="text-[#1D4F9C] text-[10px] uppercase tracking-widest">Enlarge</span>
                                     </div>

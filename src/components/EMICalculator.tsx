@@ -1,27 +1,22 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { IndianRupee } from 'lucide-react';
 
 export default function EMICalculator({ basePrice = 8500000 }: { basePrice?: number }) {
     const [loanAmount, setLoanAmount] = useState(basePrice * 0.8); // 80% default loan
     const [interestRate, setInterestRate] = useState(8.5); // Default 8.5%
     const [loanTenure, setLoanTenure] = useState(20); // Default 20 years
-    const [emi, setEmi] = useState(0);
+    // EMI Calculation Formula: P x R x (1+R)^N / [(1+R)^N-1]
+    const p = loanAmount;
+    const r = interestRate / 12 / 100; // Monthly interest rate
+    const n = loanTenure * 12; // Tenure in months
 
-    useEffect(() => {
-        // EMI Calculation Formula: P x R x (1+R)^N / [(1+R)^N-1]
-        const p = loanAmount;
-        const r = interestRate / 12 / 100; // Monthly interest rate
-        const n = loanTenure * 12; // Tenure in months
-
-        if (p > 0 && r > 0 && n > 0) {
-            const calculatedEmi = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-            setEmi(Math.round(calculatedEmi));
-        } else {
-            setEmi(0);
-        }
-    }, [loanAmount, interestRate, loanTenure]);
+    let emi = 0;
+    if (p > 0 && r > 0 && n > 0) {
+        const calculatedEmi = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+        emi = Math.round(calculatedEmi);
+    }
 
     const formatCurrency = (value: number) => {
         return new Intl.NumberFormat('en-IN', {

@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Head from "next/head";
+import Image from "next/image";
+
 import { ArrowRight, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 import { projects } from "@/data/projects";
 
@@ -46,11 +47,18 @@ export default function ProjectsPortfolio() {
             </header>
 
             <div className="max-w-5xl mx-auto px-6 space-y-16 mb-24">
-                {currentProjects.map((project, idx) => (
+                {currentProjects.map((project) => (
                     <div key={project.id} className="group flex flex-col md:flex-row bg-[#EEF2F6] border border-[#1D4F9C]/60 shadow-[0_20px_50px_rgba(0,0,0,0.4)] overflow-hidden rounded-sm hover:border-[#1D4F9C]/40 transition-colors duration-500">
                         {/* Elegant Cinematic Image */}
                         <div className="md:w-5/12 relative aspect-[4/3] md:aspect-auto overflow-hidden">
-                            <div className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity group-hover:opacity-60 group-hover:scale-105 transition-all duration-[2000ms]" style={{ backgroundImage: `url(${project.image})` }} />
+                            <Image
+                                src={project.image}
+                                alt={project.title}
+                                fill
+                                className="object-cover opacity-40 mix-blend-luminosity group-hover:opacity-60 group-hover:scale-105 transition-all duration-[2000ms]"
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                priority={true}
+                            />
                             <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#F4F6F9] via-transparent to-transparent pointer-events-none" />
                             <div className="absolute top-6 left-6 flex gap-3">
                                 <span className="px-4 py-1.5 bg-[#1D4F9C] text-[#FFFFFF] text-[9px] uppercase tracking-[0.2em] font-bold shadow-2xl">{project.status}</span>
@@ -102,6 +110,7 @@ export default function ProjectsPortfolio() {
                         {Array.from({ length: totalPages }).map((_, i) => (
                             <button
                                 key={i}
+                                aria-label={`Go to page ${i + 1}`}
                                 onClick={() => setCurrentPage(i + 1)}
                                 className={`w-10 h-10 flex items-center justify-center border transition-all duration-300 rounded-sm
                                     ${currentPage === i + 1

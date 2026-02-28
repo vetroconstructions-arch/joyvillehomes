@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { CheckCircle2, Trees, Droplets, Dumbbell, ShieldCheck, Gamepad2, Coffee, Wifi, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { CheckCircle2, Trees, Droplets, Dumbbell, ShieldCheck, Gamepad2, Coffee, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Premium Luxury Amenities in Pune | Joyville Homes Hinjewadi",
@@ -70,7 +71,7 @@ export default function AmenitiesPage() {
                     Unmatched <span className="text-[#1D4F9C] italic text-gradient">Amenities</span>
                 </h1>
                 <p className="text-[#323334]/90 text-lg max-w-3xl mx-auto font-light leading-relaxed">
-                    A Shapoorji Pallonji Real Estate project promises more than just a residence. Explore Pune's most comprehensive offering of 60+ meticulously designed amenities that ensure a premium lifestyle within Hinjewadi Phase 1.
+                    A Shapoorji Pallonji Real Estate project promises more than just a residence. Explore Pune&apos;s most comprehensive offering of 60+ meticulously designed amenities that ensure a premium lifestyle within Hinjewadi Phase 1.
                 </p>
             </header>
 
@@ -99,13 +100,13 @@ export default function AmenitiesPage() {
                     <div className="absolute inset-0 bg-[#EEF2F6]/80 backdrop-blur-sm" />
 
                     <div className="relative z-10">
-                        <h2 className="text-4xl lg:text-5xl font-serif mb-6 text-[#323334] font-light">Experience Pune's <span className="text-[#1D4F9C] italic text-gradient">Finest</span> Life</h2>
+                        <h2 className="text-4xl lg:text-5xl font-serif mb-6 text-[#323334] font-light">Experience Pune&apos;s <span className="text-[#1D4F9C] italic text-gradient">Finest</span> Life</h2>
                         <p className="text-[#323334]/90 mb-10 max-w-2xl mx-auto font-light text-lg">
                             Secure your premium 2 BHK or 3 BHK luxury flat at Joyville Homes Hinjewadi today. The legacy awaits.
                         </p>
-                        <a href="/" className="inline-flex items-center gap-4 px-10 py-5 bg-[#1D4F9C] text-[#FFFFFF] font-semibold uppercase tracking-[0.2em] text-xs hover:bg-[#323334] transition-colors duration-500 shadow-[0_0_30px_rgba(197,160,89,0.2)]">
+                        <Link href="/" className="inline-flex items-center gap-4 px-10 py-5 bg-[#1D4F9C] text-[#FFFFFF] font-semibold uppercase tracking-[0.2em] text-xs hover:bg-[#323334] transition-colors duration-500 shadow-[0_0_30px_rgba(197,160,89,0.2)]">
                             Return to Projects <ArrowRight size={16} />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>

@@ -76,7 +76,7 @@ export default function Navigation() {
 
                     {/* Enquire Button & Mobile Toggle */}
                     <div className="flex items-center gap-6 z-20">
-                        <button className={`hidden sm:flex items-center gap-3 px-8 py-3 rounded-sm font-bold text-[10px] tracking-[0.2em] uppercase transition-all duration-500 group border ${(isScrolled || !isHomePage) ? 'bg-[#1D4F9C] text-[#FFFFFF] border-[#1D4F9C] hover:bg-transparent hover:text-[#1D4F9C]' : 'bg-[#1D4F9C] text-[#FFFFFF] border-[#1D4F9C] hover:bg-transparent hover:text-[#1D4F9C]'}`}>
+                        <button aria-label="Enquire Now" className={`hidden sm:flex items-center gap-3 px-8 py-3 rounded-sm font-bold text-[10px] tracking-[0.2em] uppercase transition-all duration-500 group border ${(isScrolled || !isHomePage) ? 'bg-[#1D4F9C] text-[#FFFFFF] border-[#1D4F9C] hover:bg-transparent hover:text-[#1D4F9C]' : 'bg-[#1D4F9C] text-[#FFFFFF] border-[#1D4F9C] hover:bg-transparent hover:text-[#1D4F9C]'}`}>
                             <PhoneCall size={14} className="group-hover:animate-pulse" />
                             <span>Enquire Now</span>
                         </button>
@@ -155,7 +155,7 @@ export default function Navigation() {
                             </motion.div>
 
                             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.8 }} className="mt-10">
-                                <button className="w-full bg-[#1D4F9C] text-[#FFFFFF] uppercase tracking-[0.2em] text-xs font-bold py-5 shadow-[0_10px_30px_rgba(197,160,89,0.2)]">
+                                <button aria-label="Schedule a Call" className="w-full bg-[#1D4F9C] text-[#FFFFFF] uppercase tracking-[0.2em] text-xs font-bold py-5 shadow-[0_10px_30px_rgba(197,160,89,0.2)]">
                                     Schedule a Call
                                 </button>
                             </motion.div>

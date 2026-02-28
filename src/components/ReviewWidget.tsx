@@ -1,7 +1,6 @@
 "use client";
 
 import { Star, ThumbsUp, MapPin } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { sendGAEvent } from '@next/third-parties/google';
 
 export default function ReviewWidget() {
@@ -17,7 +16,7 @@ export default function ReviewWidget() {
                         Trusted by thousands of families across Pune.
                     </h2>
                     <p className="text-[#323334]/80 font-light leading-relaxed mb-8 max-w-lg">
-                        Our commitment to engineering excellence and timely delivery has made Joyville Pune's most trusted residential brand. Are you a proud homeowner or did you recently visit our experiential center?
+                        Our commitment to engineering excellence and timely delivery has made Joyville Pune&apos;s most trusted residential brand. Are you a proud homeowner or did you recently visit our experiential center?
                     </p>
 
                     <div className="flex items-center gap-2 mb-8">

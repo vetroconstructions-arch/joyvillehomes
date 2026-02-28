@@ -42,13 +42,13 @@ export default function InsightsPage() {
                 <span className="text-[10px] tracking-[0.3em] uppercase text-[#1D4F9C] font-semibold block mb-4">Shapoorji Pallonji Knowledge Hub</span>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#323334] font-light mb-6">Market Insights & Trends</h1>
                 <p className="text-[#323334] text-lg max-w-2xl mx-auto font-light leading-relaxed">
-                    Data-driven analysis and expert perspectives on Pune's dynamic real estate landscape to empower your investment decisions.
+                    Data-driven analysis and expert perspectives on Pune&apos;s dynamic real estate landscape to empower your investment decisions.
                 </p>
             </header>
 
             <section className="max-w-7xl mx-auto px-6">
                 <div className="grid lg:grid-cols-2 gap-12">
-                    {blogs.map((blog, index) => (
+                    {blogs.map((blog) => (
                         <article key={blog.id} className="group bg-[#FFFFFF] flex flex-col rounded-sm overflow-hidden border border-[#1D4F9C]/20 shadow-lg hover:shadow-2xl transition-all duration-500">
                             <Link href={`/insights/${blog.slug}`} className="block relative aspect-[16/9] overflow-hidden">
                                 <Image

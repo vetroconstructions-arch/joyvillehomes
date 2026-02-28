@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { ArrowRight, MapPin, PhoneCall, CheckCircle2, Navigation2, Building2, Trees, ShieldCheck, Car, Train, Landmark } from "lucide-react";
+import { ArrowRight, MapPin, PhoneCall, CheckCircle2, Building2, Trees, ShieldCheck, Landmark } from "lucide-react";
 import ReviewWidget from "@/components/ReviewWidget";
 import BrochureButton from "@/components/BrochureButton";
 
@@ -24,20 +24,13 @@ const staggerContainer: Variants = {
 
 export default function Home() {
   const [activeFloorPlan, setActiveFloorPlan] = useState<"2BHK" | "3BHK">("2BHK");
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "name": "Joyville Homes Pune | Shapoorji Pallonji Real Estate",
     "image": "https://joyville-hinjewadi.example.com/hero-bg-dark.jpg",
-    "description": "Premium 2 BHK and 3 BHK luxury flats in Hinjewadi by Shapoorji Pallonji. Discover the legacy of Pune's most trusted real estate projects.",
+    "description": "Premium 2 BHK and 3 BHK luxury flats in Hinjewadi by Shapoorji Pallonji. Discover the legacy of Pune&apos;s most trusted real estate projects.",
     "priceRange": "₹1.10 Cr - ₹1.45 Cr",
     "address": {
       "@type": "PostalAddress",
@@ -197,7 +190,7 @@ export default function Home() {
                 <span className="w-16 h-[1px] bg-[#1D4F9C]" /> Shapoorji Pallonji Real Estate
               </h4>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-8 text-[#323334] leading-[1.15] font-light">
-                Shapoorji Pallonji: Building India's <br />
+                Shapoorji Pallonji: Building India&apos;s <br />
                 <span className="italic text-[#1D4F9C]">Iconic Landmarks.</span>
               </h2>
               <p className="text-[#323334] text-lg leading-relaxed mb-10 font-light">
@@ -295,7 +288,7 @@ export default function Home() {
               <h4 className="text-[#1D4F9C] font-light text-xs tracking-[0.3em] uppercase mb-6 flex items-center gap-4">
                 <span className="w-12 h-[1px] bg-[#1D4F9C]" /> Space Optimized Living
               </h4>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#323334] font-light">Pune's Premium Residences</h2>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#323334] font-light">Pune&apos;s Premium Residences</h2>
             </motion.div>
 
             <motion.div
@@ -306,12 +299,14 @@ export default function Home() {
               className="flex border border-[#1D4F9C]/60 p-1 bg-[#FFFFFF] rounded-sm"
             >
               <button
+                aria-label="View 2 BHK Premium Floor Plans"
                 onClick={() => setActiveFloorPlan("2BHK")}
                 className={`px-10 py-4 text-xs tracking-[0.2em] uppercase transition-all duration-300 ${activeFloorPlan === "2BHK" ? "bg-[#1D4F9C] text-[#FFFFFF] font-semibold" : "text-[#323334] hover:text-[#1D4F9C] font-light"}`}
               >
                 2 BHK Premium
               </button>
               <button
+                aria-label="View 3 BHK Luxury Floor Plans"
                 onClick={() => setActiveFloorPlan("3BHK")}
                 className={`px-10 py-4 text-xs tracking-[0.2em] uppercase transition-all duration-300 ${activeFloorPlan === "3BHK" ? "bg-[#1D4F9C] text-[#FFFFFF] font-semibold" : "text-[#323334] hover:text-[#1D4F9C] font-light"}`}
               >
@@ -431,10 +426,11 @@ export default function Home() {
           <div className="flex max-w-lg mx-auto relative bg-[#EEF2F6] shadow-[0_20px_40px_rgba(0,0,0,0.5)] border border-[#1D4F9C]/60 overflow-hidden rounded-sm">
             <input
               type="text"
+              aria-label="Phone Number for Enquiry"
               placeholder="Enter your phone number"
               className="w-full bg-transparent px-8 py-5 text-[#323334] placeholder-[#323334]/30 focus:outline-none focus:bg-[#FFFFFF]/50 transition-colors font-light text-sm tracking-wide"
             />
-            <button className="bg-[#1D4F9C] px-10 text-[#FFFFFF] uppercase tracking-[0.2em] text-[10px] font-bold hover:bg-[#323334] transition-colors duration-300">
+            <button aria-label="Submit Quick Enquiry" className="bg-[#1D4F9C] px-10 text-[#FFFFFF] uppercase tracking-[0.2em] text-[10px] font-bold hover:bg-[#323334] transition-colors duration-300">
               Enquire
             </button>
           </div>
@@ -443,7 +439,7 @@ export default function Home() {
             <div>
               <div className="text-3xl font-serif text-[#1D4F9C] font-light tracking-widest mb-4">JOYVILLE <span className="text-[10px] font-sans tracking-[0.4em] text-[#323334] uppercase ml-2">Pune</span></div>
               <p className="text-[#323334]/70 text-sm font-light leading-relaxed mb-6">
-                Premium residences and townships crafted with Shapoorji Pallonji's 150-year legacy of engineering excellence.
+                Premium residences and townships crafted with Shapoorji Pallonji&apos;s 150-year legacy of engineering excellence.
               </p>
               <p className="text-[#323334]/40 text-[9px] tracking-[0.3em] uppercase font-medium">MahaRERA: P52100000000</p>
             </div>
@@ -464,7 +460,7 @@ export default function Home() {
 
       {/* Floating CTA */}
       <div className="fixed bottom-10 right-10 z-50">
-        <button className="w-16 h-16 bg-[#1D4F9C] text-[#FFFFFF] rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(197,160,89,0.3)] hover:scale-110 transition-transform duration-500 hover:bg-[#323334] border border-[#1D4F9C]/50">
+        <button aria-label="Call Sales Office" className="w-16 h-16 bg-[#1D4F9C] text-[#FFFFFF] rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(197,160,89,0.3)] hover:scale-110 transition-transform duration-500 hover:bg-[#323334] border border-[#1D4F9C]/50">
           <PhoneCall size={20} />
         </button>
       </div>
