@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FFFFFF;
+  --foreground: #323334;
+  --accent-gold: #EB9F37;
+  /* Joyville Orange */
+  --accent-gold-light: #F0B36A;
+  --surface-light: #E4E9F0;
+  --border-color: rgba(29, 79, 156, 0.2);
+  /* Joyville Blue tinted border */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-accent: var(--accent-gold);
+  --color-accent-light: var(--accent-gold-light);
+  --color-surface: var(--surface-light);
+  --color-border: var(--border-color);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glassmorphism - Premium Light Theme */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 40px -10px rgba(29, 79, 156, 0.15);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  /* Slower luxury animation */
+  animation: fadeIn 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.delay-100 {
+  animation-delay: 150ms;
+}
+
+.delay-200 {
+  animation-delay: 300ms;
+}
+
+.delay-300 {
+  animation-delay: 450ms;
+}
+
+/* Gradient Text - Premium Light Theme */
+.text-gradient {
+  background: linear-gradient(to right, #EB9F37, #1D4F9C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom Scrollbar - Premium Light Theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--joyville-blue, #1D4F9C);
+  border-radius: 4px;
 }
