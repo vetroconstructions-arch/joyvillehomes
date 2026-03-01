@@ -93,6 +93,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.joyville-homes.com",
   },
+  verification: {
+    google: "", // User to provide verification string
+  },
 };
 
 export const viewport: Viewport = {

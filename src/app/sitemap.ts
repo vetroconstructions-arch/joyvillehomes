@@ -69,12 +69,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
     ];
 
-    const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
-        url: `${baseUrl}/projects/${project.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.85,
-    }));
+    const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => {
+        // Higher priority for "New Launch" and "Pre-Launch" projects
+        let priority = 0.85;
+        if (project.status === "New Launch" || project.status === "Pre-Launch") {
+            priority = 0.95;
+        }
+
+        return {
+            url: `${baseUrl}/projects/${project.slug}`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: priority,
+        };
+    });
 
     const programmaticRoutes: MetadataRoute.Sitemap = SEO_ROUTES.map((slug) => ({
         url: `${baseUrl}/properties/${slug}`,

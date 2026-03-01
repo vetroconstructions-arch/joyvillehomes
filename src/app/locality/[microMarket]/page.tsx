@@ -164,9 +164,35 @@ export default async function LocalityPage({ params }: { params: Promise<{ micro
         }))
     };
 
+    const breadcrumbJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": siteUrl
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Localities",
+                "item": `${siteUrl}/location`
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": locality.name,
+                "item": `${siteUrl}/locality/${locality.slug}`
+            }
+        ]
+    };
+
     return (
         <div className="min-h-screen bg-[#F4F6F9] pt-32 pb-24 text-[#323334]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
             <header className="max-w-7xl mx-auto px-6 mb-16">
                 <div className="inline-flex items-center gap-2 text-[#1D4F9C] font-semibold text-xs tracking-[0.2em] uppercase mb-4">
@@ -194,7 +220,7 @@ export default async function LocalityPage({ params }: { params: Promise<{ micro
             </header>
 
             {/* Infrastructure & Trends Section */}
-            <section className="bg-[#1D4F9C] py-20 mb-20 text-[#FFFFFF] shadow-[0_20px_50px_rgba(29,79,156,0.3)]">
+            <section className="bg-[#1D4F9C] py-20 mb-20 text-[#FFFFFF] shadow-[0_20px_50px_rgba(29,79,156,0.3)]" >
                 <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
                     <div>
                         <h2 className="text-3xl font-serif mb-12 flex items-center gap-4 border-b border-[#FFFFFF]/20 pb-6"><Building2 size={32} /> Key Infrastructure</h2>
@@ -212,48 +238,50 @@ export default async function LocalityPage({ params }: { params: Promise<{ micro
                         <p className="text-lg font-light leading-relaxed">{locality.marketTrend}</p>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Relevant Projects Section */}
-            <section className="max-w-7xl mx-auto px-6">
+            < section className="max-w-7xl mx-auto px-6" >
                 <div className="flex items-center gap-4 mb-12 border-b border-[#C5A059]/20 pb-4">
                     <Landmark className="text-[#1D4F9C]" size={32} />
                     <h2 className="text-4xl font-serif text-[#1A1A1A]">Shapoorji Pallonji Properties in {locality.name}</h2>
                 </div>
 
-                {localProjects.length > 0 ? (
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {localProjects.map(project => (
-                            <div key={project.id} className="bg-[#FFFFFF] border border-[#C5A059]/60 shadow-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-500 rounded-sm group flex flex-col">
-                                <div className="aspect-[4/3] bg-cover bg-center" style={{ backgroundImage: `url(${project.image})` }} />
-                                <div className="p-8 flex flex-col flex-grow">
-                                    <div className="text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold mb-3 bg-[#EEF2F6] self-start px-3 py-1 rounded-sm border border-[#C5A059]/20">{project.type}</div>
-                                    <h3 className="text-2xl font-serif text-[#1A1A1A] mb-2">{project.title}</h3>
-                                    <p className="text-sm text-[#1A1A1A] font-light mb-6 flex-grow">{project.description.substring(0, 100)}...</p>
+                {
+                    localProjects.length > 0 ? (
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {localProjects.map(project => (
+                                <div key={project.id} className="bg-[#FFFFFF] border border-[#C5A059]/60 shadow-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-500 rounded-sm group flex flex-col">
+                                    <div className="aspect-[4/3] bg-cover bg-center" style={{ backgroundImage: `url(${project.image})` }} />
+                                    <div className="p-8 flex flex-col flex-grow">
+                                        <div className="text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold mb-3 bg-[#EEF2F6] self-start px-3 py-1 rounded-sm border border-[#C5A059]/20">{project.type}</div>
+                                        <h3 className="text-2xl font-serif text-[#1A1A1A] mb-2">{project.title}</h3>
+                                        <p className="text-sm text-[#1A1A1A] font-light mb-6 flex-grow">{project.description.substring(0, 100)}...</p>
 
-                                    <div className="flex flex-col gap-4 mt-auto pt-6 border-t border-[#C5A059]/20">
-                                        <div className="flex justify-between items-center">
-                                            <span className="text-xs text-[#1A1A1A] uppercase tracking-wide">Starting From</span>
-                                            <span className="font-serif text-lg text-[#1D4F9C] italic">{project.price}</span>
+                                        <div className="flex flex-col gap-4 mt-auto pt-6 border-t border-[#C5A059]/20">
+                                            <div className="flex justify-between items-center">
+                                                <span className="text-xs text-[#1A1A1A] uppercase tracking-wide">Starting From</span>
+                                                <span className="font-serif text-lg text-[#1D4F9C] italic">{project.price}</span>
+                                            </div>
+                                            <Link href={`/projects/${project.slug}`} className="w-full bg-[#1D4F9C] text-[#FFFFFF] py-4 text-center text-xs tracking-[0.2em] uppercase font-semibold hover:bg-[#323334] transition-colors flex items-center justify-center gap-2 group/btn shadow-lg">
+                                                View Project Summary <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+                                            </Link>
                                         </div>
-                                        <Link href={`/projects/${project.slug}`} className="w-full bg-[#1D4F9C] text-[#FFFFFF] py-4 text-center text-xs tracking-[0.2em] uppercase font-semibold hover:bg-[#323334] transition-colors flex items-center justify-center gap-2 group/btn shadow-lg">
-                                            View Project Summary <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-                                        </Link>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
-                ) : (
-                    <div className="text-center py-20 bg-[#FFFFFF] border border-[#C5A059]/60 shadow-2xl rounded-sm">
-                        <h3 className="text-2xl font-serif text-[#1D4F9C] mb-4">New Projects Launching Soon</h3>
-                        <p className="text-[#1A1A1A]">We are currently planning exclusive premium developments in {locality.name}.</p>
-                        <div className="mt-8 flex justify-center">
-                            <BrochureButton projectName={`Upcoming Projects in ${locality.name}`} label="Register for Updates" />
+                            ))}
                         </div>
-                    </div>
-                )}
-            </section>
-        </div>
+                    ) : (
+                        <div className="text-center py-20 bg-[#FFFFFF] border border-[#C5A059]/60 shadow-2xl rounded-sm">
+                            <h3 className="text-2xl font-serif text-[#1D4F9C] mb-4">New Projects Launching Soon</h3>
+                            <p className="text-[#1A1A1A]">We are currently planning exclusive premium developments in {locality.name}.</p>
+                            <div className="mt-8 flex justify-center">
+                                <BrochureButton projectName={`Upcoming Projects in ${locality.name}`} label="Register for Updates" />
+                            </div>
+                        </div>
+                    )
+                }
+            </section >
+        </div >
     );
 }
