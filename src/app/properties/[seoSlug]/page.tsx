@@ -17,7 +17,7 @@ const SEO_ROUTES = [
         description: 'Explore the best 2 BHK luxury flats in Hinjewadi Phase 1 by Shapoorji Pallonji. RERA approved, smart home apartments near Rajiv Gandhi Infotech Park. Starting ₹85 Lakhs.',
         h1: 'Premium 2 BHK Flats in Hinjewadi Phase 1',
         keywords: ['2 BHK flats in Hinjewadi', 'buy 2 BHK Hinjewadi Phase 1', 'Joyville Hinjewadi 2 BHK price', 'RERA approved 2 BHK Hinjewadi', 'flats near Rajiv Gandhi Infotech Park', 'walk to work apartments Hinjewadi'],
-        filters: { locationMatch: 'Hinjewadi', typeMatch: '2 BHK' }
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '2' }
     },
     {
         slug: '3-bhk-luxury-apartments-pune-west',
@@ -25,7 +25,7 @@ const SEO_ROUTES = [
         description: 'Discover spacious 3 BHK luxury residences in Pune West (Hinjewadi Phase 1, Bavdhan). Premium townships with Italian marble, concierge services. 150-year Shapoorji Pallonji legacy.',
         h1: '3 BHK Luxury Apartments in Pune West',
         keywords: ['3 BHK luxury apartments Pune West', '3 BHK Bavdhan', '3 BHK luxury flats Hinjewadi', 'premium 3 BHK Pune', 'penthouse Hinjewadi', 'ultra luxury apartments Pune'],
-        filters: { locationMatch: 'Pune|Hinjewadi|Bavdhan', typeMatch: '3 BHK' }
+        filters: { locationMatch: 'Pune|Hinjewadi|Bavdhan', typeMatch: '3' }
     },
     {
         slug: 'townships-near-magarpatta-city',
@@ -51,7 +51,7 @@ const SEO_ROUTES = [
         description: 'Explore spacious 3 BHK apartments in Hinjewadi Phase 1 by Shapoorji Pallonji. Options from Joyville Sensorium (979 sq.ft.) and Celestia (950 sq.ft.). Smart home ready. RERA approved.',
         h1: '3 BHK Flats in Hinjewadi Phase 1',
         keywords: ['3 BHK flats in Hinjewadi', '3 BHK Hinjewadi Phase 1', '3 BHK apartments Hinjewadi', 'Joyville Sensorium 3 BHK', 'Joyville Celestia 3 BHK'],
-        filters: { locationMatch: 'Hinjewadi', typeMatch: '3 BHK' }
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '3' }
     },
     {
         slug: '1-bhk-flats-in-hadapsar',
@@ -176,7 +176,6 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
     return (
         <main className="min-h-screen bg-[#EEF2F6] pt-32 pb-24 text-[#323334]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <Navbar />
 
             <header className="max-w-7xl mx-auto px-6 mb-16 text-center">
                 <span className="text-[10px] tracking-[0.3em] uppercase text-[#1D4F9C] font-semibold block mb-4">Shapoorji Pallonji Curated Collection</span>
