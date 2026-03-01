@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import PageTransition from "@/components/PageTransition";
@@ -93,6 +93,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.joyville-homes.com",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#1D4F9C",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1, // Prevents iOS Safari from zooming in on input focus
 };
 
 export default function RootLayout({
