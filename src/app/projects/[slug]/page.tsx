@@ -60,13 +60,15 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         notFound();
     }
 
+    const siteUrl = 'https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app';
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "RealEstateListing",
         "name": project.title,
         "image": project.image,
         "description": project.description,
-        "url": `https://localhost:3000/projects/${project.slug}`,
+        "url": `${siteUrl}/projects/${project.slug}`,
         "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "INR",
@@ -75,8 +77,33 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         }
     };
 
+    // FAQ Schema for Google Rich Results
+    const faqJsonLd = project.faqs && project.faqs.length > 0 ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": project.faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+            }
+        }))
+    } : null;
+
+    // BreadcrumbList Schema for navigation hierarchy
+    const breadcrumbJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+            { "@type": "ListItem", "position": 2, "name": "Projects", "item": `${siteUrl}/projects` },
+            { "@type": "ListItem", "position": 3, "name": project.title, "item": `${siteUrl}/projects/${project.slug}` }
+        ]
+    };
+
     const parseBasePrice = (priceStr: string) => {
-        if (!priceStr || priceStr.toLowerCase().includes('request')) return 8500000; // Default to 85 Lakhs
+        if (!priceStr || priceStr.toLowerCase().includes('request')) return 8500000;
         const match = priceStr.match(/[\d.]+/);
         if (!match) return 8500000;
         const num = parseFloat(match[0]);
@@ -89,6 +116,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
     return (
         <article className="min-h-screen bg-[#FFFFFF] pt-32 pb-24 text-[#323334] selection:bg-[#1D4F9C] selection:text-[#FFFFFF]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+            {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
             {/* Breadcrumb Navigation */}
             <div className="max-w-7xl mx-auto px-6 mb-12">
@@ -125,7 +154,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         src={project.image}
                         alt={`${project.title} Hero Banner`}
                         fill
-                        className="object-cover mix-blend-luminosity opacity-80"
+                        className="object-cover opacity-90 mix-blend-multiply"
                         sizes="100vw"
                         priority={true}
                     />
@@ -217,7 +246,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
                         <div className="mb-12 relative group rounded-sm overflow-hidden border border-[#1D4F9C]/60 cursor-pointer">
                             <div className="aspect-[16/9] bg-[#EEF2F6] relative">
-                                <Image src={project.masterLayout} alt={`${project.title} Conceptual Master Layout`} fill className="object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500" sizes="(max-width: 1200px) 100vw, 1200px" />
+                                <Image src={project.masterLayout} alt={`${project.title} Conceptual Master Layout`} fill className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500" sizes="(max-width: 1200px) 100vw, 1200px" />
                             </div>
                             <div className="absolute inset-0 bg-gradient-to-t from-[#F4F6F9] via-transparent to-transparent flex items-end p-6">
                                 <div className="text-[#1D4F9C] flex items-center gap-2 text-xs tracking-widest uppercase bg-[#FFFFFF]/80 px-4 py-2 backdrop-blur-md rounded-full border border-[#1D4F9C]/60">
@@ -250,7 +279,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                             {project.gallery.map((img, idx) => (
                                 <div key={idx} className="aspect-square relative overflow-hidden rounded-sm group">
-                                    <Image src={img} alt={`${project.title} Gallery Image ${idx + 1}`} fill className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100" sizes="(max-width: 768px) 50vw, 33vw" />
+                                    <Image src={img} alt={`${project.title} Gallery Image ${idx + 1}`} fill className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" sizes="(max-width: 768px) 50vw, 33vw" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#FFFFFF]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
                                         <span className="text-[#1D4F9C] text-[10px] uppercase tracking-widest">Enlarge</span>
                                     </div>
@@ -336,6 +365,39 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 </div>
 
             </div>
+
+            {/* Related Projects Section — Internal Linking */}
+            <section className="max-w-7xl mx-auto px-6 mt-24 pt-16 border-t border-[#1D4F9C]/10">
+                <h2 className="text-3xl font-serif text-[#323334] mb-8">Explore More Shapoorji Pallonji Projects</h2>
+                <div className="grid md:grid-cols-3 gap-6">
+                    {projects.filter(p => p.slug !== project.slug).slice(0, 3).map(related => (
+                        <Link key={related.id} href={`/projects/${related.slug}`} className="group bg-[#F4F6F9] border border-[#1D4F9C]/10 hover:border-[#1D4F9C]/40 p-6 transition-all duration-300 rounded-sm">
+                            <span className="text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold block mb-2">{related.location}</span>
+                            <h3 className="text-lg font-serif text-[#323334] group-hover:text-[#1D4F9C] transition-colors mb-2">{related.title}</h3>
+                            <p className="text-sm text-[#1D4F9C] font-serif italic">{related.price}</p>
+                        </Link>
+                    ))}
+                </div>
+            </section>
+
+            {/* Related Insights — Content Interlinking */}
+            <section className="max-w-7xl mx-auto px-6 mt-16 mb-8">
+                <h2 className="text-2xl font-serif text-[#323334] mb-6">Market Insights & Investment Guides</h2>
+                <div className="grid md:grid-cols-2 gap-4">
+                    {[
+                        { slug: 'best-residential-projects-hinjewadi-2025-complete-guide', title: 'Best Projects in Hinjewadi 2025 — Buyer\'s Guide' },
+                        { slug: 'rera-approved-projects-pune-everything-you-need-to-know', title: 'RERA Approved Projects Pune — Complete Guide' },
+                        { slug: 'pune-property-price-trends-2025-micro-market-analysis', title: 'Pune Property Price Trends 2025 — Micro-Market Analysis' },
+                        { slug: 'rental-yields-hinjewadi-2025-nri-investment-guide', title: 'Rental Yields Hinjewadi 2025 — NRI Investment Guide' },
+                    ].map(article => (
+                        <Link key={article.slug} href={`/insights/${article.slug}`} className="flex items-center gap-3 p-4 bg-[#F4F6F9] border border-[#1D4F9C]/10 hover:border-[#1D4F9C]/40 transition-all rounded-sm group">
+                            <ArrowLeft size={14} className="text-[#1D4F9C] rotate-180 group-hover:translate-x-1 transition-transform" />
+                            <span className="text-sm text-[#323334] group-hover:text-[#1D4F9C] transition-colors font-light">{article.title}</span>
+                        </Link>
+                    ))}
+                </div>
+            </section>
+
         </article>
     );
 }

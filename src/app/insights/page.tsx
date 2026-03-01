@@ -6,11 +6,16 @@ import { blogs } from '@/data/blogs';
 import Navbar from '@/components/Navigation';
 
 export const metadata: Metadata = {
-    title: 'Market Insights & Real Estate News Pune | Joyville',
-    description: 'Expert analysis, local market trends, infrastructure updates, and investment guides for the Pune real estate market powered by Shapoorji Pallonji.',
-    keywords: ['Pune real estate news', 'Hinjewadi market trends', 'Property investment Pune', 'Pune infrastructure projects 2024'],
+    title: 'Pune Real Estate Insights & Property Market Analysis 2025 | Joyville Homes',
+    description: 'Expert market analysis, property price trends, NRI investment guides, RERA compliance education, and infrastructure impact reports for Pune real estate by Shapoorji Pallonji.',
+    keywords: [
+        'Pune real estate news', 'Hinjewadi market trends', 'Property investment Pune', 'Pune infrastructure projects 2025',
+        'best residential projects Hinjewadi 2025', 'RERA approved projects Pune', 'Pune property price trends',
+        'NRI investment Pune', 'Hinjewadi vs Hadapsar vs Bavdhan', 'rental yield Hinjewadi', 'Pune Metro real estate impact',
+        'property rates Hinjewadi 2025', 'Joyville vs Kolte Patil', 'micro market analysis Pune'
+    ],
     alternates: {
-        canonical: 'https://localhost:3000/insights'
+        canonical: 'https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app/insights'
     }
 };
 
@@ -20,7 +25,7 @@ export default function InsightsPage() {
         "@type": "Blog",
         "name": "Joyville Pune Market Insights",
         "description": metadata.description,
-        "url": "https://localhost:3000/insights",
+        "url": "https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app/insights",
         "publisher": {
             "@type": "Organization",
             "name": "Shapoorji Pallonji Real Estate"
@@ -28,7 +33,7 @@ export default function InsightsPage() {
         "blogPost": blogs.map(blog => ({
             "@type": "BlogPosting",
             "headline": blog.title,
-            "url": `https://localhost:3000/insights/${blog.slug}`,
+            "url": `https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app/insights/${blog.slug}`,
             "datePublished": new Date(blog.date).toISOString()
         }))
     };

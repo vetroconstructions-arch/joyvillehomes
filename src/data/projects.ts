@@ -113,13 +113,34 @@ export const projects: Project[] = [
         },
         seoKeywords: [
             "Joyville Sensorium Hinjewadi",
+            "Joyville Sensorium price",
+            "Joyville Sensorium floor plan",
+            "Joyville Sensorium reviews",
+            "Joyville Sensorium possession date",
             "Shapoorji Pallonji Hinjewadi Phase 1",
-            "Flats for sale Hinjewadi",
-            "IT Park Hinjewadi flats",
-            "2 BHK Hinjewadi Phase 1",
-            "3 BHK luxury flats Hinjewadi",
-            "Investment Hinjewadi property",
-            "Pune IT Park residential projects"
+            "Shapoorji Pallonji Pune projects",
+            "flats in Hinjewadi",
+            "2 BHK flats in Hinjewadi Phase 1",
+            "3 BHK luxury apartments Hinjewadi",
+            "luxury apartments Hinjewadi Phase 1",
+            "new launch Hinjewadi 2025",
+            "flats near Rajiv Gandhi Infotech Park",
+            "under construction projects Hinjewadi",
+            "flats near Wipro Hinjewadi",
+            "flats near Infosys Pune",
+            "residential projects near IT Park Pune",
+            "RERA approved flats Hinjewadi Phase 1",
+            "smart home apartments Hinjewadi Pune",
+            "walk to work apartments Hinjewadi",
+            "NRI investment flats Hinjewadi Pune",
+            "rental yield Hinjewadi 2025",
+            "buy 2 BHK flat Hinjewadi Phase 1 under 1 crore",
+            "Joyville vs Kolte Patil Life Republic",
+            "Joyville vs Godrej Hinjewadi",
+            "property rates Hinjewadi 2025",
+            "Pune IT Park residential projects",
+            "gated community flats Hinjewadi",
+            "10 acre township Hinjewadi"
         ],
         faqs: [
             {
@@ -208,13 +229,29 @@ export const projects: Project[] = [
         },
         seoKeywords: [
             "Joyville Hadapsar Annexe",
+            "Joyville Hadapsar Annexe price",
+            "Joyville Hadapsar Annexe floor plan",
+            "Joyville Hadapsar Annexe reviews",
+            "Shapoorji Pallonji Hadapsar",
             "Shapoorji Pallonji Shewalewadi",
-            "Flats near Magarpatta City",
-            "Flats for sale Hadapsar",
-            "Hadapsar real estate trends",
-            "Hadapsar residential projects",
-            "Ready to move flats Hadapsar Annexe",
-            "Properties near Pune IT Hub"
+            "flats in Hadapsar Pune",
+            "1 BHK flats Hadapsar",
+            "2 BHK flats Hadapsar",
+            "3 BHK flats Hadapsar",
+            "flats near Magarpatta City",
+            "flats near SP Infocity Pune",
+            "ready to move flats Hadapsar",
+            "affordable flats Pune East",
+            "flats on Pune Solapur Highway",
+            "township projects Hadapsar",
+            "flats near Amanora Mall",
+            "Shewalewadi property rates",
+            "21 acre township Hadapsar Pune",
+            "family apartments near SP Infocity Pune",
+            "Joyville Hadapsar vs Amanora Trendsetter",
+            "ready possession flats near Magarpatta IT Park",
+            "Hadapsar real estate trends 2025",
+            "best 1 BHK flat Hadapsar under 70 lakhs"
         ],
         faqs: [
             {
@@ -299,12 +336,34 @@ export const projects: Project[] = [
         seoKeywords: [
             "Joyville Celestia Pune",
             "Joyville Celestia Hinjewadi",
-            "Shapoorji Pallonji Hinjewadi Phase 1",
-            "New launch Hinjewadi",
-            "Flats in Hinjewadi Pune",
-            "2 BHK Hinjewadi Phase 1",
-            "Under construction projects Hinjewadi",
-            "Hinjewadi property rates"
+            "Joyville Celestia price",
+            "Joyville Celestia floor plan",
+            "Shapoorji Pallonji Hinjewadi",
+            "new launch Hinjewadi 2025",
+            "flats in Hinjewadi Pune",
+            "2 BHK Hinjewadi",
+            "3 BHK Hinjewadi",
+            "Vastu compliant homes Hinjewadi",
+            "Hinjewadi property rates 2025",
+            "premium apartments Hinjewadi",
+            "under construction projects Hinjewadi",
+            "aqua gym apartments Pune",
+            "pet friendly apartments Hinjewadi",
+            "brain gym kids Pune"
+        ],
+        faqs: [
+            {
+                question: "What is the starting price for Joyville Celestia in Hinjewadi?",
+                answer: "Joyville Celestia offers premium 2 BHK and 3 BHK Vastu-compliant apartments in Hinjewadi starting from ₹85 Lakhs onwards, with 3 BHK configurations going up to ₹1.25 Cr."
+            },
+            {
+                question: "Is Joyville Celestia Vastu compliant?",
+                answer: "Yes, all residences at Joyville Celestia are designed with strict Vastu compliance, ensuring positive energy flow and optimal cross-ventilation in every home."
+            },
+            {
+                question: "What unique amenities does Joyville Celestia offer?",
+                answer: "Joyville Celestia features signature amenities including an Aqua Gym, Naturopathy Center, Brain Gym for Kids, Skating Rink, Pet Park, and a Hammock Garden — designed for holistic lifestyle living."
+            }
         ]
     },
     {
@@ -377,11 +436,34 @@ export const projects: Project[] = [
         },
         seoKeywords: [
             "Joyville Skyluxe Edition",
-            "Premium flats near Mumbai-Pune Expressway",
-            "Luxury apartments Hinjewadi Phase 1",
+            "Joyville Skyluxe Hinjewadi",
+            "Joyville Skyluxe price",
+            "ultra luxury apartments Hinjewadi Phase 1",
             "3 BHK luxury flats Hinjewadi",
-            "Sky-luxe apartments Pune",
-            "Hinjewadi luxury real estate"
+            "penthouse Hinjewadi Pune",
+            "sky luxe apartments Pune",
+            "Hinjewadi luxury real estate",
+            "private terrace apartments Pune",
+            "concierge services apartments Pune",
+            "Italian marble flooring flats Pune",
+            "premium flats near Mumbai Pune Expressway",
+            "Shapoorji Pallonji luxury homes",
+            "high rise apartments Hinjewadi panoramic view",
+            "pre launch luxury projects Hinjewadi 2025"
+        ],
+        faqs: [
+            {
+                question: "What makes Joyville Skyluxe Edition different from other Hinjewadi projects?",
+                answer: "Skyluxe Edition is the ultra-luxury pinnacle of the Joyville portfolio. It features imported Italian marble flooring, private terrace options, concierge services, Turkish Hammam spa, and panoramic views — amenities typically found in 5-star hotels, not residential projects."
+            },
+            {
+                question: "What is the starting price for Joyville Skyluxe Edition?",
+                answer: "Joyville Skyluxe Edition starts from ₹1.40 Cr onwards for exclusive 3 BHK Skyluxe configurations. The penthouse collection starts at higher price points with carpet areas up to 1,850 sq. ft."
+            },
+            {
+                question: "Does Joyville Skyluxe offer smart home features?",
+                answer: "Yes, every Skyluxe residence comes with a fully integrated home automation hub, keyless biometric entry, advanced HVAC provisions, and video door phone systems as standard."
+            }
         ]
     },
     {
@@ -507,12 +589,30 @@ export const projects: Project[] = [
         },
         seoKeywords: [
             "Vanaha Golfland Bavdhan",
+            "Vanaha Golfland price",
             "Vanaha Pune by Shapoorji",
-            "Flats for sale Bavdhan",
-            "Luxury flats in Bavdhan Pune",
-            "Golf course view apartments Pune",
+            "flats in Bavdhan Pune",
+            "2 BHK Bavdhan",
+            "3 BHK Bavdhan",
+            "luxury flats in Bavdhan Pune",
+            "golf course view apartments Pune",
             "Bavdhan real estate investment",
-            "Living in Bavdhan"
+            "flats near Mumbai Pune Expressway",
+            "township Bavdhan Pune",
+            "flats near Chandni Chowk Pune",
+            "resort style living Pune",
+            "infinity pool apartments Bavdhan",
+            "Shapoorji Pallonji Bavdhan"
+        ],
+        faqs: [
+            {
+                question: "Does Vanaha Golfland offer actual golf course views?",
+                answer: "Yes, Vanaha Golfland is designed within the Vanaha township to provide residents with unhindered views of the beautiful golf course and surrounding undulating greens, offering a resort-like everyday experience."
+            },
+            {
+                question: "How far is Vanaha Golfland from Hinjewadi IT Park?",
+                answer: "Vanaha Golfland in Bavdhan is approximately 12 km from Hinjewadi IT Park, with excellent connectivity via the Mumbai-Bengaluru Highway and the Chandni Chowk junction."
+            }
         ]
     },
     {
@@ -567,12 +667,29 @@ export const projects: Project[] = [
             ]
         },
         seoKeywords: [
+            "Vanaha Springs Bavdhan",
             "Vanaha Springs premium residences",
-            "Apartments near Chandni Chowk",
-            "Properties West Pune",
-            "Flats surrounded by hills Pune",
-            "Eco-friendly homes Pune",
-            "Townships in Bavdhan"
+            "Vanaha Springs price",
+            "apartments near Chandni Chowk Pune",
+            "properties West Pune",
+            "flats surrounded by hills Pune",
+            "eco friendly homes Pune",
+            "townships in Bavdhan",
+            "valley view apartments Pune",
+            "1000 acre township Pune",
+            "nature centric apartments Pune",
+            "meditation pavilion apartments Pune",
+            "Shapoorji Pallonji Bavdhan township"
+        ],
+        faqs: [
+            {
+                question: "What makes Vanaha Springs different from other Bavdhan projects?",
+                answer: "Vanaha Springs is part of the massive 1,000-acre Vanaha township by Shapoorji Pallonji, offering breathtaking valley views, nature trails, meditation pavilions, and homes deeply connected with nature — surrounded by natural hills and scenic landscapes."
+            },
+            {
+                question: "Is Vanaha Springs an eco-friendly development?",
+                answer: "Yes, Vanaha Springs prioritizes sustainable and eco-friendly living with earthquake-resistant RCC structures, rainwater harvesting, extensive green spaces, and energy-efficient common area lighting."
+            }
         ]
     },
     {
@@ -628,11 +745,28 @@ export const projects: Project[] = [
         },
         seoKeywords: [
             "Vanaha Pune by Shapoorji",
+            "Vanaha Bavdhan",
             "Vanaha Bavdhan 3 BHK prices",
-            "Townships in Bavdhan",
-            "Flats surrounded by hills Pune",
+            "townships in Bavdhan",
             "1000 acre township Pune",
-            "Flats for sale Bavdhan"
+            "flats for sale Bavdhan",
+            "largest township Pune",
+            "integrated township Bavdhan",
+            "Shapoorji Pallonji Bavdhan",
+            "self sustaining township Pune",
+            "sustainable living Pune",
+            "flats surrounded by hills Pune",
+            "community living Pune"
+        ],
+        faqs: [
+            {
+                question: "How large is the Vanaha township in Bavdhan?",
+                answer: "Vanaha is one of the largest integrated townships in Pune, spanning approximately 1,000 acres. It includes schools, healthcare facilities, commercial hubs, entertainment zones, grand clubhouses, parks, orchards, and sports complexes."
+            },
+            {
+                question: "Is Vanaha a self-sustaining township?",
+                answer: "Yes, Vanaha is meticulously designed to create a self-sustaining environment offering everything from healthcare and education to retail and entertainment within the township premises."
+            }
         ]
     },
     {
@@ -690,11 +824,20 @@ export const projects: Project[] = [
         },
         seoKeywords: [
             "Shapoorji Treetopia Pune",
-            "Exotic Villa Plots Pune",
-            "NA Bungalow Plots Pune",
-            "Shapoorji Pallonji Treetopia Pune",
-            "Plot Investment Pune",
-            "Plots near Purandar Airport"
+            "Shapoorji Pallonji Treetopia price",
+            "exotic villa plots Pune",
+            "NA bungalow plots Pune",
+            "plots near Purandar Airport",
+            "villa plots Pune",
+            "plotted development near Pune Ring Road",
+            "Jadhavwadi property investment",
+            "land investment near Pune airport",
+            "biophilic landscapes plots Pune",
+            "RERA approved plots Pune",
+            "Shapoorji Pallonji plots offering",
+            "Pune growth corridor real estate",
+            "plot investment Pune 2025",
+            "gated community plots Pune"
         ]
     }
 ];

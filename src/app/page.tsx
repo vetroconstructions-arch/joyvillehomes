@@ -327,7 +327,7 @@ export default function Home() {
                   className="grid lg:grid-cols-12 gap-16 items-center"
                 >
                   <div className="lg:col-span-7 order-2 lg:order-1 aspect-[4/3] bg-[#EEF2F6] border border-[#1D4F9C]/60 p-8 relative group overflow-hidden flex items-center justify-center">
-                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-luminosity group-hover:opacity-40 group-hover:scale-105 transition-all duration-[2000ms]" />
+                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                     <div className="relative z-10 w-full h-full border border-[#1D4F9C]/60 flex items-center justify-center bg-[#FFFFFF]/50 backdrop-blur-sm">
                       <span className="text-[#1D4F9C] text-xs tracking-[0.3em] uppercase border border-[#1D4F9C]/60 px-6 py-2">Floor Plan View</span>
                     </div>
@@ -371,7 +371,7 @@ export default function Home() {
                   className="grid lg:grid-cols-12 gap-16 items-center"
                 >
                   <div className="lg:col-span-7 order-2 lg:order-1 aspect-[4/3] bg-[#EEF2F6] border border-[#1D4F9C]/60 p-8 relative group overflow-hidden flex items-center justify-center">
-                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-luminosity group-hover:opacity-40 group-hover:scale-105 transition-all duration-[2000ms]" />
+                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                     <div className="relative z-10 w-full h-full border border-[#1D4F9C]/60 flex items-center justify-center bg-[#FFFFFF]/50 backdrop-blur-sm">
                       <span className="text-[#1D4F9C] text-xs tracking-[0.3em] uppercase border border-[#1D4F9C]/60 px-6 py-2">Floor Plan View</span>
                     </div>

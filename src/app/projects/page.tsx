@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { ArrowRight, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 import { projects } from "@/data/projects";
@@ -48,20 +49,20 @@ export default function ProjectsPortfolio() {
 
             <div className="max-w-5xl mx-auto px-6 space-y-16 mb-24">
                 {currentProjects.map((project) => (
-                    <div key={project.id} className="group flex flex-col md:flex-row bg-[#EEF2F6] border border-[#1D4F9C]/60 shadow-[0_20px_50px_rgba(0,0,0,0.4)] overflow-hidden rounded-sm hover:border-[#1D4F9C]/40 transition-colors duration-500">
+                    <Link key={project.id} href={`/projects/${project.slug}`} className="group flex flex-col md:flex-row bg-[#FFFFFF] border border-[#1D4F9C]/30 shadow-lg hover:shadow-2xl overflow-hidden rounded-sm hover:border-[#1D4F9C]/80 transition-all duration-500 cursor-pointer block">
                         {/* Elegant Cinematic Image */}
-                        <div className="md:w-5/12 relative aspect-[4/3] md:aspect-auto overflow-hidden">
+                        <div className="md:w-5/12 relative aspect-[4/3] md:min-h-[300px] overflow-hidden bg-[#F8FAFC]">
                             <Image
                                 src={project.image}
                                 alt={project.title}
                                 fill
-                                className="object-cover opacity-40 mix-blend-luminosity group-hover:opacity-60 group-hover:scale-105 transition-all duration-[2000ms]"
+                                className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                                 sizes="(max-width: 768px) 100vw, 50vw"
                                 priority={true}
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#F4F6F9] via-transparent to-transparent pointer-events-none" />
-                            <div className="absolute top-6 left-6 flex gap-3">
-                                <span className="px-4 py-1.5 bg-[#1D4F9C] text-[#FFFFFF] text-[9px] uppercase tracking-[0.2em] font-bold shadow-2xl">{project.status}</span>
+                            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#FFFFFF] via-[#FFFFFF]/20 to-transparent pointer-events-none md:w-3/4" />
+                            <div className="absolute top-6 left-6 flex gap-3 z-10">
+                                <span className="px-4 py-1.5 bg-[#1D4F9C] text-[#FFFFFF] text-[10px] uppercase tracking-[0.2em] font-bold shadow-lg shadow-[#1D4F9C]/30 rounded-sm">{project.status}</span>
                             </div>
                         </div>
 
@@ -86,11 +87,11 @@ export default function ProjectsPortfolio() {
                                 ))}
                             </div>
 
-                            <a href={`/projects/${project.slug}`} className="inline-flex items-center gap-4 text-[#1D4F9C] font-medium uppercase tracking-[0.2em] text-xs hover:text-[#323334] transition-colors self-start group/link">
-                                View Project Details <ArrowRight size={14} className="group-hover/link:translate-x-2 transition-transform duration-300" />
-                            </a>
+                            <div className="inline-flex items-center gap-4 text-[#1D4F9C] font-semibold uppercase tracking-[0.2em] text-xs group-hover:text-[#1A1A1A] transition-colors self-start mt-auto">
+                                View Project Details <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform duration-300" />
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
 

@@ -64,6 +64,7 @@ export default function Navigation() {
                         <div
                             className="relative h-full py-4 cursor-pointer flex items-center gap-1 group/trigger"
                             onMouseEnter={() => setIsProjectsHovered(true)}
+                            onClick={() => setIsProjectsHovered(!isProjectsHovered)}
                         >
                             <Link href="/projects" className="hover:text-[#1D4F9C] transition-colors duration-300">Portfolios</Link>
                             <ChevronDown size={14} className={`transition-transform duration-300 ${isProjectsHovered ? 'rotate-180 text-[#1D4F9C]' : ''}`} />
@@ -98,16 +99,17 @@ export default function Navigation() {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: 10 }}
                                 transition={{ duration: 0.3, ease: "easeOut" }}
-                                className="absolute top-[100%] left-0 w-full pt-6"
-                                onMouseLeave={() => setIsProjectsHovered(false)}
+                                className="absolute top-[100%] left-0 w-full pt-2"
                             >
-                                <div className="bg-[#EEF2F6] border border-[#1D4F9C]/30 shadow-[0_30px_60px_rgba(0,0,0,0.6)] rounded-sm overflow-hidden p-8 grid grid-cols-4 gap-6 relative before:absolute before:inset-0 before:bg-[url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop')] before:bg-cover before:bg-center before:opacity-5 before:pointer-events-none">
+                                <div className="bg-[#FFFFFF] border border-[#1D4F9C]/20 shadow-[0_20px_50px_rgba(29,79,156,0.15)] rounded-sm overflow-hidden p-6 grid grid-cols-4 gap-4 relative">
                                     {projects.map((proj) => (
-                                        <Link href={`/projects/${proj.slug}`} key={proj.id} className="group/dropdown overflow-hidden block relative border border-[#1D4F9C]/30 bg-[#FFFFFF] aspect-[4/3]">
-                                            <div className="absolute inset-0 bg-cover bg-center opacity-40 group-hover/dropdown:opacity-70 group-hover/dropdown:scale-110 transition-all duration-[1500ms]" style={{ backgroundImage: `url(${proj.image})` }} />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-[#F4F6F9] via-[#F4F6F9]/50 to-transparent p-6 flex flex-col justify-end">
-                                                <div className="text-[#1D4F9C] text-[9px] uppercase tracking-[0.2em] font-medium mb-2 opacity-0 group-hover/dropdown:opacity-100 transform translate-y-4 group-hover/dropdown:translate-y-0 transition-all duration-300 flex items-center gap-1.5"><MapPin size={10} /> {proj.location.split(',')[0]}</div>
-                                                <h4 className="text-[#323334] font-serif text-lg font-light transform translate-y-4 group-hover/dropdown:translate-y-0 transition-all duration-300 delay-75">{proj.title}</h4>
+                                        <Link href={`/projects/${proj.slug}`} key={proj.id} className="group/dropdown overflow-hidden block relative border border-[#E0E5EC] hover:border-[#1D4F9C]/50 bg-[#FFFFFF] rounded-sm transition-all duration-300 hover:shadow-lg" onClick={() => setIsProjectsHovered(false)}>
+                                            <div className="aspect-[4/3] relative overflow-hidden">
+                                                <div className="absolute inset-0 bg-cover bg-center opacity-90 group-hover/dropdown:opacity-100 group-hover/dropdown:scale-105 transition-all duration-500" style={{ backgroundImage: `url(${proj.image})` }} />
+                                            </div>
+                                            <div className="p-4 bg-[#FFFFFF]">
+                                                <div className="text-[#1D4F9C] text-[9px] uppercase tracking-[0.15em] font-medium mb-1 flex items-center gap-1.5"><MapPin size={10} /> {proj.location.split(',')[0]}</div>
+                                                <h4 className="text-[#323334] font-serif text-sm font-medium">{proj.title}</h4>
                                             </div>
                                         </Link>
                                     ))}

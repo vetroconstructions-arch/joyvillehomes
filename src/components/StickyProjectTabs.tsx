@@ -14,7 +14,7 @@ export default function StickyProjectTabs() {
     }, []);
 
     return (
-        <div className="sticky top-[72px] lg:top-20 z-40 bg-[#EEF2F6]/95 backdrop-blur-xl border-y border-[#1D4F9C]/30 mb-8 md:mb-16 shadow-lg">
+        <div className="sticky top-[72px] lg:top-20 z-[90] bg-[#EEF2F6]/95 backdrop-blur-xl border-y border-[#1D4F9C]/30 mb-8 md:mb-16 shadow-lg">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center gap-2 sm:gap-8 overflow-x-auto scroll-smooth no-scrollbar">
                 {SECTIONS.map((section) => (
                     <button

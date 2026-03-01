@@ -7,38 +7,109 @@ import { MapPin, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navigation';
 
 // Define the supported SEO Slugs based on our strategy matrix
+const siteUrl = 'https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app';
+
 const SEO_ROUTES = [
+    // Existing high-volume locational pages
     {
         slug: '2-bhk-flats-in-hinjewadi',
-        title: 'Premium 2 BHK Flats in Hinjewadi | Joyville Homes',
-        description: 'Explore the best 2 BHK luxury flats and apartments in Hinjewadi by Shapoorji Pallonji. Discover premium amenities and IT park connectivity.',
-        h1: 'Premium 2 BHK Flats in Hinjewadi',
-        keywords: ['2 BHK flats in Hinjewadi', 'Buy 2 BHK Hinjewadi', 'Joyville Hinjewadi 2 BHK', 'Shapoorji Pallonji Pune'],
+        title: 'Premium 2 BHK Flats in Hinjewadi Phase 1 | Shapoorji Pallonji Joyville',
+        description: 'Explore the best 2 BHK luxury flats in Hinjewadi Phase 1 by Shapoorji Pallonji. RERA approved, smart home apartments near Rajiv Gandhi Infotech Park. Starting ₹85 Lakhs.',
+        h1: 'Premium 2 BHK Flats in Hinjewadi Phase 1',
+        keywords: ['2 BHK flats in Hinjewadi', 'buy 2 BHK Hinjewadi Phase 1', 'Joyville Hinjewadi 2 BHK price', 'RERA approved 2 BHK Hinjewadi', 'flats near Rajiv Gandhi Infotech Park', 'walk to work apartments Hinjewadi'],
         filters: { locationMatch: 'Hinjewadi', typeMatch: '2 BHK' }
     },
     {
         slug: '3-bhk-luxury-apartments-pune-west',
-        title: '3 BHK Luxury Apartments in Pune West | Shapoorji Pallonji',
-        description: 'Discover spacious 3 BHK luxury residences in Pune West (Hinjewadi, Bavdhan). Premium townships with 150 years legacy.',
+        title: '3 BHK Luxury Apartments in Pune West — Hinjewadi & Bavdhan | Shapoorji Pallonji',
+        description: 'Discover spacious 3 BHK luxury residences in Pune West (Hinjewadi Phase 1, Bavdhan). Premium townships with Italian marble, concierge services. 150-year Shapoorji Pallonji legacy.',
         h1: '3 BHK Luxury Apartments in Pune West',
-        keywords: ['3 BHK luxury apartments Pune West', '3 BHK Bavdhan', '3 BHK Hinjewadi', 'Premium flats Pune'],
-        filters: { locationMatch: 'Pune', typeMatch: '3 BHK' }
+        keywords: ['3 BHK luxury apartments Pune West', '3 BHK Bavdhan', '3 BHK luxury flats Hinjewadi', 'premium 3 BHK Pune', 'penthouse Hinjewadi', 'ultra luxury apartments Pune'],
+        filters: { locationMatch: 'Pune|Hinjewadi|Bavdhan', typeMatch: '3 BHK' }
     },
     {
         slug: 'townships-near-magarpatta-city',
-        title: 'Township Projects near Magarpatta City | East Pune',
-        description: 'Find premium flats and township projects near Magarpatta City and SP Infocity in East Pune by Shapoorji Pallonji.',
+        title: 'Township Projects near Magarpatta City & SP Infocity | Joyville Hadapsar',
+        description: 'Find premium township flats near Magarpatta City and SP Infocity in East Pune. 21-acre Joyville Hadapsar Annexe with 60+ amenities. Ready to move options from ₹65 Lakhs.',
         h1: 'Premium Township Projects Near Magarpatta City',
-        keywords: ['Flats near Magarpatta', 'Townships East Pune', 'Joyville Hadapsar Annexe', 'Properties in Shewalewadi'],
+        keywords: ['flats near Magarpatta City', 'townships East Pune', 'Joyville Hadapsar Annexe', 'flats near SP Infocity', 'ready to move flats Hadapsar', 'Shewalewadi property'],
         filters: { locationMatch: 'Shewalewadi|Hadapsar', typeMatch: '' }
     },
     {
         slug: 'na-bungalow-plots-near-purandar-airport',
-        title: 'NA Bungalow Plots Near Purandar Airport | Treetopia',
-        description: 'Invest in premium NA Bungalow Plots near the upcoming Purandar Airport in Pune. Clear title properties by Shapoorji Pallonji.',
+        title: 'NA Bungalow Plots Near Purandar Airport — Shapoorji Treetopia Pune',
+        description: 'Invest in RERA approved NA Bungalow Plots near the upcoming Purandar Airport in Pune. Shapoorji Pallonji Treetopia plots from ₹84 Lakhs. Gated community with biophilic landscapes.',
         h1: 'Premium NA Bungalow Plots Near Upcoming Purandar Airport',
-        keywords: ['NA Bungalow Plots Pune', 'Plots near Purandar Airport', 'Shapoorji Treetopia', 'Land investment Pune'],
+        keywords: ['NA bungalow plots Pune', 'plots near Purandar Airport', 'Shapoorji Treetopia price', 'villa plots Pune', 'land investment Pune airport', 'RERA approved plots Pune'],
         filters: { locationMatch: 'Jadhavwadi|Purandar', typeMatch: 'Plots' }
+    },
+
+    // NEW: Typology pages mirroring joyvillehomes.com structure
+    {
+        slug: '3-bhk-flats-in-hinjewadi',
+        title: '3 BHK Flats in Hinjewadi Phase 1 | Joyville Sensorium & Celestia',
+        description: 'Explore spacious 3 BHK apartments in Hinjewadi Phase 1 by Shapoorji Pallonji. Options from Joyville Sensorium (979 sq.ft.) and Celestia (950 sq.ft.). Smart home ready. RERA approved.',
+        h1: '3 BHK Flats in Hinjewadi Phase 1',
+        keywords: ['3 BHK flats in Hinjewadi', '3 BHK Hinjewadi Phase 1', '3 BHK apartments Hinjewadi', 'Joyville Sensorium 3 BHK', 'Joyville Celestia 3 BHK'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '3 BHK' }
+    },
+    {
+        slug: '1-bhk-flats-in-hadapsar',
+        title: '1 BHK Flats in Hadapsar Pune — Starting ₹65 Lakhs | Joyville Hadapsar Annexe',
+        description: 'Affordable 1 BHK flats in Hadapsar, Pune starting just ₹65 Lakhs. Ready to move options at Joyville Hadapsar Annexe. 21-acre township near Magarpatta City. 60+ amenities.',
+        h1: 'Affordable 1 BHK Flats in Hadapsar, Pune',
+        keywords: ['1 BHK flats Hadapsar', '1 BHK Hadapsar under 70 lakhs', 'affordable flats Pune East', 'ready to move 1 BHK Hadapsar', 'Joyville Hadapsar 1 BHK'],
+        filters: { locationMatch: 'Shewalewadi|Hadapsar', typeMatch: '1' }
+    },
+    {
+        slug: 'flats-in-bavdhan-pune',
+        title: 'Premium Flats in Bavdhan, Pune — Vanaha Township by Shapoorji Pallonji',
+        description: 'Explore luxury flats and apartments in Bavdhan, Pune. Vanaha — a 1,000-acre township with golf course views, valley vistas, and world-class amenities. Shapoorji Pallonji.',
+        h1: 'Premium Flats in Bavdhan, Pune',
+        keywords: ['flats in Bavdhan Pune', '2 BHK Bavdhan', '3 BHK Bavdhan', 'Vanaha Bavdhan', 'golf course apartments Pune', 'township Bavdhan Pune', 'luxury flats Bavdhan'],
+        filters: { locationMatch: 'Bavdhan', typeMatch: '' }
+    },
+    {
+        slug: 'ready-to-move-flats-hadapsar',
+        title: 'Ready to Move Flats in Hadapsar Pune — Immediate Possession | Joyville',
+        description: 'Move in immediately. Ready to move 1, 2 & 3 BHK flats at Joyville Hadapsar Annexe by Shapoorji Pallonji. 21-acre township near Magarpatta. Starting ₹65 Lakhs.',
+        h1: 'Ready to Move Flats in Hadapsar, Pune',
+        keywords: ['ready to move flats Hadapsar', 'ready possession flats Pune East', 'immediate possession Hadapsar', 'Joyville Hadapsar ready to move', 'move in ready flats Pune'],
+        filters: { locationMatch: 'Shewalewadi|Hadapsar', typeMatch: '' }
+    },
+
+    // NEW: Comparison landing pages (Competitor gap keywords)
+    {
+        slug: 'joyville-vs-kolte-patil-life-republic-hinjewadi',
+        title: 'Joyville Sensorium vs Kolte Patil Life Republic — Hinjewadi Comparison 2025',
+        description: 'An objective comparison of Joyville Sensorium by Shapoorji Pallonji and Kolte Patil Life Republic in Hinjewadi. Compare price, amenities, construction quality, RERA status, and ROI potential.',
+        h1: 'Joyville Sensorium vs Kolte Patil Life Republic — Which Is Better?',
+        keywords: ['Joyville vs Kolte Patil Life Republic', 'Joyville vs Life Republic', 'Hinjewadi project comparison', 'best project Hinjewadi 2025', 'Shapoorji Pallonji vs Kolte Patil'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
+    },
+    {
+        slug: 'joyville-vs-godrej-hinjewadi',
+        title: 'Joyville Sensorium vs Godrej Evergreen Square — Hinjewadi Comparison 2025',
+        description: 'Detailed comparison of Joyville Sensorium (Shapoorji Pallonji) vs Godrej Evergreen Square in Hinjewadi. Price per sq.ft., amenities, green certifications, and investment returns compared.',
+        h1: 'Joyville Sensorium vs Godrej Evergreen Square — Complete Comparison',
+        keywords: ['Joyville vs Godrej Hinjewadi', 'Joyville Sensorium vs Godrej', 'Hinjewadi apartments comparison', 'Shapoorji Pallonji vs Godrej Properties', 'best apartments Hinjewadi'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
+    },
+    {
+        slug: 'luxury-apartments-hinjewadi-phase-1',
+        title: 'Luxury Apartments in Hinjewadi Phase 1 — Skyluxe Edition by Shapoorji Pallonji',
+        description: 'Ultra-luxury 3 BHK apartments in Hinjewadi Phase 1. Italian marble, private terraces, concierge services, Turkish Hammam. Joyville Skyluxe Edition from ₹1.40 Cr. Pre-launch prices.',
+        h1: 'Ultra-Luxury Apartments in Hinjewadi Phase 1',
+        keywords: ['luxury apartments Hinjewadi Phase 1', 'ultra luxury flats Hinjewadi', 'Joyville Skyluxe', 'penthouse Hinjewadi', '3 BHK luxury Hinjewadi', 'premium flats near Mumbai Pune Expressway'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: 'Luxury|Ultra' }
+    },
+    {
+        slug: 'new-launch-projects-hinjewadi-2025',
+        title: 'New Launch Projects in Hinjewadi 2025 — Joyville Celestia | Shapoorji Pallonji',
+        description: 'Discover the newest residential launches in Hinjewadi for 2025. Joyville Celestia by Shapoorji Pallonji — Vastu compliant 2 & 3 BHK from ₹85 Lakhs. Pre-launch pricing available.',
+        h1: 'New Launch Projects in Hinjewadi — 2025',
+        keywords: ['new launch Hinjewadi 2025', 'new projects Hinjewadi', 'Joyville Celestia new launch', 'upcoming projects Hinjewadi Phase 1', 'pre launch flats Hinjewadi'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
     }
 ];
 
@@ -65,7 +136,7 @@ export async function generateMetadata({ params }: { params: Promise<{ seoSlug: 
             description: routeData.description,
         },
         alternates: {
-            canonical: `https://localhost:3000/properties/${routeData.slug}`
+            canonical: `${siteUrl}/properties/${routeData.slug}`
         }
     };
 }
@@ -96,7 +167,7 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
             "item": {
                 "@type": "RealEstateListing",
                 "name": project.title,
-                "url": `https://localhost:3000/projects/${project.slug}`,
+                "url": `${siteUrl}/projects/${project.slug}`,
                 "image": project.image
             }
         }))
@@ -114,6 +185,69 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
                     {routeData.description} Explore our portfolio of premium properties crafted with a 150-year legacy of trust and engineering excellence.
                 </p>
             </header>
+
+            {/* Rich Comparison Content for vs Pages */}
+            {routeData.slug.includes('-vs-') && (
+                <section className="max-w-5xl mx-auto px-6 mb-20">
+                    <div className="bg-[#FFFFFF] border border-[#1D4F9C]/20 rounded-sm overflow-hidden shadow-lg">
+                        <div className="bg-[#1D4F9C] text-[#FFFFFF] py-4 px-8">
+                            <h2 className="text-xl font-serif">Head-to-Head Comparison</h2>
+                        </div>
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-sm">
+                                <thead>
+                                    <tr className="border-b border-[#1D4F9C]/10">
+                                        <th className="py-4 px-6 text-left text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold">Parameter</th>
+                                        <th className="py-4 px-6 text-left text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold">Joyville Sensorium</th>
+                                        <th className="py-4 px-6 text-left text-[10px] tracking-[0.2em] uppercase text-[#323334] font-semibold">
+                                            {routeData.slug.includes('kolte-patil') ? 'Kolte Patil Life Republic' : 'Godrej Evergreen Square'}
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {(routeData.slug.includes('kolte-patil') ? [
+                                        ['Developer Legacy', '150 Years (Since 1865)', '33 Years (Since 1991)'],
+                                        ['Land Area', '10.5 Acres', '390 Acres (Full Township)'],
+                                        ['2 BHK Starting Price', '₹1.10 Cr', '₹72-75 Lakhs'],
+                                        ['Construction Quality', 'Premium (Built Indian Parliament)', 'Mid-Market Standard'],
+                                        ['Amenities Count', '60+', '30-40 per cluster'],
+                                        ['Open Space', '75% of total land', '~60%'],
+                                        ['Smart Home', '✅ Standard', '❌ Not standard'],
+                                        ['Green Certification', '✅ EDGE Certified', '❌ No'],
+                                        ['Rental Yield', '4.5-5.5%', '3.5-4.0%'],
+                                        ['Best For', 'Luxury + Investment', 'Budget-first buyers'],
+                                    ] : [
+                                        ['Developer Legacy', '150 Years (Since 1865)', '127 Years (Since 1897)'],
+                                        ['Land Area', '10.5 Acres', '~5 Acres'],
+                                        ['2 BHK Starting Price', '₹1.10 Cr', '₹90 Lakhs - 1 Cr'],
+                                        ['Construction Quality', 'Premium (Built Indian Parliament)', 'Premium (Godrej National Brand)'],
+                                        ['Amenities Count', '60+', '40+'],
+                                        ['Open Space', '75% of total land', '~65%'],
+                                        ['Smart Home', '✅ Standard', '✅ Available'],
+                                        ['Green Certification', '✅ EDGE Certified', '✅ IGBC Certified'],
+                                        ['Unique Selling Point', '1.8km Walking Boulevard', 'Green Building Focus'],
+                                        ['Best For', 'Luxury + Lifestyle', 'Green-conscious buyers'],
+                                    ]).map(([param, joyville, competitor], idx) => (
+                                        <tr key={idx} className={idx % 2 === 0 ? 'bg-[#F4F6F9]' : 'bg-[#FFFFFF]'}>
+                                            <td className="py-3 px-6 font-medium text-[#323334]">{param}</td>
+                                            <td className="py-3 px-6 text-[#1D4F9C] font-medium">{joyville}</td>
+                                            <td className="py-3 px-6 text-[#323334]">{competitor}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div className="p-6 bg-[#F4F6F9] border-t border-[#1D4F9C]/10">
+                            <p className="text-sm text-[#323334] font-light">
+                                <strong className="text-[#1D4F9C]">Verdict:</strong> {routeData.slug.includes('kolte-patil')
+                                    ? 'Joyville Sensorium delivers premium construction quality and luxury amenities backed by 150+ years of Shapoorji Pallonji engineering legacy. Kolte Patil Life Republic offers a full township ecosystem at a lower price point. Choose Sensorium for quality and ROI; choose Life Republic for budget and township scale.'
+                                    : 'Both are premium developers with strong legacies. Joyville Sensorium edges ahead with its 10.5-acre scale, 60+ amenities, and 1.8km walking boulevard. Godrej Evergreen Square offers compelling green certifications. Choose Sensorium for amenity density; choose Godrej for green-first living.'
+                                }
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            )}
 
             <section className="max-w-7xl mx-auto px-6">
                 {matchedProjects.length > 0 ? (

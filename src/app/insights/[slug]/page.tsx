@@ -3,8 +3,10 @@ import { notFound } from 'next/navigation';
 import { blogs, getBlogBySlug } from '@/data/blogs';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, Calendar, User, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Facebook, Twitter, Linkedin, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navigation';
+
+const siteUrl = 'https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app';
 
 // Pre-render all blog routes at build time
 export async function generateStaticParams() {
@@ -35,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             images: [{ url: blog.image }],
         },
         alternates: {
-            canonical: `https://localhost:3000/insights/${blog.slug}`
+            canonical: `${siteUrl}/insights/${blog.slug}`
         }
     };
 }
@@ -48,13 +50,25 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         notFound();
     }
 
+    // Get related articles (exclude current)
+    const relatedArticles = blogs.filter(b => b.slug !== blog.slug).slice(0, 3);
+
+    const articleContent = blog.content.join(" ").replace(/<[^>]*>?/gm, '');
+    const wordCount = articleContent.split(/\s+/).length;
+
     const jsonLd = {
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `${siteUrl}/insights/${blog.slug}`
+        },
         "headline": blog.title,
         "image": [blog.image],
         "datePublished": new Date(blog.date).toISOString(),
         "dateModified": new Date(blog.date).toISOString(),
+        "wordCount": wordCount,
+        "keywords": blog.seoKeywords?.join(', '),
         "author": [{
             "@type": "Person",
             "name": blog.author
@@ -64,16 +78,27 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             "name": "Shapoorji Pallonji Real Estate",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://localhost:3000/logo.png"
+                "url": `${siteUrl}/logo.png`
             }
         },
         "description": blog.excerpt,
-        "articleBody": blog.content.join(" ").replace(/<[^>]*>?/gm, '') // Strip HTML for schema
+        "articleBody": articleContent
+    };
+
+    const breadcrumbLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+            { "@type": "ListItem", "position": 2, "name": "Insights", "item": `${siteUrl}/insights` },
+            { "@type": "ListItem", "position": 3, "name": blog.title, "item": `${siteUrl}/insights/${blog.slug}` }
+        ]
     };
 
     return (
         <article className="min-h-screen bg-[#EEF2F6] pt-32 pb-24 text-[#323334]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
             <Navbar />
 
             <div className="max-w-4xl mx-auto px-6 mb-12">
@@ -85,6 +110,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <span>{blog.category}</span>
                     <span className="w-1 h-1 rounded-full bg-[#323334]/30" />
                     <span>{blog.readTime}</span>
+                    <span className="w-1 h-1 rounded-full bg-[#323334]/30" />
+                    <span>{wordCount.toLocaleString()} words</span>
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#323334] font-light leading-tight mb-8">
@@ -112,7 +139,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <div className="relative aspect-[21/9] w-full bg-[#323334] rounded-sm overflow-hidden shadow-2xl">
                     <Image
                         src={blog.image}
-                        alt={blog.title}
+                        alt={`${blog.title} — Pune Real Estate Market Analysis by Shapoorji Pallonji`}
                         fill
                         className="object-cover opacity-90 mix-blend-luminosity"
                         priority
@@ -135,6 +162,23 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                         Explore Portfolio
                     </Link>
                 </div>
+
+                {/* Related Articles Section */}
+                <section className="mt-20 pt-12 border-t border-[#1D4F9C]/10">
+                    <h2 className="text-2xl font-serif text-[#323334] mb-8">More Market Insights</h2>
+                    <div className="grid md:grid-cols-3 gap-6">
+                        {relatedArticles.map(article => (
+                            <Link key={article.slug} href={`/insights/${article.slug}`} className="group bg-[#FFFFFF] border border-[#1D4F9C]/10 hover:border-[#1D4F9C]/40 p-6 transition-all duration-300 rounded-sm">
+                                <span className="text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold block mb-2">{article.category}</span>
+                                <h3 className="text-base font-serif text-[#323334] group-hover:text-[#1D4F9C] transition-colors mb-3 leading-snug">{article.title}</h3>
+                                <div className="flex items-center gap-2 text-[#1D4F9C] text-xs font-light">
+                                    <span>Read Article</span>
+                                    <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </section>
             </div>
         </article>
     );

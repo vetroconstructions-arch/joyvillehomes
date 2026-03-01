@@ -3,13 +3,26 @@ import { projects } from '@/data/projects';
 import { blogs } from '@/data/blogs';
 
 const SEO_ROUTES = [
+    // High-volume locational pages
     '2-bhk-flats-in-hinjewadi',
     '3-bhk-luxury-apartments-pune-west',
     'townships-near-magarpatta-city',
-    'na-bungalow-plots-near-purandar-airport'
+    'na-bungalow-plots-near-purandar-airport',
+    // Typology pages
+    '3-bhk-flats-in-hinjewadi',
+    '1-bhk-flats-in-hadapsar',
+    'flats-in-bavdhan-pune',
+    'ready-to-move-flats-hadapsar',
+    // Comparison landing pages
+    'joyville-vs-kolte-patil-life-republic-hinjewadi',
+    'joyville-vs-godrej-hinjewadi',
+    // Luxury & new launch pages
+    'luxury-apartments-hinjewadi-phase-1',
+    'new-launch-projects-hinjewadi-2025'
 ];
+
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://joyville-hinjewadi.example.com';
+    const baseUrl = 'https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app';
 
     const LOCALITY_ROUTES = [
         'hinjewadi',
@@ -22,37 +35,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: `${baseUrl}`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
-            priority: 1.0, // Maximum priority for the Hub
+            priority: 1.0,
         },
         {
             url: `${baseUrl}/projects`,
             lastModified: new Date(),
             changeFrequency: 'daily',
-            priority: 0.9, // High priority for Projects Hub
+            priority: 0.9,
         },
         {
             url: `${baseUrl}/location`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
-            priority: 0.8, // High priority for Spoke
+            priority: 0.8,
         },
         {
             url: `${baseUrl}/amenities`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
-            priority: 0.8, // High priority for Spoke
+            priority: 0.8,
         },
         {
             url: `${baseUrl}/insights`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
-            priority: 0.9, // High priority for Content Hub
+            priority: 0.9,
         },
         {
             url: `${baseUrl}/media`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
-            priority: 0.7, // PR and Media assets
+            priority: 0.7,
         },
     ];
 
@@ -60,28 +73,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${baseUrl}/projects/${project.slug}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
-        priority: 0.8, // Strong SEO linkage for individual projects
+        priority: 0.85,
     }));
 
     const programmaticRoutes: MetadataRoute.Sitemap = SEO_ROUTES.map((slug) => ({
         url: `${baseUrl}/properties/${slug}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
-        priority: 0.9, // Very high priority - specifically built for generic search
+        priority: 0.9,
     }));
 
     const blogRoutes: MetadataRoute.Sitemap = blogs.map((blog) => ({
         url: `${baseUrl}/insights/${blog.slug}`,
         lastModified: new Date(blog.date),
         changeFrequency: 'monthly',
-        priority: 0.7, // Educational content
+        priority: 0.75,
     }));
 
     const localityRoutes: MetadataRoute.Sitemap = LOCALITY_ROUTES.map((slug) => ({
         url: `${baseUrl}/locality/${slug}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
-        priority: 0.9, // High priority for localized search hubs
+        priority: 0.9,
     }));
 
     return [...baseRoutes, ...projectRoutes, ...programmaticRoutes, ...blogRoutes, ...localityRoutes];
