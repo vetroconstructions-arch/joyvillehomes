@@ -176,7 +176,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                             <span className="w-8 h-[1px] bg-[#1D4F9C]"></span>
                             <h2 className="text-3xl font-serif text-[#323334] font-light">{project.title} Overview</h2>
                         </div>
-                        <div className="space-y-6 text-[#1A1A1A] font-light text-lg leading-relaxed mix-blend-plus-lighter">
+                        <div className="space-y-6 text-[#1A1A1A] font-light text-lg leading-relaxed">
                             {project.overview.map((paragraph, idx) => (
                                 <p key={idx}>{paragraph}</p>
                             ))}
