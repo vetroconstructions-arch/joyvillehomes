@@ -59,9 +59,9 @@ export const projects: Project[] = [
         ],
         description: "Experience the pinnacle of sky-luxe living at Joyville Sensorium. A premier Shapoorji Pallonji residential project in Hinjewadi offering sprawling green spaces and over 60 majestic amenities.",
         overview: [
-            "Joyville Sensorium is a sprawling 10.5-acre township developed by Shapoorji Pallonji, perfectly encapsulating modern living within natural surroundings.",
-            "The master layout includes nine residential towers, a monumental 2.8-acre multi-level sunken garden, a vehicle-free podium, and a 1.8 km walking boulevard.",
-            "Designed with an EDGE Certified construction strategy, it ensures sustainability while providing 75% open spaces to breathe."
+            "Joyville Sensorium Hinjewadi is a sprawling 10.5-acre township by Shapoorji Pallonji, offering premium walk to work apartments in Hinjewadi perfectly suited for IT professionals.",
+            "Strategically positioned near Rajiv Gandhi Infotech Park, Infosys Pune, and Wipro, these smart home apartments in Hinjewadi Pune provide unmatched convenience and promise excellent rental yield in Hinjewadi for 2025.",
+            "Whether you are looking to buy a 2 BHK flat in Hinjewadi Phase 1 under 1 crore or seeking 3 BHK luxury apartments, this RERA approved gated community offers comprehensive floor plans, EDGE certified sustainability, and a monumental 2.8-acre sunken garden."
         ],
         amenities: [
             {
@@ -174,9 +174,9 @@ export const projects: Project[] = [
         ],
         description: "Joyville Hadapsar Annexe by Shapoorji Pallonji offers thoughtfully designed homes in East Pune. An oasis of calm with seamless connectivity to major IT hubs and retail destinations.",
         overview: [
-            "Joyville Hadapsar Annexe is a mammoth 21-acre residential township engineered to maximize community living and green breathing space.",
-            "Featuring an expansive 8.8+ acres of central amenity space and a standalone 35,000 sq. ft. clubhouse.",
-            "Strategically positioned in Shewalewadi to offer unmatched connectivity to Magarpatta, SP Infocity, and Amanora Park Town."
+            "Joyville Hadapsar Annexe by Shapoorji Pallonji is a mammoth 21-acre township in Hadapsar Pune, engineered to maximize community living with sprawling green spaces.",
+            "Positioned in Shewalewadi on the Pune Solapur Highway, these affordable flats in Pune East offer unmatched connectivity, making them the ideal family apartments near SP Infocity Pune and Amanora Mall.",
+            "With ready to move flats in Hadapsar and options ranging from the best 1 BHK flat in Hadapsar under 70 lakhs to spacious 3 BHK flats, residents enjoy 60+ premium amenities including a 35,000 sq. ft. clubhouse."
         ],
         amenities: [
             {
@@ -281,9 +281,9 @@ export const projects: Project[] = [
         ],
         description: "The newest landmark in Hinjewadi. Joyville Celestia redefines modern urban living with celestial designs, high-end finishing, and standard-setting Shapoorji Pallonji construction quality.",
         overview: [
-            "Joyville Celestia offers an unparalleled blend of celestial-inspired architecture and practical urban living.",
-            "Part of a grander vision, it dedicates 75% to open realms, fostering a sense of unbounded freedom.",
-            "Each home is a masterpiece of Vastu compliance, ensuring positive energy and optimal cross-ventilation."
+            "Joyville Celestia in Hinjewadi represents the pinnacle of Shapoorji Pallonji's new launch residential projects in Hinjewadi for 2025, offering an unparalleled blend of celestial-inspired architecture.",
+            "These premium 2 BHK and 3 BHK Vastu compliant homes in Hinjewadi dedicate 75% of the project to open realms, ensuring a harmonious living environment with positive energy flow.",
+            "Discover exclusive amenities rarely found in Flats in Hinjewadi Pune, including an aqua gym, brain gym for kids, and pet-friendly spaces, solidifying its status as the most sought-after premium apartments in Hinjewadi."
         ],
         amenities: [
             {
@@ -383,9 +383,9 @@ export const projects: Project[] = [
         ],
         description: "Limited edition residences for the discerning few. The Skyluxe Edition at Joyville Hinjewadi offers an incredibly rare combination of vast spaces, elite privacy, and panoramic views of Pune.",
         overview: [
-            "Skyluxe Edition represents the apex of luxury living within the Joyville portfolio, offering exclusive low-density high-rise living.",
-            "Crafted for the elite, every residence guarantees unobstructed panoramic views of the Pune skyline and surrounding hills.",
-            "Features bespoke architectural elements, private elevator lobbies, and personal terrace options."
+            "The Joyville Skyluxe Edition introduces ultra luxury apartments in Hinjewadi Phase 1, offering exclusive low-density high-rise living for the discerning elite.",
+            "Every 3 BHK luxury flat and penthouse in Hinjewadi Pune guarantees unobstructed panoramic views of the skyline, complemented by Italian marble flooring and private terrace options.",
+            "These sky luxe apartments feature bespoke architectural elements and 24/7 concierge services, setting a new benchmark for Shapoorji Pallonji luxury homes near the Mumbai Pune Expressway."
         ],
         amenities: [
             {
@@ -483,9 +483,9 @@ export const projects: Project[] = [
         ],
         description: "Discover a life of elegance at Wildernest at SP Kingstown. Offering a serene lifestyle with state-of-the-art facilities and natural beauty in Pune.",
         overview: [
-            "Wildernest at SP Kingstown is a premium residential development by Shapoorji Pallonji in Pune.",
-            "The community is designed with extensive open spaces, modern amenities, and sustainable features.",
-            "Residents can enjoy a balanced lifestyle with dedicated zones for wellness, sports, and recreation."
+            "Wildernest at SP Kingstown offers luxury flats that define high-end real estate in Pune, characterized by extensive open spaces and sustainable features.",
+            "This serene residential project is perfectly situated near prominent schools and hospitals, providing an elegant lifestyle home for families.",
+            "Residents of these premium apartments enjoy a balanced lifestyle with dedicated wellness zones, grand clubhouses, and beautifully landscaped gardens."
         ],
         amenities: [
             {
@@ -548,9 +548,9 @@ export const projects: Project[] = [
         ],
         description: "Vanaha Golfland offers an extraordinary lifestyle in Pune, featuring spectacular views of a lush golf course and premium living spaces.",
         overview: [
-            "Vanaha Golfland is an exclusive residential enclave within the massive Vanaha township by Shapoorji Pallonji.",
-            "It provides residents with unhindered views of the beautiful golf course and surrounding undulating greens.",
-            "Designed to offer a resort-like everyday experience right in the heart of Pune."
+            "Vanaha Golfland in Bavdhan is an exclusive residential enclave by Shapoorji Pallonji offering spectacular golf course view apartments in Pune.",
+            "These luxury flats in Bavdhan Pune provide a true resort-style living experience with unhindered views of undulating greens, a boutique clubhouse, and infinity pool apartments.",
+            "Located near the Mumbai Pune Expressway and Chandni Chowk, this township represents an exceptional Bavdhan real estate investment opportunity."
         ],
         amenities: [
             {
@@ -632,9 +632,9 @@ export const projects: Project[] = [
         ],
         description: "Embrace nature at Vanaha Springs, offering breathtaking valley views and a pristine environment away from the city's hustle.",
         overview: [
-            "Vanaha Springs is a part of the vibrant Vanaha township, presenting homes that are deeply connected with nature.",
-            "Surrounded by natural hills and scenic landscapes, it is a haven for peace and tranquility.",
-            "Equipped with world-class amenities ensuring a modern yet comfortable lifestyle."
+            "Vanaha Springs is a premium enclave within the 1000-acre township in Pune, presenting nature-centric valley view apartments deeply connected with their surroundings.",
+            "These eco-friendly homes in Pune are surrounded by natural hills and scenic landscapes, offering a haven of peace just minutes from Chandni Chowk.",
+            "Residents can enjoy unique amenities like a meditation pavilion and nature trails, making these some of the most sought-after flats surrounded by hills in West Pune."
         ],
         amenities: [
             {
@@ -709,9 +709,9 @@ export const projects: Project[] = [
         ],
         description: "Vanaha is not just a residence; it's an entire ecosystem thoughtfully poised in the magnificent valleys of Bavdhan, Pune.",
         overview: [
-            "One of the largest townships in Pune, Vanaha blends sophisticated living with vast open expanses and rich biodiversity.",
-            "It is meticulously designed to create a self-sustaining environment offering everything from healthcare to entertainment.",
-            "A true representation of Shapoorji Pallonji's commitment to creating impactful communities."
+            "Vanaha by Shapoorji Pallonji is one of the largest integrated townships in Pune, spanning an impressive 1000 acres in the magnificent valleys of Bavdhan.",
+            "Designed as a completely self-sustaining township in Pune, it offers exceptional community living with onsite schools, healthcare facilities, commercial hubs, and entertainment zones.",
+            "These flats in Bavdhan perfectly blend sophisticated urban conveniences with vast open expanses, rich biodiversity, and sustainable living practices."
         ],
         amenities: [
             {
@@ -786,9 +786,9 @@ export const projects: Project[] = [
         ],
         description: "Premium NA plotted development in the Pune Growth Corridor near Jadhavwadi by Shapoorji Pallonji Real Estate. Plots ranging from 1800 to 5000+ sq. ft. surrounded by hills and nature.",
         overview: [
-            "Shapoorji Pallonji Treetopia is a premium plotted development offering Regal and Grand villa plots for those looking for elite living and architectural liberty.",
-            "Featuring Biophilic Landscapes, the project integrates nature into everyday living with a focus on sustainability and sprawling greenery.",
-            "Strategically located in Jadhavwadi, just 10 minutes from the proposed Purandar Airport and Saswad, offering excellent investment advantages."
+            "Shapoorji Pallonji Treetopia is a premium plotted development in Pune offering exotic Regal and Grand NA bungalow plots for those seeking architectural liberty.",
+            "Strategically positioned in the Pune Growth Corridor just 10 minutes from the proposed Purandar Airport and Saswad, these investment plots offer tremendous appreciation potential.",
+            "Featuring Biophilic Landscapes, this RERA compliant project integrates nature into everyday living with extensive wellness hubs and sports zones."
         ],
         amenities: [
             {
