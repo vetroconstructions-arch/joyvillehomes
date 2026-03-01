@@ -96,7 +96,7 @@ export default function AmenitiesPage() {
 
             <section className="max-w-5xl mx-auto px-6 mt-32 text-center">
                 <div className="p-16 border border-[#C5A059]/30 bg-[#EEF2F6] shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-sm relative overflow-hidden group">
-                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-luminosity group-hover:scale-105 transition-transform duration-[3000ms]" />
+                    <div className="absolute inset-0 bg-[url('/images/joyville_sensorium_projectcard.webp')] bg-cover bg-center opacity-10 mix-blend-luminosity group-hover:scale-105 transition-transform duration-[3000ms]" />
                     <div className="absolute inset-0 bg-[#EEF2F6]/80 backdrop-blur-sm" />
 
                     <div className="relative z-10">

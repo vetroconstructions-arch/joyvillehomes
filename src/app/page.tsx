@@ -72,7 +72,7 @@ export default function Home() {
             className="w-full h-full relative"
           >
             <Image
-              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop"
+              src="/images/desktop-poster.webp"
               fill
               alt="Joyville Homes Hinjewadi Pune"
               className="object-cover opacity-60 mix-blend-luminosity"
@@ -170,7 +170,7 @@ export default function Home() {
               {/* Elegant image collage representing legacy */}
               <div className="relative aspect-[4/5] w-full max-w-md mx-auto z-10 shadow-2xl rounded-sm overflow-hidden border border-[#C5A059]/60">
                 <Image
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+                  src="/images/joyville_sensorium_projectcard.webp"
                   fill
                   className="object-cover opacity-80 mix-blend-luminosity"
                   alt="Shapoorji Pallonji Real Estate Building Legacy"
@@ -237,7 +237,7 @@ export default function Home() {
 
           <div className="relative aspect-[21/9] w-full bg-[#EEF2F6] border border-[#C5A059]/60 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group overflow-hidden rounded-sm">
             {/* Dark, sophisticated master layout blueprint visualization */}
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2071&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-color-dodge group-hover:scale-105 transition-all duration-[2000ms]" />
+            <div className="absolute inset-0 bg-[url('/images/joyville_hinjawadi_projectcard.webp')] bg-cover bg-center opacity-40 mix-blend-color-dodge group-hover:scale-105 transition-all duration-[2000ms]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#FFFFFF] via-transparent to-transparent" />
 
             <div className="absolute top-[30%] left-[40%] flex items-center justify-center group-hover:scale-110 transition-transform duration-500 cursor-pointer">
@@ -327,7 +327,7 @@ export default function Home() {
                   className="grid lg:grid-cols-12 gap-16 items-center"
                 >
                   <div className="lg:col-span-7 order-2 lg:order-1 aspect-[4/3] bg-[#EEF2F6] border border-[#C5A059]/60 p-8 relative group overflow-hidden flex items-center justify-center">
-                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                    <div className="absolute inset-0 bg-[url('/images/joyville_sensorium_projectcard.webp')] bg-cover bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                     <div className="relative z-10 w-full h-full border border-[#C5A059]/60 flex items-center justify-center bg-[#FFFFFF]/50 backdrop-blur-sm">
                       <span className="text-[#1D4F9C] text-xs tracking-[0.3em] uppercase border border-[#C5A059]/60 px-6 py-2">Floor Plan View</span>
                     </div>
@@ -371,7 +371,7 @@ export default function Home() {
                   className="grid lg:grid-cols-12 gap-16 items-center"
                 >
                   <div className="lg:col-span-7 order-2 lg:order-1 aspect-[4/3] bg-[#EEF2F6] border border-[#C5A059]/60 p-8 relative group overflow-hidden flex items-center justify-center">
-                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                    <div className="absolute inset-0 bg-[url('/images/joyville_hinjawadi_projectcard.webp')] bg-cover bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                     <div className="relative z-10 w-full h-full border border-[#C5A059]/60 flex items-center justify-center bg-[#FFFFFF]/50 backdrop-blur-sm">
                       <span className="text-[#1D4F9C] text-xs tracking-[0.3em] uppercase border border-[#C5A059]/60 px-6 py-2">Floor Plan View</span>
                     </div>

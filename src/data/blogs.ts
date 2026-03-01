@@ -48,7 +48,7 @@ export const blogs: BlogPost[] = [
         author: "Joyville Market Research Team",
         category: "Investment Analysis",
         readTime: "4 Min Read",
-        image: "https://images.unsplash.com/photo-1574360743625-3ef1a1ce2ac2?q=80&w=2070&auto=format&fit=crop",
+        image: "/images/joyville_sensorium_projectcard.webp",
         seoKeywords: ["Rental yield Pune 2025", "Hinjewadi real estate investment", "NRI investment Pune flats", "Buy 2 BHK Hinjewadi"]
     },
     {
@@ -85,7 +85,7 @@ export const blogs: BlogPost[] = [
         author: "Joyville Lifestyle Experts",
         category: "Community Living",
         readTime: "5 Min Read",
-        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop",
+        image: "/images/joyville_hinjawadi_projectcard.webp",
         seoKeywords: ["Townships East Pune", "Flats near Magarpatta", "Moving to Hadapsar", "Joyville Hadapsar Annexe review"]
     },
     {
@@ -119,7 +119,7 @@ export const blogs: BlogPost[] = [
         author: "Joyville Infrastructure Research",
         category: "Market Trends",
         readTime: "6 Min Read",
-        image: "https://images.unsplash.com/photo-1541888086925-920a0bda04df?q=80&w=2070&auto=format&fit=crop",
+        image: "/images/joyville_sensorium_projectcard.webp",
         seoKeywords: ["Pune Metro Line 3 real estate impact", "Pune Ring Road properties", "Infrastructure development Pune West", "Future of Hinjewadi properties"]
     },
     {
@@ -153,7 +153,7 @@ export const blogs: BlogPost[] = [
         author: "Joyville Market Research Team",
         category: "Buyer's Guide",
         readTime: "7 Min Read",
-        image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2073&auto=format&fit=crop",
+        image: "/images/joyville_hinjawadi_projectcard.webp",
         seoKeywords: ["best residential projects Hinjewadi 2025", "Joyville vs Kolte Patil Life Republic", "Joyville vs Godrej Hinjewadi", "top projects Hinjewadi", "Hinjewadi property comparison", "best flats Hinjewadi Phase 1"]
     },
     {
@@ -187,7 +187,7 @@ export const blogs: BlogPost[] = [
         author: "Joyville Legal & Compliance Team",
         category: "Buyer Education",
         readTime: "6 Min Read",
-        image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop",
+        image: "/images/joyville_sensorium_projectcard.webp",
         seoKeywords: ["RERA approved projects Pune", "MahaRERA verification", "RERA registered flats Pune", "safe property investment Pune", "RERA rules homebuyers", "Shapoorji Pallonji RERA compliant"]
     },
     {
@@ -225,7 +225,7 @@ export const blogs: BlogPost[] = [
         author: "Joyville Market Intelligence",
         category: "Market Analysis",
         readTime: "8 Min Read",
-        image: "https://images.unsplash.com/photo-1611348586804-61bf6c080437?q=80&w=2069&auto=format&fit=crop",
+        image: "/images/joyville_hinjawadi_projectcard.webp",
         seoKeywords: ["Pune property price trends 2025", "Hinjewadi vs Hadapsar vs Bavdhan", "property rates Hinjewadi 2025", "Pune real estate market analysis", "best area invest Pune 2025", "micro market analysis Pune", "Pune property appreciation rates"]
     }
 ];

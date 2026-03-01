@@ -50,7 +50,7 @@ export default function MediaPRPage() {
                     <div className="lg:w-1/2 w-full relative z-10 aspect-[4/3]">
                         <div className="w-full h-full relative rounded-sm overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.3)] border border-[#C5A059]/20 group-hover:scale-105 transition-transform duration-700">
                             <Image
-                                src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop"
+                                src="/images/joyville_sensorium_projectcard.webp"
                                 alt="Pune Real Estate Outlook Report Cover"
                                 fill
                                 className="object-cover mix-blend-luminosity opacity-90"

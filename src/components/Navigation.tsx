@@ -136,7 +136,7 @@ export default function Navigation() {
                         className="fixed inset-0 z-[90] bg-[#FFFFFF] flex flex-col justify-center px-10"
                     >
                         {/* Drawer Background Pattern */}
-                        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop')] bg-cover bg-center opacity-5 mix-blend-luminosity pointer-events-none" />
+                        <div className="absolute inset-0 bg-[url('/images/desktop-poster.webp')] bg-cover bg-center opacity-5 mix-blend-luminosity pointer-events-none" />
 
                         <div className="relative z-10 flex flex-col gap-10">
                             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }} className="text-[#1D4F9C] text-xs tracking-[0.3em] uppercase font-light border-b border-[#C5A059]/30 pb-4">
