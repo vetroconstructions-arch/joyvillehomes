@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import PageTransition from "@/components/PageTransition";
 import MobileStickyCTA from "@/components/MobileStickyCTA";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import SEOFooter from "@/components/SEOFooter";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
@@ -141,6 +142,7 @@ export default function RootLayout({
             {children}
           </PageTransition>
           <MobileStickyCTA />
+          <FloatingWhatsApp />
         </div>
         <SEOFooter />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ""} />
