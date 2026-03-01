@@ -27,8 +27,8 @@ export default function EMICalculator({ basePrice = 8500000 }: { basePrice?: num
     };
 
     return (
-        <div className="bg-[#FFFFFF] border border-[#1D4F9C]/40 shadow-xl p-8 rounded-sm">
-            <div className="flex items-center gap-4 mb-8 border-b border-[#1D4F9C]/20 pb-4">
+        <div className="bg-[#FFFFFF] border border-[#C5A059]/40 shadow-xl p-8 rounded-sm">
+            <div className="flex items-center gap-4 mb-8 border-b border-[#C5A059]/20 pb-4">
                 <IndianRupee className="text-[#1D4F9C]" size={28} strokeWidth={1.5} />
                 <div>
                     <h3 className="text-2xl font-serif text-[#1A1A1A]">Smart EMI Calculator</h3>
@@ -104,13 +104,13 @@ export default function EMICalculator({ basePrice = 8500000 }: { basePrice?: num
                 </div>
 
                 {/* Output Presentation Section */}
-                <div className="bg-[#EEF2F6] border border-[#1D4F9C]/20 p-8 rounded-sm flex flex-col justify-center items-center text-center">
+                <div className="bg-[#EEF2F6] border border-[#C5A059]/20 p-8 rounded-sm flex flex-col justify-center items-center text-center">
                     <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#1A1A1A] mb-4">Estimated Monthly EMI</p>
                     <div className="text-5xl font-serif text-[#1D4F9C] mb-6 drop-shadow-sm">
                         {formatCurrency(emi)}
                     </div>
 
-                    <div className="w-full space-y-3 border-t border-[#1D4F9C]/20 pt-6 mt-2">
+                    <div className="w-full space-y-3 border-t border-[#C5A059]/20 pt-6 mt-2">
                         <div className="flex justify-between text-sm">
                             <span className="text-[#1A1A1A]">Principal Amount</span>
                             <span className="font-semibold text-[#1A1A1A]">{formatCurrency(loanAmount)}</span>
@@ -119,7 +119,7 @@ export default function EMICalculator({ basePrice = 8500000 }: { basePrice?: num
                             <span className="text-[#1A1A1A]">Total Interest Payable</span>
                             <span className="font-semibold text-[#1A1A1A]">{formatCurrency((emi * loanTenure * 12) - loanAmount)}</span>
                         </div>
-                        <div className="flex justify-between text-sm pt-3 border-t border-[#1D4F9C]/10">
+                        <div className="flex justify-between text-sm pt-3 border-t border-[#C5A059]/10">
                             <span className="font-medium text-[#1A1A1A]">Total Payment (Prin + Int)</span>
                             <span className="font-bold text-[#1D4F9C]">{formatCurrency(emi * loanTenure * 12)}</span>
                         </div>

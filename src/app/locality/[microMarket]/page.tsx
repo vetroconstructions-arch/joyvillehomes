@@ -173,20 +173,20 @@ export default async function LocalityPage({ params }: { params: Promise<{ micro
                     <MapPin size={14} /> Micro-Market Intelligence
                 </div>
                 <h1 className="text-5xl md:text-6xl font-serif text-[#1A1A1A] mb-4 drop-shadow-sm">{locality.name} Real Estate Guide</h1>
-                <p className="text-2xl text-[#1D4F9C] font-light italic mb-8 border-l-4 border-[#1D4F9C] pl-6 py-2 bg-[#FFFFFF] shadow-lg inline-block">{locality.subtitle}</p>
+                <p className="text-2xl text-[#1D4F9C] font-light italic mb-8 border-l-4 border-[#C5A059] pl-6 py-2 bg-[#FFFFFF] shadow-lg inline-block">{locality.subtitle}</p>
                 <p className="text-lg text-[#1A1A1A] max-w-3xl leading-relaxed text-shadow-sm">{locality.description}</p>
 
                 {/* Market Data Stats Bar */}
                 <div className="grid grid-cols-3 gap-6 mt-12 max-w-3xl">
-                    <div className="bg-[#FFFFFF] border border-[#1D4F9C]/20 rounded-sm p-6 text-center shadow-lg">
+                    <div className="bg-[#FFFFFF] border border-[#C5A059]/20 rounded-sm p-6 text-center shadow-lg">
                         <span className="text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold block mb-2">Price Range</span>
                         <span className="text-xl font-serif text-[#323334]">{locality.priceRange}</span>
                     </div>
-                    <div className="bg-[#FFFFFF] border border-[#1D4F9C]/20 rounded-sm p-6 text-center shadow-lg">
+                    <div className="bg-[#FFFFFF] border border-[#C5A059]/20 rounded-sm p-6 text-center shadow-lg">
                         <span className="text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold block mb-2">Avg. Rate /sq.ft.</span>
                         <span className="text-xl font-serif text-[#323334]">{locality.avgPricePerSqFt}</span>
                     </div>
-                    <div className="bg-[#FFFFFF] border border-[#1D4F9C]/20 rounded-sm p-6 text-center shadow-lg">
+                    <div className="bg-[#FFFFFF] border border-[#C5A059]/20 rounded-sm p-6 text-center shadow-lg">
                         <span className="text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold block mb-2">YoY Appreciation</span>
                         <span className="text-xl font-serif text-green-600">↑ {locality.yoyAppreciation}</span>
                     </div>
@@ -216,7 +216,7 @@ export default async function LocalityPage({ params }: { params: Promise<{ micro
 
             {/* Relevant Projects Section */}
             <section className="max-w-7xl mx-auto px-6">
-                <div className="flex items-center gap-4 mb-12 border-b border-[#1D4F9C]/20 pb-4">
+                <div className="flex items-center gap-4 mb-12 border-b border-[#C5A059]/20 pb-4">
                     <Landmark className="text-[#1D4F9C]" size={32} />
                     <h2 className="text-4xl font-serif text-[#1A1A1A]">Shapoorji Pallonji Properties in {locality.name}</h2>
                 </div>
@@ -224,14 +224,14 @@ export default async function LocalityPage({ params }: { params: Promise<{ micro
                 {localProjects.length > 0 ? (
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {localProjects.map(project => (
-                            <div key={project.id} className="bg-[#FFFFFF] border border-[#1D4F9C]/60 shadow-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-500 rounded-sm group flex flex-col">
+                            <div key={project.id} className="bg-[#FFFFFF] border border-[#C5A059]/60 shadow-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-500 rounded-sm group flex flex-col">
                                 <div className="aspect-[4/3] bg-cover bg-center" style={{ backgroundImage: `url(${project.image})` }} />
                                 <div className="p-8 flex flex-col flex-grow">
-                                    <div className="text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold mb-3 bg-[#EEF2F6] self-start px-3 py-1 rounded-sm border border-[#1D4F9C]/20">{project.type}</div>
+                                    <div className="text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold mb-3 bg-[#EEF2F6] self-start px-3 py-1 rounded-sm border border-[#C5A059]/20">{project.type}</div>
                                     <h3 className="text-2xl font-serif text-[#1A1A1A] mb-2">{project.title}</h3>
                                     <p className="text-sm text-[#1A1A1A] font-light mb-6 flex-grow">{project.description.substring(0, 100)}...</p>
 
-                                    <div className="flex flex-col gap-4 mt-auto pt-6 border-t border-[#1D4F9C]/20">
+                                    <div className="flex flex-col gap-4 mt-auto pt-6 border-t border-[#C5A059]/20">
                                         <div className="flex justify-between items-center">
                                             <span className="text-xs text-[#1A1A1A] uppercase tracking-wide">Starting From</span>
                                             <span className="font-serif text-lg text-[#1D4F9C] italic">{project.price}</span>
@@ -245,7 +245,7 @@ export default async function LocalityPage({ params }: { params: Promise<{ micro
                         ))}
                     </div>
                 ) : (
-                    <div className="text-center py-20 bg-[#FFFFFF] border border-[#1D4F9C]/60 shadow-2xl rounded-sm">
+                    <div className="text-center py-20 bg-[#FFFFFF] border border-[#C5A059]/60 shadow-2xl rounded-sm">
                         <h3 className="text-2xl font-serif text-[#1D4F9C] mb-4">New Projects Launching Soon</h3>
                         <p className="text-[#1A1A1A]">We are currently planning exclusive premium developments in {locality.name}.</p>
                         <div className="mt-8 flex justify-center">

@@ -77,8 +77,8 @@ export default function AmenitiesPage() {
 
             <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {amenityGroups.map((group, idx) => (
-                    <section key={idx} className="bg-[#EEF2F6] border border-[#1D4F9C]/30 shadow-lg p-10 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:border-[#1D4F9C]/40 hover:-translate-y-2 transition-all duration-500 group rounded-sm">
-                        <div className="w-16 h-16 rounded-full bg-[#FFFFFF] border border-[#1D4F9C]/30 flex items-center justify-center text-[#1D4F9C] mb-8 group-hover:bg-[#1D4F9C] group-hover:text-[#FFFFFF] transition-colors duration-500 shadow-sm">
+                    <section key={idx} className="bg-[#EEF2F6] border border-[#C5A059]/30 shadow-lg p-10 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:border-[#C5A059]/40 hover:-translate-y-2 transition-all duration-500 group rounded-sm">
+                        <div className="w-16 h-16 rounded-full bg-[#FFFFFF] border border-[#C5A059]/30 flex items-center justify-center text-[#1D4F9C] mb-8 group-hover:bg-[#1D4F9C] group-hover:text-[#FFFFFF] transition-colors duration-500 shadow-sm">
                             <group.icon size={28} className="stroke-1" />
                         </div>
                         <h2 className="text-2xl font-serif mb-8 text-[#323334] font-light">{group.title}</h2>
@@ -95,7 +95,7 @@ export default function AmenitiesPage() {
             </div>
 
             <section className="max-w-5xl mx-auto px-6 mt-32 text-center">
-                <div className="p-16 border border-[#1D4F9C]/30 bg-[#EEF2F6] shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-sm relative overflow-hidden group">
+                <div className="p-16 border border-[#C5A059]/30 bg-[#EEF2F6] shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-sm relative overflow-hidden group">
                     <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-luminosity group-hover:scale-105 transition-transform duration-[3000ms]" />
                     <div className="absolute inset-0 bg-[#EEF2F6]/80 backdrop-blur-sm" />
 

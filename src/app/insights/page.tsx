@@ -54,7 +54,7 @@ export default function InsightsPage() {
             <section className="max-w-7xl mx-auto px-6">
                 <div className="grid lg:grid-cols-2 gap-12">
                     {blogs.map((blog) => (
-                        <article key={blog.id} className="group bg-[#FFFFFF] flex flex-col rounded-sm overflow-hidden border border-[#1D4F9C]/20 shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <article key={blog.id} className="group bg-[#FFFFFF] flex flex-col rounded-sm overflow-hidden border border-[#C5A059]/20 shadow-lg hover:shadow-2xl transition-all duration-500">
                             <Link href={`/insights/${blog.slug}`} className="block relative aspect-[16/9] overflow-hidden">
                                 <Image
                                     src={blog.image}

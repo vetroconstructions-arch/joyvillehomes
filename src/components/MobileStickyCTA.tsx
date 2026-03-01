@@ -37,11 +37,11 @@ export default function MobileStickyCTA() {
     };
 
     return (
-        <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[#FFFFFF] border-t border-[#1D4F9C]/20 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] flex">
+        <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[#FFFFFF] border-t border-[#C5A059]/20 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] flex">
             <a
                 href="tel:+919876543210"
                 onClick={handleCallClick}
-                className="flex-1 flex items-center justify-center gap-2 py-4 text-[#323334] font-bold text-xs uppercase tracking-widest border-r border-[#1D4F9C]/20 bg-[#EEF2F6] active:bg-[#1D4F9C]/10 transition-colors"
+                className="flex-1 flex items-center justify-center gap-2 py-4 text-[#323334] font-bold text-xs uppercase tracking-widest border-r border-[#C5A059]/20 bg-[#EEF2F6] active:bg-[#1D4F9C]/10 transition-colors"
                 aria-label="Call Shapoorji Pallonji Sales Now"
             >
                 <Phone size={16} className="text-[#1D4F9C]" /> Call Now

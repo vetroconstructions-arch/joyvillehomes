@@ -119,7 +119,7 @@ export default function Home() {
               transition={{ duration: 1.5, delay: 1 }}
               className="space-y-8"
             >
-              <p className="text-lg md:text-xl text-[#323334] max-w-lg font-light tracking-wide leading-relaxed border-l-2 border-[#1D4F9C]/60 pl-6">
+              <p className="text-lg md:text-xl text-[#323334] max-w-lg font-light tracking-wide leading-relaxed border-l-2 border-[#C5A059]/60 pl-6">
                 Discover the finest 2 & 3 BHK Flats in Hinjewadi. Elevate your lifestyle with sprawling green spaces, 60+ majestic amenities, and ultra-luxury residences by Shapoorji Pallonji Real Estate Pune.
               </p>
 
@@ -141,12 +141,12 @@ export default function Home() {
             transition={{ duration: 1.4, delay: 1.2, ease: "easeOut" }}
             className="hidden lg:flex flex-col gap-6"
           >
-            <div className="bg-[#EEF2F6]/60 backdrop-blur-xl border border-[#1D4F9C]/60 p-8 rounded-sm shrink-0 w-[280px] hover:-translate-y-2 transition-transform duration-500">
+            <div className="bg-[#EEF2F6]/60 backdrop-blur-xl border border-[#C5A059]/60 p-8 rounded-sm shrink-0 w-[280px] hover:-translate-y-2 transition-transform duration-500">
               <div className="text-[#1D4F9C] mb-4"><Landmark size={24} strokeWidth={1} /></div>
               <h3 className="text-4xl font-serif text-[#323334] font-light mb-1">150+</h3>
               <p className="text-[#323334] text-[10px] uppercase tracking-[0.2em] font-medium">Years of Legacy</p>
             </div>
-            <div className="bg-[#FFFFFF]/80 backdrop-blur-xl border border-[#1D4F9C]/60 p-8 rounded-sm shrink-0 w-[280px] -ml-12 hover:-translate-y-2 transition-transform duration-500">
+            <div className="bg-[#FFFFFF]/80 backdrop-blur-xl border border-[#C5A059]/60 p-8 rounded-sm shrink-0 w-[280px] -ml-12 hover:-translate-y-2 transition-transform duration-500">
               <div className="text-[#1D4F9C] mb-4"><Trees size={24} strokeWidth={1} /></div>
               <h3 className="text-4xl font-serif text-[#323334] font-light mb-1">10.5</h3>
               <p className="text-[#323334] text-[10px] uppercase tracking-[0.2em] font-medium">Acres of Greens</p>
@@ -156,7 +156,7 @@ export default function Home() {
       </section>
 
       {/* --- Shapoorji Pallonji Legacy (Trust Factor) --- */}
-      <section id="legacy" className="py-32 px-6 bg-[#EEF2F6] border-b border-[#1D4F9C]/60 relative z-10 overflow-hidden">
+      <section id="legacy" className="py-32 px-6 bg-[#EEF2F6] border-b border-[#C5A059]/60 relative z-10 overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[#1D4F9C]/5 blur-[120px] pointer-events-none rounded-bl-full" />
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -168,7 +168,7 @@ export default function Home() {
           >
             <motion.div variants={fadeUp} className="order-2 lg:order-1 relative p-4">
               {/* Elegant image collage representing legacy */}
-              <div className="relative aspect-[4/5] w-full max-w-md mx-auto z-10 shadow-2xl rounded-sm overflow-hidden border border-[#1D4F9C]/60">
+              <div className="relative aspect-[4/5] w-full max-w-md mx-auto z-10 shadow-2xl rounded-sm overflow-hidden border border-[#C5A059]/60">
                 <Image
                   src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
                   fill
@@ -178,7 +178,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#F4F6F9] via-transparent to-transparent" />
               </div>
-              <div className="absolute bottom-4 -left-4 lg:-left-12 w-64 h-64 bg-[#FFFFFF]/90 backdrop-blur-xl p-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[#1D4F9C]/60 z-20 flex flex-col justify-center items-center text-center">
+              <div className="absolute bottom-4 -left-4 lg:-left-12 w-64 h-64 bg-[#FFFFFF]/90 backdrop-blur-xl p-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[#C5A059]/60 z-20 flex flex-col justify-center items-center text-center">
                 <Landmark size={40} className="text-[#1D4F9C] mb-4 stroke-1" />
                 <div className="text-5xl font-serif text-[#323334] mb-2">150+</div>
                 <div className="text-[10px] uppercase tracking-[0.3em] text-[#1D4F9C] font-medium">Years of Trust</div>
@@ -197,7 +197,7 @@ export default function Home() {
                 With a legacy spanning over a century and a half, Shapoorji Pallonji is the name behind some of the most prestigious architectural marvels. Joyville Homes Pune is our commitment to bringing this unparalleled standard of construction, engineering, and trust to the premium residential properties of Hinjewadi.
               </p>
 
-              <div className="grid grid-cols-2 gap-x-8 gap-y-8 pt-10 border-t border-[#1D4F9C]/60">
+              <div className="grid grid-cols-2 gap-x-8 gap-y-8 pt-10 border-t border-[#C5A059]/60">
                 <div className="flex items-start gap-4 group cursor-pointer">
                   <CheckCircle2 className="text-[#1D4F9C] mt-1 flex-shrink-0 stroke-1 group-hover:scale-110 transition-transform" />
                   <div>
@@ -235,7 +235,7 @@ export default function Home() {
             <p className="text-[#323334] max-w-2xl mx-auto lg:text-lg font-light leading-relaxed">Explore 10.5 acres of thoughtfully integrated nature, wellness, and cutting-edge amenities—setting a new benchmark for premium flats in Hinjewadi.</p>
           </motion.div>
 
-          <div className="relative aspect-[21/9] w-full bg-[#EEF2F6] border border-[#1D4F9C]/60 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group overflow-hidden rounded-sm">
+          <div className="relative aspect-[21/9] w-full bg-[#EEF2F6] border border-[#C5A059]/60 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group overflow-hidden rounded-sm">
             {/* Dark, sophisticated master layout blueprint visualization */}
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2071&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-color-dodge group-hover:scale-105 transition-all duration-[2000ms]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#FFFFFF] via-transparent to-transparent" />
@@ -243,13 +243,13 @@ export default function Home() {
             <div className="absolute top-[30%] left-[40%] flex items-center justify-center group-hover:scale-110 transition-transform duration-500 cursor-pointer">
               <span className="absolute w-16 h-16 rounded-full bg-[#1D4F9C]/20 animate-ping" />
               <div className="relative w-3 h-3 rounded-full bg-[#1D4F9C] shadow-[0_0_20px_#1D4F9C]" />
-              <div className="absolute top-6 w-max px-5 py-3 bg-[#EEF2F6]/90 backdrop-blur-md border border-[#1D4F9C]/60 shadow-2xl text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-medium">Premium Clubhouse</div>
+              <div className="absolute top-6 w-max px-5 py-3 bg-[#EEF2F6]/90 backdrop-blur-md border border-[#C5A059]/60 shadow-2xl text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-medium">Premium Clubhouse</div>
             </div>
 
             <div className="absolute top-[60%] left-[25%] flex items-center justify-center group-hover:scale-110 transition-transform duration-500 cursor-pointer">
               <span className="absolute w-16 h-16 rounded-full bg-[#1D4F9C]/20 animate-ping" />
               <div className="relative w-3 h-3 rounded-full bg-[#1D4F9C] shadow-[0_0_20px_#1D4F9C]" />
-              <div className="absolute top-6 w-max px-5 py-3 bg-[#EEF2F6]/90 backdrop-blur-md border border-[#1D4F9C]/60 shadow-2xl text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-medium">Central Green Oasis</div>
+              <div className="absolute top-6 w-max px-5 py-3 bg-[#EEF2F6]/90 backdrop-blur-md border border-[#C5A059]/60 shadow-2xl text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-medium">Central Green Oasis</div>
             </div>
           </div>
 
@@ -260,7 +260,7 @@ export default function Home() {
               { icon: Building2, label: "Vastu Compliant Homes" },
               { icon: MapPin, label: "Hinjewadi Phase 1" },
             ].map((feature, idx) => (
-              <div key={idx} className="p-10 bg-[#EEF2F6] border border-[#1D4F9C]/60 shadow-2xl hover:border-[#1D4F9C]/40 hover:bg-[#EEF2F6]/80 transition-all duration-500 flex flex-col items-center justify-center gap-6 group">
+              <div key={idx} className="p-10 bg-[#EEF2F6] border border-[#C5A059]/60 shadow-2xl hover:border-[#C5A059]/40 hover:bg-[#EEF2F6]/80 transition-all duration-500 flex flex-col items-center justify-center gap-6 group">
                 <feature.icon className="text-[#1D4F9C] group-hover:scale-110 transition-transform duration-500 stroke-1" size={40} />
                 <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#323334]">{feature.label}</span>
               </div>
@@ -276,7 +276,7 @@ export default function Home() {
       </section>
 
       {/* --- Detailed Floor Plans (Dark Theme) --- */}
-      <section id="floor-plans" className="py-32 px-6 bg-[#EEF2F6] border-y border-[#1D4F9C]/60">
+      <section id="floor-plans" className="py-32 px-6 bg-[#EEF2F6] border-y border-[#C5A059]/60">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col xl:flex-row xl:items-end justify-between mb-20 gap-10">
             <motion.div
@@ -296,7 +296,7 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2 }}
-              className="flex border border-[#1D4F9C]/60 p-1 bg-[#FFFFFF] rounded-sm"
+              className="flex border border-[#C5A059]/60 p-1 bg-[#FFFFFF] rounded-sm"
             >
               <button
                 aria-label="View 2 BHK Premium Floor Plans"
@@ -315,7 +315,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <div className="bg-[#FFFFFF] border border-[#1D4F9C]/60 shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-8 lg:p-16 rounded-sm">
+          <div className="bg-[#FFFFFF] border border-[#C5A059]/60 shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-8 lg:p-16 rounded-sm">
             <AnimatePresence mode="wait">
               {activeFloorPlan === "2BHK" && (
                 <motion.div
@@ -326,10 +326,10 @@ export default function Home() {
                   transition={{ duration: 0.6 }}
                   className="grid lg:grid-cols-12 gap-16 items-center"
                 >
-                  <div className="lg:col-span-7 order-2 lg:order-1 aspect-[4/3] bg-[#EEF2F6] border border-[#1D4F9C]/60 p-8 relative group overflow-hidden flex items-center justify-center">
+                  <div className="lg:col-span-7 order-2 lg:order-1 aspect-[4/3] bg-[#EEF2F6] border border-[#C5A059]/60 p-8 relative group overflow-hidden flex items-center justify-center">
                     <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
-                    <div className="relative z-10 w-full h-full border border-[#1D4F9C]/60 flex items-center justify-center bg-[#FFFFFF]/50 backdrop-blur-sm">
-                      <span className="text-[#1D4F9C] text-xs tracking-[0.3em] uppercase border border-[#1D4F9C]/60 px-6 py-2">Floor Plan View</span>
+                    <div className="relative z-10 w-full h-full border border-[#C5A059]/60 flex items-center justify-center bg-[#FFFFFF]/50 backdrop-blur-sm">
+                      <span className="text-[#1D4F9C] text-xs tracking-[0.3em] uppercase border border-[#C5A059]/60 px-6 py-2">Floor Plan View</span>
                     </div>
                   </div>
 
@@ -338,15 +338,15 @@ export default function Home() {
                     <p className="text-2xl text-[#1D4F9C] mb-10 font-serif italic text-gradient">Starting ₹1.10 Cr*</p>
 
                     <div className="space-y-8 mb-12">
-                      <div className="flex justify-between border-b border-[#1D4F9C]/60 pb-4">
+                      <div className="flex justify-between border-b border-[#C5A059]/60 pb-4">
                         <span className="text-[#323334] font-light uppercase tracking-[0.2em] text-[10px]">Carpet Area</span>
                         <span className="text-[#323334] font-medium tracking-wide text-sm">750 - 850 Sq.Ft.</span>
                       </div>
-                      <div className="flex justify-between border-b border-[#1D4F9C]/60 pb-4">
+                      <div className="flex justify-between border-b border-[#C5A059]/60 pb-4">
                         <span className="text-[#323334] font-light uppercase tracking-[0.2em] text-[10px]">Configuration</span>
                         <span className="text-[#323334] font-medium tracking-wide text-sm">2 Beds • 2 Baths</span>
                       </div>
-                      <div className="flex justify-between border-b border-[#1D4F9C]/60 pb-4">
+                      <div className="flex justify-between border-b border-[#C5A059]/60 pb-4">
                         <span className="text-[#323334] font-light uppercase tracking-[0.2em] text-[10px]">Status</span>
                         <span className="text-[#1D4F9C] font-medium tracking-wide text-sm">Ready to Move Options</span>
                       </div>
@@ -355,7 +355,7 @@ export default function Home() {
                     <BrochureButton
                       projectName="2BHK Hinjewadi"
                       label="Download 2BHK Brochure"
-                      className="w-full py-5 border border-[#1D4F9C] text-[#1D4F9C] uppercase tracking-[0.2em] text-xs font-medium hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all duration-500 rounded-sm block"
+                      className="w-full py-5 border border-[#C5A059] text-[#1D4F9C] uppercase tracking-[0.2em] text-xs font-medium hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all duration-500 rounded-sm block"
                     />
                   </div>
                 </motion.div>
@@ -370,10 +370,10 @@ export default function Home() {
                   transition={{ duration: 0.6 }}
                   className="grid lg:grid-cols-12 gap-16 items-center"
                 >
-                  <div className="lg:col-span-7 order-2 lg:order-1 aspect-[4/3] bg-[#EEF2F6] border border-[#1D4F9C]/60 p-8 relative group overflow-hidden flex items-center justify-center">
+                  <div className="lg:col-span-7 order-2 lg:order-1 aspect-[4/3] bg-[#EEF2F6] border border-[#C5A059]/60 p-8 relative group overflow-hidden flex items-center justify-center">
                     <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
-                    <div className="relative z-10 w-full h-full border border-[#1D4F9C]/60 flex items-center justify-center bg-[#FFFFFF]/50 backdrop-blur-sm">
-                      <span className="text-[#1D4F9C] text-xs tracking-[0.3em] uppercase border border-[#1D4F9C]/60 px-6 py-2">Floor Plan View</span>
+                    <div className="relative z-10 w-full h-full border border-[#C5A059]/60 flex items-center justify-center bg-[#FFFFFF]/50 backdrop-blur-sm">
+                      <span className="text-[#1D4F9C] text-xs tracking-[0.3em] uppercase border border-[#C5A059]/60 px-6 py-2">Floor Plan View</span>
                     </div>
                   </div>
 
@@ -382,15 +382,15 @@ export default function Home() {
                     <p className="text-2xl text-[#1D4F9C] mb-10 font-serif italic text-gradient">Starting ₹1.45 Cr*</p>
 
                     <div className="space-y-8 mb-12">
-                      <div className="flex justify-between border-b border-[#1D4F9C]/60 pb-4">
+                      <div className="flex justify-between border-b border-[#C5A059]/60 pb-4">
                         <span className="text-[#323334] font-light uppercase tracking-[0.2em] text-[10px]">Carpet Area</span>
                         <span className="text-[#323334] font-medium tracking-wide text-sm">1050 - 1200 Sq.Ft.</span>
                       </div>
-                      <div className="flex justify-between border-b border-[#1D4F9C]/60 pb-4">
+                      <div className="flex justify-between border-b border-[#C5A059]/60 pb-4">
                         <span className="text-[#323334] font-light uppercase tracking-[0.2em] text-[10px]">Configuration</span>
                         <span className="text-[#323334] font-medium tracking-wide text-sm">3 Beds • 3 Baths</span>
                       </div>
-                      <div className="flex justify-between border-b border-[#1D4F9C]/60 pb-4">
+                      <div className="flex justify-between border-b border-[#C5A059]/60 pb-4">
                         <span className="text-[#323334] font-light uppercase tracking-[0.2em] text-[10px]">Status</span>
                         <span className="text-[#323334] font-medium tracking-wide text-sm">Under Construction</span>
                       </div>
@@ -399,7 +399,7 @@ export default function Home() {
                     <BrochureButton
                       projectName="3BHK Pune West"
                       label="Download 3BHK Brochure"
-                      className="w-full py-5 border border-[#1D4F9C] text-[#1D4F9C] uppercase tracking-[0.2em] text-xs font-medium hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all duration-500 rounded-sm block"
+                      className="w-full py-5 border border-[#C5A059] text-[#1D4F9C] uppercase tracking-[0.2em] text-xs font-medium hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all duration-500 rounded-sm block"
                     />
                   </div>
                 </motion.div>
@@ -413,7 +413,7 @@ export default function Home() {
       <ReviewWidget />
 
       {/* --- Footer & Final CTA (Dark Premium) --- */}
-      <footer className="py-32 bg-[#FFFFFF] border-t border-[#1D4F9C]/60 text-center relative z-10 overflow-hidden">
+      <footer className="py-32 bg-[#FFFFFF] border-t border-[#C5A059]/60 text-center relative z-10 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#1D4F9C]/5 blur-[120px] pointer-events-none rounded-full" />
         <div className="max-w-4xl mx-auto px-6 relative z-10">
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif mb-10 text-[#323334] font-light leading-[1.1]">
@@ -423,7 +423,7 @@ export default function Home() {
             The defining face of premium residential projects in Pune. Contact our concierge to schedule a private viewing at Joyville Hinjewadi.
           </p>
 
-          <div className="flex max-w-lg mx-auto relative bg-[#EEF2F6] shadow-[0_20px_40px_rgba(0,0,0,0.5)] border border-[#1D4F9C]/60 overflow-hidden rounded-sm">
+          <div className="flex max-w-lg mx-auto relative bg-[#EEF2F6] shadow-[0_20px_40px_rgba(0,0,0,0.5)] border border-[#C5A059]/60 overflow-hidden rounded-sm">
             <input
               type="text"
               aria-label="Phone Number for Enquiry"
@@ -435,7 +435,7 @@ export default function Home() {
             </button>
           </div>
 
-          <div className="mt-20 pt-10 border-t border-[#1D4F9C]/60 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+          <div className="mt-20 pt-10 border-t border-[#C5A059]/60 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
             <div>
               <div className="text-3xl font-serif text-[#1D4F9C] font-light tracking-widest mb-4">JOYVILLE <span className="text-[10px] font-sans tracking-[0.4em] text-[#323334] uppercase ml-2">Pune</span></div>
               <p className="text-[#323334]/70 text-sm font-light leading-relaxed mb-6">
@@ -460,7 +460,7 @@ export default function Home() {
 
       {/* Floating CTA */}
       <div className="fixed bottom-10 right-10 z-50">
-        <button aria-label="Call Sales Office" className="w-16 h-16 bg-[#1D4F9C] text-[#FFFFFF] rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(197,160,89,0.3)] hover:scale-110 transition-transform duration-500 hover:bg-[#323334] border border-[#1D4F9C]/50">
+        <button aria-label="Call Sales Office" className="w-16 h-16 bg-[#1D4F9C] text-[#FFFFFF] rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(197,160,89,0.3)] hover:scale-110 transition-transform duration-500 hover:bg-[#323334] border border-[#C5A059]/50">
           <PhoneCall size={20} />
         </button>
       </div>

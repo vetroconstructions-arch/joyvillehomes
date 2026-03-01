@@ -79,7 +79,7 @@ export default function LocationPage() {
 
             <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 mb-32 items-center">
                 {/* Dark Premium Map Area */}
-                <div className="relative h-full min-h-[500px] border border-[#1D4F9C]/60 bg-[#EEF2F6] shadow-[0_20px_50px_rgba(0,0,0,0.5)] group overflow-hidden rounded-sm p-3">
+                <div className="relative h-full min-h-[500px] border border-[#C5A059]/60 bg-[#EEF2F6] shadow-[0_20px_50px_rgba(0,0,0,0.5)] group overflow-hidden rounded-sm p-3">
                     <div className="absolute inset-0 m-3 bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-luminosity group-hover:scale-105 transition-transform duration-[3000ms] rounded-sm" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#F4F6F9] via-transparent to-transparent pointer-events-none" />
 
@@ -89,22 +89,22 @@ export default function LocationPage() {
                         <div className="relative w-6 h-6 rounded-full bg-[#1D4F9C] shadow-[0_0_30px_#1D4F9C] border-2 border-[#FFFFFF] flex items-center justify-center">
                             <MapPin size={12} className="text-[#FFFFFF]" />
                         </div>
-                        <div className="absolute top-10 w-max px-6 py-3 bg-[#FFFFFF]/95 backdrop-blur-md border border-[#1D4F9C]/60 shadow-2xl text-[10px] tracking-[0.3em] uppercase text-[#323334] font-medium rounded-sm">Joyville Phase 1</div>
+                        <div className="absolute top-10 w-max px-6 py-3 bg-[#FFFFFF]/95 backdrop-blur-md border border-[#C5A059]/60 shadow-2xl text-[10px] tracking-[0.3em] uppercase text-[#323334] font-medium rounded-sm">Joyville Phase 1</div>
                     </div>
                 </div>
 
                 {/* Detailed Timeline Data */}
                 <div className="space-y-10">
                     {landmarks.map((category, idx) => (
-                        <section key={idx} className="bg-[#EEF2F6] p-10 rounded-sm border border-[#1D4F9C]/60 shadow-2xl hover:border-[#1D4F9C]/60 transition-colors duration-500">
-                            <h2 className="text-2xl font-serif text-[#323334] mb-8 flex items-center gap-4 border-b border-[#1D4F9C]/60 pb-5 font-light">
-                                <div className="p-3 bg-[#FFFFFF] text-[#1D4F9C] rounded-full border border-[#1D4F9C]/60 shadow-inner"><category.icon size={20} strokeWidth={1.5} /></div> {category.category}
+                        <section key={idx} className="bg-[#EEF2F6] p-10 rounded-sm border border-[#C5A059]/60 shadow-2xl hover:border-[#C5A059]/60 transition-colors duration-500">
+                            <h2 className="text-2xl font-serif text-[#323334] mb-8 flex items-center gap-4 border-b border-[#C5A059]/60 pb-5 font-light">
+                                <div className="p-3 bg-[#FFFFFF] text-[#1D4F9C] rounded-full border border-[#C5A059]/60 shadow-inner"><category.icon size={20} strokeWidth={1.5} /></div> {category.category}
                             </h2>
                             <div className="grid sm:grid-cols-2 gap-8">
                                 {category.places.map((place, i) => (
                                     <div key={i} className="flex flex-col group">
                                         <h3 className="text-[#323334] font-medium mb-3 tracking-wide">{place.name}</h3>
-                                        <div className="flex justify-between items-center text-sm border-t border-[#1D4F9C]/60 pt-3 group-hover:border-[#1D4F9C]/50 transition-colors">
+                                        <div className="flex justify-between items-center text-sm border-t border-[#C5A059]/60 pt-3 group-hover:border-[#C5A059]/50 transition-colors">
                                             <span className="text-[#1A1A1A] font-light tracking-[0.2em] uppercase text-[10px]">{place.dist}</span>
                                             <span className="text-[#1D4F9C] font-serif font-medium italic">{place.time}</span>
                                         </div>

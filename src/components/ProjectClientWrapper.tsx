@@ -25,7 +25,7 @@ export default function ProjectClientWrapper({ floorPlans, projectName }: Projec
                         key={idx}
                         aria-label={`Unlock Detailed Cost Sheet for ${plan.type}`}
                         onClick={() => setIsModalOpen(true)}
-                        className="w-full block bg-[#EEF2F6] border border-[#1D4F9C]/60 p-6 text-center hover:bg-[#EEF2F6] transition-colors group cursor-pointer"
+                        className="w-full block bg-[#EEF2F6] border border-[#C5A059]/60 p-6 text-center hover:bg-[#EEF2F6] transition-colors group cursor-pointer"
                     >
                         <Home className="text-[#1D4F9C] mx-auto mb-4 opacity-50 group-hover:opacity-100 transition-opacity" size={24} strokeWidth={1} />
                         <h4 className="text-[#323334] font-serif text-lg mb-2">{plan.type}</h4>

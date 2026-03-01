@@ -99,7 +99,7 @@ export default function SEOFooter() {
                                 <Link
                                     key={link.href}
                                     href={link.href}
-                                    className="text-[#FFFFFF]/50 text-xs font-light px-3 py-2 border border-[#FFFFFF]/10 hover:border-[#1D4F9C]/60 hover:text-[#FFFFFF] transition-all rounded-sm"
+                                    className="text-[#FFFFFF]/50 text-xs font-light px-3 py-2 border border-[#FFFFFF]/10 hover:border-[#C5A059]/60 hover:text-[#FFFFFF] transition-all rounded-sm"
                                 >
                                     {link.label}
                                 </Link>

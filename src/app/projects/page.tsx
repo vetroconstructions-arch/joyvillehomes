@@ -49,7 +49,7 @@ export default function ProjectsPortfolio() {
 
             <div className="max-w-5xl mx-auto px-6 space-y-16 mb-24">
                 {currentProjects.map((project) => (
-                    <Link key={project.id} href={`/projects/${project.slug}`} className="group flex flex-col md:flex-row bg-[#FFFFFF] border border-[#1D4F9C]/30 shadow-lg hover:shadow-2xl overflow-hidden rounded-sm hover:border-[#1D4F9C]/80 transition-all duration-500 cursor-pointer block">
+                    <Link key={project.id} href={`/projects/${project.slug}`} className="group flex flex-col md:flex-row bg-[#FFFFFF] border border-[#C5A059]/30 shadow-lg hover:shadow-2xl overflow-hidden rounded-sm hover:border-[#C5A059]/80 transition-all duration-500 cursor-pointer block">
                         {/* Elegant Cinematic Image */}
                         <div className="md:w-5/12 relative aspect-[4/3] md:min-h-[300px] overflow-hidden bg-[#F8FAFC]">
                             <Image
@@ -78,7 +78,7 @@ export default function ProjectsPortfolio() {
                                 {project.description}
                             </p>
 
-                            <div className="grid grid-cols-2 gap-4 mb-10 pb-10 border-b border-[#1D4F9C]/60">
+                            <div className="grid grid-cols-2 gap-4 mb-10 pb-10 border-b border-[#C5A059]/60">
                                 {project.highlights.slice(0, 4).map((hl, i) => (
                                     <div key={i} className="flex items-start gap-3">
                                         <span className="w-1.5 h-1.5 rounded-full bg-[#1D4F9C] mt-1.5 flex-shrink-0" />
@@ -101,7 +101,7 @@ export default function ProjectsPortfolio() {
                     <button
                         onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                         disabled={currentPage === 1}
-                        className="w-12 h-12 flex items-center justify-center border border-[#1D4F9C]/60 text-[#1D4F9C] disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all duration-300 rounded-sm"
+                        className="w-12 h-12 flex items-center justify-center border border-[#C5A059]/60 text-[#1D4F9C] disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all duration-300 rounded-sm"
                         aria-label="Previous Page"
                     >
                         <ChevronLeft size={20} strokeWidth={1} />
@@ -115,8 +115,8 @@ export default function ProjectsPortfolio() {
                                 onClick={() => setCurrentPage(i + 1)}
                                 className={`w-10 h-10 flex items-center justify-center border transition-all duration-300 rounded-sm
                                     ${currentPage === i + 1
-                                        ? 'border-[#1D4F9C] text-[#FFFFFF] bg-[#1D4F9C] font-bold shadow-md'
-                                        : 'border-[#1D4F9C]/60 hover:border-[#1D4F9C] hover:bg-[#1D4F9C]/5 text-[#1D4F9C] font-medium'
+                                        ? 'border-[#C5A059] text-[#FFFFFF] bg-[#1D4F9C] font-bold shadow-md'
+                                        : 'border-[#C5A059]/60 hover:border-[#C5A059] hover:bg-[#1D4F9C]/5 text-[#1D4F9C] font-medium'
                                     }`}
                             >
                                 {i + 1}
@@ -127,7 +127,7 @@ export default function ProjectsPortfolio() {
                     <button
                         onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                         disabled={currentPage === totalPages}
-                        className="w-12 h-12 flex items-center justify-center border border-[#1D4F9C]/60 text-[#1D4F9C] disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all duration-300 rounded-sm"
+                        className="w-12 h-12 flex items-center justify-center border border-[#C5A059]/60 text-[#1D4F9C] disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all duration-300 rounded-sm"
                         aria-label="Next Page"
                     >
                         <ChevronRight size={20} strokeWidth={1} />

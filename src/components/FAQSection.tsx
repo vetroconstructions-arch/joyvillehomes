@@ -37,7 +37,7 @@ export default function FAQSection({ faqs, projectName }: FAQSectionProps) {
     };
 
     return (
-        <section className="py-24 bg-[#EEF2F6] border-t border-[#1D4F9C]/30 scroll-mt-32" id="faqs">
+        <section className="py-24 bg-[#EEF2F6] border-t border-[#C5A059]/30 scroll-mt-32" id="faqs">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
             <div className="max-w-4xl mx-auto px-6">
@@ -52,7 +52,7 @@ export default function FAQSection({ faqs, projectName }: FAQSectionProps) {
 
                 <div className="space-y-4">
                     {faqs.map((faq, index) => (
-                        <div key={index} className="border border-[#1D4F9C]/20 bg-[#FFFFFF] rounded-sm overflow-hidden transition-all duration-300 hover:border-[#1D4F9C]/40">
+                        <div key={index} className="border border-[#C5A059]/20 bg-[#FFFFFF] rounded-sm overflow-hidden transition-all duration-300 hover:border-[#C5A059]/40">
                             <button
                                 onClick={() => toggleFaq(index)}
                                 className="w-full text-left px-8 py-6 flex justify-between items-center bg-[#FFFFFF] transition-colors focus:outline-none focus:ring-1 focus:ring-[#1D4F9C]/50"
@@ -68,7 +68,7 @@ export default function FAQSection({ faqs, projectName }: FAQSectionProps) {
                             <div
                                 className={`overflow-hidden transition-all duration-500 ease-in-out ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                             >
-                                <div className="px-8 pb-6 text-[#323334]/90 font-light leading-relaxed border-t border-[#1D4F9C]/10 pt-4 bg-[#F4F6F9]">
+                                <div className="px-8 pb-6 text-[#323334]/90 font-light leading-relaxed border-t border-[#C5A059]/10 pt-4 bg-[#F4F6F9]">
                                     {faq.answer}
                                 </div>
                             </div>

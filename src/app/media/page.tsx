@@ -27,11 +27,11 @@ export default function MediaPRPage() {
             </header>
 
             <section className="max-w-7xl mx-auto px-6 mb-24">
-                <div className="bg-[#FFFFFF] border border-[#1D4F9C]/30 shadow-2xl p-8 lg:p-12 flex flex-col lg:flex-row items-center gap-12 rounded-sm group relative overflow-hidden">
+                <div className="bg-[#FFFFFF] border border-[#C5A059]/30 shadow-2xl p-8 lg:p-12 flex flex-col lg:flex-row items-center gap-12 rounded-sm group relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-1/2 h-full bg-[#1D4F9C]/5 blur-[80px] pointer-events-none rounded-bl-full" />
 
                     <div className="lg:w-1/2 relative z-10">
-                        <div className="inline-flex items-center gap-3 bg-[#EEF2F6] px-4 py-2 rounded-sm text-[#1D4F9C] font-bold text-[10px] uppercase tracking-widest mb-6 border border-[#1D4F9C]/20">
+                        <div className="inline-flex items-center gap-3 bg-[#EEF2F6] px-4 py-2 rounded-sm text-[#1D4F9C] font-bold text-[10px] uppercase tracking-widest mb-6 border border-[#C5A059]/20">
                             <TrendingUp size={14} /> Official Industry Report
                         </div>
                         <h2 className="text-3xl lg:text-4xl font-serif text-[#323334] mb-6">Pune Real Estate Outlook 2025: The Infrastructure Dividend</h2>
@@ -48,7 +48,7 @@ export default function MediaPRPage() {
                     </div>
 
                     <div className="lg:w-1/2 w-full relative z-10 aspect-[4/3]">
-                        <div className="w-full h-full relative rounded-sm overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.3)] border border-[#1D4F9C]/20 group-hover:scale-105 transition-transform duration-700">
+                        <div className="w-full h-full relative rounded-sm overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.3)] border border-[#C5A059]/20 group-hover:scale-105 transition-transform duration-700">
                             <Image
                                 src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop"
                                 alt="Pune Real Estate Outlook Report Cover"
@@ -63,7 +63,7 @@ export default function MediaPRPage() {
             </section>
 
             <section className="max-w-7xl mx-auto px-6">
-                <div className="flex items-center gap-3 mb-10 border-b border-[#1D4F9C]/20 pb-4">
+                <div className="flex items-center gap-3 mb-10 border-b border-[#C5A059]/20 pb-4">
                     <Newspaper className="text-[#1D4F9C]" size={24} />
                     <h2 className="text-2xl font-serif text-[#323334]">Recent Press Releases</h2>
                 </div>
@@ -74,7 +74,7 @@ export default function MediaPRPage() {
                         { title: "Joyville Unveils 'The Vastion' - Ultra Luxury Villaments in Pune East", date: "Jan 28, 2024", outlet: "Moneycontrol" },
                         { title: "SPRE Recognized as Developer of the Year at Real Estate Awards 2023", date: "Dec 10, 2023", outlet: "Financial Express" }
                     ].map((pr, idx) => (
-                        <div key={idx} className="bg-[#FFFFFF] p-8 border border-[#1D4F9C]/20 hover:border-[#1D4F9C]/50 transition-colors shadow-md hover:shadow-xl group flex flex-col">
+                        <div key={idx} className="bg-[#FFFFFF] p-8 border border-[#C5A059]/20 hover:border-[#C5A059]/50 transition-colors shadow-md hover:shadow-xl group flex flex-col">
                             <div className="flex justify-between items-center mb-4 text-[#323334]/60 text-xs font-medium uppercase tracking-widest">
                                 <span>{pr.date}</span>
                                 <span className="text-[#1D4F9C]">{pr.outlet}</span>

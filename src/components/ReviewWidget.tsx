@@ -5,7 +5,7 @@ import { sendGAEvent } from '@next/third-parties/google';
 
 export default function ReviewWidget() {
     return (
-        <section className="py-24 bg-[#FFFFFF] border-y border-[#1D4F9C]/20 relative overflow-hidden">
+        <section className="py-24 bg-[#FFFFFF] border-y border-[#C5A059]/20 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-1/3 h-full bg-[#1D4F9C]/5 blur-[100px] pointer-events-none rounded-bl-full" />
             <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
                 <div className="md:w-1/2">
@@ -28,7 +28,7 @@ export default function ReviewWidget() {
                 </div>
 
                 <div className="md:w-1/2 w-full">
-                    <div className="bg-[#EEF2F6] p-8 md:p-12 rounded-sm border border-[#1D4F9C]/30 shadow-2xl relative">
+                    <div className="bg-[#EEF2F6] p-8 md:p-12 rounded-sm border border-[#C5A059]/30 shadow-2xl relative">
                         <div className="absolute -top-6 -right-6 bg-[#1D4F9C] text-[#FFFFFF] w-24 h-24 rounded-full flex items-center justify-center text-center p-2 shadow-lg transform rotate-12">
                             <span className="text-[10px] font-bold uppercase tracking-widest leading-tight">Leave a<br />Review</span>
                         </div>
@@ -42,7 +42,7 @@ export default function ReviewWidget() {
                             <a
                                 href="#"
                                 onClick={() => sendGAEvent('event', 'leave_review_click', { project: 'Joyville Sensorium' })}
-                                className="flex items-center justify-between bg-[#FFFFFF] p-4 rounded-sm border border-[#1D4F9C]/20 hover:border-[#1D4F9C] hover:shadow-md transition-all group"
+                                className="flex items-center justify-between bg-[#FFFFFF] p-4 rounded-sm border border-[#C5A059]/20 hover:border-[#C5A059] hover:shadow-md transition-all group"
                                 aria-label="Leave a review for Joyville Sensorium on Google"
                             >
                                 <span className="flex items-center gap-3 text-[#323334] font-medium text-sm">
@@ -53,7 +53,7 @@ export default function ReviewWidget() {
                             <a
                                 href="#"
                                 onClick={() => sendGAEvent('event', 'leave_review_click', { project: 'Joyville Hadapsar Annexe' })}
-                                className="flex items-center justify-between bg-[#FFFFFF] p-4 rounded-sm border border-[#1D4F9C]/20 hover:border-[#1D4F9C] hover:shadow-md transition-all group"
+                                className="flex items-center justify-between bg-[#FFFFFF] p-4 rounded-sm border border-[#C5A059]/20 hover:border-[#C5A059] hover:shadow-md transition-all group"
                                 aria-label="Leave a review for Joyville Hadapsar Annexe on Google"
                             >
                                 <span className="flex items-center gap-3 text-[#323334] font-medium text-sm">

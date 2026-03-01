@@ -118,7 +118,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     {blog.title}
                 </h1>
 
-                <div className="flex flex-wrap items-center justify-between border-y border-[#1D4F9C]/20 py-4 gap-6">
+                <div className="flex flex-wrap items-center justify-between border-y border-[#C5A059]/20 py-4 gap-6">
                     <div className="flex items-center gap-6 text-[#323334]/80 text-sm font-light">
                         <span className="flex items-center gap-2"><User size={16} className="text-[#1D4F9C]" /> {blog.author}</span>
                         <span className="flex items-center gap-2"><Calendar size={16} className="text-[#1D4F9C]" /> {blog.date}</span>
@@ -155,7 +155,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     ))}
                 </div>
 
-                <div className="mt-16 pt-8 border-t border-[#1D4F9C]/20 bg-[#FFFFFF] p-8 rounded-sm shadow-sm">
+                <div className="mt-16 pt-8 border-t border-[#C5A059]/20 bg-[#FFFFFF] p-8 rounded-sm shadow-sm">
                     <h3 className="text-xl font-serif text-[#1D4F9C] mb-4">Ready to Invest in Pune?</h3>
                     <p className="text-[#323334] font-light mb-6">Connect with our property consultants to discover premium Shapoorji Pallonji residences that match your investment goals.</p>
                     <Link href="/projects" className="inline-block bg-[#1D4F9C] text-[#FFFFFF] px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#323334] transition-colors">
@@ -164,11 +164,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </div>
 
                 {/* Related Articles Section */}
-                <section className="mt-20 pt-12 border-t border-[#1D4F9C]/10">
+                <section className="mt-20 pt-12 border-t border-[#C5A059]/10">
                     <h2 className="text-2xl font-serif text-[#323334] mb-8">More Market Insights</h2>
                     <div className="grid md:grid-cols-3 gap-6">
                         {relatedArticles.map(article => (
-                            <Link key={article.slug} href={`/insights/${article.slug}`} className="group bg-[#FFFFFF] border border-[#1D4F9C]/10 hover:border-[#1D4F9C]/40 p-6 transition-all duration-300 rounded-sm">
+                            <Link key={article.slug} href={`/insights/${article.slug}`} className="group bg-[#FFFFFF] border border-[#C5A059]/10 hover:border-[#C5A059]/40 p-6 transition-all duration-300 rounded-sm">
                                 <span className="text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold block mb-2">{article.category}</span>
                                 <h3 className="text-base font-serif text-[#323334] group-hover:text-[#1D4F9C] transition-colors mb-3 leading-snug">{article.title}</h3>
                                 <div className="flex items-center gap-2 text-[#1D4F9C] text-xs font-light">

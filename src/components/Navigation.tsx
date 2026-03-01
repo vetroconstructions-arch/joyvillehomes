@@ -35,7 +35,7 @@ export default function Navigation() {
     }, [isMobileMenuOpen]);
 
     const navBackground = (isScrolled || !isHomePage)
-        ? 'bg-[#EEF2F6]/95 backdrop-blur-2xl border-b border-[#1D4F9C]/50 shadow-[0_15px_40px_rgba(0,0,0,0.1)] py-4'
+        ? 'bg-[#EEF2F6]/95 backdrop-blur-2xl border-b border-[#C5A059]/50 shadow-[0_15px_40px_rgba(0,0,0,0.1)] py-4'
         : 'bg-transparent py-8';
 
     const textColor = (isScrolled || !isHomePage) ? 'text-[#323334] font-medium' : 'text-[#323334] font-medium';
@@ -77,13 +77,13 @@ export default function Navigation() {
 
                     {/* Enquire Button & Mobile Toggle */}
                     <div className="flex items-center gap-6 z-20">
-                        <button aria-label="Enquire Now" className={`hidden sm:flex items-center gap-3 px-8 py-3 rounded-sm font-bold text-[10px] tracking-[0.2em] uppercase transition-all duration-500 group border ${(isScrolled || !isHomePage) ? 'bg-[#1D4F9C] text-[#FFFFFF] border-[#1D4F9C] hover:bg-transparent hover:text-[#1D4F9C]' : 'bg-[#1D4F9C] text-[#FFFFFF] border-[#1D4F9C] hover:bg-transparent hover:text-[#1D4F9C]'}`}>
+                        <button aria-label="Enquire Now" className={`hidden sm:flex items-center gap-3 px-8 py-3 rounded-sm font-bold text-[10px] tracking-[0.2em] uppercase transition-all duration-500 group border ${(isScrolled || !isHomePage) ? 'bg-[#1D4F9C] text-[#FFFFFF] border-[#C5A059] hover:bg-transparent hover:text-[#1D4F9C]' : 'bg-[#1D4F9C] text-[#FFFFFF] border-[#C5A059] hover:bg-transparent hover:text-[#1D4F9C]'}`}>
                             <PhoneCall size={14} className="group-hover:animate-pulse" />
                             <span>Enquire Now</span>
                         </button>
 
                         <button
-                            className={`lg:hidden flex items-center justify-center w-12 h-12 border rounded-sm transition-colors duration-300 ${(isScrolled || !isHomePage || isMobileMenuOpen) ? 'border-[#1D4F9C]/30 text-[#1D4F9C] hover:bg-[#1D4F9C] hover:text-[#FFFFFF]' : 'border-[#323334]/30 text-[#323334] hover:border-[#1D4F9C] hover:text-[#1D4F9C]'}`}
+                            className={`lg:hidden flex items-center justify-center w-12 h-12 border rounded-sm transition-colors duration-300 ${(isScrolled || !isHomePage || isMobileMenuOpen) ? 'border-[#C5A059]/30 text-[#1D4F9C] hover:bg-[#1D4F9C] hover:text-[#FFFFFF]' : 'border-[#323334]/30 text-[#323334] hover:border-[#C5A059] hover:text-[#1D4F9C]'}`}
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                             aria-label="Toggle Menu"
                         >
@@ -101,9 +101,9 @@ export default function Navigation() {
                                 transition={{ duration: 0.3, ease: "easeOut" }}
                                 className="absolute top-[100%] left-0 w-full pt-2"
                             >
-                                <div className="bg-[#FFFFFF] border border-[#1D4F9C]/20 shadow-[0_20px_50px_rgba(29,79,156,0.15)] rounded-sm overflow-hidden p-6 grid grid-cols-4 gap-4 relative">
+                                <div className="bg-[#FFFFFF] border border-[#C5A059]/20 shadow-[0_20px_50px_rgba(29,79,156,0.15)] rounded-sm overflow-hidden p-6 grid grid-cols-4 gap-4 relative">
                                     {projects.map((proj) => (
-                                        <Link href={`/projects/${proj.slug}`} key={proj.id} className="group/dropdown overflow-hidden block relative border border-[#E0E5EC] hover:border-[#1D4F9C]/50 bg-[#FFFFFF] rounded-sm transition-all duration-300 hover:shadow-lg" onClick={() => setIsProjectsHovered(false)}>
+                                        <Link href={`/projects/${proj.slug}`} key={proj.id} className="group/dropdown overflow-hidden block relative border border-[#E0E5EC] hover:border-[#C5A059]/50 bg-[#FFFFFF] rounded-sm transition-all duration-300 hover:shadow-lg" onClick={() => setIsProjectsHovered(false)}>
                                             <div className="aspect-[4/3] relative overflow-hidden">
                                                 <div className="absolute inset-0 bg-cover bg-center opacity-90 group-hover/dropdown:opacity-100 group-hover/dropdown:scale-105 transition-all duration-500" style={{ backgroundImage: `url(${proj.image})` }} />
                                             </div>
@@ -113,7 +113,7 @@ export default function Navigation() {
                                             </div>
                                         </Link>
                                     ))}
-                                    <div className="col-span-4 flex justify-end mt-4 pt-4 border-t border-[#1D4F9C]/30">
+                                    <div className="col-span-4 flex justify-end mt-4 pt-4 border-t border-[#C5A059]/30">
                                         <Link href="/projects" className="text-xs uppercase tracking-[0.2em] text-[#1D4F9C] hover:text-[#323334] font-medium flex items-center gap-2 group/all">
                                             View Full Portfolio <span className="w-6 h-[1px] bg-[#1D4F9C] group-hover/all:w-10 transition-all duration-300" />
                                         </Link>
@@ -139,7 +139,7 @@ export default function Navigation() {
                         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop')] bg-cover bg-center opacity-5 mix-blend-luminosity pointer-events-none" />
 
                         <div className="relative z-10 flex flex-col gap-10">
-                            <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }} className="text-[#1D4F9C] text-xs tracking-[0.3em] uppercase font-light border-b border-[#1D4F9C]/30 pb-4">
+                            <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }} className="text-[#1D4F9C] text-xs tracking-[0.3em] uppercase font-light border-b border-[#C5A059]/30 pb-4">
                                 Navigate
                             </motion.div>
 

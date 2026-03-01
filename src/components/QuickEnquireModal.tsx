@@ -90,7 +90,7 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-[#FFFFFF] z-50 border border-[#1D4F9C]/60 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-sm overflow-hidden"
+                        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-[#FFFFFF] z-50 border border-[#C5A059]/60 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-sm overflow-hidden"
                     >
                         {/* Header */}
                         <div className="bg-[#1D4F9C] p-6 text-center relative">
@@ -131,7 +131,7 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
                                             placeholder="Full Name"
                                             value={formData.name}
                                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                            className="w-full px-4 py-3 bg-[#FFFFFF] border border-[#1D4F9C]/30 text-[#1A1A1A] placeholder-[#1A1A1A]/40 focus:outline-none focus:border-[#1D4F9C] transition-colors"
+                                            className="w-full px-4 py-3 bg-[#FFFFFF] border border-[#C5A059]/30 text-[#1A1A1A] placeholder-[#1A1A1A]/40 focus:outline-none focus:border-[#C5A059] transition-colors"
                                         />
                                     </div>
                                     <div>
@@ -141,7 +141,7 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
                                             placeholder="Email Address"
                                             value={formData.email}
                                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                            className="w-full px-4 py-3 bg-[#FFFFFF] border border-[#1D4F9C]/30 text-[#1A1A1A] placeholder-[#1A1A1A]/40 focus:outline-none focus:border-[#1D4F9C] transition-colors"
+                                            className="w-full px-4 py-3 bg-[#FFFFFF] border border-[#C5A059]/30 text-[#1A1A1A] placeholder-[#1A1A1A]/40 focus:outline-none focus:border-[#C5A059] transition-colors"
                                         />
                                     </div>
                                     <div>
@@ -153,7 +153,7 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
                                             title="Please enter a valid 10-digit mobile number"
                                             value={formData.phone}
                                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                            className="w-full px-4 py-3 bg-[#FFFFFF] border border-[#1D4F9C]/30 text-[#1A1A1A] placeholder-[#1A1A1A]/40 focus:outline-none focus:border-[#1D4F9C] transition-colors"
+                                            className="w-full px-4 py-3 bg-[#FFFFFF] border border-[#C5A059]/30 text-[#1A1A1A] placeholder-[#1A1A1A]/40 focus:outline-none focus:border-[#C5A059] transition-colors"
                                         />
                                     </div>
 

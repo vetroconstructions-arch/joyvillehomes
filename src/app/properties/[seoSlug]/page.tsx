@@ -189,14 +189,14 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
             {/* Rich Comparison Content for vs Pages */}
             {routeData.slug.includes('-vs-') && (
                 <section className="max-w-5xl mx-auto px-6 mb-20">
-                    <div className="bg-[#FFFFFF] border border-[#1D4F9C]/20 rounded-sm overflow-hidden shadow-lg">
+                    <div className="bg-[#FFFFFF] border border-[#C5A059]/20 rounded-sm overflow-hidden shadow-lg">
                         <div className="bg-[#1D4F9C] text-[#FFFFFF] py-4 px-8">
                             <h2 className="text-xl font-serif">Head-to-Head Comparison</h2>
                         </div>
                         <div className="overflow-x-auto">
                             <table className="w-full text-sm">
                                 <thead>
-                                    <tr className="border-b border-[#1D4F9C]/10">
+                                    <tr className="border-b border-[#C5A059]/10">
                                         <th className="py-4 px-6 text-left text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold">Parameter</th>
                                         <th className="py-4 px-6 text-left text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold">Joyville Sensorium</th>
                                         <th className="py-4 px-6 text-left text-[10px] tracking-[0.2em] uppercase text-[#323334] font-semibold">
@@ -237,7 +237,7 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
                                 </tbody>
                             </table>
                         </div>
-                        <div className="p-6 bg-[#F4F6F9] border-t border-[#1D4F9C]/10">
+                        <div className="p-6 bg-[#F4F6F9] border-t border-[#C5A059]/10">
                             <p className="text-sm text-[#323334] font-light">
                                 <strong className="text-[#1D4F9C]">Verdict:</strong> {routeData.slug.includes('kolte-patil')
                                     ? 'Joyville Sensorium delivers premium construction quality and luxury amenities backed by 150+ years of Shapoorji Pallonji engineering legacy. Kolte Patil Life Republic offers a full township ecosystem at a lower price point. Choose Sensorium for quality and ROI; choose Life Republic for budget and township scale.'
@@ -253,7 +253,7 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
                 {matchedProjects.length > 0 ? (
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {matchedProjects.map(project => (
-                            <Link href={`/projects/${project.slug}`} key={project.id} className="group flex flex-col bg-[#FFFFFF] rounded-sm overflow-hidden border border-[#1D4F9C]/20 hover:border-[#1D4F9C]/50 transition-all duration-500 shadow-lg hover:shadow-2xl">
+                            <Link href={`/projects/${project.slug}`} key={project.id} className="group flex flex-col bg-[#FFFFFF] rounded-sm overflow-hidden border border-[#C5A059]/20 hover:border-[#C5A059]/50 transition-all duration-500 shadow-lg hover:shadow-2xl">
                                 <div className="relative aspect-[4/3] overflow-hidden">
                                     <Image
                                         src={project.image}
@@ -274,7 +274,7 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
                                     <h2 className="text-2xl font-serif text-[#323334] mb-3">{project.title}</h2>
                                     <p className="text-[#1D4F9C] font-serif italic text-xl mb-4">{project.price}</p>
 
-                                    <p className="text-[#323334] font-light text-sm line-clamp-2 mb-6 border-b border-[#1D4F9C]/10 pb-6">
+                                    <p className="text-[#323334] font-light text-sm line-clamp-2 mb-6 border-b border-[#C5A059]/10 pb-6">
                                         {project.type}
                                     </p>
 
@@ -287,16 +287,16 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
                         ))}
                     </div>
                 ) : (
-                    <div className="text-center py-20 bg-[#FFFFFF] border border-[#1D4F9C]/20 rounded-sm">
+                    <div className="text-center py-20 bg-[#FFFFFF] border border-[#C5A059]/20 rounded-sm">
                         <p className="text-[#323334] text-lg font-light">New inventory coming soon for this specific requirement.</p>
-                        <Link href="/projects" className="inline-block mt-6 text-[#1D4F9C] border-b border-[#1D4F9C] pb-1 uppercase tracking-widest text-xs font-bold hover:text-[#323334] hover:border-[#323334] transition-colors">
+                        <Link href="/projects" className="inline-block mt-6 text-[#1D4F9C] border-b border-[#C5A059] pb-1 uppercase tracking-widest text-xs font-bold hover:text-[#323334] hover:border-[#323334] transition-colors">
                             View All Projects
                         </Link>
                     </div>
                 )}
             </section>
 
-            <footer className="py-20 bg-[#FFFFFF] border-t border-[#1D4F9C]/30 text-center">
+            <footer className="py-20 bg-[#FFFFFF] border-t border-[#C5A059]/30 text-center">
                 <div className="text-3xl font-serif text-[#1D4F9C] font-light tracking-widest mb-4">JOYVILLE <span className="text-[10px] font-sans tracking-[0.4em] text-[#323334] uppercase ml-2">Pune</span></div>
                 <p className="text-[#323334]/40 text-[9px] tracking-[0.3em] uppercase font-medium">MahaRERA: P52100000000 | A Shapoorji Pallonji Real Estate Project</p>
             </footer>
