@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import { MapPin, Building2, FileText, TrendingUp } from 'lucide-react';
 
-const siteUrl = 'https://www.joyville-homes.com';
-
 const footerLinks = {
     projects: [
         { href: '/projects/joyville-sensorium-hinjewadi', label: 'Joyville Sensorium' },

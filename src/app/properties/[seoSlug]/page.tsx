@@ -4,7 +4,6 @@ import { projects } from '@/data/projects';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin, ArrowRight } from 'lucide-react';
-import Navbar from '@/components/Navigation';
 
 // Define the supported SEO Slugs based on our strategy matrix
 const siteUrl = 'https://www.joyville-homes.com';
