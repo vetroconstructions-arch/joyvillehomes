@@ -7,6 +7,7 @@ import { motion, AnimatePresence, Variants } from "framer-motion";
 import { ArrowRight, MapPin, PhoneCall, CheckCircle2, Building2, Trees, ShieldCheck, Landmark } from "lucide-react";
 import ReviewWidget from "@/components/ReviewWidget";
 import BrochureButton from "@/components/BrochureButton";
+import GlobalFAQ from "@/components/GlobalFAQ";
 
 // --- Framer Motion Variants ---
 const fadeUp: Variants = {
@@ -408,6 +409,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* --- Global SEO FAQ Section --- */}
+      <GlobalFAQ />
 
       {/* --- Review Harvesting Component (Local SEO) --- */}
       <ReviewWidget />
