@@ -31,17 +31,18 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
         });
 
         try {
-            // Setup Web3Forms payload
+            // Setup FormSubmit payload targeting the official email directly
             const payload = {
-                access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "", // Fetched securely from environment
-                subject: `New Lead: ${source} - ${projectName}`,
-                from_name: formData.name,
-                ...formData,
+                _subject: `New Lead: ${source} - ${projectName}`,
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,
                 project_interest: projectName,
-                lead_magnet: source
+                lead_magnet: source,
+                _captcha: "false" // Disable captcha for seamless AJAX flow
             };
 
-            const response = await fetch("https://api.web3forms.com/submit", {
+            const response = await fetch("https://formsubmit.co/ajax/propsmartrealty@gmail.com", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
