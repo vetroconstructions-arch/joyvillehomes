@@ -60,7 +60,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         notFound();
     }
 
-    const siteUrl = 'https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app';
+    const siteUrl = 'https://www.joyville-homes.com';
 
     const jsonLd = {
         "@context": "https://schema.org",

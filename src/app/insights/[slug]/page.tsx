@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { ArrowLeft, Calendar, User, Facebook, Twitter, Linkedin, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navigation';
 
-const siteUrl = 'https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app';
+const siteUrl = 'https://www.joyville-homes.com';
 
 // Pre-render all blog routes at build time
 export async function generateStaticParams() {

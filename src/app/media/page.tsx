@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: 'Download the official Pune Real Estate Market Outlook Report 2025 by Shapoorji Pallonji. Access premium data, investor kits, and official press releases.',
     keywords: ['Pune Real Estate Report', 'Hinjewadi Property Trends', 'Joyville Press Kit', 'Shapoorji Pallonji Media', 'Pune Investor Report 2025'],
     alternates: {
-        canonical: 'https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app/media'
+        canonical: 'https://www.joyville-homes.com/media'
     }
 };
 

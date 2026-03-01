@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         'property rates Hinjewadi 2025', 'Joyville vs Kolte Patil', 'micro market analysis Pune'
     ],
     alternates: {
-        canonical: 'https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app/insights'
+        canonical: 'https://www.joyville-homes.com/insights'
     }
 };
 
@@ -25,7 +25,7 @@ export default function InsightsPage() {
         "@type": "Blog",
         "name": "Joyville Pune Market Insights",
         "description": metadata.description,
-        "url": "https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app/insights",
+        "url": "https://www.joyville-homes.com/insights",
         "publisher": {
             "@type": "Organization",
             "name": "Shapoorji Pallonji Real Estate"
@@ -33,7 +33,7 @@ export default function InsightsPage() {
         "blogPost": blogs.map(blog => ({
             "@type": "BlogPosting",
             "headline": blog.title,
-            "url": `https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app/insights/${blog.slug}`,
+            "url": `https://www.joyville-homes.com/insights/${blog.slug}`,
             "datePublished": new Date(blog.date).toISOString()
         }))
     };

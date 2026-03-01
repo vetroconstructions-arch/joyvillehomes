@@ -18,7 +18,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app'),
+  metadataBase: new URL('https://www.joyville-homes.com'),
   title: "Joyville Homes Pune | Shapoorji Pallonji | 2 & 3 BHK Flats in Hinjewadi, Hadapsar, Bavdhan",
   description: "Official Joyville Pune by Shapoorji Pallonji Real Estate. Explore 9 premium projects across Hinjewadi, Hadapsar & Bavdhan. 2 & 3 BHK flats starting ₹65 Lakhs. RERA approved. Check price list, floor plans & book a site visit today.",
   keywords: [
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Joyville Homes Pune | Shapoorji Pallonji Real Estate | 9 Premium Projects",
     description: "Explore Joyville Pune by Shapoorji Pallonji – 9 premium projects across Hinjewadi, Hadapsar & Bavdhan. 2 & 3 BHK flats starting ₹65L. RERA approved.",
-    url: "https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app",
+    url: "https://www.joyville-homes.com",
     siteName: "Joyville Homes Pune",
     images: [
       {
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app",
+    canonical: "https://www.joyville-homes.com",
   },
 };
 
@@ -108,8 +108,8 @@ export default function RootLayout({
             "@type": "RealEstateAgent",
             "name": "Joyville Homes by Shapoorji Pallonji",
             "alternateName": "Shapoorji Pallonji Real Estate",
-            "url": "https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app",
-            "logo": "https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app/logo.png",
+            "url": "https://www.joyville-homes.com",
+            "logo": "https://www.joyville-homes.com/logo.png",
             "description": "Official Joyville Pune — 9 premium residential projects across Hinjewadi, Hadapsar & Bavdhan. 150+ years of Shapoorji Pallonji engineering legacy.",
             "foundingDate": "1865",
             "sameAs": ["https://www.joyvillehomes.com", "https://www.shapoorji.in"],

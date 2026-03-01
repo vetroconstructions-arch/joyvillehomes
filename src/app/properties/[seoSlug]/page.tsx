@@ -7,7 +7,7 @@ import { MapPin, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navigation';
 
 // Define the supported SEO Slugs based on our strategy matrix
-const siteUrl = 'https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app';
+const siteUrl = 'https://www.joyville-homes.com';
 
 const SEO_ROUTES = [
     // Existing high-volume locational pages

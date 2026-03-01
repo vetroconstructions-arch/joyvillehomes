@@ -22,7 +22,7 @@ const SEO_ROUTES = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://joyvillehomes-6fmc-git-main-vetroconstructions-7870s-projects.vercel.app';
+    const baseUrl = 'https://www.joyville-homes.com';
 
     const LOCALITY_ROUTES = [
         'hinjewadi',
