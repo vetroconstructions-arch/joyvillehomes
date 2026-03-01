@@ -180,6 +180,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                             {project.overview.map((paragraph, idx) => (
                                 <p key={idx}>{paragraph}</p>
                             ))}
+                            <p className="text-xs text-[#1D4F9C]/60 mt-4 italic font-medium">
+                                MahaRERA Registration: {Array.isArray(project.reraNumber) ? project.reraNumber.join(", ") : project.reraNumber}
+                            </p>
                         </div>
                         <div className="mt-10 grid sm:grid-cols-2 gap-6 bg-[#EEF2F6] p-8 border border-[#C5A059]/60 rounded-sm">
                             {project.highlights.map((highlight, index) => (
@@ -350,6 +353,12 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                             <div className="flex flex-col border-b border-[#C5A059]/60 pb-6">
                                 <span className="text-[#1A1A1A] font-light uppercase tracking-[0.2em] text-[10px] mb-1">Developer</span>
                                 <span className="text-[#323334] font-medium text-sm tracking-wide">Shapoorji Pallonji Real Estate</span>
+                            </div>
+                            <div className="flex flex-col border-b border-[#C5A059]/60 pb-4">
+                                <span className="text-[#1A1A1A] font-light uppercase tracking-[0.2em] text-[10px] mb-1">MahaRERA ID</span>
+                                <span className="text-[#1D4F9C] font-medium text-[11px] break-all">
+                                    {Array.isArray(project.reraNumber) ? project.reraNumber.join(", ") : project.reraNumber}
+                                </span>
                             </div>
                         </div>
 

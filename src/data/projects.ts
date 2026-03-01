@@ -39,6 +39,7 @@ export interface Project {
     locationDetails: LocationDetail;
     seoKeywords: string[];
     faqs?: { question: string; answer: string }[];
+    reraNumber: string | string[];
 }
 
 export const projects: Project[] = [
@@ -50,6 +51,7 @@ export const projects: Project[] = [
         price: "₹1.10 Cr - ₹1.45 Cr",
         type: "2 & 3 BHK Luxury Apartments",
         status: "Under Construction",
+        reraNumber: ["P52100027234", "P52100024965", "P52100024963", "P52100027244", "P52100024964", "P52100045257", "P52100049547"],
         image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/1.webp",
         highlights: [
             "10.5 Acres Development",
@@ -165,6 +167,7 @@ export const projects: Project[] = [
         price: "₹65 L - ₹95 L",
         type: "1, 2 & 3 BHK Premium Flats",
         status: "Ready to Move Options",
+        reraNumber: ["P52100026451", "P52100026479", "P52100026480", "P52100026478", "P52100026452", "P52100026800", "P52100026785", "P52100026797", "P52100026795", "P52100028311", "P52100028308", "P52100031391", "P52100031515", "P52100034911"],
         image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/1.webp",
         highlights: [
             "21 Acres Township",
@@ -272,6 +275,7 @@ export const projects: Project[] = [
         price: "₹85 L - ₹1.25 Cr",
         type: "2 & 3 BHK Apartments",
         status: "New Launch",
+        reraNumber: "P52100048338",
         image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/5.webp",
         highlights: [
             "Premium Club Life",
@@ -374,6 +378,7 @@ export const projects: Project[] = [
         price: "₹1.40 Cr Onwards",
         type: "3 BHK Ultra-Luxury",
         status: "Pre-Launch",
+        reraNumber: "P52100048338",
         image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/4.webp",
         highlights: [
             "Private Terrace Options",
@@ -474,7 +479,8 @@ export const projects: Project[] = [
         price: "Price on Request",
         type: "Residential Apartments",
         status: "Ongoing",
-        image: "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/sp-kingstown.jpg",
+        reraNumber: ["P52100052683", "P52100053177", "P52100053966", "P52100054077"],
+        image: "https://www.shapoorjiipallonji.com/assets/Desktop/Projects/640x640/sp-kingstown.jpg",
         highlights: [
             "Part of SP Kingstown",
             "Lush Green Surroundings",
@@ -539,6 +545,7 @@ export const projects: Project[] = [
         price: "Price on Request",
         type: "Luxury Residences",
         status: "Ongoing",
+        reraNumber: "P52100052531",
         image: "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha-golfland.jpg",
         highlights: [
             "Golf Course Views",
@@ -623,6 +630,7 @@ export const projects: Project[] = [
         price: "Price on Request",
         type: "Premium Residences",
         status: "Available",
+        reraNumber: ["P52100028031", "P52100028082", "P52100028033"],
         image: "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha_spring.jpg",
         highlights: [
             "Part of 1000-Acre Township",
@@ -700,6 +708,7 @@ export const projects: Project[] = [
         price: "Price on Request",
         type: "Residential Township",
         status: "Available",
+        reraNumber: ["P52100028031", "P52100028082", "P52100028033"],
         image: "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha-pune.jpg",
         highlights: [
             "Massive Integrated Township",
@@ -777,6 +786,7 @@ export const projects: Project[] = [
         price: "Starting ₹84 Lakhs",
         type: "NA Bungalow Plots",
         status: "Under Construction",
+        reraNumber: "PP1261012501803",
         image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/4.webp",
         highlights: [
             "Exotic Villa Plots",
