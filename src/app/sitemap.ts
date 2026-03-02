@@ -3,22 +3,23 @@ import { projects } from '@/data/projects';
 import { blogs } from '@/data/blogs';
 
 const SEO_ROUTES = [
-    // High-volume locational pages
-    '2-bhk-flats-in-hinjewadi',
+    // IT Hub specific (High Volume)
+    'flats-near-eon-it-park-kharadi',
+    'property-near-sp-infocity-phursungi',
+    'apartments-near-magarpatta-city-hadapsar',
+    'residential-projects-near-hinjewadi-phase-1',
+    // Locational specific
+    '2-bhk-flats-in-hinjewadi-pune',
     '3-bhk-luxury-apartments-pune-west',
-    'townships-near-magarpatta-city',
+    'affordable-flats-in-shewalewadi-hadapsar',
     'na-bungalow-plots-near-purandar-airport',
-    // Typology pages
-    '3-bhk-flats-in-hinjewadi',
-    '1-bhk-flats-in-hadapsar',
-    'flats-in-bavdhan-pune',
-    'ready-to-move-flats-hadapsar',
-    // Comparison landing pages
+    // Typology & Intent
+    'ready-to-move-flats-in-hadapsar',
+    'new-launch-projects-pune-2025',
+    'luxury-apartments-with-golf-view-bavdhan',
+    // Competitor Comparison
     'joyville-vs-kolte-patil-life-republic-hinjewadi',
-    'joyville-vs-godrej-hinjewadi',
-    // Luxury & new launch pages
-    'luxury-apartments-hadapsar-pune',
-    'new-launch-projects-hadapsar-2025'
+    'joyville-vs-godrej-properties-pune'
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

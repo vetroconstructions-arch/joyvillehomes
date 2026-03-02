@@ -545,7 +545,16 @@ export const projects: Project[] = [
         location: "Bavdhan, Pune (Near Oxford Golf Resort)",
         price: "Price on Request",
         type: "Luxury Residences",
-        status: "Ongoing",
+        status: "New Launch",
+        seoKeywords: [
+            "Vanaha Golfland Bavdhan Pune",
+            "flats near Oxford Golf Resort",
+            "luxury apartments Bavdhan Pune West",
+            "Shapoorji Pallonji Vanaha township",
+            "Vanaha Golfland 3 BHK price",
+            "golf course view apartments Pune",
+            "nature living Bavdhan Pune"
+        ],
         reraNumber: "P52100052531",
         image: "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha-golfland.jpg",
         highlights: [
@@ -596,23 +605,6 @@ export const projects: Project[] = [
                 { name: "Sahyadri Hospital", distance: "6.0 km" }
             ]
         },
-        seoKeywords: [
-            "Vanaha Golfland Bavdhan",
-            "Vanaha Golfland price",
-            "Vanaha Pune by Shapoorji",
-            "flats in Bavdhan Pune",
-            "2 BHK Bavdhan",
-            "3 BHK Bavdhan",
-            "luxury flats in Bavdhan Pune",
-            "golf course view apartments Pune",
-            "Bavdhan real estate investment",
-            "flats near Mumbai Pune Expressway",
-            "township Bavdhan Pune",
-            "flats near Chandni Chowk Pune",
-            "resort style living Pune",
-            "infinity pool apartments Bavdhan",
-            "Shapoorji Pallonji Bavdhan"
-        ],
         faqs: [
             {
                 question: "Does Vanaha Golfland offer actual golf course views?",
@@ -840,18 +832,19 @@ export const projects: Project[] = [
             ]
         },
         seoKeywords: [
-            "Shapoorji Treetopia Pune",
+            "Shapoorji Pallonji Treetopia Purandar",
+            "NA bungalow plots near Pune Airport",
+            "investment plots Purandar Pune",
             "Shapoorji Pallonji Treetopia price",
+            "plots near JSPM College Hadapsar",
+            "residential plots Saswad Road",
+            "Treetopia Jadhavwadi Pune",
+            "Shapoorji Treetopia Pune",
             "exotic villa plots Pune",
-            "NA bungalow plots Pune",
-            "plots near Purandar Airport",
-            "villa plots Pune",
-            "plotted development near Pune Ring Road",
             "Jadhavwadi property investment",
             "land investment near Pune airport",
             "biophilic landscapes plots Pune",
             "RERA approved plots Pune",
-            "Shapoorji Pallonji plots offering",
             "Pune growth corridor real estate",
             "plot investment Pune 2025",
             "gated community plots Pune"

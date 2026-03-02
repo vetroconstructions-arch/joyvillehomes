@@ -39,11 +39,14 @@ export const metadata: Metadata = {
     "property rates Hinjewadi 2025",
     "flats near Rajiv Gandhi Infotech Park",
     "walk to work apartments Hinjewadi",
+    "projects near Maan Village Hinjewadi",
     // Hadapsar Micro-Market
     "flats in Hadapsar Pune",
     "Joyville Hadapsar Annexe",
     "ready to move flats Hadapsar",
     "flats near Magarpatta City",
+    "flats near EON IT Park Kharadi",
+    "flats near SP Infocity Phursungi",
     "1 BHK flats Hadapsar",
     "affordable flats Pune East",
     "township projects Hadapsar",
@@ -65,6 +68,8 @@ export const metadata: Metadata = {
     "buy 2 BHK flat Hinjewadi under 1 crore",
     // Competitor Gap
     "Joyville vs Kolte Patil Life Republic",
+    "Joyville Hinjewadi vs Godrej Park Greens",
+    "Joyville Hadapsar vs Amanora",
     "best residential projects Hinjewadi 2025",
     "integrated township Pune"
   ],
@@ -116,34 +121,46 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "RealEstateAgent",
-            "name": "Joyville Homes by Shapoorji Pallonji",
-            "alternateName": "Shapoorji Pallonji Real Estate",
-            "url": "https://www.joyville-homes.com",
-            "logo": "https://www.joyville-homes.com/logo.png",
-            "description": "Official Joyville Pune — 9 premium residential projects across Hinjewadi, Hadapsar & Bavdhan. 150+ years of Shapoorji Pallonji engineering legacy.",
-            "foundingDate": "1865",
-            "sameAs": ["https://www.joyvillehomes.com", "https://www.shapoorji.in"],
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Rajiv Gandhi Infotech Park, Hinjewadi Phase 1",
-              "addressLocality": "Pune",
-              "addressRegion": "Maharashtra",
-              "postalCode": "411057",
-              "addressCountry": "IN"
-            },
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+91-20-67210000",
-              "contactType": "sales",
-              "areaServed": "Pune",
-              "availableLanguage": ["English", "Hindi", "Marathi"]
-            },
-            "areaServed": {
-              "@type": "GeoCircle",
-              "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 18.5913, "longitude": 73.7389 },
-              "geoRadius": "50000"
-            }
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://www.joyville-homes.com/#organization",
+                "name": "Joyville Homes by Shapoorji Pallonji",
+                "alternateName": "Shapoorji Pallonji Real Estate",
+                "url": "https://www.joyville-homes.com",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.joyville-homes.com/logo.png"
+                },
+                "description": "Official Joyville Pune — 9 premium residential projects across Hinjewadi, Hadapsar & Bavdhan. 150+ years of Shapoorji Pallonji engineering legacy.",
+                "foundingDate": "1865",
+                "sameAs": [
+                  "https://www.facebook.com/ShapoorjiPallonjiRealEstate/",
+                  "https://www.linkedin.com/company/shapoorji-pallonji-real-estate/",
+                  "https://www.instagram.com/shapoorjipallonjirealestate/",
+                  "https://www.joyvillehomes.com"
+                ],
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+91-20-67210000",
+                  "contactType": "sales",
+                  "areaServed": "Pune",
+                  "availableLanguage": ["English", "Hindi", "Marathi"]
+                }
+              },
+              {
+                "@type": "ItemList",
+                "@id": "https://www.joyville-homes.com/#navigation",
+                "name": "Main Navigation",
+                "itemListElement": [
+                  { "@type": "SiteNavigationElement", "position": 1, "name": "Premium Projects", "url": "https://www.joyville-homes.com/projects" },
+                  { "@type": "SiteNavigationElement", "position": 2, "name": "Localities", "url": "https://www.joyville-homes.com/location" },
+                  { "@type": "SiteNavigationElement", "position": 3, "name": "Homebuyer's Guide", "url": "https://www.joyville-homes.com/pune-real-estate-guide" },
+                  { "@type": "SiteNavigationElement", "position": 4, "name": "Comparison Matrix", "url": "https://www.joyville-homes.com/insights/joyville-vs-competitors" },
+                  { "@type": "SiteNavigationElement", "position": 5, "name": "Analytics & Insights", "url": "https://www.joyville-homes.com/insights" }
+                ]
+              }
+            ]
           })
         }} />
         <div className="min-h-screen flex flex-col relative text-foreground">

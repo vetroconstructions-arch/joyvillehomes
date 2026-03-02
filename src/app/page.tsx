@@ -8,6 +8,7 @@ import { ArrowRight, MapPin, PhoneCall, CheckCircle2, Building2, Trees, ShieldCh
 import ReviewWidget from "@/components/ReviewWidget";
 import BrochureButton from "@/components/BrochureButton";
 import GlobalFAQ from "@/components/GlobalFAQ";
+import TrustBanner from "@/components/TrustBanner";
 
 // --- Framer Motion Variants ---
 const fadeUp: Variants = {
@@ -30,16 +31,17 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "name": "Joyville Homes Pune | Shapoorji Pallonji Real Estate",
-    "image": "https://joyville-hinjewadi.example.com/hero-bg-dark.jpg",
-    "description": "Premium 2 BHK and 3 BHK luxury flats in Hinjewadi by Shapoorji Pallonji. Discover the legacy of Pune&apos;s most trusted real estate projects.",
-    "priceRange": "₹1.10 Cr - ₹1.45 Cr",
+    "image": "https://www.joyville-homes.com/images/desktop-poster.webp",
+    "description": "Discover premium 2 & 3 BHK luxury flats in Pune by Shapoorji Pallonji. Explore residential projects across Hinjewadi, Hadapsar, Bavdhan, and Shewalewadi. RERA approved homes with world-class amenities.",
+    "priceRange": "₹65 L - ₹1.45 Cr",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Hinjewadi",
+      "addressLocality": "Pune",
       "addressRegion": "Maharashtra",
+      "postalCode": "411057",
       "addressCountry": "IN"
     },
-    "url": "https://joyville-hinjewadi.example.com",
+    "url": "https://www.joyville-homes.com",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
@@ -121,7 +123,7 @@ export default function Home() {
               className="space-y-8"
             >
               <p className="text-lg md:text-xl text-[#323334] max-w-lg font-light tracking-wide leading-relaxed border-l-2 border-[#C5A059]/60 pl-6">
-                Discover the finest 2 & 3 BHK Flats in Hinjewadi. Elevate your lifestyle with sprawling green spaces, 60+ majestic amenities, and ultra-luxury residences by Shapoorji Pallonji Real Estate Pune.
+                Discover the finest 2 & 3 BHK Flats in Pune. Elevate your lifestyle with projects in Hinjewadi, Hadapsar, and Bavdhan, featuring sprawling green spaces, 60+ majestic amenities, and ultra-luxury residences by Shapoorji Pallonji Real Estate.
               </p>
 
               <div className="pt-4 flex items-center gap-8">
@@ -410,6 +412,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* --- Brand Trust & Legacy Section --- */}
+      <TrustBanner />
+
       {/* --- Global SEO FAQ Section --- */}
       <GlobalFAQ />
 
@@ -449,13 +454,13 @@ export default function Home() {
             </div>
 
             <div className="lg:col-start-4">
-              <h4 className="text-[#1D4F9C] font-semibold text-xs tracking-widest uppercase mb-6">Popular Searches</h4>
+              <h4 className="text-[#1D4F9C] font-semibold text-xs tracking-widest uppercase mb-6">High-Intent Intelligence</h4>
               <ul className="space-y-4">
-                <li><Link href="/insights" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">Market Insights Blog</Link></li>
-                <li><Link href="/properties/2-bhk-flats-in-hinjewadi" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">2 BHK Flats in Hinjewadi</Link></li>
-                <li><Link href="/properties/3-bhk-luxury-apartments-pune-west" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">3 BHK Luxury Pune West</Link></li>
-                <li><Link href="/properties/townships-near-magarpatta-city" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">Townships near Magarpatta</Link></li>
-                <li><Link href="/properties/na-bungalow-plots-near-purandar-airport" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">Plots near Purandar Airport</Link></li>
+                <li><Link href="/pune-real-estate-guide" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">Pune Homebuyer&apos;s Guide 2025</Link></li>
+                <li><Link href="/insights/joyville-vs-competitors" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">Joyville vs Competitors Analysis</Link></li>
+                <li><Link href="/flats-near-eon-it-park-kharadi" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">Flats near EON IT Park</Link></li>
+                <li><Link href="/2-bhk-flats-in-hinjewadi-pune" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">2 BHK Flats in Hinjewadi</Link></li>
+                <li><Link href="/property-near-sp-infocity-phursungi" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">Property near SP Infocity</Link></li>
               </ul>
             </div>
           </div>

@@ -73,7 +73,13 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             "@type": "AggregateOffer",
             "priceCurrency": "INR",
             "lowPrice": project.price.replace(/[^0-9.]/g, ''),
-            "offerCount": "100"
+            "offerCount": "100",
+            "priceRange": project.price
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "248"
         }
     };
 
@@ -174,7 +180,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     <section id="overview" className="scroll-mt-32">
                         <div className="flex items-center gap-3 mb-8">
                             <span className="w-8 h-[1px] bg-[#1D4F9C]"></span>
-                            <h2 className="text-3xl font-serif text-[#323334] font-light">{project.title} Overview</h2>
+                            <h2 className="text-3xl font-serif text-[#323334] font-light">{project.title} {project.location} Overview</h2>
                         </div>
                         <div className="space-y-6 text-[#1A1A1A] font-light text-lg leading-relaxed">
                             {project.overview.map((paragraph, idx) => (
@@ -198,7 +204,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     <section id="amenities" className="scroll-mt-32">
                         <div className="flex items-center gap-3 mb-8">
                             <span className="w-8 h-[1px] bg-[#1D4F9C]"></span>
-                            <h2 className="text-3xl font-serif text-[#323334] font-light">Amenities at {project.title}</h2>
+                            <h2 className="text-3xl font-serif text-[#323334] font-light">Majestic Amenities at {project.title}</h2>
                         </div>
                         <div className="grid sm:grid-cols-2 gap-10">
                             {project.amenities.map((category, idx) => (
@@ -222,7 +228,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     <section id="specifications" className="scroll-mt-32">
                         <div className="flex items-center gap-3 mb-8">
                             <span className="w-8 h-[1px] bg-[#1D4F9C]"></span>
-                            <h2 className="text-3xl font-serif text-[#323334] font-light">Luxury Specifications</h2>
+                            <h2 className="text-3xl font-serif text-[#323334] font-light">{project.title} Luxury Specifications</h2>
                         </div>
                         <div className="grid gap-6">
                             {project.specifications.map((spec, idx) => (
@@ -277,7 +283,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     <section id="gallery" className="scroll-mt-32">
                         <div className="flex items-center gap-3 mb-8">
                             <span className="w-8 h-[1px] bg-[#1D4F9C]"></span>
-                            <h2 className="text-3xl font-serif text-[#323334] font-light">Project Gallery</h2>
+                            <h2 className="text-3xl font-serif text-[#323334] font-light">Project Gallery — {project.title}</h2>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                             {project.gallery.map((img, idx) => (
@@ -295,7 +301,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     <section id="location" className="scroll-mt-32">
                         <div className="flex items-center gap-3 mb-8">
                             <span className="w-8 h-[1px] bg-[#1D4F9C]"></span>
-                            <h2 className="text-3xl font-serif text-[#323334] font-light">{project.location} Connectivity & Location</h2>
+                            <h2 className="text-3xl font-serif text-[#323334] font-light">{project.title} Connectivity & Strategic Location</h2>
                         </div>
                         <div className="grid md:grid-cols-2 gap-8 bg-[#EEF2F6]/40 border border-[#C5A059]/60 p-6 rounded-sm">
                             <div className="w-full h-full min-h-[300px] relative rounded-sm overflow-hidden border border-[#C5A059]/60 grayscale hover:grayscale-0 transition-all duration-700">
