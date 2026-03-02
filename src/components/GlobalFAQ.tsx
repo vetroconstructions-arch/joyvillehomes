@@ -6,11 +6,11 @@ import { ChevronDown, HelpCircle } from "lucide-react";
 const globalFaqs = [
     {
         question: "What are the top Shapoorji Pallonji Joyville projects in Pune?",
-        answer: "Our flagship projects include Joyville Sensorium and Celestia in Hinjewadi Phase 1, offering premium 2 & 3 BHK apartments. In East Pune, Joyville Hadapsar Annexe provides ready-to-move-in flats near Magarpatta City. For West Pune, Vanaha in Bavdhan offers an expansive 1000-acre township experience with golf course views."
+        answer: "Our flagship projects include Joyville Sensorium in Hinjewadi Phase 1, offering premium 2 & 3 BHK apartments. In East Pune, Joyville Hadapsar Annexe, Celestia, and the ultra-luxury Skyluxe Edition provide world-class residences near Magarpatta City and SP Infocity. For West Pune, Vanaha in Bavdhan offers an expansive 1000-acre township experience."
     },
     {
-        question: "Which Joyville projects offer 2 BHK and 3 BHK flats in Hinjewadi Phase 1?",
-        answer: "Joyville Sensorium, Celestia, and the ultra-luxury Skyluxe Edition offer spacious 2 BHK and 3 BHK flats in Hinjewadi Phase 1. These smart home apartments are ideally located near the Rajiv Gandhi Infotech Park, offering a pristine walk-to-work lifestyle."
+        question: "Which Joyville projects offer 2 BHK and 3 BHK flats in Hadapsar?",
+        answer: "Joyville Hadapsar Annexe, Celestia, and the ultra-luxury Skyluxe Edition offer spacious 2 BHK and 3 BHK flats in Hadapsar (Shewalewadi). These smart home apartments are ideally located near the SP Infocity and Magarpatta City, offering a pristine lifestyle in the East Pune growth corridor."
     },
     {
         question: "Are there any ready-to-move-in flats available in Joyville Hadapsar Annexe?",

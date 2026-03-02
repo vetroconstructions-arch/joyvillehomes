@@ -46,10 +46,10 @@ const SEO_ROUTES = [
     // NEW: Typology pages mirroring joyvillehomes.com structure
     {
         slug: '3-bhk-flats-in-hinjewadi',
-        title: '3 BHK Flats in Hinjewadi Phase 1 | Joyville Sensorium & Celestia',
-        description: 'Explore spacious 3 BHK apartments in Hinjewadi Phase 1 by Shapoorji Pallonji. Options from Joyville Sensorium (979 sq.ft.) and Celestia (950 sq.ft.). Smart home ready. RERA approved.',
+        title: '3 BHK Flats in Hinjewadi Phase 1 | Joyville Sensorium by Shapoorji Pallonji',
+        description: 'Explore spacious 3 BHK apartments in Hinjewadi Phase 1 at Joyville Sensorium (979 sq.ft.). Smart home ready, edge-certified green building. RERA approved.',
         h1: '3 BHK Flats in Hinjewadi Phase 1',
-        keywords: ['3 BHK flats in Hinjewadi', '3 BHK Hinjewadi Phase 1', '3 BHK apartments Hinjewadi', 'Joyville Sensorium 3 BHK', 'Joyville Celestia 3 BHK'],
+        keywords: ['3 BHK flats in Hinjewadi', '3 BHK Hinjewadi Phase 1', '3 BHK apartments Hinjewadi', 'Joyville Sensorium 3 BHK', 'flat near Infosys Hinjewadi'],
         filters: { locationMatch: 'Hinjewadi', typeMatch: '3' }
     },
     {
@@ -95,20 +95,20 @@ const SEO_ROUTES = [
         filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
     },
     {
-        slug: 'luxury-apartments-hinjewadi-phase-1',
-        title: 'Luxury Apartments in Hinjewadi Phase 1 — Skyluxe Edition by Shapoorji Pallonji',
-        description: 'Ultra-luxury 3 BHK apartments in Hinjewadi Phase 1. Italian marble, private terraces, concierge services, Turkish Hammam. Joyville Skyluxe Edition from ₹1.40 Cr. Pre-launch prices.',
-        h1: 'Ultra-Luxury Apartments in Hinjewadi Phase 1',
-        keywords: ['luxury apartments Hinjewadi Phase 1', 'ultra luxury flats Hinjewadi', 'Joyville Skyluxe', 'penthouse Hinjewadi', '3 BHK luxury Hinjewadi', 'premium flats near Mumbai Pune Expressway'],
-        filters: { locationMatch: 'Hinjewadi', typeMatch: 'Luxury|Ultra' }
+        slug: 'luxury-apartments-hadapsar-pune',
+        title: 'Luxury Apartments in Hadapsar Pune — Skyluxe Edition by Shapoorji Pallonji',
+        description: 'Ultra-luxury 3 BHK apartments in Hadapsar (Shewalewadi). Italian marble, private terraces, concierge services, Turkish Hammam. Joyville Skyluxe Edition from ₹1.40 Cr.',
+        h1: 'Ultra-Luxury Apartments in Hadapsar, Pune',
+        keywords: ['luxury apartments Hadapsar', 'ultra luxury flats Hadapsar', 'Joyville Skyluxe Hadapsar', 'penthouse Hadapsar', '3 BHK luxury Hadapsar', 'premium flats near SP Infocity'],
+        filters: { locationMatch: 'Hadapsar|Shewalewadi', typeMatch: 'Luxury|Ultra' }
     },
     {
-        slug: 'new-launch-projects-hinjewadi-2025',
-        title: 'New Launch Projects in Hinjewadi 2025 — Joyville Celestia | Shapoorji Pallonji',
-        description: 'Discover the newest residential launches in Hinjewadi for 2025. Joyville Celestia by Shapoorji Pallonji — Vastu compliant 2 & 3 BHK from ₹85 Lakhs. Pre-launch pricing available.',
-        h1: 'New Launch Projects in Hinjewadi — 2025',
-        keywords: ['new launch Hinjewadi 2025', 'new projects Hinjewadi', 'Joyville Celestia new launch', 'upcoming projects Hinjewadi Phase 1', 'pre launch flats Hinjewadi'],
-        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
+        slug: 'new-launch-projects-hadapsar-2025',
+        title: 'New Launch Projects in Hadapsar 2025 — Joyville Celestia | Shapoorji Pallonji',
+        description: 'Discover the newest residential launches in Hadapsar for 2025. Joyville Celestia by Shapoorji Pallonji — Vastu compliant 2 & 3 BHK from ₹85 Lakhs. Pre-launch pricing available.',
+        h1: 'New Launch Projects in Hadapsar — 2025',
+        keywords: ['new launch Hadapsar 2025', 'new projects Hadapsar', 'Joyville Celestia new launch', 'upcoming projects Shewalewadi', 'pre launch flats Hadapsar'],
+        filters: { locationMatch: 'Hadapsar|Shewalewadi', typeMatch: '' }
     }
 ];
 

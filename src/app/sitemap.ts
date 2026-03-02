@@ -17,8 +17,8 @@ const SEO_ROUTES = [
     'joyville-vs-kolte-patil-life-republic-hinjewadi',
     'joyville-vs-godrej-hinjewadi',
     // Luxury & new launch pages
-    'luxury-apartments-hinjewadi-phase-1',
-    'new-launch-projects-hinjewadi-2025'
+    'luxury-apartments-hadapsar-pune',
+    'new-launch-projects-hadapsar-2025'
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

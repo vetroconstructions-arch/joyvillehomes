@@ -47,7 +47,7 @@ export const projects: Project[] = [
         id: "p1",
         slug: "joyville-sensorium-hinjewadi",
         title: "Joyville Sensorium",
-        location: "Hinjewadi Phase 1, Pune",
+        location: "Off Maan Village Road, Hinjewadi Phase 1, Pune",
         price: "₹1.10 Cr - ₹1.45 Cr",
         type: "2 & 3 BHK Luxury Apartments",
         status: "Under Construction",
@@ -105,12 +105,12 @@ export const projects: Project[] = [
             "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/5.webp"
         ],
         locationDetails: {
-            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.980646012613!2d73.7330548151978!3d18.574676187376046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bbc6da6fcb2b%3A0xcdaaaadd11c2e47c!2sHinjawadi%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1622616213032!5m2!1sen!2sin",
+            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.980646012613!2d73.723826!3d18.559385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bbc6da6fcb2b%3A0xcdaaaadd11c2e47c!2sJoyville%20Sensorium!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
             landmarks: [
-                { name: "Rajiv Gandhi Infotech Park", distance: "2.5 km" },
-                { name: "Ruby Hall Clinic", distance: "3.2 km" },
-                { name: "Xion Mall", distance: "4.0 km" },
-                { name: "Mumbai-Bengaluru Highway", distance: "3.5 km" }
+                { name: "Infosys Circle Phase 1", distance: "1.5 km" },
+                { name: "Maan Road", distance: "0.5 km" },
+                { name: "Wipro Circle", distance: "3.0 km" },
+                { name: "Mumbai-Bangalore Highway", distance: "4.5 km" }
             ]
         },
         seoKeywords: [
@@ -163,7 +163,7 @@ export const projects: Project[] = [
         id: "p2",
         slug: "joyville-hadapsar-annexe-pune",
         title: "Joyville Hadapsar Annexe",
-        location: "Shewalewadi, Pune East",
+        location: "Shewalewadi, Hadapsar, Pune",
         price: "₹65 L - ₹95 L",
         type: "1, 2 & 3 BHK Premium Flats",
         status: "Ready to Move Options",
@@ -222,12 +222,12 @@ export const projects: Project[] = [
             "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/5.webp"
         ],
         locationDetails: {
-            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.33748259646!2d73.95752181519692!3d18.471905087437344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e9d2b291a271%3A0x6bba41a5d2cf5913!2sShewalewadi%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1622616281896!5m2!1sen!2sin",
+            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.33748259646!2d73.967471!3d18.494437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e9d2b291a271%3A0x6bba41a5d2cf5913!2sJoyville%20Hadapsar%20Annexe!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
             landmarks: [
-                { name: "Magarpatta IT Park", distance: "5.0 km" },
-                { name: "SP Infocity", distance: "4.5 km" },
-                { name: "Amanora Mall", distance: "5.5 km" },
-                { name: "Noble Hospital", distance: "6.0 km" }
+                { name: "SP Infocity", distance: "4.0 km" },
+                { name: "Magarpatta IT Park", distance: "6.0 km" },
+                { name: "Lexicon International School", distance: "3.2 km" },
+                { name: "Amanora Mall", distance: "5.5 km" }
             ]
         },
         seoKeywords: [
@@ -269,9 +269,9 @@ export const projects: Project[] = [
     },
     {
         id: "p3",
-        slug: "joyville-celestia-hinjewadi",
+        slug: "joyville-celestia-hadapsar",
         title: "Joyville Celestia",
-        location: "Hinjewadi, Pune",
+        location: "Shewalewadi, Off Pune-Solapur Highway, Pune",
         price: "₹85 L - ₹1.25 Cr",
         type: "2 & 3 BHK Apartments",
         status: "New Launch",
@@ -283,11 +283,11 @@ export const projects: Project[] = [
             "Advanced Security Systems",
             "Lush Landscaping"
         ],
-        description: "The newest landmark in Hinjewadi. Joyville Celestia redefines modern urban living with celestial designs, high-end finishing, and standard-setting Shapoorji Pallonji construction quality.",
+        description: "The newest landmark in East Pune. Joyville Celestia redefines modern urban living with celestial designs, high-end finishing, and standard-setting Shapoorji Pallonji construction quality in Hadapsar.",
         overview: [
-            "Joyville Celestia in Hinjewadi represents the pinnacle of Shapoorji Pallonji's new launch residential projects in Hinjewadi for 2025, offering an unparalleled blend of celestial-inspired architecture.",
-            "These premium 2 BHK and 3 BHK Vastu compliant homes in Hinjewadi dedicate 75% of the project to open realms, ensuring a harmonious living environment with positive energy flow.",
-            "Discover exclusive amenities rarely found in Flats in Hinjewadi Pune, including an aqua gym, brain gym for kids, and pet-friendly spaces, solidifying its status as the most sought-after premium apartments in Hinjewadi."
+            "Joyville Celestia in Hadapsar represents the pinnacle of Shapoorji Pallonji's new launch residential projects in East Pune for 2025, offering an unparalleled blend of celestial-inspired architecture.",
+            "These premium 2 BHK and 3 BHK Vastu compliant homes in Hadapsar dedicate 75% of the project to open realms, ensuring a harmonious living environment with positive energy flow near Magarpatta City.",
+            "Discover exclusive amenities rarely found in Flats in Hadapsar Pune, including an aqua gym, brain gym for kids, and pet-friendly spaces, solidifying its status as the most sought-after premium apartments in the Hadapsar growth corridor."
         ],
         amenities: [
             {
@@ -329,36 +329,36 @@ export const projects: Project[] = [
             "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/3.webp"
         ],
         locationDetails: {
-            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.980646012613!2d73.7330548151978!3d18.574676187376046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bbc6da6fcb2b%3A0xcdaaaadd11c2e47c!2sHinjawadi%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1622616213032!5m2!1sen!2sin",
+            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.33748259646!2d73.967471!3d18.494437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e9d2b291a271%3A0x6bba41a5d2cf5913!2sJoyville%20Hadapsar%20Annexe!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
             landmarks: [
-                { name: "Wipro Technologies", distance: "2.0 km" },
-                { name: "Infosys Phase 1", distance: "2.5 km" },
-                { name: "Symbiosis Institute", distance: "4.2 km" },
-                { name: "Blue Ridge Public School", distance: "3.8 km" }
+                { name: "SP Infocity", distance: "2.5 km" },
+                { name: "Magarpatta City", distance: "4.5 km" },
+                { name: "Lexicon International School", distance: "3.2 km" },
+                { name: "Noble Hospital", distance: "5.0 km" }
             ]
         },
         seoKeywords: [
             "Joyville Celestia Pune",
-            "Joyville Celestia Hinjewadi",
+            "Joyville Celestia Hadapsar",
             "Joyville Celestia price",
             "Joyville Celestia floor plan",
-            "Shapoorji Pallonji Hinjewadi",
-            "new launch Hinjewadi 2025",
-            "flats in Hinjewadi Pune",
-            "2 BHK Hinjewadi",
-            "3 BHK Hinjewadi",
-            "Vastu compliant homes Hinjewadi",
-            "Hinjewadi property rates 2025",
-            "premium apartments Hinjewadi",
-            "under construction projects Hinjewadi",
+            "Shapoorji Pallonji Hadapsar",
+            "new launch Hadapsar 2025",
+            "flats in Hadapsar Pune",
+            "2 BHK Hadapsar",
+            "3 BHK Hadapsar",
+            "Vastu compliant homes Hadapsar",
+            "Hadapsar property rates 2025",
+            "premium apartments Hadapsar",
+            "under construction projects Hadapsar",
             "aqua gym apartments Pune",
-            "pet friendly apartments Hinjewadi",
+            "pet friendly apartments Hadapsar",
             "brain gym kids Pune"
         ],
         faqs: [
             {
-                question: "What is the starting price for Joyville Celestia in Hinjewadi?",
-                answer: "Joyville Celestia offers premium 2 BHK and 3 BHK Vastu-compliant apartments in Hinjewadi starting from ₹85 Lakhs onwards, with 3 BHK configurations going up to ₹1.25 Cr."
+                question: "What is the starting price for Joyville Celestia in Hadapsar?",
+                answer: "Joyville Celestia offers premium 2 BHK and 3 BHK Vastu-compliant apartments in Hadapsar starting from ₹85 Lakhs onwards, with 3 BHK configurations going up to ₹1.25 Cr."
             },
             {
                 question: "Is Joyville Celestia Vastu compliant?",
@@ -372,9 +372,9 @@ export const projects: Project[] = [
     },
     {
         id: "p4",
-        slug: "joyville-skyluxe-hinjewadi",
+        slug: "joyville-skyluxe-hadapsar",
         title: "Joyville Skyluxe Edition",
-        location: "Hinjewadi Phase 1, Pune",
+        location: "Shewalewadi, Off Pune-Solapur Highway, Pune",
         price: "₹1.40 Cr Onwards",
         type: "3 BHK Ultra-Luxury",
         status: "Pre-Launch",
@@ -386,11 +386,11 @@ export const projects: Project[] = [
             "Italian Marble Flooring",
             "Unobstructed Skyline Views"
         ],
-        description: "Limited edition residences for the discerning few. The Skyluxe Edition at Joyville Hinjewadi offers an incredibly rare combination of vast spaces, elite privacy, and panoramic views of Pune.",
+        description: "Limited edition residences for the discerning few. The Skyluxe Edition at Joyville Hadapsar offers an incredibly rare combination of vast spaces, elite privacy, and panoramic views of East Pune.",
         overview: [
-            "The Joyville Skyluxe Edition introduces ultra luxury apartments in Hinjewadi Phase 1, offering exclusive low-density high-rise living for the discerning elite.",
-            "Every 3 BHK luxury flat and penthouse in Hinjewadi Pune guarantees unobstructed panoramic views of the skyline, complemented by Italian marble flooring and private terrace options.",
-            "These sky luxe apartments feature bespoke architectural elements and 24/7 concierge services, setting a new benchmark for Shapoorji Pallonji luxury homes near the Mumbai Pune Expressway."
+            "The Joyville Skyluxe Edition introduces ultra luxury apartments in Hadapsar Pune, offering exclusive low-density high-rise living for the discerning elite near Magarpatta City.",
+            "Every 3 BHK luxury flat and penthouse in Hadapsar guarantees unobstructed panoramic views of the skyline, complemented by Italian marble flooring and private terrace options.",
+            "These sky luxe apartments feature bespoke architectural elements and 24/7 concierge services, setting a new benchmark for Shapoorji Pallonji luxury homes near the Pune-Solapur Highway."
         ],
         amenities: [
             {
@@ -431,35 +431,35 @@ export const projects: Project[] = [
             "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/5.webp"
         ],
         locationDetails: {
-            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.980646012613!2d73.7330548151978!3d18.574676187376046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bbc6da6fcb2b%3A0xcdaaaadd11c2e47c!2sHinjawadi%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1622616213032!5m2!1sen!2sin",
+            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.33748259646!2d73.967471!3d18.494437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e9d2b291a271%3A0x6bba41a5d2cf5913!2sJoyville%20Hadapsar%20Annexe!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
             landmarks: [
-                { name: "Hinjewadi Heliport", distance: "1.5 km" },
-                { name: "Taj Vivanta", distance: "2.8 km" },
-                { name: "Pune-Mumbai Expressway", distance: "4.5 km" },
-                { name: "Aditya Birla Hospital", distance: "6.0 km" }
+                { name: "SP Infocity", distance: "2.5 km" },
+                { name: "Magarpatta City", distance: "4.5 km" },
+                { name: "Lexicon International School", distance: "3.2 km" },
+                { name: "Amanora Mall", distance: "5.0 km" }
             ]
         },
         seoKeywords: [
             "Joyville Skyluxe Edition",
-            "Joyville Skyluxe Hinjewadi",
+            "Joyville Skyluxe Hadapsar",
             "Joyville Skyluxe price",
-            "ultra luxury apartments Hinjewadi Phase 1",
-            "3 BHK luxury flats Hinjewadi",
-            "penthouse Hinjewadi Pune",
+            "ultra luxury apartments Hadapsar",
+            "3 BHK luxury flats Hadapsar",
+            "penthouse Hadapsar Pune",
             "sky luxe apartments Pune",
-            "Hinjewadi luxury real estate",
+            "Hadapsar luxury real estate",
             "private terrace apartments Pune",
             "concierge services apartments Pune",
             "Italian marble flooring flats Pune",
-            "premium flats near Mumbai Pune Expressway",
+            "premium flats near Pune Solapur Highway",
             "Shapoorji Pallonji luxury homes",
-            "high rise apartments Hinjewadi panoramic view",
-            "pre launch luxury projects Hinjewadi 2025"
+            "high rise apartments Hadapsar panoramic view",
+            "pre launch luxury projects Hadapsar 2025"
         ],
         faqs: [
             {
-                question: "What makes Joyville Skyluxe Edition different from other Hinjewadi projects?",
-                answer: "Skyluxe Edition is the ultra-luxury pinnacle of the Joyville portfolio. It features imported Italian marble flooring, private terrace options, concierge services, Turkish Hammam spa, and panoramic views — amenities typically found in 5-star hotels, not residential projects."
+                question: "What makes Joyville Skyluxe Edition different from other Hadapsar projects?",
+                answer: "Skyluxe Edition is the ultra-luxury pinnacle of the Joyville portfolio in Hadapsar. It features imported Italian marble flooring, private terrace options, concierge services, Turkish Hammam spa, and panoramic views — amenities typically found in 5-star hotels, not residential projects."
             },
             {
                 question: "What is the starting price for Joyville Skyluxe Edition?",
@@ -475,12 +475,12 @@ export const projects: Project[] = [
         id: "p5",
         slug: "wildernest-sp-kingstown-pune",
         title: "Wildernest at SP Kingstown",
-        location: "Pune",
+        location: "SP Kingstown, Shewalewadi Road, Pune",
         price: "Price on Request",
         type: "Residential Apartments",
         status: "Ongoing",
         reraNumber: ["P52100052683", "P52100053177", "P52100053966", "P52100054077"],
-        image: "https://www.shapoorjiipallonji.com/assets/Desktop/Projects/640x640/sp-kingstown.jpg",
+        image: "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/sp-kingstown.jpg",
         highlights: [
             "Part of SP Kingstown",
             "Lush Green Surroundings",
@@ -521,11 +521,12 @@ export const projects: Project[] = [
             "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/sp-kingstown.jpg"
         ],
         locationDetails: {
-            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.530664989065!2d73.8118063!3d18.5680199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDM0JzA0LjkiTiA3M8KwNDgnNDIuNSJF!5e0!3m2!1sen!2sin!4v1622616213032!5m2!1sen!2sin",
+            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.33748259646!2d73.971248!3d18.502989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1df15d55555%3A0x5555555555555555!2sSP%20Kingstown!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
             landmarks: [
-                { name: "Prominent Schools", distance: "2 km" },
-                { name: "Hospitals", distance: "3 km" },
-                { name: "Shopping Centers", distance: "4 km" }
+                { name: "Manjri Stud Farm", distance: "Nearby" },
+                { name: "SP Infocity", distance: "4.0 km" },
+                { name: "Lexicon International School", distance: "3.2 km" },
+                { name: "Pune-Solapur Highway", distance: "0.5 km" }
             ]
         },
         seoKeywords: [
@@ -541,7 +542,7 @@ export const projects: Project[] = [
         id: "p6",
         slug: "vanaha-golfland-pune",
         title: "Vanaha Golfland",
-        location: "Bavdhan, Pune",
+        location: "Bavdhan, Pune (Near Oxford Golf Resort)",
         price: "Price on Request",
         type: "Luxury Residences",
         status: "Ongoing",
@@ -587,11 +588,12 @@ export const projects: Project[] = [
             "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha-golfland.jpg"
         ],
         locationDetails: {
-            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.530664989065!2d73.8118063!3d18.5680199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDM0JzA0LjkiTiA3M8KwNDgnNDIuNSJF!5e0!3m2!1sen!2sin!4v1622616213032!5m2!1sen!2sin",
+            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.530664989065!2d73.782777!3d18.535277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf383063510f%3A0xc3cf7b25752a229!2sOxford%20Golf%20Resort!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
             landmarks: [
-                { name: "Mumbai-Bengaluru Highway", distance: "2.5 km" },
-                { name: "Hinjewadi IT Park", distance: "12 km" },
-                { name: "Kothrud", distance: "6 km" }
+                { name: "FLAME University", distance: "Nearby" },
+                { name: "Ryan International School", distance: "Nearby" },
+                { name: "Chandni Chowk", distance: "4.0 km" },
+                { name: "Sahyadri Hospital", distance: "6.0 km" }
             ]
         },
         seoKeywords: [
@@ -626,7 +628,7 @@ export const projects: Project[] = [
         id: "p7",
         slug: "vanaha-springs-pune",
         title: "Vanaha Springs",
-        location: "Bavdhan, Pune",
+        location: "Bavdhan, Pune (Near Oxford Golf Resort)",
         price: "Price on Request",
         type: "Premium Residences",
         status: "Available",
@@ -668,10 +670,12 @@ export const projects: Project[] = [
             "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha_spring.jpg"
         ],
         locationDetails: {
-            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.530664989065!2d73.8118063!3d18.5680199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDM0JzA0LjkiTiA3M8KwNDgnNDIuNSJF!5e0!3m2!1sen!2sin!4v1622616213032!5m2!1sen!2sin",
+            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.530664989065!2d73.782777!3d18.535277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf383063510f%3A0xc3cf7b25752a229!2sOxford%20Golf%20Resort!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
             landmarks: [
-                { name: "Chandni Chowk", distance: "4 km" },
-                { name: "Pune Railway Station", distance: "16 km" }
+                { name: "Oxford Golf Course", distance: "Nearby" },
+                { name: "Chandni Chowk", distance: "4.0 km" },
+                { name: "Sahyadri Hospital", distance: "6.0 km" },
+                { name: "Kothrud", distance: "6.0 km" }
             ]
         },
         seoKeywords: [
@@ -704,7 +708,7 @@ export const projects: Project[] = [
         id: "p8",
         slug: "vanaha-pune",
         title: "Vanaha",
-        location: "Bavdhan, Pune",
+        location: "Bavdhan, Pune (Near Oxford Golf Resort)",
         price: "Price on Request",
         type: "Residential Township",
         status: "Available",
@@ -746,10 +750,12 @@ export const projects: Project[] = [
             "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha-pune.jpg"
         ],
         locationDetails: {
-            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.530664989065!2d73.8118063!3d18.5680199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDM0JzA0LjkiTiA3M8KwNDgnNDIuNSJF!5e0!3m2!1sen!2sin!4v1622616213032!5m2!1sen!2sin",
+            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.530664989065!2d73.782777!3d18.535277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf383063510f%3A0xc3cf7b25752a229!2sOxford%20Golf%20Resort!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
             landmarks: [
-                { name: "Oxford Golf Resort", distance: "2 km" },
-                { name: "Symbiosis International University", distance: "8 km" }
+                { name: "Oxford Golf Resort", distance: "Nearby" },
+                { name: "Symbiosis International University", distance: "8.0 km" },
+                { name: "Chandni Chowk", distance: "4.0 km" },
+                { name: "Mumbai-Pune Expressway", distance: "Nearby" }
             ]
         },
         seoKeywords: [
@@ -782,7 +788,7 @@ export const projects: Project[] = [
         id: "p9",
         slug: "shapoorji-treetopia-pune",
         title: "Shapoorji Pallonji Treetopia",
-        location: "Jadhavwadi, Pune Growth Corridor",
+        location: "Jadhavwadi, Purandhar, Pune Growth Corridor",
         price: "Starting ₹84 Lakhs",
         type: "NA Bungalow Plots",
         status: "Under Construction",
@@ -825,10 +831,11 @@ export const projects: Project[] = [
             "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/3.webp"
         ],
         locationDetails: {
-            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.530664989065!2d73.8118063!3d18.5680199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDM0JzA0LjkiTiA3M8KwNDgnNDIuNSJF!5e0!3m2!1sen!2sin!4v1622616213032!5m2!1sen!2sin",
+            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.530664989065!2d74.533145!3d18.447577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e9d2b291a271%3A0x6bba41a5d2cf5913!2sJadhavwadi!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
             landmarks: [
-                { name: "Proposed Purandar Airport", distance: "10 mins" },
+                { name: "Proposed Purandar Airport", distance: "20 mins" },
                 { name: "Saswad Town", distance: "10 mins" },
+                { name: "Hadapsar", distance: "25 mins" },
                 { name: "Pune Ring Road", distance: "Nearby" }
             ]
         },
