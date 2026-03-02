@@ -37,6 +37,11 @@ export interface Project {
     masterLayout: string;
     gallery: string[];
     locationDetails: LocationDetail;
+    infrastructureScores: {
+        metro: number; // 0-10
+        ringRoad: number; // 0-10
+        itHub: number; // 0-10
+    };
     seoKeywords: string[];
     faqs?: { question: string; answer: string }[];
     reraNumber: string | string[];
@@ -112,6 +117,11 @@ export const projects: Project[] = [
                 { name: "Wipro Circle", distance: "3.0 km" },
                 { name: "Mumbai-Bangalore Highway", distance: "4.5 km" }
             ]
+        },
+        infrastructureScores: {
+            metro: 9.2,
+            ringRoad: 8.5,
+            itHub: 9.8
         },
         seoKeywords: [
             "Joyville Sensorium Hinjewadi",
@@ -230,6 +240,11 @@ export const projects: Project[] = [
                 { name: "Amanora Mall", distance: "5.5 km" }
             ]
         },
+        infrastructureScores: {
+            metro: 7.5,
+            ringRoad: 9.5,
+            itHub: 8.8
+        },
         seoKeywords: [
             "Joyville Hadapsar Annexe",
             "Joyville Hadapsar Annexe price",
@@ -337,6 +352,11 @@ export const projects: Project[] = [
                 { name: "Noble Hospital", distance: "5.0 km" }
             ]
         },
+        infrastructureScores: {
+            metro: 8.0,
+            ringRoad: 9.2,
+            itHub: 8.5
+        },
         seoKeywords: [
             "Joyville Celestia Pune",
             "Joyville Celestia Hadapsar",
@@ -439,6 +459,11 @@ export const projects: Project[] = [
                 { name: "Amanora Mall", distance: "5.0 km" }
             ]
         },
+        infrastructureScores: {
+            metro: 8.5,
+            ringRoad: 9.3,
+            itHub: 8.2
+        },
         seoKeywords: [
             "Joyville Skyluxe Edition",
             "Joyville Skyluxe Hadapsar",
@@ -529,6 +554,11 @@ export const projects: Project[] = [
                 { name: "Pune-Solapur Highway", distance: "0.5 km" }
             ]
         },
+        infrastructureScores: {
+            metro: 6.5,
+            ringRoad: 9.8,
+            itHub: 8.5
+        },
         seoKeywords: [
             "Wildernest at SP Kingstown",
             "SP Kingstown Pune luxury flats",
@@ -605,6 +635,11 @@ export const projects: Project[] = [
                 { name: "Sahyadri Hospital", distance: "6.0 km" }
             ]
         },
+        infrastructureScores: {
+            metro: 7.2,
+            ringRoad: 8.8,
+            itHub: 9.0
+        },
         faqs: [
             {
                 question: "Does Vanaha Golfland offer actual golf course views?",
@@ -669,6 +704,11 @@ export const projects: Project[] = [
                 { name: "Sahyadri Hospital", distance: "6.0 km" },
                 { name: "Kothrud", distance: "6.0 km" }
             ]
+        },
+        infrastructureScores: {
+            metro: 7.0,
+            ringRoad: 8.5,
+            itHub: 8.8
         },
         seoKeywords: [
             "Vanaha Springs Bavdhan",
@@ -750,6 +790,11 @@ export const projects: Project[] = [
                 { name: "Mumbai-Pune Expressway", distance: "Nearby" }
             ]
         },
+        infrastructureScores: {
+            metro: 7.2,
+            ringRoad: 8.8,
+            itHub: 9.0
+        },
         seoKeywords: [
             "Vanaha Pune by Shapoorji",
             "Vanaha Bavdhan",
@@ -830,6 +875,11 @@ export const projects: Project[] = [
                 { name: "Hadapsar", distance: "25 mins" },
                 { name: "Pune Ring Road", distance: "Nearby" }
             ]
+        },
+        infrastructureScores: {
+            metro: 5.0,
+            ringRoad: 10.0,
+            itHub: 6.5
         },
         seoKeywords: [
             "Shapoorji Pallonji Treetopia Purandar",

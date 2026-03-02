@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BookOpen, Map, Calculator, ShieldCheck, TrendingUp, Info } from 'lucide-react';
 import BrochureButton from '@/components/BrochureButton';
+import ROICalculator from '@/components/ROICalculator';
 
 export const metadata: Metadata = {
     title: "Pune Real Estate Guide 2025 | Investment Analysis & Homebuyer Tips",
@@ -111,6 +112,15 @@ export default function HomebuyersGuide() {
                         </div>
                     ))}
                 </div>
+
+                {/* --- Interactive ROI Calculator --- */}
+                <section className="mb-32">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-5xl font-serif mb-4 italic">Predict Your <span className="text-accent">Wealth Growth</span></h2>
+                        <p className="text-muted-foreground font-light max-w-2xl mx-auto">Use our proprietary ROI engine to calculate projected appreciation and rental yields across Pune&apos;s primary growth corridors.</p>
+                    </div>
+                    <ROICalculator />
+                </section>
 
                 {/* Investment Deep Dive Section */}
                 <section className="bg-foreground text-white p-16 rounded-sm mb-32 relative overflow-hidden">

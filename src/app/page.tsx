@@ -9,6 +9,7 @@ import ReviewWidget from "@/components/ReviewWidget";
 import BrochureButton from "@/components/BrochureButton";
 import GlobalFAQ from "@/components/GlobalFAQ";
 import TrustBanner from "@/components/TrustBanner";
+import MarketTicker from "@/components/MarketTicker";
 
 // --- Framer Motion Variants ---
 const fadeUp: Variants = {
@@ -414,6 +415,7 @@ export default function Home() {
 
       {/* --- Brand Trust & Legacy Section --- */}
       <TrustBanner />
+      <MarketTicker />
 
       {/* --- Global SEO FAQ Section --- */}
       <GlobalFAQ />

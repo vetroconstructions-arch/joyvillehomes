@@ -9,6 +9,7 @@ import BrochureButton from '@/components/BrochureButton';
 import EMICalculator from '@/components/EMICalculator';
 import ProjectClientWrapper from '@/components/ProjectClientWrapper';
 import StickyProjectTabs from '@/components/StickyProjectTabs';
+import ProximityIndex from '@/components/ProximityIndex';
 
 // Pre-render all project routes at build time
 export async function generateStaticParams() {
@@ -337,8 +338,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 </div>
 
                 {/* Right Column: Sticky Quick Action Widget */}
-                <div className="hidden lg:block lg:col-span-4">
-                    <div className="bg-[#EEF2F6]/80 backdrop-blur-xl border border-[#C5A059]/60 p-10 sticky top-40 rounded-sm shadow-2xl">
+                <div className="hidden lg:block lg:col-span-4 space-y-8 sticky top-40 h-fit">
+                    <ProximityIndex scores={project.infrastructureScores} projectName={project.title} />
+
+                    <div className="bg-[#EEF2F6]/80 backdrop-blur-xl border border-[#C5A059]/60 p-10 rounded-sm shadow-2xl">
                         <h3 className="text-xl font-serif text-[#323334] font-light mb-8 flex items-center gap-3">
                             <Key className="text-[#1D4F9C]" size={20} /> Property Snapshot
                         </h3>
