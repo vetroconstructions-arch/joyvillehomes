@@ -19,6 +19,7 @@ interface LocalityData {
     yoyAppreciation: string;
     latitude: number;
     longitude: number;
+    faqs: { q: string; a: string }[];
 }
 
 const siteUrl = 'https://www.joyville-homes.com';
@@ -55,7 +56,14 @@ const localities: LocalityData[] = [
         avgPricePerSqFt: "₹12,250",
         yoyAppreciation: "8.5%",
         latitude: 18.5913,
-        longitude: 73.7389
+        longitude: 73.7389,
+        faqs: [
+            { q: 'What is the average property rate in Hinjewadi Phase 1 in 2026?', a: 'The average property rate in Hinjewadi Phase 1 is approximately \u20b912,250 per sq.ft. as of 2026, with premium projects commanding higher rates.' },
+            { q: 'Is Hinjewadi a good area for real estate investment?', a: 'Yes, Hinjewadi is one of Pune\'s best investment corridors with 8.5% YoY appreciation, 4.5-5.5% rental yield, and upcoming Metro Line 3.' },
+            { q: 'Which IT companies are near Joyville Hinjewadi?', a: 'Infosys, Wipro, TCS, Cognizant, Persistent Systems, and 200+ MNCs in the Rajiv Gandhi Infotech Park.' },
+            { q: 'How will Pune Metro Line 3 impact Hinjewadi prices?', a: 'Properties within 1.5-2 km of Metro stations typically see a 15-22% valuation spike. Joyville projects are positioned to benefit.' },
+            { q: 'What flats are available in Hinjewadi?', a: '2 BHK from \u20b985 Lakhs and 3 BHK from \u20b91.10 Cr with smart home and EDGE green certification.' },
+        ]
     },
     {
         id: "l2",
@@ -88,7 +96,13 @@ const localities: LocalityData[] = [
         avgPricePerSqFt: "₹11,800",
         yoyAppreciation: "13.18%",
         latitude: 18.5170,
-        longitude: 73.7785
+        longitude: 73.7785,
+        faqs: [
+            { q: 'Why is Bavdhan considered a premium market?', a: 'Hill views, NDA hills, Pashan Lake, and Shapoorji Pallonji\'s 1,000-acre Vanaha township make it Pune\'s largest integrated community.' },
+            { q: 'What is the price range in Bavdhan?', a: 'Apartments range from \u20b995 Lakhs to \u20b91.85 Cr with golf course and valley views at Vanaha.' },
+            { q: 'How is Bavdhan connectivity?', a: 'New Chandni Chowk interchange, Mumbai-Pune Expressway access, and proximity to Kothrud and Hinjewadi.' },
+            { q: 'What is Bavdhan appreciation rate?', a: '13.18% YoY — the highest among Pune\'s established micro-markets. Limited land drives scarcity pricing.' },
+        ]
     },
     {
         id: "l3",
@@ -121,7 +135,13 @@ const localities: LocalityData[] = [
         avgPricePerSqFt: "₹8,900",
         yoyAppreciation: "8.5%",
         latitude: 18.5089,
-        longitude: 73.9260
+        longitude: 73.9260,
+        faqs: [
+            { q: 'What makes Hadapsar attractive for homebuyers?', a: '25% price advantage over Kharadi with proximity to Magarpatta City, SP Infocity, and Amanora Mall.' },
+            { q: 'Are there affordable flats in Hadapsar?', a: 'Yes, Joyville Hadapsar Annexe offers 1 BHK from \u20b965 Lakhs — the most affordable RERA option in an IT corridor.' },
+            { q: 'What is the rental demand in Hadapsar?', a: 'Consistently high occupancy driven by IT professionals at SP Infocity and Magarpatta City.' },
+            { q: 'How many Shapoorji projects are in Hadapsar?', a: '5 projects in the Hadapsar-Shewalewadi corridor across 40+ acres.' },
+        ]
     },
     {
         id: "l4",
@@ -153,7 +173,12 @@ const localities: LocalityData[] = [
         avgPricePerSqFt: "₹8,500",
         yoyAppreciation: "10.2%",
         latitude: 18.4944,
-        longitude: 73.9675
+        longitude: 73.9675,
+        faqs: [
+            { q: 'Where is Shewalewadi?', a: 'Off the Pune-Solapur Highway, 4.5 km from Magarpatta City and 2.5 km from SP Infocity Phursungi.' },
+            { q: 'Why are Shewalewadi prices lower than Hadapsar?', a: '15-25% price advantage as an emerging corridor, with rapid appreciation closing the gap.' },
+            { q: 'What is Shewalewadi investment potential?', a: '40%+ returns over 3 years with 10.2% YoY appreciation driven by developer premium zone.' },
+        ]
     },
     {
         id: "l5",
@@ -184,7 +209,12 @@ const localities: LocalityData[] = [
         avgPricePerSqFt: "₹4,500 (per sq.ft. land)",
         yoyAppreciation: "15.5%",
         latitude: 18.2860,
-        longitude: 74.2140
+        longitude: 74.2140,
+        faqs: [
+            { q: 'When will Purandar Airport be operational?', a: 'Currently in planning phase. Operations estimated in 5-7 years, making this a land banking opportunity.' },
+            { q: 'What plots are available near Purandar?', a: 'Shapoorji Treetopia offers NA bungalow plots from \u20b984 Lakhs in a gated community with biophilic landscapes.' },
+            { q: 'Is investing near Purandar risky?', a: 'Pre-airport investments near Navi Mumbai and Bengaluru airports delivered 5-10x returns. Shapoorji brand reduces developer risk.' },
+        ]
     }
 ];
 
@@ -271,9 +301,23 @@ export default async function LocalityPage({ params }: { params: Promise<{ micro
         ]
     };
 
+    const faqJsonLd = locality.faqs && locality.faqs.length > 0 ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": locality.faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.a
+            }
+        }))
+    } : null;
+
     return (
         <div className="min-h-screen bg-[#F4F6F9] pt-32 pb-24 text-[#323334]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+            {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
             <header className="max-w-7xl mx-auto px-6 mb-16">
@@ -364,6 +408,26 @@ export default async function LocalityPage({ params }: { params: Promise<{ micro
                     )
                 }
             </section >
+
+            {/* FAQ Section */}
+            {locality.faqs && locality.faqs.length > 0 && (
+                <section className="max-w-5xl mx-auto px-6 mt-20">
+                    <h2 className="text-3xl font-serif text-[#1A1A1A] mb-8">Frequently Asked Questions About {locality.name}</h2>
+                    <div className="space-y-4">
+                        {locality.faqs.map((faq, idx) => (
+                            <details key={idx} className="bg-[#FFFFFF] border border-[#C5A059]/20 rounded-sm group shadow-md">
+                                <summary className="px-6 py-5 cursor-pointer text-[#323334] font-medium text-sm hover:text-[#1D4F9C] transition-colors list-none flex justify-between items-center">
+                                    {faq.q}
+                                    <span className="text-[#1D4F9C] text-lg group-open:rotate-45 transition-transform">+</span>
+                                </summary>
+                                <div className="px-6 pb-5 text-[#323334] font-light text-sm leading-relaxed border-t border-[#C5A059]/10 pt-4">
+                                    {faq.a}
+                                </div>
+                            </details>
+                        ))}
+                    </div>
+                </section>
+            )}
         </div >
     );
 }

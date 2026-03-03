@@ -206,6 +206,46 @@ export async function generateMetadata({ params }: { params: Promise<{ seoSlug: 
     };
 }
 
+// FAQ data for programmatic pages — enables Google rich snippets
+const PAGE_FAQS: Record<string, { q: string; a: string }[]> = {
+    'hinjewadi': [
+        { q: 'What is the starting price of flats in Hinjewadi Phase 1?', a: 'Premium 2 BHK flats in Hinjewadi Phase 1 by Shapoorji Pallonji start from ₹1.10 Cr. 3 BHK options are available from ₹1.30 Cr at Joyville Sensorium.' },
+        { q: 'Are Joyville Hinjewadi projects RERA approved?', a: 'Yes, all Joyville projects in Hinjewadi are MahaRERA registered. Joyville Sensorium RERA: P52100053806.' },
+        { q: 'How far are Joyville Hinjewadi projects from IT parks?', a: 'Joyville Sensorium is located in Hinjewadi Phase 1, just 2-5 minutes from Infosys, Wipro, TCS, and Cognizant campuses — offering true walk-to-work convenience.' },
+        { q: 'What is the expected rental yield in Hinjewadi?', a: 'Premium apartments in Hinjewadi Phase 1 command 4.5-5.5% rental yield, significantly higher than the Mumbai average of 2.5-3%.' },
+    ],
+    'hadapsar': [
+        { q: 'What is the price range for flats in Hadapsar?', a: 'Joyville Hadapsar Annexe offers 1 BHK from ₹65 Lakhs, 2 BHK from ₹80 Lakhs. Luxury 3 BHK at Skyluxe Edition starts from ₹1.40 Cr.' },
+        { q: 'Are there ready-to-move-in flats in Hadapsar?', a: 'Yes, Joyville Hadapsar Annexe has ready-to-move-in options with immediate possession. OC received for select towers.' },
+        { q: 'How close are Joyville Hadapsar projects to Magarpatta City?', a: 'Joyville Hadapsar Annexe is approximately 4.5 km from Magarpatta City and 2.5 km from SP Infocity Phursungi.' },
+        { q: 'What amenities does Joyville Hadapsar offer?', a: 'Joyville Hadapsar Annexe spans 21 acres with 60+ amenities including a 35,000 sq.ft. clubhouse, infinity pool, co-working spaces, jogging track, and 4 mini club facilities.' },
+    ],
+    'bavdhan': [
+        { q: 'What makes Bavdhan special for real estate investment?', a: 'Bavdhan offers hill views, proximity to NDA hills, Pashan Lake, and the Mumbai-Pune Expressway. Shapoorji Pallonji\'s 1,000-acre Vanaha township makes it Pune\'s largest integrated community.' },
+        { q: 'What is Vanaha Golfland?', a: 'Vanaha Golfland is a premium residential project by Shapoorji Pallonji in Bavdhan offering golf course views, hill vistas, and world-class clubhouse amenities within the 1,000-acre Vanaha township.' },
+        { q: 'What is the price appreciation in Bavdhan?', a: 'Bavdhan has recorded 13.18% year-on-year appreciation, making it the fastest-growing luxury micro-market in Pune. Limited land availability is driving scarcity-led price growth.' },
+    ],
+    'vs': [
+        { q: 'Why choose Joyville over competitors in Pune?', a: 'Joyville by Shapoorji Pallonji offers a 150-year developer legacy, EDGE-certified green buildings, 60+ world-class amenities, and construction quality that built the Indian Parliament — advantages no competitor can match.' },
+        { q: 'Is Joyville Sensorium better than other Hinjewadi projects?', a: 'Joyville Sensorium stands out with its 10.5-acre scale, 1.8km walking boulevard, EDGE certification, smart home integration, and 75% open space — metrics that exceed most competitors in Hinjewadi Phase 1.' },
+        { q: 'What ROI can I expect from Joyville projects?', a: 'Joyville Hinjewadi projects offer 4.5-5.5% rental yield with 8-12% annual capital appreciation. Hadapsar projects offer 3.5-4.5% yield with steady 8.5% appreciation.' },
+    ],
+    'general': [
+        { q: 'Who is the developer of Joyville Homes?', a: 'Joyville Homes is developed by Shapoorji Pallonji Real Estate, a group with 150+ years of legacy since 1865. The group has built iconic structures including the Indian Parliament and the Oberoi Hotel.' },
+        { q: 'Are all Joyville projects MahaRERA registered?', a: 'Yes, every Joyville and Vanaha project by Shapoorji Pallonji is fully MahaRERA registered. RERA numbers are displayed on each project page for verification.' },
+        { q: 'How do I book a site visit for Joyville projects?', a: 'You can request a complimentary site visit by filling the enquiry form on any project page, or by contacting our sales team. Cab pickup from Pune station/airport is available for outstation buyers.' },
+        { q: 'Is Joyville a good investment for NRIs?', a: 'Yes, Joyville projects offer excellent NRI investment value with 4.5-5.5% rental yields, RERA protection, Shapoorji Pallonji brand trust, and rupee depreciation advantage for foreign currency investors.' },
+    ]
+};
+
+function getFaqsForRoute(slug: string): { q: string; a: string }[] {
+    if (slug.includes('hinjewadi') && !slug.includes('-vs-')) return [...PAGE_FAQS['hinjewadi'], ...PAGE_FAQS['general']];
+    if (slug.includes('hadapsar') || slug.includes('sp-infocity') || slug.includes('magarpatta')) return [...PAGE_FAQS['hadapsar'], ...PAGE_FAQS['general']];
+    if (slug.includes('bavdhan')) return [...PAGE_FAQS['bavdhan'], ...PAGE_FAQS['general']];
+    if (slug.includes('-vs-')) return [...PAGE_FAQS['vs'], ...PAGE_FAQS['general']];
+    return PAGE_FAQS['general'];
+}
+
 export default async function ProgrammaticSEOPage({ params }: { params: Promise<{ seoSlug: string }> }) {
     const resolvedParams = await params;
     const routeData = SEO_ROUTES.find(r => r.slug === resolvedParams.seoSlug);
@@ -220,6 +260,8 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
         const matchesType = routeData.filters.typeMatch ? new RegExp(routeData.filters.typeMatch, 'i').test(project.type) : true;
         return matchesLocation && matchesType;
     });
+
+    const pageFaqs = getFaqsForRoute(routeData.slug);
 
     const jsonLd = {
         "@context": "https://schema.org",
@@ -237,6 +279,19 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
             }
         }))
     };
+
+    const faqJsonLd = pageFaqs.length > 0 ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": pageFaqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.a
+            }
+        }))
+    } : null;
 
     const breadcrumbJsonLd = {
         "@context": "https://schema.org",
@@ -266,6 +321,7 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
     return (
         <main className="min-h-screen bg-[#EEF2F6] pt-32 pb-24 text-[#323334]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+            {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
             <header className="max-w-7xl mx-auto px-6 mb-16 text-center">
@@ -417,7 +473,27 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
                 )}
             </section>
 
-            <footer className="py-20 bg-[#FFFFFF] border-t border-[#C5A059]/30 text-center">
+            {/* FAQ Section for Rich Snippets */}
+            {pageFaqs.length > 0 && (
+                <section className="max-w-5xl mx-auto px-6 mt-20">
+                    <h2 className="text-3xl font-serif text-[#323334] mb-8 text-center">Frequently Asked Questions</h2>
+                    <div className="space-y-4">
+                        {pageFaqs.map((faq, idx) => (
+                            <details key={idx} className="bg-[#FFFFFF] border border-[#C5A059]/20 rounded-sm group">
+                                <summary className="px-6 py-5 cursor-pointer text-[#323334] font-medium text-sm hover:text-[#1D4F9C] transition-colors list-none flex justify-between items-center">
+                                    {faq.q}
+                                    <span className="text-[#1D4F9C] text-lg group-open:rotate-45 transition-transform">+</span>
+                                </summary>
+                                <div className="px-6 pb-5 text-[#323334] font-light text-sm leading-relaxed border-t border-[#C5A059]/10 pt-4">
+                                    {faq.a}
+                                </div>
+                            </details>
+                        ))}
+                    </div>
+                </section>
+            )}
+
+            <footer className="py-20 bg-[#FFFFFF] border-t border-[#C5A059]/30 text-center mt-20">
                 <div className="text-3xl font-serif text-[#1D4F9C] font-light tracking-widest mb-4">JOYVILLE <span className="text-[10px] font-sans tracking-[0.4em] text-[#323334] uppercase ml-2">Pune</span></div>
                 <p className="text-[#323334]/40 text-[9px] tracking-[0.3em] uppercase font-medium">MahaRERA: P52100000000 | A Shapoorji Pallonji Real Estate Project</p>
             </footer>

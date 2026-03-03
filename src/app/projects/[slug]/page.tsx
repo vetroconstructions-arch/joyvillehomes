@@ -49,6 +49,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             title: `${project.title} | Shapoorji Pallonji Real Estate`,
             description: project.description,
             images: [{ url: project.image, width: 1200, height: 630 }],
+        },
+        alternates: {
+            canonical: `https://www.joyville-homes.com/projects/${project.slug}`
         }
     };
 }
@@ -70,6 +73,16 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         "image": project.image,
         "description": project.description,
         "url": `${siteUrl}/projects/${project.slug}`,
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": project.location,
+            "addressRegion": "Maharashtra",
+            "addressCountry": "IN"
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Pune"
+        },
         "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "INR",
