@@ -37,7 +37,18 @@ const SEO_ROUTES = [
     'joyville-vs-vtp-bellissimo-hinjewadi',
     'joyville-vs-amanora-hadapsar',
     'flats-near-pune-metro-line-3',
-    'joyville-vs-godrej-hinjewadi'
+    'joyville-vs-godrej-hinjewadi',
+    // Phase 5: Extended Long-Tail
+    '3-bhk-flats-hadapsar-pune',
+    'flats-near-magarpatta-pune',
+    'gated-community-pune-2026',
+    'rera-approved-flats-pune',
+    'under-1-crore-flats-pune',
+    'smart-home-apartments-pune',
+    'ready-possession-flats-pune-2026',
+    'investment-property-pune-2026',
+    'flats-near-hinjewadi-it-park',
+    'shapoorji-pallonji-projects-pune'
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

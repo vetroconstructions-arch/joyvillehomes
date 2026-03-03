@@ -458,16 +458,36 @@ export default function Home() {
             <div className="lg:col-start-4">
               <h4 className="text-[#1D4F9C] font-semibold text-xs tracking-widest uppercase mb-6">High-Intent Intelligence</h4>
               <ul className="space-y-4">
-                <li><Link href="/pune-real-estate-guide" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">Pune Homebuyer&apos;s Guide 2025</Link></li>
+                <li><Link href="/pune-real-estate-guide" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">Pune Homebuyer&apos;s Guide 2025-2026</Link></li>
+                <li><Link href="/insights/pune-real-estate-market-forecast-2026-investment-hotspots" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">Pune Market Forecast 2026</Link></li>
+                <li><Link href="/insights/complete-nri-guide-buying-property-pune-2026" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">NRI Buying Guide 2026</Link></li>
                 <li><Link href="/insights/joyville-vs-competitors" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">Joyville vs Competitors Analysis</Link></li>
-                <li><Link href="/flats-near-eon-it-park-kharadi" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">Flats near EON IT Park</Link></li>
-                <li><Link href="/2-bhk-flats-in-hinjewadi-pune" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">2 BHK Flats in Hinjewadi</Link></li>
-                <li><Link href="/property-near-sp-infocity-phursungi" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">Property near SP Infocity</Link></li>
+                <li><Link href="/properties/flats-near-eon-it-park-kharadi" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">Flats near EON IT Park</Link></li>
+                <li><Link href="/properties/2-bhk-flats-in-hinjewadi" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">2 BHK Flats in Hinjewadi</Link></li>
+                <li><Link href="/properties/property-near-sp-infocity-phursungi" className="text-[#323334]/80 text-sm font-light hover:text-[#1D4F9C] transition-colors">Property near SP Infocity</Link></li>
               </ul>
             </div>
           </div>
         </div>
       </footer>
+
+      {/* --- SEO Content Block (Crawlable keyword-rich text) --- */}
+      <section className="bg-[#F4F6F9] border-t border-[#C5A059]/20 py-16 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-serif text-[#323334] mb-6">About Joyville Homes Pune — Premium Residences by Shapoorji Pallonji</h2>
+          <div className="text-sm text-[#323334]/80 font-light leading-relaxed space-y-4">
+            <p>
+              Joyville Homes Pune brings together the finest 2 BHK and 3 BHK luxury flats across Pune&apos;s most sought-after micro-markets — Hinjewadi, Hadapsar, Bavdhan, and Shewalewadi. Developed by Shapoorji Pallonji Real Estate, a group with over 150 years of engineering legacy since 1865, Joyville represents the gold standard of residential development in Maharashtra. Every project is fully MahaRERA registered, EDGE green-certified, and comes with 60+ premium amenities including infinity pools, co-working spaces, sports arenas, and landscaped gardens.
+            </p>
+            <p>
+              In <Link href="/locality/hinjewadi" className="text-[#1D4F9C] hover:underline">Hinjewadi Phase 1</Link>, <Link href="/projects/joyville-sensorium-hinjewadi" className="text-[#1D4F9C] hover:underline">Joyville Sensorium</Link> offers walk-to-work apartments near Infosys, Wipro, TCS, and 200+ IT companies in the Rajiv Gandhi Infotech Park. In <Link href="/locality/hadapsar" className="text-[#1D4F9C] hover:underline">Hadapsar</Link>, <Link href="/projects/joyville-hadapsar-annexe-pune" className="text-[#1D4F9C] hover:underline">Joyville Hadapsar Annexe</Link> provides ready-to-move-in flats from ₹65 Lakhs across a sprawling 21-acre township near Magarpatta City and SP Infocity. <Link href="/locality/bavdhan" className="text-[#1D4F9C] hover:underline">Bavdhan&apos;s</Link> <Link href="/projects/vanaha-golfland-pune" className="text-[#1D4F9C] hover:underline">Vanaha Golfland</Link> and <Link href="/projects/vanaha-springs-bavdhan" className="text-[#1D4F9C] hover:underline">Vanaha Springs</Link> offer golf course views within Pune&apos;s largest 1,000-acre integrated township.
+            </p>
+            <p>
+              Whether you are an IT professional looking for <Link href="/properties/flats-near-hinjewadi-it-park" className="text-[#1D4F9C] hover:underline">flats near Hinjewadi IT Park</Link>, an NRI investor seeking <Link href="/properties/nri-investment-flats-pune" className="text-[#1D4F9C] hover:underline">RERA-approved NRI investment options</Link>, or a first-time homebuyer searching for <Link href="/properties/under-1-crore-flats-pune" className="text-[#1D4F9C] hover:underline">flats under ₹1 Crore in Pune</Link>, Joyville Homes delivers the perfect balance of luxury, connectivity, and value. Explore our <Link href="/insights/pune-real-estate-market-forecast-2026-investment-hotspots" className="text-[#1D4F9C] hover:underline">2026 market forecast</Link> and <Link href="/pune-real-estate-guide" className="text-[#1D4F9C] hover:underline">Pune real estate guide</Link> to make an informed investment decision.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Floating CTA */}
       <div className="fixed bottom-10 right-10 z-50">
