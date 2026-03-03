@@ -104,11 +104,77 @@ const SEO_ROUTES = [
     },
     {
         slug: 'new-launch-projects-hadapsar-2025',
-        title: 'New Launch Projects in Hadapsar 2025 — Joyville Celestia | Shapoorji Pallonji',
-        description: 'Discover the newest residential launches in Hadapsar for 2025. Joyville Celestia by Shapoorji Pallonji — Vastu compliant 2 & 3 BHK from ₹85 Lakhs. Pre-launch pricing available.',
-        h1: 'New Launch Projects in Hadapsar — 2025',
-        keywords: ['new launch Hadapsar 2025', 'new projects Hadapsar', 'Joyville Celestia new launch', 'upcoming projects Shewalewadi', 'pre launch flats Hadapsar'],
+        title: 'New Launch Projects in Hadapsar 2025-2026 — Joyville Celestia | Shapoorji Pallonji',
+        description: 'Discover the newest residential launches in Hadapsar for 2025-2026. Joyville Celestia by Shapoorji Pallonji — Vastu compliant 2 & 3 BHK from ₹85 Lakhs. Pre-launch pricing available.',
+        h1: 'New Launch Projects in Hadapsar — 2025-2026',
+        keywords: ['new launch Hadapsar 2025', 'new launch Hadapsar 2026', 'new projects Hadapsar', 'Joyville Celestia new launch', 'upcoming projects Shewalewadi', 'pre launch flats Hadapsar 2026'],
         filters: { locationMatch: 'Hadapsar|Shewalewadi', typeMatch: '' }
+    },
+
+    // Phase 2: High-Intent Programmatic Pages (2026 Expansion)
+    {
+        slug: 'flats-near-sp-infocity-pune',
+        title: 'Flats Near SP Infocity Pune — Shapoorji Pallonji Joyville Hadapsar',
+        description: 'Premium 1, 2 & 3 BHK flats near SP Infocity Phursungi, Pune. Joyville Hadapsar Annexe by Shapoorji Pallonji — 21-acre township with 60+ amenities. Walk to work from ₹65 Lakhs.',
+        h1: 'Premium Flats Near SP Infocity, Pune',
+        keywords: ['flats near SP Infocity', 'SP Infocity Phursungi residential', 'apartments near SP Infocity Pune', 'walk to work SP Infocity', 'Joyville Hadapsar SP Infocity', 'IT park housing Pune East', 'rental income SP Infocity flats'],
+        filters: { locationMatch: 'Shewalewadi|Hadapsar', typeMatch: '' }
+    },
+    {
+        slug: '2-bhk-flats-hadapsar-pune',
+        title: '2 BHK Flats in Hadapsar Pune — Starting ₹70 Lakhs | Joyville by Shapoorji Pallonji',
+        description: 'Affordable & premium 2 BHK flats in Hadapsar, Pune. Joyville Hadapsar Annexe & Celestia — 589-750 sq.ft. options. RERA approved township near Magarpatta City.',
+        h1: 'Spacious 2 BHK Flats in Hadapsar, Pune',
+        keywords: ['2 BHK flats Hadapsar', '2 BHK Hadapsar price', 'affordable 2BHK Pune East', '2 BHK near Magarpatta', 'Joyville Hadapsar 2 BHK', '2 BHK Shewalewadi'],
+        filters: { locationMatch: 'Shewalewadi|Hadapsar', typeMatch: '2' }
+    },
+    {
+        slug: 'luxury-apartments-bavdhan-pune',
+        title: 'Luxury Apartments in Bavdhan Pune — Vanaha Township by Shapoorji Pallonji',
+        description: 'Discover ultra-premium luxury apartments in Bavdhan, Pune. Vanaha Golfland & Springs — golf course views, 1000-acre township, imported marble. Shapoorji Pallonji legacy.',
+        h1: 'Luxury Apartments in Bavdhan, Pune',
+        keywords: ['luxury apartments Bavdhan', 'premium flats Bavdhan Pune', 'Vanaha Golfland luxury', 'golf view apartments Pune', 'luxury township West Pune', 'high-end residences Bavdhan'],
+        filters: { locationMatch: 'Bavdhan', typeMatch: '' }
+    },
+    {
+        slug: 'new-launch-projects-pune-2026',
+        title: 'New Launch Projects in Pune 2026 — Shapoorji Pallonji Joyville & Vanaha',
+        description: 'Explore the latest new launch residential projects in Pune for 2026. Joyville Celestia, Vanaha Golfland, & Wildernest by Shapoorji Pallonji. Premium 2 & 3 BHK from ₹65 Lakhs. RERA approved.',
+        h1: 'New Launch Residential Projects in Pune — 2026',
+        keywords: ['new launch Pune 2026', 'new projects Pune 2026', 'upcoming projects Pune 2026', 'Shapoorji Pallonji new launch 2026', 'new residential projects Pune', 'pre launch projects Pune 2026', 'latest Pune projects'],
+        filters: { locationMatch: '', typeMatch: '' }
+    },
+    {
+        slug: 'nri-investment-flats-pune',
+        title: 'NRI Investment Flats in Pune 2026 — High Rental Yield | Shapoorji Pallonji',
+        description: 'Best NRI investment properties in Pune 2026. 4.5-5.5% rental yield in Hinjewadi. RERA approved Shapoorji Pallonji projects. Repatriation-friendly. Complete NRI buyer guide.',
+        h1: 'Best NRI Investment Flats in Pune — 2026 Guide',
+        keywords: ['NRI investment Pune', 'NRI flats Pune', 'NRI property investment India 2026', 'rental yield Pune NRI', 'best NRI investment India', 'RERA NRI benefits', 'Hinjewadi NRI flats', 'rupee depreciation property advantage'],
+        filters: { locationMatch: '', typeMatch: '' }
+    },
+    {
+        slug: 'joyville-vs-vtp-bellissimo-hinjewadi',
+        title: 'Joyville Sensorium vs VTP Bellissimo — Hinjewadi Comparison 2026',
+        description: 'Detailed head-to-head comparison of Joyville Sensorium (Shapoorji Pallonji) vs VTP Bellissimo in Hinjewadi. Compare price, amenities, construction quality, RERA, and investment ROI.',
+        h1: 'Joyville Sensorium vs VTP Bellissimo — Which Is Better in 2026?',
+        keywords: ['Joyville vs VTP Bellissimo', 'Joyville Sensorium vs VTP', 'Hinjewadi apartments comparison 2026', 'Shapoorji vs VTP Pune', 'best project Hinjewadi 2026'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
+    },
+    {
+        slug: 'joyville-vs-amanora-hadapsar',
+        title: 'Joyville Hadapsar vs Amanora Trendsetter — East Pune Comparison 2026',
+        description: 'Comprehensive comparison of Joyville Hadapsar Annexe (Shapoorji Pallonji) vs Amanora Trendsetter in Hadapsar. Price, township size, amenities, connectivity, and appreciation potential.',
+        h1: 'Joyville Hadapsar vs Amanora Trendsetter — Complete Comparison',
+        keywords: ['Joyville vs Amanora', 'Joyville Hadapsar vs Amanora Trendsetter', 'Hadapsar project comparison 2026', 'best township Hadapsar', 'Shapoorji vs Amanora'],
+        filters: { locationMatch: 'Hadapsar|Shewalewadi', typeMatch: '' }
+    },
+    {
+        slug: 'flats-near-pune-metro-line-3',
+        title: 'Flats Near Pune Metro Line 3 — Transit Premium Properties | Shapoorji Pallonji',
+        description: 'Invest in flats near upcoming Pune Metro Line 3 stations. Hinjewadi & Bavdhan properties by Shapoorji Pallonji. 12-15% transit premium appreciation expected. RERA approved.',
+        h1: 'Premium Flats Near Pune Metro Line 3 Stations',
+        keywords: ['flats near Pune Metro Line 3', 'Pune Metro impact real estate', 'metro proximity flats Pune', 'transit premium properties Pune', 'Hinjewadi metro station flats', 'metro connected apartments Pune 2026'],
+        filters: { locationMatch: 'Hinjewadi|Bavdhan', typeMatch: '' }
     }
 ];
 
@@ -222,9 +288,14 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
                                 <thead>
                                     <tr className="border-b border-[#C5A059]/10">
                                         <th className="py-4 px-6 text-left text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold">Parameter</th>
-                                        <th className="py-4 px-6 text-left text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold">Joyville Sensorium</th>
+                                        <th className="py-4 px-6 text-left text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold">
+                                            {routeData.slug.includes('hadapsar') || routeData.slug.includes('amanora') ? 'Joyville Hadapsar Annexe' : 'Joyville Sensorium'}
+                                        </th>
                                         <th className="py-4 px-6 text-left text-[10px] tracking-[0.2em] uppercase text-[#323334] font-semibold">
-                                            {routeData.slug.includes('kolte-patil') ? 'Kolte Patil Life Republic' : 'Godrej Evergreen Square'}
+                                            {routeData.slug.includes('kolte-patil') ? 'Kolte Patil Life Republic'
+                                                : routeData.slug.includes('vtp') ? 'VTP Bellissimo'
+                                                    : routeData.slug.includes('amanora') ? 'Amanora Trendsetter'
+                                                        : 'Godrej Evergreen Square'}
                                         </th>
                                     </tr>
                                 </thead>
@@ -240,6 +311,28 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
                                         ['Green Certification', '✅ EDGE Certified', '❌ No'],
                                         ['Rental Yield', '4.5-5.5%', '3.5-4.0%'],
                                         ['Best For', 'Luxury + Investment', 'Budget-first buyers'],
+                                    ] : routeData.slug.includes('vtp') ? [
+                                        ['Developer Legacy', '150 Years (Since 1865)', '30+ Years'],
+                                        ['Land Area', '10.5 Acres', '~8 Acres'],
+                                        ['2 BHK Starting Price', '₹1.10 Cr', '₹95 Lakhs - 1.15 Cr'],
+                                        ['Construction Quality', 'Premium (Built Indian Parliament)', 'Good (Regional Focus)'],
+                                        ['Amenities Count', '60+', '35+'],
+                                        ['Open Space', '75% of total land', '~65%'],
+                                        ['Smart Home', '✅ Standard', '✅ Select units'],
+                                        ['Green Certification', '✅ EDGE Certified', '❌ No'],
+                                        ['Unique Feature', '1.8km Walking Boulevard', 'Proximity to IT Park'],
+                                        ['Best For', 'Luxury + Lifestyle + ROI', 'Mid-segment buyers'],
+                                    ] : routeData.slug.includes('amanora') ? [
+                                        ['Developer Legacy', '150 Years (Since 1865)', 'City Corp Group'],
+                                        ['Land Area', '21 Acres', '400 Acres (Full Township)'],
+                                        ['1 BHK Starting Price', '₹65 Lakhs', '₹75 Lakhs+'],
+                                        ['Construction Quality', 'Premium (Shapoorji Legacy)', 'Standard Market'],
+                                        ['Amenities Count', '60+', '50+ (Shared across township)'],
+                                        ['Open Space', '80%', '~55%'],
+                                        ['Ready to Move', '✅ Available', '✅ Available'],
+                                        ['Clubhouse', '35,000 sq.ft. + 4 Mini Clubs', 'Shared Township Club'],
+                                        ['Mall Proximity', '5.5 km to Amanora Mall', 'Within township'],
+                                        ['Best For', 'Families + Value seekers', 'Mall-lifestyle seekers'],
                                     ] : [
                                         ['Developer Legacy', '150 Years (Since 1865)', '127 Years (Since 1897)'],
                                         ['Land Area', '10.5 Acres', '~5 Acres'],
@@ -265,7 +358,11 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
                             <p className="text-sm text-[#323334] font-light">
                                 <strong className="text-[#1D4F9C]">Verdict:</strong> {routeData.slug.includes('kolte-patil')
                                     ? 'Joyville Sensorium delivers premium construction quality and luxury amenities backed by 150+ years of Shapoorji Pallonji engineering legacy. Kolte Patil Life Republic offers a full township ecosystem at a lower price point. Choose Sensorium for quality and ROI; choose Life Republic for budget and township scale.'
-                                    : 'Both are premium developers with strong legacies. Joyville Sensorium edges ahead with its 10.5-acre scale, 60+ amenities, and 1.8km walking boulevard. Godrej Evergreen Square offers compelling green certifications. Choose Sensorium for amenity density; choose Godrej for green-first living.'
+                                    : routeData.slug.includes('vtp')
+                                        ? 'Joyville Sensorium leads with EDGE certification, 60+ amenities, and the iconic 1.8km Walking Boulevard. VTP Bellissimo offers competitive pricing for mid-segment buyers. Choose Sensorium for premium lifestyle and long-term appreciation; choose VTP for value-oriented living.'
+                                        : routeData.slug.includes('amanora')
+                                            ? 'Joyville Hadapsar Annexe offers a massive 35,000 sq.ft. clubhouse, 80% open space, and the trusted Shapoorji Pallonji legacy at competitive pricing. Amanora Trendsetter leverages mall proximity. Choose Joyville for family-friendly township living; choose Amanora for retail-centric lifestyle.'
+                                            : 'Both are premium developers with strong legacies. Joyville Sensorium edges ahead with its 10.5-acre scale, 60+ amenities, and 1.8km walking boulevard. Godrej Evergreen Square offers compelling green certifications. Choose Sensorium for amenity density; choose Godrej for green-first living.'
                                 }
                             </p>
                         </div>

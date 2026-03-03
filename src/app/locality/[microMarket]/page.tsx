@@ -30,19 +30,18 @@ const localities: LocalityData[] = [
         name: "Hinjewadi",
         subtitle: "The IT Capital of Pune West",
         seoKeywords: [
-            "Hinjewadi real estate market analysis 2025",
-            "flats in Hinjewadi Phase 1 near Infosys",
-            "Pune IT Park apartments for sale",
-            "property rates Hinjewadi Phase 1 2 3",
-            "2 BHK luxury flats in Hinjewadi Phase 1",
-            "3 BHK premium apartments Hinjewadi",
-            "new launch projects Hinjewadi 2025",
-            "flats near Rajiv Gandhi Infotech Park Phase 1",
-            "walk to work apartments Hinjewadi Phase 2",
-            "Joyville Sensorium vs Joyville Celestia",
-            "RERA approved flats Hinjewadi under 1 crore",
-            "Hinjewadi Metro Line 3 impact on property prices",
-            "rental yield in Hinjewadi for NRI investors"
+            "Hinjewadi real estate market analysis 2025", "Hinjewadi real estate market analysis 2026",
+            "flats in Hinjewadi Phase 1 near Infosys", "Pune IT Park apartments for sale",
+            "property rates Hinjewadi Phase 1 2 3", "2 BHK luxury flats in Hinjewadi Phase 1",
+            "3 BHK premium apartments Hinjewadi", "new launch projects Hinjewadi 2025", "new launch projects Hinjewadi 2026",
+            "flats near Rajiv Gandhi Infotech Park Phase 1", "walk to work apartments Hinjewadi Phase 2",
+            "Joyville Sensorium vs Joyville Celestia", "RERA approved flats Hinjewadi under 1 crore",
+            "Hinjewadi Metro Line 3 impact on property prices", "rental yield in Hinjewadi for NRI investors",
+            "flats near Wipro Hinjewadi", "flats near Infosys Pune", "flats near TCS Hinjewadi",
+            "flats near Cognizant Hinjewadi", "Hinjewadi Phase 1 property appreciation 2026",
+            "smart home apartments Hinjewadi", "gated community Hinjewadi", "Pune West luxury residences 2026",
+            "Joyville Sensorium price 2026", "best IT corridor apartments Pune", "Hinjewadi rental demand 2026",
+            "Shapoorji Pallonji Hinjewadi investment", "10 acre township Hinjewadi Phase 1"
         ],
         description: "Hinjewadi is the epicenter of Pune's IT revolution. Home to the sprawling Rajiv Gandhi Infotech Park — housing campuses of Infosys, Wipro, TCS, and 200+ MNCs — it boasts an incredible walk-to-work culture. With the upcoming Metro Line 3 (Maan to Civil Court) and the 170km Pune Ring Road, Hinjewadi is positioned for 12-15% annual capital appreciation. Property rates have surged 53% over the last 5 years, making it Pune's most lucrative investment hub.",
         infrastructure: [
@@ -64,17 +63,18 @@ const localities: LocalityData[] = [
         name: "Bavdhan",
         subtitle: "Luxury Gated Communities in West Pune",
         seoKeywords: [
-            "Bavdhan real estate trends 2025",
-            "luxury flats in Bavdhan Pune",
-            "apartments near Chandni Chowk interchange",
-            "hill view properties Bavdhan Pune",
-            "Vanaha Golfland price list 2025",
-            "Shapoorji Pallonji Vanaha township Bavdhan",
-            "1000 acre gated community Pune",
-            "3 BHK flats in Bavdhan near Kothrud",
-            "2 BHK apartments Bavdhan Pune West",
-            "resort style living Pune Bavdhan",
-            "flats near Mumbai Pune Expressway Bavdhan"
+            "Bavdhan real estate trends 2025", "Bavdhan real estate trends 2026",
+            "luxury flats in Bavdhan Pune", "apartments near Chandni Chowk interchange",
+            "hill view properties Bavdhan Pune", "Vanaha Golfland price list 2025", "Vanaha Golfland price list 2026",
+            "Shapoorji Pallonji Vanaha township Bavdhan", "1000 acre gated community Pune",
+            "3 BHK flats in Bavdhan near Kothrud", "2 BHK apartments Bavdhan Pune West",
+            "resort style living Pune Bavdhan", "flats near Mumbai Pune Expressway Bavdhan",
+            "golf course view apartments Bavdhan", "Vanaha Springs Bavdhan price",
+            "hills view apartments Pune West", "flats near Oxford Golf Resort Pune",
+            "premium apartments Bavdhan 2026", "NRI investment Bavdhan",
+            "Bavdhan property appreciation 2026", "FLAME University nearby flats",
+            "nature homes Bavdhan", "integrated township Bavdhan Pune",
+            "Bavdhan vs Baner real estate comparison", "sustainable living Bavdhan"
         ],
         description: "Bavdhan is Pune West's most prestigious residential extension. Nestled between the NDA hills and Pashan Lake, it offers a resort-like micro-climate. The area is dominated by Shapoorji Pallonji's 1,000-acre Vanaha township, which has redefined luxury with its 'City within a Forest' concept. Strategic proximity to Kothrud, Hinjewadi, and the Expressway makes it a preferred choice for HNIs and corporate leaders.",
         infrastructure: [
@@ -96,15 +96,18 @@ const localities: LocalityData[] = [
         name: "Hadapsar",
         subtitle: "East Pune's Global IT & Township Hub",
         seoKeywords: [
-            "Hadapsar property market analysis 2025",
-            "flats near SP Infocity Phursungi",
-            "apartments near Magarpatta City Hadapsar",
-            "Joyville Hadapsar Annexe price trends",
-            "affordable luxury flats Pune East",
-            "ready to move 2 BHK in Hadapsar",
-            "flats near EON IT Park Kharadi",
-            "Hadapsar vs Kharadi real estate comparison",
-            "township projects in Hadapsar Pune"
+            "Hadapsar property market analysis 2025", "Hadapsar property market analysis 2026",
+            "flats near SP Infocity Phursungi", "apartments near Magarpatta City Hadapsar",
+            "Joyville Hadapsar Annexe price trends", "affordable luxury flats Pune East",
+            "ready to move 2 BHK in Hadapsar", "flats near EON IT Park Kharadi",
+            "Hadapsar vs Kharadi real estate comparison", "township projects in Hadapsar Pune",
+            "Shewalewadi property rates 2026", "flats near Amanora Mall Hadapsar",
+            "1 BHK flats Hadapsar under 70 lakhs", "3 BHK flats Hadapsar Pune",
+            "Hadapsar real estate investment 2026", "Pune Solapur Highway properties",
+            "family apartments East Pune", "ready possession flats Hadapsar 2026",
+            "Joyville Celestia Hadapsar", "Joyville Skyluxe Hadapsar",
+            "Wildernest SP Kingstown Pune", "Manjri Hadapsar corridor properties",
+            "Hadapsar Kharadi bypass properties", "East Pune micro market analysis 2026"
         ],
         description: "Hadapsar represents the perfect synergy of commercial power and residential comfort. Hosted by the legendary Magarpatta City and SP Infocity (home to IBM, Accenture, and Amazon), it is East Pune's most stable micro-market. Joyville Hadapsar Annexe has set new standards for gated communities here, offering high-quality living at a 25% price advantage over North Pune markets like Kharadi.",
         infrastructure: [
@@ -119,6 +122,69 @@ const localities: LocalityData[] = [
         yoyAppreciation: "8.5%",
         latitude: 18.5089,
         longitude: 73.9260
+    },
+    {
+        id: "l4",
+        slug: "shewalewadi",
+        name: "Shewalewadi",
+        subtitle: "The Emerging Township Corridor of East Pune",
+        seoKeywords: [
+            "Shewalewadi property rates 2026", "flats in Shewalewadi Pune",
+            "Shewalewadi real estate investment", "Shewalewadi Hadapsar Annexe",
+            "Joyville Hadapsar Shewalewadi", "Joyville Celestia Shewalewadi",
+            "Joyville Skyluxe Shewalewadi", "Wildernest SP Kingstown Shewalewadi",
+            "SP Kingstown Shewalewadi Road", "Shewalewadi property appreciation",
+            "flats near SP Infocity Shewalewadi", "2 BHK flats Shewalewadi",
+            "3 BHK flats Shewalewadi", "township projects Shewalewadi",
+            "Shewalewadi to Magarpatta distance", "upcoming projects Shewalewadi 2026",
+            "Shapoorji Pallonji Shewalewadi", "affordable flats Shewalewadi Pune",
+            "Shewalewadi vs Hadapsar property rates", "RERA projects Shewalewadi",
+            "Pune Solapur Highway Shewalewadi", "investment hotspot East Pune 2026"
+        ],
+        description: "Shewalewadi is rapidly emerging as East Pune's most dynamic residential corridor. Located off the Pune-Solapur Highway, it hosts multiple Shapoorji Pallonji projects including Joyville Hadapsar Annexe (21 acres), Joyville Celestia, Skyluxe Edition, and Wildernest at SP Kingstown. The micro-market offers 15-25% price advantage over established Hadapsar while providing identical connectivity to SP Infocity and Magarpatta.",
+        infrastructure: [
+            { label: "Township Hub", value: "5 Shapoorji Pallonji Projects (40+ Acres)" },
+            { label: "IT Proximity", value: "SP Infocity 2.5km, Magarpatta 4.5km" },
+            { label: "Highway Access", value: "Pune-Solapur Highway & Ring Road" },
+            { label: "Social Infra", value: "Lexicon School, Noble Hospital, Amanora Mall" }
+        ],
+        marketTrend: "Rapid Appreciation. Multiple Shapoorji Pallonji projects have created a 'developer premium zone' driving consistent 10-12% annual appreciation. Early investors are seeing 40%+ returns over 3 years.",
+        priceRange: "₹65 Lakhs – ₹1.40 Cr",
+        avgPricePerSqFt: "₹8,500",
+        yoyAppreciation: "10.2%",
+        latitude: 18.4944,
+        longitude: 73.9675
+    },
+    {
+        id: "l5",
+        slug: "purandar",
+        name: "Purandar",
+        subtitle: "Pune's Growth Corridor — Airport Proximity & Land Investment",
+        seoKeywords: [
+            "Purandar real estate investment 2026", "plots near Purandar Airport",
+            "NA bungalow plots Purandar Pune", "Purandar airport real estate impact",
+            "Shapoorji Treetopia Purandar", "Jadhavwadi property investment",
+            "Saswad Road plots for sale", "land investment Pune corridor",
+            "Purandar airport connectivity", "villa plots near Pune airport",
+            "gated community plots Purandar", "RERA approved plots Purandar",
+            "Purandar growth corridor 2026", "biophilic landscapes plots Pune",
+            "investment plots Purandar Pune", "Purandar vs Pune suburbs investment",
+            "capital appreciation Purandar", "Pune airport corridor real estate",
+            "NA land Saswad Purandar", "farmland plots near Pune"
+        ],
+        description: "Purandar represents Pune's most exciting growth corridor. With the proposed Purandar International Airport and new expressway connectivity, land values are poised for exponential growth. Shapoorji Pallonji's Treetopia is the flagship plotted development here, offering NA bungalow plots starting ₹84 Lakhs with biophilic landscapes and gated community amenities. Early investors stand to gain 5-10x returns upon airport completion.",
+        infrastructure: [
+            { label: "Airport", value: "Proposed Purandar International Airport (20 mins)" },
+            { label: "Connectivity", value: "Pune Ring Road & Saswad Highway" },
+            { label: "Development", value: "Smart City Industrial Corridor" },
+            { label: "Nature", value: "Surrounded by Sahyadri Hills & Green Valleys" }
+        ],
+        marketTrend: "Pre-Infrastructure Boom. Land banking opportunity with 5-10x appreciation potential upon airport operationalization. Similar to pre-development trajectories seen in Navi Mumbai (NMIA) and Bengaluru (KIA).",
+        priceRange: "₹84 Lakhs – ₹3 Cr (Plots)",
+        avgPricePerSqFt: "₹4,500 (per sq.ft. land)",
+        yoyAppreciation: "15.5%",
+        latitude: 18.2860,
+        longitude: 74.2140
     }
 ];
 
@@ -135,11 +201,11 @@ export async function generateMetadata({ params }: { params: Promise<{ microMark
     if (!locality) return { title: 'Locality Not Found' };
 
     return {
-        title: `${locality.name} Real Estate 2025 — Property Rates, Trends & Projects | Shapoorji Pallonji`,
+        title: `${locality.name} Real Estate 2025-2026 — Property Rates, Trends & Projects | Shapoorji Pallonji`,
         description: locality.description,
         keywords: locality.seoKeywords,
         openGraph: {
-            title: `${locality.name} Real Estate Guide 2025 | Shapoorji Pallonji Joyville`,
+            title: `${locality.name} Real Estate Guide 2025-2026 | Shapoorji Pallonji Joyville`,
             description: locality.description,
         },
         alternates: {

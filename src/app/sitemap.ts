@@ -19,7 +19,25 @@ const SEO_ROUTES = [
     'luxury-apartments-with-golf-view-bavdhan',
     // Competitor Comparison
     'joyville-vs-kolte-patil-life-republic-hinjewadi',
-    'joyville-vs-godrej-properties-pune'
+    'joyville-vs-godrej-properties-pune',
+    // Phase 2: New Programmatic Routes
+    '2-bhk-flats-in-hinjewadi',
+    '3-bhk-flats-in-hinjewadi',
+    '1-bhk-flats-in-hadapsar',
+    'flats-in-bavdhan-pune',
+    'ready-to-move-flats-hadapsar',
+    'luxury-apartments-hadapsar-pune',
+    'new-launch-projects-hadapsar-2025',
+    'townships-near-magarpatta-city',
+    'flats-near-sp-infocity-pune',
+    '2-bhk-flats-hadapsar-pune',
+    'luxury-apartments-bavdhan-pune',
+    'new-launch-projects-pune-2026',
+    'nri-investment-flats-pune',
+    'joyville-vs-vtp-bellissimo-hinjewadi',
+    'joyville-vs-amanora-hadapsar',
+    'flats-near-pune-metro-line-3',
+    'joyville-vs-godrej-hinjewadi'
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -28,7 +46,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const LOCALITY_ROUTES = [
         'hinjewadi',
         'bavdhan',
-        'hadapsar'
+        'hadapsar',
+        'shewalewadi',
+        'purandar'
     ];
 
     const baseRoutes: MetadataRoute.Sitemap = [
