@@ -626,7 +626,7 @@ export const projects: Project[] = [
         ],
         masterLayout: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp",
         gallery: [
-            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/gallery/photo_gallery_building_facade1.webp",
+            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/gallery/photo_gallery_building_facade1_v2.webp",
             "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/gallery/photo_gallery_living_room7.webp"
         ],
         locationDetails: {
@@ -697,8 +697,8 @@ export const projects: Project[] = [
         ],
         masterLayout: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp",
         gallery: [
-            "https://shapoorjirealestate.com/assets/jpegs/all-projects-amenities/vanaha-springs/Community/amphitheatre.jpg",
-            "https://shapoorjirealestate.com/assets/jpegs/all_projects/vanaha-verdant/gallery/photo_gallery_building_facade1.webp"
+            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha_springs/desktop/banner.jpg",
+            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/gallery/photo_gallery_building_facade1_v2.webp"
         ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.530664989065!2d73.782777!3d18.535277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf383063510f%3A0xc3cf7b25752a229!2sOxford%20Golf%20Resort!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
