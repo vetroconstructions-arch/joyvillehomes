@@ -225,11 +225,11 @@ export const projects: Project[] = [
             { type: "2 BHK Luxury", carpetArea: "669 sq. ft." },
             { type: "3 BHK Smart", carpetArea: "815 sq. ft." }
         ],
-        masterLayout: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/2.webp",
+        masterLayout: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/banner/desktop/desktop_banner.webp",
         gallery: [
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/3.webp",
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/4.webp",
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/5.webp"
+            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/1.webp",
+            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/2.webp",
+            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/3.webp"
         ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.33748259646!2d73.967471!3d18.494437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e9d2b291a271%3A0x6bba41a5d2cf5913!2sJoyville%20Hadapsar%20Annexe!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
@@ -291,7 +291,7 @@ export const projects: Project[] = [
         type: "2 & 3 BHK Apartments",
         status: "New Launch",
         reraNumber: "P52100048338",
-        image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/5.webp",
+        image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/sensorium/banner/desktop/desktop_banner.webp",
         highlights: [
             "Premium Club Life",
             "Vastu Compliant Homes",
@@ -337,11 +337,11 @@ export const projects: Project[] = [
             { type: "2 BHK Luxury", carpetArea: "750 sq. ft." },
             { type: "3 BHK Grand", carpetArea: "950 sq. ft." }
         ],
-        masterLayout: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/4.webp",
+        masterLayout: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/sensorium/banner/desktop/desktop_banner.webp",
         gallery: [
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/1.webp",
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/2.webp",
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/3.webp"
+            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/sensorium/gallery/1.webp",
+            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/sensorium/gallery/2.webp",
+            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/sensorium/gallery/3.webp"
         ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.33748259646!2d73.967471!3d18.494437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e9d2b291a271%3A0x6bba41a5d2cf5913!2sJoyville%20Hadapsar%20Annexe!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
@@ -505,7 +505,7 @@ export const projects: Project[] = [
         type: "Residential Apartments",
         status: "Ongoing",
         reraNumber: ["P52100052683", "P52100053177", "P52100053966", "P52100054077"],
-        image: "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/sp-kingstown.jpg",
+        image: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/wildernest/desktop/wildernest_desktop_banner.webp",
         highlights: [
             "Part of SP Kingstown",
             "Lush Green Surroundings",
@@ -541,9 +541,11 @@ export const projects: Project[] = [
         floorPlans: [
             { type: "Premium Residences", carpetArea: "Available on request" }
         ],
-        masterLayout: "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/sp-kingstown.jpg",
+        masterLayout: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/wildernest/desktop/wildernest_desktop_banner.webp",
         gallery: [
-            "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/sp-kingstown.jpg"
+            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/wildernest/gallery/photo_gallery_1.webp",
+            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/wildernest/gallery/photo_gallery_2.webp",
+            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/wildernest/gallery/photo_gallery_3.webp"
         ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.33748259646!2d73.971248!3d18.502989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1df15d55555%3A0x5555555555555555!2sSP%20Kingstown!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
@@ -586,7 +588,7 @@ export const projects: Project[] = [
             "nature living Bavdhan Pune"
         ],
         reraNumber: "P52100052531",
-        image: "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha-golfland.jpg",
+        image: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp",
         highlights: [
             "Golf Course Views",
             "Expansive Township",
@@ -622,9 +624,10 @@ export const projects: Project[] = [
         floorPlans: [
             { type: "Luxury Suites", carpetArea: "Available on request" }
         ],
-        masterLayout: "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha-golfland.jpg",
+        masterLayout: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp",
         gallery: [
-            "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha-golfland.jpg"
+            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/gallery/photo_gallery_building_facade1.webp",
+            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/gallery/photo_gallery_living_room7.webp"
         ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.530664989065!2d73.782777!3d18.535277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf383063510f%3A0xc3cf7b25752a229!2sOxford%20Golf%20Resort!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
@@ -660,7 +663,7 @@ export const projects: Project[] = [
         type: "Premium Residences",
         status: "Available",
         reraNumber: ["P52100028031", "P52100028082", "P52100028033"],
-        image: "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha_spring.jpg",
+        image: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp",
         highlights: [
             "Part of 1000-Acre Township",
             "Abundant Open Spaces",
@@ -692,9 +695,10 @@ export const projects: Project[] = [
         floorPlans: [
             { type: "Premium Apartments", carpetArea: "Available on request" }
         ],
-        masterLayout: "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha_spring.jpg",
+        masterLayout: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp",
         gallery: [
-            "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha_spring.jpg"
+            "https://shapoorjirealestate.com/assets/jpegs/all-projects-amenities/vanaha-springs/Community/amphitheatre.jpg",
+            "https://shapoorjirealestate.com/assets/jpegs/all_projects/vanaha-verdant/gallery/photo_gallery_building_facade1.webp"
         ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.530664989065!2d73.782777!3d18.535277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf383063510f%3A0xc3cf7b25752a229!2sOxford%20Golf%20Resort!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
@@ -830,7 +834,7 @@ export const projects: Project[] = [
         type: "NA Bungalow Plots",
         status: "Under Construction",
         reraNumber: "PP1261012501803",
-        image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/4.webp",
+        image: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/desktop/treetopia_desktop_banner.webp",
         highlights: [
             "Exotic Villa Plots",
             "Biophilic Landscapes",
@@ -863,9 +867,10 @@ export const projects: Project[] = [
             { type: "Regal Plots", carpetArea: "1800 - 2000 Sq.Ft." },
             { type: "Grand Plots", carpetArea: "3000 - 5000+ Sq.Ft." }
         ],
-        masterLayout: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/1.webp",
+        masterLayout: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/desktop/treetopia_desktop_banner.webp",
         gallery: [
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/3.webp"
+            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/gallery/photogallery_1.webp",
+            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/gallery/photogallery_2.webp"
         ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.530664989065!2d74.533145!3d18.447577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e9d2b291a271%3A0x6bba41a5d2cf5913!2sJadhavwadi!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
