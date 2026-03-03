@@ -49,7 +49,7 @@ export const blogs: BlogPost[] = [
         category: "Investment Analysis",
         readTime: "4 Min Read",
         image: "/images/joyville_sensorium_projectcard.webp",
-        seoKeywords: ["Rental yield Pune 2025", "Hinjewadi real estate investment", "NRI investment Pune flats", "Buy 2 BHK Hinjewadi"]
+        seoKeywords: ["Rental yield Pune 2025", "Hinjewadi real estate investment", "NRI investment Pune flats", "Buy 2 BHK Hinjewadi", "rental income Hinjewadi 2026", "Pune IT corridor rental demand", "NRI property investment India 2026", "Hinjewadi Phase 1 rental rates", "best rental yield India", "Pune West investment returns", "Shapoorji Pallonji NRI homes", "walk to work apartments IT park", "Hinjewadi tenant demand 2026", "Fortune 500 companies Pune", "capital appreciation Hinjewadi", "Pune Metro Line 3 impact rental", "RERA benefits NRI buyers", "Rupee depreciation NRI advantage", "Joyville Sensorium rental yield", "passive income Pune real estate"]
     },
     {
         id: "insights-002",
@@ -86,7 +86,7 @@ export const blogs: BlogPost[] = [
         category: "Community Living",
         readTime: "5 Min Read",
         image: "/images/joyville_hinjawadi_projectcard.webp",
-        seoKeywords: ["Townships East Pune", "Flats near Magarpatta", "Moving to Hadapsar", "Joyville Hadapsar Annexe review"]
+        seoKeywords: ["Townships East Pune", "Flats near Magarpatta", "Moving to Hadapsar", "Joyville Hadapsar Annexe review", "integrated township Hadapsar Pune", "15 minute city concept Pune", "east Pune property market 2026", "SP Infocity residential projects", "Magarpatta City nearby flats", "township vs standalone building Pune", "community living East Pune", "biophilic township Pune", "work life balance Hadapsar", "best townships families Pune", "Shapoorji Pallonji township Pune", "township amenities Pune comparison", "property appreciation townships Pune", "Kharadi Hadapsar corridor homes", "east Pune micro market trends", "moving to Pune guide 2026"]
     },
     {
         id: "insights-003",
@@ -120,7 +120,7 @@ export const blogs: BlogPost[] = [
         category: "Market Trends",
         readTime: "6 Min Read",
         image: "/images/joyville_sensorium_projectcard.webp",
-        seoKeywords: ["Pune Metro Line 3 real estate impact", "Pune Ring Road properties", "Infrastructure development Pune West", "Future of Hinjewadi properties"]
+        seoKeywords: ["Pune Metro Line 3 real estate impact", "Pune Ring Road properties", "Infrastructure development Pune West", "Future of Hinjewadi properties", "Pune infrastructure mega projects 2026", "Purandar Airport real estate", "NA bungalow plots Purandar", "Pune Ring Road 170km expressway", "transit premium properties Pune", "metro station proximity flats", "infrastructure driven appreciation", "Pune 2028 property forecast", "land banking Purandar corridor", "Hinjewadi connectivity improvement", "Pimpri Chinchwad connectivity", "Bavdhan Ring Road access", "Pune Solapur Highway widening impact", "real estate before infrastructure boom", "Shapoorji Pallonji Treetopia Purandar", "investment before Pune metro completion"]
     },
     {
         id: "insights-004",
@@ -154,7 +154,7 @@ export const blogs: BlogPost[] = [
         category: "Buyer's Guide",
         readTime: "7 Min Read",
         image: "/images/joyville_hinjawadi_projectcard.webp",
-        seoKeywords: ["best residential projects Hinjewadi 2025", "Joyville vs Kolte Patil Life Republic", "Joyville vs Godrej Hinjewadi", "top projects Hinjewadi", "Hinjewadi property comparison", "best flats Hinjewadi Phase 1"]
+        seoKeywords: ["best residential projects Hinjewadi 2025", "Joyville vs Kolte Patil Life Republic", "Joyville vs Godrej Hinjewadi", "top projects Hinjewadi", "Hinjewadi property comparison", "best flats Hinjewadi Phase 1", "Hinjewadi project comparison 2026", "property rate per sqft Hinjewadi", "Joyville Sensorium vs VTP Bellissimo", "Joyville Sensorium vs Gera Joy", "best developer Hinjewadi 2026", "Hinjewadi Phase 1 buyer guide", "RERA projects Hinjewadi Phase 1", "amenity comparison Hinjewadi", "construction quality comparison Hinjewadi", "ROI comparison Hinjewadi projects", "affordable vs luxury Hinjewadi", "mid segment housing Hinjewadi", "best flats IT professionals 2026", "Shapoorji vs Kolte Patil quality"]
     },
     {
         id: "insights-005",
@@ -188,7 +188,7 @@ export const blogs: BlogPost[] = [
         category: "Buyer Education",
         readTime: "6 Min Read",
         image: "/images/joyville_sensorium_projectcard.webp",
-        seoKeywords: ["RERA approved projects Pune", "MahaRERA verification", "RERA registered flats Pune", "safe property investment Pune", "RERA rules homebuyers", "Shapoorji Pallonji RERA compliant"]
+        seoKeywords: ["RERA approved projects Pune", "MahaRERA verification", "RERA registered flats Pune", "safe property investment Pune", "RERA rules homebuyers", "Shapoorji Pallonji RERA compliant", "MahaRERA project search", "RERA carpet area rules", "escrow account real estate India", "RERA structural defect warranty", "how to verify RERA project", "RERA vs non RERA projects", "homebuyer protection India 2026", "RERA benefits buyer guide", "Pune property legal compliance", "RERA red flags builder", "Joyville RERA registration", "safe builders Pune", "trusted developers Pune 2026", "150 year legacy developer India"]
     },
     {
         id: "insights-006",
@@ -226,7 +226,7 @@ export const blogs: BlogPost[] = [
         category: "Market Analysis",
         readTime: "8 Min Read",
         image: "/images/joyville_hinjawadi_projectcard.webp",
-        seoKeywords: ["Pune property price trends 2025", "Hinjewadi vs Hadapsar vs Bavdhan", "property rates Hinjewadi 2025", "Pune real estate market analysis", "best area invest Pune 2025", "micro market analysis Pune", "Pune property appreciation rates"]
+        seoKeywords: ["Pune property price trends 2025", "Hinjewadi vs Hadapsar vs Bavdhan", "property rates Hinjewadi 2025", "Pune real estate market analysis", "best area invest Pune 2025", "micro market analysis Pune", "Pune property appreciation rates", "Pune property forecast 2026", "Pune micro market comparison", "Bavdhan property appreciation 2026", "Hadapsar property rates 2026", "Hinjewadi price per sqft 2026", "Pune real estate portfolio diversification", "best ROI Pune micro market", "West Pune vs East Pune investment", "Purandar corridor price trends", "Shewalewadi property prices 2026", "Pune housing market 2026", "13 percent appreciation Bavdhan", "53 percent growth Hinjewadi five years", "best value proposition Pune East", "Pune Metro impact property prices", "Ring Road property valuation impact", "infrastructure premium real estate Pune", "rental vs capital appreciation Pune"]
     }
 ];
 

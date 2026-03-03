@@ -124,35 +124,8 @@ export const projects: Project[] = [
             itHub: 9.8
         },
         seoKeywords: [
-            "Joyville Sensorium Hinjewadi",
-            "Joyville Sensorium price",
-            "Joyville Sensorium floor plan",
-            "Joyville Sensorium reviews",
-            "Joyville Sensorium possession date",
-            "Shapoorji Pallonji Hinjewadi Phase 1",
-            "Shapoorji Pallonji Pune projects",
-            "flats in Hinjewadi",
-            "2 BHK flats in Hinjewadi Phase 1",
-            "3 BHK luxury apartments Hinjewadi",
-            "luxury apartments Hinjewadi Phase 1",
-            "new launch Hinjewadi 2025",
-            "flats near Rajiv Gandhi Infotech Park",
-            "under construction projects Hinjewadi",
-            "flats near Wipro Hinjewadi",
-            "flats near Infosys Pune",
-            "residential projects near IT Park Pune",
-            "RERA approved flats Hinjewadi Phase 1",
-            "smart home apartments Hinjewadi Pune",
-            "walk to work apartments Hinjewadi",
-            "NRI investment flats Hinjewadi Pune",
-            "rental yield Hinjewadi 2025",
-            "buy 2 BHK flat Hinjewadi Phase 1 under 1 crore",
-            "Joyville vs Kolte Patil Life Republic",
-            "Joyville vs Godrej Hinjewadi",
-            "property rates Hinjewadi 2025",
-            "Pune IT Park residential projects",
-            "gated community flats Hinjewadi",
-            "10 acre township Hinjewadi"
+            "Joyville Sensorium Hinjewadi", "Joyville Sensorium price", "Joyville Sensorium floor plan", "Joyville Sensorium reviews", "Joyville Sensorium possession date", "Shapoorji Pallonji Hinjewadi Phase 1", "Shapoorji Pallonji Pune projects", "flats in Hinjewadi", "2 BHK flats in Hinjewadi Phase 1", "3 BHK luxury apartments Hinjewadi", "luxury apartments Hinjewadi Phase 1", "new launch Hinjewadi 2025", "flats near Rajiv Gandhi Infotech Park", "under construction projects Hinjewadi", "flats near Wipro Hinjewadi", "flats near Infosys Pune", "residential projects near IT Park Pune", "RERA approved flats Hinjewadi Phase 1", "smart home apartments Hinjewadi Pune", "walk to work apartments Hinjewadi", "NRI investment flats Hinjewadi Pune", "rental yield Hinjewadi 2025", "buy 2 BHK flat Hinjewadi Phase 1 under 1 crore", "Joyville vs Kolte Patil Life Republic", "Joyville vs Godrej Hinjewadi", "property rates Hinjewadi 2025", "Pune IT Park residential projects", "gated community flats Hinjewadi", "10 acre township Hinjewadi",
+            "Joyville Sensorium Hinjewadi Phase 1 2026", "Shapoorji Pallonji Joyville Pune 2026", "flats near Rajiv Gandhi IT Park Phase 1", "premium flats Pune IT corridor", "Wipro Circle flats for sale Hinjewadi", "Infosys Hinjewadi residential projects", "Hinjewadi real estate investment 2026", "2 BHK price Hinjewadi 2026", "luxury lifestyle Hinjewadi Phase 1", "IT professionals housing Pune West", "West Pune luxury residences 2026", "Shapoorji Pallonji brand legacy Pune", "Joyville Sensorium RERA number", "MahaRERA registered projects Hinjewadi", "best projects NRI investment Pune", "Hinjewadi metro connectivity flats", "Pune Metro Line 3 Hinjewadi properties", "biophilic homes Pune West", "sunken garden apartments Pune", "walking boulevard residences Hinjewadi", "60 plus amenities projects Pune", "top developers Hinjewadi 2026", "investment ROI Hinjewadi real estate", "Pune Bangalore highway proximity flats", "Mumbai Pune expressway residential projects", "flats near Symbiosis Hinjewadi", "3BHK duplex Hinjewadi Phase 1", "smart security homes Pune", "automation apartments Hinjewadi", "Joyville Sensorium location map", "flats near Cognizant Hinjewadi", "IT corridor property trends 2026", "Hinjewadi Phase 1 property appreciation", "Pune real estate market 2026", "best residential projects Hinjewadi 2026", "Joyville Sensorium brochure PDF", "Hinjewadi Phase 1 upcoming projects", "affordable luxury Hinjewadi", "Shapoorji Pallonji construction quality", "150 year legacy developer Pune", "EDGE certified homes Pune", "sustainable housing Pune West", "Pune West property forecast 2026", "flats near TCS Hinjewadi", "flats near Cognizant campus Pune", "Joyville Hinjewadi vs VTP Bellissimo", "Joyville vs Pride Purple Hinjewadi", "Joyville vs Gera Joy on Tree Tops", "Hinjewadi Phase 1 rental demand", "best flats for IT professionals Pune", "Pune West micro market analysis", "property investment Pune 2026", "Hinjewadi real estate forecast", "premium 2BHK apartments Pune under 1.5 crore", "luxury 3BHK apartments Pune under 2 crore", "Joyville Sensorium specifications", "Shapoorji Pallonji trust factor", "P52100027234 RERA", "Joyville Sensorium virtual tour"
         ],
         faqs: [
             {
@@ -246,30 +219,8 @@ export const projects: Project[] = [
             itHub: 8.8
         },
         seoKeywords: [
-            "Joyville Hadapsar Annexe",
-            "Joyville Hadapsar Annexe price",
-            "Joyville Hadapsar Annexe floor plan",
-            "Joyville Hadapsar Annexe reviews",
-            "Shapoorji Pallonji Hadapsar",
-            "Shapoorji Pallonji Shewalewadi",
-            "flats in Hadapsar Pune",
-            "1 BHK flats Hadapsar",
-            "2 BHK flats Hadapsar",
-            "3 BHK flats Hadapsar",
-            "flats near Magarpatta City",
-            "flats near SP Infocity Pune",
-            "ready to move flats Hadapsar",
-            "affordable flats Pune East",
-            "flats on Pune Solapur Highway",
-            "township projects Hadapsar",
-            "flats near Amanora Mall",
-            "Shewalewadi property rates",
-            "21 acre township Hadapsar Pune",
-            "family apartments near SP Infocity Pune",
-            "Joyville Hadapsar vs Amanora Trendsetter",
-            "ready possession flats near Magarpatta IT Park",
-            "Hadapsar real estate trends 2025",
-            "best 1 BHK flat Hadapsar under 70 lakhs"
+            "Joyville Hadapsar Annexe", "Joyville Hadapsar Annexe price", "Joyville Hadapsar Annexe floor plan", "Joyville Hadapsar Annexe reviews", "Shapoorji Pallonji Hadapsar", "Shapoorji Pallonji Shewalewadi", "flats in Hadapsar Pune", "1 BHK flats Hadapsar", "2 BHK flats Hadapsar", "3 BHK flats Hadapsar", "flats near Magarpatta City", "flats near SP Infocity Pune", "ready to move flats Hadapsar", "affordable flats Pune East", "flats on Pune Solapur Highway", "township projects Hadapsar", "flats near Amanora Mall", "Shewalewadi property rates", "21 acre township Hadapsar Pune", "family apartments near SP Infocity Pune", "Joyville Hadapsar vs Amanora Trendsetter", "ready possession flats near Magarpatta IT Park", "Hadapsar real estate trends 2025", "best 1 BHK flat Hadapsar under 70 lakhs",
+            "Joyville Hadapsar Annexe Pune 2026", "Shapoorji Pallonji Joyville Hadapsar price 2026", "apartments near SP Infocity Phursungi", "Hadapsar Annexe township for sale", "SP Infocity residential projects 2026", "flats near EON IT Park Kharadi", "Pune Solapur Highway residential projects", "Joyville Hadapsar Phase 1 2 3", "ready to move flats Hadapsar 2026", "Amanora Mall proximity flats", "Seasons Mall residential projects Hadapsar", "Hadapsar real estate investment 2026", "premium townships East Pune", "Joyville Hadapsar amenities list", "80 percent open space projects Pune", "lush green townships Hadapsar", "Shapoorji Pallonji trust factor Pune", "MahaRERA Hadapsar projects 2026", "investment property near IT parks Pune", "rental income Hadapsar flats", "Phursungi IT park housing", "luxury living East Pune", "gated community Hadapsar Annexe", "biophilic gardens Hadapsar", "fitness zones residences Pune", "Manjri Hadapsar corridor projects", "Shewalewadi residential market 2026", "best projects families Pune East", "affordable luxury Hadapsar 2026", "Pune Ring Road connectivity Hadapsar", "proposed Pune metro Hadapsar", "Loni Kalbhor proximity properties", "flats near Noble Hospital Hadapsar", "Hadapsar Kharadi bypass properties", "Joyville Hadapsar possession date", "MahaRERA P52100026451", "Shapoorji Pallonji Hadapsar Annexe reviews", "Joyville Hadapsar brochure PDF", "35000 sqft clubhouse Hadapsar", "Joyville Hadapsar vs Kumar Picasso", "Joyville Hadapsar vs Malpani Greenville", "East Pune property appreciation rates", "Pune East micro market analysis", "1 BHK flats Pune under 65 lakhs", "best affordable townships Pune 2026", "Pune Solapur Highway real estate forecast", "NRI investment East Pune", "flats near Lexicon School Hadapsar"
         ],
         faqs: [
             {
@@ -358,22 +309,8 @@ export const projects: Project[] = [
             itHub: 8.5
         },
         seoKeywords: [
-            "Joyville Celestia Pune",
-            "Joyville Celestia Hadapsar",
-            "Joyville Celestia price",
-            "Joyville Celestia floor plan",
-            "Shapoorji Pallonji Hadapsar",
-            "new launch Hadapsar 2025",
-            "flats in Hadapsar Pune",
-            "2 BHK Hadapsar",
-            "3 BHK Hadapsar",
-            "Vastu compliant homes Hadapsar",
-            "Hadapsar property rates 2025",
-            "premium apartments Hadapsar",
-            "under construction projects Hadapsar",
-            "aqua gym apartments Pune",
-            "pet friendly apartments Hadapsar",
-            "brain gym kids Pune"
+            "Joyville Celestia Pune", "Joyville Celestia Hadapsar", "Joyville Celestia price", "Joyville Celestia floor plan", "Shapoorji Pallonji Hadapsar", "new launch Hadapsar 2025", "flats in Hadapsar Pune", "2 BHK Hadapsar", "3 BHK Hadapsar", "Vastu compliant homes Hadapsar", "Hadapsar property rates 2025", "premium apartments Hadapsar", "under construction projects Hadapsar", "aqua gym apartments Pune", "pet friendly apartments Hadapsar", "brain gym kids Pune",
+            "Joyville Celestia Hadapsar Pune 2026", "Shapoorji Pallonji Joyville Celestia price 2026", "premium residences near SP Infocity", "luxury apartments Shewalewadi Pune", "3 BHK luxury flats East Pune", "Celestia towers Hadapsar Annexe", "high rise apartments East Pune", "Joyville Celestia amenities list", "Shapoorji Pallonji legacy homes", "MahaRERA projects Shewalewadi 2026", "investment opportunity Hadapsar 2026", "Joyville Celestia review 2026", "possession status Celestia Hadapsar", "flats near Solapur Highway Pune", "strategic location Pune East", "premium amenities Hadapsar", "Joyville Celestia brochure PDF", "Shapoorji Pallonji luxury living", "modern architecture homes Pune", "East Pune growth corridor properties", "infrastructure development Hadapsar", "Joyville Celestia RERA number", "P52100048338", "flats with sky view Pune", "luxury lifestyle Shewalewadi", "apartments near EON IT Park Kharadi", "Hadapsar real estate trends 2026", "new launch projects Pune East 2026", "Vastu flats near Magarpatta", "celestial design apartments Pune", "naturopathy center homes Pune", "skating rink apartments Pune", "hammock garden residences", "Joyville Celestia vs Joyville Hadapsar Annexe", "premium 2BHK Hadapsar under 1 crore", "Shapoorji Pallonji new launch Pune 2026"
         ],
         faqs: [
             {
@@ -465,21 +402,8 @@ export const projects: Project[] = [
             itHub: 8.2
         },
         seoKeywords: [
-            "Joyville Skyluxe Edition",
-            "Joyville Skyluxe Hadapsar",
-            "Joyville Skyluxe price",
-            "ultra luxury apartments Hadapsar",
-            "3 BHK luxury flats Hadapsar",
-            "penthouse Hadapsar Pune",
-            "sky luxe apartments Pune",
-            "Hadapsar luxury real estate",
-            "private terrace apartments Pune",
-            "concierge services apartments Pune",
-            "Italian marble flooring flats Pune",
-            "premium flats near Pune Solapur Highway",
-            "Shapoorji Pallonji luxury homes",
-            "high rise apartments Hadapsar panoramic view",
-            "pre launch luxury projects Hadapsar 2025"
+            "Joyville Skyluxe Edition", "Joyville Skyluxe Hadapsar", "Joyville Skyluxe price", "ultra luxury apartments Hadapsar", "3 BHK luxury flats Hadapsar", "penthouse Hadapsar Pune", "sky luxe apartments Pune", "Hadapsar luxury real estate", "private terrace apartments Pune", "concierge services apartments Pune", "Italian marble flooring flats Pune", "premium flats near Pune Solapur Highway", "Shapoorji Pallonji luxury homes", "high rise apartments Hadapsar panoramic view", "pre launch luxury projects Hadapsar 2025",
+            "Joyville Skyluxe Hadapsar 2026", "Shapoorji Pallonji Skyluxe Edition price 2026", "ultra luxury 3 BHK flats East Pune", "Skyluxe Hadapsar Annexe floor plan", "premium penthouse Hadapsar Pune", "Joyville Skyluxe amenities", "exclusive living East Pune 2026", "Shapoorji Pallonji premium brand Pune", "luxury apartments near SP Infocity", "high end real estate Hadapsar 2026", "Joyville Skyluxe review", "limited edition homes Pune", "MahaRERA Skyluxe Hadapsar", "P52100048338", "exclusive club life Pune", "vibrant color palette homes Skyluxe", "premium specifications Hadapsar", "sky villas Hadapsar Pune", "Shapoorji Pallonji Skyluxe location", "luxury flats near Magarpatta City", "East Pune ultra luxury market 2026", "Joyville Skyluxe possession status", "Turkish Hammam apartments Pune", "private spa suites residential Pune", "cigar lounge apartments", "sky lounge observatory homes", "German appliances kitchen apartments Pune", "quartz countertop homes Pune", "biometric entry apartments Pune", "HVAC luxury flats Pune", "Skyluxe vs Amanora Gateway Towers", "most expensive apartments Hadapsar", "Pune ultra luxury real estate 2026", "NRI luxury investment East Pune"
         ],
         faqs: [
             {
@@ -562,12 +486,7 @@ export const projects: Project[] = [
             itHub: 8.5
         },
         seoKeywords: [
-            "Wildernest at SP Kingstown",
-            "SP Kingstown Pune luxury flats",
-            "Premium apartments near prominent schools Pune",
-            "High-end real estate in Pune",
-            "Serene residential projects Pune",
-            "Elegant lifestyle homes Pune"
+            "Wildernest at SP Kingstown Pune", "Shapoorji Pallonji Wildernest", "SP Kingstown Shewalewadi Road", "luxury flats near SP Infocity", "Wildernest price 2026", "premium apartments Manjri Pune", "nature living residences Pune", "Wildernest SP Kingstown reviews", "Shapoorji Pallonji Kingstown properties", "flats near Lexicon School Hadapsar", "Pune-Solapur Highway luxury flats", "Wildernest floor plan", "biophilic homes SP Kingstown", "high-end apartments Shewalewadi", "Wildernest RERA number", "P52100052683", "integrated township properties Pune", "serene lifestyle homes East Pune", "Wildernest amenities", "Shapoorji Pallonji trust Shewalewadi", "sustainable living Pune projects", "Wildernest SP Kingstown location map", "investment hotspots Pune East", "real estate appreciation Shewalewadi", "upcoming residential projects Pune 2026"
         ]
     },
     {
@@ -579,13 +498,8 @@ export const projects: Project[] = [
         type: "Luxury Residences",
         status: "New Launch",
         seoKeywords: [
-            "Vanaha Golfland Bavdhan Pune",
-            "flats near Oxford Golf Resort",
-            "luxury apartments Bavdhan Pune West",
-            "Shapoorji Pallonji Vanaha township",
-            "Vanaha Golfland 3 BHK price",
-            "golf course view apartments Pune",
-            "nature living Bavdhan Pune"
+            "Vanaha Golfland Bavdhan Pune", "flats near Oxford Golf Resort", "luxury apartments Bavdhan Pune West", "Shapoorji Pallonji Vanaha township", "Vanaha Golfland 3 BHK price", "golf course view apartments Pune", "nature living Bavdhan Pune",
+            "Vanaha Golfland price 2026", "Shapoorji Pallonji Vanaha Golfland", "property near Oxford Golf Resort Pune", "1000 acre township Bavdhan", "Vanaha Golfland 3 BHK luxury", "Bavdhan real estate investment 2026", "Mumbai Bangalore highway properties Pune", "Vanaha Golfland amenities", "biophilic residences West Pune", "premium apartments Bavdhan 2026", "Vanaha Golfland floor plan", "Oxford valley view homes", "West Pune nature living", "Vanaha Golfland reviews", "MahaRERA Vanaha project", "P52100052531", "flats near Pashan Highway", "exclusive golf community Pune", "Shapoorji Pallonji trust Vanaha", "Vanaha Golfland possession date", "upcoming luxury projects Pune 2026", "resort style living Bavdhan", "infinity pool apartments Bavdhan", "boutique clubhouse homes Pune", "imported marble flooring flats Pune West", "home automation ready flats Bavdhan", "Vanaha Golfland vs Panchshil Towers", "hills view apartments Pune", "Bavdhan property appreciation 2026", "West Pune micro market analysis", "FLAME University proximity flats", "Ryan International School nearby flats", "Chandni Chowk proximity apartments", "Sahyadri Hospital nearby properties", "Bavdhan upcoming projects 2026", "luxury flats near Baner Pune", "NRI investment Bavdhan"
         ],
         reraNumber: "P52100052531",
         image: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp",
@@ -715,19 +629,8 @@ export const projects: Project[] = [
             itHub: 8.8
         },
         seoKeywords: [
-            "Vanaha Springs Bavdhan",
-            "Vanaha Springs premium residences",
-            "Vanaha Springs price",
-            "apartments near Chandni Chowk Pune",
-            "properties West Pune",
-            "flats surrounded by hills Pune",
-            "eco friendly homes Pune",
-            "townships in Bavdhan",
-            "valley view apartments Pune",
-            "1000 acre township Pune",
-            "nature centric apartments Pune",
-            "meditation pavilion apartments Pune",
-            "Shapoorji Pallonji Bavdhan township"
+            "Vanaha Springs Bavdhan", "Vanaha Springs premium residences", "Vanaha Springs price", "apartments near Chandni Chowk Pune", "properties West Pune", "flats surrounded by hills Pune", "eco friendly homes Pune", "townships in Bavdhan", "valley view apartments Pune", "1000 acre township Pune", "nature centric apartments Pune", "meditation pavilion apartments Pune", "Shapoorji Pallonji Bavdhan township",
+            "Vanaha Springs Bavdhan Pune 2026", "Shapoorji Pallonji Vanaha Springs price 2026", "flats near Oxford Golf Resort Pune", "premium residences Bavdhan 2026", "apartments in 1000 acre township", "Vanaha Springs floor plan", "Bavdhan residential properties 2026", "MahaRERA Vanaha Springs", "P52100028031", "hillside living Pune", "nature centric homes West Pune", "Vanaha Springs reviews", "Vanaha Springs location map", "apartments with open views Bavdhan", "Vanaha Springs amenities list", "Shapoorji Pallonji trust Pune West", "real estate Bavdhan growth 2026", "investment flats West Pune 2026", "nature trails residential Pune", "multi sports courts apartments Pune", "retail outlets within township Pune", "earthquake resistant homes Bavdhan", "copper wiring premium homes Pune", "vitrified tiles apartments West Pune", "Kothrud proximity properties", "Bavdhan vs Baner property rates", "best projects families West Pune", "sustainable development Bavdhan", "West Pune RERA projects 2026", "NRI investment Bavdhan Pune"
         ],
         faqs: [
             {
@@ -800,19 +703,8 @@ export const projects: Project[] = [
             itHub: 9.0
         },
         seoKeywords: [
-            "Vanaha Pune by Shapoorji",
-            "Vanaha Bavdhan",
-            "Vanaha Bavdhan 3 BHK prices",
-            "townships in Bavdhan",
-            "1000 acre township Pune",
-            "flats for sale Bavdhan",
-            "largest township Pune",
-            "integrated township Bavdhan",
-            "Shapoorji Pallonji Bavdhan",
-            "self sustaining township Pune",
-            "sustainable living Pune",
-            "flats surrounded by hills Pune",
-            "community living Pune"
+            "Vanaha Pune by Shapoorji", "Vanaha Bavdhan", "Vanaha Bavdhan 3 BHK prices", "townships in Bavdhan", "1000 acre township Pune", "flats for sale Bavdhan", "largest township Pune", "integrated township Bavdhan", "Shapoorji Pallonji Bavdhan", "self sustaining township Pune", "sustainable living Pune", "flats surrounded by hills Pune", "community living Pune",
+            "Vanaha Pune 2026", "Shapoorji Pallonji Vanaha price 2026", "Vanaha Bavdhan floor plan", "Vanaha township amenities", "Vanaha Bavdhan reviews", "MahaRERA Vanaha Pune", "P52100028031", "self sustaining township West Pune", "schools within township Pune", "healthcare facilities township Bavdhan", "commercial hubs integrated township", "entertainment zones Vanaha", "grand clubhouses Bavdhan", "parks orchards Vanaha Pune", "sports complexes township Bavdhan", "biodiversity rich homes Pune", "urban convenience nature Pune", "Vanaha location map Bavdhan", "Mumbai Pune Expressway proximity flats", "Symbiosis University nearby flats", "Oxford Golf Course nearby flats", "Vanaha vs Kolte Patil Bavdhan", "Vanaha vs Panchshil Bavdhan", "largest Shapoorji Pallonji township Pune", "Bavdhan Pune property rates 2026", "premium township investment Pune", "NRI investment Bavdhan township", "Bavdhan real estate forecast 2026", "West Pune upcoming projects", "best integrated townships Pune 2026"
         ],
         faqs: [
             {
@@ -888,22 +780,7 @@ export const projects: Project[] = [
             itHub: 6.5
         },
         seoKeywords: [
-            "Shapoorji Pallonji Treetopia Purandar",
-            "NA bungalow plots near Pune Airport",
-            "investment plots Purandar Pune",
-            "Shapoorji Pallonji Treetopia price",
-            "plots near JSPM College Hadapsar",
-            "residential plots Saswad Road",
-            "Treetopia Jadhavwadi Pune",
-            "Shapoorji Treetopia Pune",
-            "exotic villa plots Pune",
-            "Jadhavwadi property investment",
-            "land investment near Pune airport",
-            "biophilic landscapes plots Pune",
-            "RERA approved plots Pune",
-            "Pune growth corridor real estate",
-            "plot investment Pune 2025",
-            "gated community plots Pune"
+            "Shapoorji Pallonji Treetopia Purandar", "NA bungalow plots near Pune Airport", "investment plots Purandar Pune", "Shapoorji Pallonji Treetopia price 2026", "plots near JSPM College Hadapsar", "residential plots Saswad Road", "Treetopia Jadhavwadi Pune", "exotic villa plots Pune", "Jadhavwadi property investment", "land investment near Pune airport", "biophilic landscapes plots Pune", "RERA approved plots Pune", "Pune growth corridor real estate", "plot investment Pune 2025", "gated community plots Pune", "Shapoorji Pallonji plots price", "Purandar airport real estate trends", "Saswad-Jadhavwadi plot growth", "NA plots Pune outskirts investment", "Treetopia floor layout plan", "Shapoorji Pallonji Treetopia reviews", "P52100012501803", "MahaRERA plot verification", "upcoming investment hotspots Pune", "NA land for sale Saswad"
         ]
     }
 ];
