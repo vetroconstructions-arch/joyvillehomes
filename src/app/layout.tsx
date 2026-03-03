@@ -128,6 +128,43 @@ export default function RootLayout({
                   { "@type": "SiteNavigationElement", "position": 4, "name": "Comparison Matrix", "url": "https://www.joyville-homes.com/insights/joyville-vs-competitors" },
                   { "@type": "SiteNavigationElement", "position": 5, "name": "Analytics & Insights", "url": "https://www.joyville-homes.com/insights" }
                 ]
+              },
+              {
+                "@type": "RealEstateAgent",
+                "@id": "https://www.joyville-homes.com/#realestate",
+                "name": "Joyville Homes — Shapoorji Pallonji Real Estate, Pune",
+                "image": "https://www.joyville-homes.com/og-image.jpg",
+                "url": "https://www.joyville-homes.com",
+                "telephone": "+91-20-67210000",
+                "priceRange": "₹65 Lakhs - ₹3 Cr",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Hinjewadi Phase 1, Near Rajiv Gandhi Infotech Park",
+                  "addressLocality": "Pune",
+                  "addressRegion": "Maharashtra",
+                  "postalCode": "411057",
+                  "addressCountry": "IN"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": 18.5913,
+                  "longitude": 73.7389
+                },
+                "openingHoursSpecification": {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                  "opens": "09:00",
+                  "closes": "20:00"
+                },
+                "areaServed": [
+                  { "@type": "City", "name": "Pune" },
+                  { "@type": "State", "name": "Maharashtra" }
+                ],
+                "makesOffer": [
+                  { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "2 BHK Apartments" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "3 BHK Apartments" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "NA Bungalow Plots" } }
+                ]
               }
             ]
           })

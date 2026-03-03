@@ -416,14 +416,32 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 <h2 className="text-2xl font-serif text-[#323334] mb-6">Market Insights & Investment Guides</h2>
                 <div className="grid md:grid-cols-2 gap-4">
                     {[
+                        { slug: 'pune-real-estate-market-forecast-2026-investment-hotspots', title: 'Pune Real Estate Forecast 2026 — Top Investment Hotspots' },
+                        { slug: 'complete-nri-guide-buying-property-pune-2026', title: 'NRI Guide to Buying Property in Pune 2026' },
                         { slug: 'best-residential-projects-hinjewadi-2025-complete-guide', title: 'Best Projects in Hinjewadi 2025 — Buyer\'s Guide' },
                         { slug: 'rera-approved-projects-pune-everything-you-need-to-know', title: 'RERA Approved Projects Pune — Complete Guide' },
-                        { slug: 'pune-property-price-trends-2025-micro-market-analysis', title: 'Pune Property Price Trends 2025 — Micro-Market Analysis' },
-                        { slug: 'rental-yields-hinjewadi-2025-nri-investment-guide', title: 'Rental Yields Hinjewadi 2025 — NRI Investment Guide' },
+                        { slug: 'pune-property-price-trends-2025-micro-market-analysis', title: 'Pune Property Price Trends — Micro-Market Analysis' },
+                        { slug: 'rental-yields-hinjewadi-2025-nri-investment-guide', title: 'Rental Yields Hinjewadi — NRI Investment Guide' },
                     ].map(article => (
                         <Link key={article.slug} href={`/insights/${article.slug}`} className="flex items-center gap-3 p-4 bg-[#F4F6F9] border border-[#C5A059]/10 hover:border-[#C5A059]/40 transition-all rounded-sm group">
                             <ArrowLeft size={14} className="text-[#1D4F9C] rotate-180 group-hover:translate-x-1 transition-transform" />
                             <span className="text-sm text-[#323334] group-hover:text-[#1D4F9C] transition-colors font-light">{article.title}</span>
+                        </Link>
+                    ))}
+                </div>
+
+                {/* Locality Cross-Link */}
+                <div className="mt-8 flex flex-wrap gap-3">
+                    <span className="text-xs uppercase tracking-widest text-[#323334]/60 font-semibold self-center mr-2">Explore Localities:</span>
+                    {[
+                        { slug: 'hinjewadi', label: 'Hinjewadi' },
+                        { slug: 'hadapsar', label: 'Hadapsar' },
+                        { slug: 'bavdhan', label: 'Bavdhan' },
+                        { slug: 'shewalewadi', label: 'Shewalewadi' },
+                        { slug: 'purandar', label: 'Purandar' },
+                    ].map(loc => (
+                        <Link key={loc.slug} href={`/locality/${loc.slug}`} className="px-4 py-2 bg-[#1D4F9C]/5 border border-[#1D4F9C]/10 hover:bg-[#1D4F9C]/10 hover:border-[#1D4F9C]/30 text-[#1D4F9C] text-xs font-medium tracking-wide rounded-sm transition-all">
+                            {loc.label} Real Estate →
                         </Link>
                     ))}
                 </div>

@@ -40,10 +40,13 @@ const footerLinks = {
         { href: '/properties/joyville-vs-amanora-hadapsar', label: 'Joyville vs Amanora' },
     ],
     insights: [
-        { href: '/insights/best-residential-projects-hinjewadi-2025-complete-guide', label: 'Best Projects Hinjewadi 2025' },
+        { href: '/insights/pune-real-estate-market-forecast-2026-investment-hotspots', label: 'Pune Forecast 2026' },
+        { href: '/insights/complete-nri-guide-buying-property-pune-2026', label: 'NRI Buying Guide 2026' },
+        { href: '/insights/best-residential-projects-hinjewadi-2025-complete-guide', label: 'Best Projects Hinjewadi' },
         { href: '/insights/rera-approved-projects-pune-everything-you-need-to-know', label: 'RERA Guide Pune' },
-        { href: '/insights/pune-property-price-trends-2025-micro-market-analysis', label: 'Price Trends 2025' },
+        { href: '/insights/pune-property-price-trends-2025-micro-market-analysis', label: 'Price Trends Analysis' },
         { href: '/insights/rental-yields-hinjewadi-2025-nri-investment-guide', label: 'NRI Investment Guide' },
+        { href: '/pune-real-estate-guide', label: 'Pune Real Estate Guide' },
     ],
 };
 

@@ -88,6 +88,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.7,
         },
+        {
+            url: `${baseUrl}/pune-real-estate-guide`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.85,
+        },
+        {
+            url: `${baseUrl}/insights/joyville-vs-competitors`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.85,
+        },
     ];
 
     const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => {
@@ -116,7 +128,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${baseUrl}/insights/${blog.slug}`,
         lastModified: new Date(blog.date),
         changeFrequency: 'monthly',
-        priority: 0.75,
+        priority: 0.85,
     }));
 
     const localityRoutes: MetadataRoute.Sitemap = LOCALITY_ROUTES.map((slug) => ({
