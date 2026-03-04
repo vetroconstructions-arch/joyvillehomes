@@ -297,6 +297,68 @@ export const blogs: BlogPost[] = [
         readTime: "6 Min Read",
         image: "/images/joyville_sensorium_projectcard.webp",
         seoKeywords: ["NRI property investment Pune 2026", "NRI guide buying property India", "NRI real estate Pune", "RERA for NRI buyers", "NRI taxation India property", "repatriation rules NRI property", "best NRI investment Pune", "rental yield NRI Pune", "NRI flat Hinjewadi", "NRI investment Shapoorji Pallonji", "FEMA property rules NRI", "NRI TDS property India", "NRI Pune remote buying", "NRI virtual site visit", "NRI property management Pune", "rupee depreciation NRI advantage property", "NRI capital gains India", "NRI escrow RERA protection", "best rental yield India NRI", "Pune NRI desk real estate"]
+    },
+    {
+        id: "9",
+        slug: "first-time-homebuyer-checklist-pune-2026",
+        title: "First-Time Homebuyer's Complete Checklist — Pune 2026",
+        excerpt: "A 20-step checklist for first-time homebuyers in Pune. From RERA verification to loan pre-approval, stamp duty, and handover inspection — everything you need before buying your first flat.",
+        content: [
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4'>Your 20-Step Homebuying Checklist for Pune 2026</h2>",
+            "Buying your first home in Pune is one of the biggest financial decisions of your life. This comprehensive checklist ensures you don't miss any critical step — from initial research to final handover. Follow these 20 steps to buy your first flat with confidence.",
+
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Step 1-5: Financial Preparation</h2>",
+            "<strong>1. Assess your budget:</strong> Calculate your total budget including stamp duty (7% in Maharashtra), registration (1%), GST (5% for under-construction), and interior costs. A ₹1 Cr flat typically requires ₹1.15 Cr total. <strong>2. Get loan pre-approval:</strong> Approach 3-4 banks. Current home loan rates in Pune range from 8.35-9.1% (March 2026). Pre-approval strengthens your negotiation position. <strong>3. Check your CIBIL score:</strong> A score above 750 gets the best rates. <strong>4. Calculate EMI affordability:</strong> EMI should not exceed 40% of your net monthly income. <strong>5. Build emergency fund:</strong> Keep 6 months of EMI as a buffer before commitment.",
+
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Step 6-10: Project Research</h2>",
+            "<strong>6. Verify RERA registration:</strong> Check MahaRERA.com for registration number, project timeline, and completion certificates. All <a href='/properties/rera-approved-flats-pune' class='text-[#1D4F9C] font-semibold'>Shapoorji Pallonji projects are RERA registered</a>. <strong>7. Visit at least 5 projects:</strong> Compare Hinjewadi, Hadapsar, and Bavdhan micro-markets. <strong>8. Check developer track record:</strong> Shapoorji Pallonji's 150-year legacy means zero delivery risk. <strong>9. Compare carpet area vs super built-up:</strong> Focus on carpet area (what you actually get). <strong>10. Study floor plans carefully:</strong> Check Vastu compliance, ventilation, and natural light.",
+
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Step 11-15: Due Diligence</h2>",
+            "<strong>11. Check title clearance:</strong> Ensure the land title is clear with no encumbrances. <strong>12. Verify commencement certificate:</strong> Construction should have all municipal approvals. <strong>13. Read the agreement carefully:</strong> Pay attention to possession date, penalty clauses, and parking allocation. <strong>14. Check amenity charges:</strong> Clarify maintenance deposits, clubhouse fees, and annual charges. <strong>15. Verify construction quality:</strong> Visit completed projects by the same developer. <a href='/projects' class='text-[#1D4F9C] font-semibold'>Explore Shapoorji Pallonji's Pune portfolio</a>.",
+
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Step 16-20: Closing & Handover</h2>",
+            "<strong>16. Negotiate the price:</strong> New launches often have early-bird discounts of 2-5%. <strong>17. Review payment schedule:</strong> Construction-linked plans offer better protection than time-linked. <strong>18. Register the agreement:</strong> Pay stamp duty at the Sub-Registrar office. <strong>19. Get possession inspection:</strong> Check all fittings, electrical, plumbing, and finishes. <strong>20. Transfer utilities:</strong> Electricity, water, gas, and broadband connections.",
+
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Recommended Projects for First-Time Buyers</h2>",
+            "For first-time buyers in Pune, we recommend starting with <a href='/projects/joyville-hadapsar-annexe-pune' class='text-[#1D4F9C] font-semibold'>Joyville Hadapsar Annexe</a> (from ₹65 Lakhs) for affordable entry, or <a href='/projects/joyville-sensorium-hinjewadi' class='text-[#1D4F9C] font-semibold'>Joyville Sensorium Hinjewadi</a> (from ₹1.10 Cr) if you work in the IT corridor. Both are RERA approved, EDGE certified, and backed by Shapoorji Pallonji's 150-year construction legacy."
+        ],
+        date: "March 4, 2026",
+        author: "Joyville Research Desk",
+        category: "Buyer's Guide",
+        readTime: "8 Min Read",
+        image: "/images/vanaha_golfland_projectcard.webp",
+        seoKeywords: ["first time homebuyer Pune", "homebuyer checklist Pune 2026", "how to buy flat Pune", "first flat Pune checklist", "buying apartment Pune guide", "stamp duty Pune 2026", "home loan Pune 2026", "RERA checklist homebuyer", "Pune property buying steps", "first home Pune tips", "homebuyer mistakes Pune", "flat buying process Pune", "property registration Pune", "possession checklist flat", "EMI calculator Pune flat", "CIBIL score home loan", "Pune real estate first timer", "new homebuyer guide India", "flat buying documentation Pune", "Shapoorji Pallonji first home"]
+    },
+    {
+        id: "10",
+        slug: "pune-it-corridor-hinjewadi-vs-kharadi-vs-magarpatta",
+        title: "Pune IT Corridor Real Estate — Hinjewadi vs Kharadi vs Magarpatta Comparison 2026",
+        excerpt: "Which Pune IT corridor offers the best real estate investment? Compare Hinjewadi, Kharadi, and Magarpatta on property prices, rental yields, infrastructure, and appreciation potential.",
+        content: [
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4'>Pune's IT Corridors: A Real Estate Investment Comparison</h2>",
+            "Pune's three major IT corridors — Hinjewadi (West), Kharadi (East), and Magarpatta (South-East) — together employ over 8 lakh IT professionals. For property investors, the choice of corridor can mean a 3-5% difference in annual returns. This detailed comparison helps you pick the right micro-market for your investment goals.",
+
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Hinjewadi — Pune's Silicon Valley</h2>",
+            "<strong>Average price (2026):</strong> ₹7,500-9,500/sq.ft. | <strong>Rental yield:</strong> 4.5-5.5% | <strong>5-year appreciation:</strong> 45-55%. Hinjewadi Phase 1 is home to Rajiv Gandhi Infotech Park with 200+ IT companies including Infosys, Wipro, TCS, and Cognizant. The upcoming Pune Metro Line 3 (expected 2027) will add 12-15% transit premium. <a href='/projects/joyville-sensorium-hinjewadi' class='text-[#1D4F9C] font-semibold'>Joyville Sensorium</a> by Shapoorji Pallonji offers walk-to-work luxury apartments starting ₹1.10 Cr with EDGE certification. <strong>Best for:</strong> IT professionals seeking premium walk-to-work lifestyle and long-term appreciation.",
+
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Kharadi — The Emerging East</h2>",
+            "<strong>Average price (2026):</strong> ₹8,000-10,500/sq.ft. | <strong>Rental yield:</strong> 4.0-4.5% | <strong>5-year appreciation:</strong> 40-50%. Kharadi is home to EON IT Park, World Trade Center, and is positioned along the Pune Airport corridor. Already well-connected via the Kharadi-Wagholi bypass. Higher price points than Hinjewadi due to proximity to city center. <strong>Best for:</strong> Buyers who want better city connectivity and airport access.",
+
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Magarpatta & Hadapsar — The Established Township Belt</h2>",
+            "<strong>Average price (2026):</strong> ₹6,500-8,500/sq.ft. | <strong>Rental yield:</strong> 3.5-4.5% | <strong>5-year appreciation:</strong> 30-40%. Magarpatta City is India's first integrated township and SP Infocity is a major employer. <a href='/projects/joyville-hadapsar-annexe-pune' class='text-[#1D4F9C] font-semibold'>Joyville Hadapsar Annexe</a> offers ready-to-move flats from just ₹65 Lakhs — the most affordable entry point among all IT corridors. <a href='/properties/flats-near-magarpatta-pune' class='text-[#1D4F9C] font-semibold'>Flats near Magarpatta</a> benefit from established social infrastructure. <strong>Best for:</strong> Budget-conscious buyers and families seeking ready homes with township amenities.",
+
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Comparison Table</h2>",
+            "<table class='w-full text-sm border border-gray-200 mb-6'><thead><tr class='bg-[#1D4F9C] text-white'><th class='py-3 px-4 text-left'>Parameter</th><th class='py-3 px-4 text-left'>Hinjewadi</th><th class='py-3 px-4 text-left'>Kharadi</th><th class='py-3 px-4 text-left'>Magarpatta</th></tr></thead><tbody><tr class='bg-gray-50'><td class='py-2 px-4 font-medium'>Price/sq.ft.</td><td class='py-2 px-4'>₹7.5-9.5K</td><td class='py-2 px-4'>₹8-10.5K</td><td class='py-2 px-4'>₹6.5-8.5K</td></tr><tr><td class='py-2 px-4 font-medium'>Rental Yield</td><td class='py-2 px-4 text-green-600 font-semibold'>4.5-5.5%</td><td class='py-2 px-4'>4.0-4.5%</td><td class='py-2 px-4'>3.5-4.5%</td></tr><tr class='bg-gray-50'><td class='py-2 px-4 font-medium'>Appreciation</td><td class='py-2 px-4 text-green-600 font-semibold'>45-55%</td><td class='py-2 px-4'>40-50%</td><td class='py-2 px-4'>30-40%</td></tr><tr><td class='py-2 px-4 font-medium'>Metro Access</td><td class='py-2 px-4'>Line 3 (2027)</td><td class='py-2 px-4'>Planned</td><td class='py-2 px-4'>None</td></tr><tr class='bg-gray-50'><td class='py-2 px-4 font-medium'>Airport</td><td class='py-2 px-4'>25 km</td><td class='py-2 px-4'>12 km</td><td class='py-2 px-4'>15 km</td></tr></tbody></table>",
+
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Our Verdict: Hinjewadi Leads for 2026</h2>",
+            "For 2026, Hinjewadi offers the best combination of rental yield, appreciation potential, and upcoming infrastructure (Metro Line 3). Shapoorji Pallonji's <a href='/locality/hinjewadi' class='text-[#1D4F9C] font-semibold'>Hinjewadi presence</a> through Joyville Sensorium provides the premium option, while <a href='/locality/hadapsar' class='text-[#1D4F9C] font-semibold'>Hadapsar</a> remains the best entry point for budget-conscious investors. Explore our <a href='/flats-in-pune' class='text-[#1D4F9C] font-semibold'>complete directory of flats in Pune</a> to find the perfect match."
+        ],
+        date: "March 4, 2026",
+        author: "Joyville Pune Research",
+        category: "Market Analysis",
+        readTime: "7 Min Read",
+        image: "/images/joyville_hinjawadi_projectcard.webp",
+        seoKeywords: ["Pune IT corridor real estate", "Hinjewadi vs Kharadi", "Hinjewadi vs Magarpatta", "Kharadi vs Magarpatta property", "best IT hub real estate Pune", "Pune IT park apartments", "Hinjewadi property prices 2026", "Kharadi property rates 2026", "Magarpatta real estate 2026", "IT professionals Pune property", "walk to work Pune", "Pune tech corridor investment", "rental yield IT parks Pune", "Pune IT employment real estate", "Hinjewadi appreciation rate", "best investment IT corridor Pune", "Pune metro impact property", "IT park proximity flats Pune", "Pune real estate IT hub comparison", "Rajiv Gandhi Infotech Park flats"]
     }
 ];
 
