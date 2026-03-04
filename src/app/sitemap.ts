@@ -48,7 +48,10 @@ const SEO_ROUTES = [
     'ready-possession-flats-pune-2026',
     'investment-property-pune-2026',
     'flats-near-hinjewadi-it-park',
-    'shapoorji-pallonji-projects-pune'
+    'shapoorji-pallonji-projects-pune',
+    // Phase 6: Competitor Comparisons
+    'joyville-vs-pride-purple-pune',
+    'joyville-vs-gera-world-of-joy'
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

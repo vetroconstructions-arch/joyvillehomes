@@ -28,42 +28,9 @@ const staggerContainer: Variants = {
 export default function Home() {
   const [activeFloorPlan, setActiveFloorPlan] = useState<"2BHK" | "3BHK">("2BHK");
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "name": "Joyville Homes Pune | Shapoorji Pallonji Real Estate",
-    "image": "https://www.joyville-homes.com/images/desktop-poster.webp",
-    "description": "Discover premium 2 & 3 BHK luxury flats in Pune by Shapoorji Pallonji. Explore residential projects across Hinjewadi, Hadapsar, Bavdhan, and Shewalewadi. RERA approved homes with world-class amenities.",
-    "priceRange": "₹65 L - ₹1.45 Cr",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Pune",
-      "addressRegion": "Maharashtra",
-      "postalCode": "411057",
-      "addressCountry": "IN"
-    },
-    "url": "https://www.joyville-homes.com",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "215"
-    },
-    "sameAs": [
-      "https://www.facebook.com/ShapoorjiPallonjiRealEstate/",
-      "https://twitter.com/SPRealEstate",
-      "https://www.linkedin.com/company/shapoorji-pallonji-real-estate/",
-      "https://www.google.com/maps?cid=YOUR_GBP_CID_HERE_SENSORIUM",
-      "https://www.google.com/maps?cid=YOUR_GBP_CID_HERE_HADAPSAR"
-    ]
-  };
-
   return (
     <div className="bg-[#FFFFFF] min-h-screen text-[#323334] selection:bg-[#1D4F9C] selection:text-[#FFFFFF] overflow-hidden font-sans">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      {/* Navigation header injected globally via layout.tsx */}
+      {/* RealEstateAgent schema provided by layout.tsx @graph — no duplicate needed */}
 
       {/* --- Ultra-Modern Hero Layout (Phase 3) --- */}
       <section className="relative h-screen w-full flex items-center overflow-hidden bg-[#EEF2F6]">

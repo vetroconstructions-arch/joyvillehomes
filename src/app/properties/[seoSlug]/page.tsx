@@ -257,6 +257,24 @@ const SEO_ROUTES = [
         h1: 'All Shapoorji Pallonji Projects in Pune — 2026',
         keywords: ['Shapoorji Pallonji projects Pune', 'Shapoorji Pallonji Pune 2026', 'all Joyville projects Pune', 'Shapoorji Pallonji residential Pune', 'SP Real Estate Pune projects', 'Shapoorji developer Pune', 'Shapoorji Pallonji brand projects'],
         filters: { locationMatch: '', typeMatch: '' }
+    },
+
+    // Phase 6: New Competitor Comparison Pages
+    {
+        slug: 'joyville-vs-pride-purple-pune',
+        title: 'Joyville vs Pride Purple Pune — Complete Comparison 2026',
+        description: 'Head-to-head comparison of Joyville by Shapoorji Pallonji vs Pride Purple projects in Pune. Compare price, amenities, construction quality, RERA, and appreciation potential.',
+        h1: 'Joyville by Shapoorji Pallonji vs Pride Purple — Pune 2026',
+        keywords: ['Joyville vs Pride Purple', 'Shapoorji vs Pride Purple Pune', 'Pride Purple comparison', 'best developer Pune 2026', 'Joyville or Pride Purple'],
+        filters: { locationMatch: '', typeMatch: '' }
+    },
+    {
+        slug: 'joyville-vs-gera-world-of-joy',
+        title: 'Joyville Pune vs Gera World of Joy — Family Housing Comparison 2026',
+        description: 'Detailed comparison of Joyville Pune (Shapoorji Pallonji) vs Gera World of Joy. Price, child-friendly amenities, township scale, RERA status, and family-focused features compared.',
+        h1: 'Joyville Pune vs Gera World of Joy — Which Is Better for Families?',
+        keywords: ['Joyville vs Gera', 'Joyville vs Gera World of Joy', 'Shapoorji Pallonji vs Gera', 'best family housing Pune', 'Gera comparison 2026', 'child friendly projects Pune'],
+        filters: { locationMatch: '', typeMatch: '' }
     }
 ];
 
@@ -433,7 +451,9 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
                                             {routeData.slug.includes('kolte-patil') ? 'Kolte Patil Life Republic'
                                                 : routeData.slug.includes('vtp') ? 'VTP Bellissimo'
                                                     : routeData.slug.includes('amanora') ? 'Amanora Trendsetter'
-                                                        : 'Godrej Evergreen Square'}
+                                                        : routeData.slug.includes('pride-purple') ? 'Pride Purple'
+                                                            : routeData.slug.includes('gera') ? 'Gera World of Joy'
+                                                                : 'Godrej Evergreen Square'}
                                         </th>
                                     </tr>
                                 </thead>
@@ -471,6 +491,28 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
                                         ['Clubhouse', '35,000 sq.ft. + 4 Mini Clubs', 'Shared Township Club'],
                                         ['Mall Proximity', '5.5 km to Amanora Mall', 'Within township'],
                                         ['Best For', 'Families + Value seekers', 'Mall-lifestyle seekers'],
+                                    ] : routeData.slug.includes('pride-purple') ? [
+                                        ['Developer Legacy', '150 Years (Since 1865)', '22+ Years'],
+                                        ['Land Area', '10.5-21 Acres', '5-15 Acres'],
+                                        ['2 BHK Starting Price', '₹65 Lakhs - 1.10 Cr', '₹70 Lakhs - 95 Lakhs'],
+                                        ['Construction Quality', 'Premium (Built Indian Parliament)', 'Good (Regional Leader)'],
+                                        ['Amenities Count', '60+', '30-45'],
+                                        ['Open Space', '75-80%', '~60%'],
+                                        ['Smart Home', '✅ Standard', '❌ Not standard'],
+                                        ['Green Certification', '✅ EDGE Certified', '❌ No'],
+                                        ['Township Scale', '1,000 Acres (Vanaha)', 'Standalone projects'],
+                                        ['Best For', 'Premium lifestyle + investment', 'Mid-segment buyers'],
+                                    ] : routeData.slug.includes('gera') ? [
+                                        ['Developer Legacy', '150 Years (Since 1865)', '50+ Years'],
+                                        ['Focus', 'Premium lifestyle + IT corridor', 'Family & child-friendly'],
+                                        ['Land Area', '10.5-21 Acres', '8-12 Acres'],
+                                        ['2 BHK Starting Price', '₹65 Lakhs - 1.10 Cr', '₹78 Lakhs - 1.05 Cr'],
+                                        ['Construction Quality', 'Premium (Shapoorji Legacy)', 'Good (Pune-focused)'],
+                                        ['Amenities Count', '60+', '40-50'],
+                                        ['Child-Friendly Amenities', '✅ Extensive', '✅ Branded (ChildCentric®)'],
+                                        ['Green Certification', '✅ EDGE Certified', '❌ No'],
+                                        ['RERA Compliance', '✅ All Projects', '✅ All Projects'],
+                                        ['Best For', 'IT professionals + investors', 'Young families'],
                                     ] : [
                                         ['Developer Legacy', '150 Years (Since 1865)', '127 Years (Since 1897)'],
                                         ['Land Area', '10.5 Acres', '~5 Acres'],
@@ -500,7 +542,11 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
                                         ? 'Joyville Sensorium leads with EDGE certification, 60+ amenities, and the iconic 1.8km Walking Boulevard. VTP Bellissimo offers competitive pricing for mid-segment buyers. Choose Sensorium for premium lifestyle and long-term appreciation; choose VTP for value-oriented living.'
                                         : routeData.slug.includes('amanora')
                                             ? 'Joyville Hadapsar Annexe offers a massive 35,000 sq.ft. clubhouse, 80% open space, and the trusted Shapoorji Pallonji legacy at competitive pricing. Amanora Trendsetter leverages mall proximity. Choose Joyville for family-friendly township living; choose Amanora for retail-centric lifestyle.'
-                                            : 'Both are premium developers with strong legacies. Joyville Sensorium edges ahead with its 10.5-acre scale, 60+ amenities, and 1.8km walking boulevard. Godrej Evergreen Square offers compelling green certifications. Choose Sensorium for amenity density; choose Godrej for green-first living.'
+                                            : routeData.slug.includes('pride-purple')
+                                                ? 'Joyville by Shapoorji Pallonji outperforms with 150 years of construction legacy, EDGE green certification, and 60+ premium amenities including smart home integration. Pride Purple offers competitive mid-segment pricing but lacks the institutional-grade construction quality. Choose Joyville for long-term investment value; choose Pride Purple for budget-first decisions.'
+                                                : routeData.slug.includes('gera')
+                                                    ? 'Joyville by Shapoorji Pallonji and Gera World of Joy both excel in family-focused design. Joyville leads with superior township scale (up to 1,000 acres), EDGE certification, and 60+ amenities. Gera stands out with branded ChildCentric® features. Choose Joyville for premium lifestyle and investment ROI; choose Gera for specialized child-friendly living.'
+                                                    : 'Both are premium developers with strong legacies. Joyville Sensorium edges ahead with its 10.5-acre scale, 60+ amenities, and 1.8km walking boulevard. Godrej Evergreen Square offers compelling green certifications. Choose Sensorium for amenity density; choose Godrej for green-first living.'
                                 }
                             </p>
                         </div>
