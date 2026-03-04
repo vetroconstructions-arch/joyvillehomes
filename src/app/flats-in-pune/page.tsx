@@ -107,9 +107,25 @@ export default function FlatsInPunePage() {
         ]
     };
 
+    const allLinks = SECTIONS.flatMap(s => s.links);
+    const itemListLd = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Flats in Pune by Shapoorji Pallonji",
+        "description": "Complete directory of 40+ flat categories in Pune",
+        "numberOfItems": allLinks.length,
+        "itemListElement": allLinks.map((link, idx) => ({
+            "@type": "ListItem",
+            "position": idx + 1,
+            "name": link.label,
+            "url": `${siteUrl}${link.href}`
+        }))
+    };
+
     return (
         <div className="min-h-screen bg-[#EEF2F6] pt-32 pb-24 text-[#323334]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
             <Navbar />
 
             {/* Hero */}
@@ -126,8 +142,8 @@ export default function FlatsInPunePage() {
 
                 <div className="flex items-center gap-6 mt-8 text-sm text-[#1D4F9C] font-light">
                     <span className="flex items-center gap-2"><Building2 size={16} /> 9 Projects</span>
-                    <span className="flex items-center gap-2"><MapPin size={16} /> 5 Localities</span>
-                    <span className="flex items-center gap-2"><Home size={16} /> 32+ Searches</span>
+                    <span className="flex items-center gap-2"><MapPin size={16} /> 7 Localities</span>
+                    <span className="flex items-center gap-2"><Home size={16} /> 40+ Searches</span>
                 </div>
             </header>
 

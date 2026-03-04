@@ -19,6 +19,8 @@ const footerLinks = {
         { href: '/locality/bavdhan', label: 'Bavdhan Real Estate' },
         { href: '/locality/shewalewadi', label: 'Shewalewadi Real Estate' },
         { href: '/locality/purandar', label: 'Purandar Real Estate' },
+        { href: '/locality/kharadi', label: 'Kharadi Real Estate' },
+        { href: '/locality/wakad', label: 'Wakad Real Estate' },
     ],
     properties: [
         { href: '/properties/2-bhk-flats-in-hinjewadi', label: '2 BHK Flats Hinjewadi' },

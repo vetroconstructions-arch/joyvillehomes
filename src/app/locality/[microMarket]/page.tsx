@@ -215,6 +215,76 @@ const localities: LocalityData[] = [
             { q: 'What plots are available near Purandar?', a: 'Shapoorji Treetopia offers NA bungalow plots from \u20b984 Lakhs in a gated community with biophilic landscapes.' },
             { q: 'Is investing near Purandar risky?', a: 'Pre-airport investments near Navi Mumbai and Bengaluru airports delivered 5-10x returns. Shapoorji brand reduces developer risk.' },
         ]
+    },
+    {
+        id: "l6",
+        slug: "kharadi",
+        name: "Kharadi",
+        subtitle: "Pune's Premium IT & Commercial Hub — East Corridor",
+        seoKeywords: [
+            "Kharadi real estate 2026", "flats in Kharadi Pune", "apartments near EON IT Park",
+            "Kharadi property rates 2026", "2 BHK flats Kharadi", "3 BHK Kharadi Pune",
+            "luxury apartments Kharadi", "new launch projects Kharadi 2026",
+            "property near World Trade Center Pune", "Kharadi bypass residential projects",
+            "flats near Pune Airport", "Kharadi property appreciation 2026",
+            "investment property Kharadi Pune", "ready to move flats Kharadi",
+            "Kharadi vs Hinjewadi property", "IT corridor Kharadi apartments",
+            "Kharadi Wagholi corridor flats", "premium residences Kharadi",
+            "gated community Kharadi Pune", "rental yield Kharadi flats"
+        ],
+        description: "Kharadi is Pune's fastest-evolving IT & commercial corridor, anchored by EON IT Park, World Trade Center, and Zensar/Barclays campuses. Its strategic position — just 12 km from Pune Airport and well-connected via the Kharadi-Wagholi bypass — makes it the preferred choice for professionals seeking city-center proximity. Property prices have risen 38% over 5 years, with 2026 seeing sustained demand from IT professionals and NRI investors. While Shapoorji Pallonji's primary Pune presence is in Hinjewadi and Hadapsar, Kharadi homebuyers benefit from nearby Joyville projects that offer superior construction quality at competitive pricing.",
+        infrastructure: [
+            { label: "IT Parks", value: "EON IT Park, World Trade Center, Zensar Campus" },
+            { label: "Airport", value: "12 km to Pune International Airport" },
+            { label: "Connectivity", value: "Kharadi-Wagholi Bypass, Nagar Road" },
+            { label: "Social", value: "Amanora Mall, Eon Free Zone, Phoenix Marketcity (10 km)" }
+        ],
+        marketTrend: "Premium Appreciation. Kharadi commands some of the highest price points in East Pune at ₹8,000-10,500/sq.ft. The upcoming Nagar Road Metro extension and Kharadi-Wagholi corridor expansion will drive further 8-10% annual appreciation.",
+        priceRange: "₹80 Lakhs – ₹2.5 Cr",
+        avgPricePerSqFt: "₹9,200",
+        yoyAppreciation: "9.8%",
+        latitude: 18.5530,
+        longitude: 73.9450,
+        faqs: [
+            { q: 'Why is Kharadi property expensive?', a: 'Premium pricing due to proximity to city center, airport, and multiple IT parks. Established infrastructure justifies the rates.' },
+            { q: 'Is Kharadi better than Hinjewadi for investment?', a: 'Kharadi offers city-center proximity; Hinjewadi offers higher rental yields (4.5-5.5% vs 4.0-4.5%) and superior metro connectivity (Line 3).' },
+            { q: 'What Shapoorji Pallonji projects are near Kharadi?', a: 'Joyville Hadapsar Annexe (15 km) and Joyville Celestia offer competitive alternatives with Shapoorji Pallonji construction quality.' },
+        ]
+    },
+    {
+        id: "l7",
+        slug: "wakad",
+        name: "Wakad",
+        subtitle: "Hinjewadi-Adjacent Growth Market — Affordable IT Corridor",
+        seoKeywords: [
+            "Wakad real estate 2026", "flats in Wakad Pune", "apartments Wakad",
+            "Wakad property rates 2026", "2 BHK flats Wakad", "3 BHK Wakad Pune",
+            "affordable flats Wakad", "Wakad Hinjewadi corridor",
+            "property near Hinjewadi Phase 3", "Wakad residential projects 2026",
+            "Wakad vs Hinjewadi property price", "ready to move flats Wakad",
+            "Wakad metro station flats", "Pimpri Chinchwad Wakad corridor",
+            "investment property Wakad Pune", "new projects Wakad 2026",
+            "IT professionals Wakad housing", "Wakad ring road properties",
+            "gated society Wakad Pune", "rental yield Wakad apartments"
+        ],
+        description: "Wakad is the affordable alternative to Hinjewadi, located just 5 km from Hinjewadi IT Park and well-connected via the Mumbai-Pune Expressway and Ring Road. As Hinjewadi prices have surged past ₹9,000/sq.ft., Wakad offers 20-30% lower entry points while maintaining excellent IT corridor connectivity. The upcoming Pune Metro Line 3 Wakad station will add significant transit premium. Young IT professionals and first-time homebuyers increasingly choose Wakad for its balance of affordability and lifestyle. Shapoorji Pallonji's Joyville Sensorium in nearby Hinjewadi Phase 1 offers a premium upgrade path within the same corridor.",
+        infrastructure: [
+            { label: "IT Connectivity", value: "5 km to Hinjewadi IT Park (Phase 1, 2, 3)" },
+            { label: "Metro", value: "Pune Metro Line 3 — Wakad Station (upcoming)" },
+            { label: "Highway", value: "Mumbai-Pune Expressway (2 km), Ring Road" },
+            { label: "Social", value: "Westend Mall, DY Patil University, Symbiosis" }
+        ],
+        marketTrend: "Affordable Growth Hub. Wakad prices (₹6,500-8,000/sq.ft.) are 20-30% below Hinjewadi Phase 1, but appreciation rates are catching up at 11% YoY. Metro Line 3 will narrow this gap significantly by 2027-28.",
+        priceRange: "₹55 Lakhs – ₹1.20 Cr",
+        avgPricePerSqFt: "₹7,200",
+        yoyAppreciation: "11.0%",
+        latitude: 18.5980,
+        longitude: 73.7620,
+        faqs: [
+            { q: 'Is Wakad a good investment compared to Hinjewadi?', a: 'Wakad offers 20-30% lower entry prices with 11% YoY appreciation. Metro Line 3 will add transit premium, making it an excellent value buy.' },
+            { q: 'How far is Wakad from Hinjewadi IT Park?', a: 'Just 5 km via the Wakad-Hinjewadi bypass. Most IT professionals commute in 10-15 minutes.' },
+            { q: 'What Shapoorji Pallonji projects are near Wakad?', a: 'Joyville Sensorium in Hinjewadi Phase 1 is the closest premium option, offering walk-to-work luxury 5 km from Wakad.' },
+        ]
     }
 ];
 
