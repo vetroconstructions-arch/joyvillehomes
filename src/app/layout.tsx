@@ -67,11 +67,8 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://www.joyville-homes.com",
     languages: {
-      'en-US': 'https://www.joyville-homes.com',
-      'en-GB': 'https://www.joyville-homes.com',
-      'en-AE': 'https://www.joyville-homes.com',
+      'en-IN': 'https://www.joyville-homes.com',
       'x-default': 'https://www.joyville-homes.com',
     },
   },

@@ -24,6 +24,18 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'shapoorjipallonji.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'shapoorjirealestate.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.joyville-homes.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'joyville-homes.com',
       }
     ],
   },
@@ -39,6 +51,40 @@ const nextConfig: NextConfig = {
           { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
         ],
       },
+    ];
+  },
+  async redirects() {
+    return [
+      {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/en-us',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/properties/2-bhk-flats-in-hinjewadi-pune',
+        destination: '/properties/2-bhk-flats-in-hinjewadi',
+        permanent: true,
+      },
+      {
+        source: '/properties/property-near-sp-infocity-phursungi',
+        destination: '/properties/flats-near-sp-infocity-pune',
+        permanent: true,
+      },
+      {
+        source: '/projects/joyville-celestia-hinjewadi',
+        destination: '/projects/joyville-celestia-hadapsar',
+        permanent: true,
+      },
+      {
+        source: '/projects/vanaha-springs-bavdhan',
+        destination: '/projects/vanaha-springs-pune',
+        permanent: true,
+      }
     ];
   },
 };

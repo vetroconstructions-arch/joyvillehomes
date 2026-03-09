@@ -172,10 +172,10 @@ export const SEO_ROUTES = [
     },
     {
         slug: 'flats-near-sp-infocity-pune',
-        title: 'Flats Near SP Infocity Pune — Shapoorji Pallonji Joyville Hadapsar',
-        description: 'Premium 1, 2 & 3 BHK flats near SP Infocity Phursungi, Pune. Joyville Hadapsar Annexe by Shapoorji Pallonji — 21-acre township with 60+ amenities. Walk to work from ₹65 Lakhs.',
-        h1: 'Premium Flats Near SP Infocity, Pune',
-        keywords: ['flats near SP Infocity', 'SP Infocity Phursungi residential', 'apartments near SP Infocity Pune', 'walk to work SP Infocity', 'Joyville Hadapsar SP Infocity', 'IT park housing Pune East', 'rental income SP Infocity flats'],
+        title: 'Premium Flats Near SP Infocity Phursungi | Joyville Hadapsar Annexe',
+        description: 'Find premium 1, 2 & 3 BHK flats near SP Infocity Phursungi. 21-acre Joyville Hadapsar Annexe township by Shapoorji Pallonji. Walk to work from ₹65 Lakhs.',
+        h1: 'Premium Flats Near SP Infocity, Phursungi',
+        keywords: ['flats near SP Infocity', 'SP Infocity Phursungi residential', 'Joyville Hadapsar SP Infocity', 'apartments near SP Infocity Pune'],
         filters: { locationMatch: 'Shewalewadi|Hadapsar', typeMatch: '' }
     },
     {
@@ -200,6 +200,158 @@ export const SEO_ROUTES = [
         description: 'Browse MahaRERA approved flats in Pune by Shapoorji Pallonji. All Joyville & Vanaha projects are RERA registered with escrow protection. 9 verified projects from ₹65 Lakhs.',
         h1: 'MahaRERA Approved Flats in Pune — 2026',
         keywords: ['RERA approved flats Pune', 'MahaRERA projects Pune', 'RERA registered flats Pune', 'verified projects Pune 2026', 'RERA safe investment Pune', 'MahaRERA approved Hinjewadi', 'RERA flats Hadapsar'],
+        filters: { locationMatch: '', typeMatch: '' }
+    },
+
+    // Cluster: Locality - Specific High-Intent
+    {
+        slug: 'flats-near-hinjewadi-it-park',
+        title: 'Luxury Flats Near Hinjewadi IT Park (Phase 1, 2) | Shapoorji Pallonji',
+        description: 'Premium residences near Rajiv Gandhi Infotech Park. Walk-to-work 2 & 3 BHK apartments at Joyville Sensorium. Starting ₹1.10 Cr. EDGE certified.',
+        h1: 'Luxury Flats Near Hinjewadi IT Park',
+        keywords: ['flats near Hinjewadi IT Park', 'apartments near Rajiv Gandhi Infotech Park', 'Joyville Hinjewadi IT Park', 'flats near Wipro Hinjewadi'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
+    },
+    {
+        slug: 'flats-near-eon-it-park-kharadi',
+        title: 'Premium Flats Near EON IT Park Kharadi — Joyville Hadapsar Annexe',
+        description: 'Explore premium flats near EON IT Park Kharadi. 21-acre Joyville Hadapsar Annexe township just a short drive away. World-class amenities. Starting ₹65 Lakhs.',
+        h1: 'Premium Flats Near EON IT Park, Kharadi',
+        keywords: ['flats near EON IT Park', 'apartments near Kharadi IT Park', 'Joyville Hadapsar Kharadi', 'flats near World Trade Center Pune'],
+        filters: { locationMatch: 'Shewalewadi|Hadapsar', typeMatch: '' }
+    },
+    {
+        slug: 'apartments-near-magarpatta-city-hadapsar',
+        title: 'Luxury Apartments Near Magarpatta City Hadapsar | Shapoorji Pallonji',
+        description: 'Spacious 2 & 3 BHK luxury apartments near Magarpatta City. Explore Joyville Hadapsar Annexe & Celestia. Premium lifestyle near Pune\'s IT hubs.',
+        h1: 'Luxury Apartments Near Magarpatta City, Hadapsar',
+        keywords: ['apartments near Magarpatta City', 'luxury flats Hadapsar', 'Joyville Hadapsar apartments', 'flats near Noble Hospital'],
+        filters: { locationMatch: 'Shewalewadi|Hadapsar', typeMatch: '' }
+    },
+    {
+        slug: 'residential-projects-near-hinjewadi-phase-1',
+        title: 'Residential Projects Near Hinjewadi Phase 1 | Shapoorji Pallonji Joyville',
+        description: 'Explore the best residential projects near Hinjewadi Phase 1. Joyville Sensorium & Vyomora by Shapoorji Pallonji. Smart homes with 60+ amenities.',
+        h1: 'Top Residential Projects Near Hinjewadi Phase 1',
+        keywords: ['residential projects Hinjewadi Phase 1', 'flats near Infosys Hinjewadi', 'Joyville Sensorium Hinjewadi', 'Hinjenwadi Phase 1 apartments'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
+    },
+    {
+        slug: 'affordable-flats-in-shewalewadi-hadapsar',
+        title: 'Affordable Flats in Shewalewadi Hadapsar — Starting ₹65 Lakhs | Joyville',
+        description: 'Looking for affordable housing in East Pune? Explore Joyville Hadapsar Annexe in Shewalewadi. 1, 2 & 3 BHK premium flats with massive open spaces.',
+        h1: 'Affordable Flats in Shewalewadi, Hadapsar',
+        keywords: ['affordable flats Shewalewadi', 'Joyville Hadapsar Shewalewadi', 'flats in Shewalewadi Pune', 'Hadapsar affordable housing'],
+        filters: { locationMatch: 'Shewalewadi|Hadapsar', typeMatch: '' }
+    },
+    {
+        slug: 'flats-near-pune-metro-line-3',
+        title: 'Flats Near Pune Metro Line 3 (Hinjewadi to Shivajinagar) | Joyville Pune',
+        description: 'Invest in flats near the upcoming Pune Metro Line 3. Excellent connectivity for Hinjewadi professionals. Projects by Shapoorji Pallonji. RERA approved.',
+        h1: 'Premium Flats Near Pune Metro Line 3',
+        keywords: ['flats near Pune Metro', 'Metro Line 3 residential', 'Hinjewadi Metro flats', 'property near Metro station Pune'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
+    },
+
+    // Cluster: Budget & Intent
+    {
+        slug: 'under-1-crore-flats-pune',
+        title: 'Flats Under 1 Crore in Pune — Hinjewadi & Hadapsar | Joyville Homes',
+        description: 'Premium quality life under 1 crore. Explore 2 BHK flats in Hinjewadi and Hadapsar by Shapoorji Pallonji. RERA approved gated communities.',
+        h1: 'Best Flats Under 1 Crore in Pune',
+        keywords: ['flats under 1 crore Pune', '2 BHK under 1 crore Hinjewadi', 'apartments under 1 crore Hadapsar', 'budget luxury Pune'],
+        filters: { locationMatch: '', typeMatch: '' }
+    },
+    {
+        slug: 'investment-property-pune-2026',
+        title: 'Best Investment Property in Pune 2026 — High ROI | Shapoorji Pallonji',
+        description: 'Top real estate investment opportunities in Pune for 2026. Focus on Hinjewadi, Hadapsar and Purandar growth corridors. Trusted 150-year legacy.',
+        h1: 'Top Investment Property in Pune for 2026',
+        keywords: ['investment property Pune', 'real estate investment 2026', 'best ROI Pune property', 'Shapoorji investment Pune'],
+        filters: { locationMatch: '', typeMatch: '' }
+    },
+
+    // Cluster: Status & Features
+    {
+        slug: 'ready-to-move-flats-in-hadapsar',
+        title: 'Ready to Move Flats in Hadapsar Pune — OC Received | Joyville Annexe',
+        description: 'Move in today. Ready to move 1, 2 & 3 BHK apartments at Joyville Hadapsar Annexe. OC received for multiple towers. Starting ₹65 Lakhs onwards.',
+        h1: 'Ready to Move Flats in Hadapsar, Pune',
+        keywords: ['ready to move flats Hadapsar', 'Joyville Hadapsar ready to move', 'OC received Hadapsar', 'immediate possession Pune East'],
+        filters: { locationMatch: 'Shewalewadi|Hadapsar', typeMatch: '' }
+    },
+    {
+        slug: 'ready-possession-flats-pune-2026',
+        title: 'Ready Possession Flats in Pune 2026 — Move In Today | Joyville',
+        description: 'Skip the wait. Explore ready possession 1, 2 & 3 BHK flats at Joyville Hadapsar Annexe and other Shapoorji Pallonji projects in Pune. OC received.',
+        h1: 'Ready Possession Flats in Pune — 2026',
+        keywords: ['ready possession flats Pune', 'immediate possession flats Hadapsar', 'OC received flats Pune', 'move-in ready Joyville'],
+        filters: { locationMatch: '', typeMatch: '' }
+    },
+    {
+        slug: 'new-launch-projects-pune-2025',
+        title: 'New Launch Residential Projects in Pune 2025 | Shapoorji Pallonji',
+        description: 'be the first to invest. Explore new launch projects in Hinjewadi, Hadapsar and Bavdhan for 2025. Joyville Vyomora and Celestia. RERA approved.',
+        h1: 'Upcoming New Launch Projects in Pune — 2025',
+        keywords: ['new launch projects Pune 2025', 'upcoming projects Hinjewadi 2025', 'Shapoorji Pallonji new launch', 'Joyville Vyomora launch'],
+        filters: { locationMatch: '', typeMatch: '' }
+    },
+    {
+        slug: 'new-launch-projects-pune-2026',
+        title: 'New Launch Residential Projects in Pune 2026 | Shapoorji Pallonji',
+        description: 'Future-proof your investment. Explore upcoming residential launches in Pune for 2026. Premium townships in Hinjewadi and Hadapsar growth corridors.',
+        h1: 'Upcoming New Launch Projects in Pune — 2026',
+        keywords: ['new launch projects Pune 2026', 'investment projects Pune 2026', 'Joyville Skyluxe Edition', 'future projects Shapoorji Pune'],
+        filters: { locationMatch: '', typeMatch: '' }
+    },
+    {
+        slug: 'smart-home-apartments-pune',
+        title: 'Smart Home Apartments in Pune — Joyville Sensorium Hinjewadi',
+        description: 'Experience futuristic living. Smart home enabled apartments in Hinjewadi Phase 1 at Joyville Sensorium. Advanced safety and automation features.',
+        h1: 'Premium Smart Home Apartments in Pune',
+        keywords: ['smart home apartments Pune', 'home automation Hinjewadi', 'Joyville Sensorium smart home', 'hi-tech apartments Pune'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: 'Sensorium' }
+    },
+    {
+        slug: 'gated-community-pune-2026',
+        title: 'Gated Community Flats in Pune 2026 — Safe & Secure | Joyville Homes',
+        description: 'Elite gated communities in Hinjewadi, Hadapsar and Bavdhan. 5-tier security, 60+ amenities, and massive open spaces. Shapoorji Pallonji quality.',
+        h1: 'Top Gated Community Flats in Pune — 2026',
+        keywords: ['gated community Pune', 'secure residences Hinjewadi', 'township projects Hadapsar', 'safe flats Pune families'],
+        filters: { locationMatch: '', typeMatch: '' }
+    },
+    {
+        slug: 'shapoorji-pallonji-projects-pune',
+        title: 'All Shapoorji Pallonji Projects in Pune | Master Portfolio 2026',
+        description: 'Explore the complete master portfolio of Shapoorji Pallonji Real Estate in Pune. Spanning 9 premium projects across Hinjewadi, Hadapsar, Bavdhan & more.',
+        h1: 'Master Portfolio: Shapoorji Pallonji Projects in Pune',
+        keywords: ['Shapoorji Pallonji Pune projects', 'Joyville Pune projects', 'Vanaha Bavdhan', 'Shapoorji Treetopia'],
+        filters: { locationMatch: '', typeMatch: '' }
+    },
+
+    // Cluster: Competitor Comparisons
+    {
+        slug: 'joyville-vs-godrej-properties-pune',
+        title: 'Joyville vs Godrej Properties — Best Real Estate Developer in Pune?',
+        description: 'An objective comparison between Shapoorji Pallonji (Joyville) and Godrej Properties in the Pune market. Legacy, construction quality, and ROI compared.',
+        h1: 'Joyville vs Godrej Properties — Detailed Comparison',
+        keywords: ['Joyville vs Godrej', 'Shapoorji vs Godrej Pune', 'best developer Pune', 'construction quality comparison'],
+        filters: { locationMatch: '', typeMatch: '' }
+    },
+    {
+        slug: 'joyville-vs-pride-purple-pune',
+        title: 'Joyville Hadapsar vs Pride Purple — East Pune Project Comparison',
+        description: 'Detailed head-to-head comparison between Joyville Hadapsar Annexe and Pride Purple projects in East Pune. Compare price, scale, and amenities.',
+        h1: 'Joyville vs Pride Purple — Which Is Better?',
+        keywords: ['Joyville vs Pride Purple', 'Hadapsar project comparison', 'Pune East real estate', 'Shapoorji vs Pride Purple'],
+        filters: { locationMatch: 'Shewalewadi|Hadapsar', typeMatch: '' }
+    },
+    {
+        slug: 'joyville-vs-gera-world-of-joy',
+        title: 'Joyville vs Gera World of Joy — Best Family Projects in Pune',
+        description: 'Compare Joyville Hadapsar and Hinjewadi with Gera World of Joy. Focus on child-friendly amenities, construction quality and community living.',
+        h1: 'Joyville vs Gera World of Joy — Complete Comparison',
+        keywords: ['Joyville vs Gera', 'Gera World of Joy comparison', 'best family flats Pune', 'Shapoorji vs Gera'],
         filters: { locationMatch: '', typeMatch: '' }
     }
 ];
