@@ -9,6 +9,11 @@ export default function FloatingWhatsApp() {
             event_category: 'Lead Generation',
             event_label: 'Desktop Floating Widget'
         });
+
+        // Meta Pixel Tracking for WhatsApp micro-conversion
+        if (typeof window !== 'undefined' && (window as any).fbq) {
+            (window as any).fbq('track', 'Contact', { content_name: 'WhatsApp Initiation' });
+        }
     };
 
     return (

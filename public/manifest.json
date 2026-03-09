@@ -1,0 +1,24 @@
+{
+    "name": "Joyville Homes Pune — Shapoorji Pallonji Real Estate",
+    "short_name": "Joyville Pune",
+    "description": "Official Joyville Pune by Shapoorji Pallonji. 9 premium projects across Hinjewadi, Hadapsar & Bavdhan. 2 & 3 BHK flats starting ₹65 Lakhs.",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#1D4F9C",
+    "background_color": "#EEF2F6",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/logo.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/og-image.jpg",
+            "sizes": "512x512",
+            "type": "image/jpeg",
+            "purpose": "any"
+        }
+    ]
+}

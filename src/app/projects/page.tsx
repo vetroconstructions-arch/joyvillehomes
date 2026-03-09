@@ -19,16 +19,67 @@ export default function ProjectsPortfolio() {
     // Dynamic JSON-LD for the Portfolio
     const jsonLd = {
         "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Joyville Homes Pune Residential Projects",
-        "description": "Explore Shapoorji Pallonji's premium portfolio of luxury residential projects across Pune, Hinjewadi, Hadapsar, and Bavdhan. Find luxury 2 & 3 BHK flats.",
-        "itemListElement": currentProjects.map((project, index) => ({
-            "@type": "ListItem",
-            "position": startIndex + index + 1,
-            "url": `https://joyville-hinjewadi.example.com/projects/${project.slug}`,
-            "name": project.title,
-            "description": project.type
-        }))
+        "@graph": [
+            {
+                "@type": ["ItemList", "CollectionPage"],
+                "@id": "https://www.joyville-homes.com/projects/#portfolio",
+                "name": "Joyville Homes Pune Residential Projects",
+                "description": "Explore Shapoorji Pallonji's premium portfolio of luxury residential projects across Pune, Hinjewadi, Hadapsar, and Bavdhan. Find luxury 2 & 3 BHK flats.",
+                "url": "https://www.joyville-homes.com/projects",
+                "publisher": {
+                    "@id": "https://www.joyville-homes.com/#organization"
+                },
+                "itemListElement": projects.map((project, index) => ({
+                    "@type": "ListItem",
+                    "position": index + 1,
+                    "url": `https://www.joyville-homes.com/projects/${project.slug}`,
+                    "name": project.title,
+                    "description": project.type
+                }))
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.joyville-homes.com/projects/#breadcrumb",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.joyville-homes.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.joyville-homes.com/projects" }
+                ]
+            },
+            {
+                "@type": "HowTo",
+                "@id": "https://www.joyville-homes.com/projects/#booking-process",
+                "name": "How to Book a Home at Joyville Pune",
+                "description": "Follow these simple steps to secure your dream home at Shapoorji Pallonji Joyville in Pune.",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "name": "Digital Inquiry",
+                        "text": "Browse the Joyville Pune portfolio and fill out an inquiry form for your preferred project.",
+                        "url": "https://www.joyville-homes.com/projects"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Expert Consultation",
+                        "text": "Receive a detailed presentation and cost sheet from our authorized relationship managers.",
+                        "url": "https://www.joyville-homes.com/projects"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Prioritized Site Visit",
+                        "text": "Schedule a visit to the actual site or experience center for a walkthrough.",
+                        "url": "https://www.joyville-homes.com/projects"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Selection & Booking",
+                        "text": "Finalize your unit, submit KYC documents, and pay the booking amount to receive your allotment letter.",
+                        "url": "https://www.joyville-homes.com/projects"
+                    }
+                ],
+                "totalTime": "P3D",
+                "publisher": { "@id": "https://www.joyville-homes.com/#organization" }
+            }
+        ]
     };
 
     return (

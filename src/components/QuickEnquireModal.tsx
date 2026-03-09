@@ -56,10 +56,15 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
             if (data.success) {
                 setStatus('success');
                 // GA4 Event Tracking for successful lead capture
-                sendGAEvent('event', 'lead_form_submit', {
+                sendGAEvent('event', 'generate_lead', {
                     project_name: projectName,
                     lead_source: source
                 });
+
+                // Meta Pixel Tracking for high-intent lead conversion
+                if (typeof window !== 'undefined' && (window as any).fbq) {
+                    (window as any).fbq('track', 'Lead', { content_name: projectName });
+                }
 
                 // Auto-close after 3 seconds on success
                 setTimeout(() => {
@@ -167,7 +172,7 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
                                         disabled={status === 'submitting'}
                                         className="w-full bg-[#1D4F9C] text-[#FFFFFF] py-4 text-xs tracking-[0.2em] uppercase font-medium hover:bg-[#323334] transition-colors disabled:opacity-70 disabled:cursor-not-allowed mt-4"
                                     >
-                                        {status === 'submitting' ? 'Processing...' : 'Unlock Cost Sheet Now'}
+                                        {status === 'submitting' ? 'Processing...' : (source === 'Cost Sheet Unlock' ? 'Unlock Cost Sheet Now' : (source === 'Brochure Download' ? 'Download Premium Brochure' : 'Submit Request'))}
                                     </button>
 
                                     <p className="text-center text-[10px] text-[#1A1A1A]/60 mt-4 font-light">

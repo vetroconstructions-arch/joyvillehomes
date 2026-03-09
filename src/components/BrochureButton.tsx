@@ -16,6 +16,12 @@ export default function BrochureButton({
 
     const handleDownload = () => {
         sendGAEvent('event', 'brochure_download', { project: projectName });
+
+        // Meta Pixel Tracking for micro-conversion
+        if (typeof window !== 'undefined' && (window as any).fbq) {
+            (window as any).fbq('track', 'Contact', { content_name: `${projectName} Brochure` });
+        }
+
         // Add actual download logic here if needed
         alert(`Thank you! The brochure for ${projectName} will be sent to your email shortly.`);
     };

@@ -10,6 +10,7 @@ import BrochureButton from "@/components/BrochureButton";
 import GlobalFAQ from "@/components/GlobalFAQ";
 import TrustBanner from "@/components/TrustBanner";
 import MarketTicker from "@/components/MarketTicker";
+import { blogs } from "@/data/blogs";
 
 // --- Framer Motion Variants ---
 const fadeUp: Variants = {
@@ -29,7 +30,7 @@ export default function Home() {
   const [activeFloorPlan, setActiveFloorPlan] = useState<"2BHK" | "3BHK">("2BHK");
 
   return (
-    <div className="bg-[#FFFFFF] min-h-screen text-[#323334] selection:bg-[#1D4F9C] selection:text-[#FFFFFF] overflow-hidden font-sans">
+    <main className="bg-[#FFFFFF] min-h-screen text-[#323334] selection:bg-[#1D4F9C] selection:text-[#FFFFFF] overflow-hidden font-sans">
       {/* RealEstateAgent schema provided by layout.tsx @graph — no duplicate needed */}
 
       {/* --- Ultra-Modern Hero Layout (Phase 3) --- */}
@@ -80,8 +81,8 @@ export default function Home() {
               transition={{ duration: 1.4, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="text-6xl md:text-7xl lg:text-8xl font-serif text-[#323334] font-light leading-[1.05] tracking-tight mb-8"
             >
-              <span className="text-[#1D4F9C] italic text-gradient">Joyville Pune</span> <br />
-              by Shapoorji Pallonji.
+              <span className="text-[#1D4F9C] italic text-gradient">Joyville Vyomora</span> <br />
+              New Launch in Hinjewadi.
             </motion.h1>
 
             <motion.div
@@ -91,7 +92,7 @@ export default function Home() {
               className="space-y-8"
             >
               <p className="text-lg md:text-xl text-[#323334] max-w-lg font-light tracking-wide leading-relaxed border-l-2 border-[#C5A059]/60 pl-6">
-                Discover the finest 2 & 3 BHK Flats in Pune. Elevate your lifestyle with projects in Hinjewadi, Hadapsar, and Bavdhan, featuring sprawling green spaces, 60+ majestic amenities, and ultra-luxury residences by Shapoorji Pallonji Real Estate.
+                Experience the brand new launch of <span className="font-medium">Joyville Vyomora</span> in Hinjewadi Phase 1. Discover premium 2 & 3 BHK residences and exclusive 3 BHK duplexes starting from ₹84.99 Lakhs*, featuring 60+ world-class amenities and Pune's finest IT address.
               </p>
 
               <div className="pt-4 flex items-center gap-8">
@@ -121,6 +122,64 @@ export default function Home() {
               <div className="text-[#1D4F9C] mb-4"><Trees size={24} strokeWidth={1} /></div>
               <h3 className="text-4xl font-serif text-[#323334] font-light mb-1">10.5</h3>
               <p className="text-[#323334] text-[10px] uppercase tracking-[0.2em] font-medium">Acres of Greens</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* --- Brand New Launch Feature (Vyomora) --- */}
+      <section className="py-24 px-6 bg-[#FFFFFF] relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col lg:flex-row items-center gap-16"
+          >
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#1D4F9C]/5 border border-[#1D4F9C]/20 rounded-full text-[#1D4F9C] text-[10px] uppercase tracking-widest font-bold mb-8">
+                <span className="w-2 h-2 rounded-full bg-[#1D4F9C] animate-pulse" /> Just Launched: Vyomora
+              </div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#323334] font-light mb-8 leading-tight">
+                Joyville Vyomora: <br />
+                <span className="italic text-[#1D4F9C]">The Future of Hinjewadi.</span>
+              </h2>
+              <p className="text-[#323334]/80 text-base md:text-lg font-light leading-relaxed mb-10">
+                Strategically positioned in the heart of Phase 1, Vyomora introduces a new era of urban living. With unique 3 BHK Duplex configurations and a 100% IT-professional centric design, this is Pune's most anticipated residential launch of 2026.
+              </p>
+
+              <div className="grid grid-cols-2 gap-8 mb-12">
+                <div>
+                  <div className="text-[#1D4F9C] font-serif text-3xl mb-1">₹84.99 L+</div>
+                  <div className="text-[10px] uppercase tracking-widest text-[#323334]/60 font-medium">Starting Investment</div>
+                </div>
+                <div>
+                  <div className="text-[#1D4F9C] font-serif text-3xl mb-1">Phase 1</div>
+                  <div className="text-[10px] uppercase tracking-widest text-[#323334]/60 font-medium">Prime IT Location</div>
+                </div>
+              </div>
+
+              <Link href="/projects/joyville-vyomora-hinjewadi" className="inline-flex items-center gap-4 text-[#1D4F9C] font-bold text-xs uppercase tracking-[0.2em] group border-b border-[#1D4F9C] pb-2 hover:text-[#323334] hover:border-[#323334] transition-all">
+                Access Project Details <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+              </Link>
+            </div>
+
+            <div className="flex-1 relative aspect-square w-full max-w-xl">
+              <div className="absolute inset-0 bg-[#EEF2F6] rounded-sm transform rotate-3" />
+              <div className="absolute inset-0 bg-[#FFFFFF] border border-[#C5A059]/40 shadow-2xl rounded-sm overflow-hidden transform hover:rotate-0 transition-transform duration-700">
+                <Image
+                  src="/images/joyville_sensorium_projectcard.webp"
+                  fill
+                  alt="Joyville Vyomora Hinjewadi New Launch"
+                  className="object-cover transition-transform duration-700 hover:scale-105"
+                  priority={true}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#323334]/80 via-transparent to-transparent" />
+                <div className="absolute bottom-8 left-8 right-8">
+                  <div className="text-[#FFFFFF] text-xs uppercase tracking-[0.2em] font-medium mb-2">Hinjewadi Phase 1</div>
+                  <div className="text-[#FFFFFF] text-2xl font-serif">Vyomora: Modern IT Residences</div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -164,7 +223,7 @@ export default function Home() {
                 Shapoorji Pallonji: Building India&apos;s <br />
                 <span className="italic text-[#1D4F9C]">Iconic Landmarks.</span>
               </h2>
-              <p className="text-[#323334] text-lg leading-relaxed mb-10 font-light">
+              <p className="text-[#323334] text-base md:text-lg leading-relaxed mb-10 font-light">
                 With a legacy spanning over a century and a half, Shapoorji Pallonji is the name behind some of the most prestigious architectural marvels. Joyville Homes Pune is our commitment to bringing this unparalleled standard of construction, engineering, and trust to the premium residential properties of Hinjewadi.
               </p>
 
@@ -203,7 +262,7 @@ export default function Home() {
               <span className="w-8 h-[1px] bg-[#1D4F9C]" /> A Planned Ecosystem <span className="w-8 h-[1px] bg-[#1D4F9C]" />
             </h4>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-8 text-[#323334] font-light">Joyville Premium Master Layout</h2>
-            <p className="text-[#323334] max-w-2xl mx-auto lg:text-lg font-light leading-relaxed">Explore 10.5 acres of thoughtfully integrated nature, wellness, and cutting-edge amenities—setting a new benchmark for premium flats in Hinjewadi.</p>
+            <p className="text-[#323334] max-w-2xl mx-auto text-base lg:text-lg font-light leading-relaxed">Explore 10.5 acres of thoughtfully integrated nature, wellness, and cutting-edge amenities—setting a new benchmark for premium flats in Hinjewadi.</p>
           </motion.div>
 
           <div className="relative aspect-[21/9] w-full bg-[#EEF2F6] border border-[#C5A059]/60 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group overflow-hidden rounded-sm">
@@ -384,6 +443,49 @@ export default function Home() {
       <TrustBanner />
       <MarketTicker />
 
+      {/* --- Latest Market Insights (Phase 4: Crawl Depth Optimization) --- */}
+      <section className="bg-[#EEF2F6] py-24 px-6 border-b border-[#C5A059]/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+            <div>
+              <div className="inline-flex items-center gap-4 text-[#1D4F9C] font-light text-xs tracking-[0.3em] uppercase mb-4">
+                <span className="w-8 h-[1px] bg-[#1D4F9C]" /> Market Intelligence
+              </div>
+              <h2 className="text-4xl md:text-5xl font-serif text-[#323334] font-light">Latest <span className="text-[#1D4F9C] italic">Insights</span></h2>
+            </div>
+            <Link href="/insights" className="text-xs uppercase tracking-[0.2em] font-bold text-[#1D4F9C] hover:text-[#323334] transition-colors flex items-center gap-2 group border-b border-[#1D4F9C] hover:border-[#323334] pb-1 w-max">
+              View All Analysis <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {blogs.slice(0, 3).map((blog) => (
+              <Link key={blog.id} href={`/insights/${blog.slug}`} className="group bg-[#FFFFFF] border border-[#C5A059]/20 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden flex flex-col rounded-sm">
+                <div className="relative aspect-video overflow-hidden">
+                  <Image
+                    src={blog.image}
+                    alt={blog.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute top-4 left-4 bg-[#1D4F9C] text-[#FFFFFF] text-[10px] uppercase tracking-[0.2em] font-bold px-3 py-1 shadow-lg">
+                    {blog.category}
+                  </div>
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="text-[#1D4F9C] text-xs font-light mb-3">{blog.date}</div>
+                  <h3 className="text-lg md:text-xl font-serif text-[#323334] mb-4 leading-snug group-hover:text-[#1D4F9C] transition-colors">{blog.title}</h3>
+                  <div className="flex items-center gap-2 text-[#323334] text-xs font-bold uppercase tracking-widest mt-auto border-t border-[#C5A059]/20 pt-4">
+                    Read Report <ArrowRight size={14} className="text-[#1D4F9C] group-hover:translate-x-2 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* --- Global SEO FAQ Section --- */}
       <GlobalFAQ />
 
@@ -397,7 +499,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif mb-10 text-[#323334] font-light leading-[1.1]">
             Own a piece of the <br /> <span className="text-[#1D4F9C] italic text-gradient">Shapoorji Legacy.</span>
           </h2>
-          <p className="text-[#323334] text-lg mx-auto mb-16 font-light">
+          <p className="text-[#323334] text-base md:text-lg mx-auto mb-16 font-light">
             The defining face of premium residential projects in Pune. Contact our concierge to schedule a private viewing at Joyville Hinjewadi.
           </p>
 
@@ -462,6 +564,6 @@ export default function Home() {
           <PhoneCall size={20} />
         </button>
       </div>
-    </div>
+    </main>
   );
 }

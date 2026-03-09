@@ -2,10 +2,12 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import PageTransition from "@/components/PageTransition";
-import MobileStickyCTA from "@/components/MobileStickyCTA";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import dynamic from "next/dynamic";
+
 import SEOFooter from "@/components/SEOFooter";
+import ClientWrapper from "@/components/ClientWrapper";
 import { GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script';
 import "./globals.css";
 
 const inter = Inter({
@@ -66,10 +68,17 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.joyville-homes.com",
+    languages: {
+      'en-US': 'https://www.joyville-homes.com',
+      'en-GB': 'https://www.joyville-homes.com',
+      'en-AE': 'https://www.joyville-homes.com',
+      'x-default': 'https://www.joyville-homes.com',
+    },
   },
   verification: {
-    google: "", // User to provide verification string
+    google: "YOUR_GSC_VERIFICATION_CODE_HERE", // User to provide actual verification string from Search Console
   },
+  manifest: "/manifest.json",
 };
 
 export const viewport: Viewport = {
@@ -86,11 +95,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://connect.facebook.net" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+      </head>
       <body className={`${inter.variable} ${playfair.variable} antialiased selection:bg-accent selection:text-white`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@graph": [
+              {
+                "@type": "WebSite",
+                "@id": "https://www.joyville-homes.com/#website",
+                "url": "https://www.joyville-homes.com",
+                "name": "Joyville Homes Pune",
+                "publisher": {
+                  "@id": "https://www.joyville-homes.com/#organization"
+                },
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://www.joyville-homes.com/projects?search={search_term_string}"
+                  },
+                  "query-input": "required name=search_term_string"
+                }
+              },
               {
                 "@type": "Organization",
                 "@id": "https://www.joyville-homes.com/#organization",
@@ -99,22 +131,57 @@ export default function RootLayout({
                 "url": "https://www.joyville-homes.com",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://www.joyville-homes.com/logo.png"
+                  "url": "https://www.joyville-homes.com/logo.png",
+                  "width": "512",
+                  "height": "512"
+                },
+                "image": "https://www.joyville-homes.com/og-image.jpg",
+                "founder": {
+                  "@type": "Person",
+                  "name": "Pallonji Mistry"
                 },
                 "description": "Official Joyville Pune — 9 premium residential projects across Hinjewadi, Hadapsar & Bavdhan. 150+ years of Shapoorji Pallonji engineering legacy.",
-                "foundingDate": "1865",
+                "foundingDate": "1865-01-01",
+                "funder": {
+                  "@type": "Organization",
+                  "name": "Shapoorji Pallonji Group",
+                  "url": "https://www.shapoorjipallonji.com"
+                },
+                "isoCode": "IN",
                 "sameAs": [
                   "https://www.facebook.com/ShapoorjiPallonjiRealEstate/",
                   "https://www.linkedin.com/company/shapoorji-pallonji-real-estate/",
                   "https://www.instagram.com/shapoorjipallonjirealestate/",
-                  "https://www.joyvillehomes.com"
+                  "https://x.com/SPRealEstate",
+                  "https://www.youtube.com/c/ShapoorjiPallonjiRealEstate"
                 ],
-                "contactPoint": {
-                  "@type": "ContactPoint",
-                  "telephone": "+91-20-67210000",
-                  "contactType": "sales",
-                  "areaServed": "Pune",
-                  "availableLanguage": ["English", "Hindi", "Marathi"]
+                "contactPoint": [
+                  {
+                    "@type": "ContactPoint",
+                    "telephone": "+912067210000",
+                    "contactType": "sales",
+                    "areaServed": "IN",
+                    "availableLanguage": ["English", "Hindi", "Marathi"]
+                  },
+                  {
+                    "@type": "ContactPoint",
+                    "telephone": "+912067210001",
+                    "contactType": "customer service",
+                    "areaServed": "IN",
+                    "availableLanguage": ["English", "Hindi"]
+                  }
+                ],
+                "member": {
+                  "@type": "Organization",
+                  "@id": "https://www.joyville-homes.com/#research-desk",
+                  "name": "Shapoorji Pallonji Premium Research Desk",
+                  "description": "The expert analysis wing of Shapoorji Pallonji Real Estate, specializing in Pune property market trends, infrastructure impact reports, and NRI investment feasibility studies.",
+                  "knowsAbout": [
+                    "Pune Real Estate Market",
+                    "Infrastructure Development Impact",
+                    "NRI Property Investment Feasibility",
+                    "Real Estate ROI Analysis"
+                  ]
                 }
               },
               {
@@ -130,13 +197,18 @@ export default function RootLayout({
                 ]
               },
               {
-                "@type": "RealEstateAgent",
+                "@type": ["RealEstateAgent", "LocalBusiness"],
                 "@id": "https://www.joyville-homes.com/#realestate",
                 "name": "Joyville Homes — Shapoorji Pallonji Real Estate, Pune",
                 "image": "https://www.joyville-homes.com/og-image.jpg",
                 "url": "https://www.joyville-homes.com",
-                "telephone": "+91-20-67210000",
+                "telephone": "+912067210000",
                 "priceRange": "₹65 Lakhs - ₹3 Cr",
+                "paymentAccepted": ["Wire Transfer", "Cheque"],
+                "currenciesAccepted": "INR, USD, AED, GBP",
+                "parentOrganization": {
+                  "@id": "https://www.joyville-homes.com/#organization"
+                },
                 "address": {
                   "@type": "PostalAddress",
                   "streetAddress": "Hinjewadi Phase 1, Near Rajiv Gandhi Infotech Park",
@@ -165,20 +237,55 @@ export default function RootLayout({
                   { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "3 BHK Apartments" } },
                   { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "NA Bungalow Plots" } }
                 ]
+              },
+              {
+                "@type": "Dataset",
+                "@id": "https://www.joyville-homes.com/#dataset-trends",
+                "name": "Pune Real Estate Appreciation Trends 2024-2026",
+                "description": "Comprehensive dataset tracking capital appreciation, rental yields, and infrastructure impact across Pune's key micro-markets (Hinjewadi, Hadapsar, Bavdhan).",
+                "publisher": {
+                  "@id": "https://www.joyville-homes.com/#organization"
+                },
+                "license": "https://creativecommons.org/licenses/by/4.0/",
+                "variableMeasured": [
+                  "Capital Appreciation Rate",
+                  "Rental Yield",
+                  "Average Price Per Sq.Ft."
+                ],
+                "spatialCoverage": {
+                  "@type": "Place",
+                  "name": "Pune, Maharashtra, India"
+                },
+                "temporalCoverage": "2024-01-01/2026-12-31"
               }
             ]
           })
         }} />
-        <div className="min-h-screen flex flex-col relative text-foreground">
-          <Navigation />
-          <PageTransition>
-            {children}
-          </PageTransition>
-          <MobileStickyCTA />
-          <FloatingWhatsApp />
-        </div>
-        <SEOFooter />
+        <ClientWrapper>
+          <div className="min-h-screen flex flex-col relative text-foreground">
+            <Navigation />
+            <PageTransition>
+              {children}
+            </PageTransition>
+          </div>
+          <SEOFooter />
+        </ClientWrapper>
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ""} />
+        {/* Meta Pixel Code Injection - Loaded post-hydration to protect INP scores */}
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '${process.env.NEXT_PUBLIC_META_PIXEL_ID || ""}');
+            fbq('track', 'PageView');
+          `}
+        </Script>
       </body>
     </html>
   );

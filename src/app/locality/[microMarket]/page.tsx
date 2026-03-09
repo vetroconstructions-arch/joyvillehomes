@@ -1,292 +1,13 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { projects } from '@/data/projects';
+import { localities, LocalityData } from '@/data/localities';
 import Link from 'next/link';
-import { MapPin, ArrowRight, Building2, TrendingUp, Landmark } from 'lucide-react';
+import Image from 'next/image';
+import { MapPin, ArrowRight, Building2, TrendingUp, Landmark, Activity, GraduationCap, Hospital, ShoppingBag, Train, Clock } from 'lucide-react';
 import BrochureButton from '@/components/BrochureButton';
 
-interface LocalityData {
-    id: string;
-    slug: string;
-    name: string;
-    subtitle: string;
-    seoKeywords: string[];
-    description: string;
-    infrastructure: { label: string; value: string }[];
-    marketTrend: string;
-    priceRange: string;
-    avgPricePerSqFt: string;
-    yoyAppreciation: string;
-    latitude: number;
-    longitude: number;
-    faqs: { q: string; a: string }[];
-}
-
 const siteUrl = 'https://www.joyville-homes.com';
-
-const localities: LocalityData[] = [
-    {
-        id: "l1",
-        slug: "hinjewadi",
-        name: "Hinjewadi",
-        subtitle: "The IT Capital of Pune West",
-        seoKeywords: [
-            "Hinjewadi real estate market analysis 2025", "Hinjewadi real estate market analysis 2026",
-            "flats in Hinjewadi Phase 1 near Infosys", "Pune IT Park apartments for sale",
-            "property rates Hinjewadi Phase 1 2 3", "2 BHK luxury flats in Hinjewadi Phase 1",
-            "3 BHK premium apartments Hinjewadi", "new launch projects Hinjewadi 2025", "new launch projects Hinjewadi 2026",
-            "flats near Rajiv Gandhi Infotech Park Phase 1", "walk to work apartments Hinjewadi Phase 2",
-            "Joyville Sensorium vs Joyville Celestia", "RERA approved flats Hinjewadi under 1 crore",
-            "Hinjewadi Metro Line 3 impact on property prices", "rental yield in Hinjewadi for NRI investors",
-            "flats near Wipro Hinjewadi", "flats near Infosys Pune", "flats near TCS Hinjewadi",
-            "flats near Cognizant Hinjewadi", "Hinjewadi Phase 1 property appreciation 2026",
-            "smart home apartments Hinjewadi", "gated community Hinjewadi", "Pune West luxury residences 2026",
-            "Joyville Sensorium price 2026", "best IT corridor apartments Pune", "Hinjewadi rental demand 2026",
-            "Shapoorji Pallonji Hinjewadi investment", "10 acre township Hinjewadi Phase 1"
-        ],
-        description: "Hinjewadi is the epicenter of Pune's IT revolution. Home to the sprawling Rajiv Gandhi Infotech Park — housing campuses of Infosys, Wipro, TCS, and 200+ MNCs — it boasts an incredible walk-to-work culture. With the upcoming Metro Line 3 (Maan to Civil Court) and the 170km Pune Ring Road, Hinjewadi is positioned for 12-15% annual capital appreciation. Property rates have surged 53% over the last 5 years, making it Pune's most lucrative investment hub.",
-        infrastructure: [
-            { label: "Metro Connectivity", value: "Metro Line 3 (Connecting Hinjewadi to Shivajinagar)" },
-            { label: "Transit Hubs", value: "Proximity to Mumbai-Pune Expressway & NH48" },
-            { label: "Tech Corridors", value: "Rajiv Gandhi IT Park (Phase 1, 2 & 3 Hubs)" },
-            { label: "Education", value: "Blossom Public School & Mercedes-Benz International" }
-        ],
-        marketTrend: "Exponential Growth. The 'Maan-Mahalunge Smart City' initiative and Metro Line 3 are driving a massive influx of premium workforce, boosting both rental demand (4.5-5.5% yield) and resale value.",
-        priceRange: "₹85 Lakhs – ₹1.45 Cr",
-        avgPricePerSqFt: "₹12,250",
-        yoyAppreciation: "8.5%",
-        latitude: 18.5913,
-        longitude: 73.7389,
-        faqs: [
-            { q: 'What is the average property rate in Hinjewadi Phase 1 in 2026?', a: 'The average property rate in Hinjewadi Phase 1 is approximately \u20b912,250 per sq.ft. as of 2026, with premium projects commanding higher rates.' },
-            { q: 'Is Hinjewadi a good area for real estate investment?', a: 'Yes, Hinjewadi is one of Pune\'s best investment corridors with 8.5% YoY appreciation, 4.5-5.5% rental yield, and upcoming Metro Line 3.' },
-            { q: 'Which IT companies are near Joyville Hinjewadi?', a: 'Infosys, Wipro, TCS, Cognizant, Persistent Systems, and 200+ MNCs in the Rajiv Gandhi Infotech Park.' },
-            { q: 'How will Pune Metro Line 3 impact Hinjewadi prices?', a: 'Properties within 1.5-2 km of Metro stations typically see a 15-22% valuation spike. Joyville projects are positioned to benefit.' },
-            { q: 'What flats are available in Hinjewadi?', a: '2 BHK from \u20b985 Lakhs and 3 BHK from \u20b91.10 Cr with smart home and EDGE green certification.' },
-        ]
-    },
-    {
-        id: "l2",
-        slug: "bavdhan",
-        name: "Bavdhan",
-        subtitle: "Luxury Gated Communities in West Pune",
-        seoKeywords: [
-            "Bavdhan real estate trends 2025", "Bavdhan real estate trends 2026",
-            "luxury flats in Bavdhan Pune", "apartments near Chandni Chowk interchange",
-            "hill view properties Bavdhan Pune", "Vanaha Golfland price list 2025", "Vanaha Golfland price list 2026",
-            "Shapoorji Pallonji Vanaha township Bavdhan", "1000 acre gated community Pune",
-            "3 BHK flats in Bavdhan near Kothrud", "2 BHK apartments Bavdhan Pune West",
-            "resort style living Pune Bavdhan", "flats near Mumbai Pune Expressway Bavdhan",
-            "golf course view apartments Bavdhan", "Vanaha Springs Bavdhan price",
-            "hills view apartments Pune West", "flats near Oxford Golf Resort Pune",
-            "premium apartments Bavdhan 2026", "NRI investment Bavdhan",
-            "Bavdhan property appreciation 2026", "FLAME University nearby flats",
-            "nature homes Bavdhan", "integrated township Bavdhan Pune",
-            "Bavdhan vs Baner real estate comparison", "sustainable living Bavdhan"
-        ],
-        description: "Bavdhan is Pune West's most prestigious residential extension. Nestled between the NDA hills and Pashan Lake, it offers a resort-like micro-climate. The area is dominated by Shapoorji Pallonji's 1,000-acre Vanaha township, which has redefined luxury with its 'City within a Forest' concept. Strategic proximity to Kothrud, Hinjewadi, and the Expressway makes it a preferred choice for HNIs and corporate leaders.",
-        infrastructure: [
-            { label: "Road Network", value: "New Chandni Chowk Multi-tier Interchange" },
-            { label: "Lifestyle", value: "Oxford Golf Resort & Flame University" },
-            { label: "Connectivity", value: "Direct Highway Access to Mumbai & Bangalore" },
-            { label: "Greenery", value: "Surrounded by NDA Hills & Pashan Lake" }
-        ],
-        marketTrend: "Scarcity-driven Appreciation. Limited new land parcels and the success of integrated townships like Vanaha are pushing prices upwards. 13.18% YoY appreciation reflects its status as the fastest-growing luxury market.",
-        priceRange: "₹95 Lakhs – ₹1.85 Cr",
-        avgPricePerSqFt: "₹11,800",
-        yoyAppreciation: "13.18%",
-        latitude: 18.5170,
-        longitude: 73.7785,
-        faqs: [
-            { q: 'Why is Bavdhan considered a premium market?', a: 'Hill views, NDA hills, Pashan Lake, and Shapoorji Pallonji\'s 1,000-acre Vanaha township make it Pune\'s largest integrated community.' },
-            { q: 'What is the price range in Bavdhan?', a: 'Apartments range from \u20b995 Lakhs to \u20b91.85 Cr with golf course and valley views at Vanaha.' },
-            { q: 'How is Bavdhan connectivity?', a: 'New Chandni Chowk interchange, Mumbai-Pune Expressway access, and proximity to Kothrud and Hinjewadi.' },
-            { q: 'What is Bavdhan appreciation rate?', a: '13.18% YoY — the highest among Pune\'s established micro-markets. Limited land drives scarcity pricing.' },
-        ]
-    },
-    {
-        id: "l3",
-        slug: "hadapsar",
-        name: "Hadapsar",
-        subtitle: "East Pune's Global IT & Township Hub",
-        seoKeywords: [
-            "Hadapsar property market analysis 2025", "Hadapsar property market analysis 2026",
-            "flats near SP Infocity Phursungi", "apartments near Magarpatta City Hadapsar",
-            "Joyville Hadapsar Annexe price trends", "affordable luxury flats Pune East",
-            "ready to move 2 BHK in Hadapsar", "flats near EON IT Park Kharadi",
-            "Hadapsar vs Kharadi real estate comparison", "township projects in Hadapsar Pune",
-            "Shewalewadi property rates 2026", "flats near Amanora Mall Hadapsar",
-            "1 BHK flats Hadapsar under 70 lakhs", "3 BHK flats Hadapsar Pune",
-            "Hadapsar real estate investment 2026", "Pune Solapur Highway properties",
-            "family apartments East Pune", "ready possession flats Hadapsar 2026",
-            "Joyville Celestia Hadapsar", "Joyville Skyluxe Hadapsar",
-            "Wildernest SP Kingstown Pune", "Manjri Hadapsar corridor properties",
-            "Hadapsar Kharadi bypass properties", "East Pune micro market analysis 2026"
-        ],
-        description: "Hadapsar represents the perfect synergy of commercial power and residential comfort. Hosted by the legendary Magarpatta City and SP Infocity (home to IBM, Accenture, and Amazon), it is East Pune's most stable micro-market. Joyville Hadapsar Annexe has set new standards for gated communities here, offering high-quality living at a 25% price advantage over North Pune markets like Kharadi.",
-        infrastructure: [
-            { label: "Business Hubs", value: "SP Infocity (Phursungi) & Magarpatta City" },
-            { label: "Shopping", value: "Amanora Mall & Seasons Mall" },
-            { label: "Transportation", value: "Direct Highway Connectivity (Pune-Solapur)" },
-            { label: "Investment", value: "Future Metro Connectivity to Pune East" }
-        ],
-        marketTrend: "Stable Appreciation & High Occupancy. Driven by a semi-permanent workforce in the banking and IT sectors. Excellent social infrastructure with schools and hospitals in a 2km radius.",
-        priceRange: "₹65 Lakhs – ₹1.10 Cr",
-        avgPricePerSqFt: "₹8,900",
-        yoyAppreciation: "8.5%",
-        latitude: 18.5089,
-        longitude: 73.9260,
-        faqs: [
-            { q: 'What makes Hadapsar attractive for homebuyers?', a: '25% price advantage over Kharadi with proximity to Magarpatta City, SP Infocity, and Amanora Mall.' },
-            { q: 'Are there affordable flats in Hadapsar?', a: 'Yes, Joyville Hadapsar Annexe offers 1 BHK from \u20b965 Lakhs — the most affordable RERA option in an IT corridor.' },
-            { q: 'What is the rental demand in Hadapsar?', a: 'Consistently high occupancy driven by IT professionals at SP Infocity and Magarpatta City.' },
-            { q: 'How many Shapoorji projects are in Hadapsar?', a: '5 projects in the Hadapsar-Shewalewadi corridor across 40+ acres.' },
-        ]
-    },
-    {
-        id: "l4",
-        slug: "shewalewadi",
-        name: "Shewalewadi",
-        subtitle: "The Emerging Township Corridor of East Pune",
-        seoKeywords: [
-            "Shewalewadi property rates 2026", "flats in Shewalewadi Pune",
-            "Shewalewadi real estate investment", "Shewalewadi Hadapsar Annexe",
-            "Joyville Hadapsar Shewalewadi", "Joyville Celestia Shewalewadi",
-            "Joyville Skyluxe Shewalewadi", "Wildernest SP Kingstown Shewalewadi",
-            "SP Kingstown Shewalewadi Road", "Shewalewadi property appreciation",
-            "flats near SP Infocity Shewalewadi", "2 BHK flats Shewalewadi",
-            "3 BHK flats Shewalewadi", "township projects Shewalewadi",
-            "Shewalewadi to Magarpatta distance", "upcoming projects Shewalewadi 2026",
-            "Shapoorji Pallonji Shewalewadi", "affordable flats Shewalewadi Pune",
-            "Shewalewadi vs Hadapsar property rates", "RERA projects Shewalewadi",
-            "Pune Solapur Highway Shewalewadi", "investment hotspot East Pune 2026"
-        ],
-        description: "Shewalewadi is rapidly emerging as East Pune's most dynamic residential corridor. Located off the Pune-Solapur Highway, it hosts multiple Shapoorji Pallonji projects including Joyville Hadapsar Annexe (21 acres), Joyville Celestia, Skyluxe Edition, and Wildernest at SP Kingstown. The micro-market offers 15-25% price advantage over established Hadapsar while providing identical connectivity to SP Infocity and Magarpatta.",
-        infrastructure: [
-            { label: "Township Hub", value: "5 Shapoorji Pallonji Projects (40+ Acres)" },
-            { label: "IT Proximity", value: "SP Infocity 2.5km, Magarpatta 4.5km" },
-            { label: "Highway Access", value: "Pune-Solapur Highway & Ring Road" },
-            { label: "Social Infra", value: "Lexicon School, Noble Hospital, Amanora Mall" }
-        ],
-        marketTrend: "Rapid Appreciation. Multiple Shapoorji Pallonji projects have created a 'developer premium zone' driving consistent 10-12% annual appreciation. Early investors are seeing 40%+ returns over 3 years.",
-        priceRange: "₹65 Lakhs – ₹1.40 Cr",
-        avgPricePerSqFt: "₹8,500",
-        yoyAppreciation: "10.2%",
-        latitude: 18.4944,
-        longitude: 73.9675,
-        faqs: [
-            { q: 'Where is Shewalewadi?', a: 'Off the Pune-Solapur Highway, 4.5 km from Magarpatta City and 2.5 km from SP Infocity Phursungi.' },
-            { q: 'Why are Shewalewadi prices lower than Hadapsar?', a: '15-25% price advantage as an emerging corridor, with rapid appreciation closing the gap.' },
-            { q: 'What is Shewalewadi investment potential?', a: '40%+ returns over 3 years with 10.2% YoY appreciation driven by developer premium zone.' },
-        ]
-    },
-    {
-        id: "l5",
-        slug: "purandar",
-        name: "Purandar",
-        subtitle: "Pune's Growth Corridor — Airport Proximity & Land Investment",
-        seoKeywords: [
-            "Purandar real estate investment 2026", "plots near Purandar Airport",
-            "NA bungalow plots Purandar Pune", "Purandar airport real estate impact",
-            "Shapoorji Treetopia Purandar", "Jadhavwadi property investment",
-            "Saswad Road plots for sale", "land investment Pune corridor",
-            "Purandar airport connectivity", "villa plots near Pune airport",
-            "gated community plots Purandar", "RERA approved plots Purandar",
-            "Purandar growth corridor 2026", "biophilic landscapes plots Pune",
-            "investment plots Purandar Pune", "Purandar vs Pune suburbs investment",
-            "capital appreciation Purandar", "Pune airport corridor real estate",
-            "NA land Saswad Purandar", "farmland plots near Pune"
-        ],
-        description: "Purandar represents Pune's most exciting growth corridor. With the proposed Purandar International Airport and new expressway connectivity, land values are poised for exponential growth. Shapoorji Pallonji's Treetopia is the flagship plotted development here, offering NA bungalow plots starting ₹84 Lakhs with biophilic landscapes and gated community amenities. Early investors stand to gain 5-10x returns upon airport completion.",
-        infrastructure: [
-            { label: "Airport", value: "Proposed Purandar International Airport (20 mins)" },
-            { label: "Connectivity", value: "Pune Ring Road & Saswad Highway" },
-            { label: "Development", value: "Smart City Industrial Corridor" },
-            { label: "Nature", value: "Surrounded by Sahyadri Hills & Green Valleys" }
-        ],
-        marketTrend: "Pre-Infrastructure Boom. Land banking opportunity with 5-10x appreciation potential upon airport operationalization. Similar to pre-development trajectories seen in Navi Mumbai (NMIA) and Bengaluru (KIA).",
-        priceRange: "₹84 Lakhs – ₹3 Cr (Plots)",
-        avgPricePerSqFt: "₹4,500 (per sq.ft. land)",
-        yoyAppreciation: "15.5%",
-        latitude: 18.2860,
-        longitude: 74.2140,
-        faqs: [
-            { q: 'When will Purandar Airport be operational?', a: 'Currently in planning phase. Operations estimated in 5-7 years, making this a land banking opportunity.' },
-            { q: 'What plots are available near Purandar?', a: 'Shapoorji Treetopia offers NA bungalow plots from \u20b984 Lakhs in a gated community with biophilic landscapes.' },
-            { q: 'Is investing near Purandar risky?', a: 'Pre-airport investments near Navi Mumbai and Bengaluru airports delivered 5-10x returns. Shapoorji brand reduces developer risk.' },
-        ]
-    },
-    {
-        id: "l6",
-        slug: "kharadi",
-        name: "Kharadi",
-        subtitle: "Pune's Premium IT & Commercial Hub — East Corridor",
-        seoKeywords: [
-            "Kharadi real estate 2026", "flats in Kharadi Pune", "apartments near EON IT Park",
-            "Kharadi property rates 2026", "2 BHK flats Kharadi", "3 BHK Kharadi Pune",
-            "luxury apartments Kharadi", "new launch projects Kharadi 2026",
-            "property near World Trade Center Pune", "Kharadi bypass residential projects",
-            "flats near Pune Airport", "Kharadi property appreciation 2026",
-            "investment property Kharadi Pune", "ready to move flats Kharadi",
-            "Kharadi vs Hinjewadi property", "IT corridor Kharadi apartments",
-            "Kharadi Wagholi corridor flats", "premium residences Kharadi",
-            "gated community Kharadi Pune", "rental yield Kharadi flats"
-        ],
-        description: "Kharadi is Pune's fastest-evolving IT & commercial corridor, anchored by EON IT Park, World Trade Center, and Zensar/Barclays campuses. Its strategic position — just 12 km from Pune Airport and well-connected via the Kharadi-Wagholi bypass — makes it the preferred choice for professionals seeking city-center proximity. Property prices have risen 38% over 5 years, with 2026 seeing sustained demand from IT professionals and NRI investors. While Shapoorji Pallonji's primary Pune presence is in Hinjewadi and Hadapsar, Kharadi homebuyers benefit from nearby Joyville projects that offer superior construction quality at competitive pricing.",
-        infrastructure: [
-            { label: "IT Parks", value: "EON IT Park, World Trade Center, Zensar Campus" },
-            { label: "Airport", value: "12 km to Pune International Airport" },
-            { label: "Connectivity", value: "Kharadi-Wagholi Bypass, Nagar Road" },
-            { label: "Social", value: "Amanora Mall, Eon Free Zone, Phoenix Marketcity (10 km)" }
-        ],
-        marketTrend: "Premium Appreciation. Kharadi commands some of the highest price points in East Pune at ₹8,000-10,500/sq.ft. The upcoming Nagar Road Metro extension and Kharadi-Wagholi corridor expansion will drive further 8-10% annual appreciation.",
-        priceRange: "₹80 Lakhs – ₹2.5 Cr",
-        avgPricePerSqFt: "₹9,200",
-        yoyAppreciation: "9.8%",
-        latitude: 18.5530,
-        longitude: 73.9450,
-        faqs: [
-            { q: 'Why is Kharadi property expensive?', a: 'Premium pricing due to proximity to city center, airport, and multiple IT parks. Established infrastructure justifies the rates.' },
-            { q: 'Is Kharadi better than Hinjewadi for investment?', a: 'Kharadi offers city-center proximity; Hinjewadi offers higher rental yields (4.5-5.5% vs 4.0-4.5%) and superior metro connectivity (Line 3).' },
-            { q: 'What Shapoorji Pallonji projects are near Kharadi?', a: 'Joyville Hadapsar Annexe (15 km) and Joyville Celestia offer competitive alternatives with Shapoorji Pallonji construction quality.' },
-        ]
-    },
-    {
-        id: "l7",
-        slug: "wakad",
-        name: "Wakad",
-        subtitle: "Hinjewadi-Adjacent Growth Market — Affordable IT Corridor",
-        seoKeywords: [
-            "Wakad real estate 2026", "flats in Wakad Pune", "apartments Wakad",
-            "Wakad property rates 2026", "2 BHK flats Wakad", "3 BHK Wakad Pune",
-            "affordable flats Wakad", "Wakad Hinjewadi corridor",
-            "property near Hinjewadi Phase 3", "Wakad residential projects 2026",
-            "Wakad vs Hinjewadi property price", "ready to move flats Wakad",
-            "Wakad metro station flats", "Pimpri Chinchwad Wakad corridor",
-            "investment property Wakad Pune", "new projects Wakad 2026",
-            "IT professionals Wakad housing", "Wakad ring road properties",
-            "gated society Wakad Pune", "rental yield Wakad apartments"
-        ],
-        description: "Wakad is the affordable alternative to Hinjewadi, located just 5 km from Hinjewadi IT Park and well-connected via the Mumbai-Pune Expressway and Ring Road. As Hinjewadi prices have surged past ₹9,000/sq.ft., Wakad offers 20-30% lower entry points while maintaining excellent IT corridor connectivity. The upcoming Pune Metro Line 3 Wakad station will add significant transit premium. Young IT professionals and first-time homebuyers increasingly choose Wakad for its balance of affordability and lifestyle. Shapoorji Pallonji's Joyville Sensorium in nearby Hinjewadi Phase 1 offers a premium upgrade path within the same corridor.",
-        infrastructure: [
-            { label: "IT Connectivity", value: "5 km to Hinjewadi IT Park (Phase 1, 2, 3)" },
-            { label: "Metro", value: "Pune Metro Line 3 — Wakad Station (upcoming)" },
-            { label: "Highway", value: "Mumbai-Pune Expressway (2 km), Ring Road" },
-            { label: "Social", value: "Westend Mall, DY Patil University, Symbiosis" }
-        ],
-        marketTrend: "Affordable Growth Hub. Wakad prices (₹6,500-8,000/sq.ft.) are 20-30% below Hinjewadi Phase 1, but appreciation rates are catching up at 11% YoY. Metro Line 3 will narrow this gap significantly by 2027-28.",
-        priceRange: "₹55 Lakhs – ₹1.20 Cr",
-        avgPricePerSqFt: "₹7,200",
-        yoyAppreciation: "11.0%",
-        latitude: 18.5980,
-        longitude: 73.7620,
-        faqs: [
-            { q: 'Is Wakad a good investment compared to Hinjewadi?', a: 'Wakad offers 20-30% lower entry prices with 11% YoY appreciation. Metro Line 3 will add transit premium, making it an excellent value buy.' },
-            { q: 'How far is Wakad from Hinjewadi IT Park?', a: 'Just 5 km via the Wakad-Hinjewadi bypass. Most IT professionals commute in 10-15 minutes.' },
-            { q: 'What Shapoorji Pallonji projects are near Wakad?', a: 'Joyville Sensorium in Hinjewadi Phase 1 is the closest premium option, offering walk-to-work luxury 5 km from Wakad.' },
-        ]
-    }
-];
 
 export async function generateStaticParams() {
     return localities.map((loc) => ({
@@ -323,28 +44,65 @@ export default async function LocalityPage({ params }: { params: Promise<{ micro
     // Filter projects by this location
     const localProjects = projects.filter(p => p.location.toLowerCase().includes(locality.name.toLowerCase()));
 
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "Place",
-        "name": `${locality.name}, Pune`,
-        "description": locality.description,
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": locality.latitude,
-            "longitude": locality.longitude
+    const jsonLd = [
+        {
+            "@context": "https://schema.org",
+            "@type": "Place",
+            "name": `${locality.name}, Pune`,
+            "description": locality.description,
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": locality.latitude,
+                "longitude": locality.longitude
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": locality.name,
+                "addressRegion": "Maharashtra",
+                "addressCountry": "IN"
+            },
+            "containsPlace": localProjects.map(project => ({
+                "@type": "Residence",
+                "name": project.title,
+                "url": `${siteUrl}/projects/${project.slug}`
+            })),
+            ...(locality.lifestyleScores ? {
+                "identifier": [
+                    { "@type": "PropertyValue", "name": "Transit Score", "value": locality.lifestyleScores.transit },
+                    { "@type": "PropertyValue", "name": "Safety Score", "value": locality.lifestyleScores.safety }
+                ]
+            } : {}),
+            ...(locality.neighborhoodHighlights ? {
+                "amenityFeature": locality.neighborhoodHighlights.map(h => ({
+                    "@type": "LocationFeatureSpecification",
+                    "name": h.name,
+                    "value": h.distance
+                }))
+            } : {})
         },
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": locality.name,
-            "addressRegion": "Maharashtra",
-            "addressCountry": "IN"
-        },
-        "containsPlace": localProjects.map(project => ({
-            "@type": "Residence",
-            "name": project.title,
-            "url": `${siteUrl}/projects/${project.slug}`
-        }))
-    };
+        {
+            "@context": "https://schema.org",
+            "@type": "RealEstateAgent",
+            "name": `Shapoorji Pallonji Real Estate - ${locality.name}`,
+            "image": "https://www.joyville-homes.com/og-image.jpg",
+            "url": `${siteUrl}/locality/${locality.slug}`,
+            "telephone": "+912067210000",
+            "priceRange": locality.priceRange,
+            "openingHours": "Mo-Su 09:00-20:00",
+            "knowsLanguage": ["English", "Hindi", "Marathi"],
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": locality.name,
+                "addressRegion": "Maharashtra",
+                "addressCountry": "IN"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": locality.latitude,
+                "longitude": locality.longitude
+            }
+        }
+    ];
 
     const breadcrumbJsonLd = {
         "@context": "https://schema.org",
@@ -436,8 +194,138 @@ export default async function LocalityPage({ params }: { params: Promise<{ micro
                 </div>
             </section >
 
+            {/* Lifestyle Scores Section */}
+            {locality.lifestyleScores && (
+                <section className="max-w-7xl mx-auto px-6 mb-20">
+                    <div className="bg-white border border-[#C5A059]/30 p-10 rounded-sm shadow-xl">
+                        <h2 className="text-3xl font-serif text-[#1D4F9C] mb-12 flex items-center gap-4 border-b border-[#C5A059]/20 pb-6">
+                            <Activity size={32} /> {locality.name} Lifestyle Analysis
+                        </h2>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+                            {[
+                                { label: 'Connectivity & Transit', value: locality.lifestyleScores.transit, icon: '🚆' },
+                                { label: 'Work-Life Balance', value: locality.lifestyleScores.work, icon: '💼' },
+                                { label: 'Safety & Security', value: locality.lifestyleScores.safety, icon: '🛡️' },
+                                { label: 'Lifestyle & Amenities', value: locality.lifestyleScores.lifestyle, icon: '🌟' }
+                            ].map((score, idx) => (
+                                <div key={idx} className="flex flex-col items-center text-center" id={`lifestyle-score-${idx}`}>
+                                    <span className="text-4xl mb-4">{score.icon}</span>
+                                    <div className="relative w-20 h-20 flex items-center justify-center mb-4">
+                                        <svg className="w-full h-full transform -rotate-90">
+                                            <circle
+                                                cx="40" cy="40" r="36"
+                                                stroke="#EEF2F6" strokeWidth="8" fill="none"
+                                            />
+                                            <circle
+                                                cx="40" cy="40" r="36"
+                                                stroke="#C5A059" strokeWidth="8" fill="none"
+                                                strokeDasharray={`${2 * Math.PI * 36}`}
+                                                strokeDashoffset={`${2 * Math.PI * 36 * (1 - score.value / 10)}`}
+                                                strokeLinecap="round"
+                                            />
+                                        </svg>
+                                        <span className="absolute text-xl font-bold text-[#1D4F9C]">{score.value}<span className="text-xs">/10</span></span>
+                                    </div>
+                                    <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#323334]/60">{score.label}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* Neighborhood Proximity Engine */}
+            {locality.neighborhoodHighlights && (
+                <section className="max-w-7xl mx-auto px-6 mb-24">
+                    <div className="flex items-center gap-3 mb-10">
+                        <span className="w-8 h-[1px] bg-[#1D4F9C]"></span>
+                        <h2 className="text-3xl font-serif text-[#323334] font-light">Neighborhood Proximity Guide</h2>
+                    </div>
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {locality.neighborhoodHighlights.map((highlight, index) => (
+                            <div key={index} className="bg-[#EEF2F6] p-6 border-l-2 border-[#C5A059] rounded-sm hover:-translate-y-1 transition-transform duration-300">
+                                <div className="flex items-center justify-between mb-3">
+                                    <span className="text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C]/60 font-medium">{highlight.category}</span>
+                                    {highlight.category.toLowerCase().includes('educat') ? <GraduationCap size={16} className="text-[#1D4F9C]" /> :
+                                        highlight.category.toLowerCase().includes('health') ? <Hospital size={16} className="text-[#1D4F9C]" /> :
+                                            highlight.category.toLowerCase().includes('shop') ? <ShoppingBag size={16} className="text-[#1D4F9C]" /> :
+                                                highlight.category.toLowerCase().includes('trans') ? <Train size={16} className="text-[#1D4F9C]" /> :
+                                                    <MapPin size={16} className="text-[#1D4F9C]" />}
+                                </div>
+                                <h3 className="text-[#323334] font-medium mb-1 line-clamp-1">{highlight.name}</h3>
+                                <p className="text-2xl font-serif text-[#1D4F9C] italic">{highlight.distance}</p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            )}
+
+            {/* Local Market Trend Hardening */}
+            <section className="max-w-7xl mx-auto px-6 mb-24">
+                <div className="bg-[#1D4F9C] text-[#FFFFFF] p-12 rounded-sm relative overflow-hidden shadow-2xl">
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFFFFF]/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
+                    <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
+                        <div>
+                            <div className="flex items-center gap-3 mb-6">
+                                <span className="w-8 h-[1px] bg-[#C5A059]"></span>
+                                <h2 className="text-3xl font-serif text-[#C5A059] font-light italic">Market Intelligence</h2>
+                            </div>
+                            <p className="text-lg font-light leading-relaxed mb-8 opacity-90">
+                                {locality.name} has consistently outperformed parity markets with a <span className="text-[#C5A059] font-medium">{locality.yoyAppreciation} Year-on-Year appreciation</span>. Driven by infrastructure upgrades and steady rental yield, it remains Pune's most resilient micro-market.
+                            </p>
+                            <div className="flex items-baseline gap-4">
+                                <span className="text-5xl font-serif">{locality.avgPricePerSqFt}</span>
+                                <span className="text-xs tracking-widest uppercase opacity-60">Avg. Price / Sq.Ft</span>
+                            </div>
+                        </div>
+                        <div className="bg-[#FFFFFF]/5 backdrop-blur-sm border border-[#FFFFFF]/10 p-8 rounded-sm">
+                            <div className="flex items-center justify-between mb-8">
+                                <h3 className="text-sm tracking-widest uppercase font-light">Price Trajectory (2022 - 2026)</h3>
+                                <TrendingUp size={18} className="text-[#C5A059]" />
+                            </div>
+                            <div className="h-40 w-full flex items-end justify-between gap-4">
+                                {[40, 55, 65, 85, 100].map((height, i) => (
+                                    <div key={i} className="flex-1 flex flex-col items-center gap-3">
+                                        <div
+                                            className="w-full bg-gradient-to-t from-[#C5A059] to-[#C5A059]/40 rounded-t-sm transition-all duration-1000"
+                                            style={{ height: `${height}%` }}
+                                        ></div>
+                                        <span className="text-[10px] opacity-40 uppercase tracking-tighter">{2022 + i}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Property Type Matrix for SEO Connectivity */}
+            <section className="max-w-7xl mx-auto px-6 mb-20 mt-20" id="property-types">
+                <div className="bg-[#EEF2F6] border border-[#C5A059]/30 p-10 rounded-sm shadow-inner">
+                    <div className="flex items-center gap-3 mb-8 border-b border-[#C5A059]/20 pb-4">
+                        <Activity className="text-[#1D4F9C]" size={20} />
+                        <h2 className="text-2xl font-serif text-[#1A1A1A]">Property Varieties in {locality.name}</h2>
+                    </div>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        {['1 BHK Flats', '2 BHK Flats', '3 BHK Flats', 'Luxury Penthouses'].map((type) => (
+                            <Link
+                                key={type}
+                                href="/projects"
+                                className="group flex flex-col p-4 bg-white border border-[#C5A059]/10 hover:border-[#1D4F9C] transition-all duration-300 shadow-sm hover:shadow-md"
+                            >
+                                <span className="text-[10px] tracking-[0.1em] text-[#1D4F9C] font-semibold mb-1 uppercase">{locality.name}</span>
+                                <span className="text-[#1A1A1A] font-serif group-hover:text-[#1D4F9C] transition-colors">{type}</span>
+                                <div className="mt-4 flex items-center gap-2 text-[10px] text-[#C5A059] uppercase tracking-wider font-bold group-hover:gap-3 transition-all">
+                                    Browse Collection <ArrowRight size={12} />
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Relevant Projects Section */}
-            < section className="max-w-7xl mx-auto px-6" >
+            <section className="max-w-7xl mx-auto px-6">
                 <div className="flex items-center gap-4 mb-12 border-b border-[#C5A059]/20 pb-4">
                     <Landmark className="text-[#1D4F9C]" size={32} />
                     <h2 className="text-4xl font-serif text-[#1A1A1A]">Shapoorji Pallonji Properties in {locality.name}</h2>
@@ -448,7 +336,15 @@ export default async function LocalityPage({ params }: { params: Promise<{ micro
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {localProjects.map(project => (
                                 <div key={project.id} className="bg-[#FFFFFF] border border-[#C5A059]/60 shadow-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-500 rounded-sm group flex flex-col">
-                                    <div className="aspect-[4/3] bg-cover bg-center" style={{ backgroundImage: `url(${project.image})` }} />
+                                    <div className="relative aspect-[4/3] overflow-hidden">
+                                        <Image
+                                            src={project.image}
+                                            alt={`${project.title} - ${project.type} in ${locality.name}`}
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        />
+                                    </div>
                                     <div className="p-8 flex flex-col flex-grow">
                                         <div className="text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold mb-3 bg-[#EEF2F6] self-start px-3 py-1 rounded-sm border border-[#C5A059]/20">{project.type}</div>
                                         <h3 className="text-2xl font-serif text-[#1A1A1A] mb-2">{project.title}</h3>
@@ -480,24 +376,71 @@ export default async function LocalityPage({ params }: { params: Promise<{ micro
             </section >
 
             {/* FAQ Section */}
-            {locality.faqs && locality.faqs.length > 0 && (
-                <section className="max-w-5xl mx-auto px-6 mt-20">
-                    <h2 className="text-3xl font-serif text-[#1A1A1A] mb-8">Frequently Asked Questions About {locality.name}</h2>
-                    <div className="space-y-4">
-                        {locality.faqs.map((faq, idx) => (
-                            <details key={idx} className="bg-[#FFFFFF] border border-[#C5A059]/20 rounded-sm group shadow-md">
-                                <summary className="px-6 py-5 cursor-pointer text-[#323334] font-medium text-sm hover:text-[#1D4F9C] transition-colors list-none flex justify-between items-center">
-                                    {faq.q}
-                                    <span className="text-[#1D4F9C] text-lg group-open:rotate-45 transition-transform">+</span>
-                                </summary>
-                                <div className="px-6 pb-5 text-[#323334] font-light text-sm leading-relaxed border-t border-[#C5A059]/10 pt-4">
-                                    {faq.a}
-                                </div>
-                            </details>
-                        ))}
-                    </div>
-                </section>
-            )}
+            {
+                locality.faqs && locality.faqs.length > 0 && (
+                    <section className="max-w-5xl mx-auto px-6 mt-20">
+                        <h2 className="text-3xl font-serif text-[#1A1A1A] mb-8">Frequently Asked Questions About {locality.name}</h2>
+                        <div className="space-y-4">
+                            {locality.faqs.map((faq, idx) => (
+                                <details key={idx} className="bg-[#FFFFFF] border border-[#C5A059]/20 rounded-sm group shadow-md">
+                                    <summary className="px-6 py-5 cursor-pointer text-[#323334] font-medium text-sm hover:text-[#1D4F9C] transition-colors list-none flex justify-between items-center">
+                                        {faq.q}
+                                        <span className="text-[#1D4F9C] text-lg group-open:rotate-45 transition-transform">+</span>
+                                    </summary>
+                                    <div className="px-6 pb-5 text-[#323334] font-light text-sm leading-relaxed border-t border-[#C5A059]/10 pt-4">
+                                        {faq.a}
+                                    </div>
+                                </details>
+                            ))}
+                        </div>
+                    </section>
+                )
+            }
+
+            {/* Cross-Locality Internal Link Mesh — Phase 13 */}
+            <section className="max-w-7xl mx-auto px-6 mt-20">
+                <h2 className="text-2xl font-serif text-[#1A1A1A] mb-6">Explore Other Pune Micro-Markets</h2>
+                <div className="flex flex-wrap gap-3">
+                    {localities.filter(l => l.slug !== locality.slug).map(otherLocality => (
+                        <Link
+                            key={otherLocality.slug}
+                            href={`/locality/${otherLocality.slug}`}
+                            className="px-5 py-3 bg-[#1D4F9C]/5 border border-[#1D4F9C]/10 hover:bg-[#1D4F9C]/10 hover:border-[#1D4F9C]/30 text-[#1D4F9C] text-xs font-medium tracking-wide rounded-sm transition-all"
+                        >
+                            {otherLocality.name} Real Estate →
+                        </Link>
+                    ))}
+                </div>
+            </section>
+
+            {/* Contextual Insights Cross-Links — Phase 13 */}
+            <section className="max-w-7xl mx-auto px-6 mt-12 mb-4">
+                <h2 className="text-2xl font-serif text-[#1A1A1A] mb-6">Related Market Insights</h2>
+                <div className="grid md:grid-cols-2 gap-4">
+                    {[
+                        { slug: 'pune-real-estate-market-forecast-2026-investment-hotspots', title: 'Pune Real Estate Forecast 2026 — Investment Hotspots' },
+                        { slug: 'pune-property-price-trends-2025-micro-market-analysis', title: 'Pune Property Price Trends — Micro-Market Analysis' },
+                        { slug: 'complete-nri-guide-buying-property-pune-2026', title: 'NRI Guide to Buying Property in Pune 2026' },
+                        ...(locality.slug === 'hinjewadi' || locality.slug === 'wakad' ? [
+                            { slug: 'rental-yields-hinjewadi-2025-nri-investment-guide', title: 'Rental Yields Hinjewadi — NRI Investment Guide' },
+                            { slug: 'best-residential-projects-hinjewadi-2025-complete-guide', title: 'Best Projects in Hinjewadi — Buyer\'s Guide' },
+                            { slug: 'why-joyville-vyomora-is-best-new-launch-hinjewadi-2026', title: 'Why Joyville Vyomora Is the Best New Launch in Hinjewadi' },
+                        ] : []),
+                        ...(locality.slug === 'hadapsar' || locality.slug === 'kharadi' ? [
+                            { slug: 'the-ultimate-guide-pune-east-townships-hadapsar', title: 'The Ultimate Guide to Pune East Townships — Hadapsar' },
+                            { slug: 'pune-it-corridor-hinjewadi-vs-kharadi-vs-magarpatta', title: 'IT Corridor Comparison — Hinjewadi vs Kharadi vs Magarpatta' },
+                        ] : []),
+                        ...(locality.slug === 'bavdhan' ? [
+                            { slug: 'pune-mega-infrastructure-projects-impact-2028', title: 'Pune Mega Infrastructure Projects — Impact by 2028' },
+                        ] : []),
+                    ].slice(0, 4).map(article => (
+                        <Link key={article.slug} href={`/insights/${article.slug}`} className="flex items-center gap-3 p-4 bg-[#FFFFFF] border border-[#C5A059]/10 hover:border-[#C5A059]/40 transition-all rounded-sm group shadow-md">
+                            <ArrowRight size={14} className="text-[#1D4F9C] group-hover:translate-x-1 transition-transform flex-shrink-0" />
+                            <span className="text-sm text-[#323334] group-hover:text-[#1D4F9C] transition-colors font-light">{article.title}</span>
+                        </Link>
+                    ))}
+                </div>
+            </section>
         </div >
     );
 }

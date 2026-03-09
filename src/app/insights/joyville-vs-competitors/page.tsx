@@ -49,8 +49,33 @@ const comparisonData = [
 ];
 
 export default function ComparisonMatrix() {
+    const tableJsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://www.joyville-homes.com/insights/joyville-vs-competitors/#webpage",
+                "url": "https://www.joyville-homes.com/insights/joyville-vs-competitors",
+                "name": "Joyville vs Competitors | Real Estate Comparison Pune 2025",
+                "description": "Expert side-by-side comparison of construction quality, brand legacy, and ROI between Joyville and other Pune developers.",
+                "publisher": { "@id": "https://www.joyville-homes.com/#organization" },
+                "author": { "@id": "https://www.joyville-homes.com/#research-desk" }
+            },
+            {
+                "@type": "Table",
+                "name": "Real Estate Comparison Matrix: Joyville vs. Industry Average",
+                "about": "Comparison of residential project quality parameters in Pune",
+                "mainEntityOfPage": { "@id": "https://www.joyville-homes.com/insights/joyville-vs-competitors/#webpage" }
+            }
+        ]
+    };
+
     return (
         <article className="min-h-screen bg-[#FFFFFF] pt-32 pb-24 text-[#323334] font-sans">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(tableJsonLd) }}
+            />
             <header className="max-w-7xl mx-auto px-6 mb-20 text-center">
                 <div className="inline-flex items-center gap-2 text-[#1D4F9C] font-medium text-xs tracking-widest uppercase mb-4">
                     <ShieldAlert size={16} /> Investor Intelligence

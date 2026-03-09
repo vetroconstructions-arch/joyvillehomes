@@ -5,8 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { PhoneCall, Menu, X, ChevronDown, MapPin } from "lucide-react";
+import dynamic from "next/dynamic";
 import { projects } from "@/data/projects";
-import QuickEnquireModal from "./QuickEnquireModal";
+
+const QuickEnquireModal = dynamic(() => import("./QuickEnquireModal"), {
+    ssr: false, // Defer hydration until client to reduce Main Thread blocking
+});
 
 export default function Navigation() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -44,14 +48,14 @@ export default function Navigation() {
 
     return (
         <>
-            <nav
+            <header
                 className={`fixed w-full z-[100] transition-all duration-700 ease-out px-6 md:px-12 ${navBackground}`}
                 onMouseLeave={() => setIsProjectsHovered(false)}
             >
-                <div className="max-w-7xl mx-auto flex justify-between items-center relative">
+                <nav aria-label="Main Navigation" className="max-w-7xl mx-auto flex justify-between items-center relative">
 
                     {/* Logo & Branding */}
-                    <Link href="/" className="flex flex-col z-20 focus:outline-none group">
+                    <Link href="/" aria-label="Joyville Pune Home" className="flex flex-col z-20 focus:outline-none group">
                         <span className="text-2xl font-serif font-light tracking-widest text-[#1D4F9C] group-hover:text-[#323334] transition-colors duration-500">
                             JOYVILLE
                         </span>
@@ -67,6 +71,16 @@ export default function Navigation() {
                             className="relative h-full py-4 cursor-pointer flex items-center gap-1 group/trigger"
                             onMouseEnter={() => setIsProjectsHovered(true)}
                             onClick={() => setIsProjectsHovered(!isProjectsHovered)}
+                            role="button"
+                            aria-haspopup="true"
+                            aria-expanded={isProjectsHovered}
+                            tabIndex={0}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    setIsProjectsHovered(!isProjectsHovered);
+                                    e.preventDefault();
+                                }
+                            }}
                         >
                             <Link href="/projects" className="hover:text-[#1D4F9C] transition-colors duration-300">Portfolios</Link>
                             <ChevronDown size={14} className={`transition-transform duration-300 ${isProjectsHovered ? 'rotate-180 text-[#1D4F9C]' : ''}`} />
@@ -114,13 +128,18 @@ export default function Navigation() {
                                                 <div className="absolute inset-0 bg-cover bg-center opacity-90 group-hover/dropdown:opacity-100 group-hover/dropdown:scale-105 transition-all duration-500" style={{ backgroundImage: `url(${proj.image})` }} />
                                             </div>
                                             <div className="p-4 bg-[#FFFFFF]">
-                                                <div className="text-[#1D4F9C] text-[9px] uppercase tracking-[0.15em] font-medium mb-1 flex items-center gap-1.5"><MapPin size={10} /> {proj.location.split(',')[0]}</div>
+                                                <div className="flex justify-between items-start mb-1">
+                                                    <div className="text-[#1D4F9C] text-[9px] uppercase tracking-[0.15em] font-medium flex items-center gap-1.5"><MapPin size={10} /> {proj.location.split(',')[0]}</div>
+                                                    {proj.status === "Brand New Launch" && (
+                                                        <span className="bg-[#1D4F9C] text-[#FFFFFF] text-[7px] px-1.5 py-0.5 rounded-full font-bold animate-pulse">NEW</span>
+                                                    )}
+                                                </div>
                                                 <h4 className="text-[#323334] font-serif text-sm font-medium">{proj.title}</h4>
                                             </div>
                                         </Link>
                                     ))}
                                     <div className="col-span-4 flex justify-end mt-4 pt-4 border-t border-[#C5A059]/30">
-                                        <Link href="/projects" className="text-xs uppercase tracking-[0.2em] text-[#1D4F9C] hover:text-[#323334] font-medium flex items-center gap-2 group/all">
+                                        <Link href="/projects" aria-label="View Full Joyville Portfolio" className="text-xs uppercase tracking-[0.2em] text-[#1D4F9C] hover:text-[#323334] font-medium flex items-center gap-2 group/all">
                                             View Full Portfolio <span className="w-6 h-[1px] bg-[#1D4F9C] group-hover/all:w-10 transition-all duration-300" />
                                         </Link>
                                     </div>
@@ -128,8 +147,8 @@ export default function Navigation() {
                             </motion.div>
                         )}
                     </AnimatePresence>
-                </div>
-            </nav>
+                </nav>
+            </header>
 
             {/* Global Quick Enquire Modal */}
             <QuickEnquireModal
@@ -158,16 +177,16 @@ export default function Navigation() {
                             </motion.div>
 
                             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }}>
-                                <Link onClick={() => setIsMobileMenuOpen(false)} href="/" className="text-4xl sm:text-5xl font-serif text-[#323334] font-light hover:text-[#1D4F9C] transition-colors inline-block">Home</Link>
+                                <Link onClick={() => setIsMobileMenuOpen(false)} href="/" className="text-4xl sm:text-5xl font-serif text-[#323334] font-light hover:text-[#1D4F9C] transition-colors inline-block py-2">Home</Link>
                             </motion.div>
                             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }}>
-                                <Link onClick={() => setIsMobileMenuOpen(false)} href="/projects" className="text-4xl sm:text-5xl font-serif text-[#323334] font-light hover:text-[#1D4F9C] transition-colors inline-block">Portfolios</Link>
+                                <Link onClick={() => setIsMobileMenuOpen(false)} href="/projects" className="text-4xl sm:text-5xl font-serif text-[#323334] font-light hover:text-[#1D4F9C] transition-colors inline-block py-2">Portfolios</Link>
                             </motion.div>
                             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.6 }}>
-                                <Link onClick={() => setIsMobileMenuOpen(false)} href="/amenities" className="text-4xl sm:text-5xl font-serif text-[#323334] font-light hover:text-[#1D4F9C] transition-colors inline-block">Amenities</Link>
+                                <Link onClick={() => setIsMobileMenuOpen(false)} href="/amenities" className="text-4xl sm:text-5xl font-serif text-[#323334] font-light hover:text-[#1D4F9C] transition-colors inline-block py-2">Amenities</Link>
                             </motion.div>
                             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.7 }}>
-                                <Link onClick={() => setIsMobileMenuOpen(false)} href="/location" className="text-4xl sm:text-5xl font-serif text-[#323334] font-light hover:text-[#1D4F9C] transition-colors inline-block">Location</Link>
+                                <Link onClick={() => setIsMobileMenuOpen(false)} href="/location" className="text-4xl sm:text-5xl font-serif text-[#323334] font-light hover:text-[#1D4F9C] transition-colors inline-block py-2">Location</Link>
                             </motion.div>
 
                             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.8 }} className="mt-10">

@@ -21,15 +21,26 @@ export const metadata: Metadata = {
 export default function LocationPage() {
     const jsonLd = {
         "@context": "https://schema.org",
-        "@type": "Place",
-        "name": "Joyville Homes Pune Location",
-        "description": "Strategically located in Hinjewadi Phase 1, Pune. The crown jewel of Shapoorji Pallonji Real Estate.",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Hinjewadi",
-            "addressRegion": "Maharashtra",
-            "addressCountry": "IN"
-        }
+        "@graph": [
+            {
+                "@type": "CollectionPage",
+                "@id": "https://www.joyville-homes.com/location/#collection",
+                "name": "Joyville Homes Pune Locations & Connectivity Guide",
+                "description": "Explore prime residential locations in Pune by Shapoorji Pallonji. Detailed connectivity guides for Hinjewadi, Hadapsar, and Bavdhan micro-markets.",
+                "url": "https://www.joyville-homes.com/location",
+                "publisher": {
+                    "@id": "https://www.joyville-homes.com/#organization"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.joyville-homes.com/location/#breadcrumb",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.joyville-homes.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://www.joyville-homes.com/location" }
+                ]
+            }
+        ]
     };
 
     const landmarks = [

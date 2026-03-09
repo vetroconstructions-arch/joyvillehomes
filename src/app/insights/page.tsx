@@ -22,20 +22,32 @@ export const metadata: Metadata = {
 export default function InsightsPage() {
     const jsonLd = {
         "@context": "https://schema.org",
-        "@type": "Blog",
-        "name": "Joyville Pune Market Insights",
-        "description": metadata.description,
-        "url": "https://www.joyville-homes.com/insights",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Shapoorji Pallonji Real Estate"
-        },
-        "blogPost": blogs.map(blog => ({
-            "@type": "BlogPosting",
-            "headline": blog.title,
-            "url": `https://www.joyville-homes.com/insights/${blog.slug}`,
-            "datePublished": new Date(blog.date).toISOString()
-        }))
+        "@graph": [
+            {
+                "@type": ["Blog", "CollectionPage"],
+                "@id": "https://www.joyville-homes.com/insights/#blog",
+                "name": "Joyville Pune Market Insights",
+                "description": metadata.description,
+                "url": "https://www.joyville-homes.com/insights",
+                "publisher": {
+                    "@id": "https://www.joyville-homes.com/#organization"
+                },
+                "blogPost": blogs.map(blog => ({
+                    "@type": "BlogPosting",
+                    "headline": blog.title,
+                    "url": `https://www.joyville-homes.com/insights/${blog.slug}`,
+                    "datePublished": new Date(blog.date).toISOString()
+                }))
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.joyville-homes.com/insights/#breadcrumb",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.joyville-homes.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.joyville-homes.com/insights" }
+                ]
+            }
+        ]
     };
 
     return (

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, Calendar, User, Facebook, Twitter, Linkedin, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navigation';
+import DiscussedEntities from '@/components/DiscussedEntities';
 
 const siteUrl = 'https://www.joyville-homes.com';
 
@@ -66,23 +67,36 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         "headline": blog.title,
         "image": [blog.image],
         "datePublished": new Date(blog.date).toISOString(),
-        "dateModified": new Date(blog.date).toISOString(),
+        "dateModified": new Date().toISOString(), // Dynamic build-time freshness signal for QDF
         "wordCount": wordCount,
         "keywords": blog.seoKeywords?.join(', '),
-        "author": [{
-            "@type": "Person",
-            "name": blog.author
-        }],
+        "articleSection": blog.category, // Topical categorization for Google Discover
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", ".prose p:first-of-type"]
+        },
+        "author": {
+            "@id": "https://www.joyville-homes.com/#research-desk"
+        },
         "publisher": {
-            "@type": "Organization",
-            "name": "Shapoorji Pallonji Real Estate",
-            "logo": {
-                "@type": "ImageObject",
-                "url": `${siteUrl}/logo.png`
-            }
+            "@id": "https://www.joyville-homes.com/#organization"
         },
         "description": blog.excerpt,
-        "articleBody": articleContent
+        "articleBody": articleContent,
+        ...(blog.relatedProjects?.length ? {
+            "about": blog.relatedProjects.map(slug => ({
+                "@type": "Accommodation",
+                "name": slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '),
+                "url": `${siteUrl}/projects/${slug}`
+            }))
+        } : {}),
+        ...(blog.relatedLocalities?.length ? {
+            "mentions": blog.relatedLocalities.map(slug => ({
+                "@type": "City",
+                "name": slug.charAt(0).toUpperCase() + slug.slice(1),
+                "url": `${siteUrl}/locality/${slug}`
+            }))
+        } : {})
     };
 
     const breadcrumbLd = {
@@ -155,12 +169,36 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     ))}
                 </div>
 
-                <div className="mt-16 pt-8 border-t border-[#C5A059]/20 bg-[#FFFFFF] p-8 rounded-sm shadow-sm">
-                    <h3 className="text-xl font-serif text-[#1D4F9C] mb-4">Ready to Invest in Pune?</h3>
-                    <p className="text-[#323334] font-light mb-6">Connect with our property consultants to discover premium Shapoorji Pallonji residences that match your investment goals.</p>
-                    <Link href="/projects" className="inline-block bg-[#1D4F9C] text-[#FFFFFF] px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#323334] transition-colors">
-                        Explore Portfolio
-                    </Link>
+                <DiscussedEntities
+                    projectSlugs={blog.relatedProjects}
+                    localitySlugs={blog.relatedLocalities}
+                />
+
+                {/* Semantic Content Siloing CTA */}
+                <div className="mt-16 pt-8 border-t border-[#C5A059]/20 bg-[#FFFFFF] p-8 rounded-sm shadow-sm flex flex-col items-start">
+                    <h3 className="text-2xl font-serif text-[#1D4F9C] mb-4">Take the Next Step</h3>
+                    <p className="text-[#323334] font-light mb-8 text-lg">
+                        Our market analysis indicates high demand for properties matching your interests. Explore curated Shapoorji Pallonji residences specific to this insight.
+                    </p>
+
+                    {/* Dynamic Routing Logic linking blogs to bottom-of-funnel programmatic pages */}
+                    {blog.seoKeywords.some(k => k.toLowerCase().includes('hinjewadi') && k.toLowerCase().includes('2 bhk')) ? (
+                        <Link href="/properties/2-bhk-flats-in-hinjewadi" className="inline-flex items-center gap-3 bg-[#1D4F9C] text-[#FFFFFF] px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#323334] transition-colors shadow-lg">
+                            View 2 BHK Flats in Hinjewadi <ArrowRight size={16} />
+                        </Link>
+                    ) : blog.seoKeywords.some(k => k.toLowerCase().includes('hadapsar') || k.toLowerCase().includes('township')) ? (
+                        <Link href="/properties/townships-near-magarpatta-city" className="inline-flex items-center gap-3 bg-[#1D4F9C] text-[#FFFFFF] px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#323334] transition-colors shadow-lg">
+                            Explore Magarpatta Township <ArrowRight size={16} />
+                        </Link>
+                    ) : blog.seoKeywords.some(k => k.toLowerCase().includes('bavdhan') || k.toLowerCase().includes('luxury')) ? (
+                        <Link href="/properties/3-bhk-luxury-apartments-pune-west" className="inline-flex items-center gap-3 bg-[#1D4F9C] text-[#FFFFFF] px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#323334] transition-colors shadow-lg">
+                            Discover Pune West Luxury <ArrowRight size={16} />
+                        </Link>
+                    ) : (
+                        <Link href="/projects" className="inline-flex items-center gap-3 bg-[#1D4F9C] text-[#FFFFFF] px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#323334] transition-colors shadow-lg">
+                            Explore Master Portfolio <ArrowRight size={16} />
+                        </Link>
+                    )}
                 </div>
 
                 {/* Related Articles Section */}

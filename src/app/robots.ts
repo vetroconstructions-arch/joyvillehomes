@@ -13,8 +13,9 @@ export default function robots(): MetadataRoute.Robots {
                     '/api/',
                     '/admin/',
                     '/cgi-bin/',
-                    '/*?*', // Disallow query parameters to prevent duplicate content crawling
+                    '/*?*', // Prevent duplicated content from UTM/Ad parameters
                 ],
+                crawlDelay: 2, // Protects server from being hammered by secondary search engines
             },
             {
                 userAgent: 'Googlebot',
@@ -24,6 +25,11 @@ export default function robots(): MetadataRoute.Robots {
                 userAgent: 'Googlebot-Image',
                 allow: '/',
             },
+            // Explicitly block invasive AI Scrapers to preserve Crawl Budget and Intellectual Property
+            {
+                userAgent: ['GPTBot', 'ChatGPT-User', 'CCBot', 'anthropic-ai', 'Google-Extended', 'Omigili', 'FacebookBot'],
+                disallow: ['/'],
+            }
         ],
         sitemap: `${siteUrl}/sitemap.xml`,
         host: siteUrl,
