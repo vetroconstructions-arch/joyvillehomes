@@ -67,13 +67,14 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
   alternates: {
+    canonical: 'https://www.joyville-homes.com',
     languages: {
       'en-IN': 'https://www.joyville-homes.com',
       'x-default': 'https://www.joyville-homes.com',
     },
   },
   verification: {
-    google: "YOUR_GSC_VERIFICATION_CODE_HERE", // User to provide actual verification string from Search Console
+    google: "kgXogw_uAx3DIkOTR_Ysq5ZB6Jh_rpezL9F13KvpMro",
   },
   manifest: "/manifest.json",
 };

@@ -11,7 +11,10 @@ export const metadata: Metadata = {
         "Premium lifestyle Hinjewadi apartments",
         "Joyville Homes Pune Phase 1",
         "Shapoorji Pallonji luxury flats"
-    ]
+    ],
+    alternates: {
+        canonical: "https://www.joyville-homes.com/amenities"
+    }
 };
 
 export default function AmenitiesPage() {

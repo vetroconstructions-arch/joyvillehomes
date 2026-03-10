@@ -51,6 +51,12 @@ const nextConfig: NextConfig = {
           { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
         ],
       },
+      {
+        source: '/api/(.*)',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+        ],
+      },
     ];
   },
   async redirects() {
@@ -63,6 +69,16 @@ const nextConfig: NextConfig = {
       {
         source: '/en-us',
         destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/en-us/',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/properties/residential-projects-near-hinjewadi-phase-1',
+        destination: '/locality/hinjewadi',
         permanent: true,
       },
       {

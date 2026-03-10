@@ -6,7 +6,10 @@ import SEOFooter from '@/components/SEOFooter';
 export const metadata: Metadata = {
     title: "Real Estate Glossary — Official Terminology & Meaning | Joyville Pune",
     description: "Understand critical real estate terms like RERA, Carpet Area, and Rental Yield. Our expert-desk glossary provides technical definitions for Pune homebuyers.",
-    keywords: ["real estate glossary Pune", "RERA meaning", "carpet area definition", "real estate terms India", "homebuying terminology", "property glossary 2026"]
+    keywords: ["real estate glossary Pune", "RERA meaning", "carpet area definition", "real estate terms India", "homebuying terminology", "property glossary 2026"],
+    alternates: {
+        canonical: "https://www.joyville-homes.com/glossary"
+    }
 };
 
 export default function GlossaryPage() {

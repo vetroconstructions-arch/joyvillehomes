@@ -17,7 +17,10 @@ export const metadata: Metadata = {
         "RERA registered projects Pune checklist",
         "Stamp duty and registration Pune 2025",
         "Ready to move flats Pune advantages"
-    ]
+    ],
+    alternates: {
+        canonical: "https://www.joyville-homes.com/pune-real-estate-guide"
+    }
 };
 
 interface GuideLink {

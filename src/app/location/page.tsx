@@ -15,7 +15,10 @@ export const metadata: Metadata = {
         "Flats near Pune IT Parks",
         "Properties near Pune Metro",
         "Properties near Pune Airport / Metro / Highways"
-    ]
+    ],
+    alternates: {
+        canonical: "https://www.joyville-homes.com/location"
+    }
 };
 
 export default function LocationPage() {

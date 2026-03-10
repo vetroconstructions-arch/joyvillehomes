@@ -14,7 +14,10 @@ export const metadata: Metadata = {
         "Compare premium flats Pune 2025",
         "Real estate investment ROI Pune comparison",
         "Aluform vs traditional construction Pune"
-    ]
+    ],
+    alternates: {
+        canonical: "https://www.joyville-homes.com/insights/joyville-vs-competitors"
+    }
 };
 
 const comparisonData = [
