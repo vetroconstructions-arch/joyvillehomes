@@ -31,8 +31,8 @@ const SECTIONS = [
             { href: '/properties/1-bhk-flats-in-hadapsar', label: '1 BHK Flats in Hadapsar' },
             { href: '/properties/2-bhk-flats-in-hinjewadi', label: '2 BHK Flats in Hinjewadi' },
             { href: '/properties/3-bhk-flats-in-hinjewadi', label: '3 BHK Flats in Hinjewadi' },
-            { href: '/properties/townships-near-magarpatta-city', label: '2 BHK Flats in Hadapsar' },
-            { href: '/properties/townships-near-magarpatta-city', label: '3 BHK Flats in Hadapsar' },
+            { href: '/properties/apartments-near-magarpatta-city-hadapsar', label: '2 BHK Flats in Hadapsar' },
+            { href: '/properties/ready-to-move-flats-hadapsar', label: '3 BHK Flats in Hadapsar' },
             { href: '/properties/3-bhk-luxury-apartments-pune-west', label: '3 BHK Luxury Apartments West Pune' },
         ]
     },
@@ -44,7 +44,6 @@ const SECTIONS = [
             { href: '/properties/flats-near-magarpatta-pune', label: 'Flats Near Magarpatta City' },
             { href: '/properties/flats-near-hinjewadi-it-park', label: 'Flats Near Hinjewadi IT Park' },
             { href: '/properties/flats-near-eon-it-park-kharadi', label: 'Flats Near EON IT Park Kharadi' },
-            { href: '/properties/property-near-sp-infocity-phursungi', label: 'Property Near SP Infocity' },
             { href: '/properties/flats-near-sp-infocity-pune', label: 'Flats Near SP Infocity' },
             { href: '/properties/apartments-near-magarpatta-city-hadapsar', label: 'Apartments Near Magarpatta' },
             { href: '/properties/residential-projects-near-hinjewadi-phase-1', label: 'Projects Near Hinjewadi Phase 1' },
@@ -58,9 +57,7 @@ const SECTIONS = [
         title: 'By Budget & Intent',
         links: [
             { href: '/properties/under-1-crore-flats-pune', label: 'Flats Under ₹1 Crore in Pune' },
-            { href: '/properties/townships-near-magarpatta-city', label: 'Luxury Apartments Hadapsar' },
-            { href: '/properties/flats-in-bavdhan-pune', label: 'Luxury Apartments Bavdhan' },
-            { href: '/properties/flats-in-bavdhan-pune', label: 'Golf View Apartments Bavdhan' },
+            { href: '/properties/ready-possession-flats-pune-2026', label: 'Ready Possession Pune 2026' },
             { href: '/properties/nri-investment-flats-pune', label: 'NRI Investment Flats Pune' },
             { href: '/properties/investment-property-pune-2026', label: 'Investment Property Pune 2026' },
             { href: '/properties/na-bungalow-plots-near-purandar-airport', label: 'NA Plots Near Purandar Airport' },
@@ -71,11 +68,8 @@ const SECTIONS = [
         title: 'By Status & Features',
         links: [
             { href: '/properties/ready-to-move-flats-hadapsar', label: 'Ready to Move Hadapsar' },
-            { href: '/properties/ready-to-move-flats-in-hadapsar', label: 'Ready to Move Flats Hadapsar' },
-            { href: '/properties/ready-possession-flats-pune-2026', label: 'Ready Possession Pune 2026' },
             { href: '/properties/new-launch-projects-pune-2025', label: 'New Launch Projects 2025' },
             { href: '/properties/new-launch-projects-pune-2026', label: 'New Launch Projects 2026' },
-            { href: '/properties/new-launch-projects-pune-2025', label: 'New Launch Hadapsar 2025' },
             { href: '/properties/rera-approved-flats-pune', label: 'RERA Approved Flats Pune' },
             { href: '/properties/smart-home-apartments-pune', label: 'Smart Home Apartments Pune' },
             { href: '/properties/gated-community-pune-2026', label: 'Gated Community Pune 2026' },
@@ -86,9 +80,8 @@ const SECTIONS = [
         icon: Shield,
         title: 'Competitor Comparisons',
         links: [
-            { href: '/properties/joyville-vs-kolte-patil-life-republic-hinjewadi', label: 'Joyville vs Kolte Patil Life Republic' },
-            { href: '/properties/joyville-vs-godrej-properties-pune', label: 'Joyville vs Godrej Properties' },
-            { href: '/properties/joyville-vs-godrej-hinjewadi', label: 'Joyville vs Godrej Hinjewadi' },
+            { href: '/properties/joyville-vs-kolte-patil-life-republic-hinjewadi', label: 'Joyville vs Kolte Patil' },
+            { href: '/properties/joyville-vs-godrej-hinjewadi', label: 'Joyville vs Godrej' },
             { href: '/properties/joyville-vs-vtp-bellissimo-hinjewadi', label: 'Joyville vs VTP Bellissimo' },
             { href: '/properties/joyville-vs-amanora-hadapsar', label: 'Joyville vs Amanora Hadapsar' },
             { href: '/properties/joyville-vs-pride-purple-pune', label: 'Joyville vs Pride Purple' },
@@ -110,7 +103,7 @@ export default function FlatsInPunePage() {
     const allLinks = SECTIONS.flatMap(s => s.links);
     const itemListLd = {
         "@context": "https://schema.org",
-        "@type": "ItemList",
+        "@type": ["ItemList", "CollectionPage"],
         "name": "Flats in Pune by Shapoorji Pallonji",
         "description": "Complete directory of 40+ flat categories in Pune",
         "numberOfItems": allLinks.length,

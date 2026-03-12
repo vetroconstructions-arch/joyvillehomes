@@ -46,7 +46,7 @@ export default function Home() {
             <Image
               src="/images/desktop-poster.webp"
               fill
-              alt="Joyville Homes Hinjewadi Pune"
+              alt="Premium residential view of Joyville Homes by Shapoorji Pallonji in Hinjewadi, Pune"
               className="object-cover opacity-60 mix-blend-luminosity"
               priority
               sizes="(max-width: 1200px) 100vw, 100vw"
@@ -128,7 +128,7 @@ export default function Home() {
       </section>
 
       {/* --- Brand New Launch Feature (Vyomora) --- */}
-      <section className="py-24 px-6 bg-[#FFFFFF] relative z-10">
+      <section className="py-24 px-6 bg-[#FFFFFF] relative z-10" aria-labelledby="new-launch-heading">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -140,7 +140,7 @@ export default function Home() {
               <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#1D4F9C]/5 border border-[#1D4F9C]/20 rounded-full text-[#1D4F9C] text-[10px] uppercase tracking-widest font-bold mb-8">
                 <span className="w-2 h-2 rounded-full bg-[#1D4F9C] animate-pulse" /> Just Launched: Vyomora
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#323334] font-light mb-8 leading-tight">
+              <h2 id="new-launch-heading" className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#323334] font-light mb-8 leading-tight">
                 Joyville Vyomora: <br />
                 <span className="italic text-[#1D4F9C]">The Future of Hinjewadi.</span>
               </h2>
@@ -170,7 +170,7 @@ export default function Home() {
                 <Image
                   src="/images/joyville_sensorium_projectcard.webp"
                   fill
-                  alt="Joyville Vyomora Hinjewadi New Launch"
+                  alt="Joyville Vyomora New Launch in Hinjewadi Phase 1 - Premium 3 BHK Duplex Residences"
                   className="object-cover transition-transform duration-700 hover:scale-105"
                   priority={true}
                 />
@@ -203,7 +203,7 @@ export default function Home() {
                   src="/images/joyville_sensorium_projectcard.webp"
                   fill
                   className="object-cover opacity-80 mix-blend-luminosity"
-                  alt="Shapoorji Pallonji Real Estate Building Legacy"
+                  alt="150+ year architectural legacy of Shapoorji Pallonji Real Estate projects in Pune"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#F4F6F9] via-transparent to-transparent" />
@@ -444,7 +444,7 @@ export default function Home() {
       <MarketTicker />
 
       {/* --- Latest Market Insights (Phase 4: Crawl Depth Optimization) --- */}
-      <section className="bg-[#EEF2F6] py-24 px-6 border-b border-[#C5A059]/30">
+      <aside className="bg-[#EEF2F6] py-24 px-6 border-b border-[#C5A059]/30" aria-label="Market Insights">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
             <div>
@@ -464,7 +464,7 @@ export default function Home() {
                 <div className="relative aspect-video overflow-hidden">
                   <Image
                     src={blog.image}
-                    alt={blog.title}
+                    alt={`Real Estate Insight: ${blog.title}`}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 768px) 100vw, 33vw"
@@ -484,7 +484,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </aside>
 
       {/* --- Global SEO FAQ Section --- */}
       <GlobalFAQ />
@@ -541,7 +541,7 @@ export default function Home() {
       </footer>
 
       {/* --- SEO Content Block (Crawlable keyword-rich text) --- */}
-      <section className="bg-[#F4F6F9] border-t border-[#C5A059]/20 py-16 px-6">
+      <article className="bg-[#F4F6F9] border-t border-[#C5A059]/20 py-16 px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl font-serif text-[#323334] mb-6">About Joyville Homes Pune — Premium Residences by Shapoorji Pallonji</h2>
           <div className="text-sm text-[#323334]/80 font-light leading-relaxed space-y-4">
@@ -556,7 +556,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
+      </article>
 
       {/* Floating CTA */}
       <div className="fixed bottom-10 right-10 z-50">

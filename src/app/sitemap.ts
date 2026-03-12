@@ -45,6 +45,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
         {
+            url: `${baseUrl}/press-research`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/locality/compare`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
             url: `${baseUrl}/pune-real-estate-guide`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
@@ -77,9 +89,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority = 0.95;
         }
 
+        // QDF Signal: Use the latest of price update or construction update
+        const lastMod = project.lastPriceUpdate ? new Date(project.lastPriceUpdate) : 
+                        project.constructionUpdate?.lastUpdated ? new Date(project.constructionUpdate.lastUpdated) : 
+                        new Date();
+
         return {
             url: `${baseUrl}/projects/${project.slug}`,
-            lastModified: new Date(),
+            lastModified: lastMod,
             changeFrequency: 'weekly',
             priority: priority,
         };
@@ -89,12 +106,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${baseUrl}/properties/${route.slug}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
-        priority: 0.9,
+        priority: 0.95, // Boosted for Phase 8
     }));
 
     const blogRoutes: MetadataRoute.Sitemap = blogs.map((blog) => ({
         url: `${baseUrl}/insights/${blog.slug}`,
-        lastModified: new Date(), // Build-time freshness for QDF alignment
+        lastModified: new Date(blog.date),
         changeFrequency: 'monthly',
         priority: 0.80,
     }));

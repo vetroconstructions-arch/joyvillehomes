@@ -98,14 +98,14 @@ export default function ProjectsPortfolio() {
                 </p>
             </header>
 
-            <div className="max-w-5xl mx-auto px-6 space-y-16 mb-24">
+            <main className="max-w-5xl mx-auto px-6 space-y-16 mb-24">
                 {currentProjects.map((project) => (
                     <Link key={project.id} href={`/projects/${project.slug}`} className="group flex flex-col md:flex-row bg-[#FFFFFF] border border-[#C5A059]/30 shadow-lg hover:shadow-2xl overflow-hidden rounded-sm hover:border-[#C5A059]/80 transition-all duration-500 cursor-pointer block">
                         {/* Elegant Cinematic Image */}
                         <div className="md:w-5/12 relative aspect-[4/3] md:min-h-[300px] overflow-hidden bg-[#F8FAFC]">
                             <Image
                                 src={project.image}
-                                alt={project.title}
+                                alt={`Shapoorji Pallonji ${project.title} - ${project.type} in ${project.location}`}
                                 fill
                                 className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -144,7 +144,7 @@ export default function ProjectsPortfolio() {
                         </div>
                     </Link>
                 ))}
-            </div>
+            </main>
 
             {/* Elegant Pagination System */}
             {totalPages > 1 && (

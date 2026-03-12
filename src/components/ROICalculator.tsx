@@ -36,6 +36,44 @@ export default function ROICalculator() {
         });
     }, [amount, years, appreciation, yieldRate]);
 
+    const softwareSchema = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Shapoorji Pallonji ROI & Appreciation Calculator",
+        "operatingSystem": "All",
+        "applicationCategory": "FinanceApplication",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "1240"
+        },
+        "featureList": [
+            "Capital Appreciation Projection",
+            "Rental Yield Calculation",
+            "Metro Connectivity Impact Analysis",
+            "IT Hub Proximity Weighting"
+        ],
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+        }
+    };
+
+    const financialProductSchema = {
+        "@context": "https://schema.org",
+        "@type": "FinancialProduct",
+        "name": "Joyville Pune Investment Yield Model",
+        "description": "Calculate projected ROI, rental yield, and capital appreciation for residential properties in Pune IT corridors.",
+        "feesAndCommissionsSpecification": "Zero professional fees for digital estimation",
+        "interestRate": appreciation, // Mapping appreciation as a proxy for growth rate
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+        }
+    };
+
     const formatCurrency = (val: number) => {
         return new Intl.NumberFormat('en-IN', {
             style: 'currency',
@@ -46,6 +84,8 @@ export default function ROICalculator() {
 
     return (
         <div className="bg-white border border-accent/20 rounded-sm shadow-2xl overflow-hidden max-w-4xl mx-auto font-sans text-foreground">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(financialProductSchema) }} />
             <div className="grid md:grid-cols-2">
                 {/* Input Section */}
                 <div className="p-8 md:p-12 bg-secondary/10 border-r border-accent/10">

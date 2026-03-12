@@ -4,6 +4,7 @@ import { projects } from '@/data/projects';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin, ArrowRight } from 'lucide-react';
+import TechnicalSheet from '@/components/TechnicalSheet';
 
 // Define the supported SEO Slugs based on our strategy matrix
 const siteUrl = 'https://www.joyville-homes.com';
@@ -87,6 +88,39 @@ export const SEO_ROUTES = [
         filters: { locationMatch: 'Shewalewadi|Hadapsar', typeMatch: '' }
     },
 
+    // High-Intent Intent Clusters
+    {
+        slug: 'ready-possession-hinjewadi',
+        title: 'Ready Possession Flats in Hinjewadi Phase 1 — Move In 2026 | Joyville',
+        description: 'Skip the construction wait. Explore ready possession 2 & 3 BHK luxury flats in Hinjewadi Phase 1 by Shapoorji Pallonji. Smart home residences near Wipro Circle. Starting ₹1.10 Cr.',
+        h1: 'Ready Possession Flats in Hinjewadi Phase 1',
+        keywords: ['ready possession flats Hinjewadi', 'move in ready Hinjewadi', 'ready to move Joyville Hinjewadi', 'immediate possession Hinjewadi Phase 1'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
+    },
+    {
+        slug: '3-bhk-luxury-flats-hadapsar-nri-special',
+        title: 'Investment Grade 3 BHK Luxury Flats in Hadapsar — NRI Preferred | Skyluxe',
+        description: 'Premium 3 BHK residences and penthouses in Hadapsar. High rental yield (5.2%+) for NRI investors. Italian marble flooring, private concierge, and panoramic views. RERA approved.',
+        h1: 'Luxury 3 BHK Residences in Hadapsar — NRI Selection',
+        keywords: ['3 BHK luxury Hadapsar', 'NRI investment Pune', 'Skyluxe Hadapsar 3 BHK price', 'penthouses Hadapsar', 'high rental yield Hadapsar'],
+        filters: { locationMatch: 'Hadapsar|Shewalewadi', typeMatch: '3' }
+    },
+    {
+        slug: 'under-1-crore-flats-hinjewadi-phase-1',
+        title: 'Top Flats Under 1 Crore in Hinjewadi Phase 1 | Joyville Pune',
+        description: 'Invest in premium 2 BHK flats under 1 crore in Hinjewadi Phase 1. Joyville Vyomora launch price starting ₹84.99 Lakhs. Best amenities and tech-lifeline connectivity.',
+        h1: 'Premium Flats Under 1 Crore in Hinjewadi Phase 1',
+        keywords: ['flats under 1 crore Hinjewadi', '2 BHK under 1 crore Hinjewadi', 'budget luxury Hinjewadi', 'Joyville Vyomora price under 1 cr'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
+    },
+    {
+        slug: 'investment-flats-near-eon-it-park',
+        title: 'Best Investment Flats Near EON IT Park & Kharadi | Joyville Hadapsar',
+        description: 'High-growth investment property near EON IT Park and World Trade Center. 1, 2 & 3 BHK flats at Joyville Hadapsar Annexe. Projected 12% annual appreciation. From ₹65 Lakhs.',
+        h1: 'Lucrative Investment Flats Near EON IT Park',
+        keywords: ['investment near EON IT Park', 'property near WTC Pune', 'Joyville Hadapsar investment', 'Kharadi annexe real estate'],
+        filters: { locationMatch: 'Shewalewadi|Hadapsar', typeMatch: '' }
+    },
     // Comparison landing pages
     {
         slug: 'joyville-vs-kolte-patil-life-republic-hinjewadi',
@@ -353,6 +387,23 @@ export const SEO_ROUTES = [
         h1: 'Joyville vs Gera World of Joy — Complete Comparison',
         keywords: ['Joyville vs Gera', 'Gera World of Joy comparison', 'best family flats Pune', 'Shapoorji vs Gera'],
         filters: { locationMatch: '', typeMatch: '' }
+    },
+    // Amenity-First Clusters (Social-Moment Silos)
+    {
+        slug: 'gated-communities-with-ev-charging-hinjewadi',
+        title: 'Gated Communities with EV Charging in Hinjewadi Phase 1 | Joyville',
+        description: 'Future-proof your home. Explore premium gated communities in Hinjewadi Phase 1 with dedicated EV charging stations, sustainable infrastructure, and EDGE certification.',
+        h1: 'EV Charging Ready Gated Communities in Hinjewadi',
+        keywords: ['EV charging flats Hinjewadi', 'electric vehicle charging apartments Pune', 'Joyville Hinjewadi EV charging', 'sustainable projects Hinjewadi'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
+    },
+    {
+        slug: 'apartments-with-75-percent-open-space-pune',
+        title: 'Apartments with 75% Open Green Space in Pune | Joyville Sensorium',
+        description: 'Breathe easy. Discover luxury apartments in Pune (Hinjewadi & Hadapsar) offering 75% to 80% open green spaces, biophilic gardens, and 1.8km walking boulevards.',
+        h1: 'Premium Apartments with 75%+ Open Spaces in Pune',
+        keywords: ['apartments with open space Pune', '75 percent open space flats Hinjewadi', 'biophilic homes Pune', 'Joyville Sensorium open space'],
+        filters: { locationMatch: 'Hinjewadi|Hadapsar', typeMatch: '' }
     }
 ];
 
@@ -431,6 +482,9 @@ const PAGE_FAQS: Record<string, { q: string; a: string }[]> = {
         { q: 'Are all Joyville projects MahaRERA registered?', a: 'Yes, every Joyville and Vanaha project by Shapoorji Pallonji is fully MahaRERA registered. RERA numbers are displayed on each project page for verification.' },
         { q: 'How do I book a site visit for Joyville projects?', a: 'You can request a complimentary site visit by filling the enquiry form on any project page, or by contacting our sales team. Cab pickup from Pune station/airport is available for outstation buyers.' },
         { q: 'Is Joyville a good investment for NRIs?', a: 'Yes, Joyville projects offer excellent NRI investment value with 4.5-5.5% rental yields, RERA protection, Shapoorji Pallonji brand trust, and rupee depreciation advantage for foreign currency investors.' },
+        { q: 'What is the booking process for a flat at Joyville Pune?', a: 'The booking process is seamless: 1. Select your preferred unit/floor plan. 2. Submit the booking amount (EOI/Booking Payment). 3. Provide KYC documents (PAN, Aadhaar/Passport). 4. Complete the digital application. Most bookings can be completed remotely within 48 hours for NRIs.' },
+        { q: 'Are home loans available from major banks for Joyville?', a: 'Yes, all Joyville projects are pre-approved by major financial institutions including SBI, HDFC, ICICI, and Axis Bank. Competitive interest rates starting from 8.35% are available for eligible buyers.' },
+        { q: 'What are the stamp duty and registration charges in Pune 2026?', a: 'Currently, the stamp duty in Maharashtra is 7% (including LBT) and registration is 1% or ₹30,000 (whichever is lower). Women buyers may be eligible for a 1% concession in stamp duty.' },
     ]
 };
 
@@ -459,11 +513,32 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
 
     const pageFaqs = getFaqsForRoute(routeData.slug);
 
+    const speakableJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [
+                "h1",
+                ".header-description"
+            ]
+        },
+        "url": `${siteUrl}/properties/${routeData.slug}`
+    };
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "ItemList",
         "name": routeData.h1,
         "description": routeData.description,
+        "url": `${siteUrl}/properties/${routeData.slug}`,
+        "numberOfItems": matchedProjects.length,
+        "about": matchedProjects.map(p => ({
+            "@type": "RealEstateProject",
+            "name": p.title,
+            "url": `${siteUrl}/projects/${p.slug}`,
+            "sameAs": p.wikidataUri
+        })),
         "itemListElement": matchedProjects.map((project, index) => ({
             "@type": "ListItem",
             "position": index + 1,
@@ -471,7 +546,14 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
                 "@type": "RealEstateListing",
                 "name": project.title,
                 "url": `${siteUrl}/projects/${project.slug}`,
-                "image": project.image
+                "image": project.image,
+                "offers": {
+                    "@type": "AggregateOffer",
+                    "priceCurrency": "INR",
+                    "price": project.price,
+                    "offerCount": "1",
+                    "availability": "https://schema.org/InStock"
+                }
             }
         }))
     };
@@ -516,6 +598,7 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
 
     return (
         <main className="min-h-screen bg-[#EEF2F6] pt-32 pb-24 text-[#323334]">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
@@ -523,9 +606,19 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
             <header className="max-w-7xl mx-auto px-6 mb-16 text-center">
                 <span className="text-[10px] tracking-[0.3em] uppercase text-[#1D4F9C] font-semibold block mb-4">Shapoorji Pallonji Curated Collection</span>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#323334] font-light mb-6">{routeData.h1}</h1>
-                <p className="text-[#323334] text-lg max-w-3xl mx-auto font-light leading-relaxed">
+                <p className="text-[#323334] text-lg max-w-3xl mx-auto font-light leading-relaxed header-description">
                     {routeData.description} Explore our portfolio of premium properties crafted with a 150-year legacy of trust and engineering excellence.
                 </p>
+                
+                {/* Technical Specification Sheet for Featured Project (if strictly matched) */}
+                {matchedProjects.length === 1 && matchedProjects[0].technicalSpecs && (
+                    <div className="mt-12 text-left max-w-5xl mx-auto">
+                        <TechnicalSheet 
+                            specs={matchedProjects[0].technicalSpecs} 
+                            projectName={matchedProjects[0].title}
+                        />
+                    </div>
+                )}
             </header>
 
             {/* Rich Comparison Content for vs Pages */}

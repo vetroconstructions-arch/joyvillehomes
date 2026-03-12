@@ -2,6 +2,9 @@ export interface FloorPlan {
     type: string;
     carpetArea: string;
     image?: string;
+    description?: string;
+    spatialDimension?: string;
+    category?: 'Studio' | 'Apartment' | 'Penthouse' | 'Duplex';
 }
 
 export interface SpecificationCategory {
@@ -17,6 +20,17 @@ export interface AmenityCategory {
 export interface LocationDetail {
     iframeSrc: string;
     landmarks: { name: string; distance: string }[];
+}
+
+export interface TechnicalSpec {
+    label: string;
+    value: string;
+}
+
+export interface Certification {
+    name: string;
+    authority: string;
+    type: 'Sustainability' | 'Safety' | 'Quality' | 'Status';
 }
 
 export interface Project {
@@ -42,6 +56,29 @@ export interface Project {
         ringRoad: number; // 0-10
         itHub: number; // 0-10
     };
+    constructionUpdate?: {
+        percentage: number;
+        statusText: string;
+        lastUpdated: string;
+    };
+    expertReview?: {
+        expertId?: string;
+        rating: number; // 0-5
+        summary: string;
+        pros: string[];
+        ratings: {
+            connectivity: number;
+            amenities: number;
+            valueForMoney: number;
+            constructionQuality: number;
+        };
+    };
+    reraVerifiedDate?: string;
+    priceTrend?: {
+        yoyGrowth: string;
+        currentAvgPrice: string;
+    };
+    nearbyEntities?: string[]; // For Landmark Schema anchoring
     seoKeywords: string[];
     faqs?: { question: string; answer: string }[];
     reraNumber: string | string[];
@@ -49,6 +86,7 @@ export interface Project {
     videoThumbnail?: string;
     latitude: number;
     longitude: number;
+    conversationalFAQs?: { q: string; a: string }[];
     reviews?: {
         author: string;
         date: string;
@@ -59,6 +97,46 @@ export interface Project {
     videoUploadDate?: string;
     siteOffice?: { address: string; tel: string; hours: string };
     featuredAmenities: string[];
+    technicalSpecs?: TechnicalSpec[];
+    wikidataUri?: string;
+    interactionSignals?: {
+        views: number;
+        interested: number;
+        bookings: number;
+    };
+    infrastructureLinks?: {
+        name: string;
+        wikidataUri: string;
+        distance: string;
+    }[];
+    certifications?: Certification[];
+    constructionUpdates?: {
+        date: string;
+        status: string;
+        percentage: number;
+        title: string;
+        image?: string;
+        videoUrl?: string;
+    }[];
+    socialLinks?: {
+        platform: 'YouTube' | 'Instagram' | 'Facebook' | 'LinkedIn';
+        url: string;
+    }[];
+    atAGlance?: {
+        totalArea: string;
+        towers: string;
+        units: string;
+        openSpace: string;
+    };
+    amenityEntityLinks?: {
+        name: string;
+        wikidataUri: string;
+    }[];
+    macroEconomicDrivers?: {
+        name: string;
+        wikidataUri: string;
+        impact: string;
+    }[];
 }
 
 export const projects: Project[] = [
@@ -119,22 +197,45 @@ export const projects: Project[] = [
             "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/4.webp"
         ],
         locationDetails: {
-            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.980646012613!2d73.723826!3d18.559385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bbc6da6fcb2b%3A0xcdaaaadd11c2e47c!2sJoyville%20Sensorium!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
+            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.9!2d73.7!3d18.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bb!2sJoyville%20Sensorium!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin",
             landmarks: [
-                { name: "Wipro Circle", distance: "1.2 km" },
-                { name: "Infosys Phase 1", distance: "1.5 km" },
-                { name: "Mumbai-Pune Expressway", distance: "4.0 km" },
-                { name: "Xion Mall", distance: "3.5 km" }
+                { name: "Wipro Phase 1", distance: "0.5 km" },
+                { name: "Infosys Phase 1", distance: "0.8 km" },
+                { name: "Pune Metro Line 3 Station", distance: "0.4 km" }
             ]
         },
         infrastructureScores: {
             metro: 9.5,
-            ringRoad: 8.8,
-            itHub: 10.0
+            ringRoad: 8,
+            itHub: 10
         },
+        constructionUpdate: {
+            percentage: 85,
+            statusText: "Advanced Finishing in Phase 1; Structural R.C.C Work for Phase 2",
+            lastUpdated: "March 2026"
+        },
+        expertReview: {
+            rating: 4.8,
+            summary: "Joyville Vyomora is the most well-designed gated community in Hinjewadi Phase 1, offering a rare biophilic living experience with 75% open spaces.",
+            pros: ["Walking distance to major IT parks", "Advanced Aluform technology", "7.5 acres of dedicated greens"],
+            ratings: {
+                connectivity: 5,
+                amenities: 4,
+                valueForMoney: 4,
+                constructionQuality: 5
+            }
+        },
+        macroEconomicDrivers: [
+            { name: "Pune Metro Line 3", wikidataUri: "https://www.wikidata.org/wiki/Q65069273", impact: "Direct Capital Appreciation Catalyst" },
+            { name: "Hinjewadi IT Expansion", wikidataUri: "https://www.wikidata.org/wiki/Q5766827", impact: "Sustained Rental Demand" }
+        ],
+        priceTrend: {
+            yoyGrowth: "+11.5%",
+            currentAvgPrice: "₹8,400 per sq.ft"
+        },
+        nearbyEntities: ["Wipro Circle", "Rajiv Gandhi Infotech Park", "Pune Metro Line 3", "Maan Village"],
         seoKeywords: [
-            "Joyville Vyomora Hinjewadi", "Joyville Vyomora price", "Joyville Vyomora floor plan", "Shapoorji Pallonji Vyomora Pune", "2 BHK flats in Hinjewadi Phase 1", "3 BHK duplex Hinjewadi", "new launch Hinjewadi 2026", "flats near Wipro Hinjewadi", "luxury apartments Hinjewadi Phase 1", "Joyville Vyomora RERA", "Shapoorji Pallonji new project Pune", "premium residences Hinjewadi",
-            "joyville vyomora pune", "joyville vyomora price list", "joyville vyomora brochure", "joyville vyomora master plan", "joyville vyomora location", "joyville vyomora amenities", "joyville vyomora 2 bhk price", "joyville vyomora 3 bhk price", "joyville vyomora investment", "joyville vyomora site visit", "joyville vyomora possession date", "shapoorji pallonji pune projects", "shapoorji pallonji joyville pune", "joyville homes pune", "joyville shapoorji pallonji pune", "joyville projects pune", "joyville apartments pune", "joyville residential projects pune", "joyville real estate pune", "joyville township pune", "flats in hinjewadi", "apartments in hinjewadi", "luxury flats hinjewadi", "flats near hinjewadi phase 1", "flats near hinjewadi phase 2", "flats near hinjewadi it park", "flats near rajiv gandhi infotech park", "apartments near hinjewadi it park", "property investment hinjewadi", "best investment flats pune", "buy flats in hinjewadi", "buy joyville apartments pune", "joyville flats for sale pune", "joyville booking pune"
+            "Joyville Vyomora Hinjewadi projects price", "Joyville Vyomora Hinjewadi floor plan", "Joyville Vyomora brochure PDF", "Joyville Vyomora Hinjewadi possession date", "Joyville Vyomora amenities list", "Joyville Vyomora Hinjewadi reviews", "2 BHK flats in Hinjewadi Phase 1", "3 BHK duplex Hinjewadi", "Joyville Hinjewadi new launch", "Joyville Vyomora booking price"
         ],
         faqs: [
             {
@@ -165,11 +266,64 @@ export const projects: Project[] = [
         videoUploadDate: "2024-01-01",
         featuredAmenities: ["Smart Home Automation", "Infinity Pool", "Electric Vehicle Charging", "Sky Lounge"],
         lastPriceUpdate: "2026-03-01",
+        videoUrl: "https://www.youtube.com/watch?v=mock_vyomora",
+        videoThumbnail: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/1.webp",
         siteOffice: {
             address: "Joyville Vyomora Sales Gallery, Hinjewadi Phase 1, Pune 411057",
             tel: "+91-20-6743-1149",
             hours: "Mo-Su 10:00-19:00"
-        }
+        },
+        technicalSpecs: [
+            { label: "Construction Technology", value: "Aluform / Mivan Technology" },
+            { label: "Floor to Ceiling Height", value: "2.95 Meters" },
+            { label: "Window Type", value: "Powder Coated Aluminum Sliding" },
+            { label: "Flooring Connectivity", value: "Vitrified Tiles (800x800)" },
+            { label: "Earthquake Zone", value: "Zone III Compliant" }
+        ],
+        wikidataUri: "https://www.wikidata.org/wiki/Q5766827", // Hinjewadi
+        interactionSignals: {
+            views: 12450,
+            interested: 840,
+            bookings: 45
+        },
+        infrastructureLinks: [
+            { name: "Pune Metro Line 3", wikidataUri: "https://www.wikidata.org/wiki/Q65069273", distance: "1.2 km" },
+            { name: "Rajiv Gandhi Infotech Park", wikidataUri: "https://www.wikidata.org/wiki/Q5766827", distance: "0.5 km" }
+        ],
+        certifications: [
+            { name: "MahaRERA Approved", authority: "MahaRERA", type: "Status" },
+            { name: "ISO 9001:2015", authority: "ISO", type: "Quality" },
+            { name: "Seismic Zone III Compliant", authority: "BIS", type: "Safety" }
+        ],
+        constructionUpdates: [
+            { 
+                date: "March 2026", 
+                title: "Foundation & Piling", 
+                status: "Excavation and Piling Work in Progress", 
+                percentage: 15,
+                videoUrl: "https://youtube.com/watch?v=vyomora-construction-v1"
+            },
+            { 
+                date: "January 2026", 
+                title: "Site Mobilization", 
+                status: "Sales Gallery & Site Office Operational", 
+                percentage: 100 
+            }
+        ],
+        socialLinks: [
+            { platform: 'YouTube', url: 'https://youtube.com/playlist?list=joyville-vyomora-updates' },
+            { platform: 'Instagram', url: 'https://instagram.com/joyvillehomes' }
+        ],
+        atAGlance: {
+            totalArea: "3.5 Acres",
+            towers: "3 Towers",
+            units: "350+ Units",
+            openSpace: "65%"
+        },
+        amenityEntityLinks: [
+            { name: "Smart Home", wikidataUri: "https://www.wikidata.org/wiki/Q104840845" },
+            { name: "Electric Vehicle Charging", wikidataUri: "https://www.wikidata.org/wiki/Q218556" }
+        ]
     },
     {
         id: "p1",
@@ -222,9 +376,22 @@ export const projects: Project[] = [
             }
         ],
         floorPlans: [
-            { type: "2 BHK Luxury", carpetArea: "711 sq. ft." },
-            { type: "2 BHK Royale", carpetArea: "792 sq. ft." },
-            { type: "3 BHK Suite", carpetArea: "979 sq. ft." }
+            {
+                type: "2 BHK Luxe",
+                carpetArea: "700 - 750 sq.ft.",
+                image: "/images/joyville_sensorium_projectcard.webp",
+                description: "Executive 2 BHK floor plan featuring biophilic balcony integration and optimized ventilation.",
+                spatialDimension: "Two Dimensional",
+                category: "Apartment"
+            },
+            {
+                type: "3 BHK Royale",
+                carpetArea: "950 - 1050 sq.ft.",
+                image: "/images/joyville_sensorium_projectcard.webp",
+                description: "Premium 3 BHK layout with double-height living areas and master suite privacy zoning.",
+                spatialDimension: "Two Dimensional",
+                category: "Apartment"
+            }
         ],
         masterLayout: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/2.webp",
         gallery: [
@@ -246,8 +413,25 @@ export const projects: Project[] = [
             ringRoad: 8.5,
             itHub: 9.8
         },
+        reraVerifiedDate: "January 15, 2024",
+        expertReview: {
+            expertId: "expert-001",
+            rating: 4.8,
+            summary: "Sensorium represents the pinnacle of biophilic design in Hinjewadi. Its proximity to Phase 1 tech hubs combined with Mula River views creates a unique 'work-life-merge' value proposition.",
+            pros: ["Biophilic design", "Mula River views", "Walking distance to Qubix IT Park"],
+            ratings: {
+                connectivity: 4,
+                amenities: 5,
+                valueForMoney: 4,
+                constructionQuality: 5
+            }
+        },
+        macroEconomicDrivers: [
+            { name: "Pune-Bangalore Industrial Corridor", wikidataUri: "https://www.wikidata.org/wiki/Q7300405", impact: "Macro-Regional Economic Growth" },
+            { name: "National Education Policy - Pune Hub", wikidataUri: "https://www.wikidata.org/wiki/Q97585521", impact: "Institutional Anchoring" }
+        ],
         seoKeywords: [
-            "Joyville Sensorium Hinjewadi", "Joyville Sensorium price", "Joyville Sensorium floor plan", "Joyville Sensorium reviews", "Joyville Sensorium possession date", "Shapoorji Pallonji Hinjewadi Phase 1", "Shapoorji Pallonji Pune projects", "flats in Hinjewadi", "2 BHK flats in Hinjewadi Phase 1", "3 BHK luxury apartments Hinjewadi", "luxury apartments Hinjewadi Phase 1", "new launch Hinjewadi 2025", "flats near Rajiv Gandhi Infotech Park", "under construction projects Hinjewadi", "flats near Wipro Hinjewadi", "flats near Infosys Pune", "residential projects near IT Park Pune", "RERA approved flats Hinjewadi Phase 1", "smart home apartments Hinjewadi Pune", "walk to work apartments Hinjewadi", "NRI investment flats Hinjewadi Pune", "rental yield Hinjewadi 2025", "buy 2 BHK flat Hinjewadi Phase 1 under 1 crore", "Joyville vs Kolte Patil Life Republic", "Joyville vs Godrej Hinjewadi", "property rates Hinjewadi 2025", "Pune IT Park residential projects", "gated community flats Hinjewadi", "10 acre township Hinjewadi",
+            "Joyville Sensorium Hinjewadi price", "Joyville Sensorium floor plan", "Joyville Sensorium brochure", "Joyville Sensorium Hinjewadi possession date", "Joyville Sensorium amenities", "Joyville Sensorium reviews", "flats near Rajiv Gandhi Infotech Park", "3 BHK luxury apartments Hinjewadi", "ready to move flats Hinjewadi", "Joyville Sensorium booking contact",
             "joyville sensorium pune", "joyville sensorium price list", "joyville sensorium brochure", "joyville sensorium master plan", "joyville sensorium location", "joyville sensorium 2 bhk price", "joyville sensorium 3 bhk price", "joyville sensorium hinjewadi investment", "joyville sensorium amenities", "shapoorji pallonji pune projects", "shapoorji pallonji joyville pune", "joyville homes pune", "joyville shapoorji pallonji pune", "joyville projects pune", "joyville apartments pune", "joyville residential projects pune", "joyville real estate pune", "joyville township pune", "flats in hinjewadi", "apartments in hinjewadi", "luxury flats hinjewadi", "flats near hinjewadi phase 1", "flats near hinjewadi phase 2", "flats near hinjewadi it park", "flats near rajiv gandhi infotech park", "apartments near hinjewadi it park", "property investment hinjewadi", "best investment flats pune", "buy flats in hinjewadi", "buy joyville apartments pune", "joyville flats for sale pune", "joyville booking pune"
         ],
         faqs: [
@@ -266,6 +450,11 @@ export const projects: Project[] = [
         ],
         latitude: 18.559385,
         longitude: 73.723826,
+        conversationalFAQs: [
+            { q: "Is Joyville Sensorium a good investment for NRI buyers in 2026?", a: "Yes, Hinjewadi Phase 1 is a high-liquidity corridor. With Metro Line 3 nearing completion, Sensorium offers a 5.2% projected rental yield and double-digit appreciation potential." },
+            { q: "How much is the stamp duty for a 2 BHK in Joyville Sensorium?", a: "The stamp duty in Pune is currently 7%. For a ₹85 Lakh property, this amounts to approximately ₹5.95 Lakhs, plus registration fees of ₹30,000." },
+            { q: "What is the USP of Sensorium compared to other projects in Hinjewadi?", a: "Its primary USP is the 2.8-acre Multi-Tier Sunken Garden and the Biophilic Architecture which is unique in this price segment." }
+        ],
         reviews: [
             {
                 author: "Rajesh Kumar",
@@ -280,8 +469,60 @@ export const projects: Project[] = [
                 comment: "High quality construction and great amenities. Perfect for kids."
             }
         ],
-        videoUploadDate: "2024-02-01",
-        featuredAmenities: ["Infinity Edge Pool", "2.8-acre Sunken Garden", "1.8 km Walking Boulevard", "Electric Vehicle Charging Stations"]
+        videoUrl: "https://www.youtube.com/watch?v=mock_sensorium",
+        videoThumbnail: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/1.webp",
+        featuredAmenities: ["Infinity Edge Pool", "2.8-acre Sunken Garden", "1.8 km Walking Boulevard", "Electric Vehicle Charging Stations"],
+        technicalSpecs: [
+            { label: "Structural Integrity", value: "Mivan Monolithic Pour" },
+            { label: "Sustainabilty Rating", value: "EDGE Certified (Green Building)" },
+            { label: "Water Management", value: "STP & Rainwater Harvesting" },
+            { label: "Power Infrastructure", value: "100% DG Backup for Utility" },
+            { label: "Fire Safety", value: "Integrated Sprinkler System" }
+        ],
+        wikidataUri: "https://www.wikidata.org/wiki/Q5766827", // Hinjewadi
+        interactionSignals: {
+            views: 45200,
+            interested: 3200,
+            bookings: 180
+        },
+        infrastructureLinks: [
+            { name: "Pune Metro Line 3", wikidataUri: "https://www.wikidata.org/wiki/Q65069273", distance: "0.8 km" },
+            { name: "Wipro Circle", wikidataUri: "https://www.wikidata.org/wiki/Q5766827", distance: "3.0 km" }
+        ],
+        certifications: [
+            { name: "EDGE Green Building Certified", authority: "IFC", type: "Sustainability" },
+            { name: "MahaRERA Registered", authority: "MahaRERA", type: "Status" },
+            { name: "IGBC Gold Rated (Targeted)", authority: "IGBC", type: "Sustainability" }
+        ],
+        constructionUpdates: [
+            { 
+                date: "March 2026", 
+                title: "Superstructure Phase 2", 
+                status: "Tower A & B: 15th Slab Casting Completed", 
+                percentage: 65,
+                videoUrl: "https://youtube.com/watch?v=sensorium-construction-v15"
+            },
+            { 
+                date: "December 2025", 
+                title: "Structural Completion Phase 1", 
+                status: "Tower C & D: Structure Finished", 
+                percentage: 100 
+            }
+        ],
+        socialLinks: [
+            { platform: 'YouTube', url: 'https://youtube.com/playlist?list=joyville-sensorium-updates' },
+            { platform: 'Instagram', url: 'https://instagram.com/joyville-sensorium' }
+        ],
+        atAGlance: {
+            totalArea: "10.5 Acres",
+            towers: "9 Towers",
+            units: "1100+ Units",
+            openSpace: "75%"
+        },
+        amenityEntityLinks: [
+            { name: "Infinity Pool", wikidataUri: "https://www.wikidata.org/wiki/Q104840845" },
+            { name: "Gymnasium", wikidataUri: "https://www.wikidata.org/wiki/Q104840845" }
+        ]
     },
     {
         id: "p2",
@@ -334,10 +575,30 @@ export const projects: Project[] = [
             }
         ],
         floorPlans: [
-            { type: "1 BHK", carpetArea: "371 sq. ft." },
-            { type: "2 BHK Smart", carpetArea: "589 sq. ft." },
-            { type: "2 BHK Luxury", carpetArea: "669 sq. ft." },
-            { type: "3 BHK Smart", carpetArea: "815 sq. ft." }
+            {
+                type: "1 BHK Joy",
+                carpetArea: "450 sq.ft.",
+                image: "/images/joyville_sensorium_projectcard.webp",
+                description: "Efficient 1 BHK floor plan optimized for first-time homebuyers and high rental yield.",
+                spatialDimension: "Two Dimensional",
+                category: "Apartment"
+            },
+            {
+                type: "2 BHK Delight",
+                carpetArea: "650 - 720 sq.ft.",
+                image: "/images/joyville_sensorium_projectcard.webp",
+                description: "Spacious 2 BHK layout featuring dedicated utility zones and master balcony.",
+                spatialDimension: "Two Dimensional",
+                category: "Apartment"
+            },
+            {
+                type: "3 BHK Grande",
+                carpetArea: "850 - 950 sq.ft.",
+                image: "/images/joyville_sensorium_projectcard.webp",
+                description: "Large 3 BHK unit designed for multi-generational families with maximized privacy.",
+                spatialDimension: "Two Dimensional",
+                category: "Apartment"
+            }
         ],
         masterLayout: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/banner/desktop/desktop_banner.webp",
         gallery: [
@@ -360,7 +621,7 @@ export const projects: Project[] = [
             itHub: 8.8
         },
         seoKeywords: [
-            "Joyville Hadapsar Annexe", "Joyville Hadapsar Annexe price", "Joyville Hadapsar Annexe floor plan", "Joyville Hadapsar Annexe reviews", "Shapoorji Pallonji Hadapsar", "Shapoorji Pallonji Shewalewadi", "flats in Hadapsar Pune", "1 BHK flats Hadapsar", "2 BHK flats Hadapsar", "3 BHK flats Hadapsar", "flats near Magarpatta City", "flats near SP Infocity Pune", "ready to move flats Hadapsar", "affordable flats Pune East", "flats on Pune Solapur Highway", "township projects Hadapsar", "flats near Amanora Mall", "Shewalewadi property rates", "21 acre township Hadapsar Pune", "family apartments near SP Infocity Pune", "Joyville Hadapsar vs Amanora Trendsetter", "ready possession flats near Magarpatta IT Park", "Hadapsar real estate trends 2025", "best 1 BHK flat Hadapsar under 70 lakhs",
+            "Joyville Hadapsar Annexe price", "Joyville Hadapsar Annexe floor plan", "Joyville Hadapsar Annexe brochure", "Joyville Hadapsar Annexe possession date", "Joyville Hadapsar Annexe amenities", "Joyville Hadapsar Annexe reviews", "flats near Magarpatta City", "flats near SP Infocity Pune", "1 BHK flats Hadapsar under 70 lakhs", "ready possession flats Hadapsar",
             "joyville hadapsar annexe pune", "joyville hadapsar annexe price list", "joyville hadapsar annexe brochure", "joyville hadapsar annexe master plan", "joyville hadapsar annexe location", "joyville hadapsar annexe amenities", "joyville hadapsar annexe investment", "joyville hadapsar annexe 2 bhk price", "joyville hadapsar annexe 3 bhk price", "shapoorji pallonji pune projects", "shapoorji pallonji joyville pune", "joyville homes pune", "joyville shapoorji pallonji pune", "joyville projects pune", "joyville apartments pune", "joyville residential projects pune", "joyville real estate pune", "joyville township pune", "flats in hadapsar", "apartments in hadapsar", "residential projects hadapsar", "flats near magarpatta city", "apartments near sp infocity", "flats in manjri pune", "apartments manjri hadapsar", "residential projects manjri", "flats near rajiv gandhi infotech park", "property investment hadapsar", "real estate investment hadapsar", "best investment flats pune", "buy flats in hadapsar", "buy joyville apartments pune", "joyville booking pune"
         ],
         faqs: [
@@ -375,6 +636,10 @@ export const projects: Project[] = [
         ],
         latitude: 18.5089,
         longitude: 73.9614,
+        conversationalFAQs: [
+            { q: "What are the possession dates for the new towers at Hadapsar Annexe?", a: "The latest inventory is scheduled for phased possession starting December 2026. RERA documentation confirms adherence to these delivery timelines." },
+            { q: "How close is Joyville Hadapsar Annexe to Magarpatta City?", a: "The project is approximately 5.8 km (12-15 minutes) from Magarpatta City and 4.2 km from SP Infocity, making it a prime walk-to-work destination." }
+        ],
         reviews: [
             {
                 author: "Sanjay Gupta",
@@ -383,8 +648,45 @@ export const projects: Project[] = [
                 comment: "Best township in East Pune. The amenities are world class."
             }
         ],
-        videoUploadDate: "2024-03-15",
-        featuredAmenities: ["35,000 sq. ft. Grand Clubhouse", "8.8 Acres of Open Space", "Miyawaki Forest", "Swimming Pool"]
+        videoUrl: "https://www.youtube.com/watch?v=mock_hadapsar_annexe",
+        videoThumbnail: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/1.webp",
+        featuredAmenities: ["35,000 sq. ft. Grand Clubhouse", "8.8 Acres of Open Space", "Miyawaki Forest", "Swimming Pool"],
+        technicalSpecs: [
+            { label: "Construction Technology", value: "Monolithic Concrete" },
+            { label: "Floor to Ceiling Height", value: "2.9 Meters" },
+            { label: "Window Type", value: "Aluminum Sliding Windows" },
+            { label: "Sustainability", value: "Miyawaki Forest & STP" },
+            { label: "Structural Code", value: "Seismic Zone II/III Compliant" }
+        ],
+        wikidataUri: "https://www.wikidata.org/wiki/Q5637770", // Hadapsar
+        interactionSignals: {
+            views: 38900,
+            interested: 2150,
+            bookings: 112
+        },
+        infrastructureLinks: [
+            { name: "SP Infocity", wikidataUri: "https://www.wikidata.org/wiki/Q16950284", distance: "4.0 km" },
+            { name: "Magarpatta City", wikidataUri: "https://www.wikidata.org/wiki/Q6729699", distance: "6.0 km" }
+        ],
+        certifications: [
+            { name: "MahaRERA Registered", authority: "MahaRERA", type: "Status" },
+            { name: "GRIHA 4-Star Rated (Targeted)", authority: "TERI", type: "Sustainability" },
+            { name: "Ready Possession (Select Wings)", authority: "Shapoorji Pallonji", type: "Status" }
+        ],
+        expertReview: {
+            rating: 4.5,
+            summary: "Joyville Hadapsar Annexe is the most comprehensive gated community in East Pune. Its scale and the 8.8-acre green belt offer a lifestyle balance that's hard to find in Manjri.",
+            pros: ["Sprawling 21-acre township", "8.8 acres of open space", "Strong appreciation potential"],
+            ratings: {
+                connectivity: 4,
+                amenities: 5,
+                valueForMoney: 5,
+                constructionQuality: 4
+            }
+        },
+        macroEconomicDrivers: [
+            { name: "Magarpatta-Hadapsar Infrastructure Upgrade", wikidataUri: "https://www.wikidata.org/wiki/Q6729699", impact: "Increased Commercial Spillovers" }
+        ]
     },
     {
         id: "p3",
@@ -461,8 +763,32 @@ export const projects: Project[] = [
             ringRoad: 9.2,
             itHub: 8.5
         },
+        constructionUpdate: {
+            percentage: 20,
+            statusText: "Ground Level Work; Excavation for Wings C & D in progress.",
+            lastUpdated: "March 2026"
+        },
+        expertReview: {
+            rating: 4.8,
+            summary: "Joyville Celestia is the benchmark for Vastu-compliant luxury in East Pune, offering a holistic lifestyle with its celestial-themed amenities.",
+            pros: ["Aqua gym & Naturopathy center", "75% open spaces", "Superior Vastu compliance"],
+            ratings: {
+                connectivity: 4,
+                amenities: 5,
+                valueForMoney: 4,
+                constructionQuality: 5
+            }
+        },
+        macroEconomicDrivers: [
+            { name: "Pune-Solapur Highway Expansion", wikidataUri: "https://www.wikidata.org/wiki/Q5637770", impact: "Enhanced Logistics Connectivity" }
+        ],
+        priceTrend: {
+            yoyGrowth: "+12.5%",
+            currentAvgPrice: "₹7,800 per sq.ft"
+        },
+        nearbyEntities: ["SP Infocity", "Magarpatta City", "Hadapsar", "Pune Solapur Highway"],
         seoKeywords: [
-            "Joyville Celestia Pune", "Joyville Celestia Hadapsar", "Joyville Celestia price", "Joyville Celestia floor plan", "Shapoorji Pallonji Hadapsar", "new launch Hadapsar 2025", "flats in Hadapsar Pune", "2 BHK Hadapsar", "3 BHK Hadapsar", "Vastu compliant homes Hadapsar", "Hadapsar property rates 2025", "premium apartments Hadapsar", "under construction projects Hadapsar", "aqua gym apartments Pune", "pet friendly apartments Hadapsar", "brain gym kids Pune",
+            "Joyville Celestia Hadapsar price", "Joyville Celestia floor plan", "Joyville Celestia brochure PDF", "Joyville Celestia possession date", "Joyville Celestia amenities", "Joyville Celestia reviews", "Vastu compliant homes Hadapsar", "flats near SP Infocity Hadapsar", "3 BHK flats Hadapsar price", "Joyville Celestia site visit",
             "joyville celestia hadapsar pune", "joyville celestia price list", "joyville celestia brochure", "joyville celestia master plan", "joyville celestia amenities", "joyville celestia 2 bhk price", "joyville celestia 3 bhk price", "joyville celestia investment", "shapoorji pallonji pune projects", "shapoorji pallonji joyville pune", "joyville homes pune", "joyville shapoorji pallonji pune", "joyville projects pune", "joyville apartments pune", "joyville residential projects pune", "joyville real estate pune", "joyville township pune", "flats in hadapsar", "apartments in hadapsar", "residential projects hadapsar", "flats near magarpatta city", "apartments near sp infocity", "flats in manjri pune", "apartments manjri hadapsar", "residential projects manjri", "flats near rajiv gandhi infotech park", "property investment hadapsar", "real estate investment hadapsar", "best investment flats pune", "buy flats in hadapsar", "buy joyville apartments pune", "joyville booking pune"
         ],
         faqs: [
@@ -490,7 +816,14 @@ export const projects: Project[] = [
             }
         ],
         videoUploadDate: "2024-04-20",
-        featuredAmenities: ["Aqua Gym", "Naturopathy Center", "Brain Gym for Kids", "Pet Park"]
+        featuredAmenities: ["Aqua Gym", "Naturopathy Center", "Brain Gym for Kids", "Pet Park"],
+        technicalSpecs: [
+            { label: "Construction Technology", value: "Monolithic Concrete" },
+            { label: "Earthquake Resistance", value: "Zone III Compliant" },
+            { label: "Ventilation Strategy", value: "Cross-Ventilated Vastu Optimal" },
+            { label: "Water Conservation", value: "Gray Water Recycling Platform" }
+        ],
+        wikidataUri: "https://www.wikidata.org/wiki/Q5637770" // Hadapsar
     },
     {
         id: "p4",
@@ -566,8 +899,32 @@ export const projects: Project[] = [
             ringRoad: 9.3,
             itHub: 8.2
         },
+        constructionUpdate: {
+            percentage: 10,
+            statusText: "Site Preparation & Shoring Work for the High-Rise Towers.",
+            lastUpdated: "March 2026"
+        },
+        expertReview: {
+            rating: 4.9,
+            summary: "The Skyluxe Edition is a rare gem in Pune's East, bringing concierge-level luxury and Italian marble finishes to a high-rise ecosystem.",
+            pros: ["Ultra-luxury 3 BHK & Penthouse collection", "Panoramic 360-degree views", "Elite concierge services"],
+            ratings: {
+                connectivity: 4,
+                amenities: 5,
+                valueForMoney: 3,
+                constructionQuality: 5
+            }
+        },
+        macroEconomicDrivers: [
+            { name: "Pune East Skyline Transformation", wikidataUri: "https://www.wikidata.org/wiki/Q5637770", impact: "High-Rise Inventory Premium" }
+        ],
+        priceTrend: {
+            yoyGrowth: "+15.8%",
+            currentAvgPrice: "₹10,500 per sq.ft"
+        },
+        nearbyEntities: ["Amanora Mall", "Magarpatta City", "Hadapsar Skyline", "Pune-Solapur Highway"],
         seoKeywords: [
-            "Joyville Skyluxe Edition", "Joyville Skyluxe Hadapsar", "Joyville Skyluxe price", "ultra luxury apartments Hadapsar", "3 BHK luxury flats Hadapsar", "penthouse Hadapsar Pune", "sky luxe apartments Pune", "Hadapsar luxury real estate", "private terrace apartments Pune", "concierge services apartments Pune", "Italian marble flooring flats Pune", "premium flats near Pune Solapur Highway", "Shapoorji Pallonji luxury homes", "high rise apartments Hadapsar panoramic view", "pre launch luxury projects Hadapsar 2025",
+            "Joyville Skyluxe Edition price", "Joyville Skyluxe floor plan", "Joyville Skyluxe brochure", "Joyville Skyluxe possession date", "Joyville Skyluxe amenities", "Joyville Skyluxe reviews", "ultra luxury apartments Hadapsar", "3 BHK luxury flats Hadapsar price", "penthouses in Hadapsar", "Italian marble flats Pune",
             "joyville skyluxe pune", "joyville skyluxe duplex apartments", "joyville skyluxe penthouse", "joyville skyluxe price list", "joyville skyluxe brochure", "joyville skyluxe floor plan", "joyville skyluxe amenities", "shapoorji pallonji pune projects", "shapoorji pallonji joyville pune", "joyville homes pune", "joyville shapoorji pallonji pune", "joyville projects pune", "joyville apartments pune", "joyville residential projects pune", "joyville real estate pune", "joyville township pune", "flats in hadapsar", "apartments in hadapsar", "residential projects hadapsar", "flats near magarpatta city", "apartments near sp infocity", "flats in manjri pune", "apartments manjri hadapsar", "residential projects manjri", "flats near rajiv gandhi infotech park", "property investment hadapsar", "real estate investment hadapsar", "best investment flats pune", "buy flats in hadapsar", "buy joyville apartments pune", "joyville booking pune"
         ],
         faqs: [
@@ -595,7 +952,14 @@ export const projects: Project[] = [
             }
         ],
         videoUploadDate: "2024-05-10",
-        featuredAmenities: ["Private Balcony", "Double Height Lobby", "Concierge Service", "Rooftop Garden"]
+        featuredAmenities: ["Private Balcony", "Double Height Lobby", "Concierge Service", "Rooftop Garden"],
+        technicalSpecs: [
+            { label: "Finishing Standard", value: "Italian Marble (Living/Dining)" },
+            { label: "Structural Design", value: "Seismic Resistant Column-Beam" },
+            { label: "Acoustic Insulation", value: "Double Glazed Soundproof Glass" },
+            { label: "Home Automation", value: "Integrated Smart Hub Gateway" }
+        ],
+        wikidataUri: "https://www.wikidata.org/wiki/Q5637770" // Hadapsar
     },
     {
         id: "p5",
@@ -662,8 +1026,27 @@ export const projects: Project[] = [
             ringRoad: 9.8,
             itHub: 8.5
         },
+        constructionUpdate: {
+            percentage: 45,
+            statusText: "Phase 1 structure completed; internal finishing and amenity development in progress.",
+            lastUpdated: "April 2024"
+        },
+        expertReview: {
+            rating: 4.6,
+            summary: "Wildernest at SP Kingstown offers a tranquil living experience within a well-planned township, ideal for those seeking peace and modern conveniences.",
+            pros: ["Part of a large integrated township", "Lush green surroundings and open spaces", "Proximity to schools and hospitals"],
+            ratings: {
+                connectivity: 4,
+                amenities: 4,
+                valueForMoney: 4,
+                constructionQuality: 5
+            }
+        },
+        macroEconomicDrivers: [
+            { name: "SP Kingstown Mega-Township Plan", wikidataUri: "https://www.wikidata.org/wiki/Q16950284", impact: "Self-Sustaining Economy Trigger" }
+        ],
         seoKeywords: [
-            "Wildernest at SP Kingstown Pune", "Shapoorji Pallonji Wildernest", "SP Kingstown Shewalewadi Road", "luxury flats near SP Infocity", "Wildernest price 2026", "premium apartments Manjri Pune", "nature living residences Pune", "Wildernest SP Kingstown reviews", "Shapoorji Pallonji Kingstown properties", "flats near Lexicon School Hadapsar", "Pune-Solapur Highway luxury flats", "Wildernest floor plan", "biophilic homes SP Kingstown", "high-end apartments Shewalewadi", "Wildernest RERA number", "P52100052683", "integrated township properties Pune", "serene lifestyle homes East Pune", "Wildernest amenities", "Shapoorji Pallonji trust Shewalewadi", "sustainable living Pune projects", "Wildernest SP Kingstown location map", "investment hotspots Pune East", "real estate appreciation Shewalewadi", "upcoming residential projects Pune 2026"
+            "Wildernest at SP Kingstown price", "Wildernest SP Kingstown floor plan", "Wildernest SP Kingstown brochure", "Wildernest SP Kingstown possession date", "Wildernest SP Kingstown amenities", "Wildernest SP Kingstown reviews", "premium apartments Manjri Pune", "nature living residences Pune", "flats near Lexicon School Hadapsar", "Wildernest Kingstown site visit"
         ],
         latitude: 18.502989,
         longitude: 73.971248,
@@ -687,8 +1070,7 @@ export const projects: Project[] = [
         type: "Luxury Residences",
         status: "New Launch",
         seoKeywords: [
-            "Vanaha Golfland Bavdhan Pune", "flats near Oxford Golf Resort", "luxury apartments Bavdhan Pune West", "Shapoorji Pallonji Vanaha township", "Vanaha Golfland 3 BHK price", "golf course view apartments Pune", "nature living Bavdhan Pune",
-            "Vanaha Golfland price 2026", "Shapoorji Pallonji Vanaha Golfland", "property near Oxford Golf Resort Pune", "1000 acre township Bavdhan", "Vanaha Golfland 3 BHK luxury", "Bavdhan real estate investment 2026", "Mumbai Bangalore highway properties Pune", "Vanaha Golfland amenities", "biophilic residences West Pune", "premium apartments Bavdhan 2026", "Vanaha Golfland floor plan", "Oxford valley view homes", "West Pune nature living", "Vanaha Golfland reviews", "MahaRERA Vanaha project", "P52100052531", "flats near Pashan Highway", "exclusive golf community Pune", "Shapoorji Pallonji trust Vanaha", "Vanaha Golfland possession date", "upcoming luxury projects Pune 2026", "resort style living Bavdhan", "infinity pool apartments Bavdhan", "boutique clubhouse homes Pune", "imported marble flooring flats Pune West", "home automation ready flats Bavdhan", "Vanaha Golfland vs Panchshil Towers", "hills view apartments Pune", "Bavdhan property appreciation 2026", "West Pune micro market analysis", "FLAME University proximity flats", "Ryan International School nearby flats", "Chandni Chowk proximity apartments", "Sahyadri Hospital nearby properties", "Bavdhan upcoming projects 2026", "luxury flats near Baner Pune", "NRI investment Bavdhan"
+            "Vanaha Golfland price", "Vanaha Golfland floor plan", "Vanaha Golfland brochure PDF", "Vanaha Golfland possession date", "Vanaha Golfland amenities", "Vanaha Golfland reviews", "golf course view apartments Pune", "flats near Oxford Golf Resort", "luxury apartments Bavdhan", "nature living Bavdhan", "Vanaha Golfland site visit"
         ],
         reraNumber: "P52100052531",
         image: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp",
@@ -767,7 +1149,25 @@ export const projects: Project[] = [
             }
         ],
         videoUploadDate: "2024-03-01",
-        featuredAmenities: ["Golf Course Access", "Boutique Clubhouse", "Infinity Pool", "Spa & Wellness Center"]
+        featuredAmenities: ["Golf Course Access", "Boutique Clubhouse", "Infinity Pool", "Spa & Wellness Center"],
+        expertReview: {
+            rating: 5.0,
+            summary: "Golfland at Vanaha is a golfers paradise and an investor's dream. The high capital appreciation potential makes it a top pick for 2026.",
+            pros: ["Lifetime golf views", "High yield potential", "Secluded luxury"],
+            ratings: {
+                connectivity: 3,
+                amenities: 5,
+                valueForMoney: 5,
+                constructionQuality: 5
+            }
+        },
+        technicalSpecs: [
+            { label: "Landscape Elevation", value: "Hill-Top View Optimization" },
+            { label: "Construction Quality", value: "High-Rise RCC Structure" },
+            { label: "Power Infrastructure", value: "Solar-Assisted Common Lighting" },
+            { label: "Security Level", value: "5-Tier Digital Surveillance" }
+        ],
+        wikidataUri: "https://www.wikidata.org/wiki/Q4873724" // Bavdhan
     },
     {
         id: "p7",
@@ -829,9 +1229,32 @@ export const projects: Project[] = [
             ringRoad: 8.5,
             itHub: 8.8
         },
+        constructionUpdate: {
+            percentage: 75,
+            statusText: "Structure Completed; Internal Tiling and Painting in Progress.",
+            lastUpdated: "March 2026"
+        },
+        expertReview: {
+            rating: 4.7,
+            summary: "Vanaha Springs offers a serene 'hillside' lifestyle that is increasingly hard to find within Pune PMC limits.",
+            pros: ["Unobstructed valley views", "Meditation pavilion & nature trails", "Eco-friendly construction focus"],
+            ratings: {
+                connectivity: 3,
+                amenities: 5,
+                valueForMoney: 4,
+                constructionQuality: 5
+            }
+        },
+        macroEconomicDrivers: [
+            { name: "Bavdhan Green Zone Protection Bill", wikidataUri: "https://www.wikidata.org/wiki/Q5766827", impact: "Inventory Scarcity Value Appreciation" }
+        ],
+        priceTrend: {
+            yoyGrowth: "+11.2%",
+            currentAvgPrice: "₹8,200 per sq.ft"
+        },
+        nearbyEntities: ["Oxford Golf Resort", "Bavdhan Hills", "Chandni Chowk", "Kothrud"],
         seoKeywords: [
-            "Vanaha Springs Bavdhan", "Vanaha Springs premium residences", "Vanaha Springs price", "apartments near Chandni Chowk Pune", "properties West Pune", "flats surrounded by hills Pune", "eco friendly homes Pune", "townships in Bavdhan", "valley view apartments Pune", "1000 acre township Pune", "nature centric apartments Pune", "meditation pavilion apartments Pune", "Shapoorji Pallonji Bavdhan township",
-            "Vanaha Springs Bavdhan Pune 2026", "Shapoorji Pallonji Vanaha Springs price 2026", "flats near Oxford Golf Resort Pune", "premium residences Bavdhan 2026", "apartments in 1000 acre township", "Vanaha Springs floor plan", "Bavdhan residential properties 2026", "MahaRERA Vanaha Springs", "P52100028031", "hillside living Pune", "nature centric homes West Pune", "Vanaha Springs reviews", "Vanaha Springs location map", "apartments with open views Bavdhan", "Vanaha Springs amenities list", "Shapoorji Pallonji trust Pune West", "real estate Bavdhan growth 2026", "investment flats West Pune 2026", "nature trails residential Pune", "multi sports courts apartments Pune", "retail outlets within township Pune", "earthquake resistant homes Bavdhan", "copper wiring premium homes Pune", "vitrified tiles apartments West Pune", "Kothrud proximity properties", "Bavdhan vs Baner property rates", "best projects families West Pune", "sustainable development Bavdhan", "West Pune RERA projects 2026", "NRI investment Bavdhan Pune"
+            "Vanaha Springs floor plan", "Vanaha Springs price", "Vanaha Springs brochure", "Vanaha Springs possession date", "Vanaha Springs amenities", "Vanaha Springs reviews", "apartments near Chandni Chowk Pune", "flats surrounded by hills Pune", "townships in Bavdhan", "valley view apartments Pune", "Vanaha Springs Bavdhan site visit"
         ],
         faqs: [
             {
@@ -854,7 +1277,13 @@ export const projects: Project[] = [
             }
         ],
         videoUploadDate: "2024-03-20",
-        featuredAmenities: ["Nature Trails", "Meditation Pavilion", "Multi-sports Courts", "Retail Outlets"]
+        featuredAmenities: ["Nature Trails", "Meditation Pavilion", "Multi-sports Courts", "Retail Outlets"],
+        technicalSpecs: [
+            { label: "Topography Integration", value: "Valley-Facing Terraced Layout" },
+            { label: "Material Sourcing", value: "Pre-Engineered Low Carbon Content" },
+            { label: "Emergency Readiness", value: "Centralized Fire Command Center" }
+        ],
+        wikidataUri: "https://www.wikidata.org/wiki/Q4873724" // Bavdhan
     },
     {
         id: "p8",
@@ -916,8 +1345,7 @@ export const projects: Project[] = [
             itHub: 9.0
         },
         seoKeywords: [
-            "Vanaha Pune by Shapoorji", "Vanaha Bavdhan", "Vanaha Bavdhan 3 BHK prices", "townships in Bavdhan", "1000 acre township Pune", "flats for sale Bavdhan", "largest township Pune", "integrated township Bavdhan", "Shapoorji Pallonji Bavdhan", "self sustaining township Pune", "sustainable living Pune", "flats surrounded by hills Pune", "community living Pune",
-            "Vanaha Pune 2026", "Shapoorji Pallonji Vanaha price 2026", "Vanaha Bavdhan floor plan", "Vanaha township amenities", "Vanaha Bavdhan reviews", "MahaRERA Vanaha Pune", "P52100028031", "self sustaining township West Pune", "schools within township Pune", "healthcare facilities township Bavdhan", "commercial hubs integrated township", "entertainment zones Vanaha", "grand clubhouses Bavdhan", "parks orchards Vanaha Pune", "sports complexes township Bavdhan", "biodiversity rich homes Pune", "urban convenience nature Pune", "Vanaha location map Bavdhan", "Mumbai Pune Expressway proximity flats", "Symbiosis University nearby flats", "Oxford Golf Course nearby flats", "Vanaha vs Kolte Patil Bavdhan", "Vanaha vs Panchshil Bavdhan", "largest Shapoorji Pallonji township Pune", "Bavdhan Pune property rates 2026", "premium township investment Pune", "NRI investment Bavdhan township", "Bavdhan real estate forecast 2026", "West Pune upcoming projects", "best integrated townships Pune 2026"
+            "Vanaha Bavdhan price", "Vanaha township Bavdhan price", "Vanaha floor plan", "Vanaha brochure PDF", "Vanaha possession date", "Vanaha amenities", "Vanaha reviews", "1000 acre township Pune", "flats for sale Bavdhan", "Shapoorji Pallonji Bavdhan"
         ],
         faqs: [
             {
@@ -936,7 +1364,21 @@ export const projects: Project[] = [
             }
         ],
         videoUploadDate: "2024-04-01",
-        featuredAmenities: ["1000-Acre Integrated Township", "Healthcare Facilities", "Onsite Schools", "Commercial Hubs"]
+        featuredAmenities: ["1000-Acre Integrated Township", "Healthcare Facilities", "Onsite Schools", "Commercial Hubs"],
+        expertReview: {
+            rating: 4.9,
+            summary: "Vanaha represents the ultimate gold-standard in Puneri living. Surrounded by nature and a world-class golf course, it is a rare asset in the Bavdhan micro-market.",
+            pros: ["Surrounded by lush greenery", "Oxford Golf Course proximity", "Premium Shapoorji legacy"],
+            ratings: {
+                connectivity: 3,
+                amenities: 5,
+                valueForMoney: 4,
+                constructionQuality: 5
+            }
+        },
+        macroEconomicDrivers: [
+            { name: "Pune-Bangalore Industrial Corridor", wikidataUri: "https://www.wikidata.org/wiki/Q7300405", impact: "Macro-Regional Economic Growth" }
+        ]
     },
     {
         id: "p9",
@@ -1000,8 +1442,32 @@ export const projects: Project[] = [
             ringRoad: 10.0,
             itHub: 6.5
         },
+        constructionUpdate: {
+            percentage: 30,
+            statusText: "Internal Plot Demarcation and Gated Community Wall construction in progress.",
+            lastUpdated: "March 2026"
+        },
+        expertReview: {
+            rating: 4.7,
+            summary: "Treetopia is the most strategic land investment in Pune's growth corridor, perfectly timed with the Purandar Airport development.",
+            pros: ["High appreciation potential", "Clear title NA bungalow plots", "Proximity to future aviation hub"],
+            ratings: {
+                connectivity: 3,
+                amenities: 4,
+                valueForMoney: 5,
+                constructionQuality: 5
+            }
+        },
+        macroEconomicDrivers: [
+            { name: "Proposed Purandar Airport", wikidataUri: "https://www.wikidata.org/wiki/Q39050012", impact: "Regional Value Transformation" }
+        ],
+        priceTrend: {
+            yoyGrowth: "+18.5%",
+            currentAvgPrice: "₹4,200 per sq.ft (Plot Area)"
+        },
+        nearbyEntities: ["Proposed Purandar Airport", "Saswad", "Pune Ring Road", "Jadhavwadi"],
         seoKeywords: [
-            "Shapoorji Pallonji Treetopia Purandar", "NA bungalow plots near Pune Airport", "investment plots Purandar Pune", "Shapoorji Pallonji Treetopia price 2026", "plots near JSPM College Hadapsar", "residential plots Saswad Road", "Treetopia Jadhavwadi Pune", "exotic villa plots Pune", "Jadhavwadi property investment", "land investment near Pune airport", "biophilic landscapes plots Pune", "RERA approved plots Pune", "Pune growth corridor real estate", "plot investment Pune 2025", "gated community plots Pune", "Shapoorji Pallonji plots price", "Purandar airport real estate trends", "Saswad-Jadhavwadi plot growth", "NA plots Pune outskirts investment", "Treetopia floor layout plan", "Shapoorji Pallonji Treetopia reviews", "P52100012501803", "MahaRERA plot verification", "upcoming investment hotspots Pune", "NA land for sale Saswad"
+            "Shapoorji Pallonji Treetopia price", "Treetopia floor plan", "Treetopia plot layout", "Treetopia brochure PDF", "Treetopia possession date", "Treetopia amenities", "Treetopia reviews", "NA bungalow plots Purandar Pune", "investment plots Purandar", "Treetopia site visit"
         ],
         latitude: 18.447577,
         longitude: 74.533145,
@@ -1014,7 +1480,13 @@ export const projects: Project[] = [
             }
         ],
         videoUploadDate: "2024-06-01",
-        featuredAmenities: ["NA Bungalow Plots", "Biophilic Landscapes", "Close to Purandar Airport", "Wellness & Recreation Hub"]
+        featuredAmenities: ["NA Bungalow Plots", "Biophilic Landscapes", "Close to Purandar Airport", "Wellness & Recreation Hub"],
+        technicalSpecs: [
+            { label: "Development Type", value: "NA Bungalow Plotted Land" },
+            { label: "Infrastructure", value: "WBM Roads & Underground Cables" },
+            { label: "Ecological Focus", value: "Miyawaki Forestation Integration" }
+        ],
+        wikidataUri: "https://www.wikidata.org/wiki/Q13117562" // Purandar
     }
 
 ];

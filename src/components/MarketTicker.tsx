@@ -1,46 +1,83 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { TrendingUp, Users, Zap, Award } from "lucide-react";
+import React, { useEffect, useState } from 'react';
+import { TrendingUp, TrendingDown, Activity } from 'lucide-react';
+
+interface MarketStat {
+    locality: string;
+    avgPrice: number;
+    change: number;
+    trend: 'up' | 'down';
+}
+
+const marketStats: MarketStat[] = [
+    { locality: 'Hinjewadi Ph 1', avgPrice: 8450, change: 1.2, trend: 'up' },
+    { locality: 'Hadapsar Annexe', avgPrice: 7200, change: 0.8, trend: 'up' },
+    { locality: 'Bavdhan Peak', avgPrice: 9100, change: -0.4, trend: 'down' },
+    { locality: 'Manjari Corridor', avgPrice: 6850, change: 2.1, trend: 'up' },
+    { locality: 'Kharadi Extension', avgPrice: 10200, change: 0.5, trend: 'up' },
+];
 
 export default function MarketTicker() {
-    const stats = [
-        { label: "Hinjewadi Phase 1", value: "+12.4% YoY", trend: "up", icon: <TrendingUp size={14} /> },
-        { label: "Hadapsar Precinct", value: "+10.8% YoY", trend: "up", icon: <TrendingUp size={14} /> },
-        { label: "Bavdhan Valley", value: "+9.2% YoY", trend: "up", icon: <TrendingUp size={14} /> },
-        { label: "Live Bookings", value: "24 this week", trend: "neutral", icon: <Users size={14} /> },
-        { label: "Metro Progress", value: "85% Done", trend: "neutral", icon: <Zap size={14} /> },
-        { label: "SP Brand Legacy", value: "150+ Years", trend: "neutral", icon: <Award size={14} /> }
-    ];
+    const [scrolled, setScrolled] = useState(false);
 
-    // Duplicate for seamless loop
-    const tickerItems = [...stats, ...stats];
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 50);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const datasetSchema = {
+        "@context": "https://schema.org",
+        "@type": "Dataset",
+        "name": "Pune Residential Market Price Trends - SP Insights",
+        "description": "Real-time price trends and appreciation metrics for major Pune micro-markets including Hinjewadi, Hadapsar, and Bavdhan.",
+        "creator": {
+            "@type": "Organization",
+            "name": "Shapoorji Pallonji Real Estate Research Desk"
+        },
+        "variableMeasured": ["Average Price per Sq. Ft.", "Year-over-Year Growth"],
+        "temporalCoverage": "2024/2026"
+    };
 
     return (
-        <div className="bg-foreground text-white/90 py-3 overflow-hidden border-y border-white/10 select-none">
-            <div className="flex whitespace-nowrap">
-                <motion.div
-                    animate={{ x: [0, -1000] }}
-                    transition={{
-                        x: {
-                            repeat: Infinity,
-                            repeatType: "loop",
-                            duration: 30,
-                            ease: "linear",
-                        },
-                    }}
-                    className="flex gap-12"
-                >
-                    {tickerItems.map((item, idx) => (
-                        <div key={idx} className="flex items-center gap-2">
-                            <span className="text-accent">{item.icon}</span>
-                            <span className="text-[10px] uppercase tracking-widest font-bold">{item.label}:</span>
-                            <span className="text-[10px] font-mono text-white/70">{item.value}</span>
-                            <span className="mx-6 text-white/20">|</span>
+        <div className={`w-full bg-[#1D4F9C] text-white overflow-hidden py-1.5 transition-all duration-500 ${scrolled ? 'fixed top-0 z-[60] shadow-lg' : ''}`}>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }} />
+            <div className="flex whitespace-nowrap animate-marquee items-center gap-12 px-4">
+                <div className="flex items-center gap-2 border-r border-white/20 pr-12">
+                    <Activity size={14} className="text-[#C5A059]" />
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#C5A059]">Pune Market Pulse: March 2026</span>
+                </div>
+                
+                {/* Duplicate stats for seamless loop */}
+                {[...marketStats, ...marketStats].map((stat, i) => (
+                    <div key={i} className="flex items-center gap-4 group">
+                        <span className="text-[10px] uppercase tracking-tighter font-medium text-white/70 group-hover:text-white transition-colors">
+                            {stat.locality}
+                        </span>
+                        <div className="flex items-center gap-1.5">
+                            <span className="text-xs font-mono font-bold">₹{stat.avgPrice.toLocaleString()}</span>
+                            <div className={`flex items-center text-[9px] font-bold ${stat.trend === 'up' ? 'text-green-400' : 'text-red-400'}`}>
+                                {stat.trend === 'up' ? <TrendingUp size={10} /> : <TrendingDown size={10} />}
+                                {stat.change}%
+                            </div>
                         </div>
-                    ))}
-                </motion.div>
+                    </div>
+                ))}
             </div>
+
+            <style jsx global>{`
+                @keyframes marquee {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
+                }
+                .animate-marquee {
+                    animation: marquee 40s linear infinite;
+                }
+                .animate-marquee:hover {
+                    animation-play-state: paused;
+                }
+            `}</style>
         </div>
     );
 }

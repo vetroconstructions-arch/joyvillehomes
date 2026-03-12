@@ -20,14 +20,18 @@ export default function robots(): MetadataRoute.Robots {
                 crawlDelay: 2,
             },
             {
-                userAgent: ['Googlebot', 'Googlebot-Image'],
+                userAgent: ['Googlebot', 'Googlebot-Image', 'Google-InspectionTool'],
                 allow: '/',
                 disallow: commonDisallow,
             },
-            // Explicitly block invasive AI Scrapers
+            // Explicitly block invasive AI Scrapers but allow Search LLMs
             {
-                userAgent: ['GPTBot', 'ChatGPT-User', 'CCBot', 'anthropic-ai', 'Google-Extended', 'Omigili', 'FacebookBot'],
+                userAgent: ['GPTBot', 'ChatGPT-User', 'CCBot', 'anthropic-ai', 'Omigili', 'FacebookBot'],
                 disallow: ['/'],
+            },
+            {
+                userAgent: ['Google-Extended'], // Controls SGE/Gemini extraction
+                allow: '/', 
             }
         ],
         sitemap: `${siteUrl}/sitemap.xml`,

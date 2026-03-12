@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { BookOpen, Map, Calculator, ShieldCheck, TrendingUp, Info } from 'lucide-react';
 import BrochureButton from '@/components/BrochureButton';
 import ROICalculator from '@/components/ROICalculator';
+import { Zap, ShieldCheck as ShieldIcon, BarChart3, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: "Pune Real Estate Guide 2025 | Investment Analysis & Homebuyer Tips",
@@ -36,7 +37,14 @@ interface GuideSection {
     links: GuideLink[];
 }
 
-export default function HomebuyersGuide() {
+export default async function HomebuyersGuide({ 
+    searchParams 
+}: { 
+    searchParams: Promise<{ intent?: string }> 
+}) {
+    const resolvedSearchParams = await searchParams;
+    const intent = resolvedSearchParams.intent;
+
     const sections: GuideSection[] = [
         {
             title: "Understanding Pune's Micro-Markets",
@@ -65,6 +73,20 @@ export default function HomebuyersGuide() {
         }
     ];
 
+    const personaContent = intent === 'investment' ? {
+        badge: "Strategic Investor Track",
+        title: "Maximize Your Alpha in Pune Real Estate",
+        description: "Institutional-grade analysis for high-yield residential assets.",
+        bg: "bg-[#1D4F9C]",
+        icon: <BarChart3 className="text-[#C5A059]" />
+    } : {
+        badge: "First-Time Homebuyer Track",
+        title: "Your Journey to a Perfect Pune Home",
+        description: "Step-by-step guidance for a safe and transparent homebuying experience.",
+        bg: "bg-accent",
+        icon: <Users className="text-white" />
+    };
+
     return (
         <article className="min-h-screen bg-white pt-32 pb-24 font-sans text-foreground">
             {/* Hero Section */}
@@ -72,10 +94,14 @@ export default function HomebuyersGuide() {
                 <div className="flex flex-col md:flex-row items-center gap-12">
                     <div className="flex-1">
                         <div className="inline-flex items-center gap-2 text-accent font-medium text-xs tracking-widest uppercase mb-4">
-                            <BookOpen size={16} /> Knowledge Hub
+                            <BookOpen size={16} /> {personaContent.badge}
                         </div>
                         <h1 className="text-5xl md:text-7xl font-serif leading-tight mb-6">
-                            The Ultimate <span className="italic text-accent">Homebuyer&apos;s Guide</span> <br /> to Pune Real Estate 2025.
+                            {personaContent.title.split(':').length > 1 ? (
+                                <>{personaContent.title.split(':')[0]}: <span className="italic text-accent">{personaContent.title.split(':')[1]}</span></>
+                            ) : (
+                                personaContent.title
+                            )}
                         </h1>
                         <p className="text-lg text-muted-foreground font-light leading-relaxed max-w-2xl">
                             Navigate the complex landscape of Pune&apos;s property market with data-driven insights, legal checklists, and investment trends curated by industry experts.

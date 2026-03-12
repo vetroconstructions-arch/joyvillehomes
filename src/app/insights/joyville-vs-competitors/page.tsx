@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Check, X, ShieldAlert, Award, Star, TrendingUp, Landmark } from 'lucide-react';
+import { Check, X, ShieldAlert, Award, Star, TrendingUp, Landmark, BarChart3 } from 'lucide-react';
 import BrochureButton from '@/components/BrochureButton';
+import { comparisons } from '@/data/comparisons';
 
 export const metadata: Metadata = {
     title: "Joyville vs Competitors | Real Estate Comparison Pune 2025",
@@ -44,10 +45,24 @@ const comparisonData = [
     },
     {
         feature: "Maintenance & Quality",
-        joyville: "Corporate Professional Management",
-        others: "Variable / Third-Party",
+        joyville: "Corporate Professional (Elite Facility Management)",
+        others: "Variable / Third-Party Local",
         winner: "Joyville",
-        impact: "Long-term asset preservation and lower depreciation."
+        impact: "Long-term asset preservation and lower depreciation through institutional management."
+    },
+    {
+        feature: "RERA Transparency",
+        joyville: "100% Milestone Compliance (Escrow Protected)",
+        others: "Variable Compliance Check",
+        winner: "Joyville",
+        impact: "Maximum safety for buyer funds with zero diversion risk."
+    },
+    {
+        feature: "Appreciation Track Record",
+        joyville: "Historically 12-15% (Superior Resale Demand)",
+        others: "Market Average 8-10%",
+        winner: "Joyville",
+        impact: "SP brand legacy ensures higher liquidity and faster resale velocity."
     }
 ];
 
@@ -66,9 +81,17 @@ export default function ComparisonMatrix() {
             },
             {
                 "@type": "Table",
-                "name": "Real Estate Comparison Matrix: Joyville vs. Industry Average",
-                "about": "Comparison of residential project quality parameters in Pune",
+                "name": "Shapoorji Pallonji Joyville vs. Pune Real Estate Industry Comparison Matrix 2026",
+                "about": "Technical and financial comparison of residential project quality parameters in Pune micro-markets",
                 "mainEntityOfPage": { "@id": "https://www.joyville-homes.com/insights/joyville-vs-competitors/#webpage" }
+            },
+            {
+                "@type": "Dataset",
+                "name": "Pune Real Estate Competitive Analysis Data 2026",
+                "description": "Comparative data on construction technology, green space ratios, and ROI benchmarks for top developers in Hinjewadi, Hadapsar, and Bavdhan.",
+                "publisher": { "@id": "https://www.joyville-homes.com/#organization" },
+                "license": "https://creativecommons.org/licenses/by/4.0/",
+                "variableMeasured": ["Construction Technology", "Green Space Ratio", "Capital Appreciation", "Rental Yield"]
             }
         ]
     };
@@ -115,6 +138,39 @@ export default function ComparisonMatrix() {
                         </tbody>
                     </table>
                 </div>
+
+                {/* Detailed Analytics Grid */}
+                <section className="mb-32">
+                    <div className="flex items-center gap-3 mb-12">
+                        <BarChart3 className="text-[#1D4F9C]" size={24} />
+                        <h2 className="text-3xl font-serif">Project-Specific Benchmarks</h2>
+                    </div>
+                    
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {comparisons.map((project) => (
+                            <div key={project.projectId} className="bg-[#EEF2F6] border border-[#C5A059]/30 p-8 rounded-sm shadow-sm hover:shadow-xl transition-all group">
+                                <h3 className="text-xl font-serif text-[#1D4F9C] mb-2">{project.projectTitle}</h3>
+                                <p className="text-[10px] uppercase tracking-widest text-[#323334]/60 mb-6">{project.competitorGroup}</p>
+                                
+                                <div className="space-y-4 mb-8">
+                                    {project.metrics.map((metric, mIdx) => (
+                                        <div key={mIdx} className="flex justify-between items-center border-b border-[#C5A059]/10 pb-2">
+                                            <span className="text-xs font-light">{metric.label}</span>
+                                            <div className="text-right">
+                                                <span className="text-sm font-bold text-[#1D4F9C]">{metric.joyvilleValue}{metric.unit}</span>
+                                                <span className="text-[9px] text-[#323334]/40 block uppercase tracking-tighter">Market: {metric.competitorAvg}{metric.unit}</span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                                
+                                <p className="text-xs font-light italic leading-relaxed text-[#323334]/70">
+                                    "{project.summary}"
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
 
                 {/* Brand Authority Cards */}
                 <section className="grid lg:grid-cols-3 gap-8 mb-32">

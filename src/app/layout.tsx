@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Navigation from "@/components/Navigation";
+import MarketTicker from "@/components/MarketTicker";
 import PageTransition from "@/components/PageTransition";
 import dynamic from "next/dynamic";
 
@@ -8,6 +9,7 @@ import SEOFooter from "@/components/SEOFooter";
 import ClientWrapper from "@/components/ClientWrapper";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
+import { ENTITIES } from '@/data/entities';
 import "./globals.css";
 
 const inter = Inter({
@@ -25,24 +27,16 @@ export const metadata: Metadata = {
   title: "Joyville Homes Pune | Shapoorji Pallonji | 2 & 3 BHK Flats in Hinjewadi, Hadapsar, Bavdhan",
   description: "Official Joyville Pune by Shapoorji Pallonji Real Estate. Explore 9 premium projects across Hinjewadi, Hadapsar & Bavdhan. 2 & 3 BHK flats starting ₹65 Lakhs. RERA approved. Check price list, floor plans & book a site visit today.",
   keywords: [
-    // Brand Core
-    "Joyville Homes Pune", "Shapoorji Pallonji Pune", "Shapoorji Pallonji Real Estate Pune", "Joyville Pune projects", "Shapoorji Pallonji Joyville 2026", "Shapoorji Pallonji residential Pune", "Joyville homes official website", "Shapoorji Pallonji 150 year legacy",
-    // Hinjewadi Micro-Market
-    "flats in Hinjewadi", "2 BHK flats in Hinjewadi", "3 BHK apartments Hinjewadi", "luxury apartments Hinjewadi Phase 1", "Joyville Sensorium Hinjewadi", "new launch Hinjewadi 2025", "new launch Hinjewadi 2026", "property rates Hinjewadi 2025", "property rates Hinjewadi 2026", "flats near Rajiv Gandhi Infotech Park", "walk to work apartments Hinjewadi", "projects near Maan Village Hinjewadi", "flats near Wipro Hinjewadi", "flats near Infosys Pune", "flats near TCS Hinjewadi", "flats near Cognizant Hinjewadi", "Hinjewadi Phase 1 residential projects", "smart homes Hinjewadi Pune", "gated community Hinjewadi Phase 1", "Pune Metro Line 3 Hinjewadi flats",
-    // Hadapsar Micro-Market
-    "flats in Hadapsar Pune", "Joyville Hadapsar Annexe", "ready to move flats Hadapsar", "flats near Magarpatta City", "flats near EON IT Park Kharadi", "flats near SP Infocity Phursungi", "1 BHK flats Hadapsar", "2 BHK flats Hadapsar", "3 BHK flats Hadapsar", "affordable flats Pune East", "township projects Hadapsar", "Joyville Celestia Hadapsar", "Joyville Skyluxe Hadapsar", "Wildernest SP Kingstown Pune", "Shewalewadi flats for sale", "Shewalewadi property rates 2026", "Pune Solapur Highway residences", "flats near Amanora Mall", "flats near Seasons Mall Hadapsar", "flats near Noble Hospital Hadapsar", "Hadapsar Kharadi bypass properties", "Manjri Hadapsar corridor flats",
-    // Bavdhan Micro-Market
-    "flats in Bavdhan Pune", "Vanaha Bavdhan", "Vanaha Golfland", "Vanaha Springs Bavdhan", "golf course view apartments Pune", "1000 acre township Pune", "Shapoorji Pallonji Bavdhan township", "flats near Oxford Golf Resort", "hills view apartments Pune", "Bavdhan real estate investment 2026", "nature homes Bavdhan", "premium apartments Bavdhan", "Bavdhan property appreciation",
-    // Growth Corridor
-    "Shapoorji Treetopia Pune", "NA bungalow plots Pune", "plots near Purandar Airport", "Purandar airport real estate", "Jadhavwadi property investment", "Saswad Road plots", "Pune growth corridor real estate",
-    // Transactional Intent
-    "Shapoorji Pallonji Pune price list 2025", "Shapoorji Pallonji Pune price list 2026", "Joyville Pune floor plans", "RERA approved projects Pune", "MahaRERA registered projects Pune", "NRI investment flats Pune", "buy 2 BHK flat Hinjewadi under 1 crore", "buy property Pune 2026", "flats for sale Pune 2026", "new projects Pune 2026", "ready to move flats Pune", "luxury apartments Pune", "affordable housing Pune", "investment property Pune 2026", "rental income Pune property", "best areas invest Pune 2026",
-    // Competitor Gap
-    "Joyville vs Kolte Patil Life Republic", "Joyville Hinjewadi vs Godrej Park Greens", "Joyville Hadapsar vs Amanora", "Joyville vs VTP Bellissimo", "Joyville vs Pride Purple Pune", "Joyville vs Gera Developments", "best residential projects Hinjewadi 2025", "best residential projects Hinjewadi 2026", "best residential projects Hadapsar 2026", "best residential projects Bavdhan 2026", "integrated township Pune",
-    // Infrastructure & Market
-    "Pune real estate market 2026", "Pune property trends 2026", "Pune infrastructure development 2026", "Pune Metro impact real estate", "Pune Ring Road properties", "Pune IT hub real estate", "Pune housing market forecast", "Pune property appreciation rates", "Pune micro market analysis",
-    // Long-Tail Budget Intent
-    "1 BHK flat Pune under 70 lakhs", "2 BHK flat Pune under 1 crore", "3 BHK flat Pune under 1.5 crore", "luxury penthouse Pune", "flats for IT professionals Pune", "smart home apartments Pune", "sustainable housing Pune", "EDGE certified homes Pune", "biophilic homes Pune"
+    // 1. Master Brand Keywords (Topical Authority)
+    "Shapoorji Pallonji projects Pune", "Shapoorji Pallonji real estate Pune", "Shapoorji Pallonji flats Pune", "Joyville Homes Pune", "Shapoorji Pallonji township Pune", "Shapoorji Pallonji Pune contact number", "official website Shapoorji Pallonji Pune",
+    // 2. Project-Level Intent Clusters (Hinjewadi)
+    "Joyville Sensorium Hinjewadi price", "Joyville Sensorium floor plan", "Joyville Sensorium brochure PDF", "Joyville Sensorium 2 BHK price Hinjewadi", "Joyville Sensorium possession date", "Joyville Vyomora Hinjewadi price", "Joyville Vyomora floor plan", "Joyville Vyomora brochure download",
+    // 3. Project-Level Intent Clusters (Hadapsar)
+    "Joyville Hadapsar Annexe price", "Joyville Hadapsar Annexe floor plan", "Joyville Hadapsar brochure", "Joyville Celestia price", "Joyville Celestia floor plan", "Joyville Skyluxe Edition price", "Joyville Hadapsar possession date", "flats near Magarpatta City", "flats near SP Infocity Pune",
+    // 4. Project-Level Intent Clusters (Bavdhan)
+    "Vanaha Bavdhan price", "Vanaha Springs floor plan", "Vanaha Golfland price", "Vanaha Township Bavdhan", "flats near Oxford Golf Resort Pune", "Bavdhan property price trends",
+    // 5. Topical & Intent-Based Search
+    "best residential projects Hinjewadi Pune", "investment in Hadapsar Pune", "property price trend Pune 2026", "flats near Magarpatta City and SP Infocity", "luxury apartments Pune", "affordable flats Pune under 70 lakhs", "new launch projects Pune 2026", "RERA registered projects Pune"
   ],
   openGraph: {
     title: "Joyville Homes Pune | Shapoorji Pallonji Real Estate | 9 Premium Projects",
@@ -98,6 +92,36 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        {/* Phase 11: Predictive Intent Pre-fetching & Speculation Rules */}
+        <link rel="prefetch" href="/projects" />
+        <link rel="prefetch" href="/press-research" />
+        <link rel="prefetch" href="/locality/compare" />
+        <script
+          type="speculationrules"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              prerender: [
+                {
+                  source: "list",
+                  urls: ["/projects", "/locality/compare", "/press-research"],
+                  score: 0.5
+                }
+              ],
+              prefetch: [
+                {
+                  source: "document",
+                  where: {
+                    and: [
+                      { href_matches: "/projects/*" },
+                      { not: { href_matches: ["/projects", "/projects/invest"] } }
+                    ]
+                  },
+                  eagerness: "moderate"
+                }
+              ]
+            })
+          }}
+        />
       </head>
       <body className={`${inter.variable} ${playfair.variable} antialiased selection:bg-accent selection:text-white`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{
@@ -124,9 +148,9 @@ export default function RootLayout({
               {
                 "@type": "Organization",
                 "@id": "https://www.joyville-homes.com/#organization",
-                "name": "Joyville Homes by Shapoorji Pallonji",
-                "alternateName": "Shapoorji Pallonji Real Estate",
-                "url": "https://www.joyville-homes.com",
+                "name": ENTITIES.DEVELOPER.name,
+                "legalName": ENTITIES.DEVELOPER.legalName,
+                "url": ENTITIES.DEVELOPER.url,
                 "logo": {
                   "@type": "ImageObject",
                   "url": "https://www.joyville-homes.com/logo.png",
@@ -138,7 +162,7 @@ export default function RootLayout({
                   "@type": "Person",
                   "name": "Pallonji Mistry"
                 },
-                "description": "Official Joyville Pune — 9 premium residential projects across Hinjewadi, Hadapsar & Bavdhan. 150+ years of Shapoorji Pallonji engineering legacy.",
+                "description": `Official Joyville Pune — 9 premium residential projects across Hinjewadi, Hadapsar & Bavdhan. ${ENTITIES.DEVELOPER.legacy} Engineering excellence since 1865.`,
                 "foundingDate": "1865-01-01",
                 "funder": {
                   "@type": "Organization",
@@ -146,13 +170,7 @@ export default function RootLayout({
                   "url": "https://www.shapoorjipallonji.com"
                 },
                 "isoCode": "IN",
-                "sameAs": [
-                  "https://www.facebook.com/ShapoorjiPallonjiRealEstate/",
-                  "https://www.linkedin.com/company/shapoorji-pallonji-real-estate/",
-                  "https://www.instagram.com/shapoorjipallonjirealestate/",
-                  "https://x.com/SPRealEstate",
-                  "https://www.youtube.com/c/ShapoorjiPallonjiRealEstate"
-                ],
+                "sameAs": ENTITIES.DEVELOPER.sameAs,
                 "contactPoint": [
                   {
                     "@type": "ContactPoint",
@@ -180,7 +198,36 @@ export default function RootLayout({
                     "NRI Property Investment Feasibility",
                     "Real Estate ROI Analysis"
                   ]
-                }
+                },
+                "brand": {
+                  "@type": "Brand",
+                  "name": ENTITIES.BRAND.name,
+                  "description": ENTITIES.BRAND.concept
+                },
+                "hasPart": [
+                  {
+                    "@type": "SiteNavigationElement",
+                    "name": "Hinjewadi Projects",
+                    "url": "https://www.joyville-homes.com/location/hinjewadi"
+                  },
+                  {
+                    "@type": "SiteNavigationElement",
+                    "name": "Hadapsar Projects",
+                    "url": "https://www.joyville-homes.com/location/hadapsar"
+                  },
+                  {
+                    "@type": "SiteNavigationElement",
+                    "name": "Bavdhan Projects",
+                    "url": "https://www.joyville-homes.com/location/bavdhan"
+                  },
+                  {
+                    "@type": "Event",
+                    "name": "Shapoorji Pallonji 150th Anniversary",
+                    "description": "Celebrating a century and a half of engineering excellence and iconic structures across India.",
+                    "startDate": "2015-01-01"
+                  }
+                ],
+                "knowsAbout": ENTITIES.DEVELOPER.iconicStructures
               },
               {
                 "@type": "ItemList",
@@ -260,6 +307,7 @@ export default function RootLayout({
           })
         }} />
         <ClientWrapper>
+          <MarketTicker />
           <div className="min-h-screen flex flex-col relative text-foreground">
             <Navigation />
             <PageTransition>

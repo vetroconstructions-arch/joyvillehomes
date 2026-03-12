@@ -12,9 +12,22 @@ export interface LocalityData {
     yoyAppreciation: string;
     latitude: number;
     longitude: number;
+    geoBox?: { minLat: number; minLng: number; maxLat: number; maxLng: number };
     faqs: { q: string; a: string }[];
     lifestyleScores?: { transit: number; work: number; safety: number; lifestyle: number };
-    neighborhoodHighlights?: { category: string; name: string; distance: string }[];
+    neighborhoodHighlights?: { category: string; name: string; distance: string; latitude?: number; longitude?: number }[];
+    comparativeMetrics?: {
+        roiPotential: number; // 0-10
+        infraGrowth: number; // 0-10
+        occupancyRate: string;
+        connectivityScore: number; // 0-10
+    };
+    weeklyInfraUpdate?: {
+        title: string;
+        date: string;
+        status: 'Progress' | 'Delayed' | 'Completed';
+        description: string;
+    };
 }
 
 export const localities: LocalityData[] = [
@@ -50,6 +63,7 @@ export const localities: LocalityData[] = [
         yoyAppreciation: "8.5%",
         latitude: 18.5913,
         longitude: 73.7389,
+        geoBox: { minLat: 18.57, minLng: 73.70, maxLat: 18.62, maxLng: 73.78 },
         faqs: [
             { q: 'Is Hinjewadi safe for families and IT professionals?', a: 'Hinjewadi is extremely safe with 24/7 dedicated police patrolling, integrated CCTV surveillance in IT phases, and high-security gated communities like Joyville Sensorium. The walk-to-work culture further enhances safety during late shifts.' },
             { q: 'What is the future potential of Hinjewadi real estate by 2030?', a: 'With the completion of Metro Line 3 and the Pune Ring Road, Hinjewadi is expected to transition into a "City-within-a-City," with property values projected to grow by 40-50% by 2030 as infrastructure matures.' },
@@ -62,11 +76,24 @@ export const localities: LocalityData[] = [
             lifestyle: 8
         },
         neighborhoodHighlights: [
-            { category: "Education", name: "Mercedes-Benz International School", distance: "1.2 km" },
-            { category: "Healthcare", name: "Ruby Hall Clinic Hinjewadi", distance: "2.5 km" },
-            { category: "Lifestyle", name: "Xion Mall", distance: "3.0 km" },
-            { category: "Transport", name: "Upcoming Hinjewadi Metro Station", distance: "0.8 km" }
-        ]
+            { category: "Education", name: "Mercedes-Benz International School", distance: "1.2 km", latitude: 18.595, longitude: 73.742 },
+            { category: "Healthcare", name: "Ruby Hall Clinic Hinjewadi", distance: "2.5 km", latitude: 18.585, longitude: 73.750 },
+            { category: "Lifestyle", name: "Xion Mall", distance: "3.0 km", latitude: 18.578, longitude: 73.755 },
+            { category: "Transport", name: "Upcoming Hinjewadi Metro Station", distance: "0.8 km", latitude: 18.592, longitude: 73.740 },
+            { category: "Business Hub", name: "Infosys Phase 1", distance: "0.5 km", latitude: 18.594, longitude: 73.735 }
+        ],
+        comparativeMetrics: {
+            roiPotential: 9.5,
+            infraGrowth: 9.8,
+            occupancyRate: "92%",
+            connectivityScore: 9.4
+        },
+        weeklyInfraUpdate: {
+            title: "Metro Line 3 Electrification",
+            date: "March 12, 2026",
+            status: "Progress",
+            description: "High-tension overhead lines being installed between Maan and Phase 1 station. Commercial trials expected Q3 2026."
+        }
     },
     {
         id: "l2",
@@ -100,11 +127,24 @@ export const localities: LocalityData[] = [
         yoyAppreciation: "13.18%",
         latitude: 18.5170,
         longitude: 73.7785,
+        geoBox: { minLat: 18.49, minLng: 73.76, maxLat: 18.54, maxLng: 73.80 },
         faqs: [
             { q: 'Is Bavdhan better than Baner for investment in 2026?', a: 'Bavdhan offers better value-for-money and a greener ecosystem compared to the saturated Baner market. With the new Chandni Chowk interchange, Bavdhan has seen 13.18% appreciation, outperforming many West Pune localities.' },
             { q: 'How does the 1,000-acre Vanaha township impact Bavdhan prices?', a: 'Vanaha creates a self-sustaining demand hub. Large townships typically lead to a 5-8% premium in surrounding secondary market rates due to superior infrastructure development.' },
             { q: 'What are the upcoming infrastructure projects in Bavdhan?', a: 'Key projects include the High Capacity Mass Transit Route (HCMTR), expansion of the Mumbai-Bengaluru Highway, and the completion of the Paud-Pashan link road.' },
-        ]
+        ],
+        neighborhoodHighlights: [
+            { category: "Lifestyle", name: "Oxford Golf Resort", distance: "1.5 km", latitude: 18.510, longitude: 73.765 },
+            { category: "Education", name: "FLAME University", distance: "4.0 km", latitude: 18.495, longitude: 73.760 },
+            { category: "Transport", name: "Chandni Chowk Interchange", distance: "2.5 km", latitude: 18.511, longitude: 73.790 },
+            { category: "Healthcare", name: "Chellearam Hospital", distance: "3.0 km", latitude: 18.515, longitude: 73.785 }
+        ],
+        comparativeMetrics: {
+            roiPotential: 8.8,
+            infraGrowth: 8.5,
+            occupancyRate: "88%",
+            connectivityScore: 8.9
+        }
     },
     {
         id: "l3",
@@ -138,17 +178,30 @@ export const localities: LocalityData[] = [
         yoyAppreciation: "8.5%",
         latitude: 18.5089,
         longitude: 73.9260,
+        geoBox: { minLat: 18.48, minLng: 73.90, maxLat: 18.54, maxLng: 73.96 },
         faqs: [
             { q: 'Why is Hadapsar a major IT hub in Pune?', a: 'Hadapsar houses two massive commercial giants: Magarpatta City and SP Infocity, employing over 200,000 IT and banking professionals, ensuring year-round rental demand.' },
             { q: 'Is it better to buy in Hadapsar or Kharadi?', a: 'Hadapsar offers established social infrastructure and a 25% price advantage over Kharadi, making it ideal for self-use and steady rental income from SP Infocity Phursungi.' },
             { q: 'What is the future of the Pune-Solapur Highway expansion?', a: 'The highway expansion and the upcoming Pune Metro extension to Hadapsar are set to reduce travel time to camp and city centers by 30%, boosting property values.' },
         ],
         neighborhoodHighlights: [
-            { category: "Business Hubs", name: "SP Infocity Phursungi", distance: "1.5 km" },
-            { category: "Healthcare", name: "Noble Hospital Hadapsar", distance: "2.8 km" },
-            { category: "Shopping", name: "Amanora Town Centre", distance: "3.5 km" },
-            { category: "Transport", name: "Hadapsar Railway Station", distance: "4.0 km" }
-        ]
+            { category: "Business Hub", name: "SP Infocity Phursungi", distance: "1.5 km", latitude: 18.490, longitude: 73.955 },
+            { category: "Healthcare", name: "Noble Hospital Hadapsar", distance: "2.8 km", latitude: 18.505, longitude: 73.918 },
+            { category: "Shopping", name: "Amanora Town Centre", distance: "3.5 km", latitude: 18.518, longitude: 73.935 },
+            { category: "Transport", name: "Hadapsar Railway Station", distance: "4.0 km", latitude: 18.520, longitude: 73.910 }
+        ],
+        comparativeMetrics: {
+            roiPotential: 9.0,
+            infraGrowth: 8.7,
+            occupancyRate: "94%",
+            connectivityScore: 8.5
+        },
+        weeklyInfraUpdate: {
+            title: "Pune-Solapur Highway Flyover",
+            date: "March 11, 2026",
+            status: "Progress",
+            description: "Piling work for Shewalewadi junction flyover 85% complete. Diversions to be lifted by August."
+        }
     },
     {
         id: "l4",

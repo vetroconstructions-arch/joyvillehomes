@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { ArrowRight, Calendar, User, Clock } from 'lucide-react';
 import { blogs } from '@/data/blogs';
 import Navbar from '@/components/Navigation';
+import MicroMarketBulletin from '@/components/MicroMarketBulletin';
 
 export const metadata: Metadata = {
     title: 'Pune Real Estate Insights & Property Market Analysis 2025 | Joyville Homes',
@@ -62,6 +63,8 @@ export default function InsightsPage() {
                     Data-driven analysis and expert perspectives on Pune&apos;s dynamic real estate landscape to empower your investment decisions.
                 </p>
             </header>
+
+            <MicroMarketBulletin />
 
             <section className="max-w-7xl mx-auto px-6">
                 <div className="grid lg:grid-cols-2 gap-12">

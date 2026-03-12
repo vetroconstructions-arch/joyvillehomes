@@ -33,12 +33,26 @@ export default function DiscussedEntities({ projectSlugs = [], localitySlugs = [
                                 href={`/projects/${project.slug}`}
                                 className="flex items-center justify-between p-4 bg-[#F9FBFF] border border-[#C5A059]/10 rounded-sm hover:border-[#C5A059]/50 transition-all group"
                             >
-                                <div>
-                                    <h5 className="text-sm font-semibold text-[#323334] group-hover:text-[#1D4F9C] transition-colors">{project.title}</h5>
-                                    <p className="text-[10px] text-[#323334]/60 uppercase tracking-wider">{project.location}</p>
-                                </div>
-                                <ArrowRight size={16} className="text-[#C5A059] transform group-hover:translate-x-1 transition-transform" />
-                            </Link>
+                                    <script type="application/ld+json" dangerouslySetInnerHTML={{ 
+                                        __html: JSON.stringify({
+                                            "@context": "https://schema.org",
+                                            "@type": "DigitalDocument",
+                                            "name": `${project.title} E-Brochure`,
+                                            "url": `https://www.joyville-homes.com/projects/${project.slug}/#brochure`,
+                                            "fileFormat": "application/pdf",
+                                            "hasDigitalDocumentPermission": {
+                                                "@type": "DigitalDocumentPermission",
+                                                "permissionType": "https://schema.org/ReadPermission",
+                                                "grantee": { "@type": "Audience", "audienceType": "Public" }
+                                            }
+                                        }) 
+                                    }} />
+                                    <div>
+                                        <h5 className="text-sm font-semibold text-[#323334] group-hover:text-[#1D4F9C] transition-colors">{project.title}</h5>
+                                        <p className="text-[10px] text-[#323334]/60 uppercase tracking-wider">{project.location}</p>
+                                    </div>
+                                    <ArrowRight size={16} className="text-[#C5A059] transform group-hover:translate-x-1 transition-transform" />
+                                </Link>
                         ))}
                     </div>
                 )}
@@ -65,6 +79,23 @@ export default function DiscussedEntities({ projectSlugs = [], localitySlugs = [
                     </div>
                 )}
             </div>
+
+            {/* Semantic Context (Phase 13) */}
+            {(projectSlugs.length > 0 || localitySlugs.length > 0) && (
+                <div className="mt-12 p-6 bg-[#1D4F9C]/5 border border-[#1D4F9C]/10 rounded-sm">
+                    <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#1D4F9C] block mb-4">Knowledge Graph Context</span>
+                    <div className="flex flex-wrap gap-2">
+                        {Array.from(new Set([...projectSlugs, ...localitySlugs])).map(slug => (
+                            <span key={slug} className="px-3 py-1 bg-white border border-[#1D4F9C]/10 text-[10px] text-[#323334]/70 font-medium rounded-full">
+                                Entity: {slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                            </span>
+                        ))}
+                        <span className="px-3 py-1 bg-white border border-[#1D4F9C]/10 text-[10px] text-[#323334]/70 font-medium rounded-full">
+                            Region: Pune Metropolitan Area
+                        </span>
+                    </div>
+                </div>
+            )}
         </section>
     );
 }

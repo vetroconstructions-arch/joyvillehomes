@@ -59,7 +59,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
     const jsonLd = {
         "@context": "https://schema.org",
-        "@type": "BlogPosting",
+        "@type": "NewsArticle",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": `${siteUrl}/insights/${blog.slug}`
@@ -71,16 +71,36 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         "wordCount": wordCount,
         "keywords": blog.seoKeywords?.join(', '),
         "articleSection": blog.category, // Topical categorization for Google Discover
+        "dateline": blog.dateline || "Pune, India",
+        "printEdition": blog.printEdition || "Digital Insights",
         "speakable": {
             "@type": "SpeakableSpecification",
             "cssSelector": ["h1", ".prose p:first-of-type"]
         },
-        "author": {
+        "author": blog.expertAuthor ? {
+            "@type": "Person",
+            "name": blog.expertAuthor.name,
+            "jobTitle": blog.expertAuthor.role,
+            "image": `${siteUrl}${blog.expertAuthor.image}`,
+            "description": blog.expertAuthor.bio,
+            "url": `${siteUrl}/insights/author/${blog.expertAuthor.name.toLowerCase().replace(/\s+/g, '-')}`
+        } : {
             "@id": "https://www.joyville-homes.com/#research-desk"
         },
         "publisher": {
             "@id": "https://www.joyville-homes.com/#organization"
         },
+        ...(blog.citedReferences?.length ? {
+            "citation": blog.citedReferences.map(ref => ({
+                "@type": "CreativeWork",
+                "name": ref.title,
+                "url": ref.url,
+                "publisher": {
+                    "@type": "Organization",
+                    "name": ref.publisher
+                }
+            }))
+        } : {}),
         "description": blog.excerpt,
         "articleBody": articleContent,
         ...(blog.relatedProjects?.length ? {
@@ -173,6 +193,45 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     projectSlugs={blog.relatedProjects}
                     localitySlugs={blog.relatedLocalities}
                 />
+
+                {/* Expert Author Section - E-E-A-T Signal */}
+                {blog.expertAuthor && (
+                    <div className="mt-16 p-8 bg-[#FFFFFF] border-l-4 border-[#1D4F9C] rounded-sm shadow-sm flex flex-col md:flex-row items-center md:items-start gap-8">
+                        <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0 shadow-lg border-2 border-[#1D4F9C]/10">
+                            <Image
+                                src={blog.expertAuthor.image}
+                                alt={blog.expertAuthor.name}
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                        <div>
+                            <span className="text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-bold block mb-2">Expert Contributor</span>
+                            <h3 className="text-xl font-serif text-[#323334] mb-2">{blog.expertAuthor.name}</h3>
+                            <p className="text-[#323334]/60 text-xs font-medium mb-4 uppercase tracking-widest">{blog.expertAuthor.role}</p>
+                            <p className="text-[#323334] font-light text-sm leading-relaxed italic">
+                                "{blog.expertAuthor.bio}"
+                            </p>
+                        </div>
+                    </div>
+                )}
+
+                {/* Cited References Section - Trust Signal */}
+                {blog.citedReferences && blog.citedReferences.length > 0 && (
+                    <div className="mt-12 p-8 border border-[#C5A059]/20 rounded-sm">
+                        <h4 className="text-[10px] tracking-[0.2em] uppercase text-[#323334]/60 font-bold mb-6">Data Sources & Citations</h4>
+                        <ul className="space-y-4">
+                            {blog.citedReferences.map((ref, idx) => (
+                                <li key={idx} className="flex flex-col">
+                                    <a href={ref.url} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-[#1D4F9C] hover:underline flex items-center gap-2">
+                                        {ref.title} <ArrowRight size={12} />
+                                    </a>
+                                    <span className="text-[10px] text-[#323334]/50 uppercase tracking-wider mt-1">{ref.publisher}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
 
                 {/* Semantic Content Siloing CTA */}
                 <div className="mt-16 pt-8 border-t border-[#C5A059]/20 bg-[#FFFFFF] p-8 rounded-sm shadow-sm flex flex-col items-start">
