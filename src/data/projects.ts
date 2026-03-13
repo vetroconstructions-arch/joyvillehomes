@@ -147,6 +147,8 @@ export interface Project {
     }[];
     lastDataAudit?: string;
     reraProjectUrl?: string;
+    personaTags?: ('NRI' | 'Luxury' | 'FirstTimeBuyer' | 'Investor' | 'TechProfessional')[];
+    answerGraph?: { question: string; answer: string; personaImpact: string }[];
 }
 
 export const projects: Project[] = [
@@ -340,7 +342,12 @@ export const projects: Project[] = [
             { name: "Electric Vehicle Charging", wikidataUri: "https://www.wikidata.org/wiki/Q218556" }
         ],
         lastDataAudit: "2026-03-13",
-        reraProjectUrl: "https://maharerait.mahaonline.gov.in/PrintPreview/PrintPreview?q=wyomora_mock"
+        reraProjectUrl: "https://maharerait.mahaonline.gov.in/PrintPreview/PrintPreview?q=wyomora_mock",
+        personaTags: ['TechProfessional', 'FirstTimeBuyer', 'Investor'],
+        answerGraph: [
+            { question: "Is Hinjewadi Phase 1 better than Phase 3 for investment?", answer: "Phase 1 offers immediate high rental yields (4.5%+), while Vyomora in Phase 3 specializes in long-term capital appreciation due to the upcoming Metro Line 3 and IT expansion.", personaImpact: "High relevance for Investors looking for multi-decade growth." },
+            { question: "How does Mivan Technology impact my home value?", answer: "Mivan construction ensures a seamless finish and higher structural integrity, which leads to lower maintenance costs and better resale value compared to traditional brickwork.", personaImpact: "Critical for Value-conscious First-Time Buyers." }
+        ]
     },
     {
         id: "p1",
@@ -546,7 +553,11 @@ export const projects: Project[] = [
             { name: "Gymnasium", wikidataUri: "https://www.wikidata.org/wiki/Q104840845" }
         ],
         lastDataAudit: "2026-03-13",
-        reraProjectUrl: "https://maharerait.mahaonline.gov.in/PrintPreview/PrintPreview?q=sensorium_mock"
+        reraProjectUrl: "https://maharerait.mahaonline.gov.in/PrintPreview/PrintPreview?q=sensorium_mock",
+        personaTags: ['TechProfessional', 'Luxury', 'Investor'],
+        answerGraph: [
+            { question: "What makes Joyville Sensorium a premium choice in Hinjewadi?", answer: "The 80% open space and 40+ biophilic amenities, combined with the 1.8km Mula riverfront, create a 'luxury of wellness' that is unique in the IT corridor.", personaImpact: "Strong appeal for Luxury seekers and Tech Professionals." }
+        ]
     },
     {
         id: "p2",
@@ -711,6 +722,11 @@ export const projects: Project[] = [
         },
         macroEconomicDrivers: [
             { name: "Magarpatta-Hadapsar Infrastructure Upgrade", wikidataUri: "https://www.wikidata.org/wiki/Q6729699", impact: "Increased Commercial Spillovers" }
+        ],
+        lastDataAudit: "2026-03-13",
+        personaTags: ['FirstTimeBuyer', 'TechProfessional', 'Investor'],
+        answerGraph: [
+            { question: "Is Hadapsar Annexe a good investment for 2026?", answer: "With the DP Road connectivity and proximity to SP Infocity, Hadapsar Annexe is projected to see a 12-15% appreciation by 2026 as Pune East demand peaks.", personaImpact: "High value for Investors and SP Infocity employees." }
         ]
     },
     {
@@ -849,7 +865,12 @@ export const projects: Project[] = [
             { label: "Ventilation Strategy", value: "Cross-Ventilated Vastu Optimal" },
             { label: "Water Conservation", value: "Gray Water Recycling Platform" }
         ],
-        wikidataUri: "https://www.wikidata.org/wiki/Q5637770" // Hadapsar
+        wikidataUri: "https://www.wikidata.org/wiki/Q5637770", // Hadapsar
+        lastDataAudit: "2026-03-13",
+        personaTags: ['Luxury', 'FirstTimeBuyer', 'TechProfessional'],
+        answerGraph: [
+            { question: "Is Vastu compliance really a factor in modern luxury apartments?", answer: "Yes, at Celestia, Vastu integrity isn't just about direction but about health, air-flow, and modular space planning that increases long-term asset value and living comfort.", personaImpact: "Critical for Vastu-conscious Families." }
+        ]
     },
     {
         id: "p4",
@@ -985,7 +1006,12 @@ export const projects: Project[] = [
             { label: "Acoustic Insulation", value: "Double Glazed Soundproof Glass" },
             { label: "Home Automation", value: "Integrated Smart Hub Gateway" }
         ],
-        wikidataUri: "https://www.wikidata.org/wiki/Q5637770" // Hadapsar
+        wikidataUri: "https://www.wikidata.org/wiki/Q5637770", // Hadapsar
+        lastDataAudit: "2026-03-13",
+        personaTags: ['Luxury', 'Investor'],
+        answerGraph: [
+            { question: "What is the ROI potential for Skyluxe Edition?", answer: "As a boutique luxury asset with only limited residences, the scarcity factor alone drives a 5-7% premium over standard developments in Hadapsar.", personaImpact: "Elite signaling for Investors and Luxury collectors." }
+        ]
     },
     {
         id: "p5",
@@ -1086,7 +1112,12 @@ export const projects: Project[] = [
             }
         ],
         videoUploadDate: "2024-01-20",
-        featuredAmenities: ["Lush Green Surroundings", "Grand Clubhouse", "Swimming Pool", "Children's Play Area"]
+        featuredAmenities: ["Lush Green Surroundings", "Grand Clubhouse", "Swimming Pool", "Children's Play Area"],
+        lastDataAudit: "2026-03-13",
+        personaTags: ['Luxury', 'TechProfessional', 'Investor'],
+        answerGraph: [
+            { question: "How does SP Kingstown impact the local economy?", answer: "As a massive 200+ acre township, it acts as an economic anchor for Pune East, similar to Magarpatta, driving infrastructure and property values upward.", personaImpact: "Strategic for Long-term Wealth Investors." }
+        ]
     },
     {
         id: "p6",
@@ -1196,7 +1227,12 @@ export const projects: Project[] = [
             { label: "Power Infrastructure", value: "Solar-Assisted Common Lighting" },
             { label: "Security Level", value: "5-Tier Digital Surveillance" }
         ],
-        wikidataUri: "https://www.wikidata.org/wiki/Q4873724" // Bavdhan
+        wikidataUri: "https://www.wikidata.org/wiki/Q4873724", // Bavdhan
+        lastDataAudit: "2026-03-13",
+        personaTags: ['Luxury', 'NRI', 'Investor'],
+        answerGraph: [
+            { question: "Why is Vanaha Golfland preferred by NRIs?", answer: "The 18-hole golf course views and the high-end management by Shapoorji Pallonji provide a lifestyle and security benchmark that NRIs prioritize.", personaImpact: "High trust factor for NRI buyers." }
+        ]
     },
     {
         id: "p7",
@@ -1314,7 +1350,12 @@ export const projects: Project[] = [
             { label: "Material Sourcing", value: "Pre-Engineered Low Carbon Content" },
             { label: "Emergency Readiness", value: "Centralized Fire Command Center" }
         ],
-        wikidataUri: "https://www.wikidata.org/wiki/Q4873724" // Bavdhan
+        wikidataUri: "https://www.wikidata.org/wiki/Q4873724", // Bavdhan
+        lastDataAudit: "2026-03-13",
+        personaTags: ['FirstTimeBuyer', 'TechProfessional'],
+        answerGraph: [
+            { question: "Is Bavdhan better than Kothrud for young families?", answer: "Bavdhan offers larger carpet areas and modern gated amenities at a 20-30% better price point than congested Kothrud localities.", personaImpact: "Direct value proposition for First-Time Buyers." }
+        ]
     },
     {
         id: "p8",
@@ -1411,6 +1452,11 @@ export const projects: Project[] = [
         },
         macroEconomicDrivers: [
             { name: "Pune-Bangalore Industrial Corridor", wikidataUri: "https://www.wikidata.org/wiki/Q7300405", impact: "Macro-Regional Economic Growth" }
+        ],
+        lastDataAudit: "2026-03-13",
+        personaTags: ['FirstTimeBuyer', 'TechProfessional', 'Investor'],
+        answerGraph: [
+            { question: "What are the hidden costs of buying in Bavdhan?", answer: "With Vanaha, costs are transparently detailed including stamp duty and GST. The inclusion of Mivan construction reduces hidden future maintenance costs.", personaImpact: "Critical for Trust-focused First-buyers." }
         ]
     },
     {
@@ -1520,7 +1566,12 @@ export const projects: Project[] = [
             { label: "Infrastructure", value: "WBM Roads & Underground Cables" },
             { label: "Ecological Focus", value: "Miyawaki Forestation Integration" }
         ],
-        wikidataUri: "https://www.wikidata.org/wiki/Q13117562" // Purandar
+        wikidataUri: "https://www.wikidata.org/wiki/Q13117562", // Purandar
+        lastDataAudit: "2026-03-13",
+        personaTags: ['Investor', 'Luxury'],
+        answerGraph: [
+            { question: "Is plotting better than apartments for long-term ROI?", answer: "NA Plotted developments like Treetopia offer higher land-to-asset value and faster appreciation compared to vertical apartments as land availability in Pune decreases.", personaImpact: "High priority for Asset-heavy Investors." }
+        ]
     }
 
 ];

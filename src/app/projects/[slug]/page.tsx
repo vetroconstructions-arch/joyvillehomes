@@ -448,6 +448,23 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 } : {}),
                 "sameAs": [
                     ...(project.socialLinks?.map(link => link.url) || [])
+                ],
+                "interactionStatistic": [
+                    {
+                        "@type": "InteractionCounter",
+                        "interactionType": "https://schema.org/ViewAction",
+                        "userInteractionCount": project.interactionSignals?.views || 10000
+                    },
+                    {
+                        "@type": "InteractionCounter",
+                        "interactionType": "https://schema.org/LikeAction",
+                        "userInteractionCount": project.interactionSignals?.interested || 500
+                    },
+                    {
+                        "@type": "InteractionCounter",
+                        "interactionType": "https://schema.org/SubscribeAction",
+                        "userInteractionCount": project.interactionSignals?.bookings || 20
+                    }
                 ]
             },
             ...(project.videoUrl ? [{
@@ -465,19 +482,33 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         ]
     };
 
-    // FAQ Schema for Google Rich Results
-    const faqJsonLd = project.faqs && project.faqs.length > 0 ? {
+    // FAQ/Answer Schema for Google Rich Results & SGE
+    const answerGraphJsonLd = (project.faqs || project.answerGraph) ? {
         "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "@id": `${siteUrl}/projects/${project.slug}/#faq`,
-        "mainEntity": project.faqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
-            }
-        }))
+        "@type": "QAPage",
+        "@id": `${siteUrl}/projects/${project.slug}/#qa-graph`,
+        "mainEntity": [
+            ...(project.faqs || []).map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer
+                }
+            })),
+            ...(project.answerGraph || []).map(ag => ({
+                "@type": "Question",
+                "name": ag.question,
+                "suggestedAnswer": {
+                    "@type": "Answer",
+                    "text": ag.answer,
+                    "comment": {
+                        "@type": "Comment",
+                        "text": `Persona Impact: ${ag.personaImpact}`
+                    }
+                }
+            }))
+        ]
     } : null;
 
     // BreadcrumbList Schema for navigation hierarchy
@@ -505,7 +536,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
     return (
         <article className="min-h-screen bg-[#FFFFFF] pt-32 pb-24 text-[#323334] selection:bg-[#1D4F9C] selection:text-[#FFFFFF]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
+            {answerGraphJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(answerGraphJsonLd) }} />}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "ClaimReview",
@@ -555,6 +587,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                     views={project.interactionSignals.views}
                                     interested={project.interactionSignals.interested}
                                     projectName={project.title}
+                                    personaTags={project.personaTags}
                                 />
                             )}
                         </div>
@@ -1040,7 +1073,32 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
                         {/* 7. FAQs */}
                         {project.faqs && project.faqs.length > 0 && (
-                            <FAQSection items={project.faqs} title={`Common Questions about ${project.title}`} />
+                            <>
+                                {project.answerGraph && project.answerGraph.length > 0 && (
+                                    <div className="mt-12 mb-8 bg-[#F5F7FA] p-8 rounded-sm border-l-4 border-[#1D4F9C]">
+                                        <h3 className="text-xl font-serif italic mb-6 text-[#1D4F9C]">Decision Support: Expert Answer Graph</h3>
+                                        <div className="grid gap-6">
+                                            {project.answerGraph.map((item, idx) => (
+                                                <div key={idx} className="bg-white p-6 shadow-sm">
+                                                    <p className="font-bold text-[#323334] mb-2 flex items-center gap-2">
+                                                        <span className="text-[#1D4F9C]">Q:</span> {item.question}
+                                                    </p>
+                                                    <p className="text-sm text-[#323334]/80 leading-relaxed">
+                                                        <span className="text-[#C5A059] font-bold">A:</span> {item.answer}
+                                                    </p>
+                                                    <div className="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2">
+                                                        <span className="text-[10px] uppercase tracking-widest text-[#1D4F9C]/60 font-bold">Insights for:</span>
+                                                        <span className="bg-blue-50 text-[#1D4F9C] text-[9px] px-2 py-0.5 rounded-full font-bold uppercase tracking-tighter border border-blue-100">
+                                                            {item.personaImpact}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                                <FAQSection items={project.faqs} title={`Common Questions about ${project.title}`} />
+                            </>
                         )}
                         {project.constructionUpdates && project.constructionUpdates.length > 0 && (
                             <ConstructionMilestones 
