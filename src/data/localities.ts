@@ -14,6 +14,7 @@ export interface LocalityData {
     longitude: number;
     geoBox?: { minLat: number; minLng: number; maxLat: number; maxLng: number };
     faqs: { q: string; a: string }[];
+    sameAs?: string;
     lifestyleScores?: { transit: number; work: number; safety: number; lifestyle: number };
     neighborhoodHighlights?: { category: string; name: string; distance: string; latitude?: number; longitude?: number }[];
     comparativeMetrics?: {
@@ -64,6 +65,7 @@ export const localities: LocalityData[] = [
         latitude: 18.5913,
         longitude: 73.7389,
         geoBox: { minLat: 18.57, minLng: 73.70, maxLat: 18.62, maxLng: 73.78 },
+        sameAs: "https://en.wikipedia.org/wiki/Hinjewadi",
         faqs: [
             { q: 'Is Hinjewadi safe for families and IT professionals?', a: 'Hinjewadi is extremely safe with 24/7 dedicated police patrolling, integrated CCTV surveillance in IT phases, and high-security gated communities like Joyville Sensorium. The walk-to-work culture further enhances safety during late shifts.' },
             { q: 'What is the future potential of Hinjewadi real estate by 2030?', a: 'With the completion of Metro Line 3 and the Pune Ring Road, Hinjewadi is expected to transition into a "City-within-a-City," with property values projected to grow by 40-50% by 2030 as infrastructure matures.' },
@@ -179,6 +181,7 @@ export const localities: LocalityData[] = [
         latitude: 18.5089,
         longitude: 73.9260,
         geoBox: { minLat: 18.48, minLng: 73.90, maxLat: 18.54, maxLng: 73.96 },
+        sameAs: "https://en.wikipedia.org/wiki/Hadapsar",
         faqs: [
             { q: 'Why is Hadapsar a major IT hub in Pune?', a: 'Hadapsar houses two massive commercial giants: Magarpatta City and SP Infocity, employing over 200,000 IT and banking professionals, ensuring year-round rental demand.' },
             { q: 'Is it better to buy in Hadapsar or Kharadi?', a: 'Hadapsar offers established social infrastructure and a 25% price advantage over Kharadi, making it ideal for self-use and steady rental income from SP Infocity Phursungi.' },

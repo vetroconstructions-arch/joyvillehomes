@@ -137,6 +137,8 @@ export interface Project {
         wikidataUri: string;
         impact: string;
     }[];
+    lastDataAudit?: string;
+    reraProjectUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -323,7 +325,9 @@ export const projects: Project[] = [
         amenityEntityLinks: [
             { name: "Smart Home", wikidataUri: "https://www.wikidata.org/wiki/Q104840845" },
             { name: "Electric Vehicle Charging", wikidataUri: "https://www.wikidata.org/wiki/Q218556" }
-        ]
+        ],
+        lastDataAudit: "2026-03-13",
+        reraProjectUrl: "https://maharerait.mahaonline.gov.in/PrintPreview/PrintPreview?q=wyomora_mock"
     },
     {
         id: "p1",
@@ -522,7 +526,9 @@ export const projects: Project[] = [
         amenityEntityLinks: [
             { name: "Infinity Pool", wikidataUri: "https://www.wikidata.org/wiki/Q104840845" },
             { name: "Gymnasium", wikidataUri: "https://www.wikidata.org/wiki/Q104840845" }
-        ]
+        ],
+        lastDataAudit: "2026-03-13",
+        reraProjectUrl: "https://maharerait.mahaonline.gov.in/PrintPreview/PrintPreview?q=sensorium_mock"
     },
     {
         id: "p2",

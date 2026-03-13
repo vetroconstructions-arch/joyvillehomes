@@ -234,16 +234,28 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         }
                     ] : [])
                 ],
-                ...(project.constructionUpdate ? {
-                    "dateModified": new Date(project.constructionUpdate.lastUpdated).toISOString(),
-                    "description": `${project.description} Current Construction Status: ${project.constructionUpdate.statusText} (${project.constructionUpdate.percentage}% complete as of ${project.constructionUpdate.lastUpdated}).`
+                ...(project.lastDataAudit || project.constructionUpdate ? {
+                    "dateModified": project.lastDataAudit || new Date(project.constructionUpdate!.lastUpdated).toISOString(),
+                    "description": `${project.description} Current Construction Status: ${project.constructionUpdate?.statusText} (${project.constructionUpdate?.percentage}% complete as of ${project.constructionUpdate?.lastUpdated}). Data verified on ${project.lastDataAudit || 'March 2026'}.`
                 } : {}),
-                "isRelatedTo": {
-                    "@type": "Organization",
-                    "@id": `${siteUrl}/#organization`,
-                    "name": ENTITIES.DEVELOPER.name,
-                    "url": ENTITIES.DEVELOPER.url
-                },
+                "isRelatedTo": [
+                    {
+                        "@type": "Organization",
+                        "@id": `${siteUrl}/#organization`,
+                        "name": ENTITIES.DEVELOPER.name,
+                        "url": ENTITIES.DEVELOPER.url
+                    },
+                    {
+                        "@type": "GovernmentOrganization",
+                        "name": "MahaRERA",
+                        "url": "https://maharera.mahaonline.gov.in/"
+                    },
+                    ...(project.reraProjectUrl ? [{
+                        "@type": "WebPage",
+                        "name": `Official MahaRERA Listing: ${project.title}`,
+                        "url": project.reraProjectUrl
+                    }] : [])
+                ],
                 "brand": {
                     "@type": "Brand",
                     "name": ENTITIES.BRAND.name,
@@ -265,8 +277,13 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         "@type": "RealEstateProject",
                         "name": p.title,
                         "url": `${siteUrl}/projects/${p.slug}`
-                    }))
-                ]
+                    })),
+                    ...(locality?.sameAs ? [{
+                        "@type": "Place",
+                        "name": locality.name,
+                        "sameAs": locality.sameAs
+                    }] : [])
+                ],
             },
             ...(project.siteOffice ? [{
                 "@type": "LocalBusiness",

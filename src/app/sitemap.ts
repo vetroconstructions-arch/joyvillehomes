@@ -106,7 +106,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${baseUrl}/properties/${route.slug}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
-        priority: 0.95, // Boosted for Phase 8
+        priority: 0.95, 
     }));
 
     const blogRoutes: MetadataRoute.Sitemap = blogs.map((blog) => ({

@@ -55,7 +55,21 @@ export const ENTITIES = {
         },
         MAGARPATTA: {
             name: "Magarpatta City",
-            type: "Integrated Township"
+            type: "Integrated Township",
+            url: "https://www.magarpattacity.com",
+            sameAs: "https://en.wikipedia.org/wiki/Magarpatta"
+        },
+        PUNE: {
+            name: "Pune",
+            sameAs: "https://en.wikipedia.org/wiki/Pune"
+        },
+        HINJEWADI: {
+            name: "Hinjewadi",
+            sameAs: "https://en.wikipedia.org/wiki/Hinjewadi"
+        },
+        HADAPSAR: {
+            name: "Hadapsar",
+            sameAs: "https://en.wikipedia.org/wiki/Hadapsar"
         }
     }
 };
