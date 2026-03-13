@@ -283,7 +283,12 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         "@type": "Place",
                         "name": locality.name,
                         "sameAs": locality.sameAs
-                    }] : [])
+                    }] : []),
+                    ...project.locationDetails.landmarks.filter(l => l.wikidataUri).map(l => ({
+                        "@type": "Place",
+                        "name": l.name,
+                        "sameAs": l.wikidataUri
+                    }))
                 ],
             },
             ...(project.siteOffice ? [{
@@ -352,8 +357,17 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     {
                         "@type": "ImageObject",
                         "url": project.image,
-                        "caption": `Exterior view of ${project.title} by Shapoorji Pallonji`
+                        "caption": `Exterior view of ${project.title} by Shapoorji Pallonji`,
+                        "representativeOfPage": "true"
                     },
+                    ...(project.galleryItems || []).map(item => ({
+                        "@type": "ImageObject",
+                        "url": item.url,
+                        "caption": item.caption,
+                        "name": item.caption,
+                        "description": item.alt,
+                        "contentLocation": project.location
+                    })),
                     ...(project.floorPlans.map(fp => ({
                         "@type": "ImageObject",
                         "url": fp.image || project.image,

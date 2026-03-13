@@ -126,6 +126,16 @@ export default function RootLayout({
                     ]
                   },
                   eagerness: "conservative"
+                },
+                {
+                  source: "document",
+                  where: {
+                    or: [
+                      { href_matches: "*?action=schedule-visit" },
+                      { href_matches: "*?action=download-brochure" }
+                    ]
+                  },
+                  eagerness: "immediate"
                 }
               ]
             })

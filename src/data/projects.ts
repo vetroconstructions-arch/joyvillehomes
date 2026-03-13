@@ -17,9 +17,16 @@ export interface AmenityCategory {
     items: string[];
 }
 
+export interface GalleryItem {
+    url: string;
+    caption: string;
+    alt: string;
+    category?: string;
+}
+
 export interface LocationDetail {
     iframeSrc: string;
-    landmarks: { name: string; distance: string }[];
+    landmarks: { name: string; distance: string; wikidataUri?: string }[];
 }
 
 export interface TechnicalSpec {
@@ -50,6 +57,7 @@ export interface Project {
     floorPlans: FloorPlan[];
     masterLayout: string;
     gallery: string[];
+    galleryItems?: GalleryItem[];
     locationDetails: LocationDetail;
     infrastructureScores: {
         metro: number; // 0-10
@@ -198,12 +206,16 @@ export const projects: Project[] = [
             "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/3.webp",
             "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/4.webp"
         ],
+        galleryItems: [
+            { url: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/1.webp", caption: "Joyville Vyomora Hinjewadi Exterior View", alt: "Joyville Vyomora Luxury 2 & 3 BHK Apartments Hinjewadi", category: "Exterior" },
+            { url: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/3.webp", caption: "Premium Living Room Design Vyomora", alt: "Spacious Living Area Vyomora Hinjewadi", category: "Interior" }
+        ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.9!2d73.7!3d18.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bb!2sJoyville%20Sensorium!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin",
             landmarks: [
-                { name: "Wipro Phase 1", distance: "0.5 km" },
-                { name: "Infosys Phase 1", distance: "0.8 km" },
-                { name: "Pune Metro Line 3 Station", distance: "0.4 km" }
+                { name: "Wipro Phase 1", distance: "0.5 km", wikidataUri: "https://www.wikidata.org/wiki/Q844287" },
+                { name: "Infosys Phase 1", distance: "0.8 km", wikidataUri: "https://www.wikidata.org/wiki/Q183350" },
+                { name: "Pune Metro Line 3 Station", distance: "0.4 km", wikidataUri: "https://www.wikidata.org/wiki/Q65069273" }
             ]
         },
         infrastructureScores: {
@@ -404,13 +416,17 @@ export const projects: Project[] = [
             "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/4.webp",
             "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/5.webp"
         ],
+        galleryItems: [
+            { url: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/1.webp", caption: "Joyville Sensorium Master Clubhouse", alt: "Joyville Sensorium Amenities and Lifestyle", category: "Amenity" },
+            { url: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/3.webp", caption: "Sunken Garden View", alt: "Joyville Sensorium Biophilic Design Garden", category: "Nature" }
+        ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.980646012613!2d73.723826!3d18.559385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bbc6da6fcb2b%3A0xcdaaaadd11c2e47c!2sJoyville%20Sensorium!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
             landmarks: [
-                { name: "Infosys Circle Phase 1", distance: "1.5 km" },
-                { name: "Maan Road", distance: "0.5 km" },
-                { name: "Wipro Circle", distance: "3.0 km" },
-                { name: "Mumbai-Bangalore Highway", distance: "4.5 km" }
+                { name: "Infosys Circle Phase 1", distance: "1.5 km", wikidataUri: "https://www.wikidata.org/wiki/Q183350" },
+                { name: "Maan Road", distance: "0.5 km", wikidataUri: "https://www.wikidata.org/wiki/Q6933722" }, // Mula River area
+                { name: "Wipro Circle", distance: "3.0 km", wikidataUri: "https://www.wikidata.org/wiki/Q844287" },
+                { name: "Mumbai-Bangalore Highway", distance: "4.5 km", wikidataUri: "https://www.wikidata.org/wiki/Q13115456" }
             ]
         },
         infrastructureScores: {
@@ -755,16 +771,17 @@ export const projects: Project[] = [
         masterLayout: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/sensorium/banner/desktop/desktop_banner.webp",
         gallery: [
             "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/sensorium/gallery/1.webp",
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/sensorium/gallery/2.webp",
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/sensorium/gallery/3.webp"
+            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/sensorium/gallery/2.webp"
+        ],
+        galleryItems: [
+            { url: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/sensorium/banner/desktop/desktop_banner.webp", caption: "Joyville Celestia Sky-High Residences", alt: "Joyville Celestia Luxury Apartments Pune East", category: "Hero" }
         ],
         locationDetails: {
-            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.33748259646!2d73.967471!3d18.494437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e9d2b291a271%3A0x6bba41a5d2cf5913!2sJoyville%20Hadapsar%20Annexe!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
+            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5042!2d73.9786!3d18.5042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1c!2sJoyville%20Hadapsar!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin",
             landmarks: [
-                { name: "SP Infocity", distance: "2.5 km" },
-                { name: "Magarpatta City", distance: "4.5 km" },
-                { name: "Lexicon International School", distance: "3.2 km" },
-                { name: "Noble Hospital", distance: "5.0 km" }
+                { name: "Magarpatta City", distance: "6.5 km", wikidataUri: "https://www.wikidata.org/wiki/Q2712282" },
+                { name: "Amanora Mall", distance: "6.0 km", wikidataUri: "https://www.wikidata.org/wiki/Q4739891" },
+                { name: "Hadapsar Railway Station", distance: "7.0 km", wikidataUri: "https://www.wikidata.org/wiki/Q5637651" }
             ]
         },
         infrastructureScores: {
@@ -1017,17 +1034,18 @@ export const projects: Project[] = [
         ],
         masterLayout: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/wildernest/desktop/wildernest_desktop_banner.webp",
         gallery: [
-            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/wildernest/gallery/photo_gallery_1.webp",
-            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/wildernest/gallery/photo_gallery_2.webp",
-            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/wildernest/gallery/photo_gallery_3.webp"
+            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/wildernest/gallery/1.webp",
+            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/wildernest/gallery/2.webp"
+        ],
+        galleryItems: [
+            { url: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/wildernest/desktop/wildernest_desktop_banner.webp", caption: "Wildernest at SP Kingstown Biophilic Living", alt: "Wildernest Luxury Apartments Hadapsar Pune", category: "Exterior" }
         ],
         locationDetails: {
-            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.33748259646!2d73.971248!3d18.502989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1df15d55555%3A0x5555555555555555!2sSP%20Kingstown!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
+            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5042!2d73.9786!3d18.5042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1c!2sJoyville%20Hadapsar!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin",
             landmarks: [
-                { name: "Manjri Stud Farm", distance: "Nearby" },
-                { name: "SP Infocity", distance: "4.0 km" },
-                { name: "Lexicon International School", distance: "3.2 km" },
-                { name: "Pune-Solapur Highway", distance: "0.5 km" }
+                { name: "Saswad Road", distance: "2.0 km", wikidataUri: "https://www.wikidata.org/wiki/Q2721869" },
+                { name: "Proposed Purandar Airport", distance: "15.0 km", wikidataUri: "https://www.wikidata.org/wiki/Q30645638" },
+                { name: "SP Infocity", distance: "8.0 km", wikidataUri: "https://www.wikidata.org/wiki/Q151996" }
             ]
         },
         infrastructureScores: {
@@ -1120,16 +1138,18 @@ export const projects: Project[] = [
         ],
         masterLayout: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp",
         gallery: [
-            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/gallery/photo_gallery_building_facade1_v2.webp",
-            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/gallery/photo_gallery_living_room7.webp"
+            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/gallery/1.webp",
+            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/gallery/2.webp"
+        ],
+        galleryItems: [
+            { url: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp", caption: "Vanaha Golfland Resort-Style Living", alt: "Vanaha Golfland Luxury Apartments Bavdhan Pune", category: "Hero" }
         ],
         locationDetails: {
-            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.530664989065!2d73.782777!3d18.535277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf383063510f%3A0xc3cf7b25752a229!2sOxford%20Golf%20Resort!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
+            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5!2d73.7!3d18.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bb!2sVanaha%20Bavdhan!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin",
             landmarks: [
-                { name: "FLAME University", distance: "Nearby" },
-                { name: "Ryan International School", distance: "Nearby" },
-                { name: "Chandni Chowk", distance: "4.0 km" },
-                { name: "Sahyadri Hospital", distance: "6.0 km" }
+                { name: "Oxford Golf Resort", distance: "1.0 km", wikidataUri: "https://www.wikidata.org/wiki/Q110269430" },
+                { name: "Chandni Chowk", distance: "4.5 km", wikidataUri: "https://www.wikidata.org/wiki/Q105658097" },
+                { name: "Pune University", distance: "9.5 km", wikidataUri: "https://www.wikidata.org/wiki/Q2118320" }
             ]
         },
         infrastructureScores: {
@@ -1224,13 +1244,15 @@ export const projects: Project[] = [
             "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha_springs/desktop/banner.jpg",
             "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/gallery/photo_gallery_building_facade1_v2.webp"
         ],
+        galleryItems: [
+            { url: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha_springs/desktop/banner.jpg", caption: "Vanaha Springs Valley View Apartments", alt: "Vanaha Springs Eco-Friendly Homes Bavdhan", category: "Exterior" }
+        ],
         locationDetails: {
-            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.530664989065!2d73.782777!3d18.535277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf383063510f%3A0xc3cf7b25752a229!2sOxford%20Golf%20Resort!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
+            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5!2d73.7!3d18.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bb!2sVanaha%20Bavdhan!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin",
             landmarks: [
-                { name: "Oxford Golf Course", distance: "Nearby" },
-                { name: "Chandni Chowk", distance: "4.0 km" },
-                { name: "Sahyadri Hospital", distance: "6.0 km" },
-                { name: "Kothrud", distance: "6.0 km" }
+                { name: "Oxford Golf Resort", distance: "1.0 km", wikidataUri: "https://www.wikidata.org/wiki/Q110269430" },
+                { name: "Chandni Chowk", distance: "4.5 km", wikidataUri: "https://www.wikidata.org/wiki/Q105658097" },
+                { name: "Hinjewadi IT Park", distance: "12.0 km", wikidataUri: "https://www.wikidata.org/wiki/Q5770176" }
             ]
         },
         infrastructureScores: {
@@ -1339,13 +1361,15 @@ export const projects: Project[] = [
         gallery: [
             "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha-pune.jpg"
         ],
+        galleryItems: [
+            { url: "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha-pune.jpg", caption: "Vanaha Integrated Township Pune", alt: "Vanaha Bavdhan Self-Sustaining Ecosystem", category: "Masterplan" }
+        ],
         locationDetails: {
-            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.530664989065!2d73.782777!3d18.535277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf383063510f%3A0xc3cf7b25752a229!2sOxford%20Golf%20Resort!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
+            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5!2d73.7!3d18.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bb!2sVanaha%20Bavdhan!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin",
             landmarks: [
-                { name: "Oxford Golf Resort", distance: "Nearby" },
-                { name: "Symbiosis International University", distance: "8.0 km" },
-                { name: "Chandni Chowk", distance: "4.0 km" },
-                { name: "Mumbai-Pune Expressway", distance: "Nearby" }
+                { name: "Oxford Golf Resort", distance: "1.0 km", wikidataUri: "https://www.wikidata.org/wiki/Q110269430" },
+                { name: "Chandni Chowk", distance: "4.5 km", wikidataUri: "https://www.wikidata.org/wiki/Q105658097" },
+                { name: "Hinjewadi IT Park", distance: "12.0 km", wikidataUri: "https://www.wikidata.org/wiki/Q5770176" }
             ]
         },
         infrastructureScores: {
@@ -1433,17 +1457,18 @@ export const projects: Project[] = [
         ],
         masterLayout: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/desktop/treetopia_desktop_banner.webp",
         gallery: [
-            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/gallery/photogallery_1.webp",
-            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/gallery/photogallery_2.webp",
-            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/gallery/photogallery_3.webp"
+            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/gallery/1.webp",
+            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/gallery/2.webp"
+        ],
+        galleryItems: [
+            { url: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/desktop/treetopia_desktop_banner.webp", caption: "Shapoorji Pallonji Treetopia Villa Plots", alt: "Treetopia NA Bungalow Plots Saswad Pune", category: "Plotting" }
         ],
         locationDetails: {
-            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15128.530664989065!2d74.533145!3d18.447577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e9d2b291a271%3A0x6bba41a5d2cf5913!2sJadhavwadi!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
+            iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5!2d73.9!3d18.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bb!2sTreetopia!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin",
             landmarks: [
-                { name: "Proposed Purandar Airport", distance: "20 mins" },
-                { name: "Saswad Town", distance: "10 mins" },
-                { name: "Hadapsar", distance: "25 mins" },
-                { name: "Pune Ring Road", distance: "Nearby" }
+                { name: "Purandar Fort", distance: "12.0 km", wikidataUri: "https://www.wikidata.org/wiki/Q3638428" },
+                { name: "Saswad", distance: "6.5 km", wikidataUri: "https://www.wikidata.org/wiki/Q2721869" },
+                { name: "Proposed Purandar Airport", distance: "10.0 km", wikidataUri: "https://www.wikidata.org/wiki/Q30645638" }
             ]
         },
         infrastructureScores: {
