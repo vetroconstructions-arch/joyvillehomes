@@ -225,14 +225,15 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                             "author": { "@id": "https://www.joyville-homes.com/#research-desk" },
                             "reviewBody": project.expertReview.summary
                         },
-                        {
-                            "@type": "Recommendation",
-                            "category": "Real Estate Investment",
-                            "itemReviewed": { "@id": `${siteUrl}/projects/${project.slug}/#place` },
-                            "recommendationScore": project.expertReview.rating,
-                            "reviewer": { "@id": "https://www.joyville-homes.com/#research-desk" }
-                        }
-                    ] : [])
+                    ] : []),
+                    {
+                        "@type": "SoftwareApplication",
+                        "name": `${project.title} ROI & Appreciation Calculator`,
+                        "applicationCategory": "Real Estate Investment Tool",
+                        "operatingSystem": "Web",
+                        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+                        "description": `AI-powered intelligence model for calculating capital appreciation and rental yield for ${project.title}.`
+                    }
                 ],
                 ...(project.lastDataAudit || project.constructionUpdate ? {
                     "dateModified": project.lastDataAudit || new Date(project.constructionUpdate!.lastUpdated).toISOString(),
@@ -340,6 +341,13 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     "name": amenity,
                     "value": "true"
                 })),
+                ...(project.technicalSpecs ? {
+                    "additionalProperty": project.technicalSpecs.map(spec => ({
+                        "@type": "PropertyValue",
+                        "name": spec.label,
+                        "value": spec.value
+                    }))
+                } : {}),
                 "photo": [
                     {
                         "@type": "ImageObject",

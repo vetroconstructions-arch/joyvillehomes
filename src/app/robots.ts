@@ -20,9 +20,14 @@ export default function robots(): MetadataRoute.Robots {
                 crawlDelay: 2,
             },
             {
-                userAgent: ['Googlebot', 'Googlebot-Image', 'Google-InspectionTool'],
+                userAgent: ['Googlebot', 'Googlebot-Image'],
                 allow: '/',
                 disallow: commonDisallow,
+            },
+            {
+                userAgent: 'Google-InspectionTool',
+                allow: '/',
+                disallow: [], // Full access for visual/technical inspection
             },
             // Explicitly block invasive AI Scrapers but allow Search LLMs
             {

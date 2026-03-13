@@ -153,12 +153,12 @@ export const projects: Project[] = [
         reraNumber: "Coming Soon",
         image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/1.webp", // Will update with generated image later if possible or stay with placeholder
         highlights: [
-            "Premium IT Lifeline Location",
+            "Premium IT Lifeline Location (High ROI)",
             "3 BHK Duplex Configurations",
-            "24/7 Elite Security",
-            "Modern Lifestyle Amenities"
+            "Mivan Technology Construction",
+            "24/7 Elite Security & Smart Surge"
         ],
-        description: "A new landmark of luxury in Hinjewadi Phase 1. Joyville Vyomora offers thoughtfully designed 2 & 3 BHK residences and exclusive 3 BHK duplexes, perfectly positioned for Pune's IT professionals.",
+        description: "A new landmark of luxury in Hinjewadi Phase 1. Joyville Vyomora offers thoughtfully designed 2 & 3 BHK residences and exclusive 3 BHK duplexes, perfectly positioned for Pune's IT professionals seeking capital appreciation and high rental yield.",
         overview: [
             "Joyville Vyomora is the latest residential marvel by Shapoorji Pallonji in Hinjewadi Phase 1, Pune's primary IT lifeline.",
             "Strategically located near major tech giants like Wipro, Infosys, and Cognizant, it offers unmatched connectivity and a premium lifestyle.",
@@ -237,7 +237,8 @@ export const projects: Project[] = [
         },
         nearbyEntities: ["Wipro Circle", "Rajiv Gandhi Infotech Park", "Pune Metro Line 3", "Maan Village"],
         seoKeywords: [
-            "Joyville Vyomora Hinjewadi projects price", "Joyville Vyomora Hinjewadi floor plan", "Joyville Vyomora brochure PDF", "Joyville Vyomora Hinjewadi possession date", "Joyville Vyomora amenities list", "Joyville Vyomora Hinjewadi reviews", "2 BHK flats in Hinjewadi Phase 1", "3 BHK duplex Hinjewadi", "Joyville Hinjewadi new launch", "Joyville Vyomora booking price"
+            "Joyville Vyomora Hinjewadi projects price", "Joyville Vyomora Hinjewadi floor plan", "Joyville Vyomora brochure PDF", "Joyville Vyomora Hinjewadi possession date", "Joyville Vyomora amenities list", "Joyville Vyomora Hinjewadi reviews", "2 BHK flats in Hinjewadi Phase 1", "3 BHK duplex Hinjewadi", "Joyville Hinjewadi new launch", "Joyville Vyomora booking price",
+            "ready possession flats in Hinjewadi", "Joyville Vyomora investment ROI", "Shapoorji Pallonji Hinjewadi contact", "best 2BHK flats under 90 lakhs Pune"
         ],
         faqs: [
             {
@@ -340,12 +341,12 @@ export const projects: Project[] = [
         reraNumber: ["P52100027234", "P52100024965", "P52100024963", "P52100027244", "P52100024964", "P52100045257", "P52100049547"],
         image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/1.webp",
         highlights: [
-            "10.5 Acres Development",
-            "75% Open Green Spaces",
-            "Infinity Edge Pool",
-            "Smart Home Automation"
+            "10.5 Acres Biophilic Development",
+            "75% Open Green Spaces (QDF Signal)",
+            "Infinity Edge Pool & ROI Catalyst",
+            "EDGE Certified Sustainable Living"
         ],
-        description: "Experience the pinnacle of sky-luxe living at Joyville Sensorium. A premier Shapoorji Pallonji residential project in Hinjewadi offering sprawling green spaces and over 60 majestic amenities.",
+        description: "Experience the pinnacle of sky-luxe living at Joyville Sensorium. A premier Shapoorji Pallonji residential project in Hinjewadi offering sprawling green spaces, high-liquidity investment potential, and over 60 majestic amenities.",
         overview: [
             "Joyville Sensorium Hinjewadi is a sprawling 10.5-acre township by Shapoorji Pallonji, offering premium walk to work apartments in Hinjewadi perfectly suited for IT professionals.",
             "Strategically positioned near Rajiv Gandhi Infotech Park, Infosys Pune, and Wipro, these smart home apartments in Hinjewadi Pune provide unmatched convenience and promise excellent rental yield in Hinjewadi for 2025.",
@@ -436,7 +437,8 @@ export const projects: Project[] = [
         ],
         seoKeywords: [
             "Joyville Sensorium Hinjewadi price", "Joyville Sensorium floor plan", "Joyville Sensorium brochure", "Joyville Sensorium Hinjewadi possession date", "Joyville Sensorium amenities", "Joyville Sensorium reviews", "flats near Rajiv Gandhi Infotech Park", "3 BHK luxury apartments Hinjewadi", "ready to move flats Hinjewadi", "Joyville Sensorium booking contact",
-            "joyville sensorium pune", "joyville sensorium price list", "joyville sensorium brochure", "joyville sensorium master plan", "joyville sensorium location", "joyville sensorium 2 bhk price", "joyville sensorium 3 bhk price", "joyville sensorium hinjewadi investment", "joyville sensorium amenities", "shapoorji pallonji pune projects", "shapoorji pallonji joyville pune", "joyville homes pune", "joyville shapoorji pallonji pune", "joyville projects pune", "joyville apartments pune", "joyville residential projects pune", "joyville real estate pune", "joyville township pune", "flats in hinjewadi", "apartments in hinjewadi", "luxury flats hinjewadi", "flats near hinjewadi phase 1", "flats near hinjewadi phase 2", "flats near hinjewadi it park", "flats near rajiv gandhi infotech park", "apartments near hinjewadi it park", "property investment hinjewadi", "best investment flats pune", "buy flats in hinjewadi", "buy joyville apartments pune", "joyville flats for sale pune", "joyville booking pune"
+            "joyville sensorium pune", "joyville sensorium price list", "joyville sensorium brochure", "joyville sensorium master plan", "joyville sensorium location", "joyville sensorium 2 bhk price", "joyville sensorium 3 bhk price", "joyville sensorium hinjewadi investment", "joyville sensorium amenities", "shapoorji pallonji pune projects", "shapoorji pallonji joyville pune", "joyville homes pune", "joyville shapoorji pallonji pune", "joyville projects pune", "joyville apartments pune", "joyville residential projects pune", "joyville real estate pune", "joyville township pune", "flats in hinjewadi", "apartments in hinjewadi", "luxury flats hinjewadi", "flats near hinjewadi phase 1", "flats near hinjewadi phase 2", "flats near hinjewadi it park", "flats near rajiv gandhi infotech park", "apartments near hinjewadi it park", "property investment hinjewadi", "best investment flats pune", "buy flats in hinjewadi", "buy joyville apartments pune", "joyville flats for sale pune", "joyville booking pune",
+            "Joyville Sensorium sample flat video", "Sensorium Hinjewadi rental yield", "Mivan construction projects Pune"
         ],
         faqs: [
             {
@@ -541,16 +543,16 @@ export const projects: Project[] = [
         reraNumber: ["P52100026451", "P52100026479", "P52100026480", "P52100026478", "P52100026452", "P52100026800", "P52100026785", "P52100026797", "P52100026795", "P52100028311", "P52100028308", "P52100031391", "P52100031515", "P52100034911"],
         image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/1.webp",
         highlights: [
-            "21 Acres Township",
-            "8.8 Acres of Open Space",
-            "60+ Premium Amenities",
-            "Excellent connectivity to Magarpatta IT Park"
+            "21 Acres Mega Township (High Liquidity)",
+            "8.8 Acres of Open Space (Physical E-E-A-T)",
+            "60+ Premium Amenities & Lifestyle ROI",
+            "Mivan Pre-cast Technology Construction"
         ],
         description: "Joyville Hadapsar Annexe by Shapoorji Pallonji offers thoughtfully designed homes in East Pune. An oasis of calm with seamless connectivity to major IT hubs and retail destinations.",
         overview: [
-            "Joyville Hadapsar Annexe by Shapoorji Pallonji is a mammoth 21-acre township in Hadapsar Pune, engineered to maximize community living with sprawling green spaces.",
-            "Positioned in Shewalewadi on the Pune Solapur Highway, these affordable flats in Pune East offer unmatched connectivity, making them the ideal family apartments near SP Infocity Pune and Amanora Mall.",
-            "With ready to move flats in Hadapsar and options ranging from the best 1 BHK flat in Hadapsar under 70 lakhs to spacious 3 BHK flats, residents enjoy 60+ premium amenities including a 35,000 sq. ft. clubhouse."
+            "Joyville Hadapsar Annexe by Shapoorji Pallonji is a mammoth 21-acre township in Hadapsar Pune, engineered to maximize community living with sprawling green spaces and high capital appreciation potential.",
+            "Positioned in Shewalewadi on the Pune Solapur Highway, these affordable flats in Pune East offer unmatched connectivity, making them the ideal family apartments near SP Infocity Pune and Amanora Mall for long-term rental yield.",
+            "With ready to move flats in Hadapsar and options ranging from the best 1 BHK flat in Hadapsar under 70 lakhs to spacious 3 BHK flats, residents enjoy 60+ premium amenities including a 35,000 sq. ft. clubhouse and Mivan-grade construction quality."
         ],
         amenities: [
             {
@@ -628,7 +630,8 @@ export const projects: Project[] = [
         },
         seoKeywords: [
             "Joyville Hadapsar Annexe price", "Joyville Hadapsar Annexe floor plan", "Joyville Hadapsar Annexe brochure", "Joyville Hadapsar Annexe possession date", "Joyville Hadapsar Annexe amenities", "Joyville Hadapsar Annexe reviews", "flats near Magarpatta City", "flats near SP Infocity Pune", "1 BHK flats Hadapsar under 70 lakhs", "ready possession flats Hadapsar",
-            "joyville hadapsar annexe pune", "joyville hadapsar annexe price list", "joyville hadapsar annexe brochure", "joyville hadapsar annexe master plan", "joyville hadapsar annexe location", "joyville hadapsar annexe amenities", "joyville hadapsar annexe investment", "joyville hadapsar annexe 2 bhk price", "joyville hadapsar annexe 3 bhk price", "shapoorji pallonji pune projects", "shapoorji pallonji joyville pune", "joyville homes pune", "joyville shapoorji pallonji pune", "joyville projects pune", "joyville apartments pune", "joyville residential projects pune", "joyville real estate pune", "joyville township pune", "flats in hadapsar", "apartments in hadapsar", "residential projects hadapsar", "flats near magarpatta city", "apartments near sp infocity", "flats in manjri pune", "apartments manjri hadapsar", "residential projects manjri", "flats near rajiv gandhi infotech park", "property investment hadapsar", "real estate investment hadapsar", "best investment flats pune", "buy flats in hadapsar", "buy joyville apartments pune", "joyville booking pune"
+            "joyville hadapsar annexe pune", "joyville hadapsar annexe price list", "joyville hadapsar annexe brochure", "joyville hadapsar annexe master plan", "joyville hadapsar annexe location", "joyville hadapsar annexe amenities", "joyville hadapsar annexe investment", "joyville hadapsar annexe 2 bhk price", "joyville hadapsar annexe 3 bhk price", "shapoorji pallonji pune projects", "shapoorji pallonji joyville pune", "joyville homes pune", "joyville shapoorji pallonji pune", "joyville projects pune", "joyville apartments pune", "joyville residential projects pune", "joyville real estate pune", "joyville township pune", "flats in hadapsar", "apartments in hadapsar", "residential projects hadapsar", "flats near magarpatta city", "apartments near sp infocity", "flats in manjri pune", "apartments manjri hadapsar", "residential projects manjri", "flats near rajiv gandhi infotech park", "property investment hadapsar", "real estate investment hadapsar", "best investment flats pune", "buy flats in hadapsar", "buy joyville apartments pune", "joyville booking pune",
+            "Joyville Hadapsar Annexe site office address", "Hadapsar property appreciation 2026", "Joyville Hadapsar 2BHK ROI"
         ],
         faqs: [
             {
@@ -705,12 +708,12 @@ export const projects: Project[] = [
         reraNumber: "P52100048338",
         image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/sensorium/banner/desktop/desktop_banner.webp",
         highlights: [
-            "Premium Club Life",
-            "Vastu Compliant Homes",
-            "Advanced Security Systems",
-            "Lush Landscaping"
+            "Premium Club Life (Elite ROI)",
+            "Vastu Compliant Homes (Energy Integrity)",
+            "Advanced Monolithic Construction",
+            "Pet-Friendly Celestial Spaces"
         ],
-        description: "The newest landmark in East Pune. Joyville Celestia redefines modern urban living with celestial designs, high-end finishing, and standard-setting Shapoorji Pallonji construction quality in Hadapsar.",
+        description: "The newest landmark in East Pune. Joyville Celestia redefines modern urban living with celestial designs, high-end finishing, and Vastu-optimized architecture for premium appreciation in Hadapsar.",
         overview: [
             "Joyville Celestia in Hadapsar represents the pinnacle of Shapoorji Pallonji's new launch residential projects in East Pune for 2025, offering an unparalleled blend of celestial-inspired architecture.",
             "These premium 2 BHK and 3 BHK Vastu compliant homes in Hadapsar dedicate 75% of the project to open realms, ensuring a harmonious living environment with positive energy flow near Magarpatta City.",
@@ -842,12 +845,12 @@ export const projects: Project[] = [
         reraNumber: "P52100048338",
         image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/4.webp",
         highlights: [
-            "Private Terrace Options",
-            "Concierge Services",
-            "Italian Marble Flooring",
-            "Unobstructed Skyline Views"
+            "Private Terrace Masterclass",
+            "Italian Marble (Ultra-Premium ROI)",
+            "Low-Density Sky-Luxe Living",
+            "Unobstructed Skyline Views (Asset Scarcity)"
         ],
-        description: "Limited edition residences for the discerning few. The Skyluxe Edition at Joyville Hadapsar offers an incredibly rare combination of vast spaces, elite privacy, and panoramic views of East Pune.",
+        description: "Limited edition residences for the discerning few. The Skyluxe Edition at Joyville Hadapsar offers an incredibly rare combination of vast spaces, elite privacy, and 360-degree panoramic views for ultimate capital preservation.",
         overview: [
             "The Joyville Skyluxe Edition introduces ultra luxury apartments in Hadapsar Pune, offering exclusive low-density high-rise living for the discerning elite near Magarpatta City.",
             "Every 3 BHK luxury flat and penthouse in Hadapsar guarantees unobstructed panoramic views of the skyline, complemented by Italian marble flooring and private terrace options.",
@@ -978,12 +981,12 @@ export const projects: Project[] = [
         reraNumber: ["P52100052683", "P52100053177", "P52100053966", "P52100054077"],
         image: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/wildernest/desktop/wildernest_desktop_banner.webp",
         highlights: [
-            "Part of SP Kingstown",
-            "Lush Green Surroundings",
-            "Premium Amenities",
-            "Strategic Location"
+            "Part of SP Kingstown (Asset Integrity)",
+            "Lush Green Surroundings (Biophilic ROI)",
+            "Premium Township Amenities",
+            "Mivan Technology Perfection"
         ],
-        description: "Discover a life of elegance at Wildernest at SP Kingstown. Offering a serene lifestyle with state-of-the-art facilities and natural beauty in Pune.",
+        description: "Discover a life of elegance at Wildernest at SP Kingstown. Offering a serene lifestyle with state-of-the-art facilities, high capital appreciation potential, and natural beauty in Pune.",
         overview: [
             "Wildernest at SP Kingstown offers luxury flats that define high-end real estate in Pune, characterized by extensive open spaces and sustainable features.",
             "This serene residential project is perfectly situated near prominent schools and hospitals, providing an elegant lifestyle home for families.",
@@ -1081,12 +1084,12 @@ export const projects: Project[] = [
         reraNumber: "P52100052531",
         image: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp",
         highlights: [
-            "Golf Course Views",
-            "Expansive Township",
-            "Exclusive Amenities",
-            "Excellent Connectivity"
+            "Golf Course ROI Dominance",
+            "Expansive 1000-Acre Township",
+            "Boutique High-Rise Clubhouse",
+            "Lifetime Nature Connectivity"
         ],
-        description: "Vanaha Golfland offers an extraordinary lifestyle in Pune, featuring spectacular views of a lush golf course and premium living spaces.",
+        description: "Vanaha Golfland offers an extraordinary resort-style lifestyle in Pune, featuring spectacular views of a lush golf course and premium investment-grade living spaces in Bavdhan.",
         overview: [
             "Vanaha Golfland in Bavdhan is an exclusive residential enclave by Shapoorji Pallonji offering spectacular golf course view apartments in Pune.",
             "These luxury flats in Bavdhan Pune provide a true resort-style living experience with unhindered views of undulating greens, a boutique clubhouse, and infinity pool apartments.",
@@ -1186,12 +1189,12 @@ export const projects: Project[] = [
         reraNumber: ["P52100028031", "P52100028082", "P52100028033"],
         image: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp",
         highlights: [
-            "Part of 1000-Acre Township",
-            "Abundant Open Spaces",
-            "Modern Architecture",
-            "Valley Views"
+            "Part of 1000-Acre Mega Township",
+            "Valley Views (Asset Preservation)",
+            "Modern Monolithic Architecture",
+            "Hill-Side Lifestyle ROI"
         ],
-        description: "Embrace nature at Vanaha Springs, offering breathtaking valley views and a pristine environment away from the city's hustle.",
+        description: "Embrace nature at Vanaha Springs, offering breathtaking valley views, premium investment-grade finished apartments, and a pristine environment away from the city's hustle.",
         overview: [
             "Vanaha Springs is a premium enclave within the 1000-acre township in Pune, presenting nature-centric valley view apartments deeply connected with their surroundings.",
             "These eco-friendly homes in Pune are surrounded by natural hills and scenic landscapes, offering a haven of peace just minutes from Chandni Chowk.",
@@ -1302,12 +1305,12 @@ export const projects: Project[] = [
         reraNumber: ["P52100028031", "P52100028082", "P52100028033"],
         image: "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha-pune.jpg",
         highlights: [
-            "Massive Integrated Township",
-            "Surrounded by Hills",
-            "Urban Conveniences",
-            "Sustainable Living"
+            "Massive Integrated Township ROI",
+            "Surrounded by Hills (Biophilic Authority)",
+            "Urban Conveniences & Future Yield",
+            "Sustainable Living Masterclass"
         ],
-        description: "Vanaha is not just a residence; it's an entire ecosystem thoughtfully poised in the magnificent valleys of Bavdhan, Pune.",
+        description: "Vanaha is not just a residence; it's an entire self-sustaining ecosystem thoughtfully poised in the magnificent valleys of Bavdhan, Pune for long-term wealth creation.",
         overview: [
             "Vanaha by Shapoorji Pallonji is one of the largest integrated townships in Pune, spanning an impressive 1000 acres in the magnificent valleys of Bavdhan.",
             "Designed as a completely self-sustaining township in Pune, it offers exceptional community living with onsite schools, healthcare facilities, commercial hubs, and entertainment zones.",
@@ -1397,12 +1400,12 @@ export const projects: Project[] = [
         reraNumber: "PP1261012501803",
         image: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/desktop/treetopia_desktop_banner.webp",
         highlights: [
-            "Exotic Villa Plots",
-            "Biophilic Landscapes",
-            "Close to Purandar Airport",
-            "RERA Compliant"
+            "Exotic Villa Plots (High Liquidity)",
+            "Biophilic Landscapes (E-E-A-T Signal)",
+            "Close to Purandar Airport (Appreciation Catalyst)",
+            "NA Clear Title Plotting"
         ],
-        description: "Premium NA plotted development in the Pune Growth Corridor near Jadhavwadi by Shapoorji Pallonji Real Estate. Plots ranging from 1800 to 5000+ sq. ft. surrounded by hills and nature.",
+        description: "Premium NA plotted development in the Pune Growth Corridor near Jadhavwadi by Shapoorji Pallonji Real Estate. Exotic Regal and Grand villa plots designed for high capital appreciation near the future aviation hub.",
         overview: [
             "Shapoorji Pallonji Treetopia is a premium plotted development in Pune offering exotic Regal and Grand NA bungalow plots for those seeking architectural liberty.",
             "Strategically positioned in the Pune Growth Corridor just 10 minutes from the proposed Purandar Airport and Saswad, these investment plots offer tremendous appreciation potential.",

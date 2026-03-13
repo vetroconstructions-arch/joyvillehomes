@@ -104,10 +104,7 @@ export default function RootLayout({
                 {
                   source: "list",
                   urls: ["/projects", "/locality/compare", "/press-research"],
-                  score: 0.5
-                }
-              ],
-              prefetch: [
+                },
                 {
                   source: "document",
                   where: {
@@ -117,6 +114,18 @@ export default function RootLayout({
                     ]
                   },
                   eagerness: "moderate"
+                }
+              ],
+              prefetch: [
+                {
+                  source: "document",
+                  where: {
+                    and: [
+                      { href_matches: "/insights/*" },
+                      { href_matches: "/location/*" }
+                    ]
+                  },
+                  eagerness: "conservative"
                 }
               ]
             })
