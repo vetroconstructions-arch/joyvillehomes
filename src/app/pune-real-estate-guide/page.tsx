@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         "Ready to move flats Pune advantages"
     ],
     alternates: {
-        canonical: "https://www.joyville-homes.com/pune-real-estate-guide"
+        canonical: "https://joyville-homes.com/pune-real-estate-guide"
     }
 };
 

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         "Aluform vs traditional construction Pune"
     ],
     alternates: {
-        canonical: "https://www.joyville-homes.com/insights/joyville-vs-competitors"
+        canonical: "https://joyville-homes.com/insights/joyville-vs-competitors"
     }
 };
 
@@ -72,24 +72,24 @@ export default function ComparisonMatrix() {
         "@graph": [
             {
                 "@type": "WebPage",
-                "@id": "https://www.joyville-homes.com/insights/joyville-vs-competitors/#webpage",
-                "url": "https://www.joyville-homes.com/insights/joyville-vs-competitors",
+                "@id": "https://joyville-homes.com/insights/joyville-vs-competitors/#webpage",
+                "url": "https://joyville-homes.com/insights/joyville-vs-competitors",
                 "name": "Joyville vs Competitors | Real Estate Comparison Pune 2025",
                 "description": "Expert side-by-side comparison of construction quality, brand legacy, and ROI between Joyville and other Pune developers.",
-                "publisher": { "@id": "https://www.joyville-homes.com/#organization" },
-                "author": { "@id": "https://www.joyville-homes.com/#research-desk" }
+                "publisher": { "@id": "https://joyville-homes.com/#organization" },
+                "author": { "@id": "https://joyville-homes.com/#research-desk" }
             },
             {
                 "@type": "Table",
                 "name": "Shapoorji Pallonji Joyville vs. Pune Real Estate Industry Comparison Matrix 2026",
                 "about": "Technical and financial comparison of residential project quality parameters in Pune micro-markets",
-                "mainEntityOfPage": { "@id": "https://www.joyville-homes.com/insights/joyville-vs-competitors/#webpage" }
+                "mainEntityOfPage": { "@id": "https://joyville-homes.com/insights/joyville-vs-competitors/#webpage" }
             },
             {
                 "@type": "Dataset",
                 "name": "Pune Real Estate Competitive Analysis Data 2026",
                 "description": "Comparative data on construction technology, green space ratios, and ROI benchmarks for top developers in Hinjewadi, Hadapsar, and Bavdhan.",
-                "publisher": { "@id": "https://www.joyville-homes.com/#organization" },
+                "publisher": { "@id": "https://joyville-homes.com/#organization" },
                 "license": "https://creativecommons.org/licenses/by/4.0/",
                 "variableMeasured": ["Construction Technology", "Green Space Ratio", "Capital Appreciation", "Rental Yield"]
             }

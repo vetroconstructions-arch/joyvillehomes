@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { localities } from '@/data/localities';
-import Navbar from '@/components/Navigation';
 import Link from 'next/link';
 import { BarChart3, TrendingUp, ShieldCheck, MapPin, ArrowRight, Zap } from 'lucide-react';
 
@@ -10,7 +9,7 @@ export const metadata: Metadata = {
     keywords: ["Pune locality comparison", "Hinjewadi vs Hadapsar investment", "Bavdhan vs Hinjewadi real estate", "Pune property appreciation trends 2026"]
 };
 
-const siteUrl = 'https://www.joyville-homes.com';
+const siteUrl = 'https://joyville-homes.com';
 
 export default function LocalityComparePage() {
     const mainLocalities = localities.filter(l => l.comparativeMetrics);
@@ -37,6 +36,29 @@ export default function LocalityComparePage() {
         }))
     };
 
+    const faqJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Which locality in Pune has the best ROI for 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Based on current infrastructure velocity, Hinjewadi and Bavdhan show the highest capital appreciation potential due to Metro Line 3 connectivity, while Hadapsar offers superior rental liquidity."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is it better to invest in Hinjewadi or Hadapsar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Hinjewadi is ideal for long-term capital gains and proximity to IT hubs. Hadapsar is better for immediate rental income given its proximity to established commercial centers like SP Infocity."
+                }
+            }
+        ]
+    };
+
     const compareActionJsonLd = {
         "@context": "https://schema.org",
         "@type": "ItemPage",
@@ -59,9 +81,9 @@ export default function LocalityComparePage() {
 
     return (
         <main className="min-h-screen bg-[#EEF2F6] pt-32 pb-24 text-[#323334]">
-            <Navbar />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(comparisonDatasetJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(compareActionJsonLd) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
             
             <div className="max-w-7xl mx-auto px-6">
                 <header className="mb-16">

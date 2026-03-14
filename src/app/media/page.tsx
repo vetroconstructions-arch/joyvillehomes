@@ -2,21 +2,19 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Download, TrendingUp, Newspaper, ArrowRight } from 'lucide-react';
-import Navbar from '@/components/Navigation';
 
 export const metadata: Metadata = {
     title: 'Media & Digital PR | Real Estate Insights Pune | Joyville',
     description: 'Download the official Pune Real Estate Market Outlook Report 2025 by Shapoorji Pallonji. Access premium data, investor kits, and official press releases.',
     keywords: ['Pune Real Estate Report', 'Hinjewadi Property Trends', 'Joyville Press Kit', 'Shapoorji Pallonji Media', 'Pune Investor Report 2025'],
     alternates: {
-        canonical: 'https://www.joyville-homes.com/media'
+        canonical: 'https://joyville-homes.com/media'
     }
 };
 
 export default function MediaPRPage() {
     return (
         <main className="min-h-screen bg-[#EEF2F6] pt-32 pb-24 text-[#323334]">
-            <Navbar />
 
             <header className="max-w-7xl mx-auto px-6 mb-20 text-center">
                 <span className="text-[10px] tracking-[0.3em] uppercase text-[#1D4F9C] font-semibold block mb-4">Shapoorji Pallonji Media Center</span>

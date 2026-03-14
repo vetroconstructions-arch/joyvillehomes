@@ -17,7 +17,7 @@ const MarketPulseTicker: React.FC<MarketPulseTickerProps> = ({ localityName, avg
         "@type": "Dataset",
         "name": `${localityName} Real Estate Market Price Index`,
         "description": `Real-time price trends and investment data for ${localityName}, Pune.`,
-        "url": `https://www.joyville-homes.com/locality/${localityName.toLowerCase()}`,
+        "url": `https://joyville-homes.com/locality/${localityName.toLowerCase()}`,
         "creator": {
             "@type": "Organization",
             "name": "Shapoorji Pallonji Real Estate Research Desk"

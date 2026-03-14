@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import Navbar from '@/components/Navigation';
 import ResearchHub from '@/components/ResearchHub';
 import { ShieldCheck, Globe, Users, Trophy } from 'lucide-react';
 
@@ -12,7 +11,6 @@ export const metadata: Metadata = {
 export default function PressResearchPage() {
     return (
         <main className="min-h-screen bg-[#EEF2F6] pt-32 pb-24 text-[#323334]">
-            <Navbar />
             
             <div className="max-w-7xl mx-auto px-6">
                 <header className="mb-20">

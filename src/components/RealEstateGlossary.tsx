@@ -4,22 +4,22 @@ const glossaryTerms = [
     {
         term: "Carpet Area",
         definition: "The net usable floor area of an apartment, excluding the area covered by the external walls, areas under services shafts, exclusive balcony or verandah area and exclusive open terrace area.",
-        url: "https://www.joyville-homes.com/pune-real-estate-guide#carpet-area"
+        url: "https://joyville-homes.com/pune-real-estate-guide#carpet-area"
     },
     {
         term: "RERA Registered",
         definition: "A project that has been registered with the Real Estate Regulatory Authority, ensuring transparency, financial discipline, and timely delivery.",
-        url: "https://www.joyville-homes.com/pune-real-estate-guide#rera-registered"
+        url: "https://joyville-homes.com/pune-real-estate-guide#rera-registered"
     },
     {
         term: "Loading Factor",
         definition: "The difference between the super built-up area and the carpet area of a flat, representing the space used for common amenities like elevators, stairs, and lobbies.",
-        url: "https://www.joyville-homes.com/pune-real-estate-guide#loading-factor"
+        url: "https://joyville-homes.com/pune-real-estate-guide#loading-factor"
     },
     {
         term: "BHK",
         definition: "An acronym for Bedroom, Hall, and Kitchen, used to define the configuration of a residential apartment.",
-        url: "https://www.joyville-homes.com/pune-real-estate-guide#bhk"
+        url: "https://joyville-homes.com/pune-real-estate-guide#bhk"
     }
 ];
 
@@ -27,7 +27,7 @@ const RealEstateGlossary: React.FC = () => {
     const glossaryJsonLd = {
         "@context": "https://schema.org",
         "@type": "DefinedTermSet",
-        "@id": "https://www.joyville-homes.com/#real-estate-glossary",
+        "@id": "https://joyville-homes.com/#real-estate-glossary",
         "name": "Shapoorji Pallonji Real Estate Glossary",
         "description": "Essential real estate terms for homebuyers in Pune, including Carpet Area, RERA, and more.",
         "hasDefinedTerm": glossaryTerms.map(term => ({

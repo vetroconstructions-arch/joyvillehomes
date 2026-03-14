@@ -1,9 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Navbar from '@/components/Navigation';
 import { MapPin, Home, TrendingUp, CheckCircle2, ArrowRight, Building2, Shield } from 'lucide-react';
 
-const siteUrl = 'https://www.joyville-homes.com';
+const siteUrl = 'https://joyville-homes.com';
 
 export const metadata: Metadata = {
     title: 'Flats in Pune 2026 — 32+ Options by Shapoorji Pallonji | Joyville Homes',
@@ -119,7 +118,6 @@ export default function FlatsInPunePage() {
         <div className="min-h-screen bg-[#EEF2F6] pt-32 pb-24 text-[#323334]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
-            <Navbar />
 
             {/* Hero */}
             <header className="max-w-6xl mx-auto px-6 mb-16">

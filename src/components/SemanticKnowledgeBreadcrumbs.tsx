@@ -25,8 +25,8 @@ const SemanticKnowledgeBreadcrumbs: React.FC<SemanticKnowledgeBreadcrumbsProps> 
             "name": item.name,
             "item": {
                 "@type": item.type === 'Home' ? 'WebPage' : item.type,
-                "@id": `https://www.joyville-homes.com${item.url}`,
-                "url": `https://www.joyville-homes.com${item.url}`,
+                "@id": `https://joyville-homes.com${item.url}`,
+                "url": `https://joyville-homes.com${item.url}`,
                 "name": item.name
             }
         }))

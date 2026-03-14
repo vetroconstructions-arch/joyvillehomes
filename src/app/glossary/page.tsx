@@ -1,14 +1,12 @@
 import { Metadata } from 'next';
 import { glossaryTerms } from '@/data/glossary';
-import Navigation from '@/components/Navigation';
-import SEOFooter from '@/components/SEOFooter';
 
 export const metadata: Metadata = {
     title: "Real Estate Glossary — Official Terminology & Meaning | Joyville Pune",
     description: "Understand critical real estate terms like RERA, Carpet Area, and Rental Yield. Our expert-desk glossary provides technical definitions for Pune homebuyers.",
     keywords: ["real estate glossary Pune", "RERA meaning", "carpet area definition", "real estate terms India", "homebuying terminology", "property glossary 2026"],
     alternates: {
-        canonical: "https://www.joyville-homes.com/glossary"
+        canonical: "https://joyville-homes.com/glossary"
     }
 };
 
@@ -16,14 +14,14 @@ export default function GlossaryPage() {
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "DefinedTermSet",
-        "@id": "https://www.joyville-homes.com/glossary",
+        "@id": "https://joyville-homes.com/glossary",
         "name": "Joyville Real Estate Glossary",
         "description": "A comprehensive guide to real estate terminology for Pune investors and homebuyers.",
         "hasDefinedTerm": glossaryTerms.map(term => ({
             "@type": "DefinedTerm",
             "name": term.term,
             "description": term.definition,
-            "url": `https://www.joyville-homes.com/glossary#${term.slug}`
+            "url": `https://joyville-homes.com/glossary#${term.slug}`
         }))
     };
 
@@ -33,7 +31,6 @@ export default function GlossaryPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <Navigation />
 
             <div className="pt-32 pb-20 px-4 md:px-8 max-w-7xl mx-auto">
                 <div className="text-center mb-16">
@@ -75,7 +72,6 @@ export default function GlossaryPage() {
                 </div>
             </div>
 
-            <SEOFooter />
         </main>
     );
 }

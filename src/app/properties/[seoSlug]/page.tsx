@@ -7,7 +7,7 @@ import { MapPin, ArrowRight } from 'lucide-react';
 import TechnicalSheet from '@/components/TechnicalSheet';
 
 // Define the supported SEO Slugs based on our strategy matrix
-const siteUrl = 'https://www.joyville-homes.com';
+const siteUrl = 'https://joyville-homes.com';
 
 export const SEO_ROUTES = [
     // Existing high-volume locational pages

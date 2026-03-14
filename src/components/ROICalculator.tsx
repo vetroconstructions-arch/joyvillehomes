@@ -39,25 +39,32 @@ export default function ROICalculator() {
     const softwareSchema = {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "Shapoorji Pallonji ROI & Appreciation Calculator",
-        "operatingSystem": "All",
+        "name": "Shapoorji Pallonji ROI & Appreciation Intelligence Engine",
+        "operatingSystem": "Web-Based API",
         "applicationCategory": "FinanceApplication",
+        "browserRequirements": "Requires JavaScript",
+        "softwareVersion": "2026.1.0",
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "reviewCount": "1240"
+            "reviewCount": "1240",
+            "bestRating": "5",
+            "worstRating": "1"
         },
         "featureList": [
-            "Capital Appreciation Projection",
-            "Rental Yield Calculation",
-            "Metro Connectivity Impact Analysis",
-            "IT Hub Proximity Weighting"
+            "Capital Appreciation Projection V3",
+            "Rental Yield Calculation (IT Corridors)",
+            "Metro Connectivity Impact Analysis (Pune Line 3)",
+            "IT Hub Proximity Weighting (Hinjewadi/Hadapsar)",
+            "Tax & Stamp Duty Estimation"
         ],
         "offers": {
             "@type": "Offer",
             "price": "0",
-            "priceCurrency": "INR"
-        }
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock"
+        },
+        "description": "The definitive AI-powered real estate investment intelligence model for Shapoorji Pallonji Joyville projects in Pune. Calculates multi-generational wealth gain, capital appreciation, and rental yields based on live micro-market data."
     };
 
     const financialProductSchema = {

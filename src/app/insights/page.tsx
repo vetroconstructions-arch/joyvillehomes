@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Calendar, User, Clock } from 'lucide-react';
 import { blogs } from '@/data/blogs';
-import Navbar from '@/components/Navigation';
 import MicroMarketBulletin from '@/components/MicroMarketBulletin';
 
 export const metadata: Metadata = {
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
         'property rates Hinjewadi 2025', 'Joyville vs Kolte Patil', 'micro market analysis Pune'
     ],
     alternates: {
-        canonical: 'https://www.joyville-homes.com/insights'
+        canonical: 'https://joyville-homes.com/insights'
     }
 };
 
@@ -26,26 +25,26 @@ export default function InsightsPage() {
         "@graph": [
             {
                 "@type": ["Blog", "CollectionPage"],
-                "@id": "https://www.joyville-homes.com/insights/#blog",
+                "@id": "https://joyville-homes.com/insights/#blog",
                 "name": "Joyville Pune Market Insights",
                 "description": metadata.description,
-                "url": "https://www.joyville-homes.com/insights",
+                "url": "https://joyville-homes.com/insights",
                 "publisher": {
-                    "@id": "https://www.joyville-homes.com/#organization"
+                    "@id": "https://joyville-homes.com/#organization"
                 },
                 "blogPost": blogs.map(blog => ({
                     "@type": "BlogPosting",
                     "headline": blog.title,
-                    "url": `https://www.joyville-homes.com/insights/${blog.slug}`,
+                    "url": `https://joyville-homes.com/insights/${blog.slug}`,
                     "datePublished": new Date(blog.date).toISOString()
                 }))
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://www.joyville-homes.com/insights/#breadcrumb",
+                "@id": "https://joyville-homes.com/insights/#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.joyville-homes.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.joyville-homes.com/insights" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://joyville-homes.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://joyville-homes.com/insights" }
                 ]
             }
         ]
@@ -54,7 +53,6 @@ export default function InsightsPage() {
     return (
         <main className="min-h-screen bg-[#EEF2F6] pt-32 pb-24 text-[#323334]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <Navbar />
 
             <header className="max-w-7xl mx-auto px-6 mb-20 text-center">
                 <span className="text-[10px] tracking-[0.3em] uppercase text-[#1D4F9C] font-semibold block mb-4">Shapoorji Pallonji Knowledge Hub</span>

@@ -38,7 +38,7 @@ export default function DiscussedEntities({ projectSlugs = [], localitySlugs = [
                                             "@context": "https://schema.org",
                                             "@type": "DigitalDocument",
                                             "name": `${project.title} E-Brochure`,
-                                            "url": `https://www.joyville-homes.com/projects/${project.slug}/#brochure`,
+                                            "url": `https://joyville-homes.com/projects/${project.slug}/#brochure`,
                                             "fileFormat": "application/pdf",
                                             "hasDigitalDocumentPermission": {
                                                 "@type": "DigitalDocumentPermission",

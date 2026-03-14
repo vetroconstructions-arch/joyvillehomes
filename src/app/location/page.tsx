@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         "Properties near Pune Airport / Metro / Highways"
     ],
     alternates: {
-        canonical: "https://www.joyville-homes.com/location"
+        canonical: "https://joyville-homes.com/location"
     }
 };
 
@@ -27,20 +27,20 @@ export default function LocationPage() {
         "@graph": [
             {
                 "@type": "CollectionPage",
-                "@id": "https://www.joyville-homes.com/location/#collection",
+                "@id": "https://joyville-homes.com/location/#collection",
                 "name": "Joyville Homes Pune Locations & Connectivity Guide",
                 "description": "Explore prime residential locations in Pune by Shapoorji Pallonji. Detailed connectivity guides for Hinjewadi, Hadapsar, and Bavdhan micro-markets.",
-                "url": "https://www.joyville-homes.com/location",
+                "url": "https://joyville-homes.com/location",
                 "publisher": {
-                    "@id": "https://www.joyville-homes.com/#organization"
+                    "@id": "https://joyville-homes.com/#organization"
                 }
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://www.joyville-homes.com/location/#breadcrumb",
+                "@id": "https://joyville-homes.com/location/#breadcrumb",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.joyville-homes.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://www.joyville-homes.com/location" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://joyville-homes.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://joyville-homes.com/location" }
                 ]
             }
         ]

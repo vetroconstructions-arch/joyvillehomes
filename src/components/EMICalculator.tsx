@@ -26,8 +26,23 @@ export default function EMICalculator({ basePrice = 8500000 }: { basePrice?: num
         }).format(value);
     };
 
+    const emiSchema = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Shapoorji Pallonji Smart EMI Intelligence Tool",
+        "operatingSystem": "Web-Based",
+        "applicationCategory": "FinanceApplication",
+        "description": "Advanced mortgage and EMI estimation model for Shapoorji Pallonji Joyville projects in Pune. Features real-time principal and interest breakdown.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+        }
+    };
+
     return (
         <div className="bg-[#FFFFFF] border border-[#C5A059]/40 shadow-xl p-8 rounded-sm">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(emiSchema) }} />
             <div className="flex items-center gap-4 mb-8 border-b border-[#C5A059]/20 pb-4">
                 <IndianRupee className="text-[#1D4F9C]" size={28} strokeWidth={1.5} />
                 <div>

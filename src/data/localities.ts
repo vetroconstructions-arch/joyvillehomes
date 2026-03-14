@@ -258,9 +258,10 @@ export const localities: LocalityData[] = [
             "Purandar growth corridor 2026", "biophilic landscapes plots Pune",
             "investment plots Purandar Pune", "Purandar vs Pune suburbs investment",
             "capital appreciation Purandar", "Pune airport corridor real estate",
-            "NA land Saswad Purandar", "farmland plots near Pune"
+            "NA land Saswad Purandar", "farmland plots near Pune",
+            "NA plots in South Pune", "NA plots in East Pune", "Saswad property rates 2026", "Purandar Airport current status 2026", "land price in Purandar Saswad", "best NA plots for investment in Pune", "Pune Ring Road Phase 2 plots", "Phursungi to Purandar connectivity", "Loni Kalbhor plots vs Purandar plots", "agricultural to NA conversion Pune", "7/12 extract NA plots Saswad", "collector NA plots Purandar", "Shapoorji Pallonji Saswad land"
         ],
-        description: "Purandar represents Pune's most exciting growth corridor. With the proposed Purandar International Airport and new expressway connectivity, land values are poised for exponential growth. Shapoorji Pallonji's Treetopia is the flagship plotted development here, offering NA bungalow plots starting ₹84 Lakhs with biophilic landscapes and gated community amenities. Early investors stand to gain 5-10x returns upon airport completion.",
+        description: "Purandar represents East and South Pune's most exciting growth corridor. With the proposed Purandar International Airport and new expressway connectivity, land values are poised for exponential growth. Shapoorji Pallonji's Treetopia is the flagship plotted development here, offering NA bungalow plots starting ₹84 Lakhs with biophilic landscapes and gated community amenities. This region is the epicenter of the NA plot investment masterclass in Pune, offering early-entry advantages similar to pre-boom Navi Mumbai.",
         infrastructure: [
             { label: "Airport", value: "Proposed Purandar International Airport (20 mins)" },
             { label: "Connectivity", value: "Pune Ring Road & Saswad Highway" },

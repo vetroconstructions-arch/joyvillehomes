@@ -4,10 +4,10 @@ import { blogs, getBlogBySlug } from '@/data/blogs';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, Calendar, User, Facebook, Twitter, Linkedin, ArrowRight } from 'lucide-react';
-import Navbar from '@/components/Navigation';
 import DiscussedEntities from '@/components/DiscussedEntities';
+import { projects } from '@/data/projects';
 
-const siteUrl = 'https://www.joyville-homes.com';
+const siteUrl = 'https://joyville-homes.com';
 
 // Pre-render all blog routes at build time
 export async function generateStaticParams() {
@@ -64,6 +64,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             "@type": "WebPage",
             "@id": `${siteUrl}/insights/${blog.slug}`
         },
+        "subjectOf": [
+            ...(projects.filter(p => p.topicID && blog.topicID && p.topicID.some(id => blog.topicID!.includes(id))).map(p => ({
+                "@type": "RealEstateProject",
+                "url": `${siteUrl}/projects/${p.slug}`,
+                "name": p.title
+            })))
+        ],
         "headline": blog.title,
         "image": [blog.image],
         "datePublished": new Date(blog.date).toISOString(),
@@ -85,10 +92,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             "description": blog.expertAuthor.bio,
             "url": `${siteUrl}/insights/author/${blog.expertAuthor.name.toLowerCase().replace(/\s+/g, '-')}`
         } : {
-            "@id": "https://www.joyville-homes.com/#research-desk"
+            "@id": "https://joyville-homes.com/#research-desk"
         },
         "publisher": {
-            "@id": "https://www.joyville-homes.com/#organization"
+            "@id": "https://joyville-homes.com/#organization"
         },
         ...(blog.citedReferences?.length ? {
             "citation": blog.citedReferences.map(ref => ({
@@ -111,12 +118,25 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             }))
         } : {}),
         ...(blog.relatedLocalities?.length ? {
-            "mentions": blog.relatedLocalities.map(slug => ({
-                "@type": "City",
-                "name": slug.charAt(0).toUpperCase() + slug.slice(1),
-                "url": `${siteUrl}/locality/${slug}`
+            "mentions": [
+                ...blog.relatedLocalities.map(slug => ({
+                    "@type": "City",
+                    "name": slug.charAt(0).toUpperCase() + slug.slice(1),
+                    "url": `${siteUrl}/locality/${slug}`
+                })),
+                ...(projects.filter(p => p.topicID && blog.topicID && p.topicID.some(id => blog.topicID!.includes(id))).map(p => ({
+                    "@type": "RealEstateProject",
+                    "name": p.title,
+                    "url": `${siteUrl}/projects/${p.slug}`
+                })))
+            ]
+        } : {
+            "mentions": projects.filter(p => p.topicID && blog.topicID && p.topicID.some(id => blog.topicID!.includes(id))).map(p => ({
+                "@type": "RealEstateProject",
+                "name": p.title,
+                "url": `${siteUrl}/projects/${p.slug}`
             }))
-        } : {})
+        })
     };
 
     const breadcrumbLd = {
@@ -133,7 +153,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <article className="min-h-screen bg-[#EEF2F6] pt-32 pb-24 text-[#323334]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
-            <Navbar />
 
             <div className="max-w-4xl mx-auto px-6 mb-12">
                 <Link href="/insights" className="inline-flex items-center gap-2 text-[#1D4F9C] hover:text-[#323334] font-light text-xs tracking-widest uppercase transition-colors mb-10">

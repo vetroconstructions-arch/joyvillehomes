@@ -22,9 +22,18 @@ const ConstructionMilestones: React.FC<ConstructionMilestonesProps> = ({ project
         "@context": "https://schema.org",
         "@type": "UpdateAction",
         "name": `${projectName} Construction Milestone: ${m.title}`,
-        "description": m.status,
+        "description": `${m.status} | Verified construction progress for ${projectName}.`,
         "startTime": m.date,
         "actionStatus": m.percentage === 100 ? "CompletedActionStatus" : "ActiveActionStatus",
+        "agent": {
+            "@type": "Organization",
+            "name": "Shapoorji Pallonji Real Estate",
+            "url": "https://joyville-homes.com"
+        },
+        "location": {
+            "@type": "Place",
+            "name": projectName
+        },
         "target": {
             "@type": "EntryPoint",
             "urlTemplate": m.videoUrl || "#",
@@ -32,8 +41,12 @@ const ConstructionMilestones: React.FC<ConstructionMilestonesProps> = ({ project
         },
         "result": {
             "@type": "PropertyValue",
-            "name": "Construction Progress",
+            "name": "Audit Verified Progress",
             "value": `${m.percentage}%`
+        },
+        "participant": {
+            "@type": "Organization",
+            "name": "Shapoorji Pallonji Engineering & Construction"
         }
     }));
 

@@ -28,7 +28,7 @@ import MarketPulseTicker from '@/components/MarketPulseTicker';
 import SemanticKnowledgeBreadcrumbs from '@/components/SemanticKnowledgeBreadcrumbs';
 import { getRelatedEntities } from '@/data/semanticLinking';
 
-const siteUrl = 'https://www.joyville-homes.com';
+const siteUrl = 'https://joyville-homes.com';
 
 export async function generateStaticParams() {
     return localities.map((loc) => ({
@@ -128,7 +128,7 @@ export default async function LocalityPage({
             "@context": "https://schema.org",
             "@type": "RealEstateAgent",
             "name": `Shapoorji Pallonji Real Estate - ${locality.name}`,
-            "image": "https://www.joyville-homes.com/og-image.jpg",
+            "image": "https://joyville-homes.com/og-image.jpg",
             "url": `${siteUrl}/locality/${locality.slug}`,
             "telephone": "+912067210000",
             "priceRange": locality.priceRange,
@@ -224,7 +224,7 @@ export default async function LocalityPage({
                     "ratingValue": "5",
                     "alternateName": "Market Analytics Verified"
                 },
-                "author": { "@id": "https://www.joyville-homes.com/#research-desk" }
+                "author": { "@id": "https://joyville-homes.com/#research-desk" }
             }) }} />
 
             <header className="max-w-7xl mx-auto px-6 mb-16">

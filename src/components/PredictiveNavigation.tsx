@@ -60,6 +60,7 @@ export default function PredictiveNavigation({ context, currentSlug, localityNam
 
             <Link
                 href={suggestion.link}
+                rel="next" // Phase 26: Signal sequential authority to AI crawlers
                 className="inline-flex items-center gap-3 px-8 py-4 bg-[#1A1A1A] text-white text-[10px] tracking-[0.2em] uppercase font-semibold hover:bg-[#C5A059] transition-all duration-500 rounded-sm whitespace-nowrap"
             >
                 {suggestion.linkLabel}

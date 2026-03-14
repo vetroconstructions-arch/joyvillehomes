@@ -29,6 +29,7 @@ export interface BlogPost {
     newsKeywords?: string[];
     dateline?: string;
     printEdition?: string;
+    topicID?: string[]; // Added Phase 26
 }
 
 export const blogs: BlogPost[] = [
@@ -85,7 +86,8 @@ export const blogs: BlogPost[] = [
         wikidataUri: "https://www.wikidata.org/wiki/Q5766827", // Hinjewadi
         newsKeywords: ["Pune Metro Line 3", "NRI Real Estate Investment India", "Hinjewadi Rental Yields 2026"],
         dateline: "Pune, India",
-        printEdition: "Shapoorji Pallonji Intelligence Monthly"
+        printEdition: "Shapoorji Pallonji Intelligence Monthly",
+        topicID: ["hinjewadi-it-hub", "pune-rental-market", "nri-investment"]
     },
     {
         id: "insights-002",
@@ -132,7 +134,8 @@ export const blogs: BlogPost[] = [
         citedReferences: [
             { title: "EDGE Green Building Certification Standards", url: "https://www.edgebuildings.com/", publisher: "IFC World Bank" }
         ],
-        wikidataUri: "https://www.wikidata.org/wiki/Q5637770" // Hadapsar
+        wikidataUri: "https://www.wikidata.org/wiki/Q5637770", // Hadapsar
+        topicID: ["hadapsar-east-corridor", "pune-townships", "shewalewadi-growth"]
     },
     {
         id: "insights-003",
@@ -178,7 +181,8 @@ export const blogs: BlogPost[] = [
             { title: "Pune Ring Road Project Report", url: "https://msrdc.in/ProjectDetails.aspx?ProjectID=23", publisher: "MSRDC" }
         ],
         wikidataUri: "https://www.wikidata.org/wiki/Q104840845", // Pune Ring Road
-        newsKeywords: ["Pune Infrastructure Projects 2026", "Pune Ring Road Completion Date", "Pune Metro Line 3 Impact"]
+        newsKeywords: ["Pune Infrastructure Projects 2026", "Pune Ring Road Completion Date", "Pune Metro Line 3 Impact"],
+        topicID: ["pune-infrastructure", "hinjewadi-connectivity", "purandar-airport-vision"]
     },
     {
         id: "insights-004",
@@ -213,7 +217,8 @@ export const blogs: BlogPost[] = [
         readTime: "7 Min Read",
         image: "/images/joyville_hinjawadi_projectcard.webp",
         seoKeywords: ["best residential projects Hinjewadi 2025", "Joyville vs Kolte Patil Life Republic", "Joyville vs Godrej Hinjewadi", "top projects Hinjewadi", "Hinjewadi property comparison", "best flats Hinjewadi Phase 1", "Hinjewadi project comparison 2026", "property rate per sqft Hinjewadi", "Joyville Sensorium vs VTP Bellissimo", "Joyville Sensorium vs Gera Joy", "best developer Hinjewadi 2026", "Hinjewadi Phase 1 buyer guide", "RERA projects Hinjewadi Phase 1", "amenity comparison Hinjewadi", "construction quality comparison Hinjewadi", "ROI comparison Hinjewadi projects", "affordable vs luxury Hinjewadi", "mid segment housing Hinjewadi", "best flats IT professionals 2026", "Shapoorji vs Kolte Patil quality"],
-        wikidataUri: "https://www.wikidata.org/wiki/Q104840845" // Real Estate in India
+        wikidataUri: "https://www.wikidata.org/wiki/Q104840845", // Real Estate in India
+        topicID: ["hinjewadi-it-hub", "pune-investment-guide", "developer-comparison"]
     },
     {
         id: "insights-005",
@@ -248,7 +253,8 @@ export const blogs: BlogPost[] = [
         readTime: "6 Min Read",
         image: "/images/joyville_sensorium_projectcard.webp",
         seoKeywords: ["RERA approved projects Pune", "MahaRERA verification", "RERA registered flats Pune", "safe property investment Pune", "RERA rules homebuyers", "Shapoorji Pallonji RERA compliant", "MahaRERA project search", "RERA carpet area rules", "escrow account real estate India", "RERA structural defect warranty", "how to verify RERA project", "RERA vs non RERA projects", "homebuyer protection India 2026", "RERA benefits buyer guide", "Pune property legal compliance", "RERA red flags builder", "Joyville RERA registration", "safe builders Pune", "trusted developers Pune 2026", "150 year legacy developer India"],
-        wikidataUri: "https://www.wikidata.org/wiki/Q25303429" // Real Estate (Regulation and Development) Act, 2016
+        wikidataUri: "https://www.wikidata.org/wiki/Q25303429", // Real Estate (Regulation and Development) Act, 2016
+        topicID: ["pune-legal-compliance", "rera-verification", "buyer-education"]
     },
     {
         id: "insights-006",
@@ -287,7 +293,8 @@ export const blogs: BlogPost[] = [
         readTime: "8 Min Read",
         image: "/images/joyville_hinjawadi_projectcard.webp",
         seoKeywords: ["Pune property price trends 2025", "Hinjewadi vs Hadapsar vs Bavdhan", "property rates Hinjewadi 2025", "Pune real estate market analysis", "best area invest Pune 2025", "micro market analysis Pune", "Pune property appreciation rates", "Pune property forecast 2026", "Pune micro market comparison", "Bavdhan property appreciation 2026", "Hadapsar property rates 2026", "Hinjewadi price per sqft 2026", "Pune real estate portfolio diversification", "best ROI Pune micro market", "West Pune vs East Pune investment", "Purandar corridor price trends", "Shewalewadi property prices 2026", "Pune housing market 2026", "13 percent appreciation Bavdhan", "53 percent growth Hinjewadi five years", "best value proposition Pune East", "Pune Metro impact property prices", "Ring Road property valuation impact", "infrastructure premium real estate Pune", "rental vs capital appreciation Pune"],
-        wikidataUri: "https://www.wikidata.org/wiki/Q1538" // Pune
+        wikidataUri: "https://www.wikidata.org/wiki/Q1538", // Pune
+        topicID: ["pune-market-forecast", "hinjewadi-it-hub", "hadapsar-east-corridor", "bavdhan-luxury"]
     },
     {
         id: "insights-007",
@@ -357,7 +364,8 @@ export const blogs: BlogPost[] = [
         category: "NRI Guide",
         readTime: "6 Min Read",
         image: "/images/joyville_sensorium_projectcard.webp",
-        seoKeywords: ["NRI property investment Pune 2026", "NRI guide buying property India", "NRI real estate Pune", "RERA for NRI buyers", "NRI taxation India property", "repatriation rules NRI property", "best NRI investment Pune", "rental yield NRI Pune", "NRI flat Hinjewadi", "NRI investment Shapoorji Pallonji", "FEMA property rules NRI", "NRI TDS property India", "NRI Pune remote buying", "NRI virtual site visit", "NRI property management Pune", "rupee depreciation NRI advantage property", "NRI capital gains India", "NRI escrow RERA protection", "best rental yield India NRI", "Pune NRI desk real estate"]
+        seoKeywords: ["NRI property investment Pune 2026", "NRI guide buying property India", "NRI real estate Pune", "RERA for NRI buyers", "NRI taxation India property", "repatriation rules NRI property", "best NRI investment Pune", "rental yield NRI Pune", "NRI flat Hinjewadi", "NRI investment Shapoorji Pallonji", "FEMA property rules NRI", "NRI TDS property India", "NRI Pune remote buying", "NRI virtual site visit", "NRI property management Pune", "rupee depreciation NRI advantage property", "NRI capital gains India", "NRI escrow RERA protection", "best rental yield India NRI", "Pune NRI desk real estate"],
+        topicID: ["nri-investment", "pune-investment-guide", "hinjewadi-it-hub"]
     },
     {
         id: "9",
@@ -388,7 +396,8 @@ export const blogs: BlogPost[] = [
         category: "Buyer's Guide",
         readTime: "8 Min Read",
         image: "/images/vanaha_golfland_projectcard.webp",
-        seoKeywords: ["first time homebuyer Pune", "homebuyer checklist Pune 2026", "how to buy flat Pune", "first flat Pune checklist", "buying apartment Pune guide", "stamp duty Pune 2026", "home loan Pune 2026", "RERA checklist homebuyer", "Pune property buying steps", "first home Pune tips", "homebuyer mistakes Pune", "flat buying process Pune", "property registration Pune", "possession checklist flat", "EMI calculator Pune flat", "CIBIL score home loan", "Pune real estate first timer", "new homebuyer guide India", "flat buying documentation Pune", "Shapoorji Pallonji first home"]
+        seoKeywords: ["first time homebuyer Pune", "homebuyer checklist Pune 2026", "how to buy flat Pune", "first flat Pune checklist", "buying apartment Pune guide", "stamp duty Pune 2026", "home loan Pune 2026", "RERA checklist homebuyer", "Pune property buying steps", "first home Pune tips", "homebuyer mistakes Pune", "flat buying process Pune", "property registration Pune", "possession checklist flat", "EMI calculator Pune flat", "CIBIL score home loan", "Pune real estate first timer", "new homebuyer guide India", "flat buying documentation Pune", "Shapoorji Pallonji first home"],
+        topicID: ["buyer-education", "pune-legal-compliance", "hadapsar-east-corridor"]
     },
     {
         id: "10",
@@ -419,7 +428,8 @@ export const blogs: BlogPost[] = [
         category: "Market Analysis",
         readTime: "7 Min Read",
         image: "/images/joyville_hinjawadi_projectcard.webp",
-        seoKeywords: ["Pune IT corridor real estate", "Hinjewadi vs Kharadi", "Hinjewadi vs Magarpatta", "Kharadi vs Magarpatta property", "best IT hub real estate Pune", "Pune IT park apartments", "Hinjewadi property prices 2026", "Kharadi property rates 2026", "Magarpatta real estate 2026", "IT professionals Pune property", "walk to work Pune", "Pune tech corridor investment", "rental yield IT parks Pune", "Pune IT employment real estate", "Hinjewadi appreciation rate", "best investment IT corridor Pune", "Pune metro impact property", "IT park proximity flats Pune", "Pune real estate IT hub comparison", "Rajiv Gandhi Infotech Park flats"]
+        seoKeywords: ["Pune IT corridor real estate", "Hinjewadi vs Kharadi", "Hinjewadi vs Magarpatta", "Kharadi vs Magarpatta property", "best IT hub real estate Pune", "Pune IT park apartments", "Hinjewadi property prices 2026", "Kharadi property rates 2026", "Magarpatta real estate 2026", "IT professionals Pune property", "walk to work Pune", "Pune tech corridor investment", "rental yield IT parks Pune", "Pune IT employment real estate", "Hinjewadi appreciation rate", "best investment IT corridor Pune", "Pune metro impact property", "IT park proximity flats Pune", "Pune real estate IT hub comparison", "Rajiv Gandhi Infotech Park flats"],
+        topicID: ["hinjewadi-it-hub", "developer-comparison", "hadapsar-east-corridor"]
     },
     {
         id: "insights-011",
@@ -451,7 +461,8 @@ export const blogs: BlogPost[] = [
         category: "Project Spotlight",
         readTime: "5 Min Read",
         image: "/images/joyville_sensorium_projectcard.webp",
-        seoKeywords: ["joyville vyomora hinjewadi", "joyville vyomora price", "best new launch hinjewadi 2026", "new residential projects hinjewadi phase 1", "joyville vyomora reviews", "shapoorji pallonji new launch pune", "3 bhk duplex apartments hinjewadi", "luxury real estate hinjewadi", "joyville vyomora floor plan", "joyville vyomora possession date", "buy flats hinjewadi phase 1", "premium apartments pune west"]
+        seoKeywords: ["joyville vyomora hinjewadi", "joyville vyomora price", "best new launch hinjewadi 2026", "new residential projects hinjewadi phase 1", "joyville vyomora reviews", "shapoorji pallonji new launch pune", "3 bhk duplex apartments hinjewadi", "luxury real estate hinjewadi", "joyville vyomora floor plan", "joyville vyomora possession date", "buy flats hinjewadi phase 1", "premium apartments pune west"],
+        topicID: ["hinjewadi-it-hub", "joyville-vyomora-spotlight", "developer-comparison"]
     },
     {
         id: "insights-012",
@@ -480,7 +491,8 @@ export const blogs: BlogPost[] = [
         category: "Luxury Living",
         readTime: "4 Min Read",
         image: "/images/vanaha_golfland_projectcard.webp",
-        seoKeywords: ["3 bhk duplex apartments hinjewadi pune", "luxury duplex apartments pune", "joyville vyomora duplex floor plan", "ultra luxury flats hinjewadi", "premium 3 bhk pune west", "duplex flats near infosys pune", "high net worth property pune", "best luxury residential project hinjewadi", "shapoorji pallonji penthouses pune", "luxury real estate investment pune 2026", "scarcity premium real estate"]
+        seoKeywords: ["3 bhk duplex apartments hinjewadi pune", "luxury duplex apartments pune", "joyville vyomora duplex floor plan", "ultra luxury flats hinjewadi", "premium 3 bhk pune west", "duplex flats near infosys pune", "high net worth property pune", "best luxury residential project hinjewadi", "shapoorji pallonji penthouses pune", "luxury real estate investment pune 2026", "scarcity premium real estate"],
+        topicID: ["hinjewadi-it-hub", "bavdhan-luxury", "buyer-education"]
     },
     {
         id: "insights-013",
@@ -512,7 +524,8 @@ export const blogs: BlogPost[] = [
         category: "Portfolio Review",
         readTime: "7 Min Read",
         image: "/images/joyville_sensorium_projectcard.webp",
-        seoKeywords: ["Shapoorji Pallonji Pune project review", "best Shapoorji projects Pune 2026", "Joyville Pune review 2026", "Vanaha Bavdhan review", "Shapoorji Pallonji Hinjewadi vs Hadapsar", "premium residential projects Pune 2026", "Shapoorji Pallonji investment guide Pune", "real estate review Pune 2026", "top 5 projects Pune Shapoorji", "Joyville vs Vanaha comparison"]
+        seoKeywords: ["Shapoorji Pallonji Pune project review", "best Shapoorji projects Pune 2026", "Joyville Pune review 2026", "Vanaha Bavdhan review", "Shapoorji Pallonji Hinjewadi vs Hadapsar", "premium residential projects Pune 2026", "Shapoorji Pallonji investment guide Pune", "real estate review Pune 2026", "top 5 projects Pune Shapoorji", "Joyville vs Vanaha comparison"],
+        topicID: ["pune-market-forecast", "developer-comparison", "hinjewadi-it-hub", "hadapsar-east-corridor", "bavdhan-luxury"]
     },
     {
         id: "insights-014",
@@ -544,7 +557,8 @@ export const blogs: BlogPost[] = [
         category: "ROI Analysis",
         readTime: "6 Min Read",
         image: "/images/vanaha_golfland_projectcard.webp",
-        seoKeywords: ["Hinjewadi vs Hadapsar real estate ROI", "Bavdhan property appreciation 2026", "Best ROI projects Pune 2026", "Shapoorji Pallonji rental yield Pune", "Pune real estate investment analysis", "Investment returns Pune West vs East", "Joyville Sensorium ROI", "Vanaha Golfland capital growth", "Pune property price forecast 2027", "Real estate math Pune"]
+        seoKeywords: ["Hinjewadi vs Hadapsar real estate ROI", "Bavdhan property appreciation 2026", "Best ROI projects Pune 2026", "Shapoorji Pallonji rental yield Pune", "Pune real estate investment analysis", "Investment returns Pune West vs East", "Joyville Sensorium ROI", "Vanaha Golfland capital growth", "Pune property price forecast 2027", "Real estate math Pune"],
+        topicID: ["pune-rental-market", "hadapsar-east-corridor", "bavdhan-luxury"]
     },
     {
         id: "insights-015",
@@ -568,7 +582,8 @@ export const blogs: BlogPost[] = [
         category: "Brand Legacy",
         readTime: "5 Min Read",
         image: "/images/joyville_hinjawadi_projectcard.webp",
-        seoKeywords: ["Shapoorji Pallonji brand legacy", "Why choose Shapoorji Pallonji Pune", "Shapoorji Pallonji engineering excellence", "trusted developers in Pune 2026", "Aluform technology Shapoorji Pallonji", "Joyville brand history", "Shapoorji Pallonji project delivery", "luxury developer Pune review", "SP Real Estate Pune legacy", "Investment protection in real estate"]
+        seoKeywords: ["Shapoorji Pallonji brand legacy", "Why choose Shapoorji Pallonji Pune", "Shapoorji Pallonji engineering excellence", "trusted developers in Pune 2026", "Aluform technology Shapoorji Pallonji", "Joyville brand history", "Shapoorji Pallonji project delivery", "luxury developer Pune review", "SP Real Estate Pune legacy", "Investment protection in real estate"],
+        topicID: ["developer-comparison", "buyer-education", "pune-legal-compliance"]
     },
     {
         id: "insights-016",
@@ -588,7 +603,8 @@ export const blogs: BlogPost[] = [
         category: "Comparison Guide",
         readTime: "6 Min Read",
         image: "/images/joyville_sensorium_projectcard.webp",
-        seoKeywords: ["Hinjewadi vs Wakad property", "buy flat Hinjewadi or Wakad", "Wakad vs Hinjewadi ROI", "best IT corridor Pune west", "Joyville Sensorium vs Wakad flats", "Hinjewadi Phase 1 price trends 2026", "Wakad real estate forecast 2026"]
+        seoKeywords: ["Hinjewadi vs Wakad property", "buy flat Hinjewadi or Wakad", "Wakad vs Hinjewadi ROI", "best IT corridor Pune west", "Joyville Sensorium vs Wakad flats", "Hinjewadi Phase 1 price trends 2026", "Wakad real estate forecast 2026"],
+        topicID: ["hinjewadi-it-hub", "developer-comparison", "pune-rental-market"]
     },
     {
         id: "insights-017",
@@ -605,7 +621,8 @@ export const blogs: BlogPost[] = [
         category: "Investment Spotlight",
         readTime: "5 Min Read",
         image: "/images/joyville_hinjawadi_projectcard.webp",
-        seoKeywords: ["Hadapsar investment hotspots 2026", "buy property Shewalewadi", "Manjri vs Hadapsar real estate", "best projects near SP Infocity", "Hadapsar property market forecast", "Joyville Celestia review", "investment near Magarpatta City"]
+        seoKeywords: ["Hadapsar investment hotspots 2026", "buy property Shewalewadi", "Manjri vs Hadapsar real estate", "best projects near SP Infocity", "Hadapsar property market forecast", "Joyville Celestia review", "investment near Magarpatta City"],
+        topicID: ["hadapsar-east-corridor", "shewalewadi-growth", "pune-investment-guide"]
     },
     {
         id: "insights-018",
@@ -622,7 +639,8 @@ export const blogs: BlogPost[] = [
         category: "Price Forecast",
         readTime: "7 Min Read",
         image: "/images/vanaha_golfland_projectcard.webp",
-        seoKeywords: ["Pune property price forecast 2027", "future property rates Pune", "will property prices drop in Pune 2027", "Hinjewadi price per sqft 2027", "Bavdhan real estate value 2027", "investment forecast Pune real estate"]
+        seoKeywords: ["Pune property price forecast 2027", "future property rates Pune", "will property prices drop in Pune 2027", "Hinjewadi price per sqft 2027", "Bavdhan real estate value 2027", "investment forecast Pune real estate"],
+        topicID: ["pune-market-forecast", "pune-infrastructure", "purandar-airport-vision"]
     },
     {
         id: "insights-019",
@@ -639,7 +657,8 @@ export const blogs: BlogPost[] = [
         category: "Buyer's Guide",
         readTime: "5 Min Read",
         image: "/images/joyville_hinjawadi_projectcard.webp",
-        seoKeywords: ["best 2 BHK near Magarpatta City", "flats near Cybercity Magarpatta", "Joyville Hadapsar Annexe 2 BHK price", "buy 2 BHK in Shewalewadi", "luxury 2 BHK near SP Infocity", "Magarpatta vs Joyville Hadapsar"]
+        seoKeywords: ["best 2 BHK near Magarpatta City", "flats near Cybercity Magarpatta", "Joyville Hadapsar Annexe 2 BHK price", "buy 2 BHK in Shewalewadi", "luxury 2 BHK near SP Infocity", "Magarpatta vs Joyville Hadapsar"],
+        topicID: ["hadapsar-east-corridor", "pune-townships", "shewalewadi-growth"]
     },
     {
         id: "insights-020",
@@ -658,7 +677,8 @@ export const blogs: BlogPost[] = [
         readTime: "6 Min Read",
         image: "/images/joyville_sensorium_projectcard.webp",
         seoKeywords: ["NRI tax guide Pune property", "NRI investment India 2026", "FEMA rules real estate", "repatriation of property funds India", "NRI home loan Pune"],
-        wikidataUri: "https://www.wikidata.org/wiki/Q5405234"
+        wikidataUri: "https://www.wikidata.org/wiki/Q5405234",
+        topicID: ["nri-investment", "pune-legal-compliance", "pune-investment-guide"]
     },
     {
         id: "insights-021",
@@ -677,7 +697,8 @@ export const blogs: BlogPost[] = [
         readTime: "5 Min Read",
         image: "/images/vanaha_golfland_projectcard.webp",
         seoKeywords: ["legal checklist Pune property", "flat buying steps Pune 2026", "verify RERA project Pune", "stamp duty Pune 2026", "home loan process Pune"],
-        wikidataUri: "https://www.wikidata.org/wiki/Q25303429"
+        wikidataUri: "https://www.wikidata.org/wiki/Q25303429",
+        topicID: ["buyer-education", "pune-legal-compliance", "rera-verification"]
     },
     {
         id: "insights-022",
@@ -696,7 +717,8 @@ export const blogs: BlogPost[] = [
         readTime: "8 Min Read",
         image: "/images/joyville_hadapsar_projectcard.webp",
         seoKeywords: ["Pune real estate report 2026", "Hinjewadi price trends 2026", "Hadapsar property appreciation", "Pune metro impact on real estate", "investment analysis Pune"],
-        wikidataUri: "https://www.wikidata.org/wiki/Q104840845"
+        wikidataUri: "https://www.wikidata.org/wiki/Q104840845",
+        topicID: ["pune-market-forecast", "hinjewadi-it-hub", "hadapsar-east-corridor"]
     },
     {
         id: "insights-023",
@@ -715,7 +737,8 @@ export const blogs: BlogPost[] = [
         readTime: "7 Min Read",
         image: "/images/joyville_sensorium_projectcard.webp",
         seoKeywords: ["EDGE certification India real estate", "green building benefits Pune", "sustainable apartments Hinjewadi", "energy efficient homes Pune", "resale value green buildings"],
-        wikidataUri: "https://www.wikidata.org/wiki/Q5332159"
+        wikidataUri: "https://www.wikidata.org/wiki/Q5332159",
+        topicID: ["pune-infrastructure", "hinjewadi-it-hub", "developer-comparison"]
     }
 ];
 

@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-    const siteUrl = 'https://www.joyville-homes.com';
+    const siteUrl = 'https://joyville-homes.com';
 
     const commonDisallow = [
         '/_next/',
@@ -17,10 +17,14 @@ export default function robots(): MetadataRoute.Robots {
                 userAgent: '*',
                 allow: '/',
                 disallow: commonDisallow,
-                crawlDelay: 2,
             },
             {
                 userAgent: ['Googlebot', 'Googlebot-Image'],
+                allow: '/',
+                disallow: commonDisallow,
+            },
+            {
+                userAgent: ['YandexBot', 'YandexImages', 'Baiduspider', 'Baiduspider-image', 'Sogou-Test-Spider', 'Sogou-Web-Spider'],
                 allow: '/',
                 disallow: commonDisallow,
             },
@@ -31,7 +35,7 @@ export default function robots(): MetadataRoute.Robots {
             },
             // Explicitly block invasive AI Scrapers but allow Search LLMs
             {
-                userAgent: ['GPTBot', 'ChatGPT-User', 'CCBot', 'anthropic-ai', 'Omigili', 'FacebookBot'],
+                userAgent: ['GPTBot', 'ChatGPT-User', 'CCBot', 'anthropic-ai', 'Omigili', 'FacebookBot', 'Twitterbot'],
                 disallow: ['/'],
             },
             {

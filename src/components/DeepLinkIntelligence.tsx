@@ -13,8 +13,11 @@ export default function DeepLinkIntelligence({ currentProject }: DeepLinkIntelli
     const normalizedLocation = currentProject.location.split(',')[0].trim().toLowerCase();
     
     const sisterProjects = projects
-        .filter(p => p.id !== currentProject.id && p.location.toLowerCase().includes(normalizedLocation))
-        .slice(0, 2);
+        .filter(p => p.id !== currentProject.id && (
+            p.location.toLowerCase().includes(normalizedLocation) ||
+            currentProject.seoKeywords?.some(k => p.seoKeywords?.includes(k))
+        ))
+        .slice(0, 4);
 
     // Logic: Find related blogs that mention this project or location
     const relatedBlogs = blogs

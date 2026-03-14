@@ -153,8 +153,8 @@ export default function SEOFooter() {
                 {/* Bottom bar */}
                 <div className="border-t border-[#FFFFFF]/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4" itemScope itemType="https://schema.org/Organization">
                     <meta itemProp="name" content="Shapoorji Pallonji Real Estate" />
-                    <meta itemProp="url" content="https://www.joyville-homes.com" />
-                    <meta itemProp="logo" content="https://www.joyville-homes.com/logo.png" />
+                    <meta itemProp="url" content="https://joyville-homes.com" />
+                    <meta itemProp="logo" content="https://joyville-homes.com/logo.png" />
                     <div>
                         <span className="text-2xl font-serif text-[#FFFFFF]/80 tracking-widest uppercase">Joyville</span>
                         <span className="text-[8px] font-sans tracking-[0.4em] text-[#C5A059] uppercase ml-2">Pune</span>

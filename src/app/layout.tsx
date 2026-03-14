@@ -23,7 +23,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.joyville-homes.com'),
+  metadataBase: new URL('https://joyville-homes.com'),
   title: "Joyville Homes Pune | Shapoorji Pallonji | 2 & 3 BHK Flats in Hinjewadi, Hadapsar, Bavdhan",
   description: "Official Joyville Pune by Shapoorji Pallonji Real Estate. Explore 9 premium projects across Hinjewadi, Hadapsar & Bavdhan. 2 & 3 BHK flats starting ₹65 Lakhs. RERA approved. Check price list, floor plans & book a site visit today.",
   keywords: [
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Joyville Homes Pune | Shapoorji Pallonji Real Estate | 9 Premium Projects",
     description: "Explore Joyville Pune by Shapoorji Pallonji – 9 premium projects across Hinjewadi, Hadapsar & Bavdhan. 2 & 3 BHK flats starting ₹65L. RERA approved.",
-    url: "https://www.joyville-homes.com",
+    url: "https://joyville-homes.com",
     siteName: "Joyville Homes Pune",
     images: [
       {
@@ -60,17 +60,22 @@ export const metadata: Metadata = {
     description: "9 premium projects across Hinjewadi, Hadapsar & Bavdhan. RERA approved. Check price list & floor plans.",
     images: ["/og-image.jpg"],
   },
-  alternates: {
-    canonical: 'https://www.joyville-homes.com',
-    languages: {
-      'en-IN': 'https://www.joyville-homes.com',
-      'x-default': 'https://www.joyville-homes.com',
-    },
-  },
   verification: {
     google: "kgXogw_uAx3DIkOTR_Ysq5ZB6Jh_rpezL9F13KvpMro",
   },
   manifest: "/manifest.json",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'indexifembedded': true, // Critical for Phase 26 AI-Crawl Hardening
+    },
+  },
 };
 
 export const viewport: Viewport = {
@@ -149,34 +154,34 @@ export default function RootLayout({
             "@graph": [
               {
                 "@type": "WebSite",
-                "@id": "https://www.joyville-homes.com/#website",
-                "url": "https://www.joyville-homes.com",
+                "@id": "https://joyville-homes.com/#website",
+                "url": "https://joyville-homes.com",
                 "name": "Joyville Homes Pune",
                 "publisher": {
-                  "@id": "https://www.joyville-homes.com/#organization"
+                  "@id": "https://joyville-homes.com/#organization"
                 },
                 "potentialAction": {
                   "@type": "SearchAction",
                   "target": {
                     "@type": "EntryPoint",
-                    "urlTemplate": "https://www.joyville-homes.com/projects?search={search_term_string}"
+                    "urlTemplate": "https://joyville-homes.com/projects?search={search_term_string}"
                   },
                   "query-input": "required name=search_term_string"
                 }
               },
               {
                 "@type": "Organization",
-                "@id": "https://www.joyville-homes.com/#organization",
+                "@id": "https://joyville-homes.com/#organization",
                 "name": ENTITIES.DEVELOPER.name,
                 "legalName": ENTITIES.DEVELOPER.legalName,
                 "url": ENTITIES.DEVELOPER.url,
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://www.joyville-homes.com/logo.png",
+                  "url": "https://joyville-homes.com/logo.png",
                   "width": "512",
                   "height": "512"
                 },
-                "image": "https://www.joyville-homes.com/og-image.jpg",
+                "image": "https://joyville-homes.com/og-image.jpg",
                 "founder": {
                   "@type": "Person",
                   "name": "Pallonji Mistry"
@@ -208,7 +213,7 @@ export default function RootLayout({
                 ],
                 "member": {
                   "@type": "Organization",
-                  "@id": "https://www.joyville-homes.com/#research-desk",
+                  "@id": "https://joyville-homes.com/#research-desk",
                   "name": "Shapoorji Pallonji Premium Research Desk",
                   "description": "The expert analysis wing of Shapoorji Pallonji Real Estate, specializing in Pune property market trends, infrastructure impact reports, and NRI investment feasibility studies.",
                   "knowsAbout": [
@@ -227,17 +232,17 @@ export default function RootLayout({
                   {
                     "@type": "SiteNavigationElement",
                     "name": "Hinjewadi Projects",
-                    "url": "https://www.joyville-homes.com/location/hinjewadi"
+                    "url": "https://joyville-homes.com/location/hinjewadi"
                   },
                   {
                     "@type": "SiteNavigationElement",
                     "name": "Hadapsar Projects",
-                    "url": "https://www.joyville-homes.com/location/hadapsar"
+                    "url": "https://joyville-homes.com/location/hadapsar"
                   },
                   {
                     "@type": "SiteNavigationElement",
                     "name": "Bavdhan Projects",
-                    "url": "https://www.joyville-homes.com/location/bavdhan"
+                    "url": "https://joyville-homes.com/location/bavdhan"
                   },
                   {
                     "@type": "Event",
@@ -250,28 +255,28 @@ export default function RootLayout({
               },
               {
                 "@type": "ItemList",
-                "@id": "https://www.joyville-homes.com/#navigation",
+                "@id": "https://joyville-homes.com/#navigation",
                 "name": "Main Navigation",
                 "itemListElement": [
-                  { "@type": "SiteNavigationElement", "position": 1, "name": "Premium Projects", "url": "https://www.joyville-homes.com/projects" },
-                  { "@type": "SiteNavigationElement", "position": 2, "name": "Localities", "url": "https://www.joyville-homes.com/location" },
-                  { "@type": "SiteNavigationElement", "position": 3, "name": "Homebuyer's Guide", "url": "https://www.joyville-homes.com/pune-real-estate-guide" },
-                  { "@type": "SiteNavigationElement", "position": 4, "name": "Comparison Matrix", "url": "https://www.joyville-homes.com/insights/joyville-vs-competitors" },
-                  { "@type": "SiteNavigationElement", "position": 5, "name": "Analytics & Insights", "url": "https://www.joyville-homes.com/insights" }
+                  { "@type": "SiteNavigationElement", "position": 1, "name": "Premium Projects", "url": "https://joyville-homes.com/projects" },
+                  { "@type": "SiteNavigationElement", "position": 2, "name": "Localities", "url": "https://joyville-homes.com/location" },
+                  { "@type": "SiteNavigationElement", "position": 3, "name": "Homebuyer's Guide", "url": "https://joyville-homes.com/pune-real-estate-guide" },
+                  { "@type": "SiteNavigationElement", "position": 4, "name": "Comparison Matrix", "url": "https://joyville-homes.com/insights/joyville-vs-competitors" },
+                  { "@type": "SiteNavigationElement", "position": 5, "name": "Analytics & Insights", "url": "https://joyville-homes.com/insights" }
                 ]
               },
               {
                 "@type": ["RealEstateAgent", "LocalBusiness"],
-                "@id": "https://www.joyville-homes.com/#realestate",
+                "@id": "https://joyville-homes.com/#realestate",
                 "name": "Joyville Homes — Shapoorji Pallonji Real Estate, Pune",
-                "image": "https://www.joyville-homes.com/og-image.jpg",
-                "url": "https://www.joyville-homes.com",
+                "image": "https://joyville-homes.com/og-image.jpg",
+                "url": "https://joyville-homes.com",
                 "telephone": "+912067210000",
                 "priceRange": "₹65 Lakhs - ₹3 Cr",
                 "paymentAccepted": ["Wire Transfer", "Cheque"],
                 "currenciesAccepted": "INR, USD, AED, GBP",
                 "parentOrganization": {
-                  "@id": "https://www.joyville-homes.com/#organization"
+                  "@id": "https://joyville-homes.com/#organization"
                 },
                 "address": {
                   "@type": "PostalAddress",
@@ -304,11 +309,11 @@ export default function RootLayout({
               },
               {
                 "@type": "Dataset",
-                "@id": "https://www.joyville-homes.com/#dataset-trends",
+                "@id": "https://joyville-homes.com/#dataset-trends",
                 "name": "Pune Real Estate Appreciation Trends 2024-2026",
                 "description": "Comprehensive dataset tracking capital appreciation, rental yields, and infrastructure impact across Pune's key micro-markets (Hinjewadi, Hadapsar, Bavdhan).",
                 "publisher": {
-                  "@id": "https://www.joyville-homes.com/#organization"
+                  "@id": "https://joyville-homes.com/#organization"
                 },
                 "license": "https://creativecommons.org/licenses/by/4.0/",
                 "variableMeasured": [

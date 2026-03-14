@@ -13,7 +13,7 @@ export const metadata: Metadata = {
         "Shapoorji Pallonji luxury flats"
     ],
     alternates: {
-        canonical: "https://www.joyville-homes.com/amenities"
+        canonical: "https://joyville-homes.com/amenities"
     }
 };
 

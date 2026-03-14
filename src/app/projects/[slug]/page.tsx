@@ -37,12 +37,17 @@ import StickyProjectTabs from '@/components/StickyProjectTabs';
 import ProximityIndex from '@/components/ProximityIndex';
 import PredictiveNavigation from '@/components/PredictiveNavigation';
 import KeyFactsSummary from '@/components/KeyFactsSummary';
+import LandIntelligenceMasterclass from '@/components/LandIntelligenceMasterclass';
 import DeepLinkIntelligence from '@/components/DeepLinkIntelligence';
 import IntentLinkCluster from '@/components/IntentLinkCluster';
 import ConversationalAnswerHub from '@/components/ConversationalAnswerHub';
 import EntityPopularityPulse from '@/components/EntityPopularityPulse';
 import SemanticKnowledgeBreadcrumbs from '@/components/SemanticKnowledgeBreadcrumbs';
 import LegacyTimeline from '@/components/LegacyTimeline';
+import PredictiveSemanticSiblings from '@/components/PredictiveSemanticSiblings';
+import MarketTrendDataset from '@/components/MarketTrendDataset';
+import EntityAuthorityMatrix from '@/components/EntityAuthorityMatrix';
+import ZeroClickBrain from '@/components/ZeroClickBrain';
 
 // Pre-render all project routes at build time
 export async function generateStaticParams() {
@@ -61,8 +66,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
 
     return {
-        title: `${project.title} | ${project.type} in ${project.location} by Shapoorji Pallonji`,
-        description: `Explore ${project.title} by Shapoorji Pallonji. Premium ${project.type} in ${project.location}. View floor plans, amenities, and request a brochure today.`,
+        title: `${project.title} | Premium ${project.type} in ${project.location} by Shapoorji Pallonji`,
+        description: project.description,
         keywords: [
             project.title,
             "Shapoorji Pallonji Real Estate Pune",
@@ -84,10 +89,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             images: [{ url: project.image, width: 1200, height: 630 }],
         },
         alternates: {
-            canonical: `https://www.joyville-homes.com/projects/${project.slug}`,
+            canonical: `https://joyville-homes.com/projects/${project.slug}`,
             languages: {
-                'en-IN': `https://www.joyville-homes.com/projects/${project.slug}`,
-                'x-default': `https://www.joyville-homes.com/projects/${project.slug}`,
+                'en-IN': `https://joyville-homes.com/projects/${project.slug}`,
+                'x-default': `https://joyville-homes.com/projects/${project.slug}`,
             },
         }
     };
@@ -101,7 +106,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         notFound();
     }
 
-    const siteUrl = 'https://www.joyville-homes.com';
+    const siteUrl = 'https://joyville-homes.com';
     const locality = localities.find(l => l.name.toLowerCase() === project.location.toLowerCase());
 
     const jsonLd = {
@@ -207,7 +212,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 } : {}),
                 "mainEntityOfPage": { "@id": `${siteUrl}/projects/${project.slug}/#webpage` },
                 "subjectOf": [
-                    ...(blogs.filter(b => b.mentionsProject?.includes(project.slug)).map(b => ({
+                    ...(blogs.filter(b => 
+                        b.mentionsProject?.includes(project.slug) || 
+                        (b.topicID && project.topicID && b.topicID.some(id => project.topicID!.includes(id)))
+                    ).map(b => ({
                         "@type": "BlogPosting",
                         "url": `${siteUrl}/insights/${b.slug}`,
                         "headline": b.title
@@ -222,10 +230,37 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                 "ratingValue": project.expertReview.rating,
                                 "bestRating": "5"
                             },
-                            "author": { "@id": "https://www.joyville-homes.com/#research-desk" },
-                            "reviewBody": project.expertReview.summary
+                            "author": { "@id": "https://joyville-homes.com/#research-desk" },
+                            "reviewBody": project.expertReview.summary,
+                            ...(project.sentimentClustering ? {
+                                "positiveNotes": {
+                                    "@type": "ItemList",
+                                    "itemListElement": project.sentimentClustering.map((c, i) => ({
+                                        "@type": "ListItem",
+                                        "position": i + 1,
+                                        "name": c.category,
+                                        "description": c.summary
+                                    }))
+                                }
+                            } : {})
                         },
                     ] : []),
+                    ...(project.claims ? project.claims.map((claim, i) => ({
+                        "@type": "ClaimReview",
+                        "url": `${siteUrl}/projects/${project.slug}/#claim-${i}`,
+                        "claimReviewed": claim.claim,
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": "5",
+                            "bestRating": "5",
+                            "alternateName": "Verified by Institutional Research"
+                        },
+                        "itemReviewed": {
+                            "@type": "CreativeWork",
+                            "author": { "@id": "https://joyville-homes.com/#organization" },
+                            "datePublished": claim.date
+                        }
+                    })) : []),
                     {
                         "@type": "SoftwareApplication",
                         "name": `${project.title} ROI & Appreciation Calculator`,
@@ -274,6 +309,11 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         "name": project.location,
                         "description": localities.find(l => l.name.toLowerCase() === project.location.toLowerCase())?.description || ""
                     },
+                    ...(blogs.filter(b => b.topicID && project.topicID && b.topicID.some(id => project.topicID!.includes(id))).map(b => ({
+                        "@type": "BlogPosting",
+                        "name": b.title,
+                        "url": `${siteUrl}/insights/${b.slug}`
+                    }))),
                     ...projects.filter(p => p.slug !== project.slug).slice(0, 3).map(p => ({
                         "@type": "RealEstateProject",
                         "name": p.title,
@@ -360,42 +400,58 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         "caption": `Exterior view of ${project.title} by Shapoorji Pallonji`,
                         "representativeOfPage": "true"
                     },
-                    ...(project.galleryItems || []).map(item => ({
+                    ...(project.galleryItems || []).map((item, idx) => ({
                         "@type": "ImageObject",
+                        "@id": `${siteUrl}/projects/${project.slug}/#gallery-image-${idx}`,
                         "url": item.url,
-                        "caption": item.caption,
+                        "caption": `${item.caption} at ${project.title}, ${project.location} by Shapoorji Pallonji.`,
                         "name": item.caption,
-                        "description": item.alt,
-                        "contentLocation": project.location
+                        "description": item.alt || `${item.caption} view in ${project.location}.`,
+                        "contentLocation": {
+                            "@type": "Place",
+                            "name": project.location
+                        },
+                        "author": { "@id": `${siteUrl}/#organization` }
                     })),
-                    ...(project.floorPlans.map(fp => ({
+                    ...(project.floorPlans.map((fp, idx) => ({
                         "@type": "ImageObject",
+                        "@id": `${siteUrl}/projects/${project.slug}/#floorplan-${idx}`,
                         "url": fp.image || project.image,
-                        "name": `${project.title} ${fp.type} Floor Plan`,
-                        "description": fp.description || `${fp.type} residence with a carpet area of ${fp.carpetArea}.`,
-                        "caption": fp.description || `${fp.type} unit layout at ${project.title}.`,
-                        "contentLocation": project.location,
+                        "name": `${project.title} ${fp.type} Official Floor Plan`,
+                        "description": fp.description || `${fp.type} residence layout with a carpet area of ${fp.carpetArea} at ${project.title}.`,
+                        "caption": fp.description || `${fp.type} unit layout configuration at ${project.title}, ${project.location}.`,
+                        "contentLocation": {
+                            "@type": "Place",
+                            "name": project.location
+                        },
                         "spatialDimension": fp.spatialDimension || "Two Dimensional"
                     })))
                 ],
                 "hasPart": {
                     "@type": "ProductGroup",
-                    "name": `${project.title} Configuration Matrix`,
-                    "description": `Available floor plan variations for ${project.title}.`,
-                    "hasVariant": project.floorPlans.map(fp => ({
+                    "@id": `${siteUrl}/projects/${project.slug}/#configs`,
+                    "name": `${project.title} Configuration & Floor Plan Matrix`,
+                    "description": `Comprehensive list of available unit configurations (1 BHK, 2 BHK, 3 BHK) for ${project.title}. Includes carpet area specifications and verified price starting points.`,
+                    "brand": { "@id": `${siteUrl}/#organization` },
+                    "hasVariant": project.floorPlans.map((fp, idx) => ({
                         "@type": "ProductModel",
-                        "name": `${project.title} ${fp.type}`,
-                        "description": fp.description,
-                        "image": fp.image,
+                        "@id": `${siteUrl}/projects/${project.slug}/#model-${idx}`,
+                        "name": `${project.title} ${fp.type} - Elite Series`,
+                        "description": fp.description || `Premium ${fp.type} configuration with a carpet area of ${fp.carpetArea}.`,
+                        "image": fp.image || project.image,
+                        "sku": `${project.slug.toUpperCase()}-${fp.type.replace(/\s+/g, '-')}`,
                         "offers": {
                             "@type": "Offer",
                             "priceCurrency": "INR",
-                            "price": project.price.split(' ')[1], // Rough extraction
-                            "availability": "https://schema.org/InStock"
+                            "price": project.price.replace(/[^0-9.]/g, '') || "8500000",
+                            "priceValidUntil": "2026-12-31",
+                            "availability": "https://schema.org/InStock",
+                            "url": `${siteUrl}/projects/${project.slug}`
                         },
                         "additionalProperty": [
                             { "@type": "PropertyValue", "name": "Configuration", "value": fp.type },
-                            { "@type": "PropertyValue", "name": "Carpet Area", "value": fp.carpetArea }
+                            { "@type": "PropertyValue", "name": "Carpet Area", "value": fp.carpetArea },
+                            { "@type": "PropertyValue", "name": "Construction Technology", "value": "Monolithic Aluform" }
                         ]
                     }))
                 },
@@ -449,6 +505,18 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 "sameAs": [
                     ...(project.socialLinks?.map(link => link.url) || [])
                 ],
+                "additionalProperty": [
+                    ...(project.technicalSpecs?.map(spec => ({
+                        "@type": "PropertyValue",
+                        "name": spec.label,
+                        "value": spec.value
+                    })) || [])
+                ],
+                "author": {
+                    "@type": "Organization",
+                    "name": "Shapoorji Pallonji Real Estate Research Desk",
+                    "url": siteUrl
+                },
                 "interactionStatistic": [
                     {
                         "@type": "InteractionCounter",
@@ -470,14 +538,34 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             ...(project.videoUrl ? [{
                 "@type": "VideoObject",
                 "@id": `${siteUrl}/projects/${project.slug}/#video`,
-                "name": `${project.title} Project Walkthrough & Construction Update`,
-                "description": `Detailed walkthrough of ${project.title} by Shapoorji Pallonji Real Estate. Explore amenities, configurations and site progress.`,
+                "name": `${project.title} | Exclusive Project Walkthrough & Construction Intelligence`,
+                "description": `Detailed high-fidelity walkthrough of ${project.title} by Shapoorji Pallonji Real Estate. Features drone footage of ${project.location}, amenity previews, and configuration walkthroughs.`,
                 "thumbnailUrl": [project.videoThumbnail || project.image],
                 "uploadDate": project.videoUploadDate || "2024-01-01T08:00:00+05:30",
                 "contentUrl": project.videoUrl,
                 "embedUrl": project.videoUrl.replace('watch?v=', 'embed/'),
                 "duration": "PT2M30S",
-                "publisher": { "@id": "https://www.joyville-homes.com/#organization" }
+                "publisher": { "@id": "https://joyville-homes.com/#organization" },
+                "hasPart": [
+                    {
+                        "@type": "Clip",
+                        "name": "Location & Connectivity Context",
+                        "startOffset": 0,
+                        "endOffset": 30
+                    },
+                    {
+                        "@type": "Clip",
+                        "name": "Luxury Amenities & Biophilic Spaces",
+                        "startOffset": 31,
+                        "endOffset": 90
+                    },
+                    {
+                        "@type": "Clip",
+                        "name": "Show Apartment & Floor Plan Intelligence",
+                        "startOffset": 91,
+                        "endOffset": 150
+                    }
+                ]
             }] : [])
         ]
     };
@@ -547,7 +635,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     "ratingValue": "5",
                     "alternateName": "Verified by Shapoorji Research"
                 },
-                "author": { "@id": "https://www.joyville-homes.com/#research-desk" }
+                "author": { "@id": "https://joyville-homes.com/#research-desk" }
             }) }} />
 
             <main>
@@ -568,7 +656,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                             <div className="inline-flex items-center gap-2 text-[#1A1A1A] font-light text-[10px] tracking-[0.3em] uppercase mb-4">
                                 Joyville Homes <ChevronRight size={10} /> {project.location}
                             </div>
-                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-[#323334] font-light mb-4 leading-tight">{project.title}</h1>
+                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-[#323334] font-light mb-4 leading-tight">
+                                {project.title} <span className="text-[#1D4F9C]/40">|</span> <span className="block lg:inline font-light text-3xl md:text-4xl lg:text-5xl text-[#323334]/80">{project.location}</span>
+                            </h1>
                             <div className="flex items-center gap-3">
                                 <p className="flex items-center gap-2 text-[#1D4F9C] font-light tracking-wide text-lg">
                                     <MapPin size={18} /> {project.location}
@@ -628,6 +718,48 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         location={project.location}
                         rera={project.reraNumber}
                         status={project.status}
+                    />
+                </div>
+
+                {/* Intelligence Core: Market Dataset (Phase 25) */}
+                <div className="max-w-7xl mx-auto px-6">
+                    <MarketTrendDataset 
+                        marketBenchmark={project.marketBenchmark}
+                        competitiveInsights={project.competitiveInsights}
+                        projectName={project.title}
+                        location={project.location}
+                    />
+                </div>
+
+                {/* Entity Authority Matrix (Phase 25) */}
+                <div className="max-w-7xl mx-auto px-6">
+                    <EntityAuthorityMatrix 
+                        projectName={project.title}
+                        localityName={project.location}
+                        topicID={project.topicID}
+                        metrics={[
+                            {
+                                label: "Capital Appreciation Index",
+                                projectValue: project.priceTrend?.yoyGrowth || "12.5%",
+                                marketAverage: locality?.yoyAppreciation || "8.5%",
+                                icon: TrendingUp,
+                                better: true
+                            },
+                            {
+                                label: "Structural Reliability",
+                                projectValue: project.technicalSpecs?.find(s => s.label.includes('Technology'))?.value || "Mivan Technology",
+                                marketAverage: "Traditional RCC",
+                                icon: Shield,
+                                better: true
+                            },
+                            {
+                                label: "Connectivity Score",
+                                projectValue: project.infrastructureScores ? (Object.values(project.infrastructureScores).reduce((a, b) => a + b, 0) / 3).toFixed(1) : "9.2",
+                                marketAverage: locality?.comparativeMetrics?.connectivityScore || "8.5",
+                                icon: MapPin,
+                                better: true
+                            }
+                        ]}
                     />
                 </div>
 
@@ -859,6 +991,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                                 Based on {locality.name}'s current appreciation trend of <strong>{locality.yoyAppreciation}</strong> YoY, your investment is projected to reach institutional valuations by 2030.
                                             </p>
 
+                                            {project.id === 'p9' && <LandIntelligenceMasterclass />}
+
                                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                                 <div className="bg-white p-6 rounded-sm border border-[#C5A059]/10 shadow-sm">
                                                     <span className="text-[10px] text-[#C5A059] uppercase tracking-widest block mb-1">Current Base Value</span>
@@ -989,7 +1123,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                             </div>
                                         )}
                                         <h3 className="text-xl font-serif mb-4 text-[#FFFFFF]">SP Research Desk Verdict</h3>
-                                        <div className="flex items-center gap-1 mb-4">
+                                        <div className="flex items-center gap-1 mb-6">
                                             {[...Array(5)].map((_, i) => (
                                                 <div 
                                                     key={i} 
@@ -998,19 +1132,16 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                             ))}
                                             <span className="ml-2 text-sm font-light text-white/80">{project.expertReview.rating}/5.0</span>
                                         </div>
-                                        <p className="text-sm font-light leading-relaxed mb-6 italic text-white/90">
-                                            "{project.expertReview.summary}"
-                                        </p>
-                                        <ul className="space-y-2">
-                                            {project.expertReview.pros.map((pro, i) => (
-                                                <li key={i} className="flex items-center gap-2 text-xs font-light text-white/80">
-                                                    <span className="w-1 h-1 rounded-full bg-[#C5A059]"></span> {pro}
-                                                </li>
-                                            ))}
-                                        </ul>
                                     </div>
                                 )}
                             </div>
+
+                            {project.expertReview && (
+                                <SentimentPulse 
+                                    ratings={project.expertReview.ratings} 
+                                    summary={project.expertReview.summary} 
+                                />
+                            )}
 
                             <PredictiveNavigation context="project" currentSlug={project.slug} />
                         </section>
@@ -1075,27 +1206,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         {project.faqs && project.faqs.length > 0 && (
                             <>
                                 {project.answerGraph && project.answerGraph.length > 0 && (
-                                    <div className="mt-12 mb-8 bg-[#F5F7FA] p-8 rounded-sm border-l-4 border-[#1D4F9C]">
-                                        <h3 className="text-xl font-serif italic mb-6 text-[#1D4F9C]">Decision Support: Expert Answer Graph</h3>
-                                        <div className="grid gap-6">
-                                            {project.answerGraph.map((item, idx) => (
-                                                <div key={idx} className="bg-white p-6 shadow-sm">
-                                                    <p className="font-bold text-[#323334] mb-2 flex items-center gap-2">
-                                                        <span className="text-[#1D4F9C]">Q:</span> {item.question}
-                                                    </p>
-                                                    <p className="text-sm text-[#323334]/80 leading-relaxed">
-                                                        <span className="text-[#C5A059] font-bold">A:</span> {item.answer}
-                                                    </p>
-                                                    <div className="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2">
-                                                        <span className="text-[10px] uppercase tracking-widest text-[#1D4F9C]/60 font-bold">Insights for:</span>
-                                                        <span className="bg-blue-50 text-[#1D4F9C] text-[9px] px-2 py-0.5 rounded-full font-bold uppercase tracking-tighter border border-blue-100">
-                                                            {item.personaImpact}
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
+                                    <ZeroClickBrain 
+                                        projectName={project.title}
+                                        answerGraph={project.answerGraph}
+                                    />
                                 )}
                                 <FAQSection items={project.faqs} title={`Common Questions about ${project.title}`} />
                             </>
@@ -1108,50 +1222,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         )}
                         <RealEstateGlossary />
 
-                        {/* 8. Predictive Next Steps — Semantic Internal Linking */}
-                        <section className="mt-20 p-8 bg-[#1D4F9C]/5 border border-[#1D4F9C]/20 rounded-sm">
-                            <div className="flex items-center gap-3 mb-6">
-                                <TrendingUp size={18} className="text-[#1D4F9C]" />
-                                <h2 className="text-xl font-serif text-[#1A1A1A]">Compare & Explore Premium Alternatives</h2>
-                            </div>
-                            <p className="text-sm text-[#323334] font-light mb-8 leading-relaxed">
-                                Based on your interest in <strong>{project.title}</strong>, our research desk recommends exploring these high-yield premium developments in the same corridor:
-                            </p>
-                            <div className="grid sm:grid-cols-2 gap-4">
-                                {projects.filter(p => p.id !== project.id && p.location === project.location).slice(0, 2).map(altProject => (
-                                    <Link
-                                        key={altProject.id}
-                                        href={`/projects/${altProject.slug}`}
-                                        className="group flex flex-col p-5 bg-white border border-[#C5A059]/20 hover:border-[#1D4F9C] transition-all rounded-sm shadow-sm hover:shadow-md"
-                                    >
-                                        <span className="text-[10px] tracking-[0.2em] text-[#1D4F9C] font-semibold mb-1 uppercase">{altProject.location}</span>
-                                        <span className="text-lg font-serif text-[#1A1A1A] group-hover:text-[#1D4F9C] transition-colors">{altProject.title}</span>
-                                        <div className="mt-4 flex items-center justify-between">
-                                            <span className="text-xs text-[#C5A059] italic">{altProject.price}</span>
-                                            <span className="text-[10px] uppercase tracking-wide font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Details <ArrowRight size={12} /></span>
-                                        </div>
-                                    </Link>
-                                ))}
-                                {/* Fallback if no same-location projects */}
-                                {projects.filter(p => p.id !== project.id && p.location === project.location).length === 0 &&
-                                    projects.filter(p => p.id !== project.id).slice(0, 2).map(altProject => (
-                                        <Link
-                                            key={altProject.id}
-                                            href={`/projects/${altProject.slug}`}
-                                            className="group flex flex-col p-5 bg-white border border-[#C5A059]/20 hover:border-[#1D4F9C] transition-all rounded-sm shadow-sm hover:shadow-md"
-                                        >
-                                            <span className="text-[10px] tracking-[0.2em] text-[#1D4F9C] font-semibold mb-1 uppercase">{altProject.location}</span>
-                                            <span className="text-lg font-serif text-[#1A1A1A] group-hover:text-[#1D4F9C] transition-colors">{altProject.title}</span>
-                                            <div className="mt-4 flex items-center justify-between">
-                                                <span className="text-xs text-[#C5A059] italic">{altProject.price}</span>
-                                                <span className="text-[10px] uppercase tracking-wide font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Details <ArrowRight size={12} /></span>
-                                            </div>
-                                        </Link>
-                                    ))
-                                }
-                            </div>
-                        </section>
-
+                        {/* 8. Predictive Semantic Siblings — Neural Link Mesh */}
+                        <PredictiveSemanticSiblings currentProject={project} allProjects={projects} />
                     </div>
 
                     {/* Right Column: Sticky Quick Action Widget */}
