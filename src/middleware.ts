@@ -5,14 +5,14 @@ export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   const host = request.headers.get('host');
 
+  /* 
   // Redirect www to non-www
   if (host && host.startsWith('www.')) {
     const nextHost = host.replace(/^www\./, '');
     url.host = nextHost;
-    // For local development, host might not include port in some environments,
-    // but url.host usually does. clones handle this well.
     return NextResponse.redirect(url, 301);
   }
+  */
 
   return NextResponse.next();
 }
