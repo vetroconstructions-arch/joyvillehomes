@@ -22,6 +22,8 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
 });
 
+export const runtime = "edge";
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://joyville-homes.com'),
   title: "Joyville Homes Pune | Shapoorji Pallonji | 2 & 3 BHK Flats in Hinjewadi, Hadapsar, Bavdhan",
