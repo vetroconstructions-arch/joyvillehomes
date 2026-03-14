@@ -49,6 +49,7 @@ export default function HomeClient() {
               alt="Premium residential view of Joyville Homes by Shapoorji Pallonji in Hinjewadi, Pune"
               className="object-cover opacity-60 mix-blend-luminosity"
               priority
+              fetchPriority="high"
               sizes="(max-width: 1200px) 100vw, 100vw"
             />
           </motion.div>

@@ -9,6 +9,9 @@ export default function robots(): MetadataRoute.Robots {
         '/admin/',
         '/cgi-bin/',
         '/*?*', // Prevent duplicated content from UTM/Ad parameters
+        '/*?filter=*',
+        '/*?sort=*',
+        '/*?search=*',
     ];
 
     return {

@@ -93,6 +93,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://connect.facebook.net" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
@@ -326,6 +328,24 @@ export default function RootLayout({
                   "name": "Pune, Maharashtra, India"
                 },
                 "temporalCoverage": "2024-01-01/2026-12-31"
+              },
+              {
+                "@type": "BreadcrumbList",
+                "@id": "https://joyville-homes.com/#breadcrumb",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://joyville-homes.com"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Projects",
+                    "item": "https://joyville-homes.com/projects"
+                  }
+                ]
               }
             ]
           })
