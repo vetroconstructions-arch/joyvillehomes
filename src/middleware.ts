@@ -5,12 +5,16 @@ export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   const host = request.headers.get('host');
 
+  /* 
   // Redirect www to non-www
+  // Temporarily disabled to prevent redirect loop with Vercel settings.
+  // Set joyville-homes.com as Primary Domain in Vercel to handle this correctly.
   if (host && host.startsWith('www.')) {
     const nextHost = host.replace(/^www\./, '');
     url.host = nextHost;
     return NextResponse.redirect(url, 301);
   }
+  */
 
   return NextResponse.next();
 }
