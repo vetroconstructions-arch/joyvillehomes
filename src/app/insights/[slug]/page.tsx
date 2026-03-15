@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+export const dynamic = 'force-static';
 import { notFound } from 'next/navigation';
 import { blogs, getBlogBySlug } from '@/data/blogs';
 import Image from 'next/image';

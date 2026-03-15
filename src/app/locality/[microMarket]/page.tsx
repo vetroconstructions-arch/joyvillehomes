@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+export const dynamic = 'force-static';
 import { notFound } from 'next/navigation';
 import { projects } from '@/data/projects';
 import { localities, LocalityData } from '@/data/localities';
