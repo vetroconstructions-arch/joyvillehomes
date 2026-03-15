@@ -22,7 +22,9 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
 });
 
-export const runtime = "edge";
+// Cloudflare Pages compatibility: Enable Edge runtime for features like middleware
+// but allow static generation where possible.
+// export const runtime = "edge"; // Removed global edge to allow static generation and reduce bundle size
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://joyville-homes.com'),
