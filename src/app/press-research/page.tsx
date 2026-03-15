@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+export const dynamic = 'force-static';
 import ResearchHub from '@/components/ResearchHub';
 import { ShieldCheck, Globe, Users, Trophy } from 'lucide-react';
 

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+export const dynamic = "force-static";
 import Link from "next/link";
 import { MapPin, Navigation2, Briefcase, ShoppingBag, ArrowRight } from "lucide-react";
 

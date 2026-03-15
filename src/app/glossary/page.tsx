@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+export const dynamic = 'force-static';
 import { glossaryTerms } from '@/data/glossary';
 
 export const metadata: Metadata = {

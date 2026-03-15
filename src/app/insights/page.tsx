@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+export const dynamic = 'force-static';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Calendar, User, Clock } from 'lucide-react';

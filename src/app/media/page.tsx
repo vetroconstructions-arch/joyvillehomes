@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+export const dynamic = 'force-static';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Download, TrendingUp, Newspaper, ArrowRight } from 'lucide-react';

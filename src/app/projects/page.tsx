@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+export const dynamic = 'force-static';
 import ProjectsPortfolioClient from '@/components/ProjectsPortfolioClient';
 import SGEAnswerHub from '@/components/SGEAnswerHub';
 

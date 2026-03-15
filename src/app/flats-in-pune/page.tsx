@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+export const dynamic = 'force-static';
 import Link from 'next/link';
 import { MapPin, Home, TrendingUp, CheckCircle2, ArrowRight, Building2, Shield } from 'lucide-react';
 

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+export const dynamic = 'force-static';
 import Link from "next/link";
 import { CheckCircle2, Trees, Droplets, Dumbbell, ShieldCheck, Gamepad2, Coffee, ArrowRight } from "lucide-react";
 
