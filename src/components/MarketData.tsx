@@ -10,10 +10,13 @@ export default function MarketData() {
         "@type": "Dataset",
         "name": "Pune Real Estate Locality Performance Matrix 2026",
         "description": "Granular data on ROI potential, infrastructure growth scores, and occupancy rates across Pune's high-growth corridors.",
+        "url": "https://joyville-homes.com/pune-real-estate-market",
         "creator": {
             "@type": "Organization",
-            "name": "Shapoorji Pallonji Premium Research Desk"
+            "name": "Shapoorji Pallonji Premium Research Desk",
+            "url": "https://joyville-homes.com"
         },
+        "license": "https://creativecommons.org/licenses/by/4.0/",
         "spatialCoverage": "Pune, Maharashtra, India",
         "variableMeasured": [
             {

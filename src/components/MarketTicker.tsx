@@ -32,10 +32,13 @@ export default function MarketTicker() {
         "@type": "Dataset",
         "name": "Pune Residential Market Price Trends - SP Insights",
         "description": "Real-time price trends and appreciation metrics for major Pune micro-markets including Hinjewadi, Hadapsar, and Bavdhan.",
+        "url": "https://joyville-homes.com/pune-real-estate-market",
         "creator": {
             "@type": "Organization",
-            "name": "Shapoorji Pallonji Real Estate Research Desk"
+            "name": "Shapoorji Pallonji Real Estate Research Desk",
+            "url": "https://joyville-homes.com"
         },
+        "license": "https://creativecommons.org/licenses/by/4.0/",
         "variableMeasured": ["Average Price per Sq. Ft.", "Year-over-Year Growth"],
         "temporalCoverage": "2024/2026"
     };

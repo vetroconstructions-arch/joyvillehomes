@@ -21,10 +21,13 @@ const MarketTrendDataset: React.FC<MarketTrendDatasetProps> = ({
         "@type": "Dataset",
         "name": `${projectName} Market Intelligence & Competitive Analysis`,
         "description": `Comprehensive market benchmarking and competitive analysis for ${projectName} in ${location}.`,
+        "url": `https://joyville-homes.com/projects/${projectName.toLowerCase().replace(/\s+/g, '-')}`,
         "creator": {
             "@type": "Organization",
-            "name": "Shapoorji Pallonji Real Estate"
+            "name": "Shapoorji Pallonji Real Estate",
+            "url": "https://joyville-homes.com"
         },
+        "license": "https://creativecommons.org/licenses/by/4.0/",
         "variableMeasured": [
             "Market Price Benchmark",
             "Competitive Advantages",

@@ -1,8 +1,7 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
-import { TrendingUp, BarChart3, Database, Globe, ArrowUpRight } from 'lucide-react';
+import { BarChart3, Database, Globe, ArrowUpRight } from 'lucide-react';
 
 interface MarketPulseTickerProps {
     localityName: string;
@@ -20,8 +19,10 @@ const MarketPulseTicker: React.FC<MarketPulseTickerProps> = ({ localityName, avg
         "url": `https://joyville-homes.com/locality/${localityName.toLowerCase()}`,
         "creator": {
             "@type": "Organization",
-            "name": "Shapoorji Pallonji Real Estate Research Desk"
+            "name": "Shapoorji Pallonji Real Estate Research Desk",
+            "url": "https://joyville-homes.com"
         },
+        "license": "https://creativecommons.org/licenses/by/4.0/",
         "variableMeasured": [
             {
                 "@type": "PropertyValue",

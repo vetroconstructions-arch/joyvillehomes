@@ -320,6 +320,11 @@ export default function RootLayout({
                   "@id": "https://joyville-homes.com/#organization"
                 },
                 "license": "https://creativecommons.org/licenses/by/4.0/",
+                "creator": {
+                  "@type": "Organization",
+                  "name": "Shapoorji Pallonji Real Estate Research Desk",
+                  "url": "https://joyville-homes.com"
+                },
                 "variableMeasured": [
                   "Capital Appreciation Rate",
                   "Rental Yield",
