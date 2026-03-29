@@ -36,14 +36,14 @@ export default function robots(): MetadataRoute.Robots {
                 allow: '/',
                 disallow: [], // Full access for visual/technical inspection
             },
-            // Explicitly block invasive AI Scrapers but allow Search LLMs
+            // Block invasive scrapers, but ALLOW top-tier AI Search engines (ChatGPT, Claude, Gemini) for AGI/SGE Dominance
             {
-                userAgent: ['GPTBot', 'ChatGPT-User', 'CCBot', 'anthropic-ai', 'Omigili', 'FacebookBot', 'Twitterbot'],
+                userAgent: ['CCBot', 'Omigili', 'FacebookBot', 'Twitterbot'],
                 disallow: ['/'],
             },
             {
-                userAgent: ['Google-Extended'], // Controls SGE/Gemini extraction
-                allow: '/', 
+                userAgent: ['GPTBot', 'ChatGPT-User', 'anthropic-ai', 'Google-Extended'], 
+                allow: '/',
             }
         ],
         sitemap: `${siteUrl}/sitemap.xml`,

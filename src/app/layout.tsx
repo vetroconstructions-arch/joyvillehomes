@@ -3,7 +3,6 @@ import { Inter, Playfair_Display } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import MarketTicker from "@/components/MarketTicker";
 import PageTransition from "@/components/PageTransition";
-import dynamic from "next/dynamic";
 
 import SEOFooter from "@/components/SEOFooter";
 import ClientWrapper from "@/components/ClientWrapper";
@@ -28,9 +27,14 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://joyville-homes.com'),
-  title: "Joyville Homes Pune | Shapoorji Pallonji | 2 & 3 BHK Flats in Hinjewadi, Hadapsar, Bavdhan",
-  description: "Official Joyville Pune by Shapoorji Pallonji Real Estate. Explore 9 premium projects across Hinjewadi, Hadapsar & Bavdhan. 2 & 3 BHK flats starting ₹65 Lakhs. RERA approved. Check price list, floor plans & book a site visit today.",
+  title: {
+    template: "%s | Joyville Homes Pune | Shapoorji Pallonji",
+    default: "Joyville Homes Pune | Shapoorji Pallonji | Top Real Estate in Pune",
+  },
+  description: "Official Joyville Pune by Shapoorji Pallonji Real Estate. Explore 9 premium projects across Hinjewadi, Hadapsar & Bavdhan. 2 & 3 BHK flats starting ₹65 Lakhs. RERA approved. Dive into the Pune real estate market today.",
   keywords: [
+    // 0. Macro-Market Pillar Keywords
+    "Pune real estate market", "Pune real estate market 2026", "Pune real estate investment", "top real estate developer Pune", "Pune property market trends", "buy property in Pune",
     // 1. Master Brand Keywords (Topical Authority)
     "Shapoorji Pallonji projects Pune", "Shapoorji Pallonji real estate Pune", "Shapoorji Pallonji flats Pune", "Joyville Homes Pune", "Shapoorji Pallonji township Pune", "Shapoorji Pallonji Pune contact number", "official website Shapoorji Pallonji Pune",
     // 2. Project-Level Intent Clusters (Hinjewadi)
@@ -249,12 +253,6 @@ export default function RootLayout({
                     "@type": "SiteNavigationElement",
                     "name": "Bavdhan Projects",
                     "url": "https://joyville-homes.com/location/bavdhan"
-                  },
-                  {
-                    "@type": "Event",
-                    "name": "Shapoorji Pallonji 150th Anniversary",
-                    "description": "Celebrating a century and a half of engineering excellence and iconic structures across India.",
-                    "startDate": "2015-01-01"
                   }
                 ],
                 "knowsAbout": ENTITIES.DEVELOPER.iconicStructures
@@ -308,9 +306,9 @@ export default function RootLayout({
                   { "@type": "State", "name": "Maharashtra" }
                 ],
                 "makesOffer": [
-                  { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "2 BHK Apartments" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "3 BHK Apartments" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "NA Bungalow Plots" } }
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "2 BHK Apartments in Pune" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "3 BHK Apartments in Pune" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "NA Bungalow Plots in Pune" } }
                 ]
               },
               {

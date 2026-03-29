@@ -74,6 +74,24 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'joyvillehomes.com' }],
+        destination: 'https://joyville-homes.com/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.joyvillehomes.com' }],
+        destination: 'https://joyville-homes.com/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.joyville-homes.com' }],
+        destination: 'https://joyville-homes.com/:path*',
+        permanent: true,
+      },
+      {
         source: '/index.html',
         destination: '/',
         permanent: true,

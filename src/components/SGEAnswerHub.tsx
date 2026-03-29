@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { HelpCircle, ChevronRight, Zap } from 'lucide-react';
+import { ChevronRight, Zap } from 'lucide-react';
 
 interface AnswerItem {
     question: string;
@@ -37,7 +37,7 @@ export default function SGEAnswerHub() {
                     </div>
                     <div>
                         <h2 className="text-3xl font-serif text-slate-900 mb-2">Google SGE & AI Intelligence Hub</h2>
-                        <p className="text-slate-600 font-light italic">Expert-verified answers for Pune's real estate growth corridor.</p>
+                        <p className="text-slate-600 font-light italic">Expert-verified answers for Pune&apos;s real estate growth corridor.</p>
                     </div>
                 </div>
 
@@ -60,24 +60,7 @@ export default function SGEAnswerHub() {
                     ))}
                 </div>
 
-                {/* Structured Data for SGE citation */}
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify({
-                            "@context": "https://schema.org",
-                            "@type": "FAQPage",
-                            "mainEntity": answers.map(a => ({
-                                "@type": "Question",
-                                "name": a.question,
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": a.answer
-                                }
-                            }))
-                        })
-                    }}
-                />
+                {/* FAQPage schema is emitted by GlobalFAQ component to avoid duplicate structured data on the same URL */}
             </div>
         </section>
     );

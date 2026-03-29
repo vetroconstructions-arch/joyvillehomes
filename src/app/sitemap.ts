@@ -63,6 +63,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.85,
         },
         {
+            url: `${baseUrl}/pune-real-estate-market`,
+            lastModified: new Date(), // Always fresh for Google
+            changeFrequency: 'daily',
+            priority: 1.0, // High-intent topical authority
+        },
+        {
             url: `${baseUrl}/insights/joyville-vs-competitors`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
