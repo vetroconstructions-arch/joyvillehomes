@@ -15,22 +15,17 @@ import {
     Activity, 
     Shield, 
     Key, 
-    Map, 
+    Map as LucideMap, 
     ChevronRight, 
     TrendingUp, 
-    ArrowRight, 
     Clock, 
-    Phone,
     Globe,
-    ExternalLink,
-    BarChart3
+    ExternalLink
 } from 'lucide-react';
 import FAQSection from '@/components/FAQSection';
 import BrochureButton from '@/components/BrochureButton';
-import MarketPulseTicker from '@/components/MarketPulseTicker';
 import ConstructionMilestones from '@/components/ConstructionMilestones';
 import RealEstateGlossary from '@/components/RealEstateGlossary';
-import SemanticLinkMesh from '@/components/SemanticLinkMesh';
 import EMICalculator from '@/components/EMICalculator';
 import ProjectClientWrapper from '@/components/ProjectClientWrapper';
 import StickyProjectTabs from '@/components/StickyProjectTabs';
@@ -359,7 +354,22 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     },
                     "result": {
                         "@type": "Event",
-                        "name": `Site Visit to ${project.title} Site Office`
+                        "name": `Site Visit to ${project.title} Site Office`,
+                        "location": {
+                            "@type": "Place",
+                            "name": `${project.title} Site Office`,
+                            "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": project.siteOffice.address,
+                                "addressLocality": project.location,
+                                "addressRegion": "Maharashtra",
+                                "addressCountry": "IN"
+                            }
+                        },
+                        "startDate": new Date().toISOString().split('T')[0],
+                        "endDate": new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toISOString().split('T')[0],
+                        "eventStatus": "https://schema.org/EventScheduled",
+                        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
                     }
                 }
             }] : []),
@@ -949,7 +959,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                 </div>
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#F4F6F9] via-transparent to-transparent flex items-end p-6">
                                     <div className="text-[#1D4F9C] flex items-center gap-2 text-xs tracking-widest uppercase bg-[#FFFFFF]/80 px-4 py-2 backdrop-blur-md rounded-full border border-[#C5A059]/60">
-                                        <Map size={14} /> View Conceptual Master Layout
+                                        <LucideMap size={14} /> View Conceptual Master Layout
                                     </div>
                                 </div>
                             </div>
@@ -970,10 +980,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
                             {/* ROI Vision: 5-Year Appreciation Simulator */}
                             {(() => {
-                                const locality = require('@/data/localities').localities.find((l: any) => l.name.toLowerCase() === project.location.toLowerCase());
-                                if (!locality) return null;
+                                const matchedLocality = localities.find(l => l.name.toLowerCase() === project.location.toLowerCase());
+                                if (!matchedLocality) return null;
 
-                                const appreciationRate = parseFloat(locality.yoyAppreciation) / 100;
+                                const appreciationRate = parseFloat(matchedLocality.yoyAppreciation) / 100;
                                 const currentVal = calculatedBasePrice;
                                 const futureVal = currentVal * Math.pow(1 + appreciationRate, 5);
                                 const totalAppreciation = futureVal - currentVal;
@@ -988,7 +998,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                             </div>
                                             <h3 className="text-2xl font-serif text-[#1A1A1A] mb-4">5-Year ROI Vision for {project.title}</h3>
                                             <p className="text-sm text-[#323334] font-light mb-8 max-w-2xl leading-relaxed">
-                                                Based on {locality.name}'s current appreciation trend of <strong>{locality.yoyAppreciation}</strong> YoY, your investment is projected to reach institutional valuations by 2030.
+                                                Based on {matchedLocality.name}&apos;s current appreciation trend of <strong>{matchedLocality.yoyAppreciation}</strong> YoY, your investment is projected to reach institutional valuations by 2030.
                                             </p>
 
                                             {project.id === 'p9' && <LandIntelligenceMasterclass />}
@@ -1010,7 +1020,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
                                             <div className="mt-8 flex flex-wrap gap-4 text-[10px] text-[#323334]/60 italic font-light">
                                                 <span>*Based on current launch pricing.</span>
-                                                <span>**Projected based on {locality.yoyAppreciation} compound annual growth rate. Real estate investments are subject to market risks.</span>
+                                                <span>**Projected based on {matchedLocality.yoyAppreciation} compound annual growth rate. Real estate investments are subject to market risks.</span>
                                             </div>
                                         </div>
                                     </div>
@@ -1019,13 +1029,13 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
                             {/* Market Benchmarking: Price Delta Analysis */}
                             {(() => {
-                                const locality = require('@/data/localities').localities.find((l: any) => project.location.toLowerCase().includes(l.name.toLowerCase()));
-                                if (!locality) return null;
+                                const matchedMarketLocality = localities.find(l => project.location.toLowerCase().includes(l.name.toLowerCase()));
+                                if (!matchedMarketLocality) return null;
 
                                 const firstFloorPlan = project.floorPlans[0];
                                 const minCarpet = parseInt(firstFloorPlan.carpetArea.split(' ')[0]);
                                 const projectPpsf = Math.round(calculatedBasePrice / minCarpet);
-                                const localityPpsf = parseInt(locality.avgPricePerSqFt.replace('₹', '').replace(',', ''));
+                                const localityPpsf = parseInt(matchedMarketLocality.avgPricePerSqFt.replace('₹', '').replace(',', ''));
 
                                 const delta = ((projectPpsf - localityPpsf) / localityPpsf) * 100;
                                 const isPremium = delta > 5;
@@ -1041,7 +1051,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                                     <span className="text-[10px] text-[#323334]/60">per sq. ft. (Est.)</span>
                                                 </div>
                                                 <p className="text-xs text-[#323334] font-light">
-                                                    {locality.name} Average: <span className="font-medium">₹{localityPpsf.toLocaleString()} / sq. ft.</span>
+                                                    {matchedMarketLocality.name} Average: <span className="font-medium">₹{localityPpsf.toLocaleString()} / sq. ft.</span>
                                                 </p>
                                             </div>
                                             <div className="flex items-center gap-4">

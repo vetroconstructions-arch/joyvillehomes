@@ -51,8 +51,19 @@ const LegacyTimeline: React.FC = () => {
         "about": timelineEvents.map(event => ({
             "@type": "Event",
             "name": event.title,
-            "startDate": event.year,
-            "description": event.description
+            "startDate": event.year === "1865" ? "1865-01-01" : event.year === "1930s" ? "1930-01-01" : event.year === "1970s" ? "1970-01-01" : event.year === "2016" ? "2016-01-01" : "2026-01-01",
+            "location": {
+                "@type": "Place",
+                "name": event.year === "1970s" ? "Al Alam Palace, Muscat" : event.year === "2026" ? "Joyville Pune" : "Mumbai, India",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": event.year === "1970s" ? "Muscat" : event.year === "2026" ? "Pune" : "Mumbai",
+                    "addressCountry": event.year === "1970s" ? "Oman" : "IN"
+                }
+            },
+            "description": event.description,
+            "eventStatus": "https://schema.org/EventScheduled",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
         }))
     };
 
@@ -81,7 +92,7 @@ const LegacyTimeline: React.FC = () => {
                         whileInView={{ opacity: 1 }}
                         className="text-[#323334]/60 text-sm font-light max-w-xl mx-auto leading-relaxed"
                     >
-                        Explore the evolutionary journey of the Shapoorji Pallonji Group, from shaping India's reserve bank to defining the skyline of Pune in 2026.
+                        Explore the evolutionary journey of the Shapoorji Pallonji Group, from shaping India&apos;s reserve bank to defining the skyline of Pune in 2026.
                     </motion.p>
                 </div>
 
@@ -127,7 +138,7 @@ const LegacyTimeline: React.FC = () => {
                     className="mt-24 p-12 bg-white border border-dashed border-[#C5A059]/30 rounded-3xl text-center"
                 >
                     <blockquote className="text-xl font-serif italic text-[#323334] max-w-3xl mx-auto mb-6">
-                        "Engineering is not just about steel and concrete; it's about building legacies that endure for generations."
+                        &quot;Engineering is not just about steel and concrete; it&apos;s about building legacies that endure for generations.&quot;
                     </blockquote>
                     <cite className="text-[10px] uppercase tracking-widest font-bold text-[#C5A059]">The Shapoorji Pallonji Ethos</cite>
                 </motion.div>

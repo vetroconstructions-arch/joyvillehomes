@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 export const dynamic = 'force-static';
 import { notFound } from 'next/navigation';
 import { projects } from '@/data/projects';
-import { localities, LocalityData } from '@/data/localities';
+import { localities } from '@/data/localities';
 import Link from 'next/link';
 import Image from 'next/image';
 import { 
@@ -16,7 +16,6 @@ import {
     Hospital, 
     ShoppingBag, 
     Train, 
-    Clock,
     Zap,
     ShieldCheck,
     BarChart3
@@ -27,7 +26,6 @@ import HyperLocalQA from '@/components/HyperLocalQA';
 import IntentLinkCluster from '@/components/IntentLinkCluster';
 import MarketPulseTicker from '@/components/MarketPulseTicker';
 import SemanticKnowledgeBreadcrumbs from '@/components/SemanticKnowledgeBreadcrumbs';
-import { getRelatedEntities } from '@/data/semanticLinking';
 
 const siteUrl = 'https://joyville-homes.com';
 
@@ -150,7 +148,21 @@ export default async function LocalityPage({
                 },
                 "result": {
                     "@type": "Event",
-                    "name": `Site Visit to ${locality.name}`
+                    "name": `Site Visit to ${locality.name} Real Estate Hub`,
+                    "location": {
+                        "@type": "Place",
+                        "name": `${locality.name} Real Estate Hub`,
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": locality.name,
+                            "addressRegion": "Maharashtra",
+                            "addressCountry": "IN"
+                        }
+                    },
+                    "startDate": new Date().toISOString().split('T')[0],
+                    "endDate": new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toISOString().split('T')[0],
+                    "eventStatus": "https://schema.org/EventScheduled",
+                    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
                 }
             },
             "geo": {
@@ -215,6 +227,7 @@ export default async function LocalityPage({
     return (
         <div className="min-h-screen bg-[#F4F6F9] pt-32 pb-24 text-[#323334]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
             {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                 "@context": "https://schema.org",
