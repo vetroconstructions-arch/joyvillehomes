@@ -49,6 +49,25 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* Phase 37: Market Intelligence Manifest — Strategic Internal Mesh */}
+            <section className="bg-[#EEF2F6] py-16 border-b border-[#C5A059]/10">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        {[
+                            { title: "Hinjewadi IT Cluster", slug: "/insights/topic/hinjewadi-it-hub", desc: "Rental yield and appreciation trends." },
+                            { title: "East Pune Growth", slug: "/insights/topic/pune-townships", desc: "Hadapsar infrastructure roadmap." },
+                            { title: "Global NRI Portfolio", slug: "/insights/topic/nri-investment", desc: "FEMA & cross-border asset data." },
+                            { title: "Rental Market 2026", slug: "/insights/topic/pune-rental-market", desc: "Yield analysis for IT corridors." }
+                        ].map((hub, idx) => (
+                            <Link key={idx} href={hub.slug} className="group p-6 bg-white border border-[#C5A059]/10 rounded-sm hover:border-[#1D4F9C]/30 transition-all">
+                                <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#323334] mb-2 group-hover:text-[#1D4F9C]">{hub.title}</h3>
+                                <p className="text-[10px] text-[#323334]/60 font-light leading-relaxed">{hub.desc}</p>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             <SGEAnswerHub />
         </>
     );

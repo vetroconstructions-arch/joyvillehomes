@@ -19,6 +19,7 @@ export default function Navigation() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isProjectsHovered, setIsProjectsHovered] = useState(false);
+    const [isDecisionHovered, setIsDecisionHovered] = useState(false);
     const [isEnquireModalOpen, setIsEnquireModalOpen] = useState(false);
     const pathname = usePathname();
 
@@ -53,7 +54,10 @@ export default function Navigation() {
         <>
             <header
                 className={`fixed w-full z-[100] transition-all duration-700 ease-out px-6 md:px-12 ${navBackground}`}
-                onMouseLeave={() => setIsProjectsHovered(false)}
+                onMouseLeave={() => {
+                    setIsProjectsHovered(false);
+                    setIsDecisionHovered(false);
+                }}
             >
                 <nav aria-label="Main Navigation" className="max-w-7xl mx-auto flex justify-between items-center relative">
 
@@ -76,7 +80,7 @@ export default function Navigation() {
                             onClick={() => setIsProjectsHovered(!isProjectsHovered)}
                             role="button"
                             aria-haspopup="true"
-                            aria-expanded={isProjectsHovered}
+                            aria-expanded={isProjectsHovered ? "true" : "false"}
                             tabIndex={0}
                             onKeyDown={(e) => {
                                 if (e.key === 'Enter' || e.key === ' ') {
@@ -87,6 +91,45 @@ export default function Navigation() {
                         >
                             <Link href="/projects" className="hover:text-[#1D4F9C] transition-colors duration-300">Portfolios</Link>
                             <ChevronDown size={14} className={`transition-transform duration-300 ${isProjectsHovered ? 'rotate-180 text-[#1D4F9C]' : ''}`} />
+                        </div>
+
+                        <div
+                            className="relative h-full py-4 cursor-pointer flex items-center gap-1 group/trigger"
+                            onMouseEnter={() => setIsDecisionHovered(true)}
+                            onClick={() => setIsDecisionHovered(!isDecisionHovered)}
+                            role="button"
+                            aria-haspopup="true"
+                            aria-expanded={isDecisionHovered ? "true" : "false"}
+                            tabIndex={0}
+                        >
+                            <span className="hover:text-[#1D4F9C] transition-colors duration-300">Decision Hub</span>
+                            <ChevronDown size={14} className={`transition-transform duration-300 ${isDecisionHovered ? 'rotate-180 text-[#1D4F9C]' : ''}`} />
+                            
+                            <AnimatePresence>
+                                {isDecisionHovered && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: 5 }}
+                                        className="absolute top-full left-0 w-64 bg-white border border-[#C5A059]/20 shadow-2xl p-4 mt-2 rounded-sm"
+                                    >
+                                        <div className="space-y-4">
+                                            <Link href="/insights/matchmaker" className="block p-3 hover:bg-[#EEF2F6] rounded-sm transition-colors group/item">
+                                                <span className="block text-[10px] font-bold text-[#1D4F9C] mb-1">Investment Matchmaker</span>
+                                                <span className="block text-[9px] text-[#323334]/60 normal-case tracking-normal">60-second persona-based project matching.</span>
+                                            </Link>
+                                            <Link href="/insights/joyville-vs-competitors" className="block p-3 hover:bg-[#EEF2F6] rounded-sm transition-colors group/item">
+                                                <span className="block text-[10px] font-bold text-[#1D4F9C] mb-1">ROI Simulator</span>
+                                                <span className="block text-[9px] text-[#323334]/60 normal-case tracking-normal">10-year capital appreciation & yield modeling.</span>
+                                            </Link>
+                                            <Link href="/insights" className="block p-3 hover:bg-[#EEF2F6] rounded-sm transition-colors group/item">
+                                                <span className="block text-[10px] font-bold text-[#1D4F9C] mb-1">Authority Guide</span>
+                                                <span className="block text-[9px] text-[#323334]/60 normal-case tracking-normal">Expert market reviews & IT corridor analysis.</span>
+                                            </Link>
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </div>
 
                         <Link href="/amenities" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4">Amenities</Link>

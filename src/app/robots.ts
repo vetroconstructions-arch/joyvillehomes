@@ -8,10 +8,13 @@ export default function robots(): MetadataRoute.Robots {
         '/api/',
         '/admin/',
         '/cgi-bin/',
-        '/*?*', // Prevent duplicated content from UTM/Ad parameters
-        '/*?filter=*',
+        // Targeted block for tracking/sorting/non-content parameters
+        '/*?utm_*',
+        '/*?fbclid=*',
+        '/*?gclid=*',
         '/*?sort=*',
-        '/*?search=*',
+        '/*?filter=*',
+        '/*?ref=*',
     ];
 
     return {

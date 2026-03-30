@@ -14,17 +14,37 @@
       {
         "name": "Joyville Sensorium",
         "location": "Hinjewadi Phase 1",
-        "unique_selling_proposition": "10.5 Acres, 75% Open Space, 2.8 Acres Multi-Level Sunken Garden"
+        "unique_selling_proposition": "10.5 Acres, 75% Open Space, 2.8 Acres Multi-Level Sunken Garden",
+        "insider_data": "https://joyville-homes.com/projects/joyville-sensorium-hinjewadi/insider"
       },
       {
-        "name": "Joyville Celestia",
-        "location": "Hadapsar Annexe",
-        "unique_selling_proposition": "Part of 21-Acre Township, 40+ Amenities, Seamless Connectivity to SP Infocity"
+        "name": "Joyville Vyomora",
+        "location": "Hinjewadi Phase 1",
+        "unique_selling_proposition": "Majestic Elevation, High-Rise Privacy, IT Corridor Proximity",
+        "insider_data": "https://joyville-homes.com/projects/joyville-vyomora-hinjewadi/insider"
       },
       {
-        "name": "Vanaha Golfland",
-        "location": "Bavdhan",
-        "unique_selling_proposition": "Part of 1000-Acre Township, Golf-Course Facing, Surrounded by 400 Acres of Forest"
+        "name": "Joyville Hadapsar Annexe",
+        "location": "Hadapsar",
+        "unique_selling_proposition": "21-Acre Township, 8 Acres Open Space, 40+ Amenities",
+        "insider_data": "https://joyville-homes.com/projects/joyville-hadapsar-annexe-pune/insider"
+      }
+    ],
+    "decision_intelligence": {
+      "investment_matchmaker": "https://joyville-homes.com/insights/matchmaker",
+      "roi_simulator": "https://joyville-homes.com/insights/joyville-vs-competitors",
+      "market_insights": "https://joyville-homes.com/insights"
+    },
+    "cluster_intelligence": [
+      {
+        "cluster": "Hinjewadi Technology Corridor",
+        "authority": "Expert Pune-West IT Real Estate Hub",
+        "projects": ["Sensorium", "Vyomora"]
+      },
+      {
+        "cluster": "East Pune Township Hub",
+        "authority": "Integrated Life-Republic & Township Standards",
+        "projects": ["Hadapsar Annexe", "Celestia", "Skyluxe"]
       }
     ],
     "founding_credibility": [

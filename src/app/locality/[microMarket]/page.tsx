@@ -128,6 +128,44 @@ export default async function LocalityPage({
         },
         {
             "@context": "https://schema.org",
+            "@type": "Dataset",
+            "name": `${locality.name} Real Estate Market Intelligence Dataset 2026`,
+            "description": `Comprehensive property rates, appreciation trends, and infrastructure roadmaps for ${locality.name}, Pune.`,
+            "creator": { "@id": "https://joyville-homes.com/#organization" },
+            "license": "https://joyville-homes.com/terms-and-conditions",
+            "hasPart": [
+                {
+                    "@id": `${siteUrl}/locality/${locality.slug}#property-types`,
+                    "name": "Property Type Distribution",
+                    "description": "Inventory availability for 1BHK, 2BHK, and 3BHK units."
+                }
+            ],
+            "spatialCoverage": {
+                "@type": "Place",
+                "name": locality.name,
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": locality.latitude,
+                    "longitude": locality.longitude
+                }
+            },
+            "variableMeasured": [
+                { "@type": "PropertyValue", "name": "Average Rate per SqFt", "value": locality.avgPricePerSqFt },
+                { "@type": "PropertyValue", "name": "Annual Capital Appreciation", "value": locality.yoyAppreciation }
+            ]
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "ServiceArea",
+            "name": `${locality.name} Real Estate Corridor`,
+            "description": `The official service zone for Shapoorji Pallonji Joyville residential assets in ${locality.name}.`,
+            "geo": {
+                "@type": "GeoShape",
+                "circle": `${locality.latitude},${locality.longitude} 5000`
+            }
+        },
+        {
+            "@context": "https://schema.org",
             "@type": "RealEstateAgent",
             "name": `Shapoorji Pallonji Real Estate - ${locality.name}`,
             "image": "https://joyville-homes.com/og-image.jpg",
