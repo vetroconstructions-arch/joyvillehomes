@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 export const dynamic = 'force-static';
 import HomeClient from '@/components/HomeClient';
 import SGEAnswerHub from '@/components/SGEAnswerHub';
+import Link from 'next/link';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: "Pune Real Estate Market 2026 | Joyville Homes by Shapoorji Pallonji",
@@ -22,6 +24,31 @@ export default function Home() {
     return (
         <>
             <HomeClient />
+            
+            {/* Phase 33: Homepage Matchmaker Funnel */}
+            <section className="bg-[#FFFFFF] py-24 border-y border-[#C5A059]/10">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="bg-[#1D4F9C] rounded-sm p-12 md:p-20 text-white flex flex-col lg:flex-row items-center justify-between gap-12 shadow-2xl relative overflow-hidden group">
+                        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-white/5 to-transparent skew-x-12" />
+                        <div className="max-w-2xl text-center lg:text-left relative z-10">
+                            <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#C5A059] mb-6 block">The Decision Engine</span>
+                            <h2 className="text-4xl md:text-5xl font-serif mb-8 leading-tight">Which Joyville Project Is <span className="italic opacity-80">Right For You?</span></h2>
+                            <p className="text-lg font-light opacity-70 leading-relaxed mb-10">
+                                Skip the search and get a data-backed recommendation in 60 seconds. Our matchmaker analyzes your budget, location priority, and ROI goals to find your ideal SP asset.
+                            </p>
+                            <Link href="/insights/matchmaker" className="inline-flex items-center gap-4 bg-white text-[#1D4F9C] px-12 py-5 text-xs font-bold uppercase tracking-[0.3em] hover:bg-[#C5A059] hover:text-white transition-all shadow-xl">
+                                Start Matchmaker <ArrowRight className="w-5 h-5" />
+                            </Link>
+                        </div>
+                        <div className="hidden lg:flex items-center justify-center relative z-10 p-12 border border-white/10 rounded-full group-hover:scale-105 transition-transform duration-700">
+                             <div className="w-32 h-32 bg-[#C5A059] rounded-full flex items-center justify-center shadow-2xl">
+                                <Sparkles className="w-12 h-12 text-[#1D4F9C]" />
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <SGEAnswerHub />
         </>
     );

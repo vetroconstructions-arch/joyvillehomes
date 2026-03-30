@@ -6,7 +6,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, Calendar, User, Facebook, Twitter, Linkedin, ArrowRight } from 'lucide-react';
 import DiscussedEntities from '@/components/DiscussedEntities';
+import KeyFactsSummary from '@/components/KeyFactsSummary';
 import { projects } from '@/data/projects';
+import { getExpertByName } from '@/data/experts';
+import { getTopicById } from '@/data/TopicIntelligence';
+import { Target, ArrowUpRight } from 'lucide-react';
 
 const siteUrl = 'https://joyville-homes.com';
 
@@ -91,7 +95,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             "jobTitle": blog.expertAuthor.role,
             "image": `${siteUrl}${blog.expertAuthor.image}`,
             "description": blog.expertAuthor.bio,
-            "url": `${siteUrl}/insights/author/${blog.expertAuthor.name.toLowerCase().replace(/\s+/g, '-')}`
+            "url": `${siteUrl}/insights/author/${getExpertByName(blog.expertAuthor.name)?.id || 'research-desk'}`
         } : {
             "@id": "https://joyville-homes.com/#research-desk"
         },
@@ -203,6 +207,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </div>
 
             <div className="max-w-3xl mx-auto px-6">
+                <KeyFactsSummary takeaways={[
+                    blog.excerpt,
+                    `Perspective: Authored by ${blog.expertAuthor ? blog.expertAuthor.name : blog.author} specializing in ${blog.category}`,
+                    `Strategic Focus: ${blog.seoKeywords?.slice(0, 3).join(', ') ?? blog.title}`
+                ]} />
+
                 <div className="prose prose-lg prose-headings:font-serif prose-headings:font-light prose-headings:text-[#323334] prose-p:font-light prose-p:text-[#323334]/90 prose-p:leading-relaxed prose-a:text-[#1D4F9C] prose-a:font-semibold prose-a:no-underline hover:prose-a:underline prose-a:decoration-[#1D4F9C] max-w-none">
                     {blog.content.map((paragraph, idx) => (
                         <p key={idx} dangerouslySetInnerHTML={{ __html: paragraph }} className="mb-8" />
@@ -227,11 +237,40 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                         </div>
                         <div>
                             <span className="text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-bold block mb-2">Expert Contributor</span>
-                            <h3 className="text-xl font-serif text-[#323334] mb-2">{blog.expertAuthor.name}</h3>
+                            <Link href={`/insights/author/${getExpertByName(blog.expertAuthor.name)?.id || '#'}`} className="hover:text-[#1D4F9C] transition-colors">
+                                <h3 className="text-xl font-serif text-[#323334] mb-2 underline decoration-[#C5A059]/30">{blog.expertAuthor.name}</h3>
+                            </Link>
                             <p className="text-[#323334]/60 text-xs font-medium mb-4 uppercase tracking-widest">{blog.expertAuthor.role}</p>
                             <p className="text-[#323334] font-light text-sm leading-relaxed italic">
-                                "{blog.expertAuthor.bio}"
+                                &quot;{blog.expertAuthor.bio}&quot;
                             </p>
+                        </div>
+                    </div>
+                )}
+
+                {/* Phase 28: Topical Insight Hub Link */}
+                {blog.topicID && blog.topicID.length > 0 && (
+                    <div className="mt-12 bg-[#1D4F9C] p-8 rounded-sm text-[#FFFFFF] shadow-xl relative overflow-hidden group">
+                        <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <Target size={120} />
+                        </div>
+                        <div className="relative z-10 max-w-lg">
+                            <span className="text-[10px] tracking-[0.3em] uppercase font-bold opacity-60 mb-2 block">Authority Hub</span>
+                            <h4 className="text-2xl font-serif mb-4 font-light leading-tight">Delve deeper into the entities discussed.</h4>
+                            <p className="text-sm font-light mb-8 opacity-80 leading-relaxed">
+                                Our data analysts have mapped the relationships between this insight and the broader market trajectory. Access the definitive Topic Hub for a unified view.
+                            </p>
+                            <div className="flex flex-wrap gap-3">
+                                {blog.topicID.map(tid => {
+                                    const topic = getTopicById(tid);
+                                    if (!topic) return null;
+                                    return (
+                                        <Link key={tid} href={`/insights/topic/${topic.id}`} className="inline-flex items-center gap-2 bg-[#FFFFFF] text-[#1D4F9C] px-5 py-2.5 text-[10px] font-bold uppercase tracking-widest hover:bg-[#C5A059] hover:text-[#FFFFFF] transition-all rounded-full group/btn">
+                                            {topic.title} <ArrowUpRight size={14} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                                        </Link>
+                                    );
+                                })}
+                            </div>
                         </div>
                     </div>
                 )}

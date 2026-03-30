@@ -47,7 +47,7 @@ const SemanticLinkMesh: React.FC<SemanticLinkMeshProps> = ({ currentSlug }) => {
                                 )}
                             </div>
                             <p className="text-xs text-[#323334]/60 font-light leading-relaxed mb-6 italic">
-                                "{group.description}"
+                                &quot;{group.description}&quot;
                             </p>
                             
                             <div className="space-y-3">

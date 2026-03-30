@@ -11,7 +11,9 @@ export default function FloatingWhatsApp() {
         });
 
         // Meta Pixel Tracking for WhatsApp micro-conversion
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         if (typeof window !== 'undefined' && (window as any).fbq) {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (window as any).fbq('track', 'Contact', { content_name: 'WhatsApp Initiation' });
         }
     };

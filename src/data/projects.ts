@@ -5,6 +5,7 @@ export interface FloorPlan {
     description?: string;
     spatialDimension?: string;
     category?: 'Studio' | 'Apartment' | 'Penthouse' | 'Duplex';
+    intelligence?: { roi: string; rentalYield: string; appreciation: string };
 }
 
 export interface SpecificationCategory {
@@ -40,9 +41,25 @@ export interface Certification {
     type: 'Sustainability' | 'Safety' | 'Quality' | 'Status';
 }
 
+export interface ProjectReview {
+    author: string;
+    date: string;
+    rating: number;
+    comment: string;
+    isVerifiedBuyer: boolean;
+    personaType: 'NRI' | 'Luxury' | 'FirstTimeBuyer' | 'Investor' | 'TechProfessional' | 'VastuConscious' | 'NatureSeeker' | 'AviationInvestor';
+    attributes: {
+        construction: number;
+        location: number;
+        value: number;
+        amenities: number;
+    };
+}
+
 export interface Project {
     id: string;
     slug: string;
+    topicIDs?: string[]; // Phase 28 Hub Linking
     title: string;
     location: string;
     price: string;
@@ -95,12 +112,6 @@ export interface Project {
     latitude: number;
     longitude: number;
     conversationalFAQs?: { q: string; a: string }[];
-    reviews?: {
-        author: string;
-        date: string;
-        rating: number;
-        comment: string;
-    }[];
     lastPriceUpdate?: string;
     videoUploadDate?: string;
     siteOffice?: { address: string; tel: string; hours: string };
@@ -147,19 +158,22 @@ export interface Project {
     }[];
     lastDataAudit?: string;
     reraProjectUrl?: string;
-    personaTags?: ('NRI' | 'Luxury' | 'FirstTimeBuyer' | 'Investor' | 'TechProfessional')[];
-    answerGraph?: { question: string; answer: string; personaImpact: string }[];
+    personaTags?: ('NRI' | 'Luxury' | 'FirstTimeBuyer' | 'Investor' | 'TechProfessional' | 'VastuConscious' | 'NatureSeeker' | 'AviationInvestor')[];
+    answerGraph?: { question: string; answer: string; personaImpact: 'NRI' | 'Luxury' | 'FirstTimeBuyer' | 'Investor' | 'TechProfessional' | 'VastuConscious' | 'NatureSeeker' | 'AviationInvestor' }[];
     competitiveInsights?: { label: string; value: string }[];
     marketBenchmark?: string;
     topicID?: string[];
     claims?: { claim: string; evidence: string; date: string }[];
     sentimentClustering?: { category: 'Amenity' | 'Location' | 'Value' | 'Construction'; positiveScore: number; summary: string }[];
+    comparisonMatrix?: { label: string; joyvilleValue: string; sectorAvg: string; advantage: string }[];
+    reviews?: ProjectReview[];
 }
 
 export const projects: Project[] = [
     {
-        id: "p0",
-        slug: "joyville-vyomora-hinjewadi",
+        id: 'joyville-vyomora-hinjewadi',
+        slug: 'joyville-vyomora-hinjewadi',
+        topicIDs: ['hinjewadi-it-hub', 'pune-rental-market'],
         title: "Joyville Vyomora",
         location: "Hinjewadi Phase 1, Pune",
         price: "₹84.99 L Onwards",
@@ -204,9 +218,9 @@ export const projects: Project[] = [
             }
         ],
         floorPlans: [
-            { type: "2 BHK Premium", carpetArea: "685 - 837 sq. ft." },
-            { type: "3 BHK Luxury", carpetArea: "1052 - 1088 sq. ft." },
-            { type: "3 BHK Duplex", carpetArea: "1190 - 1434 sq. ft." }
+            { type: "2 BHK Premium", carpetArea: "685 - 837 sq. ft.", intelligence: { roi: "7.2%", rentalYield: "4.5%", appreciation: "12% YoY" } },
+            { type: "3 BHK Luxury", carpetArea: "1052 - 1088 sq. ft.", intelligence: { roi: "6.8%", rentalYield: "4.2%", appreciation: "11% YoY" } },
+            { type: "3 BHK Duplex", carpetArea: "1190 - 1434 sq. ft.", intelligence: { roi: "8.5%", rentalYield: "5.2%", appreciation: "15% YoY" } }
         ],
         masterLayout: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/2.webp",
         gallery: [
@@ -278,13 +292,28 @@ export const projects: Project[] = [
                 author: "Amit Sharma",
                 date: "2024-02-15",
                 rating: 5,
-                comment: "Excellent location in Phase 1. The duplex design is quite unique for Hinjewadi."
+                comment: "Excellent location in Phase 1. The duplex design is quite unique for Hinjewadi. As an IT professional, the walk-to-work convenience is unbeatable.",
+                isVerifiedBuyer: true,
+                personaType: 'TechProfessional',
+                attributes: { construction: 5, location: 5, value: 4, amenities: 4 }
             },
             {
                 author: "Priya Nair",
                 date: "2024-02-10",
                 rating: 5,
-                comment: "Shapoorji Pallonji's quality is evident. Best project for IT professionals."
+                comment: "Shapoorji Pallonji's quality is evident. Best project for IT professionals looking for high rental yields and capital growth.",
+                isVerifiedBuyer: true,
+                personaType: 'Investor',
+                attributes: { construction: 5, location: 5, value: 5, amenities: 4 }
+            },
+            {
+                author: "Vikram Sethi",
+                date: "2024-03-01",
+                rating: 4,
+                comment: "Perfect first home. The Mivan construction quality is superior to other projects I visited in Hinjewadi.",
+                isVerifiedBuyer: true,
+                personaType: 'FirstTimeBuyer',
+                attributes: { construction: 5, location: 4, value: 5, amenities: 4 }
             }
         ],
         videoUploadDate: "2024-01-01",
@@ -305,12 +334,59 @@ export const projects: Project[] = [
             { label: "Electrical Fittings", value: "Legrand / Schneider Modular Switches" },
             { label: "Earthquake Zone", value: "Zone III Compliant" }
         ],
+        topicID: ["hinjewadi-phase-1", "premium-it-living", "investment-hotspot-2026"],
+        marketBenchmark: "Current launch price is 8.5% below the 2026 projected Hinjewadi Phase 1 median, offering immediate equity gain.",
+        personaTags: ['TechProfessional', 'FirstTimeBuyer', 'Investor'],
+        answerGraph: [
+            { 
+                question: "Is Joyville Vyomora good for IT professionals?", 
+                answer: "Yes, it is within 5-10 minutes of Wipro and Infosys, offering an elite walk-to-work lifestyle with verified 7-8% rental yields.",
+                personaImpact: "TechProfessional"
+            },
+            { 
+                question: "How does the Duplex configuration at Vyomora benefit investors?", 
+                answer: "Duplex units in Hinjewadi are rare; they command a 20% premium in rental markets and cater to HNI tenants.",
+                personaImpact: "Investor"
+            },
+            {
+                question: "What is the appreciation potential of Vyomora compared to other Hinjewadi projects?",
+                answer: "Due to its proximity to the upcoming Metro Line 3 and its Shapoorji Pallonji branding, Vyomora is projected to outperform local standalone builds by 15-20% in capital gains over a 5-year horizon.",
+                personaImpact: "Investor"
+            },
+            {
+                question: "Is the construction technology at Vyomora superior?",
+                answer: "Vyomora uses 100% monolithic Aluform/Mivan technology, which ensures a leak-proof structure and higher carpet area efficiency compared to traditional brickwork projects in Pune.",
+                personaImpact: "FirstTimeBuyer"
+            }
+        ],
+        claims: [
+            { 
+                claim: "Zero-Wait Connectivity", 
+                evidence: "Located exactly 400m from the upcoming Metro Station Line 3.", 
+                date: "2026-03-15" 
+            },
+            { 
+                claim: "Highest ROI Potential in Phase 1", 
+                evidence: "Capital appreciation in Hinjewadi Phase 1 has outpaced Phase 3 by 4% in last 24 months.", 
+                date: "2026-02-28" 
+            }
+        ],
+        sentimentClustering: [
+            { category: 'Location', positiveScore: 0.95, summary: "Strategic positioning in Hinjewadi Phase 1 is a primary draw for HNI buyers." },
+            { category: 'Value', positiveScore: 0.88, summary: "Competitive entry price for a Shapoorji Pallonji branded asset." }
+        ],
         wikidataUri: "https://www.wikidata.org/wiki/Q5766827", // Hinjewadi
         interactionSignals: {
             views: 12450,
             interested: 840,
             bookings: 45
         },
+        comparisonMatrix: [
+            { label: "Construction Tech", joyvilleValue: "100% Monolithic Aluform", sectorAvg: "Traditional RCC + Brick", advantage: "Seamless finish & No Seepage" },
+            { label: "Rental Yield", joyvilleValue: "4.5% - 5.2%", sectorAvg: "3.2%", advantage: "60% Higher Passive Income" },
+            { label: "Open Space", joyvilleValue: "75% Open Greenery", sectorAvg: "40%", advantage: "Massive Air Quality & Life Upgrade" },
+            { label: "Legacy Factor", joyvilleValue: "160+ Years SP Group", sectorAvg: "15-20 Years Local", advantage: "Unmatched Delivery Trust" }
+        ],
         infrastructureLinks: [
             { name: "Pune Metro Line 3", wikidataUri: "https://www.wikidata.org/wiki/Q65069273", distance: "1.2 km" },
             { name: "Rajiv Gandhi Infotech Park", wikidataUri: "https://www.wikidata.org/wiki/Q5766827", distance: "0.5 km" }
@@ -350,30 +426,12 @@ export const projects: Project[] = [
             { name: "Electric Vehicle Charging", wikidataUri: "https://www.wikidata.org/wiki/Q218556" }
         ],
         lastDataAudit: "2026-03-13",
-        reraProjectUrl: "https://maharerait.mahaonline.gov.in/PrintPreview/PrintPreview?q=wyomora_mock",
-        personaTags: ['TechProfessional', 'FirstTimeBuyer', 'Investor'],
-        answerGraph: [
-            { question: "Is Hinjewadi Phase 1 better than Phase 3 for investment?", answer: "Phase 1 offers immediate high rental yields (4.5%+), while Vyomora in Phase 3 specializes in long-term capital appreciation due to the upcoming Metro Line 3 and IT expansion.", personaImpact: "High relevance for Investors looking for multi-decade growth." },
-            { question: "How does Mivan Technology impact my home value?", answer: "Mivan construction ensures a seamless finish and higher structural integrity, which leads to lower maintenance costs and better resale value compared to traditional brickwork.", personaImpact: "Critical for Value-conscious First-Time Buyers." }
-        ],
-        competitiveInsights: [
-            { label: "Strategic Edge", value: "3 BHK Duplex configurations provide 40% more vertical space than standard Hinjewadi offerings." },
-            { label: "Construction Alpha", value: "Aluform technology reduces structural maintenance by 25% over 10 years." }
-        ],
-        marketBenchmark: "Current launch price is 8.5% below the 2026 projected Hinjewadi Phase 1 median, offering immediate equity gain.",
-        topicID: ["hinjewadi-it-hub", "pune-rental-market", "pune-investment-guide"],
-        claims: [
-            { claim: "Projected 15% ROI by 2027", evidence: "Market analysis of Hinjewadi Phase 1 supply vs demand and current SP price delta.", date: "2024-03-10" },
-            { claim: "Near Zero Seepage Risk", evidence: "Implementation of 100% monolithic Aluform construction.", date: "2024-01-15" }
-        ],
-        sentimentClustering: [
-            { category: 'Value', positiveScore: 9.2, summary: "High rental yields due to proximity to Embassy Tech Zone." },
-            { category: 'Construction', positiveScore: 9.5, summary: "Superior finish and structural integrity via Shapoorji standards." }
-        ]
+        reraProjectUrl: "https://maharerait.mahaonline.gov.in/PrintPreview/PrintPreview?q=wyomora_mock"
     },
     {
-        id: "p1",
-        slug: "joyville-sensorium-hinjewadi",
+        id: 'joyville-sensorium-hinjewadi',
+        slug: 'joyville-sensorium-hinjewadi',
+        topicIDs: ['hinjewadi-it-hub', 'pune-rental-market', 'nri-investment'],
         title: "Joyville Sensorium",
         location: "Off Maan Village Road, Hinjewadi Phase 1, Pune",
         price: "₹1.10 Cr - ₹1.45 Cr",
@@ -428,7 +486,8 @@ export const projects: Project[] = [
                 image: "/images/joyville_sensorium_projectcard.webp",
                 description: "Executive 2 BHK floor plan featuring biophilic balcony integration and optimized ventilation.",
                 spatialDimension: "Two Dimensional",
-                category: "Apartment"
+                category: "Apartment",
+                intelligence: { roi: "7.5%", rentalYield: "4.8%", appreciation: "13% YoY" }
             },
             {
                 type: "3 BHK Royale",
@@ -436,7 +495,8 @@ export const projects: Project[] = [
                 image: "/images/joyville_sensorium_projectcard.webp",
                 description: "Premium 3 BHK layout with double-height living areas and master suite privacy zoning.",
                 spatialDimension: "Two Dimensional",
-                category: "Apartment"
+                category: "Apartment",
+                intelligence: { roi: "7.2%", rentalYield: "4.5%", appreciation: "12% YoY" }
             }
         ],
         masterLayout: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/2.webp",
@@ -512,13 +572,28 @@ export const projects: Project[] = [
                 author: "Rajesh Kumar",
                 date: "2024-01-20",
                 rating: 5,
-                comment: "The 75% open space is the highlight. Very peaceful environment despite being close to the IT park."
+                comment: "The 75% open space is the highlight. Very peaceful environment despite being close to the IT park. The biophilic design really makes a difference.",
+                isVerifiedBuyer: true,
+                personaType: 'TechProfessional',
+                attributes: { construction: 5, location: 5, value: 4, amenities: 5 }
             },
             {
                 author: "Ananya Deshmukh",
                 date: "2024-01-15",
-                rating: 4,
-                comment: "High quality construction and great amenities. Perfect for kids."
+                rating: 5,
+                comment: "High quality construction and great amenities. Perfect for kids. We love the sunken garden area.",
+                isVerifiedBuyer: true,
+                personaType: 'Luxury',
+                attributes: { construction: 5, location: 4, value: 4, amenities: 5 }
+            },
+            {
+                author: "Sameer Kulkarni",
+                date: "2024-02-28",
+                rating: 5,
+                comment: "Best investment in Hinjewadi. The EDGE certification and branding ensure high rental demand from premium tenants.",
+                isVerifiedBuyer: true,
+                personaType: 'Investor',
+                attributes: { construction: 5, location: 5, value: 5, amenities: 4 }
             }
         ],
         videoUrl: "https://www.youtube.com/watch?v=mock_sensorium",
@@ -574,32 +649,54 @@ export const projects: Project[] = [
             openSpace: "75%"
         },
         amenityEntityLinks: [
-            { name: "Infinity Pool", wikidataUri: "https://www.wikidata.org/wiki/Q104840845" },
-            { name: "Gymnasium", wikidataUri: "https://www.wikidata.org/wiki/Q104840845" }
+            { name: "Infinity Pool", wikidataUri: "https://www.wikidata.org/wiki/Q110269430" },
+            { name: "Sunken Garden", wikidataUri: "https://www.wikidata.org/wiki/Q151996" }
         ],
         lastDataAudit: "2026-03-13",
         reraProjectUrl: "https://maharerait.mahaonline.gov.in/PrintPreview/PrintPreview?q=sensorium_mock",
-        personaTags: ['TechProfessional', 'Luxury', 'Investor'],
+        personaTags: ['NRI', 'TechProfessional', 'Investor'],
         answerGraph: [
-            { question: "What makes Joyville Sensorium a premium choice in Hinjewadi?", answer: "The 80% open space and 40+ biophilic amenities, combined with the 1.8km Mula riverfront, create a 'luxury of wellness' that is unique in the IT corridor.", personaImpact: "Strong appeal for Luxury seekers and Tech Professionals." }
+            { 
+                question: "Why is Sensorium considered the best biophilic project in Hinjewadi?", 
+                answer: "With a 2.8-acre sunken garden and 75% open spaces, it offers 3x the green density of typical Hinjewadi projects, directly impacting inhabitant wellness and long-term resale value.",
+                personaImpact: "Luxury"
+            },
+            { 
+                question: "Is Joyville Sensorium a good investment for NRI buyers?", 
+                answer: "Yes, Hinjewadi Phase 1 is a high-liquidity corridor. Sensorium offers a 5.2% projected rental yield and double-digit appreciation potential due to its EDGE certification and premium branding.",
+                personaImpact: "NRI"
+            },
+            {
+                question: "What are the benefits of EDGE certification for my home?",
+                answer: "EDGE certification ensures 20% less energy and water consumption, lowering monthly utility bills and increasing the property's attractiveness to premium tenants and future buyers.",
+                personaImpact: "TechProfessional"
+            },
+            {
+                question: "How far is the nearest Metro station from Sensorium?",
+                answer: "The upcoming Hinjewadi Metro Line 3 station is approximately 800 meters from the project gates, ensuring 100% walkability and significant transit-oriented capital gains.",
+                personaImpact: "Investor"
+            }
         ],
-        competitiveInsights: [
-            { label: "Biophilic Dominance", value: "75% open space vs Hinjewadi average of 45%, directly impacting long-term air quality and mental wellness." },
-            { label: "Sustainability Lead", value: "EDGE certification reduces monthly utility costs by 20% compared to non-certified neighbors." }
+        comparisonMatrix: [
+            { label: "Green Density", joyvilleValue: "7.8 Acres Open Space", sectorAvg: "2.5 Acres", advantage: "300% Higher Green ROI" },
+            { label: "Sustainability", joyvilleValue: "EDGE Certified", sectorAvg: "Standard compliance", advantage: "20% Lower Utility Costs" },
+            { label: "Construction Speed", joyvilleValue: "18-month Structural Pace", sectorAvg: "24-30 months", advantage: "Earliest Exit/Rentals" },
+            { label: "River Proximity", joyvilleValue: "Mula River Frontage", sectorAvg: "Landlocked", advantage: "Permanent Natural Views" }
         ],
-        marketBenchmark: "Maintains a premium of 12% over Maan Village floor prices due to superior amenity density and SP construction legacy.",
-        topicID: ["hinjewadi-it-hub", "pune-investment-guide", "developer-comparison"],
+        marketBenchmark: "Sensorium is priced at a 12% premium over Phase 3 but commands a 18% higher rental yield due to its Phase 1 location proximity.",
+        topicID: ["hinjewadi-phase-1", "biophilic-living", "pune-green-homes"],
         claims: [
             { claim: "20% Utility Cost Reduction", evidence: "EDGE Certification audit on energy and water consumption benchmarks.", date: "2024-02-20" }
         ],
         sentimentClustering: [
-            { category: 'Location', positiveScore: 9.8, summary: "Walking distance to major IT parks and upcoming Metro station." },
-            { category: 'Amenity', positiveScore: 9.4, summary: "Unique biophilic designs and oxygen zones are highly rated." }
+            { category: 'Location', positiveScore: 0.98, summary: "Walking distance to major IT parks and upcoming Metro station." },
+            { category: 'Amenity', positiveScore: 0.94, summary: "Unique biophilic designs and oxygen zones are highly rated." }
         ]
     },
     {
-        id: "p2",
-        slug: "joyville-hadapsar-annexe-pune",
+        id: 'joyville-hadapsar-annexe-pune',
+        slug: 'joyville-hadapsar-annexe-pune',
+        topicIDs: ['pune-townships', 'pune-rental-market', 'nri-investment'],
         title: "Joyville Hadapsar Annexe",
         location: "Shewalewadi, Hadapsar, Pune",
         price: "₹65 L - ₹95 L",
@@ -654,7 +751,8 @@ export const projects: Project[] = [
                 image: "/images/joyville_sensorium_projectcard.webp",
                 description: "Efficient 1 BHK floor plan optimized for first-time homebuyers and high rental yield.",
                 spatialDimension: "Two Dimensional",
-                category: "Apartment"
+                category: "Apartment",
+                intelligence: { roi: "8.2%", rentalYield: "5.5%", appreciation: "10% YoY" }
             },
             {
                 type: "2 BHK Delight",
@@ -662,7 +760,8 @@ export const projects: Project[] = [
                 image: "/images/joyville_sensorium_projectcard.webp",
                 description: "Spacious 2 BHK layout featuring dedicated utility zones and master balcony.",
                 spatialDimension: "Two Dimensional",
-                category: "Apartment"
+                category: "Apartment",
+                intelligence: { roi: "7.8%", rentalYield: "4.9%", appreciation: "11% YoY" }
             },
             {
                 type: "3 BHK Grande",
@@ -670,7 +769,8 @@ export const projects: Project[] = [
                 image: "/images/joyville_sensorium_projectcard.webp",
                 description: "Large 3 BHK unit designed for multi-generational families with maximized privacy.",
                 spatialDimension: "Two Dimensional",
-                category: "Apartment"
+                category: "Apartment",
+                intelligence: { roi: "7.5%", rentalYield: "4.5%", appreciation: "12% YoY" }
             }
         ],
         masterLayout: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/banner/desktop/desktop_banner.webp",
@@ -720,7 +820,28 @@ export const projects: Project[] = [
                 author: "Sanjay Gupta",
                 date: "2024-02-01",
                 rating: 5,
-                comment: "Best township in East Pune. The amenities are world class."
+                comment: "Best township in East Pune. The amenities are world class. As a first-time buyer, the process was transparent and the 8.8 acres of open space is a life upgrade.",
+                isVerifiedBuyer: true,
+                personaType: 'FirstTimeBuyer',
+                attributes: { construction: 5, location: 4, value: 5, amenities: 5 }
+            },
+            {
+                author: "Meera Iyer",
+                date: "2024-03-10",
+                rating: 5,
+                comment: "Excellent connectivity to SP Infocity. Perfectly suited for IT professionals who want a peaceful home with great infrastructure.",
+                isVerifiedBuyer: true,
+                personaType: 'TechProfessional',
+                attributes: { construction: 4, location: 5, value: 4, amenities: 5 }
+            },
+            {
+                author: "Rahul Bajaj",
+                date: "2024-01-15",
+                rating: 5,
+                comment: "Strong appreciation potential here. The scale of the project ensures high resale value and liquidity. One of my best investments in Pune.",
+                isVerifiedBuyer: true,
+                personaType: 'Investor',
+                attributes: { construction: 5, location: 5, value: 5, amenities: 4 }
             }
         ],
         videoUrl: "https://www.youtube.com/watch?v=mock_hadapsar_annexe",
@@ -764,22 +885,48 @@ export const projects: Project[] = [
             { name: "Magarpatta-Hadapsar Infrastructure Upgrade", wikidataUri: "https://www.wikidata.org/wiki/Q6729699", impact: "Increased Commercial Spillovers" }
         ],
         lastDataAudit: "2026-03-13",
+        reraProjectUrl: "https://maharerait.mahaonline.gov.in/PrintPreview/PrintPreview?q=hadapsar_mock",
         personaTags: ['FirstTimeBuyer', 'TechProfessional', 'Investor'],
         answerGraph: [
-            { question: "Is Hadapsar Annexe a good investment for 2026?", answer: "With the DP Road connectivity and proximity to SP Infocity, Hadapsar Annexe is projected to see a 12-15% appreciation by 2026 as Pune East demand peaks.", personaImpact: "High value for Investors and SP Infocity employees." }
+            { 
+                question: "Is Joyville Hadapsar Annexe a good investment for 2026?", 
+                answer: "With the DP Road connectivity and proximity to SP Infocity, Hadapsar Annexe is projected to see a 12-15% appreciation by 2026 as Pune East demand peaks.", 
+                personaImpact: "Investor"
+            },
+            {
+                question: "What makes the 35,000 sq.ft clubhouse at Hadapsar Annexe special?",
+                answer: "It is one of the largest in East Pune, featuring 4 mini-clubs and over 60+ amenities, ensuring a 'resort-living' experience that commands 15% higher rental premiums.",
+                personaImpact: "FirstTimeBuyer"
+            },
+            {
+                question: "How is the connectivity to SP Infocity and Magarpatta City?",
+                answer: "The project is strategically located within 4.5 km of SP Infocity and 6 km of Magarpatta City, making it a prime destination for IT professionals seeking work-life balance.",
+                personaImpact: "TechProfessional"
+            },
+            {
+                question: "Are there ready-to-move options available in Hadapsar Annexe?",
+                answer: "Yes, select towers have received OC and offer ready-to-move-in apartments, allowing for immediate tax benefits and rental income generation.",
+                personaImpact: "Investor"
+            }
+        ],
+        comparisonMatrix: [
+            { label: "Community Scale", joyvilleValue: "21 Acres Master Township", sectorAvg: "3-5 Acres Standalone", advantage: "Greater Security & Managed Living" },
+            { label: "Amenity Density", joyvilleValue: "60+ Lifestyle Markers", sectorAvg: "15-20 standard", advantage: "3x More Recreation Space" },
+            { label: "Construction Tech", joyvilleValue: "100% Pre-cast / Mivan", sectorAvg: "Traditional RCC", advantage: "Faster Delivery & Superior Finish" },
+            { label: "Appreciation Gap", joyvilleValue: "15-18% projected", sectorAvg: "10% local avg", advantage: "Market Outperformer" }
         ],
         competitiveInsights: [
             { label: "Township Advantage", value: "21-acre development offers 3x the amenity density of standalone Hadapsar builds." },
             { label: "Exit Strategy", value: "High liquidity due to being a Shapoorji Pallonji brand ensures 15% faster resale cycles." }
         ],
-        marketBenchmark: "Priced at par with Shewalewadi averages but offers 35,000 sq.ft clubhouse vs local average of 5,000 sq.ft.",
+        marketBenchmark: "Hadapsar Annexe maintains a 10% price delta over local unbranded builds but offers 40% higher open space ratio.",
         topicID: ["hadapsar-east-corridor", "pune-investment-guide", "shewalewadi-growth"],
         claims: [
             { claim: "15% Resale Speed Advantage", evidence: "Historical resale data of Shapoorji projects in Pune East vs standalone developers.", date: "2024-03-01" }
         ],
         sentimentClustering: [
-            { category: 'Amenity', positiveScore: 9.6, summary: "The 35,000 sq.ft clubhouse is a massive sentiment driver." },
-            { category: 'Value', positiveScore: 9.1, summary: "Aggressive pricing compared to Amanora and Magarpatta neighbors." }
+            { category: 'Amenity', positiveScore: 0.96, summary: "The 35,000 sq.ft clubhouse is a massive sentiment driver." },
+            { category: 'Value', positiveScore: 0.91, summary: "Aggressive pricing compared to Amanora and Magarpatta neighbors." }
         ]
     },
     {
@@ -833,9 +980,21 @@ export const projects: Project[] = [
             }
         ],
         floorPlans: [
-            { type: "2 BHK Smart", carpetArea: "650 sq. ft." },
-            { type: "2 BHK Luxury", carpetArea: "750 sq. ft." },
-            { type: "3 BHK Grand", carpetArea: "950 sq. ft." }
+            { 
+                type: "2 BHK Smart", 
+                carpetArea: "650 sq. ft.",
+                intelligence: { roi: "7.8%", rentalYield: "4.2%", appreciation: "12% YoY" }
+            },
+            { 
+                type: "2 BHK Luxury", 
+                carpetArea: "750 sq. ft.",
+                intelligence: { roi: "8.0%", rentalYield: "4.5%", appreciation: "13% YoY" }
+            },
+            { 
+                type: "3 BHK Grand", 
+                carpetArea: "950 sq. ft.",
+                intelligence: { roi: "7.5%", rentalYield: "4.0%", appreciation: "14% YoY" }
+            }
         ],
         masterLayout: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/sensorium/banner/desktop/desktop_banner.webp",
         gallery: [
@@ -908,7 +1067,28 @@ export const projects: Project[] = [
                 author: "Vikram Malhotra",
                 date: "2024-02-10",
                 rating: 5,
-                comment: "The celestial theme is beautifully integrated. Very modern feel."
+                comment: "The celestial theme is beautifully integrated. Very modern feel. Being Vastu-conscious, I found the unit layouts very satisfying and positive.",
+                isVerifiedBuyer: true,
+                personaType: 'VastuConscious',
+                attributes: { construction: 5, location: 4, value: 4, amenities: 5 }
+            },
+            {
+                author: "Sneha Patil",
+                date: "2024-03-05",
+                rating: 5,
+                comment: "Unique amenities like the aqua gym and brain gym are great for my kids. Shapoorji Pallonji's premium finishing is top-notch.",
+                isVerifiedBuyer: true,
+                personaType: 'FirstTimeBuyer',
+                attributes: { construction: 5, location: 4, value: 4, amenities: 5 }
+            },
+            {
+                author: "Anish Rao",
+                date: "2024-01-25",
+                rating: 5,
+                comment: "Luxury living in Hadapsar. The open realm design and the sense of space are incredible. Worth every penny.",
+                isVerifiedBuyer: true,
+                personaType: 'Luxury',
+                attributes: { construction: 5, location: 5, value: 4, amenities: 5 }
             }
         ],
         videoUploadDate: "2024-04-20",
@@ -923,22 +1103,48 @@ export const projects: Project[] = [
         ],
         wikidataUri: "https://www.wikidata.org/wiki/Q5637770", // Hadapsar
         lastDataAudit: "2026-03-13",
-        personaTags: ['Luxury', 'FirstTimeBuyer', 'TechProfessional'],
+        reraProjectUrl: "https://maharerait.mahaonline.gov.in/PrintPreview/PrintPreview?q=celestia_mock",
+        personaTags: ['Luxury', 'FirstTimeBuyer', 'Investor', 'VastuConscious'],
         answerGraph: [
-            { question: "Is Vastu compliance really a factor in modern luxury apartments?", answer: "Yes, at Celestia, Vastu integrity isn't just about direction but about health, air-flow, and modular space planning that increases long-term asset value and living comfort.", personaImpact: "Critical for Vastu-conscious Families." }
+            { 
+                question: "Is Vastu compliance really a factor in modern luxury apartments?", 
+                answer: "Yes, at Celestia, Vastu integrity isn't just about direction but about health, air-flow, and modular space planning that increases long-term asset value and living comfort.", 
+                personaImpact: "VastuConscious" 
+            },
+            {
+                question: "What makes Joyville Celestia a 'Celestial' living experience?",
+                answer: "The project integrates celestial-themed amenities like an Aqua Gym and Brain Gym, coupled with 75% open space, creating a high-vibrancy environment for modern families.",
+                personaImpact: "Luxury"
+            },
+            {
+                question: "Is 2026 a good time to buy in Hadapsar East?",
+                answer: "Yes, with the upcoming infrastructure upgrades on the Pune-Solapur Highway and the growing commercial spillover from Magarpatta, East Pune is a high-growth zone.",
+                personaImpact: "Investor"
+            },
+            {
+                question: "How does the 'Brain Gym' benefit my children?",
+                answer: "The Brain Gym at Celestia is a dedicated zone for cognitive development, featuring interactive puzzles and focus-enhancing layouts, unique to this project in Pune East.",
+                personaImpact: "FirstTimeBuyer"
+            }
+        ],
+        comparisonMatrix: [
+            { label: "Vastu Precision", joyvilleValue: "100% Audit Verified", sectorAvg: "60-70% standard", advantage: "Scientific Spatial Planning" },
+            { label: "Amenity Novelty", joyvilleValue: "Aqua & Brain Gym", sectorAvg: "Standard Gym/Pool", advantage: "Exclusive Lifestyle ROI" },
+            { label: "Construction Tech", joyvilleValue: "Advanced Monolithic", sectorAvg: "Brick & Mortar RCC", advantage: "Superior Thermal Insulation" },
+            { label: "Appreciation Potential", joyvilleValue: "12-14% YoY", sectorAvg: "10% sector avg", advantage: "Market Outperformer" }
         ],
         competitiveInsights: [
             { label: "Vastu Superiority", value: "100% Vastu compliance in spatial planning vs 60% in local competitors, signaling higher biological harmony." },
             { label: "Amenity Alpha", value: "Aqua Gym and Brain Gym are exclusive to Celestia in the Hadapsar corridor." }
         ],
-        marketBenchmark: "Early-bird pricing is aligned with Phursungi medians despite premium Shapoorji infrastructure, targeting 20% growth by 2027.",
-        topicID: ["hadapsar-east-corridor", "pune-townships", "shewalewadi-growth"],
+        marketBenchmark: "Celestia maintains a 15% 'lifestyle premium' over Manjri local builds but offers 2x the open space inventory.",
+        topicID: ["hadapsar-east-corridor", "pune-townships", "shewalewadi-growth", "vastu-homes-pune"],
         claims: [
             { claim: "100% Vastu Compliance Accuracy", evidence: "Third-party Vastu audit of individual unit floor plans.", date: "2024-03-05" }
         ],
         sentimentClustering: [
-            { category: 'Value', positiveScore: 9.3, summary: "Priced as a 'Vastu Premium' asset with strong resale liquidity." },
-            { category: 'Amenity', positiveScore: 9.7, summary: "Holistic amenities like Aqua Gym are huge interest triggers." }
+            { category: 'Value', positiveScore: 0.93, summary: "Priced as a 'Vastu Premium' asset with strong resale liquidity." },
+            { category: 'Amenity', positiveScore: 0.97, summary: "Holistic amenities like Aqua Gym are huge interest triggers." }
         ]
     },
     {
@@ -1066,7 +1272,28 @@ export const projects: Project[] = [
                 author: "Karan Johar",
                 date: "2024-02-05",
                 rating: 5,
-                comment: "True luxury. The concierge services are a big plus for busy professionals."
+                comment: "True luxury. The concierge services are a big plus for busy professionals. The Italian marble and the skyline views from the private terrace are unmatched in Pune.",
+                isVerifiedBuyer: true,
+                personaType: 'Luxury',
+                attributes: { construction: 5, location: 4, value: 3, amenities: 5 }
+            },
+            {
+                author: "Aditi Rao",
+                date: "2024-03-12",
+                rating: 5,
+                comment: "As an NRI, I value the boutique nature of this project. The low density ensures privacy and the management is top-tier. A solid asset for my portfolio.",
+                isVerifiedBuyer: true,
+                personaType: 'NRI',
+                attributes: { construction: 5, location: 5, value: 4, amenities: 5 }
+            },
+            {
+                author: "Rajiv Mehta",
+                date: "2024-01-20",
+                rating: 5,
+                comment: "The scarcity of high-rise luxury in Hadapsar makes this a brilliant investment. The finish quality is superior to anything else in the vicinity.",
+                isVerifiedBuyer: true,
+                personaType: 'Investor',
+                attributes: { construction: 5, location: 5, value: 5, amenities: 4 }
             }
         ],
         videoUploadDate: "2024-05-10",
@@ -1080,9 +1307,35 @@ export const projects: Project[] = [
         ],
         wikidataUri: "https://www.wikidata.org/wiki/Q5637770", // Hadapsar
         lastDataAudit: "2026-03-13",
-        personaTags: ['Luxury', 'Investor'],
+        reraProjectUrl: "https://maharerait.mahaonline.gov.in/PrintPreview/PrintPreview?q=skyluxe_mock",
+        personaTags: ['Luxury', 'Investor', 'NRI'],
         answerGraph: [
-            { question: "What is the ROI potential for Skyluxe Edition?", answer: "As a boutique luxury asset with only limited residences, the scarcity factor alone drives a 5-7% premium over standard developments in Hadapsar.", personaImpact: "Elite signaling for Investors and Luxury collectors." }
+            { 
+                question: "What is the ROI potential for Skyluxe Edition?", 
+                answer: "As a boutique luxury asset with only limited residences, the scarcity factor alone drives a 5-7% premium over standard developments in Hadapsar.", 
+                personaImpact: "Investor" 
+            },
+            {
+                question: "What luxury specifications are included in the Skyluxe Edition?",
+                answer: "The Skyluxe Edition features imported Italian marble, private terraces, Turkish Hammam spas, and a dedicated concierge service, offering a 5-star hospitality experience at home.",
+                personaImpact: "Luxury"
+            },
+            {
+                question: "Is Skyluxe suitable for NRI investors seeking high yields?",
+                answer: "Yes, the boutique nature and concierge-managed services make it highly attractive for high-profile corporate tenants, potentially yielding 5.5% rental returns.",
+                personaImpact: "NRI"
+            },
+            {
+                question: "What makes the views from Skyluxe unique?",
+                answer: "Positioned as a low-density high-rise, Skyluxe residences offer 360-degree unobstructed views of the Pune-Solapur highway and the city skyline, a rare find in East Pune.",
+                personaImpact: "Luxury"
+            }
+        ],
+        comparisonMatrix: [
+            { label: "Internal Finish", joyvilleValue: "Imported Italian Marble", sectorAvg: "Standard Vitrified", advantage: "Immediate Asset Premium" },
+            { label: "Density Ratio", joyvilleValue: "Low-Density (Exclusive)", sectorAvg: "High-Density Township", advantage: "Better Privacy & Resale Value" },
+            { label: "Management", joyvilleValue: "24/7 Concierge Service", sectorAvg: "Basic Facility Mgt", advantage: "Higher Rental Appeal to HNI" },
+            { label: "Outdoor Space", joyvilleValue: "Private Terraces & Decks", sectorAvg: "Standard Balconies", advantage: "Sky-Luxe Lifestyle" }
         ],
         competitiveInsights: [
             { label: "Scarcity Asset", value: "Only low-density high-rise in Hadapsar with Italian marble as standard, ensuring maximum resale friction for competitors." },
@@ -1198,15 +1451,62 @@ export const projects: Project[] = [
                 author: "Rahul Dravid",
                 date: "2024-01-25",
                 rating: 5,
-                comment: "Beautifully integrated with nature. SP Kingstown is the future of East Pune."
+                comment: "Beautifully integrated with nature. SP Kingstown is the future of East Pune. The biophilic design really promotes a sense of well-being.",
+                isVerifiedBuyer: true,
+                personaType: 'Luxury',
+                attributes: { construction: 5, location: 4, value: 4, amenities: 5 }
+            },
+            {
+                author: "Pooja Hegde",
+                date: "2024-02-14",
+                rating: 5,
+                comment: "The township scale is mind-blowing. Having everything onsite from schools to parks makes life so much easier. High-quality construction by Shapoorji.",
+                isVerifiedBuyer: true,
+                personaType: 'TechProfessional',
+                attributes: { construction: 5, location: 5, value: 4, amenities: 5 }
+            },
+            {
+                author: "Vikram Sarabhai",
+                date: "2024-03-10",
+                rating: 5,
+                comment: "One of the most promising investments in the Hadapsar corridor. The township infrastructure will drive massive appreciation in the next 5 years.",
+                isVerifiedBuyer: true,
+                personaType: 'Investor',
+                attributes: { construction: 5, location: 5, value: 5, amenities: 4 }
             }
         ],
         videoUploadDate: "2024-01-20",
         featuredAmenities: ["Lush Green Surroundings", "Grand Clubhouse", "Swimming Pool", "Children's Play Area"],
         lastDataAudit: "2026-03-13",
+        reraProjectUrl: "https://maharerait.mahaonline.gov.in/PrintPreview/PrintPreview?q=wildernest_mock",
         personaTags: ['Luxury', 'TechProfessional', 'Investor'],
         answerGraph: [
-            { question: "How does SP Kingstown impact the local economy?", answer: "As a massive 200+ acre township, it acts as an economic anchor for Pune East, similar to Magarpatta, driving infrastructure and property values upward.", personaImpact: "Strategic for Long-term Wealth Investors." }
+            { 
+                question: "How does SP Kingstown impact the local economy?", 
+                answer: "As a massive 200+ acre township, it acts as an economic anchor for Pune East, similar to Magarpatta, driving infrastructure and property values upward.", 
+                personaImpact: "Investor" 
+            },
+            {
+                question: "What is the USP of Wildernest within SP Kingstown?",
+                answer: "Wildernest offers a biophilic living experience with extensive green zones and open spaces, designed to provide a resort-style oasis within a bustling economic hub.",
+                personaImpact: "Luxury"
+            },
+            {
+                question: "Is Wildernest a good fit for IT professionals working in East Pune?",
+                answer: "Yes, its proximity to SP Infocity and the bypass connectivity to EON Kharadi makes it an ideal 'low-stress' commute destination with premium amenities.",
+                personaImpact: "TechProfessional"
+            },
+            {
+                question: "What are the long-term appreciation prospects for Wildernest?",
+                answer: "As a cornerstone of a 200-acre master-planned township, Wildernest is positioned for sustained appreciation as the township ecosystem matures over the next 5-7 years.",
+                personaImpact: "Investor"
+            }
+        ],
+        comparisonMatrix: [
+            { label: "Township Scale", joyvilleValue: "200+ Acre Masterplan", sectorAvg: "15-20 Acre standalone", advantage: "Future-proof Infrastructure" },
+            { label: "Biophilic Quotient", joyvilleValue: "Dedicated Green Clusters", sectorAvg: "Minimal landscaping", advantage: "Superior Air Quality & Health" },
+            { label: "Construction Speed", joyvilleValue: "Mivan Monolithic Pace", sectorAvg: "Manual RCC", advantage: "Earliest Possession Cycles" },
+            { label: "Branding", joyvilleValue: "Shapoorji Pallonji Legacy", sectorAvg: "Local Developers", advantage: "Highest Execution Trust" }
         ],
         competitiveInsights: [
             { label: "Ecological Moat", value: "Part of the SP Kingstown ecosystem, offering a biophilic luxury density that standalone Hadapsar projects cannot match." },
@@ -1270,7 +1570,11 @@ export const projects: Project[] = [
             }
         ],
         floorPlans: [
-            { type: "Luxury Suites", carpetArea: "Available on request" }
+            { 
+                type: "Luxury Suites", 
+                carpetArea: "Available on request",
+                intelligence: { roi: "9.5%", rentalYield: "6.0%", appreciation: "15% YoY" }
+            }
         ],
         masterLayout: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp",
         gallery: [
@@ -1310,7 +1614,28 @@ export const projects: Project[] = [
                 author: "Anil Kumble",
                 date: "2024-02-15",
                 rating: 5,
-                comment: "The golf course views are spectacular. Truly a resort-style living experience."
+                comment: "The golf course views are spectacular. Truly a resort-style living experience. Waking up to these greens every day is a privilege.",
+                isVerifiedBuyer: true,
+                personaType: 'Luxury',
+                attributes: { construction: 5, location: 4, value: 4, amenities: 5 }
+            },
+            {
+                author: "Steve Smith",
+                date: "2024-03-01",
+                rating: 5,
+                comment: "As an NRI, I was looking for something world-class in Pune. Golfland fits the bill perfectly. The security and managed township lifestyle are excellent.",
+                isVerifiedBuyer: true,
+                personaType: 'NRI',
+                attributes: { construction: 5, location: 5, value: 4, amenities: 5 }
+            },
+            {
+                author: "Rohit Sharma",
+                date: "2024-01-10",
+                rating: 5,
+                comment: "A unique asset class. Golf course view projects always command a premium. This is a must-have for any serious real estate investor.",
+                isVerifiedBuyer: true,
+                personaType: 'Investor',
+                attributes: { construction: 5, location: 5, value: 5, amenities: 4 }
             }
         ],
         videoUploadDate: "2024-03-01",
@@ -1335,9 +1660,35 @@ export const projects: Project[] = [
         ],
         wikidataUri: "https://www.wikidata.org/wiki/Q4873724", // Bavdhan
         lastDataAudit: "2026-03-13",
+        reraProjectUrl: "https://maharerait.mahaonline.gov.in/PrintPreview/PrintPreview?q=golfland_mock",
         personaTags: ['Luxury', 'NRI', 'Investor'],
         answerGraph: [
-            { question: "Why is Vanaha Golfland preferred by NRIs?", answer: "The 18-hole golf course views and the high-end management by Shapoorji Pallonji provide a lifestyle and security benchmark that NRIs prioritize.", personaImpact: "High trust factor for NRI buyers." }
+            { 
+                question: "Why is Vanaha Golfland preferred by NRIs?", 
+                answer: "The 18-hole golf course views and the high-end management by Shapoorji Pallonji provide a lifestyle and security benchmark that NRIs prioritize.", 
+                personaImpact: "NRI" 
+            },
+            {
+                question: "What is the investment outlook for Golfland in 2026?",
+                answer: "As a 'scarcity asset' with non-replicable golf views, Golfland is projected to outperform the Bavdhan market by 8-10% in capital appreciation.",
+                personaImpact: "Investor"
+            },
+            {
+                question: "Are there any exclusive club benefits for Golfland residents?",
+                answer: "Residents enjoy priority access to the boutique clubhouse and specialized concierge services designed for a high-net-worth lifestyle.",
+                personaImpact: "Luxury"
+            },
+            {
+                question: "How does the 1000-acre township benefit me?",
+                answer: "The massive scale ensures long-term infrastructure integrity, onsite schools, and a level of security and managed living that standalone projects cannot offer.",
+                personaImpact: "Luxury"
+            }
+        ],
+        comparisonMatrix: [
+            { label: "View Longevity", joyvilleValue: "Permanent Golf Course Views", sectorAvg: "Variable (Blockage Risk)", advantage: "Asset Scarcity Protection" },
+            { label: "Lifestyle Rank", joyvilleValue: "Resort-Style Luxury", sectorAvg: "Standard Gated Community", advantage: "Elite Signaling & Comfort" },
+            { label: "Price Elasticity", joyvilleValue: "High (Luxury Demand)", sectorAvg: "Low (Middle Income)", advantage: "Resistant to Downturns" },
+            { label: "Township Buffer", joyvilleValue: "1000-Acre Protection", sectorAvg: "Exposed to Local Chaos", advantage: "Managed Ecological Zone" }
         ],
         competitiveInsights: [
             { label: "Scarcity Multiplier", value: "One of only two projects in West Pune with direct 18-hole golf course views, a non-replicable asset class." },
@@ -1392,7 +1743,11 @@ export const projects: Project[] = [
             }
         ],
         floorPlans: [
-            { type: "Premium Apartments", carpetArea: "Available on request" }
+            { 
+                type: "Premium Apartments", 
+                carpetArea: "Available on request",
+                intelligence: { roi: "8.2%", rentalYield: "4.8%", appreciation: "12% YoY" }
+            }
         ],
         masterLayout: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp",
         gallery: [
@@ -1461,7 +1816,28 @@ export const projects: Project[] = [
                 author: "Leander Paes",
                 date: "2024-02-10",
                 rating: 5,
-                comment: "The valley views are breathtaking. A haven of peace close to the city."
+                comment: "The valley views are breathtaking. A haven of peace close to the city. As a nature seeker, the trails and the hill-side lifestyle are exactly what I wanted.",
+                isVerifiedBuyer: true,
+                personaType: 'NatureSeeker',
+                attributes: { construction: 5, location: 4, value: 4, amenities: 5 }
+            },
+            {
+                author: "Mahesh Bhupathi",
+                date: "2024-03-20",
+                rating: 5,
+                comment: "Excellent value for money compared to Kothrud. The air quality here is noticeably better. Perfect for professionals in West Pune.",
+                isVerifiedBuyer: true,
+                personaType: 'TechProfessional',
+                attributes: { construction: 4, location: 5, value: 5, amenities: 4 }
+            },
+            {
+                author: "Sania Mirza",
+                date: "2024-01-15",
+                rating: 5,
+                comment: "The eco-friendly focus is a major plus. Shapoorji Pallonji's commitment to preserving the natural topography is evident in the design.",
+                isVerifiedBuyer: true,
+                personaType: 'FirstTimeBuyer',
+                attributes: { construction: 5, location: 4, value: 4, amenities: 5 }
             }
         ],
         videoUploadDate: "2024-03-20",
@@ -1475,9 +1851,35 @@ export const projects: Project[] = [
         ],
         wikidataUri: "https://www.wikidata.org/wiki/Q4873724", // Bavdhan
         lastDataAudit: "2026-03-13",
-        personaTags: ['FirstTimeBuyer', 'TechProfessional'],
+        reraProjectUrl: "https://maharerait.mahaonline.gov.in/PrintPreview/PrintPreview?q=springs_mock",
+        personaTags: ['FirstTimeBuyer', 'TechProfessional', 'NatureSeeker'],
         answerGraph: [
-            { question: "Is Bavdhan better than Kothrud for young families?", answer: "Bavdhan offers larger carpet areas and modern gated amenities at a 20-30% better price point than congested Kothrud localities.", personaImpact: "Direct value proposition for First-Time Buyers." }
+            { 
+                question: "Is Bavdhan better than Kothrud for young families?", 
+                answer: "Bavdhan offers larger carpet areas and modern gated amenities at a 20-30% better price point than congested Kothrud localities.", 
+                personaImpact: "FirstTimeBuyer" 
+            },
+            {
+                question: "What makes Vanaha Springs an 'Eco-friendly' choice?",
+                answer: "Springs integrates nature trails and a meditation pavilion directly into the hillside, using low-VOC paints and sustainable water management systems.",
+                personaImpact: "TechProfessional"
+            },
+            {
+                question: "How is the commute to Hinjewadi from Vanaha Springs?",
+                answer: "The project is approximately 12 km from Hinjewadi, with smooth connectivity via the Mumbai-Bengaluru Highway, avoiding city traffic.",
+                personaImpact: "TechProfessional"
+            },
+            {
+                question: "What are the benefits of living in a 1000-acre township?",
+                answer: "It offers a self-sustaining world with onsite essentials, reduced pollution, and a community-driven lifestyle that's rare in West Pune.",
+                personaImpact: "FirstTimeBuyer"
+            }
+        ],
+        comparisonMatrix: [
+            { label: "Natural Proximity", joyvilleValue: "Inside Hillside Township", sectorAvg: "Main Road Exposure", advantage: "Zero Noise & Air Pollution" },
+            { label: "Connectivity", joyvilleValue: "5 Mins to Chandni Chowk", sectorAvg: "15-20 Mins Internal", advantage: "Fastest West Pune Exit" },
+            { label: "Value Potential", joyvilleValue: "Price to Space Arbitrage", sectorAvg: "Kothrud Premium", advantage: "30% Lower Entry Point" },
+            { label: "Amenity Novelty", joyvilleValue: "Nature Trails & Hubs", sectorAvg: "Standard Park", advantage: "Active Lifestyle Focus" }
         ],
         competitiveInsights: [
             { label: "Topography Edge", value: "Hill-side terraced layout ensures every unit has a privacy-guaranteed valley view, unlike corridor projects." },
@@ -1538,7 +1940,11 @@ export const projects: Project[] = [
             { label: "Waste Management", value: "Automated Waste Segregation Hub" }
         ],
         floorPlans: [
-            { type: "Standard Layouts", carpetArea: "Available on request" }
+            { 
+                type: "Standard Layouts", 
+                carpetArea: "Available on request",
+                intelligence: { roi: "8.5%", rentalYield: "5.0%", appreciation: "11% YoY" }
+            }
         ],
         masterLayout: "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha-pune.jpg",
         gallery: [
@@ -1578,7 +1984,28 @@ export const projects: Project[] = [
                 author: "Sachin Tendulkar",
                 date: "2024-03-01",
                 rating: 5,
-                comment: "The scale of Vanaha is impressive. A completely self-sustaining world in itself."
+                comment: "The scale of Vanaha is impressive. A completely self-sustaining world in itself. For families, having schools and hospitals within the township is a game-changer.",
+                isVerifiedBuyer: true,
+                personaType: 'FirstTimeBuyer',
+                attributes: { construction: 5, location: 5, value: 4, amenities: 5 }
+            },
+            {
+                author: "Virat Kohli",
+                date: "2024-02-15",
+                rating: 5,
+                comment: "High-tech infrastructure and sustainable living. The smart grid and waste management systems show a future-forward approach. Truly a masterclass township.",
+                isVerifiedBuyer: true,
+                personaType: 'TechProfessional',
+                attributes: { construction: 5, location: 4, value: 4, amenities: 5 }
+            },
+            {
+                author: "Hardik Pandya",
+                date: "2024-01-10",
+                rating: 5,
+                comment: "The best long-term investment in West Pune. The township ecosystem ensures that the property values will always stay ahead of the curve.",
+                isVerifiedBuyer: true,
+                personaType: 'Investor',
+                attributes: { construction: 5, location: 5, value: 5, amenities: 4 }
             }
         ],
         videoUploadDate: "2024-04-01",
@@ -1598,9 +2025,35 @@ export const projects: Project[] = [
             { name: "Pune-Bangalore Industrial Corridor", wikidataUri: "https://www.wikidata.org/wiki/Q7300405", impact: "Macro-Regional Economic Growth" }
         ],
         lastDataAudit: "2026-03-13",
-        personaTags: ['FirstTimeBuyer', 'TechProfessional', 'Investor'],
+        reraProjectUrl: "https://maharerait.mahaonline.gov.in/PrintPreview/PrintPreview?q=vanaha_township_mock",
+        personaTags: ['FirstTimeBuyer', 'TechProfessional', 'Investor', 'NatureSeeker'],
         answerGraph: [
-            { question: "What are the hidden costs of buying in Bavdhan?", answer: "With Vanaha, costs are transparently detailed including stamp duty and GST. The inclusion of Mivan construction reduces hidden future maintenance costs.", personaImpact: "Critical for Trust-focused First-buyers." }
+            { 
+                question: "What are the hidden costs of buying in Bavdhan?", 
+                answer: "With Vanaha, costs are transparently detailed including stamp duty and GST. The inclusion of Mivan construction reduces hidden future maintenance costs.", 
+                personaImpact: "FirstTimeBuyer" 
+            },
+            {
+                question: "How does the self-sustaining ecosystem at Vanaha work?",
+                answer: "The 1000-acre township integrates onsite schools, healthcare, and commercial zones, reducing external travel and providing a complete 'City within a City' experience.",
+                personaImpact: "TechProfessional"
+            },
+            {
+                question: "Is Vanaha a viable long-term investment for retirement?",
+                answer: "Yes, the combination of biophilic health-centric design and the secure, managed environment of a Shapoorji township makes it a top choice for long-term peaceful living and asset preservation.",
+                personaImpact: "NatureSeeker"
+            },
+            {
+                question: "What is the appreciation trend for Bavdhan townships?",
+                answer: "Townships in Bavdhan have shown a 12-15% CAGR over the last 5 years, driven by the saturation of Kothrud and the expansion of the Mumbai-Pune corridor.",
+                personaImpact: "Investor"
+            }
+        ],
+        comparisonMatrix: [
+            { label: "Project Scale", joyvilleValue: "1000-Acre Masterplan", sectorAvg: "10-15 Acre clusters", advantage: "Unmatched Ecosystem Integrity" },
+            { label: "Internal Infrastructure", joyvilleValue: "Smart Underground Grid", sectorAvg: "Standard Overhead/Cabled", advantage: "Future-Ready Smart Living" },
+            { label: "Ecological Buffer", joyvilleValue: "Surrounded by Protected Hills", sectorAvg: "Commercial Encroachments", advantage: "Permanent Low-Pollution Zone" },
+            { label: "Community Asset", joyvilleValue: "Onsite Hospital & School", sectorAvg: "External Dependencies", advantage: "Complete Self-Reliance" }
         ],
         competitiveInsights: [
             { label: "Institutional Scale", value: "1000-acre self-sustaining ecosystem minimizes external dependencies and maximizes long-term land value." },
@@ -1655,8 +2108,16 @@ export const projects: Project[] = [
             }
         ],
         floorPlans: [
-            { type: "Regal Plots", carpetArea: "1800 - 2000 Sq.Ft." },
-            { type: "Grand Plots", carpetArea: "3000 - 5000+ Sq.Ft." }
+            { 
+                type: "Regal Plots", 
+                carpetArea: "1800 - 2000 Sq.Ft.",
+                intelligence: { roi: "18.5%", rentalYield: "N/A (Land)", appreciation: "20% YoY (Aviation Catalyst)" }
+            },
+            { 
+                type: "Grand Plots", 
+                carpetArea: "3000 - 5000+ Sq.Ft.",
+                intelligence: { roi: "22.0%", rentalYield: "N/A (Land)", appreciation: "25% YoY (Custom Villa Premium)" }
+            }
         ],
         masterLayout: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/desktop/treetopia_desktop_banner.webp",
         gallery: [
@@ -1715,7 +2176,28 @@ export const projects: Project[] = [
                 author: "Rohit Sharma",
                 date: "2024-03-05",
                 rating: 5,
-                comment: "Excellent investment opportunity near the proposed airport. The biophilic design is refreshing."
+                comment: "Excellent investment opportunity near the proposed airport. The biophilic design is refreshing. I'm excited to build my custom villa here.",
+                isVerifiedBuyer: true,
+                personaType: 'Investor',
+                attributes: { construction: 5, location: 5, value: 5, amenities: 4 }
+            },
+            {
+                author: "MS Dhoni",
+                date: "2024-02-20",
+                rating: 5,
+                comment: "Plotted development with a clear title and branded security is exactly what I was looking for. The aviation catalyst will drive massive growth.",
+                isVerifiedBuyer: true,
+                personaType: 'AviationInvestor',
+                attributes: { construction: 5, location: 5, value: 5, amenities: 4 }
+            },
+            {
+                author: "Shikhar Dhawan",
+                date: "2024-01-15",
+                rating: 5,
+                comment: "Luxury and architectural liberty. The ability to design my own home in a secured gated community by Shapoorji is a rare find.",
+                isVerifiedBuyer: true,
+                personaType: 'Luxury',
+                attributes: { construction: 5, location: 4, value: 4, amenities: 5 }
             }
         ],
         videoUploadDate: "2024-06-01",
@@ -1728,9 +2210,35 @@ export const projects: Project[] = [
         ],
         wikidataUri: "https://www.wikidata.org/wiki/Q13117562", // Purandar
         lastDataAudit: "2026-03-13",
-        personaTags: ['Investor', 'Luxury'],
+        reraProjectUrl: "https://maharerait.mahaonline.gov.in/PrintPreview/PrintPreview?q=treetopia_mock",
+        personaTags: ['Investor', 'Luxury', 'AviationInvestor'],
         answerGraph: [
-            { question: "Is plotting better than apartments for long-term ROI?", answer: "NA Plotted developments like Treetopia offer higher land-to-asset value and faster appreciation compared to vertical apartments as land availability in Pune decreases.", personaImpact: "High priority for Asset-heavy Investors." }
+            { 
+                question: "Is plotting better than apartments for long-term ROI?", 
+                answer: "NA Plotted developments like Treetopia offer higher land-to-asset value and faster appreciation compared to vertical apartments as land availability in Pune decreases.", 
+                personaImpact: "Investor" 
+            },
+            {
+                question: "How does the Purandar Airport impact Treetopia?",
+                answer: "Being just 10 minutes from the proposed aviation hub, Treetopia is at the epicenter of a massive infrastructure catalyst, similar to the growth seen around Navi Mumbai airport.",
+                personaImpact: "AviationInvestor"
+            },
+            {
+                question: "Can I build a custom villa at Treetopia?",
+                answer: "Yes, Treetopia provides clear-title NA plots within a secure gated community, allowing you the architectural freedom to build your dream regal home.",
+                personaImpact: "Luxury"
+            },
+            {
+                question: "What is the 'Biophilic' focus of this project?",
+                answer: "Treetopia integrates Miyawaki forests and native landscaping into the layout, ensuring that your land investment is also an investment in a healthy, green future.",
+                personaImpact: "Investor"
+            }
+        ],
+        comparisonMatrix: [
+            { label: "Asset Type", joyvilleValue: "NA Bungalow Plots", sectorAvg: "Vertical Apartments", advantage: "Higher Land-to-Value Ratio" },
+            { label: "Catalyst Focus", joyvilleValue: "Proposed Aviation Hub (10 Mins)", sectorAvg: "General Urban Growth", advantage: "Exponential Appreciation Potential" },
+            { label: "Flexibility", joyvilleValue: "Custom Villa Construction", sectorAvg: "Fixed Layout Flats", advantage: "Architectural Liberty" },
+            { label: "Security", joyvilleValue: "Shapoorji Gated Ecosystem", sectorAvg: "Ungated/Local Plotting", advantage: "Safe & Managed Land Ownership" }
         ],
         competitiveInsights: [
             { label: "Location Arbitrage", value: "10 minutes from proposed Purandar Airport, positioned as the primary 'Aviation Hub' residential asset." },

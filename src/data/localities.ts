@@ -130,6 +130,7 @@ export const localities: LocalityData[] = [
         latitude: 18.5170,
         longitude: 73.7785,
         geoBox: { minLat: 18.49, minLng: 73.76, maxLat: 18.54, maxLng: 73.80 },
+        sameAs: "https://en.wikipedia.org/wiki/Bavdhan",
         faqs: [
             { q: 'Is Bavdhan better than Baner for investment in 2026?', a: 'Bavdhan offers better value-for-money and a greener ecosystem compared to the saturated Baner market. With the new Chandni Chowk interchange, Bavdhan has seen 13.18% appreciation, outperforming many West Pune localities.' },
             { q: 'How does the 1,000-acre Vanaha township impact Bavdhan prices?', a: 'Vanaha creates a self-sustaining demand hub. Large townships typically lead to a 5-8% premium in surrounding secondary market rates due to superior infrastructure development.' },
@@ -237,6 +238,7 @@ export const localities: LocalityData[] = [
         yoyAppreciation: "10.2%",
         latitude: 18.4944,
         longitude: 73.9675,
+        sameAs: "https://en.wikipedia.org/wiki/Hadapsar", // Shewalewadi is part of Hadapsar/Manjri extension
         faqs: [
             { q: 'What is the "SP Kingstown" development in Shewalewadi?', a: 'SP Kingstown is a master-planned ecosystem by Shapoorji Pallonji, featuring varied projects like Wildernest (premium residences) and Joyville (modern apartments) within a cohesive infrastructure hub.' },
             { q: 'Is Shewalewadi good for long-term investment?', a: 'Yes, as the natural extension of Hadapsar, Shewalewadi is witnessing a "Phase 2" growth boom similar to what Kharadi experience 5 years ago, with 10.2% YoY appreciation.' },
@@ -274,6 +276,7 @@ export const localities: LocalityData[] = [
         yoyAppreciation: "15.5%",
         latitude: 18.2860,
         longitude: 74.2140,
+        sameAs: "https://en.wikipedia.org/wiki/Purandar_taluka",
         faqs: [
             { q: 'How does the new airport impact Purandar plot prices?', a: 'Historically, airport-proximal land typically appreciates by 300-500% from announcement to operation. Purandar is currently in the high-growth "accumulation" phase.' },
             { q: 'Is "Treetopia" a RERA registered project?', a: 'Yes, Shapoorji Treetopia is a fully RERA registered NA bungalow plot development, ensuring legal security for land investors.' },
@@ -309,6 +312,7 @@ export const localities: LocalityData[] = [
         yoyAppreciation: "9.8%",
         latitude: 18.5530,
         longitude: 73.9450,
+        sameAs: "https://en.wikipedia.org/wiki/Kharadi,_Pune",
         faqs: [
             { q: 'Is Kharadi or Magarpatta better for IT professionals?', a: 'Kharadi offers newer, high-spec luxury projects and direct proximity to Eon IT Park, while Magarpatta is a mature township hub. Kharadi is preferred for its better appreciation potential (9.8%).' },
             { q: 'How far is Kharadi from Pune Airport?', a: 'Kharadi is extremely close to the airport (approx 12km), making it a top choice for corporate travelers and NRIs.' },
@@ -344,6 +348,7 @@ export const localities: LocalityData[] = [
         yoyAppreciation: "11.0%",
         latitude: 18.5980,
         longitude: 73.7620,
+        sameAs: "https://en.wikipedia.org/wiki/Wakad",
         faqs: [
             { q: 'Why is Wakad trending for 2026 homebuyers?', a: 'Wakad combines PCMC infrastructure reliability with 20-30% lower rates than Hinjewadi Phase 1, while sharing the same IT proximity and future Metro connectivity.' },
             { q: 'Is water availability a problem in Wakad?', a: 'Newer gated societies in Wakad increasingly use independent WTP systems and benefit from improved PCMC water line networks compared to 5 years ago.' },

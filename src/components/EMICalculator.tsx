@@ -57,17 +57,19 @@ export default function EMICalculator({ basePrice = 8500000 }: { basePrice?: num
                     {/* Loan Amount */}
                     <div>
                         <div className="flex justify-between mb-2">
-                            <label className="text-sm font-medium text-[#1A1A1A] tracking-wide uppercase">Loan Amount</label>
+                            <label htmlFor="loan-amount-slider" className="text-sm font-medium text-[#1A1A1A] tracking-wide uppercase">Loan Amount</label>
                             <span className="text-[#1D4F9C] font-semibold">{formatCurrency(loanAmount)}</span>
                         </div>
                         <input
+                            id="loan-amount-slider"
                             type="range"
                             min="1000000"
                             max="50000000"
                             step="100000"
                             value={loanAmount}
                             onChange={(e) => setLoanAmount(Number(e.target.value))}
-                            className="w-full h-1 bg-[#EEF2F6] rounded-lg appearance-none cursor-pointer accent-[#1D4F9C]"
+                            className="w-full h-1 bg-[#EEF2F6] rounded-lg appearance-none cursor-pointer accent-[#1D4F9C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1D4F9C] focus-visible:outline-offset-4"
+                            tabIndex={0}
                         />
                         <div className="flex justify-between mt-2 text-xs text-[#1A1A1A]/70">
                             <span>{formatCurrency(1000000)}</span>
@@ -78,17 +80,19 @@ export default function EMICalculator({ basePrice = 8500000 }: { basePrice?: num
                     {/* Interest Rate */}
                     <div>
                         <div className="flex justify-between mb-2">
-                            <label className="text-sm font-medium text-[#1A1A1A] tracking-wide uppercase">Interest Rate (%)</label>
+                            <label htmlFor="interest-rate-slider" className="text-sm font-medium text-[#1A1A1A] tracking-wide uppercase">Interest Rate (%)</label>
                             <span className="text-[#1D4F9C] font-semibold">{interestRate}%</span>
                         </div>
                         <input
+                            id="interest-rate-slider"
                             type="range"
                             min="6"
                             max="15"
                             step="0.1"
                             value={interestRate}
                             onChange={(e) => setInterestRate(Number(e.target.value))}
-                            className="w-full h-1 bg-[#EEF2F6] rounded-lg appearance-none cursor-pointer accent-[#1D4F9C]"
+                            className="w-full h-1 bg-[#EEF2F6] rounded-lg appearance-none cursor-pointer accent-[#1D4F9C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1D4F9C] focus-visible:outline-offset-4"
+                            tabIndex={0}
                         />
                         <div className="flex justify-between mt-2 text-xs text-[#1A1A1A]/70">
                             <span>6%</span>
@@ -99,17 +103,19 @@ export default function EMICalculator({ basePrice = 8500000 }: { basePrice?: num
                     {/* Loan Tenure */}
                     <div>
                         <div className="flex justify-between mb-2">
-                            <label className="text-sm font-medium text-[#1A1A1A] tracking-wide uppercase">Loan Tenure (Years)</label>
+                            <label htmlFor="loan-tenure-slider" className="text-sm font-medium text-[#1A1A1A] tracking-wide uppercase">Loan Tenure (Years)</label>
                             <span className="text-[#1D4F9C] font-semibold">{loanTenure} Years</span>
                         </div>
                         <input
+                            id="loan-tenure-slider"
                             type="range"
                             min="5"
                             max="30"
                             step="1"
                             value={loanTenure}
                             onChange={(e) => setLoanTenure(Number(e.target.value))}
-                            className="w-full h-1 bg-[#EEF2F6] rounded-lg appearance-none cursor-pointer accent-[#1D4F9C]"
+                            className="w-full h-1 bg-[#EEF2F6] rounded-lg appearance-none cursor-pointer accent-[#1D4F9C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1D4F9C] focus-visible:outline-offset-4"
+                            tabIndex={0}
                         />
                         <div className="flex justify-between mt-2 text-xs text-[#1A1A1A]/70">
                             <span>5 Yrs</span>

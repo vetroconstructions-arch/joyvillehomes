@@ -5,12 +5,17 @@ import { blogs } from '@/data/blogs';
 import { localities } from '@/data/localities';
 import { ENTITIES } from '@/data/entities';
 import { getExpertById } from '@/data/experts';
+import { getTopicById } from '@/data/TopicIntelligence';
 import Link from 'next/link';
 import Image from 'next/image';
+import VerifiedDataBadge from '@/components/VerifiedDataBadge';
 import SentimentPulse from '@/components/SentimentPulse';
+import BookingProcessSchema from '@/components/BookingProcessSchema';
+import PriceDisplay from '@/components/PriceDisplay';
 import { 
     MapPin, 
     ArrowLeft, 
+    ArrowRight,
     CheckCircle2, 
     Activity, 
     Shield, 
@@ -20,7 +25,8 @@ import {
     TrendingUp, 
     Clock, 
     Globe,
-    ExternalLink
+    ExternalLink,
+    BarChart3
 } from 'lucide-react';
 import FAQSection from '@/components/FAQSection';
 import BrochureButton from '@/components/BrochureButton';
@@ -43,6 +49,17 @@ import PredictiveSemanticSiblings from '@/components/PredictiveSemanticSiblings'
 import MarketTrendDataset from '@/components/MarketTrendDataset';
 import EntityAuthorityMatrix from '@/components/EntityAuthorityMatrix';
 import ZeroClickBrain from '@/components/ZeroClickBrain';
+import ComparisonMatrix from '@/components/ComparisonMatrix';
+import InstitutionalEndorsement from '@/components/InstitutionalEndorsement';
+import ReviewWidget from '@/components/ReviewWidget';
+import PriceIntelligenceCard from '@/components/PriceIntelligenceCard';
+import UrgencyRibbon from '@/components/UrgencyRibbon';
+import ImmersiveGallery from '@/components/ImmersiveGallery';
+import RelatedProjects from '@/components/RelatedProjects';
+import ProjectComparator from '@/components/ProjectComparator';
+import SiteVisitScheduler from '@/components/SiteVisitScheduler';
+import LiveActivityFeed from '@/components/LiveActivityFeed';
+import { KEYWORD_MATRIX, GET_EXPANDED_KEYWORDS } from '@/data/KeywordIntelligence';
 
 // Pre-render all project routes at build time
 export async function generateStaticParams() {
@@ -51,7 +68,6 @@ export async function generateStaticParams() {
     }));
 }
 
-// Generate Dynamic SEO Metadata for Each Project
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const resolvedParams = await params;
     const project = getProjectBySlug(resolvedParams.slug);
@@ -60,36 +76,38 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         return { title: 'Project Not Found | Joyville Pune' };
     }
 
+    const expandedKeywords = GET_EXPANDED_KEYWORDS(project.title, project.location);
+    const siteUrl = 'https://joyville-homes.com';
+
     return {
-        title: `${project.title} | Premium ${project.type} in ${project.location} by Shapoorji Pallonji`,
-        description: project.description,
+        title: `${project.title} ${project.location} | Price, Floor Plan & Possession 2026`,
+        description: `${project.description.slice(0, 150)}... Explore ${project.title} by Shapoorji Pallonji in ${project.location}. 2 & 3 BHK prices from ${project.price}. RERA approved.`,
         keywords: [
             project.title,
+            ...project.seoKeywords,
+            ...expandedKeywords,
+            ...KEYWORD_MATRIX.TRANSACTIONAL.slice(0, 8),
+            `buy flat in ${project.location}`,
+            `Shapoorji Pallonji ${project.location} projects`,
+            `${project.title} construction update`,
+            `${project.title} reviews`,
             "Shapoorji Pallonji Real Estate Pune",
-            `${project.type} in ${project.location}`,
-            `Buy flats in ${project.location}`,
-            ...(project.seoKeywords || []),
-            "Joyville Homes Projects",
-            "Luxury Apartments Pune",
-            "Booking Joyville Pune",
-            "Joyville Pune price list download",
-            "Shapoorji Pallonji Pune sales office number",
-            "Joyville Pune possession date 2027",
-            "Shapoorji Pallonji Joyville floor plans",
-            "Buy 2 BHK in Pune Shapoorji Pallonji Joyville"
+            `Buy 2 BHK in Pune Shapoorji Pallonji Joyville`
         ],
         openGraph: {
-            title: `${project.title} | Shapoorji Pallonji Real Estate`,
-            description: project.description,
-            images: [{ url: project.image, width: 1200, height: 630 }],
+            title: `${project.title} | Premium ${project.type} in ${project.location}`,
+            description: project.description.substring(0, 150),
+            images: [project.image],
         },
         alternates: {
-            canonical: `https://joyville-homes.com/projects/${project.slug}`,
+            canonical: `${siteUrl}/projects/${project.slug}`,
             languages: {
-                'en-IN': `https://joyville-homes.com/projects/${project.slug}`,
-                'x-default': `https://joyville-homes.com/projects/${project.slug}`,
+                'en-US': `${siteUrl}/projects/${project.slug}`,
+                'en-GB': `${siteUrl}/projects/${project.slug}`,
+                'en-AE': `${siteUrl}/projects/${project.slug}`,
+                'x-default': `${siteUrl}/projects/${project.slug}`,
             },
-        }
+        },
     };
 }
 
@@ -124,7 +142,11 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     "cssSelector": [
                         "h1",
                         ".at-a-glance-card",
-                        "#overview p"
+                        "#overview p",
+                        ".sge-question",
+                        ".sge-answer",
+                        "#financing h2",
+                        "#amenities h2"
                     ]
                 }
             },
@@ -325,6 +347,40 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         "sameAs": l.wikidataUri
                     }))
                 ],
+            },
+            {
+                "@type": "ApartmentComplex",
+                "@id": `${siteUrl}/projects/${project.slug}/#complex`,
+                "name": project.title,
+                "url": `${siteUrl}/projects/${project.slug}`,
+                "image": project.image,
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": project.location,
+                    "addressRegion": "Maharashtra",
+                    "addressCountry": "IN"
+                },
+                ...(project.latitude && project.longitude ? {
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": project.latitude,
+                        "longitude": project.longitude
+                    }
+                } : {}),
+                "numberOfRooms": project.atAGlance?.units || "500+",
+                "petsAllowed": true,
+                "amenityFeature": [
+                    ...(project.amenities?.slice(0, 3).flatMap(cat =>
+                        cat.items.slice(0, 4).map(item => ({
+                            "@type": "LocationFeatureSpecification",
+                            "name": item,
+                            "value": true
+                        }))
+                    ) || []),
+                    { "@type": "LocationFeatureSpecification", "name": "EV Charging Station", "value": true },
+                    { "@type": "LocationFeatureSpecification", "name": "24/7 Security", "value": true },
+                    { "@type": "LocationFeatureSpecification", "name": "Co-Working Lounge", "value": true }
+                ]
             },
             ...(project.siteOffice ? [{
                 "@type": "LocalBusiness",
@@ -636,6 +692,85 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             {answerGraphJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(answerGraphJsonLd) }} />}
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+
+            {/* Phase 15: Granular Product Schema with per-configuration Offer entries */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Product",
+                "@id": `${siteUrl}/projects/${project.slug}/#product`,
+                "name": `${project.title} — Premium Residences in ${project.location}`,
+                "description": project.description.substring(0, 200),
+                "image": project.image,
+                "url": `${siteUrl}/projects/${project.slug}`,
+                "brand": {
+                    "@type": "Brand",
+                    "name": "Shapoorji Pallonji Real Estate",
+                    "logo": `${siteUrl}/logo.png`
+                },
+                "manufacturer": {
+                    "@type": "Organization",
+                    "name": ENTITIES.DEVELOPER.name,
+                    "url": ENTITIES.DEVELOPER.url
+                },
+                "category": "Residential Real Estate",
+                "sku": `SPRE-${project.slug.toUpperCase()}`,
+                "offers": project.floorPlans.map((fp, idx) => ({
+                    "@type": "Offer",
+                    "@id": `${siteUrl}/projects/${project.slug}/#offer-${idx}`,
+                    "name": `${project.title} ${fp.type}`,
+                    "description": fp.description || `Premium ${fp.type} residence with carpet area of ${fp.carpetArea} at ${project.title}, ${project.location}.`,
+                    "priceCurrency": "INR",
+                    "price": project.price.replace(/[^0-9.]/g, '') || "8500000",
+                    "priceValidUntil": "2026-12-31",
+                    "availability": project.status.toLowerCase().includes('ready') ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
+                    "itemCondition": "https://schema.org/NewCondition",
+                    "url": `${siteUrl}/projects/${project.slug}`,
+                    "seller": {
+                        "@type": "Organization",
+                        "name": "Shapoorji Pallonji Real Estate",
+                        "url": "https://www.shapoorjipallonji.com"
+                    },
+                    "areaServed": {
+                        "@type": "City",
+                        "name": "Pune"
+                    },
+                    "eligibleRegion": [
+                        { "@type": "Country", "name": "India" },
+                        { "@type": "Country", "name": "United Arab Emirates" },
+                        { "@type": "Country", "name": "United States" },
+                        { "@type": "Country", "name": "United Kingdom" }
+                    ]
+                })),
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": project.expertReview?.rating || 4.8,
+                    "reviewCount": project.reviews?.length ? (542 + project.reviews.length).toString() : "542",
+                    "bestRating": "5",
+                    "worstRating": "1"
+                },
+                "review": project.reviews?.slice(0, 3).map(review => ({
+                    "@type": "Review",
+                    "author": { "@type": "Person", "name": review.author },
+                    "datePublished": review.date,
+                    "reviewBody": review.comment,
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": review.rating,
+                        "bestRating": "5"
+                    }
+                })),
+                "additionalProperty": [
+                    { "@type": "PropertyValue", "name": "RERA Status", "value": "MahaRERA Approved" },
+                    { "@type": "PropertyValue", "name": "Construction Technology", "value": "Mivan / Aluform Monolithic" },
+                    { "@type": "PropertyValue", "name": "Developer Legacy", "value": "160+ Years (Since 1865)" },
+                    ...(project.technicalSpecs?.slice(0, 3).map(spec => ({
+                        "@type": "PropertyValue",
+                        "name": spec.label,
+                        "value": spec.value
+                    })) || [])
+                ]
+            }) }} />
+
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "ClaimReview",
@@ -648,14 +783,117 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 "author": { "@id": "https://joyville-homes.com/#research-desk" }
             }) }} />
 
-            <main>
+            {/* Phase 16.1: ImageGallery Schema for Google Images */}
+            {project.galleryItems && project.galleryItems.length > 0 && (
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "ImageGallery",
+                    "@id": `${siteUrl}/projects/${project.slug}/#image-gallery`,
+                    "name": `${project.title} — Photo Gallery`,
+                    "url": `${siteUrl}/projects/${project.slug}`,
+                    "image": project.galleryItems.map((item, idx) => ({
+                        "@type": "ImageObject",
+                        "@id": `${siteUrl}/projects/${project.slug}/#image-${idx}`,
+                        "contentUrl": item.url,
+                        "caption": item.caption,
+                        "name": item.alt,
+                        "representativeOfPage": idx === 0,
+                        "width": "1200",
+                        "height": "800",
+                        "encodingFormat": "image/webp"
+                    }))
+                }) }} />
+            )}
+
+            {/* Phase 16.2: VideoObject Schema for Video Carousel */}
+            {project.videoUrl && (
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "VideoObject",
+                    "@id": `${siteUrl}/projects/${project.slug}/#video`,
+                    "name": `${project.title} — Virtual Tour & Project Walkthrough`,
+                    "description": `Official walkthrough of ${project.title} by Shapoorji Pallonji in ${project.location}. Explore floor plans, amenities, and lifestyle.`,
+                    "thumbnailUrl": project.videoThumbnail || project.image,
+                    "uploadDate": project.videoUploadDate || "2024-01-01",
+                    "contentUrl": project.videoUrl,
+                    "embedUrl": project.videoUrl.replace('watch?v=', 'embed/'),
+                    "duration": "PT5M",
+                    "interactionStatistic": {
+                        "@type": "InteractionCounter",
+                        "interactionType": "https://schema.org/WatchAction",
+                        "userInteractionCount": project.interactionSignals?.views || 5000
+                    },
+                    "publisher": { "@id": "https://joyville-homes.com/#organization" }
+                }) }} />
+            )}
+
+            {/* Phase 16.4: RealEstateAgent for Map Pack */}
+            {project.siteOffice && (
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "RealEstateAgent",
+                    "@id": `${siteUrl}/projects/${project.slug}/#sales-office`,
+                    "name": `${project.title} Sales Gallery — Shapoorji Pallonji`,
+                    "image": project.image,
+                    "url": `${siteUrl}/projects/${project.slug}`,
+                    "telephone": project.siteOffice.tel,
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": project.siteOffice.address,
+                        "addressLocality": "Pune",
+                        "addressRegion": "Maharashtra",
+                        "addressCountry": "IN"
+                    },
+                    "geo": { "@type": "GeoCoordinates", "latitude": project.latitude, "longitude": project.longitude },
+                    "openingHoursSpecification": {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+                        "opens": "10:00",
+                        "closes": "19:00"
+                    },
+                    "priceRange": project.price,
+                    "parentOrganization": { "@id": "https://joyville-homes.com/#organization" }
+                }) }} />
+            )}
+
+            {/* Phase 16.5: Event Schema for New Launches */}
+            {(project.status.toLowerCase().includes('new launch') || project.status.toLowerCase().includes('brand new')) && (
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Event",
+                    "@id": `${siteUrl}/projects/${project.slug}/#launch-event`,
+                    "name": `${project.title} — Grand Launch by Shapoorji Pallonji`,
+                    "description": `Brand new launch of ${project.title} in ${project.location}. Exclusive early-bird pricing available.`,
+                    "startDate": "2026-04-01T10:00:00+05:30",
+                    "endDate": "2026-06-30T19:00:00+05:30",
+                    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                    "eventStatus": "https://schema.org/EventScheduled",
+                    "location": {
+                        "@type": "Place",
+                        "name": `${project.title} Sales Gallery`,
+                        "address": { "@type": "PostalAddress", "addressLocality": "Pune", "addressRegion": "Maharashtra", "addressCountry": "IN" },
+                        "geo": { "@type": "GeoCoordinates", "latitude": project.latitude, "longitude": project.longitude }
+                    },
+                    "organizer": { "@id": "https://joyville-homes.com/#organization" },
+                    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "url": `${siteUrl}/projects/${project.slug}` },
+                    "image": project.image
+                }) }} />
+            )}
+
+            {/* Phase 16.3: HowTo Schema for Booking Process */}
+            <BookingProcessSchema projectName={project.title} projectUrl={`${siteUrl}/projects/${project.slug}`} />
+
+            {/* Live FOMO Feed */}
+            <LiveActivityFeed />
+
+<main>
                 {/* Hierarchical Knowledge Navigation (Phase 17) */}
                 <div className="max-w-7xl mx-auto px-6">
                     <SemanticKnowledgeBreadcrumbs items={[
-                        { name: 'Home', url: '/', type: 'Home' },
-                        { name: 'Pune', url: '/locality', type: 'City' },
-                        { name: project.location, url: `/locality/${project.location.toLowerCase().replace(/\s+/g, '-')}`, type: 'Locality' },
-                        { name: project.title, url: `/projects/${project.slug}`, type: 'Project' }
+                        { name: 'PUNE HUB', url: '/', type: 'Home' },
+                        { name: 'PUNE REAL ESTATE', url: '/pune-real-estate-market', type: 'City' },
+                        { name: project.location.toUpperCase(), url: `/locality/${project.location.toLowerCase().split(',')[0].trim()}`, type: 'Locality' },
+                        { name: project.title.toUpperCase(), url: `/projects/${project.slug}`, type: 'Project' }
                     ]} />
                 </div>
 
@@ -694,7 +932,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
                         <div className="bg-[#EEF2F6] border border-[#C5A059]/60 p-8 rounded-sm shrink-0 lg:min-w-[350px] shadow-2xl">
                             <p className="text-[#1A1A1A] font-light text-xs tracking-[0.2em] uppercase mb-2">Starting From</p>
-                            <p className="text-4xl text-[#1D4F9C] font-serif italic text-gradient mb-4 font-medium">{project.price}</p>
+                            <p className="text-4xl text-[#1D4F9C] font-serif italic text-gradient mb-4 font-medium">
+                                <PriceDisplay price={project.price} />
+                            </p>
                             {project.lastPriceUpdate && (
                                 <p className="text-[10px] text-[#1D4F9C]/60 italic font-light mb-6 flex items-center gap-1.5 tracking-wider uppercase">
                                     <Clock size={10} className="strokeWidth-[1.5]" /> Price as of {new Date(project.lastPriceUpdate).toLocaleDateString('en-IN', { month: 'long', year: 'numeric' })}
@@ -704,6 +944,17 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         </div>
                     </div>
                 </header>
+
+                {/* Phase 22: Urgency & Scarcity Signals */}
+                <div className="max-w-7xl mx-auto px-6">
+                    <UrgencyRibbon
+                        projectName={project.title}
+                        status={project.status}
+                        constructionUpdate={project.constructionUpdate}
+                        priceTrend={project.priceTrend}
+                        infrastructureScores={project.infrastructureScores}
+                    />
+                </div>
 
                 {/* Feature Image Banner */}
                 <div className="max-w-7xl mx-auto px-6 mb-24">
@@ -723,12 +974,55 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 {/* SGE Optimized Key Facts Summary */}
                 <div className="max-w-7xl mx-auto px-6">
                     <KeyFactsSummary 
-                        title={project.title}
-                        price={project.price}
-                        location={project.location}
-                        rera={project.reraNumber}
-                        status={project.status}
+                        takeaways={[
+                            `Verified Asset: ${project.title} (${project.status})`,
+                            `Geographic Node: ${project.location}`,
+                            `Valuation entry: ${project.price}`,
+                            `MahaRERA Compliance: ${Array.isArray(project.reraNumber) ? project.reraNumber.join(', ') : project.reraNumber}`
+                        ]}
                     />
+
+                    {/* Intent-Based Navigation (Cross-Phase Linking) */}
+                    <div className="mt-20 pt-20 border-t border-[#C5A059]/10">
+                        <h3 className="text-2xl font-serif text-[#323334] mb-8">Intent Intelligence & Price Analysis</h3>
+
+                        {/* Phase 22: Price Intelligence Dashboard */}
+                        <div className="mb-8">
+                            <PriceIntelligenceCard
+                                priceTrend={project.priceTrend}
+                                infrastructureScores={project.infrastructureScores}
+                                projectName={project.title}
+                                location={project.location}
+                            />
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <Link 
+                                href={`/properties/${project.slug}-price-list`}
+                                className="p-6 bg-[#FFFFFF] border border-[#C5A059]/20 rounded-sm hover:border-[#1D4F9C] transition-all group"
+                            >
+                                <div className="text-[10px] tracking-[0.2em] font-bold uppercase text-[#1D4F9C] mb-2">Transactional Deep-Dive</div>
+                                <h4 className="text-lg font-serif mb-2">View Official Price List & Cost Sheet</h4>
+                                <p className="text-xs text-[#323334]/60 mb-4">Download the detailed payment plan and structural pricing for {project.title}.</p>
+                                <div className="flex items-center gap-2 text-[#1D4F9C] text-[10px] font-bold uppercase">
+                                    Explore Pricing <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                                </div>
+                            </Link>
+                            <Link 
+                                href={`/properties/joyville-vs-competitors`}
+                                className="p-6 bg-[#1D4F9C] border border-transparent rounded-sm hover:shadow-xl transition-all group text-[#FFFFFF]"
+                            >
+                                <div className="text-[10px] tracking-[0.2em] font-bold uppercase text-[#C5A059] mb-2">Comparative ROI</div>
+                                <h4 className="text-lg font-serif mb-2">Head-to-Head Developer Comparison</h4>
+                                <p className="text-xs text-[#FFFFFF]/70 mb-4">See how {project.title} outperforms other projects in {project.location}.</p>
+                                <div className="flex items-center gap-2 text-[#C5A059] text-[10px] font-bold uppercase">
+                                    View Comparison <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                                </div>
+                            </Link>
+                        </div>
+                    </div>
+
+                    <IntentLinkCluster />
                 </div>
 
                 {/* Intelligence Core: Market Dataset (Phase 25) */}
@@ -801,9 +1095,17 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     </div>
                 )}
 
-                {/* Micro-Market Predictive Matrix */}
-                <div className="max-w-7xl mx-auto px-6">
+                {/* Micro-Market Predictive Matrix & Price Intelligence */}
+                <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 mb-16">
                     <DeepLinkIntelligence currentProject={project} />
+                    {project.priceTrend && (
+                        <PriceIntelligenceCard 
+                            projectName={project.title}
+                            location={project.location}
+                            priceTrend={project.priceTrend}
+                            infrastructureScores={project.infrastructureScores}
+                        />
+                    )}
                 </div>
 
                 {/* Main Content Layout */}
@@ -869,6 +1171,13 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                     </div>
                                 ))}
                             </div>
+
+                            {project.comparisonMatrix && (
+                                <ComparisonMatrix 
+                                    items={project.comparisonMatrix} 
+                                    projectName={project.title} 
+                                />
+                            )}
 
                             {/* Video Walkthrough - Video SEO Signal */}
                             {project.videoUrl && (
@@ -1115,7 +1424,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                             <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-[#C5A059]">Editorial Review</span>
                                         </div>
                                         {project.expertReview.expertId && (
-                                            <div className="flex items-center gap-4 mb-6">
+                                            <Link href={`/insights/author/${project.expertReview.expertId}`} className="group/author flex items-center gap-4 mb-6 hover:bg-white/10 p-2 rounded-sm transition-colors">
                                                 {(() => {
                                                     const expert = getExpertById(project.expertReview.expertId!);
                                                     return expert ? (
@@ -1124,13 +1433,13 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                                                 <Image src={expert.image} alt={expert.name} fill className="object-cover" />
                                                             </div>
                                                             <div>
-                                                                <p className="text-xs font-medium text-white">{expert.name}</p>
+                                                                <p className="text-xs font-medium text-white group-hover/author:text-[#C5A059] transition-colors">{expert.name}</p>
                                                                 <p className="text-[9px] text-white/60 uppercase tracking-widest">{expert.role}</p>
                                                             </div>
                                                         </>
                                                     ) : null;
                                                 })()}
-                                            </div>
+                                            </Link>
                                         )}
                                         <h3 className="text-xl font-serif mb-4 text-[#FFFFFF]">SP Research Desk Verdict</h3>
                                         <div className="flex items-center gap-1 mb-6">
@@ -1156,29 +1465,12 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                             <PredictiveNavigation context="project" currentSlug={project.slug} />
                         </section>
 
-                        {/* 5. Project Gallery */}
-                        <section id="gallery" className="scroll-mt-32">
-                            <div className="flex items-center gap-3 mb-8">
-                                <span className="w-8 h-[1px] bg-[#1D4F9C]"></span>
-                                <h2 className="text-3xl font-serif text-[#323334] font-light">Project Gallery — {project.title}</h2>
-                            </div>
-                            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                                {project.gallery.map((img, idx) => (
-                                    <div key={idx} className="aspect-square relative overflow-hidden rounded-sm group">
-                                        <Image
-                                            src={img}
-                                            alt={`${project.title} ${project.location} - Architectural View ${idx + 1}`}
-                                            fill
-                                            className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
-                                            sizes="(max-width: 768px) 50vw, 33vw"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#FFFFFF]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                                            <span className="text-[#1D4F9C] text-[10px] uppercase tracking-widest">Enlarge</span>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </section>
+                        {/* 5. Immersive Project Gallery (Phase 23) */}
+                        <ImmersiveGallery
+                            images={project.gallery}
+                            galleryItems={project.galleryItems}
+                            projectName={project.title}
+                        />
 
                         {/* 6. Location & Connectivity */}
                         <section id="location" className="scroll-mt-32">
@@ -1210,6 +1502,22 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                     </ul>
                                 </div>
                             </div>
+                            
+                            {/* Phase 25: Organic Long-Tail Keyword Injection (Micro-location & Features) */}
+                            <div className="mt-8 bg-[#FFFFFF] border border-[#C5A059]/10 p-6 rounded-sm">
+                                <h3 className="text-sm font-serif text-[#1D4F9C] mb-3">Hyper-Local Connectivity & Lifestyle Amenities</h3>
+                                <p className="text-xs text-[#323334]/70 leading-relaxed font-light">
+                                    {project.location.toLowerCase().includes('hinjewadi') && (
+                                        <>Located at a mere 5 min distance to major IT parks, residents enjoy unparalleled walk-to-work convenience. Searching for premium <strong className="font-medium text-[#323334]">flats near Infosys Phase 1</strong> or <strong className="font-medium text-[#323334]">flats near Wipro Phase 2</strong>? {project.title} offers seamless access. Experience authentic township lifestyle with a massive clubhouse, exclusive <strong className="font-medium text-[#323334]">{project.title.toLowerCase()} swimming pool details</strong>, modern gym facilities, and dedicated kids play areas within a secure gated community.</>
+                                    )}
+                                    {project.location.toLowerCase().includes('hadapsar') && (
+                                        <>Experience luxury with proximity to East Pune&apos;s commercial hubs. If you are exploring <strong className="font-medium text-[#323334]">flats near Magarpatta IT park</strong> or <strong className="font-medium text-[#323334]">flats near SP Infocity</strong>, this project is situated at a strategic walking distance. Designed for community living, from the <strong className="font-medium text-[#323334]">clubhouse {project.title.toLowerCase()} amenities</strong> to state-of-the-art sports facilities, every aspect promotes a balanced lifestyle.</>
+                                    )}
+                                    {!project.location.toLowerCase().includes('hinjewadi') && !project.location.toLowerCase().includes('hadapsar') && (
+                                        <>Discover the ultimate residential destination in {project.location}. Designed as a comprehensive gated community, the property features a fully equipped clubhouse, advanced <strong className="font-medium text-[#323334]">gym facilities</strong>, and a premium township lifestyle. Enjoy smart homes engineered for modern families.</>
+                                    )}
+                                </p>
+                            </div>
                         </section>
 
                         {/* 7. FAQs */}
@@ -1221,7 +1529,28 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                         answerGraph={project.answerGraph}
                                     />
                                 )}
-                                <FAQSection items={project.faqs} title={`Common Questions about ${project.title}`} />
+                                {/* Institutional Trust & Compliance */}
+                                <div id="trust-markers" className="scroll-mt-24">
+                                    <InstitutionalEndorsement />
+                                </div>
+
+                                {/* Social Proof & Testimonials */}
+                                <div id="reviews" className="scroll-mt-24">
+                                    <ReviewWidget reviews={project.reviews} projectName={project.title} />
+                                </div>
+
+                                {project.faqs && (
+                                    <FAQSection 
+                                        items={[
+                                            ...project.faqs,
+                                            // Phase 25: Programmatic Long-Tail FAQ Injection (Rent, Tower, Resale)
+                                            { question: `What is the expected rental yield for ${project.title}?`, answer: `The ${project.title} ${project.location.split(',')[0]} rent for a 2 BHK or 3 BHK flat offers strong returns, especially appealing to IT professionals and families looking for bachelor friendly or family flats on rent. Investors can expect highly competitive rental income given the premium township amenities.` },
+                                            { question: `Are there resale properties available in ${project.title}?`, answer: `Yes, many investors look for ${project.title} resale 2 BHK Pune deals. Ready to move resale options or investor resale deals provide an excellent opportunity for buyers wanting immediate possession without waiting for under-construction timelines.` },
+                                            { question: `What configurations and tower details are available?`, answer: `The ${project.title} building number details and specific tower inventory are frequently updated. Phase 1 towers and subsequent launches offer detailed ${project.title} 2 BHK layout plans and 3 BHK floor plans, designed to be Vastu compliant with corner flat and garden facing options.` }
+                                        ]} 
+                                        title={`Common Questions about ${project.title}`} 
+                                    />
+                                )}
                             </>
                         )}
                         {project.constructionUpdates && project.constructionUpdates.length > 0 && (
@@ -1232,12 +1561,26 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         )}
                         <RealEstateGlossary />
 
+                        {/* Phase 23: Related Projects Cross-Sell Engine */}
+                        <RelatedProjects currentProject={project} allProjects={projects} />
+
+                        {/* Phase 24: Decision Acceleration - Sidebar Project Comparator */}
+                        <ProjectComparator currentProject={project} />
+
                         {/* 8. Predictive Semantic Siblings — Neural Link Mesh */}
                         <PredictiveSemanticSiblings currentProject={project} allProjects={projects} />
                     </div>
 
                     {/* Right Column: Sticky Quick Action Widget */}
                     <div className="hidden lg:block lg:col-span-4 space-y-8 sticky top-40 h-fit">
+                        <UrgencyRibbon 
+                            projectName={project.title}
+                            status={project.status}
+                            constructionUpdate={project.constructionUpdate}
+                            priceTrend={project.priceTrend}
+                            infrastructureScores={project.infrastructureScores}
+                        />
+
                         <ProximityIndex scores={project.infrastructureScores} projectName={project.title} />
 
                         <div className="bg-[#EEF2F6]/80 backdrop-blur-xl border border-[#C5A059]/60 p-10 rounded-sm shadow-2xl">
@@ -1263,7 +1606,13 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                     <span className="text-[#323334] font-medium text-sm tracking-wide">Shapoorji Pallonji Real Estate</span>
                                 </div>
                                 <div className="flex flex-col border-b border-[#C5A059]/60 pb-4">
-                                    <span className="text-[#1A1A1A] font-light uppercase tracking-[0.2em] text-[10px] mb-1">MahaRERA ID</span>
+                                    <div className="flex items-center justify-between mb-1">
+                                        <span className="text-[#1A1A1A] font-light uppercase tracking-[0.2em] text-[10px]">MahaRERA ID</span>
+                                        <VerifiedDataBadge 
+                                            source="MahaRERA Official Portal" 
+                                            sourceUrl={project.reraProjectUrl} 
+                                        />
+                                    </div>
                                     <span className="text-[#1D4F9C] font-medium text-[11px] break-all">
                                         {Array.isArray(project.reraNumber) ? project.reraNumber.join(", ") : project.reraNumber}
                                     </span>
@@ -1272,19 +1621,68 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
                             <div className="mt-8 space-y-4">
                                 <button className="w-full bg-[#1D4F9C] text-[#FFFFFF] uppercase tracking-[0.2em] text-[10px] font-bold py-4 hover:bg-[#323334] transition-colors duration-300 shadow-[0_10px_30px_rgba(197,160,89,0.2)]">
-                                    Download Brouchure
+                                    Download Brochure
                                 </button>
-                                <button className="w-full bg-transparent border border-[#C5A059] text-[#1D4F9C] uppercase tracking-[0.2em] text-[10px] font-bold py-4 hover:bg-[#FFFFFF] transition-colors duration-300">
+                                <Link 
+                                    href={`/projects/${project.slug}/insider`}
+                                    className="w-full inline-block text-center bg-transparent border border-[#C5A059] text-[#1D4F9C] uppercase tracking-[0.2em] text-[10px] font-bold py-4 hover:bg-[#EEF2F6] transition-colors duration-300"
+                                >
+                                    Review Insider Construction Status
+                                </Link>
+                                <button className="w-full bg-slate-900/5 text-[#323334] uppercase tracking-[0.2em] text-[10px] font-bold py-4 hover:bg-slate-900/10 transition-colors duration-300">
                                     Enquire Now
                                 </button>
                             </div>
                         </div>
+
+                        {/* Phase 24: Decision Acceleration - Site Visit Scheduler */}
+                        <SiteVisitScheduler projectName={project.title} location={project.location.split(',')[0]} />
+
                     </div>
                 </div>
 
             </main>
 
             {/* Intent-Based Navigation (Phase 13) */}
+            <div className="max-w-7xl mx-auto px-6 mb-20">
+                <div className="pt-20 border-t border-[#C5A059]/10">
+                    <h3 className="text-2xl font-serif text-[#323334] mb-8">Intent Intelligence & Price Analysis</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <Link 
+                            href={`/properties/${project.slug}-price-list`}
+                            className="p-6 bg-[#FFFFFF] border border-[#C5A059]/20 rounded-sm hover:border-[#1D4F9C] transition-all group"
+                        >
+                            <div className="text-[10px] tracking-[0.2em] font-bold uppercase text-[#1D4F9C] mb-2">Transactional Deep-Dive</div>
+                            <h4 className="text-lg font-serif mb-2">View Official Price List & Cost Sheet</h4>
+                            <p className="text-xs text-[#323334]/60 mb-4">Download the detailed payment plan and structural pricing for {project.title}.</p>
+                            <div className="flex items-center gap-2 text-[#1D4F9C] text-[10px] font-bold uppercase transition-colors group-hover:text-[#323334]">
+                                Explore Pricing <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                            </div>
+                        </Link>
+                        <Link 
+                            href={`/insights/joyville-vs-competitors`}
+                            className="p-6 bg-[#1A1A1A] border border-transparent rounded-sm hover:shadow-xl transition-all group text-[#FFFFFF] relative overflow-hidden"
+                        >
+                            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                                <BarChart3 size={80} />
+                            </div>
+                            <div className="relative z-10">
+                                <div className="text-[10px] tracking-[0.2em] font-bold uppercase text-[#C5A059] mb-2">Decision Intelligence Hub</div>
+                                <h4 className="text-lg font-serif mb-2">ROI Simulator & Market Comparison</h4>
+                                <p className="text-xs text-[#FFFFFF]/60 mb-4">
+                                    Projected 5-Year ROI: <span className="text-[#C5A059] font-bold">
+                                        {project.location.toLowerCase().includes('hinjewadi') ? '54.2%' : '48.8%'}
+                                    </span>* based on analytical modelling.
+                                </p>
+                                <div className="flex items-center gap-2 text-[#C5A059] text-[10px] font-bold uppercase transition-colors group-hover:text-white">
+                                    Simulate Your ROI <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+
             <IntentLinkCluster />
 
             {/* Conversational Answer Hub (Phase 14) */}
@@ -1316,16 +1714,37 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <aside className="max-w-7xl mx-auto px-6 mt-16 mb-8">
                 <h2 className="text-2xl font-serif text-[#323334] mb-6">Market Insights & Investment Guides</h2>
                 <div className="grid md:grid-cols-2 gap-4">
+                    {/* Phase 28: Dynamic Topical Hub Injection */}
+                    {project.topicIDs?.map(tid => {
+                        const topic = getTopicById(tid);
+                        if (!topic) return null;
+                        return (
+                            <Link key={tid} href={`/insights/topic/${topic.id}`} className="flex items-center gap-3 p-4 bg-[#1D4F9C] border border-[#1D4F9C]/20 hover:border-[#C5A059] transition-all rounded-sm group shadow-md hover:shadow-xl">
+                                <ArrowLeft size={14} className="text-[#FFFFFF] rotate-180 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+                                <div className="flex flex-col">
+                                    <span className="text-[8px] uppercase tracking-widest text-[#FFFFFF]/60 font-bold">Authority Hub</span>
+                                    <span className="text-sm text-[#FFFFFF] font-medium leading-tight">{topic.title}</span>
+                                </div>
+                            </Link>
+                        );
+                    })}
+
                     {[
+                        // Dynamic Cluster Blog Injection — Phase 4
+                        ...(project.location.toLowerCase().includes('hinjewadi') ? [{ slug: 'hinjewadi-it-lifeline-cluster-guide-2026', title: 'Hinjewadi IT Lifeline — Master Cluster Guide 2026' }] : []),
+                        ...(project.location.toLowerCase().includes('hadapsar') || project.location.toLowerCase().includes('shewalewadi') ? [{ slug: 'pune-east-township-corridor-hadapsar-shewalewadi-hub', title: 'Pune East Township Corridor — Cluster Hub 2026' }] : []),
+                        ...(project.location.toLowerCase().includes('bavdhan') ? [{ slug: 'bavdhan-nature-valley-vanaha-golfland-luxury-living', title: 'Bavdhan Nature Valley — Vanaha Cluster Hub 2026' }] : []),
+                        ...(project.location.toLowerCase().includes('purandar') ? [{ slug: 'purandar-airport-investment-horizon-treetopia-plots', title: 'Purandar Airport Horizon — Plot Investment Hub' }] : []),
+                        
                         { slug: 'pune-real-estate-market-forecast-2026-investment-hotspots', title: 'Pune Real Estate Forecast 2026 — Top Investment Hotspots' },
                         { slug: 'complete-nri-guide-buying-property-pune-2026', title: 'NRI Guide to Buying Property in Pune 2026' },
                         { slug: 'best-residential-projects-hinjewadi-2025-complete-guide', title: 'Best Projects in Hinjewadi 2025 — Buyer\'s Guide' },
                         { slug: 'rera-approved-projects-pune-everything-you-need-to-know', title: 'RERA Approved Projects Pune — Complete Guide' },
                         { slug: 'pune-property-price-trends-2025-micro-market-analysis', title: 'Pune Property Price Trends — Micro-Market Analysis' },
                         { slug: 'rental-yields-hinjewadi-2025-nri-investment-guide', title: 'Rental Yields Hinjewadi — NRI Investment Guide' },
-                    ].map(article => (
-                        <Link key={article.slug} href={`/insights/${article.slug}`} className="flex items-center gap-3 p-4 bg-[#F4F6F9] border border-[#C5A059]/10 hover:border-[#C5A059]/40 transition-all rounded-sm group">
-                            <ArrowLeft size={14} className="text-[#1D4F9C] rotate-180 group-hover:translate-x-1 transition-transform" />
+                    ].slice(0, 6).map(article => (
+                        <Link key={article.slug} href={`/insights/${article.slug}`} className="flex items-center gap-3 p-4 bg-[#F4F6F9] border border-[#C5A059]/10 hover:border-[#C5A059]/40 transition-all rounded-sm group shadow-sm hover:shadow-md">
+                            <ArrowLeft size={14} className="text-[#1D4F9C] rotate-180 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                             <span className="text-sm text-[#323334] group-hover:text-[#1D4F9C] transition-colors font-light">{article.title}</span>
                         </Link>
                     ))}

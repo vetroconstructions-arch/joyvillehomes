@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 export const dynamic = 'force-static';
 import { notFound } from 'next/navigation';
 import { projects } from '@/data/projects';
+import { blogs } from '@/data/blogs';
 import { localities } from '@/data/localities';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -26,6 +27,7 @@ import HyperLocalQA from '@/components/HyperLocalQA';
 import IntentLinkCluster from '@/components/IntentLinkCluster';
 import MarketPulseTicker from '@/components/MarketPulseTicker';
 import SemanticKnowledgeBreadcrumbs from '@/components/SemanticKnowledgeBreadcrumbs';
+import ZeroClickBrain from '@/components/ZeroClickBrain';
 
 const siteUrl = 'https://joyville-homes.com';
 
@@ -89,6 +91,7 @@ export default async function LocalityPage({
                 "name": project.title,
                 "url": `${siteUrl}/projects/${project.slug}`
             })),
+            ...(locality.sameAs ? { "sameAs": locality.sameAs } : {}),
             ...(locality.lifestyleScores ? {
                 "identifier": [
                     { "@type": "PropertyValue", "name": "Transit Score", "value": locality.lifestyleScores.transit },
@@ -243,9 +246,9 @@ export default async function LocalityPage({
 
             <header className="max-w-7xl mx-auto px-6 mb-16">
                 <SemanticKnowledgeBreadcrumbs items={[
-                    { name: 'Home', url: '/', type: 'Home' },
-                    { name: 'Pune', url: '/location', type: 'City' },
-                    { name: locality.name, url: `/locality/${locality.slug}`, type: 'Locality' }
+                    { name: 'PUNE HUB', url: '/', type: 'Home' },
+                    { name: 'PUNE REAL ESTATE', url: '/pune-real-estate-market', type: 'City' },
+                    { name: `${locality.name.toUpperCase()}`, url: `/locality/${locality.slug}`, type: 'Locality' }
                 ]} />
                 <div className="inline-flex items-center gap-2 text-[#1D4F9C] font-semibold text-xs tracking-[0.2em] uppercase mb-4">
                     <MapPin size={14} /> Micro-Market Intelligence
@@ -268,6 +271,15 @@ export default async function LocalityPage({
                         <span className="text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold block mb-2">YoY Appreciation</span>
                         <span className="text-xl font-serif text-green-600">↑ {locality.yoyAppreciation}</span>
                     </div>
+                </div>
+
+                {/* AI Overviews Data Payload (GEO) */}
+                <div className="mt-12 w-full max-w-4xl mx-auto">
+                    <ZeroClickBrain 
+                        localityName={locality.name} 
+                        appreciation={`↑ ${locality.yoyAppreciation}`}
+                        sqftPrice={locality.avgPricePerSqFt}
+                    />
                 </div>
             </header>
 
@@ -443,56 +455,120 @@ export default async function LocalityPage({
                 </div>
             </section>
 
-            {/* Relevant Projects Section */}
+            {/* Relevant Projects Section — Persona Grouped */}
             <section className="max-w-7xl mx-auto px-6">
-                <div className="flex items-center gap-4 mb-12 border-b border-[#C5A059]/20 pb-4">
+                <div className="flex items-center gap-4 mb-4 border-b border-[#C5A059]/20 pb-4">
                     <Landmark className="text-[#1D4F9C]" size={32} />
                     <h2 className="text-4xl font-serif text-[#1A1A1A]">Shapoorji Pallonji Properties in {locality.name}</h2>
                 </div>
+                <p className="text-sm text-[#323334]/60 font-light mb-12 max-w-2xl">
+                    Discover hand-picked residential assets in {locality.name}, categorized by your primary objective — whether it&apos;s high-yield asset creation or elevated biophilic living.
+                </p>
 
-                {
-                    localProjects.length > 0 ? (
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {localProjects.map(project => (
-                                <div key={project.id} className="bg-[#FFFFFF] border border-[#C5A059]/60 shadow-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-500 rounded-sm group flex flex-col">
-                                    <div className="relative aspect-[4/3] overflow-hidden">
-                                        <Image
-                                            src={project.image}
-                                            alt={`${project.title} - ${project.type} in ${locality.name}`}
-                                            fill
-                                            className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        />
-                                    </div>
-                                    <div className="p-8 flex flex-col flex-grow">
-                                        <div className="text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold mb-3 bg-[#EEF2F6] self-start px-3 py-1 rounded-sm border border-[#C5A059]/20">{project.type}</div>
-                                        <h3 className="text-2xl font-serif text-[#1A1A1A] mb-2">{project.title}</h3>
-                                        <p className="text-sm text-[#1A1A1A] font-light mb-6 flex-grow">{project.description.substring(0, 100)}...</p>
-
-                                        <div className="flex flex-col gap-4 mt-auto pt-6 border-t border-[#C5A059]/20">
-                                            <div className="flex justify-between items-center">
-                                                <span className="text-xs text-[#1A1A1A] uppercase tracking-wide">Starting From</span>
-                                                <span className="font-serif text-lg text-[#1D4F9C] italic">{project.price}</span>
-                                            </div>
-                                            <Link href={`/projects/${project.slug}`} className="w-full bg-[#1D4F9C] text-[#FFFFFF] py-4 text-center text-xs tracking-[0.2em] uppercase font-semibold hover:bg-[#323334] transition-colors flex items-center justify-center gap-2 group/btn shadow-lg">
-                                                View Project Summary <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-                                            </Link>
-                                        </div>
-                                    </div>
+                {localProjects.length > 0 ? (
+                    <div className="space-y-24">
+                        {/* 1. Investment Powerhouses */}
+                        {localProjects.filter(p => p.personaTags?.some(tag => ['Investor', 'NRI', 'AviationInvestor'].includes(tag))).length > 0 && (
+                            <div>
+                                <div className="flex items-center gap-2 mb-8">
+                                    <Zap className="text-[#C5A059] fill-[#C5A059]" size={16} />
+                                    <h3 className="text-xl font-serif text-[#1D4F9C] uppercase tracking-wider">Investment Powerhouses</h3>
+                                    <span className="h-[1px] flex-grow bg-gradient-to-r from-[#1D4F9C]/20 to-transparent ml-4"></span>
                                 </div>
-                            ))}
-                        </div>
-                    ) : (
-                        <div className="text-center py-20 bg-[#FFFFFF] border border-[#C5A059]/60 shadow-2xl rounded-sm">
-                            <h3 className="text-2xl font-serif text-[#1D4F9C] mb-4">New Projects Launching Soon</h3>
-                            <p className="text-[#1A1A1A]">We are currently planning exclusive premium developments in {locality.name}.</p>
-                            <div className="mt-8 flex justify-center">
-                                <BrochureButton projectName={`Upcoming Projects in ${locality.name}`} label="Register for Updates" />
+                                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                    {localProjects.filter(p => p.personaTags?.some(tag => ['Investor', 'NRI', 'AviationInvestor'].includes(tag))).map(project => (
+                                        <div key={project.id} className="bg-[#FFFFFF] border border-[#C5A059]/60 shadow-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-500 rounded-sm group flex flex-col">
+                                            <div className="relative aspect-[4/3] overflow-hidden">
+                                                <Image
+                                                    src={project.image}
+                                                    alt={`${project.title} - ${project.type} in ${locality.name}`}
+                                                    fill
+                                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                                />
+                                            </div>
+                                            <div className="p-8 flex flex-col flex-grow">
+                                                <div className="flex items-center justify-between mb-3">
+                                                    <div className="text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold bg-[#EEF2F6] px-3 py-1 rounded-sm border border-[#C5A059]/20">{project.type}</div>
+                                                    <div className="flex items-center gap-1 text-[9px] font-bold text-[#C5A059] uppercase tracking-tighter">
+                                                        <TrendingUp size={10} /> High ROI
+                                                    </div>
+                                                </div>
+                                                <h3 className="text-2xl font-serif text-[#1A1A1A] mb-2">{project.title}</h3>
+                                                <p className="text-sm text-[#1A1A1A] font-light mb-6 flex-grow">{project.description.substring(0, 100)}...</p>
+
+                                                <div className="flex flex-col gap-4 mt-auto pt-6 border-t border-[#C5A059]/20">
+                                                    <div className="flex justify-between items-center">
+                                                        <span className="text-xs text-[#1A1A1A] uppercase tracking-wide">Starting From</span>
+                                                        <span className="font-serif text-lg text-[#1D4F9C] italic">{project.price}</span>
+                                                    </div>
+                                                    <Link href={`/projects/${project.slug}`} className="w-full bg-[#1D4F9C] text-[#FFFFFF] py-4 text-center text-xs tracking-[0.2em] uppercase font-semibold hover:bg-[#323334] transition-colors flex items-center justify-center gap-2 group/btn shadow-lg">
+                                                        Examine ROI Graph <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
+                        )}
+
+                        {/* 2. Lifestyle Destinations */}
+                        {localProjects.filter(p => p.personaTags?.some(tag => ['Luxury', 'FirstTimeBuyer', 'NatureSeeker', 'VastuConscious'].includes(tag))).length > 0 && (
+                            <div>
+                                <div className="flex items-center gap-2 mb-8">
+                                    <Activity className="text-[#1D4F9C]" size={16} />
+                                    <h3 className="text-xl font-serif text-[#1D4F9C] uppercase tracking-wider">Lifestyle Destinations</h3>
+                                    <span className="h-[1px] flex-grow bg-gradient-to-r from-[#1D4F9C]/20 to-transparent ml-4"></span>
+                                </div>
+                                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                    {localProjects.filter(p => p.personaTags?.some(tag => ['Luxury', 'FirstTimeBuyer', 'NatureSeeker', 'VastuConscious'].includes(tag))).map(project => (
+                                        <div key={project.id} className="bg-[#FFFFFF] border border-[#C5A059]/60 shadow-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-500 rounded-sm group flex flex-col">
+                                            <div className="relative aspect-[4/3] overflow-hidden">
+                                                <Image
+                                                    src={project.image}
+                                                    alt={`${project.title} - ${project.type} in ${locality.name}`}
+                                                    fill
+                                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                                />
+                                            </div>
+                                            <div className="p-8 flex flex-col flex-grow">
+                                                <div className="flex items-center justify-between mb-3">
+                                                    <div className="text-[10px] tracking-[0.2em] uppercase text-[#1D4F9C] font-semibold bg-[#EEF2F6] px-3 py-1 rounded-sm border border-[#C5A059]/20">{project.type}</div>
+                                                    <div className="flex items-center gap-1 text-[9px] font-bold text-[#1D4F9C] uppercase tracking-tighter">
+                                                        <Activity size={10} /> Elite Living
+                                                    </div>
+                                                </div>
+                                                <h3 className="text-2xl font-serif text-[#1A1A1A] mb-2">{project.title}</h3>
+                                                <p className="text-sm text-[#1A1A1A] font-light mb-6 flex-grow">{project.description.substring(0, 100)}...</p>
+
+                                                <div className="flex flex-col gap-4 mt-auto pt-6 border-t border-[#C5A059]/20">
+                                                    <div className="flex justify-between items-center">
+                                                        <span className="text-xs text-[#1A1A1A] uppercase tracking-wide">Starting From</span>
+                                                        <span className="font-serif text-lg text-[#1D4F9C] italic">{project.price}</span>
+                                                    </div>
+                                                    <Link href={`/projects/${project.slug}`} className="w-full bg-[#323334] text-[#FFFFFF] py-4 text-center text-xs tracking-[0.2em] uppercase font-semibold hover:bg-[#1D4F9C] transition-colors flex items-center justify-center gap-2 group/btn shadow-lg">
+                                                        Explore Amenities <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                ) : (
+                    <div className="text-center py-20 bg-[#FFFFFF] border border-[#C5A059]/60 shadow-2xl rounded-sm">
+                        <h3 className="text-2xl font-serif text-[#1D4F9C] mb-4">New Projects Launching Soon</h3>
+                        <p className="text-[#1A1A1A]">We are currently planning exclusive premium developments in {locality.name}.</p>
+                        <div className="mt-8 flex justify-center">
+                            <BrochureButton projectName={`Upcoming Projects in ${locality.name}`} label="Register for Updates" />
                         </div>
-                    )
-                }
-            </section >
+                    </div>
+                )}
+            </section>
 
             {/* Intent-Based Navigation (Phase 13) */}
             <IntentLinkCluster />
@@ -521,34 +597,52 @@ export default async function LocalityPage({
                 </div>
             </section>
 
-            {/* Contextual Insights Cross-Links — Phase 13 */}
-            <section className="max-w-7xl mx-auto px-6 mt-12 mb-4">
-                <h2 className="text-2xl font-serif text-[#1A1A1A] mb-6">Related Market Insights</h2>
-                <div className="grid md:grid-cols-2 gap-4">
-                    {[
-                        { slug: 'pune-real-estate-market-forecast-2026-investment-hotspots', title: 'Pune Real Estate Forecast 2026 — Investment Hotspots' },
-                        { slug: 'pune-property-price-trends-2025-micro-market-analysis', title: 'Pune Property Price Trends — Micro-Market Analysis' },
-                        { slug: 'complete-nri-guide-buying-property-pune-2026', title: 'NRI Guide to Buying Property in Pune 2026' },
-                        ...(locality.slug === 'hinjewadi' || locality.slug === 'wakad' ? [
-                            { slug: 'rental-yields-hinjewadi-2025-nri-investment-guide', title: 'Rental Yields Hinjewadi — NRI Investment Guide' },
-                            { slug: 'best-residential-projects-hinjewadi-2025-complete-guide', title: 'Best Projects in Hinjewadi — Buyer\'s Guide' },
-                            { slug: 'why-joyville-vyomora-is-best-new-launch-hinjewadi-2026', title: 'Why Joyville Vyomora Is the Best New Launch in Hinjewadi' },
-                        ] : []),
-                        ...(locality.slug === 'hadapsar' || locality.slug === 'kharadi' ? [
-                            { slug: 'the-ultimate-guide-pune-east-townships-hadapsar', title: 'The Ultimate Guide to Pune East Townships — Hadapsar' },
-                            { slug: 'pune-it-corridor-hinjewadi-vs-kharadi-vs-magarpatta', title: 'IT Corridor Comparison — Hinjewadi vs Kharadi vs Magarpatta' },
-                        ] : []),
-                        ...(locality.slug === 'bavdhan' ? [
-                            { slug: 'pune-mega-infrastructure-projects-impact-2028', title: 'Pune Mega Infrastructure Projects — Impact by 2028' },
-                        ] : []),
-                    ].slice(0, 4).map(article => (
-                        <Link key={article.slug} href={`/insights/${article.slug}`} className="flex items-center gap-3 p-4 bg-[#FFFFFF] border border-[#C5A059]/10 hover:border-[#C5A059]/40 transition-all rounded-sm group shadow-md">
-                            <ArrowRight size={14} className="text-[#1D4F9C] group-hover:translate-x-1 transition-transform flex-shrink-0" />
-                            <span className="text-sm text-[#323334] group-hover:text-[#1D4F9C] transition-colors font-light">{article.title}</span>
-                        </Link>
-                    ))}
+            {/* Project Cluster Intelligence — Phase 4 Strategy */}
+            <section className="max-w-7xl mx-auto px-6 mt-20">
+                <div className="bg-[#1D4F9C]/5 border-2 border-[#1D4F9C]/10 p-8 md:p-12 rounded-2xl relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-[#C5A059]/5 rounded-full -mr-32 -mt-32 blur-3xl group-hover:bg-[#C5A059]/10 transition-colors" />
+                    <div className="relative z-10">
+                        <div className="inline-flex items-center gap-2 text-[#1D4F9C] font-bold text-[10px] tracking-[0.3em] uppercase mb-6">
+                            <Zap size={14} className="fill-[#1D4F9C]" /> Strategic Project Clustering
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-serif text-[#1A1A1A] mb-6">Explore the {locality.name} Growth Hub</h2>
+                        <p className="text-lg text-[#323334]/70 max-w-3xl mb-10 leading-relaxed font-light">
+                            Discover how Shapoorji Pallonji is redefining {locality.name}&apos;s skyline through interconnected project clusters designed for maximized ROI and biophilic living.
+                        </p>
+                        
+                        <div className="grid md:grid-cols-2 gap-6">
+                            {blogs.filter(b => b.category === 'Project Clusters' && b.slug.includes(locality.slug)).map(clusterBlog => (
+                                <Link 
+                                    key={clusterBlog.slug} 
+                                    href={`/insights/${clusterBlog.slug}`}
+                                    className="flex flex-col p-6 bg-white border border-[#C5A059]/20 hover:border-[#1D4F9C] transition-all rounded-xl shadow-sm hover:shadow-xl group/card"
+                                >
+                                    <span className="text-[10px] font-bold text-[#C5A059] uppercase tracking-widest mb-2">Master Guide 2026</span>
+                                    <h3 className="text-xl font-serif text-[#1A1A1A] mb-3 group-hover/card:text-[#1D4F9C] transition-colors">{clusterBlog.title}</h3>
+                                    <p className="text-sm text-[#323334]/60 mb-6 line-clamp-2 font-light">{clusterBlog.excerpt}</p>
+                                    <div className="mt-auto flex items-center gap-2 text-[#1D4F9C] text-[10px] font-bold uppercase tracking-widest group-hover/card:gap-3 transition-all">
+                                        Access Cluster Intelligence <ArrowRight size={14} />
+                                    </div>
+                                </Link>
+                            ))}
+                            {/* Fallback for general insights if no specific cluster blog matches exactly */}
+                            {blogs.filter(b => b.category === 'Project Clusters' && b.slug.includes(locality.slug)).length === 0 && (
+                                <Link 
+                                    href="/insights/shapoorji-pallonji-pune-project-review-2026-master-collection"
+                                    className="flex flex-col p-6 bg-white border border-[#C5A059]/20 hover:border-[#1D4F9C] transition-all rounded-xl shadow-sm hover:shadow-xl group/card md:col-span-2"
+                                >
+                                    <span className="text-[10px] font-bold text-[#C5A059] uppercase tracking-widest mb-2">Master Portfolio 2026</span>
+                                    <h3 className="text-xl font-serif text-[#1A1A1A] mb-3 group-hover/card:text-[#1D4F9C] transition-colors">Shapoorji Pallonji Pune Project Review: The Master Collection</h3>
+                                    <p className="text-sm text-[#323334]/60 mb-6 line-clamp-2 font-light">An exhaustive review of the entire residential portfolio, from Hinjewadi IT lifelines to Bavdhan nature valleys.</p>
+                                    <div className="mt-auto flex items-center gap-2 text-[#1D4F9C] text-[10px] font-bold uppercase tracking-widest group-hover/card:gap-3 transition-all">
+                                        View Master Collection <ArrowRight size={14} />
+                                    </div>
+                                </Link>
+                            )}
+                        </div>
+                    </div>
                 </div>
             </section>
-        </div >
+        </div>
     );
 }

@@ -12,6 +12,14 @@ export const metadata: Metadata = {
 export default function PressResearchPage() {
     return (
         <main className="min-h-screen bg-[#EEF2F6] pt-32 pb-24 text-[#323334]">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://joyville-homes.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Press & Research", "item": "https://joyville-homes.com/press-research" }
+                ]
+            }) }} />
             
             <div className="max-w-7xl mx-auto px-6">
                 <header className="mb-20">

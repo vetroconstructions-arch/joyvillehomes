@@ -12,7 +12,12 @@ export const ENTITIES = {
             "https://en.wikipedia.org/wiki/Shapoorji_Pallonji_Group",
             "https://www.linkedin.com/company/shapoorji-pallonji-real-estate",
             "https://twitter.com/SPRealEstate_In",
-            "https://www.facebook.com/ShapoorjiPallonjiRealEstate/"
+            "https://www.facebook.com/ShapoorjiPallonjiRealEstate/",
+            "https://www.wikidata.org/wiki/Q7489503",
+            "https://www.crunchbase.com/organization/shapoorji-pallonji-group",
+            "https://maharera.mahaonline.gov.in",
+            "https://www.instagram.com/shapoorjipallonjirealestate/",
+            "https://www.youtube.com/user/ShapoorjiPallonjiRE"
         ],
         legacy: "Since 1865 (150+ Years)",
         foundingDate: "1865",
@@ -70,6 +75,46 @@ export const ENTITIES = {
         HADAPSAR: {
             name: "Hadapsar",
             sameAs: "https://en.wikipedia.org/wiki/Hadapsar"
+        },
+        BAVDHAN: {
+            name: "Bavdhan",
+            sameAs: "https://en.wikipedia.org/wiki/Bavdhan"
+        },
+        PURANDAR: {
+            name: "Purandar",
+            sameAs: "https://en.wikipedia.org/wiki/Purandar_taluka"
+        },
+        CHANDNI_CHOWK: {
+            name: "Chandni Chowk Pune",
+            type: "Infrastructure Hub",
+            description: "Major multi-level flyover and transport hub in West Pune.",
+            sameAs: "https://www.wikidata.org/wiki/Q5079820"
+        },
+        MAHARERA: {
+            name: "MahaRERA",
+            type: "Government Regulatory Body",
+            url: "https://maharera.mahaonline.gov.in",
+            description: "Maharashtra Real Estate Regulatory Authority — the statutory body for regulation and promotion of the real estate sector in Maharashtra.",
+            sameAs: "https://en.wikipedia.org/wiki/Real_Estate_Regulatory_Authority"
+        },
+        PURANDAR_AIRPORT: {
+            name: "Purandar International Airport",
+            type: "Upcoming Infrastructure",
+            description: "Upcoming greenfield international airport in Purandar taluka, Pune district. Expected to become Pune's primary airport, replacing Lohegaon.",
+            sameAs: "https://en.wikipedia.org/wiki/Purandar_airport",
+            status: "Under Planning — Land Acquisition Phase"
+        },
+        HCMTR: {
+            name: "HCMTR (High-Capacity Mass Transit Route)",
+            type: "Infrastructure",
+            description: "128 km ring road corridor around Pune connecting all major growth corridors including Hinjewadi, Bavdhan, and Hadapsar.",
+            sameAs: "https://www.wikidata.org/wiki/Q65186553"
+        },
+        SP_INFOCITY_PHURSUNGI: {
+            name: "SP Infocity Phursungi",
+            type: "IT SEZ",
+            url: "https://www.spinfocity.com",
+            sameAs: "https://www.wikidata.org/wiki/Q16950284"
         }
     }
 };

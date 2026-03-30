@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
+import PriceDisplay from "@/components/PriceDisplay";
 import { projects } from "@/data/projects";
 
 const ITEMS_PER_PAGE = 2; // Strict pagination constraint for elegant display
@@ -86,7 +87,7 @@ export default function ProjectsPortfolioClient() {
                                 <MapPin size={12} /> {project.location}
                             </div>
                             <h2 className="text-3xl lg:text-4xl font-serif mb-4 text-[#323334] font-light">{project.title}</h2>
-                            <p className="text-xl text-[#1D4F9C] mb-6 font-serif italic text-gradient">{project.price}</p>
+                            <PriceDisplay price={project.price} className="text-xl text-[#1D4F9C] mb-6 font-serif italic text-gradient block" />
 
                             <p className="text-[#323334] font-light text-sm leading-relaxed mb-8 line-clamp-3">
                                 {project.description}

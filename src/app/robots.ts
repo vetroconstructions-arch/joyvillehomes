@@ -27,23 +27,19 @@ export default function robots(): MetadataRoute.Robots {
                 disallow: commonDisallow,
             },
             {
-                userAgent: ['YandexBot', 'YandexImages', 'Baiduspider', 'Baiduspider-image', 'Sogou-Test-Spider', 'Sogou-Web-Spider'],
-                allow: '/',
-                disallow: commonDisallow,
-            },
-            {
                 userAgent: 'Google-InspectionTool',
                 allow: '/',
-                disallow: [], // Full access for visual/technical inspection
+                disallow: [], // Full access for visual/technical inspection (SGE/Rich Results)
             },
-            // Block invasive scrapers, but ALLOW top-tier AI Search engines (ChatGPT, Claude, Gemini) for AGI/SGE Dominance
+            // Secure SGE & AI Search presence (Gemini, ChatGPT, Claude)
             {
-                userAgent: ['CCBot', 'Omigili', 'FacebookBot', 'Twitterbot'],
+                userAgent: ['GPTBot', 'ChatGPT-User', 'anthropic-ai', 'ClaudeBot', 'Google-Extended', 'OAI-SearchBot', 'PerplexityBot', 'YouBot'], 
+                allow: ['/', '/ai-manifest.json'],
+            },
+            // Block invasive/low-value scrapers
+            {
+                userAgent: ['CCBot', 'Omigili', 'FacebookBot', 'Twitterbot', 'GPTBot-Mobile'],
                 disallow: ['/'],
-            },
-            {
-                userAgent: ['GPTBot', 'ChatGPT-User', 'anthropic-ai', 'Google-Extended'], 
-                allow: '/',
             }
         ],
         sitemap: `${siteUrl}/sitemap.xml`,

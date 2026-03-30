@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 export const dynamic = 'force-static';
 import { glossaryTerms } from '@/data/glossary';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: "Real Estate Glossary — Official Terminology & Meaning | Joyville Pune",
@@ -32,6 +33,14 @@ export default function GlossaryPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://joyville-homes.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Real Estate Glossary", "item": "https://joyville-homes.com/glossary" }
+                ]
+            }) }} />
 
             <div className="pt-32 pb-20 px-4 md:px-8 max-w-7xl mx-auto">
                 <div className="text-center mb-16">
@@ -64,11 +73,11 @@ export default function GlossaryPage() {
                     <div className="relative z-10 text-center">
                         <h3 className="text-2xl font-serif mb-6">Ready to apply this knowledge?</h3>
                         <p className="text-white/60 mb-8 max-w-xl mx-auto font-light">
-                            Explore our premium projects across Pune's high-growth corridors and experience 150 years of engineering excellence.
+                            Explore our premium projects across Pune&apos;s high-growth corridors and experience 150 years of engineering excellence.
                         </p>
-                        <a href="/projects" className="inline-block px-10 py-4 bg-[#C5A059] text-white text-[10px] tracking-[0.2em] uppercase font-semibold hover:bg-[#FFFFFF] hover:text-[#1A1A1A] transition-all duration-500">
+                        <Link href="/projects" className="inline-block px-10 py-4 bg-[#C5A059] text-white text-[10px] tracking-[0.2em] uppercase font-semibold hover:bg-[#FFFFFF] hover:text-[#1A1A1A] transition-all duration-500">
                             Explore Portfolios
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

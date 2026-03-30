@@ -93,3 +93,23 @@ body {
   background: var(--joyville-blue, #1D4F9C);
   border-radius: 4px;
 }
+
+/* Rendering performance: skip off-screen layout/paint */
+footer, 
+.seo-section,
+.faq-section,
+.content-defer {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1000px;
+}
+
+/* Phase 16.10: GPU acceleration for animated elements */
+.gpu-accelerated {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Reduce CLS from lazy-loaded images */
+img[loading="lazy"] {
+  background-color: #EEF2F6;
+}

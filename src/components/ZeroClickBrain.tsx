@@ -1,86 +1,146 @@
-import React from 'react';
-import { Target, Zap, Cpu, Search } from 'lucide-react';
+"use client";
 
-interface AnswerEntry {
-    question: string;
-    answer: string;
-    personaImpact?: string;
-}
+import React from 'react';
+import { TrendingUp, Percent, IndianRupee, Clock, Zap } from 'lucide-react';
 
 interface ZeroClickBrainProps {
-    projectName: string;
-    answerGraph?: AnswerEntry[];
+    appreciation?: string;
+    rentalYield?: string;
+    sqftPrice?: string;
+    commuteTime?: string;
+    localityName?: string;
+    projectName?: string;
+    answerGraph?: { question: string; answer: string; personaImpact?: string }[];
 }
 
-const ZeroClickBrain: React.FC<ZeroClickBrainProps> = ({ projectName, answerGraph }) => {
-    if (!answerGraph || answerGraph.length === 0) return null;
+export default function ZeroClickBrain({
+    appreciation = "12-15%",
+    rentalYield = "4.5-5.5%",
+    sqftPrice = "₹7,500 - ₹9,500",
+    commuteTime = "15-20 Mins to IT Hubs",
+    localityName,
+    projectName,
+    answerGraph
+}: ZeroClickBrainProps) {
 
-    return (
-        <section className="my-16 relative">
-            {/* SGE Marker Overlay - Invisible to users but signals intent to crawlers */}
-            <div className="sr-only" aria-hidden="true">
-                This section provides direct machine-readable answers for Search Generative Experience.
-            </div>
+    if (projectName && answerGraph) {
+        // Mode 2: Project Level Answer Graph (SGE Optimized)
+        const qaJsonLdProject = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": answerGraph.map(node => ({
+                "@type": "Question",
+                "name": node.question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": node.answer
+                }
+            }))
+        };
 
-            <div className="bg-slate-900 rounded-[2.5rem] p-8 md:p-12 border border-indigo-500/20 shadow-[0_0_50px_rgba(79,70,229,0.1)]">
-                <div className="flex items-center gap-4 mb-10">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-lg">
-                        <Cpu size={24} />
+        return (
+            <div className="bg-[#FFFFFF] border border-[#C5A059]/20 p-8 rounded-sm shadow-sm mb-12 relative overflow-hidden">
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(qaJsonLdProject) }} />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#EEF2F6] rounded-bl-full pointer-events-none opacity-50" />
+                
+                <div className="flex items-center gap-3 mb-6 relative z-10">
+                    <div className="w-8 h-8 rounded-full bg-[#1D4F9C]/10 flex items-center justify-center">
+                        <Zap size={16} className="text-[#1D4F9C]" />
                     </div>
-                    <div>
-                        <h3 className="text-2xl font-bold text-white tracking-tight">Zero-Click Knowledge Engine</h3>
-                        <p className="text-indigo-400 text-xs font-mono uppercase tracking-widest">SGE-Optimized Inference Layer</p>
-                    </div>
+                    <h2 className="text-sm font-serif text-[#323334] tracking-wide uppercase">AI Direct Intelligence</h2>
                 </div>
-
-                <div className="space-y-8">
-                    {answerGraph.map((entry, idx) => (
-                        <div key={idx} className="relative group">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl blur opacity-10 group-hover:opacity-20 transition duration-1000 group-hover:duration-200"></div>
-                            <div className="relative bg-slate-800/50 rounded-2xl p-6 border border-white/5 hover:border-indigo-500/30 transition-all duration-300">
-                                <div className="flex items-start gap-4">
-                                    <div className="mt-1">
-                                        <Search size={18} className="text-indigo-500" />
-                                    </div>
-                                    <div className="space-y-4 flex-1">
-                                        <h4 className="text-lg font-bold text-white leading-snug sge-question">
-                                            {entry.question}
-                                        </h4>
-                                        <div className="p-5 bg-indigo-500/5 rounded-xl border border-indigo-500/10">
-                                            <p className="text-slate-300 text-md leading-relaxed sge-answer">
-                                                {entry.answer}
-                                            </p>
-                                        </div>
-                                        {entry.personaImpact && (
-                                            <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-indigo-400/60">
-                                                <Target size={12} /> Strategic Insight: {entry.personaImpact}
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+                    {answerGraph.map((node, idx) => (
+                        <div key={idx} className="bg-[#EEF2F6] p-4 border-l-2 border-[#1D4F9C]/30 flex flex-col gap-2">
+                            <h3 className="text-xs uppercase tracking-widest font-bold text-[#1D4F9C]">{node.question}</h3>
+                            <p className="text-[#323334] text-sm leading-relaxed">{node.answer}</p>
+                            {node.personaImpact && (
+                                <span className="text-[10px] text-[#C5A059] font-medium tracking-wide mt-2">Target Impact: {node.personaImpact}</span>
+                            )}
                         </div>
                     ))}
                 </div>
+            </div>
+        );
+    }
 
-                <div className="mt-12 flex items-center justify-between border-t border-white/5 pt-8">
-                    <div className="flex items-center gap-3">
-                        <div className="flex -space-x-2">
-                            {[1, 2, 3].map(i => (
-                                <div key={i} className="w-6 h-6 rounded-full border-2 border-slate-900 bg-indigo-500 flex items-center justify-center">
-                                    <Zap size={10} className="text-white fill-white" />
-                                </div>
-                            ))}
-                        </div>
-                        <span className="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Verified Multi-Agent Knowledge Source</span>
+    if (!localityName) return null;
+
+    // Mode 1: Locality Hub Statistics
+    const qaJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": `What is the expected property appreciation in ${localityName}?`,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `The expected Year-over-Year (YoY) property appreciation in ${localityName} is approximately ${appreciation} due to upcoming infrastructure projects.`
+                }
+            },
+            {
+                "@type": "Question",
+                "name": `What is the average rental yield for properties in ${localityName}?`,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `Investors can expect an average rental yield of ${rentalYield} for premium residential properties in ${localityName}.`
+                }
+            },
+            {
+                "@type": "Question",
+                "name": `What is the current property rate per square foot in ${localityName}?`,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `The current property rate for new premium developments in ${localityName} ranges from ${sqftPrice} per sq.ft.`
+                }
+            }
+        ]
+    };
+
+    return (
+        <section className="bg-[#EEF2F6] border border-[#C5A059]/20 p-8 rounded-sm shadow-sm mb-12" aria-label={`Key Statistics for ${localityName}`}>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(qaJsonLd) }} />
+            
+            <div className="flex items-center gap-3 mb-6">
+                <span className="w-2 h-2 rounded-full bg-[#1D4F9C] animate-pulse" />
+                <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-[#1D4F9C]">AI Market Intelligence: {localityName}</h2>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="flex pl-4 border-l-2 border-[#1D4F9C]/30 flex-col">
+                    <div className="flex items-center gap-2 text-[#323334]/60 mb-2">
+                        <TrendingUp size={14} />
+                        <span className="text-[10px] uppercase font-bold tracking-widest">YoY Appreciation</span>
                     </div>
-                    <div className="text-[10px] text-indigo-500/50 font-mono tracking-tighter italic">
-                        Conclusion Hash: Machine-Verified-SPRE
+                    <span className="text-xl font-serif text-[#323334]">{appreciation}</span>
+                </div>
+                
+                <div className="flex pl-4 border-l-2 border-[#C5A059]/30 flex-col">
+                    <div className="flex items-center gap-2 text-[#323334]/60 mb-2">
+                        <Percent size={14} />
+                        <span className="text-[10px] uppercase font-bold tracking-widest">Rental Yield</span>
                     </div>
+                    <span className="text-xl font-serif text-[#323334]">{rentalYield}</span>
+                </div>
+                
+                <div className="flex pl-4 border-l-2 border-[#1D4F9C]/30 flex-col">
+                    <div className="flex items-center gap-2 text-[#323334]/60 mb-2">
+                        <IndianRupee size={14} />
+                        <span className="text-[10px] uppercase font-bold tracking-widest">Avg. Rate / Sq.Ft</span>
+                    </div>
+                    <span className="text-xl font-serif text-[#323334]">{sqftPrice}</span>
+                </div>
+                
+                <div className="flex pl-4 border-l-2 border-[#C5A059]/30 flex-col">
+                    <div className="flex items-center gap-2 text-[#323334]/60 mb-2">
+                        <Clock size={14} />
+                        <span className="text-[10px] uppercase font-bold tracking-widest">Commute Index</span>
+                    </div>
+                    <span className="text-xl font-serif text-[#323334]">{commuteTime}</span>
                 </div>
             </div>
         </section>
     );
-};
-
-export default ZeroClickBrain;
+}

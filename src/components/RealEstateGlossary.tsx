@@ -3,23 +3,103 @@ import React from 'react';
 const glossaryTerms = [
     {
         term: "Carpet Area",
-        definition: "The net usable floor area of an apartment, excluding the area covered by the external walls, areas under services shafts, exclusive balcony or verandah area and exclusive open terrace area.",
+        definition: "The net usable floor area of an apartment, excluding walls, balcony areas, and service shafts. Regulated by RERA for transparency.",
         url: "https://joyville-homes.com/pune-real-estate-guide#carpet-area"
     },
     {
-        term: "RERA Registered",
-        definition: "A project that has been registered with the Real Estate Regulatory Authority, ensuring transparency, financial discipline, and timely delivery.",
-        url: "https://joyville-homes.com/pune-real-estate-guide#rera-registered"
+        term: "RERA ID (MahaRERA)",
+        definition: "A unique registration number issued by the Maharashtra Real Estate Regulatory Authority, ensuring the project's legal compliance and financial discipline.",
+        url: "https://joyville-homes.com/pune-real-estate-guide#maharera"
     },
     {
         term: "Loading Factor",
-        definition: "The difference between the super built-up area and the carpet area of a flat, representing the space used for common amenities like elevators, stairs, and lobbies.",
+        definition: "The ratio between the super built-up area and carpet area, used to account for common spaces like lobbies, elevators, and clubhouse amenities.",
         url: "https://joyville-homes.com/pune-real-estate-guide#loading-factor"
     },
     {
-        term: "BHK",
-        definition: "An acronym for Bedroom, Hall, and Kitchen, used to define the configuration of a residential apartment.",
+        term: "BHK Configuration",
+        definition: "Stands for Bedroom, Hall, and Kitchen. Joyville Hinjewadi and Hadapsar projects offer 1, 2, and 3 BHK configurations optimized for urban living.",
         url: "https://joyville-homes.com/pune-real-estate-guide#bhk"
+    },
+    {
+        term: "Occupancy Certificate (OC)",
+        definition: "A document issued by the local municipal body (PMC/PCMC/PMRDA) certifying that a building is safe for occupation and meets all sanctioned building norms.",
+        url: "https://joyville-homes.com/pune-real-estate-guide#oc"
+    },
+    {
+        term: "Stamp Duty & Registration",
+        definition: "A tax paid to the state government for property transactions. In Pune, this is typically 7% of the agreement value (including LBT and Metro Cess).",
+        url: "https://joyville-homes.com/pune-real-estate-guide#stamp-duty"
+    },
+    {
+        term: "Floor Space Index (FSI)",
+        definition: "The ratio of the total built-up area to the total area of the plot. Pune's UDCPR rules dictate the permissible FSI for residential developments.",
+        url: "https://joyville-homes.com/pune-real-estate-guide#fsi"
+    },
+    {
+        term: "Transferable Development Rights (TDR)",
+        definition: "A certificate from the municipal authority that allows developers to build above the standard FSI, often used to create additional floors in IT corridors like Hinjewadi.",
+        url: "https://joyville-homes.com/pune-real-estate-guide#tdr"
+    },
+    {
+        term: "Ready Reckoner Rate",
+        definition: "The minimum property valuation rate set by the government, used as the benchmark for calculating stamp duty and registration fees.",
+        url: "https://joyville-homes.com/pune-real-estate-guide#ready-reckoner"
+    },
+    {
+        term: "Commencement Certificate (CC)",
+        definition: "A legal document issued by the planning authority allowing the developer to begin the construction of the building after verifying layout plans.",
+        url: "https://joyville-homes.com/pune-real-estate-guide#cc"
+    },
+    {
+        term: "Ready-to-Move-In (RTMI)",
+        definition: "Properties that have received the OC and are ready for immediate possession, typically attracting higher demand due to immediate tax benefits under Section 24.",
+        url: "https://joyville-homes.com/pune-real-estate-guide#rtmi"
+    },
+    {
+        term: "PMRDA",
+        definition: "Pune Metropolitan Region Development Authority. The governing body responsible for planning and development in Pune's growth corridors, including Hinjewadi.",
+        url: "https://joyville-homes.com/pune-real-estate-guide#pmrda"
+    },
+    {
+        term: "Biophilic Design",
+        definition: "An architectural approach that connects residents with nature. Features like forest trails in Joyville Sensorium and Vanaha utilize this to enhance mental well-being.",
+        url: "https://joyville-homes.com/pune-real-estate-guide#biophilic"
+    },
+    {
+        term: "Pune Metro Line 3",
+        definition: "The 23km elevated metro corridor connecting Hinjewadi Phase 3 to Shivajinagar, set to drastically reduce commute times and boost property values in Phase 1.",
+        url: "https://joyville-homes.com/pune-real-estate-guide#metro-line-3"
+    },
+    {
+        term: "SP Infocity",
+        definition: "A premier IT/ITES SEZ in Phursungi, Hadapsar, developed by Shapoorji Pallonji, creating massive rental demand for nearby Joyville Hadapsar Annexe.",
+        url: "https://joyville-homes.com/pune-real-estate-guide#sp-infocity"
+    },
+    {
+        term: "Rental Yield",
+        definition: "The annual rental income from a property as a percentage of its cost. Hinjewadi currently offers one of Pune's highest yields at 3.5% to 4.8%.",
+        url: "https://joyville-homes.com/pune-real-estate-guide#rental-yield"
+    },
+    {
+        term: "Knowledge Economy",
+        definition: "Refers to the sector of the economy based on intellectual capital. Pune's West and East corridors are the primary hubs of India's knowledge economy.",
+        url: "https://joyville-homes.com/pune-real-estate-guide#knowledge-economy"
+    },
+    {
+        term: "7/12 Extract",
+        definition: "An official document maintained by the revenue department that identifies the ownership, land survey number, and area of a property in Maharashtra.",
+        url: "https://joyville-homes.com/pune-real-estate-guide#7-12-extract"
+    },
+    {
+        term: "Maintenance Charges",
+        definition: "Fees collected by the housing society for the upkeep of common amenities, security, and cleaning. Joyville manages these via professional service teams.",
+        url: "https://joyville-homes.com/pune-real-estate-guide#maintenance"
+    },
+    {
+        term: "GST on Construction",
+        definition: "The Goods and Services Tax applicable on under-construction properties. Affordable housing (under ₹45L) attracts 1%, while others attract 5% without ITC.",
+        url: "https://joyville-homes.com/pune-real-estate-guide#gst"
     }
 ];
 
@@ -48,7 +128,7 @@ const RealEstateGlossary: React.FC = () => {
                         <span className="font-serif text-xl font-bold">A-Z</span>
                     </div>
                     <div>
-                        <h2 className="text-2xl font-serif text-[#1A1A1A]">Smart Homebuyer's Glossary</h2>
+                        <h2 className="text-2xl font-serif text-[#1A1A1A]">Smart Homebuyer&apos;s Glossary</h2>
                         <p className="text-sm text-neutral-500 font-light">Demystifying real estate jargon for informed decisions.</p>
                     </div>
                 </div>

@@ -10,7 +10,12 @@ import BrochureButton from "@/components/BrochureButton";
 import GlobalFAQ from "@/components/GlobalFAQ";
 import TrustBanner from "@/components/TrustBanner";
 import MarketTicker from "@/components/MarketTicker";
+import LiveActivityFeed from "@/components/LiveActivityFeed";
+import InstitutionalEndorsement from "@/components/InstitutionalEndorsement";
 import { blogs } from "@/data/blogs";
+
+import PriceDisplay from "@/components/PriceDisplay";
+import { useCurrency } from "@/context/CurrencyContext";
 
 // --- Framer Motion Variants ---
 const fadeUp: Variants = {
@@ -27,6 +32,7 @@ const staggerContainer: Variants = {
 };
 
 export default function HomeClient() {
+  const { formatPrice } = useCurrency();
   const [activeFloorPlan, setActiveFloorPlan] = useState<"2BHK" | "3BHK">("2BHK");
 
   return (
@@ -77,9 +83,9 @@ export default function HomeClient() {
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.4, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ opacity: 1, y: 0 }} // LCP Optimization: Visible immediately
+              animate={{ y: [10, 0], opacity: [0.9, 1] }}
+              transition={{ duration: 1, ease: "easeOut" }}
               className="text-6xl md:text-7xl lg:text-8xl font-serif text-[#323334] font-light leading-[1.05] tracking-tight mb-8"
             >
               <span className="text-[#1D4F9C] italic text-gradient">Joyville Vyomora</span> <br />
@@ -87,13 +93,12 @@ export default function HomeClient() {
             </motion.h1>
 
             <motion.div
-              initial={{ opacity: 0 }}
+              initial={{ opacity: 1 }} // LCP Optimization
               animate={{ opacity: 1 }}
-              transition={{ duration: 1.5, delay: 1 }}
               className="space-y-8"
             >
               <p className="text-lg md:text-xl text-[#323334] max-w-lg font-light tracking-wide leading-relaxed border-l-2 border-[#C5A059]/60 pl-6">
-                Experience the brand new launch of <span className="font-medium">Joyville Vyomora</span> in Hinjewadi Phase 1. Discover premium 2 & 3 BHK residences and exclusive 3 BHK duplexes starting from ₹84.99 Lakhs*, featuring 60+ world-class amenities and Pune's finest IT address.
+                Experience the brand new launch of <span className="font-medium">Joyville Vyomora</span> in Hinjewadi Phase 1. Discover premium 2 & 3 BHK residences and exclusive 3 BHK duplexes starting from <span className="font-bold">{formatPrice('₹84.99 Lakhs*')}</span>, featuring 60+ world-class amenities and Pune&apos;s finest IT address.
               </p>
 
               <div className="pt-4 flex items-center gap-8">
@@ -146,12 +151,14 @@ export default function HomeClient() {
                 <span className="italic text-[#1D4F9C]">The Future of Hinjewadi.</span>
               </h2>
               <p className="text-[#323334]/80 text-base md:text-lg font-light leading-relaxed mb-10">
-                Strategically positioned in the heart of Phase 1, Vyomora introduces a new era of urban living. With unique 3 BHK Duplex configurations and a 100% IT-professional centric design, this is Pune's most anticipated residential launch of 2026.
+                Strategically positioned in the heart of Phase 1, Vyomora introduces a new era of urban living. With unique 3 BHK Duplex configurations and a 100% IT-professional centric design, this is Pune&apos;s most anticipated residential launch of 2026.
               </p>
 
               <div className="grid grid-cols-2 gap-8 mb-12">
                 <div>
-                  <div className="text-[#1D4F9C] font-serif text-3xl mb-1">₹84.99 L+</div>
+                  <div className="text-[#1D4F9C] font-serif text-3xl mb-1">
+                    <PriceDisplay price="₹84.99 Lakhs+" />
+                  </div>
                   <div className="text-[10px] uppercase tracking-widest text-[#323334]/60 font-medium">Starting Investment</div>
                 </div>
                 <div>
@@ -366,7 +373,9 @@ export default function HomeClient() {
 
                   <div className="lg:col-span-5 order-1 lg:order-2">
                     <h3 className="text-3xl lg:text-4xl font-serif mb-4 text-[#323334] font-light">2 BHK Joyville Flats</h3>
-                    <p className="text-2xl text-[#1D4F9C] mb-10 font-serif italic text-gradient">Starting ₹1.10 Cr*</p>
+                    <p className="text-2xl text-[#1D4F9C] mb-10 font-serif italic text-gradient">
+                      Starting <PriceDisplay price="₹1.10 Cr*" />
+                    </p>
 
                     <div className="space-y-8 mb-12">
                       <div className="flex justify-between border-b border-[#C5A059]/60 pb-4">
@@ -410,7 +419,9 @@ export default function HomeClient() {
 
                   <div className="lg:col-span-5 order-1 lg:order-2">
                     <h3 className="text-3xl lg:text-4xl font-serif mb-4 text-[#323334] font-light">3 BHK Luxury Apartments</h3>
-                    <p className="text-2xl text-[#1D4F9C] mb-10 font-serif italic text-gradient">Starting ₹1.45 Cr*</p>
+                    <p className="text-2xl text-[#1D4F9C] mb-10 font-serif italic text-gradient">
+                      Starting <PriceDisplay price="₹1.45 Cr*" />
+                    </p>
 
                     <div className="space-y-8 mb-12">
                       <div className="flex justify-between border-b border-[#C5A059]/60 pb-4">
@@ -486,6 +497,37 @@ export default function HomeClient() {
           </div>
         </div>
       </aside>
+
+      {/* Phase 16.7: Internal Link Equity Grid — distributes homepage authority to money pages */}
+      <section className="bg-[#FFFFFF] py-16 px-6 border-b border-[#C5A059]/20 content-defer" aria-label="Quick Property Searches">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center gap-4 mb-8">
+            <span className="w-8 h-[1px] bg-[#1D4F9C]" />
+            <h2 className="text-sm font-serif text-[#323334]">Popular Property Searches in Pune</h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+            {[
+              { href: '/flats-in-pune', label: 'All Flats in Pune' },
+              { href: '/properties/2-bhk-flats-in-hinjewadi', label: '2 BHK Hinjewadi' },
+              { href: '/properties/3-bhk-flats-in-hinjewadi', label: '3 BHK Hinjewadi' },
+              { href: '/properties/ready-possession-flats-pune-2026', label: 'Ready Possession 2026' },
+              { href: '/properties/under-1-crore-flats-pune', label: 'Under ₹1 Crore' },
+              { href: '/properties/nri-investment-flats-pune', label: 'NRI Investment' },
+              { href: '/properties/flats-near-hinjewadi-it-park', label: 'Near IT Park' },
+              { href: '/properties/flats-near-magarpatta-pune', label: 'Near Magarpatta' },
+              { href: '/properties/new-launch-projects-pune-2026', label: 'New Launch 2026' },
+              { href: '/properties/investment-property-pune-2026', label: 'Investment 2026' },
+            ].map(link => (
+              <Link key={link.href} href={link.href} className="px-4 py-3 bg-[#EEF2F6] border border-[#C5A059]/10 text-xs text-[#323334] font-light hover:bg-[#1D4F9C] hover:text-[#FFFFFF] hover:border-[#1D4F9C] transition-all text-center">
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- Institutional Trust & Compliance (Phase 22) --- */}
+      <InstitutionalEndorsement />
 
       {/* --- Global SEO FAQ Section --- */}
       <GlobalFAQ />
@@ -565,6 +607,9 @@ export default function HomeClient() {
           <PhoneCall size={20} />
         </button>
       </div>
+
+      {/* Phase 22: Live Activity Feed */}
+      <LiveActivityFeed />
     </main>
   );
 }

@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calculator, TrendingUp, Wallet, Home, Info, ArrowRight } from "lucide-react";
+import { Calculator, TrendingUp, Info, ArrowRight } from "lucide-react";
 
 export default function ROICalculator() {
     const [amount, setAmount] = useState(7500000); // 75L default
@@ -10,31 +10,19 @@ export default function ROICalculator() {
     const [appreciation, setAppreciation] = useState(10); // 10% avg
     const [yieldRate, setYieldRate] = useState(4.5); // 4.5% avg for IT hubs
 
-    const [results, setResults] = useState({
-        finalValue: 0,
-        totalRent: 0,
-        netROI: 0,
-        totalGain: 0
-    });
+    // Calculate derived state directly during render to prevent cascading re-renders
+    const finalValue = amount * Math.pow(1 + appreciation / 100, years);
+    const annualRent = amount * (yieldRate / 100);
+    const totalRent = annualRent * years;
+    const totalGain = (finalValue - amount) + totalRent;
+    const netROI = (totalGain / amount) * 100;
 
-    useEffect(() => {
-        // Basic compounding appreciation
-        const finalValue = amount * Math.pow(1 + appreciation / 100, years);
-
-        // Simple rental income (assuming yearly growth in rent too, but keeping it simple for now)
-        const annualRent = amount * (yieldRate / 100);
-        const totalRent = annualRent * years;
-
-        const totalGain = (finalValue - amount) + totalRent;
-        const netROI = (totalGain / amount) * 100;
-
-        setResults({
-            finalValue,
-            totalRent,
-            netROI,
-            totalGain
-        });
-    }, [amount, years, appreciation, yieldRate]);
+    const results = {
+        finalValue,
+        totalRent,
+        netROI,
+        totalGain
+    };
 
     const softwareSchema = {
         "@context": "https://schema.org",

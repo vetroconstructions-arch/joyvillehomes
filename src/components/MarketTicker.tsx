@@ -44,8 +44,9 @@ export default function MarketTicker() {
     };
 
     return (
-        <div className={`w-full bg-[#1D4F9C] text-white overflow-hidden py-1.5 transition-all duration-500 ${scrolled ? 'fixed top-0 z-[60] shadow-lg' : ''}`}>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }} />
+        <div className="h-[32px] w-full bg-[#1D4F9C]"> {/* Layout Shift Reservation */}
+            <div className={`w-full bg-[#1D4F9C] text-white overflow-hidden py-1.5 transition-all duration-500 ${scrolled ? 'fixed top-0 z-[60] shadow-lg' : ''}`}>
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }} />
             <div className="flex whitespace-nowrap animate-marquee items-center gap-12 px-4">
                 <div className="flex items-center gap-2 border-r border-white/20 pr-12">
                     <Activity size={14} className="text-[#C5A059]" />
@@ -81,6 +82,7 @@ export default function MarketTicker() {
                     animation-play-state: paused;
                 }
             `}</style>
+        </div>
         </div>
     );
 }

@@ -6,6 +6,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin, ArrowRight } from 'lucide-react';
 import TechnicalSheet from '@/components/TechnicalSheet';
+import PriceDisplay from '@/components/PriceDisplay';
+import IntentLinkCluster from '@/components/IntentLinkCluster';
+import LiveActivityFeed from '@/components/LiveActivityFeed';
+import { KEYWORD_MATRIX } from '@/data/KeywordIntelligence';
 
 // Define the supported SEO Slugs based on our strategy matrix
 const siteUrl = 'https://joyville-homes.com';
@@ -15,25 +19,25 @@ export const SEO_ROUTES = [
     {
         slug: '2-bhk-flats-in-hinjewadi',
         title: 'Premium 2 BHK Flats in Hinjewadi Phase 1 | Shapoorji Pallonji Joyville',
-        description: 'Explore the best 2 BHK luxury flats in Hinjewadi Phase 1 by Shapoorji Pallonji. RERA approved, smart home apartments near Rajiv Gandhi Infotech Park. Starting ₹85 Lakhs.',
+        description: 'Buy premium 2 BHK flats in Hinjewadi Phase 1 by Shapoorji Pallonji. RERA approved smart homes near Rajiv Gandhi Infotech Park. Prices from ₹85L*. Book site visit.',
         h1: 'Premium 2 BHK Flats in Hinjewadi Phase 1',
-        keywords: ['2 BHK flats in Hinjewadi', 'buy 2 BHK Hinjewadi Phase 1', 'Joyville Hinjewadi 2 BHK price', 'RERA approved 2 BHK Hinjewadi', 'flats near Rajiv Gandhi Infotech Park', 'walk to work apartments Hinjewadi'],
+        keywords: [...KEYWORD_MATRIX.MICRO_MARKET_HINJEWADI, '2 BHK flats in Hinjewadi', 'buy 2 BHK Hinjewadi Phase 1', 'Joyville Hinjewadi 2 BHK price', 'RERA approved 2 BHK Hinjewadi'],
         filters: { locationMatch: 'Hinjewadi', typeMatch: '2' }
     },
     {
         slug: '3-bhk-luxury-apartments-pune-west',
         title: '3 BHK Luxury Apartments in Pune West — Hinjewadi & Bavdhan | Shapoorji Pallonji',
-        description: 'Discover spacious 3 BHK luxury residences in Pune West (Hinjewadi Phase 1, Bavdhan). Premium townships with Italian marble, concierge services. 150-year Shapoorji Pallonji legacy.',
+        description: 'Spacious 3 BHK luxury residences in Pune West (Hinjewadi & Bavdhan). Premium townships with Italian marble and concierge services. Legacy of 150 years. View price.',
         h1: '3 BHK Luxury Apartments in Pune West',
-        keywords: ['3 BHK luxury apartments Pune West', '3 BHK Bavdhan', '3 BHK luxury flats Hinjewadi', 'premium 3 BHK Pune', 'penthouse Hinjewadi', 'ultra luxury apartments Pune'],
+        keywords: [...KEYWORD_MATRIX.MICRO_MARKET_BAVDHAN, ...KEYWORD_MATRIX.COMPETITIVE_BENCHMARKS, '3 BHK luxury apartments Pune West', '3 BHK Bavdhan', '3 BHK luxury flats Hinjewadi'],
         filters: { locationMatch: 'Pune|Hinjewadi|Bavdhan', typeMatch: '3' }
     },
     {
         slug: 'townships-near-magarpatta-city',
         title: 'Township Projects near Magarpatta City & SP Infocity | Joyville Hadapsar',
-        description: 'Find premium township flats near Magarpatta City and SP Infocity in East Pune. 21-acre Joyville Hadapsar Annexe with 60+ amenities. Ready to move options from ₹65 Lakhs.',
+        description: 'Premium township flats near Magarpatta City & SP Infocity. 21-acre Joyville Hadapsar Annexe with 60+ amenities. Ready to move from ₹65L*. Download brochure.',
         h1: 'Premium Township Projects Near Magarpatta City',
-        keywords: ['flats near Magarpatta City', 'townships East Pune', 'Joyville Hadapsar Annexe', 'flats near SP Infocity', 'ready to move flats Hadapsar', 'Shewalewadi property'],
+        keywords: [...KEYWORD_MATRIX.MICRO_MARKET_HADAPSAR, 'flats near Magarpatta City', 'townships East Pune', 'Joyville Hadapsar Annexe', 'flats near SP Infocity'],
         filters: { locationMatch: 'Shewalewadi|Hadapsar', typeMatch: '' }
     },
     {
@@ -41,7 +45,7 @@ export const SEO_ROUTES = [
         title: 'NA Bungalow Plots Near Purandar Airport — Shapoorji Treetopia Pune',
         description: 'Invest in RERA approved NA Bungalow Plots near the upcoming Purandar Airport in Pune. Shapoorji Pallonji Treetopia plots from ₹84 Lakhs. Gated community with biophilic landscapes.',
         h1: 'Premium NA Bungalow Plots Near Upcoming Purandar Airport',
-        keywords: ['NA bungalow plots Pune', 'plots near Purandar Airport', 'Shapoorji Treetopia price', 'villa plots Pune', 'land investment Pune airport', 'RERA approved plots Pune'],
+        keywords: [...KEYWORD_MATRIX.MACRO_PUNE.slice(10, 20), 'NA bungalow plots Pune', 'plots near Purandar Airport', 'Shapoorji Treetopia price', 'villa plots Pune'],
         filters: { locationMatch: 'Jadhavwadi|Purandar', typeMatch: 'Plots' }
     },
 
@@ -51,7 +55,7 @@ export const SEO_ROUTES = [
         title: 'Joyville Vyomora Hinjewadi Phase 1 | Brand New Launch by Shapoorji Pallonji',
         description: 'Experience luxury at Joyville Vyomora, Hinjewadi Phase 1. 2 & 3 BHK residences and 3 BHK duplexes. Premium IT lifeline location. Starting ₹84.99 Lakhs. RERA registered.',
         h1: 'Joyville Vyomora — Brand New Launch in Hinjewadi Phase 1',
-        keywords: ['joyville vyomora hinjewadi', 'joyville vyomora price', 'joyville vyomora floor plan', 'new launch hinjewadi', '3 bhk duplex hinjewadi'],
+        keywords: [...KEYWORD_MATRIX.TRANSACTIONAL, 'joyville vyomora hinjewadi', 'joyville vyomora price', 'joyville vyomora floor plan', 'new launch hinjewadi'],
         filters: { locationMatch: 'Hinjewadi', typeMatch: 'Vyomora' }
     },
 
@@ -154,6 +158,72 @@ export const SEO_ROUTES = [
         h1: 'Joyville Hadapsar vs Amanora Trendsetter — Complete Comparison',
         keywords: ['Joyville vs Amanora', 'Joyville Hadapsar vs Amanora Trendsetter', 'Hadapsar project comparison 2026', 'best township Hadapsar', 'Shapoorji vs Amanora'],
         filters: { locationMatch: 'Hadapsar|Shewalewadi', typeMatch: '' }
+    },
+    
+    // Phase 25: Hyper-Expanded Keyword Matrix - Head Terms
+    {
+        slug: 'joyville-sensorium-2-bhk-price-phase-1',
+        title: 'Joyville Sensorium 2 BHK Price Phase 1 | Cost Sheet & Details 2026',
+        description: 'Get the exact Joyville Sensorium 2 BHK price for Phase 1. Download the complete cost sheet, payment plan, and checking booking amount. RERA approved luxury in Hinjewadi.',
+        h1: 'Joyville Sensorium 2 BHK Price — Phase 1 Details',
+        keywords: ['Joyville Sensorium 2 BHK price Phase 1', 'Joyville Sensorium cost sheet', 'Joyville Sensorium payment plan', 'Joyville Sensorium booking amount', 'Joyville Sensorium all inclusive price'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '2' }
+    },
+    {
+        slug: 'joyville-hinjewadi-3-bhk-floor-plan-pdf',
+        title: 'Joyville Hinjewadi 3 BHK Floor Plan PDF | Layout & Carpet Area',
+        description: 'Download the Joyville Hinjewadi 3 BHK floor plan PDF. View detailed 3 BHK layout, 979 sqft carpet area, Vastu compliance, and corner flat options. Premium IT lifeline property.',
+        h1: 'Joyville Hinjewadi 3 BHK Floor Plan & Layout',
+        keywords: ['Joyville Hinjewadi 3 BHK floor plan', 'Joyville Hinjewadi 3 BHK layout plan', 'Joyville Hinjewadi 1000 sqft carpet', 'Joyville Hinjewadi vastu compliant', 'Joyville Hinjewadi corner flat'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '3' }
+    },
+    {
+        slug: 'rental-yield-joyville-hinjewadi',
+        title: 'Rental Yield & ROI for Joyville Hinjewadi | Investment Analysis 2026',
+        description: 'Explore the rental yield and ROI for Joyville Hinjewadi real estate. Highly lucrative investment with 5.5%+ rental yields driven by Infosys and TCS proximity. See appreciation forecast.',
+        h1: 'Rental Yield & ROI Analysis — Joyville Hinjewadi',
+        keywords: ['Joyville ROI Hinjewadi', 'rental yield Joyville Pune', 'appreciation in Hinjewadi real estate', 'Joyville Hinjewadi rent 2 bhk', 'Joyville Hinjewadi rental income calculator'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
+    },
+    {
+        slug: 'joyville-hadapsar-resale-2-bhk-pune',
+        title: 'Joyville Hadapsar Resale 2 BHK Pune | Ready to Move Investor Deals',
+        description: 'Find verified Joyville Hadapsar resale 2 BHK flats in Pune. Secure investor resale deals, ready to move possession, and premium furnished options near SP Infocity.',
+        h1: 'Joyville Hadapsar Resale 2 BHK in Pune',
+        keywords: ['Joyville Hadapsar resale 2 bhk pune', 'Joyville Hadapsar ready to move resale', 'Joyville Hadapsar investor resale deals', 'Joyville Hadapsar furnished flat rent', 'Joyville Hadapsar resale price'],
+        filters: { locationMatch: 'Hadapsar|Shewalewadi', typeMatch: '2' }
+    },
+    {
+        slug: 'joyville-vyomora-pre-launch-price',
+        title: 'Joyville Vyomora Pre Launch Price | Booking Amount & Details',
+        description: 'Secure Early Bird advantages with the Joyville Vyomora pre-launch price. View 2 & 3 BHK all-inclusive price breakdown, payment plans, and official cost sheet for Hinjewadi Phase 1.',
+        h1: 'Joyville Vyomora Pre-Launch Price & Cost Sheet',
+        keywords: ['Joyville Vyomora pre launch price', 'Joyville Vyomora price breakdown', 'Joyville Vyomora cost sheet', 'Joyville Vyomora payment plan', 'Joyville Vyomora early bird offer'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: 'Vyomora' }
+    },
+    {
+        slug: 'flats-near-infosys-phase-1-hinjewadi',
+        title: 'Luxury Flats Near Infosys Phase 1 Hinjewadi | Walk to Work',
+        description: 'Premium flats near Infosys Phase 1, Hinjewadi. 5 min walking distance to major IT parks including Wipro and TCS. Explore Joyville Sensorium & Vyomora today.',
+        h1: 'Luxury Flats Near Infosys Phase 1, Hinjewadi',
+        keywords: ['flats near Infosys Phase 1', 'flats near Wipro Phase 2', 'flats near TCS Hinjewadi', 'walking distance IT park Hinjewadi', 'projects near metro station Hinjewadi'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
+    },
+    {
+        slug: 'joyville-sensorium-clubhouse-amenities',
+        title: 'Joyville Sensorium Clubhouse Amenities | Smart Homes Pune',
+        description: 'Discover the 5-star Joyville Sensorium clubhouse amenities. 2.8 acres of sunken garden, swimming pool details, full gym facilities, and kids play area in Hinjewadi Phase 1.',
+        h1: 'Joyville Sensorium Clubhouse & Amenities',
+        keywords: ['clubhouse Joyville Sensorium amenities', 'smart homes Joyville Pune', 'Joyville Sensorium swimming pool details', 'Joyville Sensorium gym facilities', 'township lifestyle Joyville'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
+    },
+    {
+        slug: 'joyville-sensorium-reviews-pros-and-cons',
+        title: 'Joyville Sensorium Reviews — Pros and Cons (2026 Analysis)',
+        description: 'Honest Joyville Sensorium reviews, pros and cons. In-depth buyer analysis on construction quality, RERA timeline, and lifestyle benefits. Shapoorji Pallonji Hinjewadi.',
+        h1: 'Joyville Sensorium Reviews — Pros & Cons Analysis',
+        keywords: ['Joyville Sensorium review', 'Joyville Sensorium pros and cons', 'Joyville Sensorium complaints', 'is Joyville Sensorium good', 'Shapoorji Pallonji Hinjewadi reviews'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
     },
 
     // High-Intent Intent Clusters
@@ -405,6 +475,104 @@ export const SEO_ROUTES = [
         h1: 'Premium Apartments with 75%+ Open Spaces in Pune',
         keywords: ['apartments with open space Pune', '75 percent open space flats Hinjewadi', 'biophilic homes Pune', 'Joyville Sensorium open space'],
         filters: { locationMatch: 'Hinjewadi|Hadapsar', typeMatch: '' }
+    },
+
+    // Phase 9: 2027 Freshness & Voice-Search Expansion
+    {
+        slug: 'best-flats-in-pune-2027',
+        title: 'Best Flats in Pune 2027 — Top Projects by Shapoorji Pallonji | Joyville',
+        description: 'Discover the best residential flats in Pune for 2027. Premium 1, 2 & 3 BHK apartments across Hinjewadi, Hadapsar & Bavdhan by Shapoorji Pallonji. RERA approved.',
+        h1: 'Best Flats in Pune for 2027',
+        keywords: ['best flats Pune 2027', 'top residential projects Pune 2027', 'new flats Pune 2027', 'Pune property market 2027', 'buy flat Pune 2027'],
+        filters: { locationMatch: '', typeMatch: '' }
+    },
+    {
+        slug: 'flats-near-hinjewadi-metro-station-2027',
+        title: 'Flats Near Hinjewadi Metro Station 2027 — Line 3 Impact | Joyville',
+        description: 'Capitalise on the Pune Metro Line 3 completion. Premium flats near upcoming Hinjewadi Metro station. Projected 14% appreciation. Joyville Sensorium & Vyomora.',
+        h1: 'Premium Flats Near Hinjewadi Metro Station — 2027',
+        keywords: ['flats near Hinjewadi Metro 2027', 'Metro Line 3 property impact', 'Hinjewadi Metro station flats', 'metro connectivity apartments Pune'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
+    },
+    {
+        slug: 'vanaha-golfland-bavdhan-price-list',
+        title: 'Vanaha Golfland Bavdhan — Price List & Floor Plans 2026 | Shapoorji Pallonji',
+        description: 'Official Vanaha Golfland price list. 2 & 3 BHK golf-view apartments in Bavdhan, Pune. 1,000-acre township. Valley views. Starting ₹1.15 Cr. Download brochure.',
+        h1: 'Vanaha Golfland Bavdhan — Pricing & Floor Plans',
+        keywords: ['Vanaha Golfland price', 'Vanaha Bavdhan cost sheet', 'golf course apartments Bavdhan price', 'Vanaha Golfland floor plan', 'Shapoorji Bavdhan price list'],
+        filters: { locationMatch: 'Bavdhan', typeMatch: 'Vanaha' }
+    },
+    {
+        slug: 'shapoorji-treetopia-plots-price-list',
+        title: 'Shapoorji Treetopia NA Plots — Price List & Master Plan | Purandar Pune',
+        description: 'Official Treetopia NA bungalow plot price list. Gated plotted development near Purandar Airport by Shapoorji Pallonji. Starting ₹84 Lakhs. View master plan.',
+        h1: 'Shapoorji Treetopia Plots — Pricing & Master Plan',
+        keywords: ['Treetopia plots price', 'Shapoorji Treetopia cost', 'NA plots Purandar price list', 'Treetopia master plan', 'bungalow plots Pune price'],
+        filters: { locationMatch: 'Jadhavwadi|Purandar', typeMatch: 'Plots' }
+    },
+    {
+        slug: 'duplex-apartments-hinjewadi-pune',
+        title: '3 BHK Duplex Apartments in Hinjewadi Phase 1 | Joyville Vyomora',
+        description: 'Exclusive 3 BHK duplex residences in Hinjewadi Phase 1 at Joyville Vyomora. Double-height living rooms, private terraces. New launch by Shapoorji Pallonji.',
+        h1: '3 BHK Duplex Apartments in Hinjewadi Phase 1',
+        keywords: ['duplex apartments Hinjewadi', '3 BHK duplex Pune', 'Joyville Vyomora duplex price', 'luxury duplex Hinjewadi Phase 1', 'double height apartments Pune'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: 'Duplex|Vyomora' }
+    },
+    {
+        slug: 'pet-friendly-apartments-pune',
+        title: 'Pet-Friendly Apartments in Pune — Dog Parks & Green Trails | Joyville',
+        description: 'Find pet-friendly gated communities in Pune with dedicated dog parks, walking trails, and green open spaces. Joyville Sensorium & Hadapsar Annexe.',
+        h1: 'Pet-Friendly Apartments in Pune',
+        keywords: ['pet friendly apartments Pune', 'dog friendly flats Hinjewadi', 'pet friendly township Pune', 'apartments with dog park Pune'],
+        filters: { locationMatch: '', typeMatch: '' }
+    },
+    {
+        slug: 'work-from-home-apartments-pune',
+        title: 'Work From Home Ready Apartments in Pune — Co-Working Spaces | Joyville',
+        description: 'Apartments designed for hybrid work. Dedicated co-working lounges, high-speed fiber, and quiet zones at Joyville Sensorium & Hadapsar Annexe. From ₹65 Lakhs.',
+        h1: 'Work From Home Ready Apartments in Pune',
+        keywords: ['work from home apartments Pune', 'co-working space flats Pune', 'home office apartments Hinjewadi', 'hybrid work apartments Pune'],
+        filters: { locationMatch: '', typeMatch: '' }
+    },
+    {
+        slug: 'flats-under-80-lakhs-hadapsar-pune',
+        title: 'Flats Under 80 Lakhs in Hadapsar Pune — Affordable Luxury | Joyville',
+        description: 'Premium 1 & 2 BHK flats under ₹80 Lakhs in Hadapsar. Joyville Hadapsar Annexe — 21-acre RERA township near Magarpatta. 60+ amenities. Move in today.',
+        h1: 'Affordable Flats Under ₹80 Lakhs in Hadapsar',
+        keywords: ['flats under 80 lakhs Hadapsar', 'affordable flats Hadapsar Pune', '1 BHK under 80 lakhs Pune', 'budget flats East Pune 2026'],
+        filters: { locationMatch: 'Shewalewadi|Hadapsar', typeMatch: '' }
+    },
+    {
+        slug: 'luxury-penthouses-pune-2026',
+        title: 'Luxury Penthouses in Pune 2026 — Skyluxe Edition Hadapsar | Shapoorji',
+        description: 'Ultra-luxury penthouses in Pune by Shapoorji Pallonji. Skyluxe Edition Hadapsar with panoramic views, private terraces, and Italian marble. For the discerning few.',
+        h1: 'Luxury Penthouses in Pune — 2026 Collection',
+        keywords: ['penthouses Pune', 'luxury penthouse Hadapsar', 'Skyluxe Edition penthouse price', 'ultra luxury apartments Pune', 'premium penthouses Pune 2026'],
+        filters: { locationMatch: 'Hadapsar|Shewalewadi', typeMatch: '3|Skyluxe' }
+    },
+    {
+        slug: 'senior-citizen-friendly-flats-pune',
+        title: 'Senior Citizen Friendly Flats in Pune — Barrier-Free Living | Joyville',
+        description: 'Age-friendly gated communities in Pune with barrier-free access, medical facilities, walking trails, and 24/7 security. Shapoorji Pallonji townships.',
+        h1: 'Senior Citizen Friendly Flats in Pune',
+        keywords: ['senior citizen flats Pune', 'elderly friendly apartments Pune', 'retirement homes Pune', 'barrier free living Pune', 'safe flats for seniors Pune'],
+        filters: { locationMatch: '', typeMatch: '' }
+    },
+    {
+        slug: 'vastu-compliant-flats-pune',
+        title: 'Vastu Compliant Flats in Pune — Celestia Hadapsar | Shapoorji Pallonji',
+        description: 'Explore Vastu-compliant premium flats in Pune. Joyville Celestia Hadapsar offers 100% Vastu-aligned floor plans. 2 & 3 BHK luxury residences. RERA approved.',
+        h1: 'Vastu Compliant Flats in Pune',
+        keywords: ['Vastu compliant flats Pune', 'Vastu approved apartments Hadapsar', 'Joyville Celestia Vastu', 'east facing flats Pune', 'Vastu homes Pune'],
+        filters: { locationMatch: 'Hadapsar|Shewalewadi', typeMatch: 'Celestia' }
+    },
+    {
+        slug: 'flats-near-pune-ring-road',
+        title: 'Flats Near Pune Ring Road — Growth Corridor Investment | Joyville',
+        description: 'Invest in premium flats along the upcoming Pune Ring Road corridor. Projects near Hinjewadi, Bavdhan & Purandar access points. Projected 15%+ appreciation.',
+        h1: 'Premium Flats Near Pune Ring Road Corridor',
+        keywords: ['flats near Pune Ring Road', 'Ring Road property investment', 'Pune Ring Road impact real estate', 'infrastructure growth Pune property'],
+        filters: { locationMatch: '', typeMatch: '' }
     }
 ];
 
@@ -424,11 +592,11 @@ export async function generateMetadata({ params }: { params: Promise<{ seoSlug: 
 
     return {
         title: routeData.title,
-        description: routeData.description,
+        description: routeData.description.length > 155 ? routeData.description.substring(0, 152) + "..." : routeData.description,
         keywords: routeData.keywords,
         openGraph: {
             title: routeData.title,
-            description: routeData.description,
+            description: routeData.description.length > 155 ? routeData.description.substring(0, 152) + "..." : routeData.description,
             url: `${siteUrl}/properties/${routeData.slug}`,
             siteName: 'Joyville Homes Pune | Shapoorji Pallonji',
             images: [
@@ -445,11 +613,18 @@ export async function generateMetadata({ params }: { params: Promise<{ seoSlug: 
         twitter: {
             card: 'summary_large_image',
             title: routeData.title,
-            description: routeData.description,
+            description: routeData.description.length > 155 ? routeData.description.substring(0, 152) + "..." : routeData.description,
             images: [`${siteUrl}/images/desktop-poster.webp`],
         },
         alternates: {
-            canonical: `${siteUrl}/properties/${routeData.slug}`
+            canonical: `${siteUrl}/properties/${routeData.slug}`,
+            languages: {
+                'en-IN': `${siteUrl}/properties/${routeData.slug}`,
+                'en-US': `${siteUrl}/properties/${routeData.slug}`,
+                'en-GB': `${siteUrl}/properties/${routeData.slug}`,
+                'en-AE': `${siteUrl}/properties/${routeData.slug}`,
+                'x-default': `${siteUrl}/properties/${routeData.slug}`
+            }
         }
     };
 }
@@ -486,14 +661,33 @@ const PAGE_FAQS: Record<string, { q: string; a: string }[]> = {
         { q: 'What is the booking process for a flat at Joyville Pune?', a: 'The booking process is seamless: 1. Select your preferred unit/floor plan. 2. Submit the booking amount (EOI/Booking Payment). 3. Provide KYC documents (PAN, Aadhaar/Passport). 4. Complete the digital application. Most bookings can be completed remotely within 48 hours for NRIs.' },
         { q: 'Are home loans available from major banks for Joyville?', a: 'Yes, all Joyville projects are pre-approved by major financial institutions including SBI, HDFC, ICICI, and Axis Bank. Competitive interest rates starting from 8.35% are available for eligible buyers.' },
         { q: 'What are the stamp duty and registration charges in Pune 2026?', a: 'Currently, the stamp duty in Maharashtra is 7% (including LBT) and registration is 1% or ₹30,000 (whichever is lower). Women buyers may be eligible for a 1% concession in stamp duty.' },
+    ],
+    'lifestyle': [
+        { q: 'Are Joyville projects pet-friendly?', a: 'Yes, Joyville townships feature dedicated pet parks, landscaped walking trails, and open green spaces ideal for pets. The 75%+ open space ratio at Sensorium and 21-acre Hadapsar Annexe provide ample outdoor areas.' },
+        { q: 'Do Joyville apartments support work from home?', a: 'Absolutely. Joyville Sensorium and Hadapsar Annexe include dedicated co-working lounges, high-speed fiber connectivity, and quiet study zones designed for the hybrid work model.' },
+        { q: 'Are there Vastu-compliant flats at Joyville?', a: 'Yes, Joyville Celestia Hadapsar offers 100% Vastu-aligned floor plans. Other projects also feature east-facing units and Vastu-friendly layouts on request.' },
+        { q: 'Are Joyville projects suitable for senior citizens?', a: 'Yes. All Joyville townships feature barrier-free common areas, elevators in every tower, 24/7 medical emergency response, walking trails, and gated security — making them ideal for senior residents.' },
+    ],
+    'infrastructure': [
+        { q: 'How will Pune Metro Line 3 impact Hinjewadi property prices?', a: 'The Pune Metro Line 3 (Hinjewadi to Shivajinagar) is projected to boost property values by 12-15% upon completion. Joyville Sensorium and Vyomora are located within 2 km of the planned Hinjewadi terminus.' },
+        { q: 'What is the impact of the Pune Ring Road on real estate?', a: 'The 128-km Pune Ring Road will connect Hinjewadi, Bavdhan, and Purandar — all Joyville micro-markets. Properties along the corridor are projected to see 15%+ appreciation upon completion.' },
+        { q: 'How does Purandar Airport affect property investment?', a: 'The proposed Purandar International Airport will transform South-East Pune into a high-growth corridor. Shapoorji Treetopia NA plots near the corridor offer significant long-term ROI potential.' },
+    ],
+    'plots': [
+        { q: 'What are NA bungalow plots?', a: 'NA (Non-Agricultural) plots are land parcels converted for residential use. They allow individual house construction and offer full land ownership — unlike apartments. Treetopia by Shapoorji Pallonji offers gated NA plots from ₹84 Lakhs.' },
+        { q: 'Is plotted development a good investment in Pune?', a: 'Yes. NA plots in emerging corridors like Purandar have historically delivered 2-3x returns over 5-7 years. Treetopia offers the added security of a gated community with Shapoorji Pallonji brand backing.' },
+        { q: 'What is the price of Shapoorji Treetopia plots?', a: 'Shapoorji Treetopia NA bungalow plots start from ₹84 Lakhs onwards. Multiple plot sizes are available in a fully gated, landscaped community near the Purandar Airport corridor.' },
     ]
 };
 
 function getFaqsForRoute(slug: string): { q: string; a: string }[] {
     if (slug.includes('hinjewadi') && !slug.includes('-vs-')) return [...PAGE_FAQS['hinjewadi'], ...PAGE_FAQS['general']];
-    if (slug.includes('hadapsar') || slug.includes('sp-infocity') || slug.includes('magarpatta')) return [...PAGE_FAQS['hadapsar'], ...PAGE_FAQS['general']];
-    if (slug.includes('bavdhan')) return [...PAGE_FAQS['bavdhan'], ...PAGE_FAQS['general']];
+    if (slug.includes('hadapsar') || slug.includes('sp-infocity') || slug.includes('magarpatta') || slug.includes('shewalewadi')) return [...PAGE_FAQS['hadapsar'], ...PAGE_FAQS['general']];
+    if (slug.includes('bavdhan') || slug.includes('vanaha') || slug.includes('golfland')) return [...PAGE_FAQS['bavdhan'], ...PAGE_FAQS['general']];
     if (slug.includes('-vs-')) return [...PAGE_FAQS['vs'], ...PAGE_FAQS['general']];
+    if (slug.includes('pet-friendly') || slug.includes('work-from-home') || slug.includes('vastu') || slug.includes('senior-citizen')) return [...PAGE_FAQS['lifestyle'], ...PAGE_FAQS['general']];
+    if (slug.includes('metro') || slug.includes('ring-road')) return [...PAGE_FAQS['infrastructure'], ...PAGE_FAQS['general']];
+    if (slug.includes('treetopia') || slug.includes('plots') || slug.includes('purandar')) return [...PAGE_FAQS['plots'], ...PAGE_FAQS['general']];
     return PAGE_FAQS['general'];
 }
 
@@ -717,8 +911,12 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
                                     ]).map(([param, joyville, competitor], idx) => (
                                         <tr key={idx} className={idx % 2 === 0 ? 'bg-[#F4F6F9]' : 'bg-[#FFFFFF]'}>
                                             <td className="py-3 px-6 font-medium text-[#323334]">{param}</td>
-                                            <td className="py-3 px-6 text-[#1D4F9C] font-medium">{joyville}</td>
-                                            <td className="py-3 px-6 text-[#323334]">{competitor}</td>
+                                            <td className="py-3 px-6 text-[#1D4F9C] font-medium">
+                                                {param.toLowerCase().includes('price') ? <PriceDisplay price={String(joyville)} /> : joyville}
+                                            </td>
+                                            <td className="py-3 px-6 text-[#323334]">
+                                                {param.toLowerCase().includes('price') ? <PriceDisplay price={String(competitor)} /> : competitor}
+                                            </td>
                                         </tr>
                                     ))}
                                 </tbody>
@@ -767,7 +965,7 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
                                         <MapPin size={14} /> {project.location}
                                     </div>
                                     <h2 className="text-2xl font-serif text-[#323334] mb-3">{project.title}</h2>
-                                    <p className="text-[#1D4F9C] font-serif italic text-xl mb-4">{project.price}</p>
+                                    <PriceDisplay price={project.price} className="text-[#1D4F9C] font-serif italic text-xl mb-4 block" />
 
                                     <p className="text-[#323334] font-light text-sm line-clamp-2 mb-6 border-b border-[#C5A059]/10 pb-6">
                                         {project.type}
@@ -791,6 +989,33 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
                 )}
             </section>
 
+            {/* Project Cluster Intelligence Mesh — Phase 4 Strategy  */}
+            <section className="max-w-7xl mx-auto px-6 mt-20">
+                <div className="bg-[#1D4F9C] p-8 md:p-12 rounded-sm text-white relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-[#C5A059]/10 rounded-full -mr-32 -mt-32 blur-3xl group-hover:scale-110 transition-transform duration-700" />
+                    <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+                        <div className="max-w-2xl">
+                            <span className="text-[10px] font-bold text-[#C5A059] uppercase tracking-[0.3em] mb-4 block">Strategic Real Estate Intelligence</span>
+                            <h2 className="text-3xl font-serif mb-4">Explore the {routeData.slug.includes('hinjewadi') ? 'Hinjewadi IT' : routeData.slug.includes('hadapsar') ? 'East Pune' : 'Pune Luxury'} Cluster Hub</h2>
+                            <p className="text-white/70 font-light leading-relaxed">
+                                Access our master guides to understand how interconnected project ecosystems are maximizing capital appreciation and lifestyle quality in this micro-market.
+                            </p>
+                        </div>
+                        <Link 
+                            href={
+                                routeData.slug.includes('hinjewadi') ? '/insights/hinjewadi-it-lifeline-cluster-guide-2026' :
+                                routeData.slug.includes('hadapsar') || routeData.slug.includes('shewalewadi') ? '/insights/pune-east-township-corridor-hadapsar-shewalewadi-hub' :
+                                routeData.slug.includes('bavdhan') ? '/insights/bavdhan-nature-valley-vanaha-golfland-luxury-living' :
+                                '/insights/shapoorji-pallonji-pune-project-review-2026-master-collection'
+                            }
+                            className="inline-flex items-center gap-3 px-8 py-4 bg-[#C5A059] text-[#1D4F9C] text-[10px] font-bold uppercase tracking-widest hover:bg-white transition-colors flex-shrink-0"
+                        >
+                            Open Cluster Hub <ArrowRight size={14} />
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
             {/* FAQ Section for Rich Snippets */}
             {pageFaqs.length > 0 && (
                 <section className="max-w-5xl mx-auto px-6 mt-20">
@@ -811,10 +1036,17 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
                 </section>
             )}
 
+            <div className="max-w-7xl mx-auto px-6 mt-12 mb-12">
+                <IntentLinkCluster />
+            </div>
+
             <footer className="py-20 bg-[#FFFFFF] border-t border-[#C5A059]/30 text-center mt-20">
                 <div className="text-3xl font-serif text-[#1D4F9C] font-light tracking-widest mb-4">JOYVILLE <span className="text-[10px] font-sans tracking-[0.4em] text-[#323334] uppercase ml-2">Pune</span></div>
                 <p className="text-[#323334]/40 text-[9px] tracking-[0.3em] uppercase font-medium">MahaRERA: P52100000000 | A Shapoorji Pallonji Real Estate Project</p>
             </footer>
+
+            {/* Global FOMO Activity Feed */}
+            <LiveActivityFeed />
         </main>
     );
 }

@@ -32,7 +32,7 @@ export default function LandIntelligenceMasterclass() {
                 </div>
                 
                 <p className="text-lg text-[#1A1A1A] font-light mb-12 max-w-3xl leading-relaxed">
-                    Investing in NA (Non-Agricultural) plots is the highest-alpha strategy in Pune's current market. Unlike apartments, land offers <span className="font-medium">zero depreciation</span> and <span className="font-medium">100% architectural freedom</span>.
+                    Investing in NA (Non-Agricultural) plots is the highest-alpha strategy in Pune&apos;s current market. Unlike apartments, land offers <span className="font-medium">zero depreciation</span> and <span className="font-medium">100% architectural freedom</span>.
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-8">
@@ -49,7 +49,7 @@ export default function LandIntelligenceMasterclass() {
                     <div className="flex-1">
                         <h4 className="text-xl font-serif text-[#1D4F9C] mb-2">Dominating the South-East Corridor</h4>
                         <p className="text-sm text-[#323334]/70 font-light">
-                            With the Purandar Airport and Ring Road Phase 2, the South-East quadrant is the new epicenter of Pune's real estate wealth.
+                            With the Purandar Airport and Ring Road Phase 2, the South-East quadrant is the new epicenter of Pune&apos;s real estate wealth.
                         </p>
                     </div>
                     <button className="bg-[#1D4F9C] text-white px-10 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#153a74] transition-all flex items-center gap-3">

@@ -37,7 +37,7 @@ export default function MobileStickyCTA() {
     };
 
     return (
-        <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[#FFFFFF] border-t border-[#C5A059]/20 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] flex">
+        <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[#FFFFFF] border-t border-[#C5A059]/20 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] flex" role="navigation" aria-label="Mobile Quick Actions">
             <a
                 href="tel:+917744009295"
                 onClick={handleCallClick}

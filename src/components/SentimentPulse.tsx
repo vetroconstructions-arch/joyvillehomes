@@ -40,7 +40,7 @@ const SentimentPulse: React.FC<SentimentPulseProps> = ({ ratings, summary }) => 
                     <div className="space-y-2">
                         <p className="text-xs font-bold text-[#1D4F9C] uppercase tracking-widest">Executive Summary</p>
                         <p className="text-sm leading-relaxed text-[#555] font-light italic">
-                            "{summary}"
+                            &quot;{summary}&quot;
                         </p>
                     </div>
                     

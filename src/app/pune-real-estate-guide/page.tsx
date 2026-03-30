@@ -90,6 +90,23 @@ export default async function HomebuyersGuide({
 
     return (
         <article className="min-h-screen bg-white pt-32 pb-24 font-sans text-foreground">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://joyville-homes.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Pune Real Estate Guide", "item": "https://joyville-homes.com/pune-real-estate-guide" }
+                ]
+            }) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What are the best areas to invest in Pune real estate for 2025?", "acceptedAnswer": { "@type": "Answer", "text": "Hinjewadi Phase 1, Hadapsar-Shewalewadi corridor, and Bavdhan are top picks due to proximity to employment hubs and upcoming infrastructure like Metro Line 3." } },
+                    { "@type": "Question", "name": "Is it a good time to buy property in Pune now?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, currently Pune offers a balanced supply and demand. With interest rates stabilizing and secondary market prices rising, pre-launch or under-construction projects by trusted brands like Shapoorji Pallonji offer high ROI." } },
+                    { "@type": "Question", "name": "What is the average price of a 2 BHK in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Prices vary by locality. Premium 2 BHKs in growth corridors like Hinjewadi start around ₹75-80 Lakhs, while established areas like Bavdhan range from ₹90 Lakhs to ₹1.2 Cr." } }
+                ]
+            }) }} />
             {/* Hero Section */}
             <header className="max-w-7xl mx-auto px-6 mb-20">
                 <div className="flex flex-col md:flex-row items-center gap-12">

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Building2, MapPin, ArrowRight } from 'lucide-react';
-import { getProjectBySlug } from '@/data/projects';
+import { getProjectBySlug, Project } from '@/data/projects';
 import { localities } from '@/data/localities';
 
 interface DiscussedEntitiesProps {
@@ -11,8 +11,8 @@ interface DiscussedEntitiesProps {
 export default function DiscussedEntities({ projectSlugs = [], localitySlugs = [] }: DiscussedEntitiesProps) {
     if (projectSlugs.length === 0 && localitySlugs.length === 0) return null;
 
-    const discussedProjects = projectSlugs.map(slug => getProjectBySlug(slug)).filter(Boolean);
-    const discussedLocalities = localitySlugs.map(slug => localities.find(l => l.slug === slug)).filter(Boolean);
+    const discussedProjects = projectSlugs.map(slug => getProjectBySlug(slug)).filter((p): p is Project => Boolean(p));
+    const discussedLocalities = localitySlugs.map(slug => localities.find(l => l.slug === slug)).filter((l): l is typeof localities[0] => Boolean(l));
 
     return (
         <section className="mt-16 py-12 border-t border-[#C5A059]/20">
@@ -27,7 +27,7 @@ export default function DiscussedEntities({ projectSlugs = [], localitySlugs = [
                         <h4 className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase font-bold text-[#C5A059] mb-4">
                             <Building2 size={14} /> Featured Portfolios
                         </h4>
-                        {discussedProjects.map((project: any) => (
+                        {discussedProjects.map((project: Project) => (
                             <Link
                                 key={project.slug}
                                 href={`/projects/${project.slug}`}
@@ -63,7 +63,7 @@ export default function DiscussedEntities({ projectSlugs = [], localitySlugs = [
                         <h4 className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase font-bold text-[#C5A059] mb-4">
                             <MapPin size={14} /> Micro-Market Insights
                         </h4>
-                        {discussedLocalities.map((loc: any) => (
+                        {discussedLocalities.map((loc: typeof localities[0]) => (
                             <Link
                                 key={loc.slug}
                                 href={`/locality/${loc.slug}`}

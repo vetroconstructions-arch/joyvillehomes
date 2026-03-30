@@ -5,6 +5,7 @@ import MarketTicker from "@/components/MarketTicker";
 import PageTransition from "@/components/PageTransition";
 
 import SEOFooter from "@/components/SEOFooter";
+import CookieConsent from "@/components/CookieConsent";
 import ClientWrapper from "@/components/ClientWrapper";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
@@ -25,6 +26,10 @@ const playfair = Playfair_Display({
 // but allow static generation where possible.
 // export const runtime = "edge"; // Removed global edge to allow static generation and reduce bundle size
 
+import { KEYWORD_MATRIX } from "@/data/KeywordIntelligence";
+
+// ... existing code ...
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://joyville-homes.com'),
   title: {
@@ -33,18 +38,9 @@ export const metadata: Metadata = {
   },
   description: "Official Joyville Pune by Shapoorji Pallonji Real Estate. Explore 9 premium projects across Hinjewadi, Hadapsar & Bavdhan. 2 & 3 BHK flats starting ₹65 Lakhs. RERA approved. Dive into the Pune real estate market today.",
   keywords: [
-    // 0. Macro-Market Pillar Keywords
-    "Pune real estate market", "Pune real estate market 2026", "Pune real estate investment", "top real estate developer Pune", "Pune property market trends", "buy property in Pune",
-    // 1. Master Brand Keywords (Topical Authority)
+    ...KEYWORD_MATRIX.MACRO_PUNE,
     "Shapoorji Pallonji projects Pune", "Shapoorji Pallonji real estate Pune", "Shapoorji Pallonji flats Pune", "Joyville Homes Pune", "Shapoorji Pallonji township Pune", "Shapoorji Pallonji Pune contact number", "official website Shapoorji Pallonji Pune",
-    // 2. Project-Level Intent Clusters (Hinjewadi)
-    "Joyville Sensorium Hinjewadi price", "Joyville Sensorium floor plan", "Joyville Sensorium brochure PDF", "Joyville Sensorium 2 BHK price Hinjewadi", "Joyville Sensorium possession date", "Joyville Vyomora Hinjewadi price", "Joyville Vyomora floor plan", "Joyville Vyomora brochure download",
-    // 3. Project-Level Intent Clusters (Hadapsar)
-    "Joyville Hadapsar Annexe price", "Joyville Hadapsar Annexe floor plan", "Joyville Hadapsar brochure", "Joyville Celestia price", "Joyville Celestia floor plan", "Joyville Skyluxe Edition price", "Joyville Hadapsar possession date", "flats near Magarpatta City", "flats near SP Infocity Pune",
-    // 4. Project-Level Intent Clusters (Bavdhan)
-    "Vanaha Bavdhan price", "Vanaha Springs floor plan", "Vanaha Golfland price", "Vanaha Township Bavdhan", "flats near Oxford Golf Resort Pune", "Bavdhan property price trends",
-    // 5. Topical & Intent-Based Search
-    "best residential projects Hinjewadi Pune", "investment in Hadapsar Pune", "property price trend Pune 2026", "flats near Magarpatta City and SP Infocity", "luxury apartments Pune", "affordable flats Pune under 70 lakhs", "new launch projects Pune 2026", "RERA registered projects Pune"
+    "Joyville Sensorium price 2026", "Joyville Vyomora launch", "Vanaha Bavdhan investment", "Hadapsar Annexe ready to move", "Pune IT Park apartments", "NRI investment in Pune property", "RERA registered projects Pune 2026"
   ],
   openGraph: {
     title: "Joyville Homes Pune | Shapoorji Pallonji Real Estate | 9 Premium Projects",
@@ -174,9 +170,25 @@ export default function RootLayout({
                   "@type": "SearchAction",
                   "target": {
                     "@type": "EntryPoint",
-                    "urlTemplate": "https://joyville-homes.com/projects?search={search_term_string}"
+                    "urlTemplate": "https://joyville-homes.com/flats-in-pune?q={search_term_string}"
                   },
                   "query-input": "required name=search_term_string"
+                },
+                "speakable": {
+                  "@type": "SpeakableSpecification",
+                  "cssSelector": [
+                    "h1",
+                    "#sge-answer-hub h3",
+                    "#sge-answer-hub p",
+                    ".sge-question",
+                    ".sge-answer",
+                    ".at-a-glance-card",
+                    "#overview p"
+                  ],
+                  "xpath": [
+                    "/html/head/title",
+                    "/html/head/meta[@name='description']/@content"
+                  ]
                 }
               },
               {
@@ -303,12 +315,19 @@ export default function RootLayout({
                 },
                 "areaServed": [
                   { "@type": "City", "name": "Pune" },
-                  { "@type": "State", "name": "Maharashtra" }
+                  { "@type": "State", "name": "Maharashtra" },
+                  { "@type": "Country", "name": "United Arab Emirates" },
+                  { "@type": "Country", "name": "United States" },
+                  { "@type": "Country", "name": "United Kingdom" }
                 ],
                 "makesOffer": [
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "2 BHK Apartments in Pune" } },
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "3 BHK Apartments in Pune" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "NA Bungalow Plots in Pune" } }
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "3 BHK Duplex Apartments Hinjewadi" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Luxury Penthouses Pune" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "NA Bungalow Plots in Pune" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "NRI Investment Advisory" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Virtual Site Visits" } }
                 ]
               },
               {
@@ -353,6 +372,24 @@ export default function RootLayout({
                     "item": "https://joyville-homes.com/projects"
                   }
                 ]
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://joyville-homes.com/#speakable-page",
+                "name": "Joyville Homes Pune — Voice Search Optimized",
+                "speakable": {
+                  "@type": "SpeakableSpecification",
+                  "cssSelector": [
+                    "h1",
+                    "h2",
+                    "#sge-answer-hub h3",
+                    "#sge-answer-hub p",
+                    ".sge-question",
+                    ".sge-answer",
+                    ".at-a-glance-card"
+                  ]
+                },
+                "url": "https://joyville-homes.com"
               }
             ]
           })
@@ -366,6 +403,7 @@ export default function RootLayout({
             </PageTransition>
           </div>
           <SEOFooter />
+          <CookieConsent />
         </ClientWrapper>
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ""} />
         {/* Meta Pixel Code Injection - Loaded post-hydration to protect INP scores */}

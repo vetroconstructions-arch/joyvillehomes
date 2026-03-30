@@ -15,6 +15,14 @@ export const metadata: Metadata = {
 export default function PuneRealEstateMarket() {
     return (
         <main className="min-h-screen bg-neutral pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://joyville-homes.com" },
+                    { "@type": "ListItem", "position": 2, "name": "Pune Real Estate Market", "item": "https://joyville-homes.com/pune-real-estate-market" }
+                ]
+            }) }} />
             <div className="max-w-4xl mx-auto">
                 <header className="mb-12">
                     <h1 className="text-4xl md:text-5xl font-serif text-primary mb-6">

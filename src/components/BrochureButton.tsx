@@ -18,7 +18,9 @@ export default function BrochureButton({
         sendGAEvent('event', 'brochure_download', { project: projectName });
 
         // Meta Pixel Tracking for micro-conversion
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         if (typeof window !== 'undefined' && (window as any).fbq) {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (window as any).fbq('track', 'Contact', { content_name: `${projectName} Brochure` });
         }
 

@@ -58,7 +58,7 @@ export const blogs: BlogPost[] = [
 
             "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>The Legal and Financial Advantages for NRI Investors</h2>",
             "The regulatory environment in India has never been more conducive for foreign capital deployment in real estate. The implementation of the Real Estate (Regulation and Development) Act (RERA) has cleaned up the sector, enforcing strict delivery timelines and financial transparency. Furthermore, the digitized property registration processes in Maharashtra have reduced bureaucratic friction to near zero.",
-            "From a financial perspective, the depreciation of the Rupee against major global currencies (USD, GBP, AED) gives NRIs massive purchasing power parity. Essentially, premier assets in highly desirable locations like Hinjewadi are currently available at a significant structural discount when evaluated in foreign currency terms.",
+            "From a financial perspective, the depreciation of the Rupee against major global exchange regions gives NRIs massive purchasing power parity. Essentially, premier assets in highly desirable locations like Hinjewadi are currently available at a significant structural discount when evaluated in origin-currency terms.",
 
             "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Conclusion: The Shapoorji Pallonji Trust Factor</h2>",
             "In conclusion, the data unequivocally supports Hinjewadi Phase 1 as the premier investment geography in Pune for 2025 and beyond. However, the final variable in the investment equation is the developer. In a high-stakes NRI investment where remote management is necessary, brand legacy is paramount.",
@@ -303,7 +303,8 @@ export const blogs: BlogPost[] = [
         excerpt: "A data-driven forecast of Pune's real estate market for 2026. Discover which micro-markets are poised for maximum appreciation and where smart money is flowing.",
         content: [
             "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Pune Real Estate in 2026: The Macro Picture</h2>",
-            "Pune's real estate market enters 2026 with unprecedented momentum. With the city's GDP growing at 11.2% annually and IT/ITeS exports crossing $25 billion, the fundamentals for housing demand have never been stronger. The confluence of three mega infrastructure projects — Pune Metro Lines 1-3, the 170km Ring Road, and the Pune-Mumbai Hyperloop corridor study — is reshaping the city's real estate geography.",
+            "Pune's real estate market enters 2026 with unprecedented momentum. With the city's GDP growing at 11.2% annually and IT/ITeS exports reaching record institutional heights, the fundamentals for housing demand have never been stronger. The confluence of three mega infrastructure projects — Pune Metro Lines 1-3, the 170km Ring Road, and the Pune-Mumbai Hyperloop corridor study — is reshaping the city's real estate geography.",
+            "For investors earning in foreign exchange, the persistent rupee depreciation creates an additional structural advantage. A typical global investment that bought a 600 sq.ft. flat in 2020 now buys an 800 sq.ft. apartment due to favorable exchange yield differentials alone.",
             "For investors, 2026 presents a once-in-a-decade opportunity. We are at the inflection point where infrastructure announcements transition into visible construction progress, triggering the steepest phase of property appreciation. Our analysis of 15,000+ transactions across Pune's key micro-markets reveals clear winners.",
 
             "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Hotspot #1: Hinjewadi Phase 1 — The IT Powerhouse</h2>",
@@ -342,7 +343,7 @@ export const blogs: BlogPost[] = [
         content: [
             "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Why Pune is India's #1 NRI Investment Destination in 2026</h2>",
             "Pune has overtaken Bangalore and Hyderabad as the preferred NRI real estate investment destination in 2026. Three factors drive this shift: exceptional rental yields (4-5.5% vs. national average 2.8%), a stable IT-driven tenant base guaranteeing occupancy, and property rates that are 40-60% lower than Mumbai for comparable quality — offering significant room for capital appreciation.",
-            "For NRIs earning in USD, GBP, or AED, the persistent rupee depreciation creates an additional structural advantage. A $100,000 USD investment that bought a 600 sq.ft. flat in 2020 now buys an 800 sq.ft. apartment due to currency differentials alone.",
+            "For NRIs earning in international exchange zones, the persistent rupee depreciation creates an additional structural advantage. A typical global entry that bought a 600 sq.ft. flat in 2020 now buys an 800 sq.ft. apartment due to currency yield differentials alone.",
 
             "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>RERA: Your Investment Shield</h2>",
             "The Real Estate Regulation and Development Act (RERA) has transformed Indian real estate into a transparent, regulated market. For NRI investors, RERA provides: mandatory project registration with delivery timelines, 70% of buyer funds kept in escrow (preventing diversion), standardized carpet area calculations, and severe penalties for delays. All <a href='/projects' class='text-[#1D4F9C] font-semibold underline decoration-[#1D4F9C]/30 hover:decoration-[#1D4F9C] transition-colors'>Shapoorji Pallonji projects in Pune</a> are fully MahaRERA compliant.",
@@ -739,8 +740,217 @@ export const blogs: BlogPost[] = [
         seoKeywords: ["EDGE certification India real estate", "green building benefits Pune", "sustainable apartments Hinjewadi", "energy efficient homes Pune", "resale value green buildings"],
         wikidataUri: "https://www.wikidata.org/wiki/Q5332159",
         topicID: ["pune-infrastructure", "hinjewadi-it-hub", "developer-comparison"]
+    },
+    {
+        id: "cluster-001",
+        slug: "hinjewadi-it-lifeline-cluster-guide-2026",
+        title: "The Hinjewadi IT Lifeline: A Strategic Guide to Vyomora & Sensorium (2026)",
+        excerpt: "Dominating Pune's West IT corridor, this cluster focuses on the 'Walk-to-Work' ROI. Compare the ultra-luxury Duplexes of Vyomora with the biophilic excellence of Sensorium.",
+        content: [
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>The Central Nerve Center of Pune IT</h2>",
+            "Hinjewadi Phase 1 isn't just an employment hub; it's a financial powerhouse. As we move into 2026, the 'IT Lifeline Cluster'—consisting of <a href='/projects/joyville-vyomora-hinjewadi' class='text-[#1D4F9C] font-semibold underline'>Joyville Vyomora</a> and <a href='/projects/joyville-sensorium-hinjewadi' class='text-[#1D4F9C] font-semibold underline'>Joyville Sensorium</a>—represents the absolute pinnacle of residential engineering in this micro-market.",
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Vyomora vs. Sensorium: The Strategic Choice</h2>",
+            "While both projects share the Shapoorji Pallonji 150-year legacy, they cater to distinct investment goals. Vyomora is the 'Status' play, featuring <a href='/properties/3-bhk-duplex-apartments-hinjewadi-pune' class='text-[#1D4F9C] font-semibold underline'>luxury 3 BHK Duplexes</a> for the C-suite. Sensorium is the 'Wellness' play, focusing on biophilic design and massive open spaces. Together, they offer the highest rental yields (4.8%+) in West Pune due to their proximity to the upcoming Metro Line 3 terminus."
+        ],
+        date: "April 10, 2026",
+        author: "Joyville Cluster Analysts",
+        category: "Project Clusters",
+        readTime: "6 Min Read",
+        image: "/images/joyville_sensorium_projectcard.webp",
+        seoKeywords: ["Hinjewadi IT Lifeline", "Joyville Vyomora vs Sensorium", "3 BHK Duplex Hinjewadi price list", "best flats near Infosys Hinjewadi", "walk-to-work ROI Pune", "Metro Line 3 impact real estate"],
+        mentionsProject: ["joyville-vyomora-hinjewadi", "joyville-sensorium-hinjewadi"],
+        topicID: ["hinjewadi-it-hub", "pune-rental-market", "nri-investment"]
+    },
+    {
+        id: "cluster-002",
+        slug: "pune-east-township-corridor-hadapsar-shewalewadi-hub",
+        title: "The East Pune Township Corridor: Hadapsar Annexe, Celestia & Skyluxe (2026)",
+        excerpt: "Exploring the massive 40-acre synergy of Shapoorji Pallonji projects in East Pune. From ready-to-move units to ultra-modern Vastu-compliant residences.",
+        content: [
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>The New Gravity Center of Pune East</h2>",
+            "The corridor spanning Hadapsar and Shewalewadi has transitioned into a self-sustaining metropolis. This cluster hub anchors three distinct residential narratives: <a href='/projects/joyville-hadapsar-annexe-pune' class='text-[#1D4F9C] font-semibold underline'>Hadapsar Annexe</a> (Ready-to-move value), <a href='/projects/joyville-celestia-hadapsar' class='text-[#1D4F9C] font-semibold underline'>Celestia</a> (Vastu-compliant luxury), and <a href='/projects/joyville-skyluxe-hadapsar' class='text-[#1D4F9C] font-semibold underline'>Skyluxe</a> (Premium Penthouses).",
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Why the East Wins in 2026</h2>",
+            "With price points 20% lower than Kharadi but with identical connectivity to SP Infocity and Magarpatta, the 'East Pune Hub' is the choice for young families. The cluster offers a combined 60+ acres of gated security and lifestyle biophilia, creating a 'city within a city' experience that standalone buildings cannot match."
+        ],
+        date: "April 12, 2026",
+        author: "Joyville Cluster Analysts",
+        category: "Project Clusters",
+        readTime: "7 Min Read",
+        image: "/images/joyville_hadapsar_projectcard.webp",
+        seoKeywords: ["East Pune real estate cluster", "Joyville Hadapsar Annexe vs Celestia", "ready to move flats near Magarpatta", "Skyluxe penthouses Hadapsar", "Shewalewadi property growth 2026"],
+        mentionsProject: ["joyville-hadapsar-annexe-pune", "joyville-celestia-hadapsar", "joyville-skyluxe-hadapsar"],
+        topicID: ["hadapsar-east-corridor", "pune-townships", "shewalewadi-growth"]
+    },
+    {
+        id: "cluster-003",
+        slug: "bavdhan-nature-valley-vanaha-golfland-luxury-living",
+        title: "The Bavdhan Nature Valley: Life Amidst 1,000 Acres at Vanaha (2026)",
+        excerpt: "An exclusive look at Pune's fastest-growing luxury micro-market. Discover why Vanaha Golfland is the primary choice for HNWIs seeking golf course views and valley biophilia.",
+        content: [
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Scarcity Meets Luxury in Bavdhan</h2>",
+            "Bavdhan recorded a staggering 13.18% appreciation in the last 12 months, driven primarily by the 'Nature Valley Cluster' anchored by <a href='/projects/vanaha-golfland-pune' class='text-[#1D4F9C] font-semibold underline'>Vanaha Golfland</a>. Spanning a massive 1,000 acres, this is no longer just a project; it's a nature reserve that you can call home.",
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>The Golf Course Advantage</h2>",
+            "Living at Vanaha means having the Oxford Golf Resort as your neighbor. The cluster focuses on low-density development, ensuring that every residence has permanent access to valley views, natural springs, and mountain air—amenities that no urban core project can replicate. It's the ultimate 'Legacy Asset' for long-term wealth builders."
+        ],
+        date: "April 15, 2026",
+        author: "Joyville Cluster Analysts",
+        category: "Project Clusters",
+        readTime: "5 Min Read",
+        image: "/images/vanaha_golfland_projectcard.webp",
+        seoKeywords: ["Bavdhan Nature Valley", "Vanaha Golfland luxury living", "1000 acre township Pune", "best investment Bavdhan 2026", "golf course view flats Pune"],
+        mentionsProject: ["vanaha-golfland-pune"],
+        topicID: ["bavdhan-luxury", "pune-investment-guide", "pune-infrastructure"]
+    },
+    {
+        id: "cluster-004",
+        slug: "purandar-airport-investment-horizon-treetopia-plots",
+        title: "The Purandar Airport Horizon: NA Bungalow Plots at Treetopia (2026)",
+        excerpt: "Speculative wealth at its peak. Why buying NA bungalow plots near the Purandar International Airport corridor is the 10x ROI play for this decade.",
+        content: [
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>The 10x ROI Speculative Belt</h2>",
+            "In real estate, the highest multipliers happen before the infrastructure arrives. The 'Airport Horizon Cluster' in Purandar, headlined by <a href='/projects/shapoorji-treetopia-pune' class='text-[#1D4F9C] font-semibold underline'>Shapoorji Pallonji Treetopia</a>, is designed for the high-risk, high-reward investor.",
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Why Plotted Development Wins in Purandar</h2>",
+            "Unlike apartments, NA (Non-Agricultural) bungalow plots offer absolute land ownership. With the proposed international airport and the Ring Road connectivity converging at Purandar, these plots are positioned as the future 'Chakan' or 'Talegaon' of South-East Pune. Treetopia provides the security of a gated community with the appreciation potential of a high-speed infrastructure corridor."
+        ],
+        date: "April 18, 2026",
+        author: "Joyville Cluster Analysts",
+        category: "Project Clusters",
+        readTime: "6 Min Read",
+        image: "/images/vanaha_golfland_projectcard.webp",
+        seoKeywords: ["Purandar Airport investment plots", "Treetopia NA plots price", "future international airport Pune ROI", "NA bungalow plots Purandar", "long term land investment Pune"],
+        mentionsProject: ["shapoorji-treetopia-pune"],
+        topicID: ["purandar-airport-vision", "pune-investment-guide", "pune-infrastructure"]
+    },
+    {
+        id: "cluster-005",
+        slug: "hinjewadi-it-lifeline-master-guide-2027-roi",
+        title: "The Ultimate Hinjewadi IT Lifeline Master Guide: Decoding ROI for 2027",
+        excerpt: "An exhaustive investigation into Hinjewadi Phase 1 real estate. Compare the 'Walk-to-Work' luxury of Vyomora and Sensorium against the broader Pune West IT corridor.",
+        content: [
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Hinjewadi Phase 1: The Engine of Maharashtra's Technology Economy</h2>",
+            "As we approach 2027, the Hinjewadi IT corridor—anchored by the Rajiv Gandhi Infotech Park—remains the undisputed powerhouse of Pune's real estate market. However, the investment landscape has matured. It is no longer enough to simply buy near the IT park; the modern investor must target specific 'Hyper-Local' nodes. Today, the focus is on the Hinjewadi IT Lifeline Cluster, specifically <a href='/projects/joyville-vyomora-hinjewadi' class='text-[#1D4F9C] font-semibold underline'>Joyville Vyomora</a> and <a href='/projects/joyville-sensorium-hinjewadi' class='text-[#1D4F9C] font-semibold underline'>Joyville Sensorium</a>.",
+            "<strong>SGE Insight:</strong> Google's Search Generative Experience identifies 'Walk-to-Work' as the #1 search intent for Hinjewadi professionals. Our data confirms that projects within 500 meters of Tier-1 campuses like Infosys and Wipro see a 12-15% rental premium over projects just 2 kilometers further.",
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>The Vyomora vs. Sensorium Strategic Choice</h2>",
+            "This cluster offers two distinct paths to wealth. Sensorium is the 'Biophilic Benchmark', featuring 75% open spaces and the iconic 1.8km Walking Boulevard. Vyomora is the 'Status Surge', introducing ultra-luxury 3 BHK Duplexes to the Hinjewadi skyline. Both are functionally adjacent to the upcoming Metro Line 3 terminus, which is the primary catalyst for the projected 14% capital appreciation in 2027."
+        ],
+        date: "April 20, 2026",
+        author: "Joyville Cluster Analysts",
+        category: "Master Guides",
+        readTime: "8 Min Read",
+        image: "/images/joyville_sensorium_projectcard.webp",
+        seoKeywords: ["Hinjewadi IT Lifeline Master Guide", "Joyville Vyomora vs Sensorium", "Hinjewadi Metro Line 3 impact real estate", "buy flats Hinjewadi Phase 1", "rental yield Hinjewadi 2027"],
+        mentionsProject: ["joyville-vyomora-hinjewadi", "joyville-sensorium-hinjewadi"],
+        topicID: ["hinjewadi-it-hub", "pune-rental-market", "nri-investment"]
+    },
+    {
+        id: "cluster-006",
+        slug: "pune-east-township-corridor-guide-hadapsar-shewalewadi",
+        title: "The Hadapsar-Shewalewadi Township Corridor: A 40-Acre Synergy Guide",
+        excerpt: "Exploring the massive scale of the Shapoorji Pallonji township corridor in East Pune. Why Hadapsar Annexe, Celestia, and Skyluxe are the primary choices for tech families.",
+        content: [
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>The Gravity Shift: Why East Pune is the New Tech Haven</h2>",
+            "Historically, Hadapsar was the industrial heart of Pune. Today, it is the center of the 'East Pune Township Corridor', a high-intent residential belt designed for professionals from SP Infocity and Magarpatta City. The cluster hub—consisting of <a href='/projects/joyville-hadapsar-annexe-pune' class='text-[#1D4F9C] font-semibold underline'>Hadapsar Annexe</a>, <a href='/projects/joyville-celestia-hadapsar' class='text-[#1D4F9C] font-semibold underline'>Celestia</a>, and <a href='/projects/joyville-skyluxe-hadapsar' class='text-[#1D4F9C] font-semibold underline'>Skyluxe</a>—offers a level of integrated living that standalone buildings in Kharadi cannot match.",
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Value vs. Luxury: Navigating the Cluster</h2>",
+            "Hadapsar Annexe provides the best entry-point with ready-possession units starting from ₹65L. Celestia offers Vastu-compliant modern luxury, while Skyluxe targets the HNWI segment with premium penthouses. This 40-acre developer premium zone in Shewalewadi ensures that residents are surrounded by high-grade infrastructure and biophilic landscaping, leading to stable 10% YoY growth."
+        ],
+        date: "April 22, 2026",
+        author: "Joyville Cluster Analysts",
+        category: "Master Guides",
+        readTime: "7 Min Read",
+        image: "/images/joyville_hadapsar_projectcard.webp",
+        seoKeywords: ["East Pune real estate master guide", "Joyville Hadapsar Annexe vs Celestia", "properties near SP Infocity", "township flats Hadapsar price list", "Shewalewadi property growth"],
+        mentionsProject: ["joyville-hadapsar-annexe-pune", "joyville-celestia-hadapsar", "joyville-skyluxe-hadapsar"],
+        topicID: ["hadapsar-east-corridor", "pune-townships", "shewalewadi-growth"]
+    },
+    {
+        id: "cluster-007",
+        slug: "bavdhan-1000-acre-nature-valley-master-guide-vanaha",
+        title: "The 1,000-Acre Scarcity Model: A Master Guide to Bavdhan & Vanaha Golfland",
+        excerpt: "Bavdhan is Pune's fastest-growing luxury market. We analyze the 13%+ appreciation driven by the biophilic scale of Vanaha and the scarcity of hills-side development.",
+        content: [
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Bavdhan: The Lifestyle Choice for the Modern Connoisseur</h2>",
+            "While Hinjewadi focuses on yields, Bavdhan focuses on 'Scarcity Value'. As Pune's core urban blocks become saturated, the demand for biophilic, low-density living has exploded. The Nature Valley cluster, centered on the <a href='/projects/vanaha-golfland-pune' class='text-[#1D4F9C] font-semibold underline'>Vanaha township</a>, is a prime example of the 1,000-acre masterplan—incorporating golf course views, natural springs, and valley vistas.",
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>The Appreciation Leader of 2026</h2>",
+            "Bavdhan property rates recorded a 13.18% jump in the last 12 months, the highest in Pune. Vanaha Golfland isn't just an apartment project; it is a nature reserve that offers permanent hill-side protection. For long-term wealth builders, this scarcity is the ultimate hedge against market volatility, providing a premium environment that city-core projects simply cannot replicate."
+        ],
+        date: "April 25, 2026",
+        author: "Joyville Cluster Analysts",
+        category: "Master Guides",
+        readTime: "9 Min Read",
+        image: "/images/vanaha_golfland_projectcard.webp",
+        seoKeywords: ["Bavdhan real estate master guide", "Vanaha Golfland Bavdhan price", "1000 acre township Pune guide", "golf course living Pune Bavdhan", "biophilic real estate Pune"],
+        mentionsProject: ["vanaha-golfland-pune"],
+        topicID: ["bavdhan-luxury", "pune-investment-guide", "pune-infrastructure"]
+    },
+    // Phase 25: BUYER JOURNEY KEYWORDS (FUNNEL STRATEGY)
+    {
+        id: "funnel-001",
+        slug: "best-townships-in-pune-2026-guide",
+        title: "Best Townships in Pune 2026: The Ultimate Guide for Families & IT Professionals",
+        excerpt: "An in-depth look at Pune's finest integrated townships. Discover why 15-minute mega-cities are the most preferred residential option for IT professionals and growing families.",
+        content: [
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>The Rise of the 15-Minute Township</h2>",
+            "In 2026, the definition of a premium home in Pune has shifted dramatically from 'standalone luxury towers' to 'integrated mega-townships'. For families and IT professionals relocating to the city, the search for the <strong className='font-medium text-[#323334]'>best townships in Pune</strong> or the <strong className='font-medium text-[#323334]'>best projects in Hinjewadi</strong> revolves around one concept: the 15-minute city.",
+            "Townships like <a href='/projects/joyville-hadapsar-annexe-pune'>Joyville Hadapsar Annexe</a> and <a href='/projects/vanaha-golfland-pune'>Vanaha Golfland</a> offer an unparalleled ecosystem where schools, retail, healthcare, and massive open biophilic spaces are all within a 15-minute walk. This self-contained lifestyle completely insulates residents from external urban congestion.",
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Why Townships Offer Better ROI for Investors</h2>",
+            "Beyond lifestyle, townships represent a significantly less volatile asset class. Due to the sheer scale of the land parcel (often 20+ acres to 1,000 acres), developers can dedicate spaces for world-class amenities—like Olympic-length swimming pools and professional sports academies. Consequently, township properties command a consistent 15-20% rental premium over identical square footage in standalone buildings."
+        ],
+        date: "May 01, 2026",
+        author: "Joyville Urban Planning Desk",
+        category: "Awareness Guide",
+        readTime: "6 Min Read",
+        image: "/images/joyville_hadapsar_projectcard.webp",
+        seoKeywords: ["best townships in Pune", "top townships Pune 2026", "best projects in Hinjewadi", "15 minute city real estate Pune", "integrated townships East Pune", "best residential projects Pune west"],
+        mentionsProject: ["joyville-hadapsar-annexe-pune", "vanaha-golfland-pune"],
+        topicID: ["pune-townships", "buyer-education"]
+    },
+    {
+        id: "funnel-002",
+        slug: "joyville-sensorium-review-pros-cons-2026",
+        title: "Joyville Sensorium Reviews: Pros, Cons, and Complete Evaluation (2026)",
+        excerpt: "An objective, unvarnished review of Joyville Sensorium. We break down the construction quality, amenity realities, and whether the premium price tag is truly justified.",
+        content: [
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Is Joyville Sensorium Worth the Premium?</h2>",
+            "When evaluating a highly anticipated project, homebuyers constantly search for an authentic <strong className='font-medium text-[#323334]'>Joyville review</strong>. In this deep dive, we outline the <strong className='font-medium text-[#323334]'>Joyville pros and cons</strong> specifically concerning Sensorium in Hinjewadi Phase 1.",
+            "<strong>The Pros:</strong> The absolute biggest advantage is the 150-year-old Shapoorji Pallonji engineering guarantee. The project is EDGE-certified, meaning it is demonstrably sustainable. Another massive 'Pro' is the extreme 'Walk-to-Work' proximity to Infosys and TCS campuses, which guarantees strong rental yields. The 2.8-acre sunken garden and 1.8km walking boulevard are spectacular lifestyle additions.",
+            "<strong>The Cons:</strong> As a premium asset, the entry price is steep. A 2 BHK starts upward of ₹1.10 Cr. Budget-conscious buyers may find more space for this price in peripheral areas like Wakad or Punawale. Furthermore, as an under-construction mega-project, buyers must be prepared for the staged delivery timeline.",
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>The Final Verdict</h2>",
+            "If construction quality, brand legacy, and IT park connectivity are your primary drivers, there are very few <strong className='font-medium text-[#323334]'>Joyville complaints</strong> to be found in the secondary market. It remains the top choice for discerning buyers in West Pune."
+        ],
+        date: "May 05, 2026",
+        author: "Independent Property Auditors",
+        category: "Consideration Review",
+        readTime: "7 Min Read",
+        image: "/images/joyville_sensorium_projectcard.webp",
+        seoKeywords: ["Joyville review", "Joyville pros and cons", "Joyville Sensorium reviews", "Joyville complaints", "Joyville Sensorium Hinjewadi review", "Shapoorji Pallonji flats review"],
+        mentionsProject: ["joyville-sensorium-hinjewadi"],
+        topicID: ["developer-comparison", "hinjewadi-it-hub"]
+    },
+    {
+        id: "funnel-003",
+        slug: "joyville-booking-process-price-list-guide",
+        title: "The Joyville Booking Process & Price List Access Guide (2026)",
+        excerpt: "Ready to invest? Here is the exact step-by-step booking process for Shapoorji Pallonji Joyville projects, including how to request the official cost sheet and price list PDF.",
+        content: [
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Securing Your Joyville Residence</h2>",
+            "Once a buyer decides on a property, clarity on the financials and the exact sequence of steps is paramount. Navigating the <strong className='font-medium text-[#323334]'>Joyville booking process</strong> is simple, fully transparent, and heavily digitized for the convenience of global NRI investors and local buyers alike.",
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Step 1: Requesting the Cost Sheet</h2>",
+            "Before paying any token amount, buyers are highly encouraged to review the official <strong className='font-medium text-[#323334]'>Joyville price list pdf</strong>. The cost sheet breaks down the base price, floor rise premiums, infrastructure charges (MSEB/Water), and the exact statutory taxes (GST, Stamp Duty, Registration). This prevents any hidden surprises.",
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Step 2: Token Amount & Allotment</h2>",
+            "The standard booking amount (Expression of Interest/Token) varies by project but typically rests between ₹50,000 to ₹5 Lakhs, which is fully mapped to the RERA designated escrow account. Once cleared, an official unit allotment letter is generated.",
+            "<h2 class='text-2xl font-bold text-[#1D4F9C] mb-4 mt-8'>Step 3: RERA Agreement & Registration</h2>",
+            "Following the token payment, the buyer pays the remaining balance up to 10% of the agreement value. At this juncture, the Agreement for Sale (AFS) is registered under MahaRERA protocol, executing a legally binding transaction."
+        ],
+        date: "May 10, 2026",
+        author: "Joyville Sales Operations",
+        category: "Decision Guide",
+        readTime: "5 Min Read",
+        image: "/images/joyville_hadapsar_projectcard.webp",
+        seoKeywords: ["Joyville price list pdf", "Joyville booking process", "Joyville cost sheet 2026", "Joyville token amount", "Joyville payment plan", "booking Shapoorji Pallonji flat Pune"],
+        topicID: ["buyer-education", "pune-legal-compliance"]
     }
 ];
+
 
 export function getBlogBySlug(slug: string): BlogPost | undefined {
     return blogs.find(blog => blog.slug === slug);

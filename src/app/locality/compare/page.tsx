@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { localities } from '@/data/localities';
 import Link from 'next/link';
-import { BarChart3, TrendingUp, ShieldCheck, MapPin, ArrowRight, Zap } from 'lucide-react';
+import { BarChart3, ShieldCheck, ArrowRight, Zap } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: "Pune Locality Comparison Matrix 2026 | Investment ROI Analysis",
@@ -94,7 +94,7 @@ export default function LocalityComparePage() {
                         </h1>
                     </div>
                     <p className="text-xl text-[#323334]/70 font-light max-w-3xl leading-relaxed">
-                        A data-driven analysis of Pune's premium corridors. Compare capital appreciation, infrastructure 
+                        A data-driven analysis of Pune&apos;s premium corridors. Compare capital appreciation, infrastructure 
                         velocity, and rental liquidity to make informed investment decisions for 2026.
                     </p>
                 </header>

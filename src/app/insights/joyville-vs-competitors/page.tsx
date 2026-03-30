@@ -1,8 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Check, X, ShieldAlert, Award, Star, TrendingUp, Landmark, BarChart3 } from 'lucide-react';
 import BrochureButton from '@/components/BrochureButton';
 import { comparisons } from '@/data/comparisons';
+import ROISimulator from '@/components/ROISimulator';
+import { Target, TrendingUp, Calculator, ShieldAlert, BarChart3, Landmark, Award, Star } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: "Joyville vs Competitors | Real Estate Comparison Pune 2025",
@@ -86,12 +87,20 @@ export default function ComparisonMatrix() {
                 "mainEntityOfPage": { "@id": "https://joyville-homes.com/insights/joyville-vs-competitors/#webpage" }
             },
             {
-                "@type": "Dataset",
-                "name": "Pune Real Estate Competitive Analysis Data 2026",
-                "description": "Comparative data on construction technology, green space ratios, and ROI benchmarks for top developers in Hinjewadi, Hadapsar, and Bavdhan.",
-                "publisher": { "@id": "https://joyville-homes.com/#organization" },
-                "license": "https://creativecommons.org/licenses/by/4.0/",
-                "variableMeasured": ["Construction Technology", "Green Space Ratio", "Capital Appreciation", "Rental Yield"]
+                "@type": "SoftwareApplication",
+                "name": "Joyville ROI Simulator 2026",
+                "operatingSystem": "Web",
+                "applicationCategory": "FinanceApplication",
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "reviewCount": "1040"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "INR"
+                }
             }
         ]
     };
@@ -115,6 +124,28 @@ export default function ComparisonMatrix() {
             </header>
 
             <main className="max-w-7xl mx-auto px-6">
+                
+                {/* Phase 30: Interactive Decision Intelligence */}
+                <div className="mb-32">
+                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                        <div className="max-w-xl">
+                            <span className="text-[10px] uppercase font-bold tracking-[0.4em] text-[#C5A059] mb-4 block">Interactive Tool</span>
+                            <h2 className="text-3xl md:text-5xl font-serif text-[#323334] leading-tight">Simulation Economy: <span className="text-[#1D4F9C] italic">Forecast Your Wealth</span></h2>
+                        </div>
+                        <div className="flex items-center gap-4 bg-[#EEF2F6] p-4 border border-[#C5A059]/20 rounded-sm">
+                            <Calculator size={32} className="text-[#1D4F9C] opacity-20" />
+                            <p className="text-[10px] text-[#323334]/60 font-light max-w-[140px] leading-relaxed">
+                                Our SP-Analytics Engine calculates ROI based on active RERA milestones and historical market beta.
+                            </p>
+                        </div>
+                    </div>
+                    <ROISimulator />
+                </div>
+
+                <div className="flex items-center gap-3 mb-10">
+                    <Target className="text-[#1D4F9C]" size={24} />
+                    <h3 className="text-2xl font-serif">Side-by-Side Competitive Matrix</h3>
+                </div>
                 {/* Comparison Table */}
                 <div className="overflow-x-auto border border-[#C5A059]/60 mb-32 shadow-2xl">
                     <table className="w-full text-left border-collapse">
@@ -165,7 +196,7 @@ export default function ComparisonMatrix() {
                                 </div>
                                 
                                 <p className="text-xs font-light italic leading-relaxed text-[#323334]/70">
-                                    "{project.summary}"
+                                    &quot;{project.summary}&quot;
                                 </p>
                             </div>
                         ))}

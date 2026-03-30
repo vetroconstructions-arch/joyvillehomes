@@ -8,11 +8,14 @@ import { PhoneCall, Menu, X, ChevronDown, MapPin } from "lucide-react";
 import dynamic from "next/dynamic";
 import { projects } from "@/data/projects";
 
+import { useCurrency } from "@/context/CurrencyContext";
+
 const QuickEnquireModal = dynamic(() => import("./QuickEnquireModal"), {
     ssr: false, // Defer hydration until client to reduce Main Thread blocking
 });
 
 export default function Navigation() {
+    const { currency, setCurrency } = useCurrency();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isProjectsHovered, setIsProjectsHovered] = useState(false);
@@ -93,8 +96,21 @@ export default function Navigation() {
                         <Link href="/#floor-plans" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4">Floor Plans</Link>
                     </div>
 
-                    {/* Enquire Button & Mobile Toggle */}
-                    <div className="flex items-center gap-6 z-20">
+                    {/* Currency, Enquire Button & Mobile Toggle */}
+                    <div className="flex items-center gap-4 md:gap-6 z-20">
+                        {/* Currency Switcher */}
+                        <div className="hidden sm:flex items-center gap-1 border border-[#C5A059]/30 rounded-full p-1 bg-[#FFFFFF]/30 backdrop-blur-sm">
+                            {(['INR', 'USD', 'AED'] as const).map((curr) => (
+                                <button
+                                    key={curr}
+                                    onClick={() => setCurrency(curr)}
+                                    className={`px-3 py-1.5 rounded-full text-[9px] font-bold tracking-widest transition-all ${currency === curr ? 'bg-[#1D4F9C] text-[#FFFFFF] shadow-sm' : 'text-[#323334]/50 hover:text-[#1D4F9C]'}`}
+                                >
+                                    {curr}
+                                </button>
+                            ))}
+                        </div>
+
                         <button
                             onClick={() => setIsEnquireModalOpen(true)}
                             aria-label="Enquire Now"

@@ -51,7 +51,7 @@ const PredictiveSemanticSiblings: React.FC<PredictiveSemanticSiblingsProps> = ({
                 </div>
 
                 <p className="text-sm text-[#555] font-light mb-10 leading-relaxed max-w-2xl">
-                    Based on your interest in <span className="font-semibold text-[#1D4F9C]">{currentProject.title}</span>, our predictive algorithms suggest these institutional-grade developments that match your <span className="italic">"{currentProject.personaTags?.[0]}"</span> profile:
+                    Based on your interest in <span className="font-semibold text-[#1D4F9C]">{currentProject.title}</span>, our predictive algorithms suggest these institutional-grade developments that match your <span className="italic">&quot;{currentProject.personaTags?.[0]}&quot;</span> profile:
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-6">

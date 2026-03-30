@@ -1,0 +1,65 @@
+
+> joyvillehomes@0.1.0 lint
+> eslint
+
+
+/Users/vikasyewle/Desktop/joyvillehomes/src/app/glossary/page.tsx
+  75:69  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                 react/no-unescaped-entities
+  77:25  error  Do not use an `<a>` element to navigate to `/projects/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+/Users/vikasyewle/Desktop/joyvillehomes/src/app/insights/joyville-vs-competitors/page.tsx
+    3:10  warning  'Check' is defined but never used                                @typescript-eslint/no-unused-vars
+    3:17  warning  'X' is defined but never used                                    @typescript-eslint/no-unused-vars
+  168:37  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  168:55  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+/Users/vikasyewle/Desktop/joyvillehomes/src/app/locality/compare/page.tsx
+   4:21  warning  'TrendingUp' is defined but never used                           @typescript-eslint/no-unused-vars
+   4:46  warning  'MapPin' is defined but never used                               @typescript-eslint/no-unused-vars
+  97:55  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/Users/vikasyewle/Desktop/joyvillehomes/src/app/not-found.tsx
+  2:24  warning  'MapPin' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/vikasyewle/Desktop/joyvillehomes/src/app/pune-real-estate-guide/page.tsx
+  5:25  warning  'Calculator' is defined but never used  @typescript-eslint/no-unused-vars
+  8:10  warning  'Zap' is defined but never used         @typescript-eslint/no-unused-vars
+  8:30  warning  'ShieldIcon' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/vikasyewle/Desktop/joyvillehomes/src/components/BrochureButton.tsx
+  21:57  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  22:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/vikasyewle/Desktop/joyvillehomes/src/components/ConstructionMilestones.tsx
+   2:10  warning  'Calendar' is defined but never used  @typescript-eslint/no-unused-vars
+  21:49  warning  'idx' is defined but never used       @typescript-eslint/no-unused-vars
+
+/Users/vikasyewle/Desktop/joyvillehomes/src/components/ConversationalAnswerHub.tsx
+  5:15  warning  'ChevronRight' is defined but never used   @typescript-eslint/no-unused-vars
+  5:29  warning  'MessageSquare' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/vikasyewle/Desktop/joyvillehomes/src/components/EntityAuthorityMatrix.tsx
+  2:22  warning  'TrendingUp' is defined but never used  @typescript-eslint/no-unused-vars
+  2:34  warning  'Shield' is defined but never used      @typescript-eslint/no-unused-vars
+  2:42  warning  'MapPin' is defined but never used      @typescript-eslint/no-unused-vars
+  2:50  warning  'Activity' is defined but never used    @typescript-eslint/no-unused-vars
+
+/Users/vikasyewle/Desktop/joyvillehomes/src/components/MicroMarketBulletin.tsx
+  4:10  warning  'Radio' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/vikasyewle/Desktop/joyvillehomes/src/components/PredictiveNavigation.tsx
+  12:57  warning  'currentSlug' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/vikasyewle/Desktop/joyvillehomes/src/components/PredictiveSemanticSiblings.tsx
+  54:239  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  54:273  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+/Users/vikasyewle/Desktop/joyvillehomes/src/components/ProximityIndex.tsx
+  15:50  warning  'projectName' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/vikasyewle/Desktop/joyvillehomes/src/middleware.ts
+  5:9  warning  'url' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  6:9  warning  'host' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+✖ 30 problems (9 errors, 21 warnings)
+

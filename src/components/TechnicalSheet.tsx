@@ -53,7 +53,7 @@ const TechnicalSheet: React.FC<TechnicalSheetProps> = ({ specs, projectName }) =
             
             <div className="p-4 bg-slate-50/50 text-center border-t border-slate-100">
                 <p className="text-[10px] text-slate-400 uppercase tracking-[0.2em]">
-                    Engineering excellence backed by Shapoorji Pallonji's 150-year legacy
+                    Engineering excellence backed by Shapoorji Pallonji&apos;s 150-year legacy
                 </p>
             </div>
         </div>
