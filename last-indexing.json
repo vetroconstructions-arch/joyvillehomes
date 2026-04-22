@@ -1,0 +1,838 @@
+{
+  "lastRun": "2026-04-22T18:28:53.194Z",
+  "totalUrls": 166,
+  "successCount": 0,
+  "failCount": 166,
+  "details": [
+    {
+      "url": "https://joyville-homes.com",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/projects",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/flats-in-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/pune-real-estate-market",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/locality/compare",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/nri-investment-guide",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/projects/joyville-vyomora-hinjewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/projects/joyville-sensorium-hinjewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/projects/joyville-hadapsar-annexe-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/projects/joyville-celestia-hadapsar",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/projects/joyville-skyluxe-hadapsar",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/projects/wildernest-sp-kingstown-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/projects/vanaha-golfland-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/projects/vanaha-springs-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/projects/vanaha-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/projects/shapoorji-treetopia-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/joyville-vyomora-2-bhk-premium-hinjewadi-phase-1-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/joyville-vyomora-3-bhk-luxury-hinjewadi-phase-1-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/joyville-vyomora-3-bhk-duplex-hinjewadi-phase-1-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/joyville-sensorium-2-bhk-luxe-off-maan-village-road-hinjewadi-phase-1-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/joyville-sensorium-3-bhk-royale-off-maan-village-road-hinjewadi-phase-1-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/joyville-hadapsar-annexe-1-bhk-joy-shewalewadi-hadapsar-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/joyville-hadapsar-annexe-2-bhk-delight-shewalewadi-hadapsar-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/joyville-hadapsar-annexe-3-bhk-grande-shewalewadi-hadapsar-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/joyville-celestia-2-bhk-smart-shewalewadi-off-pune-solapur-highway-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/joyville-celestia-2-bhk-luxury-shewalewadi-off-pune-solapur-highway-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/joyville-celestia-3-bhk-grand-shewalewadi-off-pune-solapur-highway-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/joyville-skyluxe-edition-3-bhk-skyluxe-shewalewadi-off-pune-solapur-highway-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/joyville-skyluxe-edition-3-bhk-penthouse-shewalewadi-off-pune-solapur-highway-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/wildernest-at-sp-kingstown-premium-residences-sp-kingstown-shewalewadi-road-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/vanaha-golfland-luxury-suites-bavdhan-pune-near-oxford-golf-resort",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/vanaha-springs-premium-apartments-bavdhan-pune-near-oxford-golf-resort",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/vanaha-standard-layouts-bavdhan-pune-near-oxford-golf-resort",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/shapoorji-pallonji-treetopia-regal-plots-jadhavwadi-purandhar-pune-growth-corridor",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/unit/shapoorji-pallonji-treetopia-grand-plots-jadhavwadi-purandhar-pune-growth-corridor",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/locality/hinjewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/locality/bavdhan",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/locality/hadapsar",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/locality/shewalewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/locality/purandar",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/locality/kharadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/locality/wakad",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/2-bhk-flats-in-hinjewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/3-bhk-luxury-apartments-pune-west",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/townships-near-magarpatta-city",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/na-bungalow-plots-near-purandar-airport",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-vyomora-hinjewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/3-bhk-flats-in-hinjewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/1-bhk-flats-in-hadapsar",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/flats-in-bavdhan-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/ready-to-move-flats-hadapsar",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/ready-possession-hinjewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/3-bhk-luxury-flats-hadapsar-nri-special",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/under-1-crore-flats-hinjewadi-phase-1",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/investment-flats-near-eon-it-park",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-vs-kolte-patil-life-republic-hinjewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-vs-godrej-hinjewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-vs-vtp-bellissimo-hinjewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-vs-amanora-hadapsar",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-sensorium-2-bhk-price-phase-1",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-hinjewadi-3-bhk-floor-plan-pdf",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/rental-yield-joyville-hinjewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-hadapsar-resale-2-bhk-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-vyomora-pre-launch-price",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/flats-near-infosys-phase-1-hinjewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-sensorium-clubhouse-amenities",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-sensorium-reviews-pros-and-cons",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-sensorium-price-list",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-hadapsar-annexe-price",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-vyomora-price-list",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-pune-brochure-download",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-sensorium-possession-date",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-hadapsar-annexe-possession",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/flats-near-sp-infocity-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/flats-near-magarpatta-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/nri-investment-flats-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/rera-approved-flats-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/flats-near-hinjewadi-it-park",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/flats-near-eon-it-park-kharadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/apartments-near-magarpatta-city-hadapsar",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/residential-projects-near-hinjewadi-phase-1",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/affordable-flats-in-shewalewadi-hadapsar",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/flats-near-pune-metro-line-3",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/under-1-crore-flats-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/investment-property-pune-2026",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/ready-to-move-flats-in-hadapsar",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/ready-possession-flats-pune-2026",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/new-launch-projects-pune-2025",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/new-launch-projects-pune-2026",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/smart-home-apartments-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/gated-community-pune-2026",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/shapoorji-pallonji-projects-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-vs-godrej-properties-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-vs-pride-purple-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-vs-gera-world-of-joy",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/gated-communities-with-ev-charging-hinjewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/apartments-with-75-percent-open-space-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/best-flats-in-pune-2027",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/flats-near-hinjewadi-metro-station-2027",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/vanaha-golfland-bavdhan-price-list",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/shapoorji-treetopia-plots-price-list",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/duplex-apartments-hinjewadi-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/pet-friendly-apartments-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/work-from-home-apartments-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/flats-under-80-lakhs-hadapsar-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/luxury-penthouses-pune-2026",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/senior-citizen-friendly-flats-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/vastu-compliant-flats-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/flats-near-pune-ring-road",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/best-investment-property-pune-2027",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/nri-buying-guide-pune-2026",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/metro-line-3-property-investment-guide",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/luxury-flats-with-infinity-pool-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/joyville-vs-lodha-pune-real-estate",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/flats-under-1-point-5-crore-pune-west",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/flats-near-wipro-circle-hinjewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/residential-projects-on-maan-road-hinjewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/townships-near-sp-infocity-phursungi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/luxury-apartments-near-bavdhan-valley",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/flats-near-wipro-hinjewadi-phase-1",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/residential-projects-near-infosys-pune-hinjewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/flats-near-tcs-pune-hadapsar-shewalewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/properties/apartments-near-cognizant-hinjewadi-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/rental-yields-hinjewadi-2025-nri-investment-guide",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/the-ultimate-guide-pune-east-townships-hadapsar",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/pune-mega-infrastructure-projects-impact-2028",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/best-residential-projects-hinjewadi-2025-complete-guide",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/rera-approved-projects-pune-everything-you-need-to-know",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/pune-property-price-trends-2025-micro-market-analysis",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/pune-real-estate-market-forecast-2026-investment-hotspots",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/complete-nri-guide-buying-property-pune-2026",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/first-time-homebuyer-checklist-pune-2026",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/pune-it-corridor-hinjewadi-vs-kharadi-vs-magarpatta",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/why-joyville-vyomora-is-best-new-launch-hinjewadi-2026",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/should-you-buy-3-bhk-duplex-in-hinjewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/shapoorji-pallonji-pune-project-review-2026-master-collection",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/comparative-roi-hinjewadi-vs-hadapsar-vs-bavdhan-shapoorji",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/legacy-luxury-why-shapoorji-pallonji-dominates-pune-market",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/hinjewadi-vs-wakad-property-comparison-2026",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/investment-hotspots-hadapsar-pune-2026",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/pune-property-price-forecast-2027",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/best-2-bhk-flats-near-magarpatta-city-2026",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/nri-pune-real-estate-investment-tax-guide-2026",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/pune-homebuyer-financial-legal-checklist-2026",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/pune-q1-2026-micro-market-real-estate-report",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/edge-certification-impact-on-property-value-pune",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/hinjewadi-it-lifeline-cluster-guide-2026",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/pune-east-township-corridor-hadapsar-shewalewadi-hub",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/bavdhan-nature-valley-vanaha-golfland-luxury-living",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/purandar-airport-investment-horizon-treetopia-plots",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/hinjewadi-it-lifeline-master-guide-2027-roi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/pune-east-township-corridor-guide-hadapsar-shewalewadi",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/bavdhan-1000-acre-nature-valley-master-guide-vanaha",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/best-townships-in-pune-2026-guide",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/joyville-sensorium-review-pros-cons-2026",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/joyville-booking-process-price-list-guide",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/topic/hinjewadi-it-hub",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/topic/pune-rental-market",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/topic/nri-investment",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/topic/pune-townships",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/author/vikas-sharma",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/author/ananya-deshpande",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/nri/region/nri-uae-dubai",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/nri/region/nri-usa-tech",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    },
+    {
+      "url": "https://joyville-homes.com/insights/nri/region/nri-uk-europe",
+      "status": 403,
+      "error": "Permission denied. Failed to verify the URL ownership."
+    }
+  ]
+}

@@ -179,17 +179,17 @@ export default function ComparisonMatrix() {
                     
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {comparisons.map((project) => (
-                            <div key={project.projectId} className="bg-[#EEF2F6] border border-[#C5A059]/30 p-8 rounded-sm shadow-sm hover:shadow-xl transition-all group">
-                                <h3 className="text-xl font-serif text-[#1D4F9C] mb-2">{project.projectTitle}</h3>
-                                <p className="text-[10px] uppercase tracking-widest text-[#323334]/60 mb-6">{project.competitorGroup}</p>
+                            <div key={project.id} className="bg-[#EEF2F6] border border-[#C5A059]/30 p-8 rounded-sm shadow-sm hover:shadow-xl transition-all group">
+                                <h3 className="text-xl font-serif text-[#1D4F9C] mb-2">{project.joyvilleProject}</h3>
+                                <p className="text-[10px] uppercase tracking-widest text-[#323334]/60 mb-6">Vs. {project.competitorProject} ({project.developer})</p>
                                 
                                 <div className="space-y-4 mb-8">
                                     {project.metrics.map((metric, mIdx) => (
                                         <div key={mIdx} className="flex justify-between items-center border-b border-[#C5A059]/10 pb-2">
                                             <span className="text-xs font-light">{metric.label}</span>
                                             <div className="text-right">
-                                                <span className="text-sm font-bold text-[#1D4F9C]">{metric.joyvilleValue}{metric.unit}</span>
-                                                <span className="text-[9px] text-[#323334]/40 block uppercase tracking-tighter">Market: {metric.competitorAvg}{metric.unit}</span>
+                                                <span className={`text-sm font-bold ${metric.winner === 'joyville' ? 'text-[#1D4F9C]' : 'text-[#323334]'}`}>{metric.joyville}</span>
+                                                <span className="text-[9px] text-[#323334]/40 block uppercase tracking-tighter">Market: {metric.competitor}</span>
                                             </div>
                                         </div>
                                     ))}

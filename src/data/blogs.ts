@@ -87,7 +87,7 @@ export const blogs: BlogPost[] = [
         newsKeywords: ["Pune Metro Line 3", "NRI Real Estate Investment India", "Hinjewadi Rental Yields 2026"],
         dateline: "Pune, India",
         printEdition: "Shapoorji Pallonji Intelligence Monthly",
-        topicID: ["hinjewadi-it-hub", "pune-rental-market", "nri-investment"]
+        topicID: ["hinjewadi-it-hub", "pune-rental-market", "nri-investment", "IT Corridor Alpha", "Biophilic Wellness Hubs"]
     },
     {
         id: "insights-002",
@@ -135,7 +135,7 @@ export const blogs: BlogPost[] = [
             { title: "EDGE Green Building Certification Standards", url: "https://www.edgebuildings.com/", publisher: "IFC World Bank" }
         ],
         wikidataUri: "https://www.wikidata.org/wiki/Q5637770", // Hadapsar
-        topicID: ["hadapsar-east-corridor", "pune-townships", "shewalewadi-growth"]
+        topicID: ["hadapsar-east-corridor", "pune-townships", "shewalewadi-growth", "Integrated Township Excellence", "Manufacturing & Industrial Anchors"]
     },
     {
         id: "insights-003",
@@ -182,7 +182,7 @@ export const blogs: BlogPost[] = [
         ],
         wikidataUri: "https://www.wikidata.org/wiki/Q104840845", // Pune Ring Road
         newsKeywords: ["Pune Infrastructure Projects 2026", "Pune Ring Road Completion Date", "Pune Metro Line 3 Impact"],
-        topicID: ["pune-infrastructure", "hinjewadi-connectivity", "purandar-airport-vision"]
+        topicID: ["pune-infrastructure", "hinjewadi-connectivity", "purandar-airport-vision", "IT Corridor Alpha", "Aviation Catalyst Growth"]
     },
     {
         id: "insights-004",
@@ -218,7 +218,7 @@ export const blogs: BlogPost[] = [
         image: "/images/joyville_hinjawadi_projectcard.webp",
         seoKeywords: ["best residential projects Hinjewadi 2025", "Joyville vs Kolte Patil Life Republic", "Joyville vs Godrej Hinjewadi", "top projects Hinjewadi", "Hinjewadi property comparison", "best flats Hinjewadi Phase 1", "Hinjewadi project comparison 2026", "property rate per sqft Hinjewadi", "Joyville Sensorium vs VTP Bellissimo", "Joyville Sensorium vs Gera Joy", "best developer Hinjewadi 2026", "Hinjewadi Phase 1 buyer guide", "RERA projects Hinjewadi Phase 1", "amenity comparison Hinjewadi", "construction quality comparison Hinjewadi", "ROI comparison Hinjewadi projects", "affordable vs luxury Hinjewadi", "mid segment housing Hinjewadi", "best flats IT professionals 2026", "Shapoorji vs Kolte Patil quality"],
         wikidataUri: "https://www.wikidata.org/wiki/Q104840845", // Real Estate in India
-        topicID: ["hinjewadi-it-hub", "pune-investment-guide", "developer-comparison"]
+        topicID: ["hinjewadi-it-hub", "pune-investment-guide", "developer-comparison", "IT Corridor Alpha", "Biophilic Wellness Hubs"]
     },
     {
         id: "insights-005",

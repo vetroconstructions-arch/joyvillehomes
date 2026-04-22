@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowRight, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 import PriceDisplay from "@/components/PriceDisplay";
 import { projects } from "@/data/projects";
+import { generateUnitSlug } from "@/utils/seo-utils";
 
 const ITEMS_PER_PAGE = 2; // Strict pagination constraint for elegant display
 
@@ -66,7 +67,7 @@ export default function ProjectsPortfolioClient() {
 
             <main className="max-w-5xl mx-auto px-6 space-y-16 mb-24">
                 {currentProjects.map((project) => (
-                    <Link key={project.id} href={`/projects/${project.slug}`} className="group flex flex-col md:flex-row bg-[#FFFFFF] border border-[#C5A059]/30 shadow-lg hover:shadow-2xl overflow-hidden rounded-sm hover:border-[#C5A059]/80 transition-all duration-500 cursor-pointer block">
+                    <div key={project.id} className="group flex flex-col md:flex-row bg-[#FFFFFF] border border-[#C5A059]/30 shadow-lg hover:shadow-2xl overflow-hidden rounded-sm hover:border-[#C5A059]/80 transition-all duration-500 block relative">
                         <div className="md:w-5/12 relative aspect-[4/3] md:min-h-[300px] overflow-hidden bg-[#F8FAFC]">
                             <Image
                                 src={project.image}
@@ -80,13 +81,21 @@ export default function ProjectsPortfolioClient() {
                             <div className="absolute top-6 left-6 flex gap-3 z-10">
                                 <span className="px-4 py-1.5 bg-[#1D4F9C] text-[#FFFFFF] text-[10px] uppercase tracking-[0.2em] font-bold shadow-lg shadow-[#1D4F9C]/30 rounded-sm">{project.status}</span>
                             </div>
+                            <div className="absolute top-6 right-6 flex flex-col items-end z-10 text-right">
+                                <span className="px-3 py-1.5 bg-[#1A1A2E]/80 backdrop-blur-md text-[#FFFFFF] text-[10px] uppercase tracking-wider font-bold shadow-lg rounded-sm border border-[#C5A059]/60 flex items-center gap-2">
+                                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_5px_#22c55e]"></span>
+                                    MahaRERA: {Array.isArray(project.reraNumber) ? project.reraNumber[0] + (project.reraNumber.length > 1 ? ', ...' : '') : project.reraNumber}
+                                </span>
+                            </div>
                         </div>
 
                         <div className="md:w-7/12 p-10 md:p-12 flex flex-col justify-center">
                             <div className="flex items-center gap-2 text-[#1D4F9C] text-xs font-light tracking-[0.2em] uppercase mb-4">
                                 <MapPin size={12} /> {project.location}
                             </div>
-                            <h2 className="text-3xl lg:text-4xl font-serif mb-4 text-[#323334] font-light">{project.title}</h2>
+                             <Link href={`/projects/${project.slug}`}>
+                                <h2 className="text-3xl lg:text-4xl font-serif mb-4 text-[#323334] font-light hover:text-[#1D4F9C] transition-colors cursor-pointer">{project.title}</h2>
+                            </Link>
                             <PriceDisplay price={project.price} className="text-xl text-[#1D4F9C] mb-6 font-serif italic text-gradient block" />
 
                             <p className="text-[#323334] font-light text-sm leading-relaxed mb-8 line-clamp-3">
@@ -102,11 +111,26 @@ export default function ProjectsPortfolioClient() {
                                 ))}
                             </div>
 
-                            <div className="inline-flex items-center gap-4 text-[#1D4F9C] font-semibold uppercase tracking-[0.2em] text-xs group-hover:text-[#1A1A1A] transition-colors self-start mt-auto">
-                                View Project Details <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform duration-300" />
+                            <div className="flex flex-wrap gap-2 mb-8">
+                                {project.floorPlans.slice(0, 3).map((plan, i) => (
+                                    <Link 
+                                        key={i} 
+                                        href={`/properties/unit/${generateUnitSlug(project.title, plan.type, project.location)}`}
+                                        className="px-3 py-1.5 bg-[#EEF2F6] border border-[#C5A059]/30 text-[#1D4F9C] text-[9px] font-bold uppercase tracking-wider hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all rounded-sm"
+                                    >
+                                        {plan.type} Floor Plan
+                                    </Link>
+                                ))}
                             </div>
+
+                            <Link 
+                                href={`/projects/${project.slug}`}
+                                className="inline-flex items-center gap-4 text-[#1D4F9C] font-semibold uppercase tracking-[0.2em] text-xs hover:text-[#1A1A1A] transition-colors self-start mt-auto cursor-pointer"
+                            >
+                                View Project Details <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform duration-300" />
+                            </Link>
                         </div>
-                    </Link>
+                    </div>
                 ))}
             </main>
 

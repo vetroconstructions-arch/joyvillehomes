@@ -27,7 +27,11 @@ export default function FAQSection({ items, title = "Frequently Asked Questions"
                 "@type": "Answer",
                 "text": item.answer
             }
-        }))
+        })),
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".faq-question", ".faq-answer"]
+        }
     };
 
     return (
@@ -52,7 +56,7 @@ export default function FAQSection({ items, title = "Frequently Asked Questions"
                             onClick={() => setOpenIndex(openIndex === index ? null : index)}
                             className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#EEF2F6]/50 transition-colors"
                         >
-                            <span className="text-[#323334] font-medium text-lg leading-tight pr-8">
+                            <span className="text-[#323334] font-medium text-lg leading-tight pr-8 faq-question">
                                 {item.question}
                             </span>
                             {openIndex === index ? (
@@ -67,7 +71,7 @@ export default function FAQSection({ items, title = "Frequently Asked Questions"
                                 openIndex === index ? 'max-h-[500px] py-6' : 'max-h-0 py-0'
                             } overflow-hidden`}
                         >
-                            <p className="text-[#323334]/80 font-light leading-relaxed">
+                            <p className="text-[#323334]/80 font-light leading-relaxed faq-answer">
                                 {item.answer}
                             </p>
                         </div>

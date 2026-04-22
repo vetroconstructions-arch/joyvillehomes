@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Sparkles, Target } from 'lucide-react';
 import { blogs } from '@/data/blogs';
+import { experts } from '@/data/experts';
+import { TOPIC_HUBS } from '@/data/TopicIntelligence';
 import MicroMarketBulletin from '@/components/MicroMarketBulletin';
 
 export const metadata: Metadata = {
@@ -132,6 +134,50 @@ export default function InsightsPage() {
             <MicroMarketBulletin />
 
             <div className="space-y-24 mt-20">
+                {/* Phase 40: Discovery Directory Layer — maximizing internal link equity */}
+                <section className="max-w-7xl mx-auto px-6 mb-20">
+                    <div className="grid md:grid-cols-2 gap-8">
+                        {/* Topic Directory */}
+                        <div className="bg-[#FFFFFF] p-8 border border-[#C5A059]/20 rounded-sm shadow-sm">
+                            <h3 className="text-xl font-serif text-[#323334] mb-6 flex items-center gap-3">
+                                <Target size={20} className="text-[#1D4F9C]" /> Investigation Topics
+                            </h3>
+                            <div className="flex flex-wrap gap-2">
+                                {TOPIC_HUBS.map(topic => (
+                                    <Link 
+                                        key={topic.id} 
+                                        href={`/insights/topic/${topic.id}`}
+                                        className="px-4 py-2 bg-[#EEF2F6] text-[#323334] text-[10px] font-bold uppercase tracking-widest hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all border border-[#C5A059]/10"
+                                    >
+                                        {topic.title}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Author Directory */}
+                        <div className="bg-[#FFFFFF] p-8 border border-[#C5A059]/20 rounded-sm shadow-sm">
+                            <h3 className="text-xl font-serif text-[#323334] mb-6 flex items-center gap-3">
+                                <Sparkles size={20} className="text-[#C5A059]" /> Expert Contributors
+                            </h3>
+                            <div className="grid grid-cols-2 gap-4">
+                                {experts.map(expert => (
+                                    <Link 
+                                        key={expert.id} 
+                                        href={`/insights/author/${expert.id}`}
+                                        className="flex items-center gap-3 group"
+                                    >
+                                        <div className="relative w-10 h-10 rounded-full overflow-hidden border border-[#C5A059]/30">
+                                            <Image src={expert.image} alt={expert.name} fill className="object-cover" />
+                                        </div>
+                                        <span className="text-[10px] font-bold uppercase tracking-widest text-[#323334] group-hover:text-[#1D4F9C] transition-colors">{expert.name}</span>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {clusters.map((cluster) => {
                     const clusterBlogs = getBlogsByCluster(cluster.topicIds);
                     if (clusterBlogs.length === 0) return null;

@@ -42,6 +42,25 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
             return;
         }
 
+        // Phase 4: Sovereign Vault Persistence
+        const leadId = `lead_${Date.now()}`;
+        const leadPayload = {
+            id: leadId,
+            project: projectName,
+            source: source,
+            data: { ...formData, phone: phoneClean },
+            timestamp: new Date().toISOString(),
+            synced: false
+        };
+
+        try {
+            const vault = JSON.parse(localStorage.getItem('sovereign_vault') || '[]');
+            vault.push(leadPayload);
+            localStorage.setItem('sovereign_vault', JSON.stringify(vault));
+        } catch (e) {
+            console.error("Vault write error:", e);
+        }
+
         setStatus('submitting');
 
         sendGAEvent('event', 'lead_form_start', {
@@ -72,6 +91,13 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
             const data = await response.json();
 
             if (data.success) {
+                // Update Vault Status
+                try {
+                    const vault = JSON.parse(localStorage.getItem('sovereign_vault') || '[]');
+                    const updatedVault = vault.map((l: any) => l.id === leadId ? { ...l, synced: true } : l);
+                    localStorage.setItem('sovereign_vault', JSON.stringify(updatedVault));
+                } catch (e) {}
+
                 setStatus('success');
                 sendGAEvent('event', 'generate_lead', {
                     project_name: projectName,

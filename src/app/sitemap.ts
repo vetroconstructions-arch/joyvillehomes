@@ -5,27 +5,32 @@ import { localities } from '@/data/localities';
 import { experts } from '@/data/experts';
 import { TOPIC_HUBS } from '@/data/TopicIntelligence';
 import { NRI_REGIONS } from '@/data/GlobalNRI';
-import { SEO_ROUTES } from './properties/[seoSlug]/page';
+import { SEO_ROUTES } from '@/data/seo-routes';
+import { generateUnitSlug } from '@/utils/seo-utils';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://joyville-homes.com';
 
-    // Phase 16.8: Use genuinely recent dates per-route instead of a single date
+    // Phase 38: Cap all dates to today — future-dated lastmod suppresses Google indexing
+    const today = new Date();
+    const capDate = (date: Date): Date => date > today ? today : date;
+
     const getGeneralLastMod = () => {
         const projectDates = projects.map(p => p.lastDataAudit ? new Date(p.lastDataAudit).getTime() : 0);
         const blogDates = blogs.map(b => new Date(b.date).getTime());
-        return new Date(Math.max(...projectDates, ...blogDates, new Date('2024-03-25').getTime()));
+        const raw = new Date(Math.max(...projectDates, ...blogDates, new Date('2024-03-25').getTime()));
+        return capDate(raw);
     };
 
     const generalLastMod = getGeneralLastMod();
-    const today = new Date(); // Dynamic freshness signal for hub pages
 
+    // Phase 38: Tiered priority system — if everything is priority 1, nothing is
     const baseRoutes: MetadataRoute.Sitemap = [
         {
             url: `${baseUrl}`,
-            lastModified: today, // Homepage always fresh
-            changeFrequency: 'always',
-            priority: 1.0,
+            lastModified: today,
+            changeFrequency: 'daily',
+            priority: 1.0, // Homepage — sole priority 1.0
         },
         {
             url: `${baseUrl}/projects`,
@@ -36,104 +41,108 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: `${baseUrl}/location`,
             lastModified: generalLastMod,
-            changeFrequency: 'daily',
-            priority: 0.9,
+            changeFrequency: 'weekly',
+            priority: 0.85,
         },
         {
             url: `${baseUrl}/amenities`,
             lastModified: generalLastMod,
             changeFrequency: 'weekly',
-            priority: 0.8,
+            priority: 0.7,
         },
         {
             url: `${baseUrl}/insights`,
-            lastModified: today, // Content hub always fresh
-            changeFrequency: 'always',
-            priority: 1.0,
+            lastModified: today,
+            changeFrequency: 'daily',
+            priority: 0.9,
         },
         {
             url: `${baseUrl}/media`,
             lastModified: generalLastMod,
             changeFrequency: 'monthly',
-            priority: 0.7,
+            priority: 0.5,
         },
         {
             url: `${baseUrl}/press-research`,
             lastModified: today,
-            changeFrequency: 'daily',
-            priority: 0.95,
+            changeFrequency: 'weekly',
+            priority: 0.85,
         },
         {
             url: `${baseUrl}/locality/compare`,
             lastModified: today,
-            changeFrequency: 'daily',
-            priority: 0.95,
+            changeFrequency: 'weekly',
+            priority: 0.85,
         },
         {
             url: `${baseUrl}/pune-real-estate-guide`,
             lastModified: generalLastMod,
             changeFrequency: 'weekly',
-            priority: 0.85,
+            priority: 0.8,
         },
         {
             url: `${baseUrl}/pune-real-estate-market`,
-            lastModified: today,
-            changeFrequency: 'daily',
-            priority: 1.0,
-        },
-        {
-            url: `${baseUrl}/insights/joyville-vs-competitors`,
             lastModified: today,
             changeFrequency: 'weekly',
             priority: 0.9,
         },
         {
+            url: `${baseUrl}/insights/joyville-vs-competitors`,
+            lastModified: today,
+            changeFrequency: 'weekly',
+            priority: 0.85,
+        },
+        {
             url: `${baseUrl}/flats-in-pune`,
-            lastModified: today, // High-intent directory — always fresh
+            lastModified: today,
             changeFrequency: 'daily',
-            priority: 1.0,
+            priority: 0.95,
         },
         {
             url: `${baseUrl}/glossary`,
             lastModified: generalLastMod,
             changeFrequency: 'monthly',
-            priority: 0.8,
+            priority: 0.5,
         },
         {
             url: `${baseUrl}/insights/matchmaker`,
             lastModified: today,
-            changeFrequency: 'always',
-            priority: 1.0,
+            changeFrequency: 'weekly',
+            priority: 0.8,
         },
     ];
 
-    // Phase 16.8: Per-project lastModified using lastDataAudit for genuine freshness
+    // Phase 38: Per-project lastModified — capped to prevent future dates
     const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => {
-        const lastMod = project.lastDataAudit ? new Date(project.lastDataAudit) : generalLastMod;
+        const rawDate = project.lastDataAudit ? new Date(project.lastDataAudit) : generalLastMod;
         return {
             url: `${baseUrl}/projects/${project.slug}`,
-            lastModified: lastMod,
-            changeFrequency: 'daily',
-            priority: 1.0,
+            lastModified: capDate(rawDate),
+            changeFrequency: 'weekly',
+            priority: 0.9,
         };
     });
 
-    // Phase 16.8: PSEO routes use today's date since they're dynamically generated
-    const programmaticRoutes: MetadataRoute.Sitemap = SEO_ROUTES.map((route) => ({
-        url: `${baseUrl}/properties/${route.slug}`,
-        lastModified: today,
-        changeFrequency: 'always',
-        priority: 1.0,
-    }));
+    // Phase 38: PSEO routes — tiered down from 1.0 to prevent priority dilution
+    const programmaticRoutes: MetadataRoute.Sitemap = SEO_ROUTES.map((route) => {
+        const isCorporate = route.slug.includes('wipro') || route.slug.includes('infosys') || route.slug.includes('tcs') || route.slug.includes('cognizant');
+        return {
+            url: `${baseUrl}/properties/${route.slug}`,
+            lastModified: today,
+            changeFrequency: 'weekly',
+            priority: isCorporate ? 0.92 : 0.75, // Higher priority for high-intent corporate routes
+        };
+    });
 
     // Blog routes use actual publication dates for genuine freshness
+    // Phase 38: Blog routes — cap future dates to today
     const blogRoutes: MetadataRoute.Sitemap = blogs.map((blog) => {
         const isClusterGuide = blog.category === 'Master Guides' || blog.category === 'Project Clusters';
         return {
             url: `${baseUrl}/insights/${blog.slug}`,
-            lastModified: new Date(blog.date),
-            changeFrequency: isClusterGuide ? 'always' : 'monthly',
-            priority: isClusterGuide ? 0.95 : 0.8,
+            lastModified: capDate(new Date(blog.date)),
+            changeFrequency: isClusterGuide ? 'weekly' : 'monthly',
+            priority: isClusterGuide ? 0.85 : 0.75,
         };
     });
 
@@ -141,36 +150,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${baseUrl}/locality/${loc.slug}`,
         lastModified: today,
         changeFrequency: 'weekly', 
-        priority: 0.9,
+        priority: 0.8,
     }));
 
     const authorRoutes: MetadataRoute.Sitemap = experts.map(expert => ({
         url: `${baseUrl}/insights/author/${expert.id}`,
-        lastModified: today, // Freshness signal for experts
-        changeFrequency: 'weekly',
-        priority: 0.85,
+        lastModified: today,
+        changeFrequency: 'monthly',
+        priority: 0.6,
     }));
 
     const topicRoutes: MetadataRoute.Sitemap = TOPIC_HUBS.map(topic => ({
         url: `${baseUrl}/insights/topic/${topic.id}`,
         lastModified: today,
-        changeFrequency: 'daily',
-        priority: 0.9,
+        changeFrequency: 'weekly',
+        priority: 0.8,
     }));
 
     const regionalNRIRoutes: MetadataRoute.Sitemap = NRI_REGIONS.map(region => ({
         url: `${baseUrl}/insights/nri/region/${region.id}`,
         lastModified: today,
-        changeFrequency: 'weekly',
-        priority: 0.85,
+        changeFrequency: 'monthly',
+        priority: 0.7,
     }));
 
-    const projectInsiderRoutes: MetadataRoute.Sitemap = projects.map(project => ({
-        url: `${baseUrl}/projects/${project.slug}/insider`,
-        lastModified: today,
-        changeFrequency: 'daily',
-        priority: 0.9,
-    }));
+    const unitRoutes: MetadataRoute.Sitemap = projects.flatMap(project => 
+        project.floorPlans.map(plan => ({
+            url: `${baseUrl}/properties/unit/${generateUnitSlug(project.title, plan.type, project.location)}`,
+            lastModified: today,
+            changeFrequency: 'weekly',
+            priority: 0.82, // High intent deep links
+        }))
+    );
 
-    return [...baseRoutes, ...projectRoutes, ...blogRoutes, ...localityRoutes, ...programmaticRoutes, ...authorRoutes, ...topicRoutes, ...regionalNRIRoutes, ...projectInsiderRoutes];
+    return [...baseRoutes, ...projectRoutes, ...blogRoutes, ...localityRoutes, ...programmaticRoutes, ...authorRoutes, ...topicRoutes, ...regionalNRIRoutes, ...unitRoutes];
 }

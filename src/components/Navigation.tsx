@@ -9,6 +9,7 @@ import dynamic from "next/dynamic";
 import { projects } from "@/data/projects";
 
 import { useCurrency } from "@/context/CurrencyContext";
+import CurrencyToggle from "./CurrencyToggle";
 
 const QuickEnquireModal = dynamic(() => import("./QuickEnquireModal"), {
     ssr: false, // Defer hydration until client to reduce Main Thread blocking
@@ -45,7 +46,7 @@ export default function Navigation() {
     }, [isMobileMenuOpen]);
 
     const navBackground = (isScrolled || !isHomePage)
-        ? 'bg-[#EEF2F6]/95 backdrop-blur-2xl border-b border-[#C5A059]/50 shadow-[0_15px_40px_rgba(0,0,0,0.1)] py-4'
+        ? 'bg-[#EEF2F6]/90 backdrop-blur-2xl backdrop-saturate-[1.8] border-b border-[#C5A059]/50 shadow-[0_15px_40px_rgba(0,0,0,0.1)] py-4'
         : 'bg-transparent py-8';
 
     const textColor = (isScrolled || !isHomePage) ? 'text-[#323334] font-medium' : 'text-[#323334] font-medium';
@@ -141,18 +142,7 @@ export default function Navigation() {
 
                     {/* Currency, Enquire Button & Mobile Toggle */}
                     <div className="flex items-center gap-4 md:gap-6 z-20">
-                        {/* Currency Switcher */}
-                        <div className="hidden sm:flex items-center gap-1 border border-[#C5A059]/30 rounded-full p-1 bg-[#FFFFFF]/30 backdrop-blur-sm">
-                            {(['INR', 'USD', 'AED'] as const).map((curr) => (
-                                <button
-                                    key={curr}
-                                    onClick={() => setCurrency(curr)}
-                                    className={`px-3 py-1.5 rounded-full text-[9px] font-bold tracking-widest transition-all ${currency === curr ? 'bg-[#1D4F9C] text-[#FFFFFF] shadow-sm' : 'text-[#323334]/50 hover:text-[#1D4F9C]'}`}
-                                >
-                                    {curr}
-                                </button>
-                            ))}
-                        </div>
+                        <CurrencyToggle />
 
                         <button
                             onClick={() => setIsEnquireModalOpen(true)}
@@ -227,7 +217,7 @@ export default function Navigation() {
                         animate={{ opacity: 1, clipPath: "circle(150% at 100% 0)" }}
                         exit={{ opacity: 0, clipPath: "circle(0% at 100% 0)" }}
                         transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
-                        className="fixed inset-0 z-[90] bg-[#FFFFFF] flex flex-col justify-center px-10"
+                        className="fixed inset-0 z-[90] bg-[#FFFFFF] flex flex-col justify-center px-10 pb-[max(env(safe-area-inset-bottom),_2rem)] overflow-y-auto overscroll-contain"
                     >
                         {/* Drawer Background Pattern */}
                         <div className="absolute inset-0 bg-[url('/images/desktop-poster.webp')] bg-cover bg-center opacity-5 mix-blend-luminosity pointer-events-none" />

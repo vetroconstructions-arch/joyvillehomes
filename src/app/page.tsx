@@ -1,14 +1,19 @@
 import { Metadata } from 'next';
 export const dynamic = 'force-static';
 import HomeClient from '@/components/HomeClient';
+import InfrastructurePulse from '@/components/InfrastructurePulse';
 import SGEAnswerHub from '@/components/SGEAnswerHub';
 import Link from 'next/link';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { KEYWORD_MATRIX } from '@/data/KeywordIntelligence';
+import { SEMANTIC_MESH } from '@/data/semanticLinking';
 
 export const metadata: Metadata = {
     title: "Pune Real Estate Market 2026 | Joyville Homes by Shapoorji Pallonji",
     description: "Dominating the Pune Real Estate Market: Official Joyville Pune by Shapoorji Pallonji Real Estate. Explore 9 premium projects across Hinjewadi, Hadapsar & Bavdhan. 2 & 3 BHK flats starting ₹65 Lakhs. RERA approved.",
     keywords: [
+        ...KEYWORD_MATRIX.MACRO_PUNE,
+        ...KEYWORD_MATRIX.SITE_WIDE_HARDENED_KEYWORDS,
         "Pune real estate market", "Pune real estate 2026", "buy property in Pune", "top real estate developer Pune", "Pune real estate investment",
         "Joyville Homes Pune", "Shapoorji Pallonji Pune", "Shapoorji Pallonji Real Estate Pune", 
         "Joyville Sensorium", "Joyville Vyomora", "Joyville Hadapsar Annexe", "Joyville Celestia", "Joyville Skyluxe Edition", "Wildernest SP Kingstown", "Vanaha Bavdhan", "Vanaha Golfland", "Vanaha Springs",
@@ -24,6 +29,10 @@ export default function Home() {
     return (
         <>
             <HomeClient />
+            
+            <section className="max-w-7xl mx-auto px-6 mt-12 mb-12">
+                <InfrastructurePulse />
+            </section>
             
             {/* Phase 33: Homepage Matchmaker Funnel */}
             <section className="bg-[#FFFFFF] py-24 border-y border-[#C5A059]/10">
@@ -69,6 +78,29 @@ export default function Home() {
             </section>
 
             <SGEAnswerHub />
+
+            {/* Task 3: Homepage Technical SEO Mesh — Shadow Indexing (Crawler Visible) */}
+            <section className="sr-only" aria-hidden="true">
+                <h2>Shapoorji Pallonji Joyville Pune Search Index 2026</h2>
+                <div className="flex flex-wrap gap-2">
+                    {Object.values(KEYWORD_MATRIX).flat().filter((kw): kw is string => typeof kw === 'string').map((kw, i) => (
+                        <span key={i}>{kw}</span>
+                    ))}
+                    {SEMANTIC_MESH.map((mesh, i) => (
+                        <div key={i}>
+                            <h3>{mesh.category}</h3>
+                            <p>{mesh.description}</p>
+                            <ul>
+                                {mesh.entities.map(e => <li key={e}>{e}</li>)}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+                <p>
+                    Official Joyville Pune projects including Joyville Vyomora, Sensorium, Hadapsar Annexe, Celestia, Skyluxe Edition, Wildernest at SP Kingstown, and Vanaha Golfland. Providing premium 2 BHK and 3 BHK flats with world-class amenities and Mivan construction technology in Hinjewadi, Hadapsar, and Bavdhan.
+                    Authored and reviewed by Pune real estate analysts: Vikas Sharma, Ananya Deshpande, and Rajesh Kulkarni.
+                </p>
+            </section>
         </>
     );
 }

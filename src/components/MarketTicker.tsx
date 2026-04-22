@@ -11,11 +11,11 @@ interface MarketStat {
 }
 
 const marketStats: MarketStat[] = [
-    { locality: 'Hinjewadi Ph 1', avgPrice: 8450, change: 1.2, trend: 'up' },
-    { locality: 'Hadapsar Annexe', avgPrice: 7200, change: 0.8, trend: 'up' },
-    { locality: 'Bavdhan Peak', avgPrice: 9100, change: -0.4, trend: 'down' },
-    { locality: 'Manjari Corridor', avgPrice: 6850, change: 2.1, trend: 'up' },
-    { locality: 'Kharadi Extension', avgPrice: 10200, change: 0.5, trend: 'up' },
+    { locality: 'Joyville Hinjewadi', avgPrice: 8450, change: 1.2, trend: 'up' },
+    { locality: 'Joyville Hadapsar', avgPrice: 7200, change: 0.8, trend: 'up' },
+    { locality: 'Vanaha Bavdhan', avgPrice: 9100, change: -0.4, trend: 'down' },
+    { locality: 'Skyluxe Hadapsar', avgPrice: 10850, change: 2.1, trend: 'up' },
+    { locality: 'Sensorium Ph 1', avgPrice: 10200, change: 0.5, trend: 'up' },
 ];
 
 export default function MarketTicker() {

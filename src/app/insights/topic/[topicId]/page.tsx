@@ -53,6 +53,44 @@ export default async function TopicHubPage({ params }: { params: Promise<{ topic
     const relevantBlogs = blogs.filter(b => b.topicID?.includes(topic.id));
     const relevantProjects = projects.filter(p => p.topicIDs?.includes(topic.id));
 
+    const breadcrumbLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": siteUrl
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Insights",
+                "item": `${siteUrl}/insights`
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": topic.title,
+                "item": `${siteUrl}/insights/topic/${topic.id}`
+            }
+        ]
+    };
+
+    const faqLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": topic.faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.a
+            }
+        }))
+    };
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
@@ -82,6 +120,8 @@ export default async function TopicHubPage({ params }: { params: Promise<{ topic
     return (
         <main className="min-h-screen bg-[#EEF2F6] text-[#323334]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
             
             {/* Topic Hero Section */}
             <section className="relative pt-40 pb-24 overflow-hidden bg-[#FFFFFF]">

@@ -49,7 +49,32 @@ export default async function ExpertProfilePage({ params }: { params: Promise<{ 
     const relevantBlogs = blogs.filter(b => b.author === expert.name || b.expertAuthor?.name === expert.name);
     const relevantProjects = projects.filter(p => p.expertReview && p.expertReview.expertId === expert.id);
 
-    const jsonLd = {
+    const breadcrumbLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": siteUrl
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Insights",
+                "item": `${siteUrl}/insights`
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": expert.name,
+                "item": `${siteUrl}/insights/author/${expert.id}`
+            }
+        ]
+    };
+
+    const personLd = {
         "@context": "https://schema.org",
         "@type": "Person",
         "@id": `${siteUrl}/insights/author/${expert.id}/#person`,
@@ -61,17 +86,26 @@ export default async function ExpertProfilePage({ params }: { params: Promise<{ 
             expert.linkedIn,
             expert.twitter
         ].filter(Boolean),
-        "affiliation": {
+        "worksFor": {
             "@type": "Organization",
-            "name": "Shapoorji Pallonji Real Estate"
+            "name": "Shapoorji Pallonji Real Estate",
+            "url": siteUrl
         },
-        "award": expert.certification?.map(c => c.name),
         "url": `${siteUrl}/insights/author/${expert.id}`
+    };
+
+    const profilePageLd = {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "mainEntity": { "@id": `${siteUrl}/insights/author/${expert.id}/#person` },
+        "breadcrumb": { "@id": `${siteUrl}/insights/author/${expert.id}/#breadcrumb` }
     };
 
     return (
         <main className="min-h-screen bg-[#EEF2F6] text-[#323334]">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageLd) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
             
             {/* Author Hero */}
             <section className="relative pt-40 pb-20 overflow-hidden bg-[#FFFFFF]">

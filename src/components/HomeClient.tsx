@@ -86,8 +86,9 @@ export default function HomeClient() {
               initial={{ opacity: 1, y: 0 }} // LCP Optimization: Visible immediately
               animate={{ y: [10, 0], opacity: [0.9, 1] }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="text-6xl md:text-7xl lg:text-8xl font-serif text-[#323334] font-light leading-[1.05] tracking-tight mb-8"
+              className="text-5xl md:text-7xl lg:text-8xl font-serif text-[#323334] font-light leading-[1.05] tracking-tight mb-8"
             >
+              <span className="block text-[10px] md:text-xs font-bold tracking-[0.5em] text-[#1D4F9C]/50 mb-4 sm:mb-6 uppercase">Shapoorji Pallonji Joyville Pune</span>
               <span className="text-[#1D4F9C] italic text-gradient">Joyville Vyomora</span> <br />
               New Launch in Hinjewadi.
             </motion.h1>

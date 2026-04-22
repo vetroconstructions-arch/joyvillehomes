@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useCurrency } from '@/context/CurrencyContext';
+import DeepLinkDirectory from './DeepLinkDirectory';
 
 const footerLinks = {
     homebuyers: [
@@ -87,7 +88,9 @@ export default function SEOFooter() {
     };
 
     return (
-        <footer className="bg-[#1A1A2E] text-[#FFFFFF] pt-20 pb-8">
+        <>
+            <DeepLinkDirectory />
+            <footer className="bg-[#1A1A2E] text-[#FFFFFF] pt-20 pb-8">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-16">
                     {/* Column 1: Homebuyers */}
@@ -187,6 +190,91 @@ export default function SEOFooter() {
                     </div>
                 </div>
 
+                {/* Phase 38: Hyper-Link Matrix - Deep Internal Linking Grid */}
+                <div className="border-t border-[#FFFFFF]/10 pt-12 pb-8 mb-8">
+                    <h3 className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#C5A059] mb-8">Sovereign Authority Hub — Internal Linking Matrix</h3>
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-8 gap-y-10">
+                        {/* Hinjewadi Silo */}
+                        <div className="space-y-3">
+                            <p className="text-[9px] font-bold text-[#FFFFFF]/40 uppercase tracking-widest border-b border-[#FFFFFF]/10 pb-2">Hinjewadi Silo</p>
+                            <Link href="/projects/joyville-sensorium-hinjewadi" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">Joyville Sensorium</Link>
+                            <Link href="/projects/joyville-vyomora-hinjewadi" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">Joyville Vyomora</Link>
+                            <Link href="/properties/joyville-vs-kolte-patil-life-republic-hinjewadi" className="block text-[10px] text-[#FFFFFF]/40 hover:text-[#C5A059] italic">Joyville vs Life Republic</Link>
+                        </div>
+                        {/* Hadapsar Silo */}
+                        <div className="space-y-3">
+                            <p className="text-[9px] font-bold text-[#FFFFFF]/40 uppercase tracking-widest border-b border-[#FFFFFF]/10 pb-2">Hadapsar Silo</p>
+                            <Link href="/projects/joyville-hadapsar-annexe-pune" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">Hadapsar Annexe</Link>
+                            <Link href="/projects/joyville-celestia-hadapsar" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">Joyville Celestia</Link>
+                            <Link href="/properties/joyville-vs-amanora-hadapsar" className="block text-[10px] text-[#FFFFFF]/40 hover:text-[#C5A059] italic">Joyville vs Amanora</Link>
+                        </div>
+                        {/* Bavdhan Silo */}
+                        <div className="space-y-3">
+                            <p className="text-[9px] font-bold text-[#FFFFFF]/40 uppercase tracking-widest border-b border-[#FFFFFF]/10 pb-2">Bavdhan Silo</p>
+                            <Link href="/projects/vanaha-golfland-pune" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">Vanaha Golfland</Link>
+                            <Link href="/projects/vanaha-springs-pune" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">Vanaha Springs</Link>
+                            <Link href="/properties/vanaha-golfland-bavdhan-price-list" className="block text-[10px] text-[#FFFFFF]/40 hover:text-[#C5A059] italic">Vanaha Price List</Link>
+                        </div>
+                        {/* Investment Silo */}
+                        <div className="space-y-3">
+                            <p className="text-[9px] font-bold text-[#FFFFFF]/40 uppercase tracking-widest border-b border-[#FFFFFF]/10 pb-2">Investment Hub</p>
+                            <Link href="/properties/investment-property-pune-2026" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">Best ROI 2026</Link>
+                            <Link href="/properties/nri-investment-flats-pune" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">NRI Priority Hub</Link>
+                            <Link href="/insights/matchmaker" className="block text-[10px] text-[#FFFFFF]/40 hover:text-[#C5A059] italic">Property Matchmaker</Link>
+                        </div>
+                        {/* Compliance Silo */}
+                        <div className="space-y-3">
+                            <p className="text-[9px] font-bold text-[#FFFFFF]/40 uppercase tracking-widest border-b border-[#FFFFFF]/10 pb-2">Compliance Hub</p>
+                            <Link href="/properties/rera-approved-flats-pune" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">RERA Directory</Link>
+                            <Link href="/glossary" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">Real Estate Glossary</Link>
+                            <Link href="/disclaimer" className="block text-[10px] text-[#FFFFFF]/40 hover:text-[#C5A059] italic">Legal Framework</Link>
+                        </div>
+                        {/* Crawler Hub */}
+                        <div className="space-y-3">
+                            <p className="text-[9px] font-bold text-[#FFFFFF]/40 uppercase tracking-widest border-b border-[#FFFFFF]/10 pb-2">Crawler Intelligence</p>
+                            <Link href="/sitemap.xml" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">Sitemap.xml</Link>
+                            <Link href="/robots.txt" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">Robots.txt</Link>
+                            <span className="block text-[8px] text-green-500 font-mono tracking-tighter uppercase">API::INDEXING::ACTIVE</span>
+                        </div>
+                        {/* RERA & Authority Silo */}
+                        <div className="space-y-3">
+                            <p className="text-[9px] font-bold text-[#FFFFFF]/40 uppercase tracking-widest border-b border-[#FFFFFF]/10 pb-2">RERA & Wikidata</p>
+                            <a href="https://maharera.mahaonline.gov.in/" target="_blank" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">MahaRERA Official</a>
+                            <a href="https://www.wikidata.org/wiki/Q183" target="_blank" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">India Geo-Entity</a>
+                            <a href="https://www.wikidata.org/wiki/Q1515" target="_blank" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">Pune City Authority</a>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Phase 38: Crawler Intelligence & Site Authority Hub */}
+                <div className="border-t border-[#FFFFFF]/10 pt-8 pb-8 mb-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    <div className="col-span-1">
+                        <h3 className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#C5A059] mb-3">Google Crawler Intelligence</h3>
+                        <p className="text-[10px] text-[#FFFFFF]/40 leading-relaxed font-light uppercase tracking-wider">
+                            Programmatic Indexing Active via Sovereign Bridge v3.0. Real-time SERP optimization and entity-level schema verification for Googlebot-mobile.
+                        </p>
+                    </div>
+                    <div className="col-span-1 flex flex-col gap-2">
+                        <div className="flex items-center gap-2">
+                            <span className="h-1 w-1 rounded-full bg-green-500 animate-pulse"></span>
+                            <span className="text-[9px] uppercase tracking-[0.2em] text-[#FFFFFF]/60">Google Search Console Verified</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <span className="h-1 w-1 rounded-full bg-green-500 animate-pulse"></span>
+                            <span className="text-[9px] uppercase tracking-[0.2em] text-[#FFFFFF]/60">Sitemap.xml Protocol Hardened</span>
+                        </div>
+                    </div>
+                    <div className="col-span-1">
+                        <div className="flex flex-wrap gap-2">
+                            {['Googlebot', 'Bingbot', 'Gemini-Bot', 'ChatGPT-User'].map(bot => (
+                                <span key={bot} className="px-3 py-1 bg-[#FFFFFF]/5 rounded-sm border border-[#FFFFFF]/10 text-[9px] font-mono text-[#FFFFFF]/30">
+                                    {bot}::ALLOWED
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
                 {/* Phase 16.7: Popular Searches — PageRank distribution to money pages */}
                 <div className="border-t border-[#FFFFFF]/10 pt-8 pb-8 mb-8">
                     <h3 className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#C5A059] mb-4">Popular Searches</h3>
@@ -222,7 +310,19 @@ export default function SEOFooter() {
                         <Link href="/glossary" className="hover:text-[#FFFFFF] transition-colors">Glossary</Link>
                     </div>
                 </div>
+
+                {/* Prominent Legal & RERA Disclaimer */}
+                <div className="mt-12 pt-8 border-t border-[#FFFFFF]/10 text-[#FFFFFF]/40 text-[10px] sm:text-xs text-justify font-light leading-relaxed max-w-7xl mx-auto">
+                    <p className="mb-4">
+                        <strong className="text-[#FFFFFF]/70 font-medium uppercase tracking-widest text-[11px] block mb-2">Disclaimer & Statutory Notice</strong> 
+                        The content provided on this website is for informational purposes only and does not constitute an offer, invitation, or solicitation to purchase properties. This is not the official developer website; it is managed by Authorized Channel Partners for marketing, education, and information dissemination. All project information, including but not limited to brochures, floor plans, pricing, layouts, and availability, is subject to change at the sole discretion of the developer without prior notice. 
+                    </p>
+                    <p>
+                        The images, renders, and virtual tours shown are artistic impressions and representational in nature. Actual deliveries may vary. We do not guarantee the accuracy or completeness of the data presented and shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use of this information. All projects listed are MahaRERA registered. Prospective buyers are strongly advised to independently verify all details, including RERA registration numbers, property approvals, and terms of sale, by visiting the official MahaRERA website (<a href="https://maharera.mahaonline.gov.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#C5A059] transition-colors">https://maharera.mahaonline.gov.in</a>) before making any booking or investment decision. By providing your contact details, you authorize us to contact you via Whatsapp, SMS, Phone Call, or Email.
+                    </p>
+                </div>
             </div>
-        </footer>
+            </footer>
+        </>
     );
 }

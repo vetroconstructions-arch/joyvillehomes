@@ -36,12 +36,12 @@ export default function robots(): MetadataRoute.Robots {
             },
             // Secure SGE & AI Search presence (Gemini, ChatGPT, Claude)
             {
-                userAgent: ['GPTBot', 'ChatGPT-User', 'anthropic-ai', 'ClaudeBot', 'Google-Extended', 'OAI-SearchBot', 'PerplexityBot', 'YouBot'], 
+                userAgent: ['GPTBot', 'ChatGPT-User', 'anthropic-ai', 'ClaudeBot', 'Google-Extended', 'OAI-SearchBot', 'PerplexityBot', 'YouBot', 'clark', 'Crystale', 'FacebookBot', 'ImagesiftBot', 'PetalBot'], 
                 allow: ['/', '/ai-manifest.json'],
             },
             // Block invasive/low-value scrapers
             {
-                userAgent: ['CCBot', 'Omigili', 'FacebookBot', 'Twitterbot', 'GPTBot-Mobile'],
+                userAgent: ['CCBot', 'Omigili', 'Twitterbot', 'GPTBot-Mobile'],
                 disallow: ['/'],
             }
         ],

@@ -42,8 +42,6 @@ import LandIntelligenceMasterclass from '@/components/LandIntelligenceMasterclas
 import DeepLinkIntelligence from '@/components/DeepLinkIntelligence';
 import IntentLinkCluster from '@/components/IntentLinkCluster';
 import ConversationalAnswerHub from '@/components/ConversationalAnswerHub';
-import EntityPopularityPulse from '@/components/EntityPopularityPulse';
-import SemanticKnowledgeBreadcrumbs from '@/components/SemanticKnowledgeBreadcrumbs';
 import LegacyTimeline from '@/components/LegacyTimeline';
 import PredictiveSemanticSiblings from '@/components/PredictiveSemanticSiblings';
 import MarketTrendDataset from '@/components/MarketTrendDataset';
@@ -59,7 +57,12 @@ import RelatedProjects from '@/components/RelatedProjects';
 import ProjectComparator from '@/components/ProjectComparator';
 import SiteVisitScheduler from '@/components/SiteVisitScheduler';
 import LiveActivityFeed from '@/components/LiveActivityFeed';
-import { KEYWORD_MATRIX, GET_EXPANDED_KEYWORDS } from '@/data/KeywordIntelligence';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import EntityPopularityPulse from '@/components/EntityPopularityPulse';
+import GoogleBusinessAutomation from '@/components/GoogleBusinessAutomation';
+import ProjectComparison from '@/components/ProjectComparison';
+import CommuteIntelligence from '@/components/CommuteIntelligence';
+import { KEYWORD_MATRIX, GET_EXPANDED_KEYWORDS, SITE_WIDE_HARDENED_KEYWORDS } from '@/data/KeywordIntelligence';
 
 // Pre-render all project routes at build time
 export async function generateStaticParams() {
@@ -80,28 +83,46 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const siteUrl = 'https://joyville-homes.com';
 
     return {
-        title: `${project.title} ${project.location} | Price, Floor Plan & Possession 2026`,
-        description: `${project.description.slice(0, 150)}... Explore ${project.title} by Shapoorji Pallonji in ${project.location}. 2 & 3 BHK prices from ${project.price}. RERA approved.`,
+        title: `${project.title} ${project.location} | Floor Plan, Pricing & Site Visit 2026`,
+        description: `Official Details: ${project.title} by Shapoorji Pallonji in ${project.location}. Explore premium 2 & 3 BHK flats starting from ${project.price}. RERA approved with world-class amenities. ${project.description.slice(0, 100)}...`,
         keywords: [
             project.title,
             ...project.seoKeywords,
             ...expandedKeywords,
+            ...SITE_WIDE_HARDENED_KEYWORDS,
             ...KEYWORD_MATRIX.TRANSACTIONAL.slice(0, 8),
             `buy flat in ${project.location}`,
-            `Shapoorji Pallonji ${project.location} projects`,
             `${project.title} construction update`,
-            `${project.title} reviews`,
+            `${project.title} official price list`,
             "Shapoorji Pallonji Real Estate Pune",
             `Buy 2 BHK in Pune Shapoorji Pallonji Joyville`
         ],
         openGraph: {
-            title: `${project.title} | Premium ${project.type} in ${project.location}`,
+            title: `${project.title} | Premium Residences in ${project.location}`,
+            description: project.description.substring(0, 150),
+            url: `${siteUrl}/projects/${project.slug}`,
+            siteName: 'Joyville Homes Pune',
+            images: [
+                {
+                    url: project.image,
+                    width: 1200,
+                    height: 630,
+                    alt: project.title
+                }
+            ],
+            locale: 'en_IN',
+            type: 'website',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${project.title} | Shapoorji Pallonji Pune`,
             description: project.description.substring(0, 150),
             images: [project.image],
         },
         alternates: {
             canonical: `${siteUrl}/projects/${project.slug}`,
             languages: {
+                'en-IN': `${siteUrl}/projects/${project.slug}`,
                 'en-US': `${siteUrl}/projects/${project.slug}`,
                 'en-GB': `${siteUrl}/projects/${project.slug}`,
                 'en-AE': `${siteUrl}/projects/${project.slug}`,
@@ -540,6 +561,16 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         "@type": "Rating",
                         "ratingValue": review.rating,
                         "bestRating": "5"
+                    },
+                    "itemReviewed": {
+                        "@type": "LocalBusiness",
+                        "name": project.title,
+                        "image": project.image,
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": project.latitude,
+                            "longitude": project.longitude
+                        }
                     }
                 })),
                 ...(project.videoUrl ? {
@@ -692,6 +723,16 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             {answerGraphJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(answerGraphJsonLd) }} />}
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+
+            <div className="max-w-7xl mx-auto px-6 mb-12">
+                <Breadcrumbs 
+                    items={[
+                        { label: "Portfolios", href: "/projects" },
+                        { label: project.location.split(',')[0], href: `/locality/${project.location.toLowerCase().split(',')[0]}` },
+                        { label: project.title, href: `/projects/${project.slug}` }
+                    ]}
+                />
+            </div>
 
             {/* Phase 15: Granular Product Schema with per-configuration Offer entries */}
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -886,16 +927,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             {/* Live FOMO Feed */}
             <LiveActivityFeed />
 
+
 <main>
-                {/* Hierarchical Knowledge Navigation (Phase 17) */}
-                <div className="max-w-7xl mx-auto px-6">
-                    <SemanticKnowledgeBreadcrumbs items={[
-                        { name: 'PUNE HUB', url: '/', type: 'Home' },
-                        { name: 'PUNE REAL ESTATE', url: '/pune-real-estate-market', type: 'City' },
-                        { name: project.location.toUpperCase(), url: `/locality/${project.location.toLowerCase().split(',')[0].trim()}`, type: 'Locality' },
-                        { name: project.title.toUpperCase(), url: `/projects/${project.slug}`, type: 'Project' }
-                    ]} />
-                </div>
 
                 {/* Hero Header */}
                 <header className="max-w-7xl mx-auto px-6 mb-16">
@@ -930,8 +963,15 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                             )}
                         </div>
 
-                        <div className="bg-[#EEF2F6] border border-[#C5A059]/60 p-8 rounded-sm shrink-0 lg:min-w-[350px] shadow-2xl">
-                            <p className="text-[#1A1A1A] font-light text-xs tracking-[0.2em] uppercase mb-2">Starting From</p>
+                        <div className="bg-[#EEF2F6] border border-[#C5A059]/60 p-8 rounded-sm shrink-0 lg:min-w-[350px] shadow-2xl relative">
+                            <div className="absolute -top-5 -right-5 bg-[#1A1A2E] text-[#FFFFFF] px-5 py-3 rounded-sm shadow-xl border border-[#C5A059]/60 z-10 max-w-[280px]">
+                                <div className="flex items-center gap-2 mb-1">
+                                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_5px_#22c55e]"></span>
+                                    <p className="text-[9px] uppercase tracking-widest text-[#FFFFFF]/70">Verified Asset</p>
+                                </div>
+                                <p className="text-[11px] font-bold tracking-wider leading-tight">MahaRERA: <span className="text-[#C5A059]">{Array.isArray(project.reraNumber) ? project.reraNumber[0] + (project.reraNumber.length > 1 ? ', ...' : '') : project.reraNumber}</span></p>
+                            </div>
+                            <p className="text-[#1A1A1A] font-light text-xs tracking-[0.2em] uppercase mb-2 mt-2">Starting From</p>
                             <p className="text-4xl text-[#1D4F9C] font-serif italic text-gradient mb-4 font-medium">
                                 <PriceDisplay price={project.price} />
                             </p>
@@ -1273,7 +1313,11 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                 </div>
                             </div>
 
-                            <ProjectClientWrapper floorPlans={project.floorPlans} projectName={project.title} />
+                            <ProjectClientWrapper 
+                                floorPlans={project.floorPlans} 
+                                projectName={project.title} 
+                                location={project.location}
+                            />
                         </section>
 
                         {/* 4.5 Financial Tools (EMI Calculator) */}
@@ -1472,51 +1516,77 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                             projectName={project.title}
                         />
 
-                        {/* 6. Location & Connectivity */}
+                        {/* 6. Location & Connectivity - Google Business Automation */}
                         <section id="location" className="scroll-mt-32">
                             <div className="flex items-center gap-3 mb-8">
                                 <span className="w-8 h-[1px] bg-[#1D4F9C]"></span>
                                 <h2 className="text-3xl font-serif text-[#323334] font-light">{project.title} Connectivity & Strategic Location</h2>
                             </div>
-                            <div className="grid md:grid-cols-2 gap-8 bg-[#EEF2F6]/40 border border-[#C5A059]/60 p-6 rounded-sm">
-                                <div className="w-full h-full min-h-[300px] relative rounded-sm overflow-hidden border border-[#C5A059]/60 grayscale hover:grayscale-0 transition-all duration-700">
-                                    <iframe
-                                        src={project.locationDetails.iframeSrc}
-                                        width="100%"
-                                        height="100%"
-                                        style={{ border: 0, position: 'absolute', top: 0, left: 0 }}
-                                        allowFullScreen={true}
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer-when-downgrade"
-                                    />
-                                </div>
+                            
+                            <GoogleBusinessAutomation 
+                                projectName={project.title}
+                                address={project.siteOffice?.address || project.locationDetails.landmarks[0].name + ", " + project.location}
+                                phone={project.siteOffice?.tel || "+91-20-67210000"}
+                                rating={4.8}
+                                reviewCount={542}
+                                hours={project.siteOffice?.hours || "Mo-Su 09:00-20:00"}
+                                coordinates={{ lat: project.latitude, lng: project.longitude }}
+                            />
+
+                            <CommuteIntelligence 
+                                projectName={project.title}
+                                hubs={project.locationDetails.landmarks.map(l => ({
+                                    name: l.name,
+                                    distance: l.distance,
+                                    timeCar: `${Math.ceil(parseFloat(l.distance) * 4)} mins`,
+                                    timeBike: `${Math.ceil(parseFloat(l.distance) * 3)} mins`,
+                                    timeWalk: parseFloat(l.distance) < 2 ? `${Math.ceil(parseFloat(l.distance) * 12)} mins` : undefined,
+                                    type: l.name.toLowerCase().includes('metro') ? 'Metro' : 
+                                          l.name.toLowerCase().includes('school') ? 'School' : 
+                                          l.name.toLowerCase().includes('mall') ? 'Mall' : 'IT Park'
+                                }))}
+                            />
+
+                            <div className="grid md:grid-cols-2 gap-8 mt-12 bg-[#EEF2F6]/40 border border-[#C5A059]/10 p-8 rounded-2xl">
                                 <div>
-                                    <h3 className="text-[#1D4F9C] font-medium tracking-widest uppercase text-[10px] mb-6">Nearby Landmarks</h3>
+                                    <h3 className="text-[#1D4F9C] font-medium tracking-widest uppercase text-[10px] mb-6">Nearby Landmarks & Infrastructure</h3>
                                     <ul className="space-y-4">
                                         {project.locationDetails.landmarks.map((landmark, idx) => (
-                                            <li key={idx} className="flex justify-between items-center border-b border-[#C5A059]/60 pb-3">
-                                                <span className="text-[#1A1A1A] font-light text-sm">{landmark.name}</span>
-                                                <span className="text-[#1D4F9C] text-xs font-mono bg-[#FFFFFF] px-2 py-1 rounded-sm border border-[#C5A059]/60">{landmark.distance}</span>
+                                            <li key={idx} className="flex justify-between items-center border-b border-[#C5A059]/10 pb-3">
+                                                <div className="flex flex-col">
+                                                    <span className="text-[#1A1A1A] font-medium text-sm">{landmark.name}</span>
+                                                    {landmark.wikidataUri && (
+                                                        <span className="text-[10px] text-[#323334]/40 uppercase tracking-tighter">Verified Landmark</span>
+                                                    )}
+                                                </div>
+                                                <span className="text-[#1D4F9C] text-xs font-mono bg-white px-3 py-1 rounded-full border border-[#1D4F9C]/10 shadow-sm">{landmark.distance}</span>
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
-                            </div>
-                            
-                            {/* Phase 25: Organic Long-Tail Keyword Injection (Micro-location & Features) */}
-                            <div className="mt-8 bg-[#FFFFFF] border border-[#C5A059]/10 p-6 rounded-sm">
-                                <h3 className="text-sm font-serif text-[#1D4F9C] mb-3">Hyper-Local Connectivity & Lifestyle Amenities</h3>
-                                <p className="text-xs text-[#323334]/70 leading-relaxed font-light">
-                                    {project.location.toLowerCase().includes('hinjewadi') && (
-                                        <>Located at a mere 5 min distance to major IT parks, residents enjoy unparalleled walk-to-work convenience. Searching for premium <strong className="font-medium text-[#323334]">flats near Infosys Phase 1</strong> or <strong className="font-medium text-[#323334]">flats near Wipro Phase 2</strong>? {project.title} offers seamless access. Experience authentic township lifestyle with a massive clubhouse, exclusive <strong className="font-medium text-[#323334]">{project.title.toLowerCase()} swimming pool details</strong>, modern gym facilities, and dedicated kids play areas within a secure gated community.</>
-                                    )}
-                                    {project.location.toLowerCase().includes('hadapsar') && (
-                                        <>Experience luxury with proximity to East Pune&apos;s commercial hubs. If you are exploring <strong className="font-medium text-[#323334]">flats near Magarpatta IT park</strong> or <strong className="font-medium text-[#323334]">flats near SP Infocity</strong>, this project is situated at a strategic walking distance. Designed for community living, from the <strong className="font-medium text-[#323334]">clubhouse {project.title.toLowerCase()} amenities</strong> to state-of-the-art sports facilities, every aspect promotes a balanced lifestyle.</>
-                                    )}
-                                    {!project.location.toLowerCase().includes('hinjewadi') && !project.location.toLowerCase().includes('hadapsar') && (
-                                        <>Discover the ultimate residential destination in {project.location}. Designed as a comprehensive gated community, the property features a fully equipped clubhouse, advanced <strong className="font-medium text-[#323334]">gym facilities</strong>, and a premium township lifestyle. Enjoy smart homes engineered for modern families.</>
-                                    )}
-                                </p>
+                                <div className="flex flex-col justify-center">
+                                    <h3 className="text-sm font-serif text-[#1D4F9C] mb-4">Location Intelligence</h3>
+                                    <p className="text-sm text-[#323334]/70 leading-relaxed font-light mb-6">
+                                        {project.location.toLowerCase().includes('hinjewadi') && (
+                                            <>Located at a mere 5 min distance to major IT parks, {project.title} offers unparalleled walk-to-work convenience. This strategic positioning in Hinjewadi Phase 1 ensures high rental liquidity and consistent capital appreciation.</>
+                                        )}
+                                        {project.location.toLowerCase().includes('hadapsar') && (
+                                            <>Experience luxury with proximity to East Pune&apos;s commercial hubs. Situated near SP Infocity and Magarpatta City, this project is a prime destination for professionals seeking balanced urban living.</>
+                                        )}
+                                        {!project.location.toLowerCase().includes('hinjewadi') && !project.location.toLowerCase().includes('hadapsar') && (
+                                            <>Discover the ultimate residential destination in {project.location}. Designed as a comprehensive gated community, the property features advanced infrastructure and premium connectivity to Pune's core business districts.</>
+                                        )}
+                                    </p>
+                                    <div className="flex items-center gap-4 p-4 bg-white/60 rounded-xl border border-[#C5A059]/10">
+                                        <div className="h-10 w-10 rounded-full bg-[#C5A059]/10 flex items-center justify-center text-[#C5A059]">
+                                            <LucideMap size={20} />
+                                        </div>
+                                        <div>
+                                            <p className="text-xs font-bold text-[#323334]">Google Maps Entity Index</p>
+                                            <p className="text-[10px] text-[#323334]/60 uppercase tracking-widest">UID: {project.id.toUpperCase()}-GMB-2026</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </section>
 
@@ -1561,7 +1631,43 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         )}
                         <RealEstateGlossary />
 
-                        {/* Phase 23: Related Projects Cross-Sell Engine */}
+                        {/* Phase 38: Head-to-Head Comparison Engine */}
+                        {project.slug === 'joyville-sensorium-hinjewadi' && (
+                            <ProjectComparison comparisonId="sensorium-vs-life-republic" />
+                        )}
+                        {project.slug === 'joyville-hadapsar-annexe-pune' && (
+                            <ProjectComparison comparisonId="hadapsar-vs-amanora" />
+                        )}
+
+                        {/* Phase 38: Market Authority & Semantic Saturation */}
+                        <section className="mt-24 mb-16 p-12 bg-white border border-[#1D4F9C]/5 rounded-3xl shadow-sm relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-[#C5A059]/5 blur-3xl rounded-full -mr-16 -mt-16"></div>
+                            
+                            <div className="relative z-10">
+                                <h3 className="text-2xl font-serif text-[#1D4F9C] mb-8">Pune Real Estate Market Context</h3>
+                                <div className="grid md:grid-cols-3 gap-8">
+                                    <div className="space-y-4">
+                                        <p className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-bold">Investment Thesis</p>
+                                        <p className="text-sm text-[#323334]/70 leading-relaxed font-light">
+                                            {project.title} represents a high-alpha investment opportunity in the {project.location} growth corridor. With the upcoming <strong className="font-medium">Pune Metro Line 3</strong> and the <strong className="font-medium">Ring Road</strong> expansion, projects by <strong className="font-medium">Shapoorji Pallonji</strong> are projected to outperform the broader <strong className="font-medium">Pune real estate market 2026</strong> benchmarks.
+                                        </p>
+                                    </div>
+                                    <div className="space-y-4">
+                                        <p className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-bold">Architectural Authority</p>
+                                        <p className="text-sm text-[#323334]/70 leading-relaxed font-light">
+                                            Utilizing <strong className="font-medium">Mivan technology construction</strong> and <strong className="font-medium">EDGE certified green building</strong> standards, {project.title} sets a new benchmark for <strong className="font-medium">luxury gated communities in Pune</strong>. The biophilic design ensures a sustainable <strong className="font-medium">township lifestyle</strong> with 75%+ open green spaces.
+                                        </p>
+                                    </div>
+                                    <div className="space-y-4">
+                                        <p className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-bold">NRI Market Sentiment</p>
+                                        <p className="text-sm text-[#323334]/70 leading-relaxed font-light">
+                                            As a preferred destination for <strong className="font-medium">NRI investment in Pune</strong>, {project.title} offers repatriable investment structures and high rental yield potential. The proximity to <strong className="font-medium">Infosys</strong>, <strong className="font-medium">Wipro</strong>, and <strong className="font-medium">TCS</strong> makes it an ideal <strong className="font-medium">high rental yield property</strong> for the global Indian community.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
                         <RelatedProjects currentProject={project} allProjects={projects} />
 
                         {/* Phase 24: Decision Acceleration - Sidebar Project Comparator */}

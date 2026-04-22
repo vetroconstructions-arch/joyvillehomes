@@ -1,54 +1,42 @@
-export interface ComparisonMetric {
-    label: string;
-    joyvilleValue: string | number;
-    competitorAvg: string | number;
-    unit?: string;
-    sentiment: 'positive' | 'neutral' | 'negative';
-}
-
-export interface ProjectComparison {
-    projectId: string;
-    projectTitle: string;
-    competitorGroup: string; // e.g. "Hinjewadi Parity Projects"
-    metrics: ComparisonMetric[];
+export interface ComparisonData {
+    id: string;
+    joyvilleProject: string;
+    competitorProject: string;
+    developer: string;
+    metrics: {
+        label: string;
+        joyville: string;
+        competitor: string;
+        winner: 'joyville' | 'competitor' | 'neutral';
+    }[];
     summary: string;
 }
 
-export const comparisons: ProjectComparison[] = [
+export const comparisons: ComparisonData[] = [
     {
-        projectId: "p0",
-        projectTitle: "Joyville Vyomora",
-        competitorGroup: "Hinjewadi Phase 1 Premium",
+        id: 'sensorium-vs-life-republic',
+        joyvilleProject: 'Joyville Sensorium',
+        competitorProject: 'Life Republic',
+        developer: 'Kolte Patil',
         metrics: [
-            { label: "Amenity Density", joyvilleValue: 60, competitorAvg: 35, unit: "features", sentiment: 'positive' },
-            { label: "Construction Technology", joyvilleValue: "Pre-Cast", competitorAvg: "Masonry", sentiment: 'positive' },
-            { label: "Open Space", joyvilleValue: 75, competitorAvg: 60, unit: "%", sentiment: 'positive' },
-            { label: "Estimated Possession", joyvilleValue: 2027, competitorAvg: 2028, sentiment: 'positive' }
+            { label: 'Construction Tech', joyville: 'Mivan Monolithic', competitor: 'Traditional RCC', winner: 'joyville' },
+            { label: 'Open Space', joyville: '75% Biophilic', competitor: '45-50%', winner: 'joyville' },
+            { label: 'Metro Proximity', joyville: '800m (Phase 1)', competitor: '3.5km (Phase 2)', winner: 'joyville' },
+            { label: 'Legacy Trust', joyville: '160 Years', competitor: '30 Years', winner: 'joyville' }
         ],
-        summary: "Joyville Vyomora outperforms micro-market averages in amenity density and construction speed, leveraging Shapoorji Pallonji's global engineering legacy."
+        summary: "While Life Republic is a large township, Joyville Sensorium offers superior construction quality (Mivan) and much closer proximity to the Hinjewadi IT Lifeline and Metro Line 3."
     },
     {
-        projectId: "p1",
-        projectTitle: "Joyville Sensorium",
-        competitorGroup: "Pune West Luxury IT Corridor",
+        id: 'hadapsar-vs-amanora',
+        joyvilleProject: 'Joyville Hadapsar Annexe',
+        competitorProject: 'Amanora Trendsetter',
+        developer: 'Amanora',
         metrics: [
-            { label: "Biophilic Design", joyvilleValue: "Advanced", competitorAvg: "Standard", sentiment: 'positive' },
-            { label: "Edge Certification", joyvilleValue: "Yes", competitorAvg: "No", sentiment: 'positive' },
-            { label: "2BHK Carpet Area", joyvilleValue: 720, competitorAvg: 680, unit: "sq.ft", sentiment: 'positive' },
-            { label: "Customer Trust Score", joyvilleValue: 4.9, competitorAvg: 4.2, unit: "/5", sentiment: 'positive' }
+            { label: 'Acreage', joyville: '21 Acres', competitor: '400 Acres (Township)', winner: 'competitor' },
+            { label: 'Value for Money', joyville: 'Premium Luxury @ 7k/sqft', competitor: '9k/sqft+', winner: 'joyville' },
+            { label: 'Privacy', joyville: 'High (Lower Density)', competitor: 'Moderate (High Density)', winner: 'joyville' },
+            { label: 'Connectivity', joyville: 'On Highway', competitor: 'Internal Road', winner: 'joyville' }
         ],
-        summary: "As an Edge-certified green development, Sensorium provides superior air quality and larger carpet areas compared to Hinjewadi parity projects."
-    },
-    {
-        projectId: "p2",
-        projectTitle: "Joyville Hadapsar Annexe",
-        competitorGroup: "Pune East Townships",
-        metrics: [
-            { label: "Township Size", joyvilleValue: 21, competitorAvg: 12, unit: "acres", sentiment: 'positive' },
-            { label: "Clubhouse Size", joyvilleValue: 35000, competitorAvg: 15000, unit: "sq.ft", sentiment: 'positive' },
-            { label: "Park Space", joyvilleValue: 8, competitorAvg: 3, unit: "acres", sentiment: 'positive' },
-            { label: "Maintenance Efficiency", joyvilleValue: "High", competitorAvg: "Medium", sentiment: 'positive' }
-        ],
-        summary: "Hadapsar Annexe offers the largest integrated park and clubhouse ecosystem in the East Pune corridor, significantly exceeding industrial township standards."
+        summary: "Amanora offers a larger ecosystem, but Joyville Hadapsar Annexe provides a more focused, lower-density luxury experience with better price-to-value appreciation potential."
     }
 ];

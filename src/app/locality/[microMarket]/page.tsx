@@ -26,7 +26,7 @@ import SemanticLinkMesh from '@/components/SemanticLinkMesh';
 import HyperLocalQA from '@/components/HyperLocalQA';
 import IntentLinkCluster from '@/components/IntentLinkCluster';
 import MarketPulseTicker from '@/components/MarketPulseTicker';
-import SemanticKnowledgeBreadcrumbs from '@/components/SemanticKnowledgeBreadcrumbs';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import ZeroClickBrain from '@/components/ZeroClickBrain';
 
 const siteUrl = 'https://joyville-homes.com';
@@ -283,10 +283,9 @@ export default async function LocalityPage({
             }) }} />
 
             <header className="max-w-7xl mx-auto px-6 mb-16">
-                <SemanticKnowledgeBreadcrumbs items={[
-                    { name: 'PUNE HUB', url: '/', type: 'Home' },
-                    { name: 'PUNE REAL ESTATE', url: '/pune-real-estate-market', type: 'City' },
-                    { name: `${locality.name.toUpperCase()}`, url: `/locality/${locality.slug}`, type: 'Locality' }
+                <Breadcrumbs items={[
+                    { label: 'Market Matrix', href: '/location' },
+                    { label: locality.name, href: `/locality/${locality.slug}` }
                 ]} />
                 <div className="inline-flex items-center gap-2 text-[#1D4F9C] font-semibold text-xs tracking-[0.2em] uppercase mb-4">
                     <MapPin size={14} /> Micro-Market Intelligence

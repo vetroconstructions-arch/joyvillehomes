@@ -60,6 +60,55 @@ export default async function RegionalNRIHub({ params }: { params: Promise<{ reg
 
     const relevantProjects = projects.filter(p => region.relatedProjects.includes(p.slug));
 
+    const breadcrumbLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": siteUrl
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Insights",
+                "item": `${siteUrl}/insights`
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "NRI Investment",
+                "item": `${siteUrl}/insights/topic/nri-investment`
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": region.name,
+                "item": `${siteUrl}/insights/nri/region/${region.id}`
+            }
+        ]
+    };
+
+    const projectListLd = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": `Preferred Projects for NRIs in ${region.name}`,
+        "description": `Curated multi-unit assets in Pune, India for investors from ${region.name}.`,
+        "numberOfItems": relevantProjects.length,
+        "itemListElement": relevantProjects.map((p, i) => ({
+            "@type": "ListItem",
+            "position": i + 1,
+            "item": {
+                "@type": "RealEstateProject",
+                "name": p.title,
+                "url": `${siteUrl}/projects/${p.slug}`,
+                "image": `${siteUrl}${p.image}`
+            }
+        }))
+    };
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "WebPage",
@@ -79,6 +128,8 @@ export default async function RegionalNRIHub({ params }: { params: Promise<{ reg
     return (
         <main className="min-h-screen bg-[#EEF2F6] text-[#323334]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(projectListLd) }} />
             
             {/* Regional Hero */}
             <section className="relative pt-40 pb-24 overflow-hidden bg-[#FFFFFF]">

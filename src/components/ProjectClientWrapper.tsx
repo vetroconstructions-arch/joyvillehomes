@@ -3,6 +3,9 @@
 import { useState } from 'react';
 import { ChevronRight, Home } from 'lucide-react';
 import QuickEnquireModal from './QuickEnquireModal';
+import Link from 'next/link';
+import { generateUnitSlug } from '@/utils/seo-utils';
+import { ArrowRight } from 'lucide-react';
 
 interface FloorPlan {
     type: string;
@@ -19,9 +22,10 @@ interface FloorPlan {
 interface ProjectClientWrapperProps {
     floorPlans: FloorPlan[];
     projectName: string;
+    location: string;
 }
 
-export default function ProjectClientWrapper({ floorPlans, projectName }: ProjectClientWrapperProps) {
+export default function ProjectClientWrapper({ floorPlans, projectName, location }: ProjectClientWrapperProps) {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
@@ -53,10 +57,17 @@ export default function ProjectClientWrapper({ floorPlans, projectName }: Projec
                             </div>
                         )}
 
+                        <Link 
+                            href={`/properties/unit/${generateUnitSlug(projectName, plan.type, location)}`}
+                            className="mt-4 mb-3 w-full py-3 bg-[#EEF2F6] border border-[#C5A059]/30 text-[9px] uppercase tracking-widest text-[#1D4F9C] font-bold hover:bg-[#1D4F9C] hover:text-white transition-all flex items-center justify-center gap-2 group/link"
+                        >
+                            View Floor Plan Details <ArrowRight size={12} className="group-hover/link:translate-x-1 transition-transform" />
+                        </Link>
+
                         <button
                             aria-label={`Unlock Detailed Cost Sheet for ${plan.type}`}
                             onClick={() => setIsModalOpen(true)}
-                            className="mt-auto w-full py-3 bg-[#FFFFFF] border border-[#1D4F9C]/20 text-[10px] uppercase tracking-widest text-[#1A1A1A] hover:bg-[#1D4F9C] hover:text-white transition-all flex items-center justify-center gap-1"
+                            className="w-full py-3 bg-[#FFFFFF] border border-[#1D4F9C]/20 text-[10px] uppercase tracking-widest text-[#1A1A1A] hover:bg-[#1D4F9C] hover:text-white transition-all flex items-center justify-center gap-1"
                         >
                             Unlock Detailed Cost Sheet <ChevronRight size={12} />
                         </button>
