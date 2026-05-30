@@ -45,6 +45,16 @@ export const SEO_ROUTES = [
         filters: { locationMatch: 'Hinjewadi', typeMatch: 'Vyomora' }
     },
 
+    // Brand Dominance
+    {
+        slug: 'shapoorji-pallonji-joyville-home-pune',
+        title: 'Shapoorji Pallonji Joyville Home Pune | Official Brand Portal',
+        description: 'Discover the complete portfolio of Shapoorji Pallonji Joyville homes in Pune. Explore luxury 2 & 3 BHK apartments in Hinjewadi, Hadapsar, and Bavdhan. Book a site visit today.',
+        h1: 'Shapoorji Pallonji Joyville Homes in Pune',
+        keywords: [...KEYWORD_MATRIX.SHAPOORJI_BRAND_DOMINANCE],
+        filters: { locationMatch: 'Pune', typeMatch: '' }
+    },
+
     // Typology pages
     {
         slug: '3-bhk-flats-in-hinjewadi',
@@ -670,6 +680,94 @@ export const SEO_ROUTES = [
         description: 'Explore Shapoorji Pallonji Joyville projects near Cognizant Hinjewadi Phase 1. Premium 2 & 3 BHK flats with easy commute to Rajiv Gandhi Infotech Park.',
         h1: 'Luxury Apartments Near Cognizant, Hinjewadi Phase 1',
         keywords: ['flats near cognizant hinjewadi', 'apartments near cognizant pune', 'joyville hinjewadi cognizant proximity', 'residential projects near cognizant phase 1'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
+    },
+    {
+        slug: 'sp-kingstown-pune-township',
+        title: 'SP Kingstown Pune | Shapoorji Pallonji Mega Township Hadapsar',
+        description: 'SP Kingstown Pune East is a mega-township by Shapoorji Pallonji featuring luxury homes, premium apartments, and Wildernest residences near SP Infocity.',
+        h1: 'SP Kingstown Mega-Township, Pune East',
+        keywords: ['SP Kingstown Pune', 'Shapoorji Pallonji Kingstown', 'SP Kingstown Hadapsar', 'SP Kingstown Township', 'SP Kingstown Apartments', 'SP Kingstown Luxury Homes'],
+        filters: { locationMatch: 'Shewalewadi|Hadapsar', typeMatch: 'Kingstown' }
+    },
+    {
+        slug: 'luxury-apartments-in-wakad-tathawade',
+        title: 'Luxury Apartments Near Wakad & Tathawade | Joyville Hinjewadi',
+        description: 'Explore premium luxury apartments near Wakad and Tathawade. Joyville Hinjewadi offers the perfect investment property just minutes from Wakad.',
+        h1: 'Premium Residences Near Wakad & Tathawade',
+        keywords: ['Wakad Property', 'Wakad Luxury Homes', 'Wakad Premium Apartments', 'Tathawade Property', 'Tathawade Luxury Homes'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
+    },
+    {
+        slug: 'premium-residences-baner-balewadi',
+        title: 'Premium Residences Near Baner & Balewadi | Luxury Apartments Pune',
+        description: 'Looking for Baner Luxury Apartments? Discover Shapoorji Pallonji\'s premium residences in Hinjewadi, offering better ROI and club-class living near Balewadi.',
+        h1: 'Luxury Living Near Baner & Balewadi',
+        keywords: ['Baner Luxury Apartments', 'Baner Premium Homes', 'Balewadi Luxury Apartments', 'Balewadi Premium Residences'],
+        filters: { locationMatch: 'Hinjewadi|Bavdhan', typeMatch: '' }
+    },
+    {
+        slug: 'joyville-sensorium-hinjawadi-wellness-homes',
+        title: 'Joyville Sensorium Hinjawadi | Wellness Homes by Shapoorji Pallonji',
+        description: 'Joyville Sensorium in Hinjawadi offers 2 & 3 BHK luxury wellness homes with river views. Club class living by Shapoorji Pallonji in Pune West.',
+        h1: 'Joyville Sensorium: Wellness Homes in Hinjawadi',
+        keywords: ['Joyville Sensorium', 'Shapoorji Pallonji Sensorium', 'Sensorium Wellness Homes', 'Sensorium River View Homes', 'Sensorium Luxury Apartments'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: 'Sensorium' }
+    },
+    {
+        slug: 'joyville-spectra-club-class-living',
+        title: 'Joyville Spectra Hinjawadi | Club Class Premium Homes Pune',
+        description: 'Experience club class living at Joyville Spectra Hinjawadi. Premium 2 & 3 BHK luxury apartments and smart homes in Pune\'s primary IT hub.',
+        h1: 'Joyville Spectra: Club Class Living in Hinjawadi',
+        keywords: ['Joyville Spectra', 'Joyville Spectra Hinjawadi', 'Spectra Luxury Apartments', 'Spectra Premium Homes', 'Spectra Club Class Living'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' } // Matches Hinjewadi general for Spectra umbrella
+    },
+    {
+        slug: 'pune-real-estate-premium-projects',
+        title: 'Pune Real Estate | Premium & Luxury Projects by Shapoorji Pallonji',
+        description: 'Explore the best of Pune real estate. Discover Shapoorji Pallonji Joyville\'s premium residential projects, luxury apartments, and mega-townships across Pune.',
+        h1: 'Pune Real Estate: Premium Projects & Luxury Homes',
+        keywords: ['Pune Real Estate', 'Pune Real Estate Market', 'Property In Pune', 'Top Builders In Pune', 'Best Real Estate Projects In Pune'],
+        filters: { locationMatch: '', typeMatch: '' } // Empty filters matches all projects
+    },
+    {
+        slug: 'hinjewadi-real-estate-investment',
+        title: 'Hinjewadi Real Estate Investment | Luxury IT Park Homes Pune',
+        description: 'Investing in Hinjewadi real estate? Explore premium 2 & 3 BHK luxury apartments and smart homes near Rajiv Gandhi Infotech Park by Shapoorji Pallonji.',
+        h1: 'Hinjewadi Real Estate Investment Opportunities',
+        keywords: ['Hinjewadi Real Estate', 'Hinjewadi Real Estate Investment', 'Property In Hinjewadi', 'Hinjewadi IT Park Real Estate', 'Buy Property In Hinjewadi'],
+        filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
+    },
+    {
+        slug: 'west-pune-real-estate-luxury-homes',
+        title: 'West Pune Real Estate | Premium Homes & Luxury Apartments',
+        description: 'Discover West Pune real estate. Shapoorji Pallonji offers luxury apartments and premium residences across Hinjewadi, Wakad, Baner, and Bavdhan.',
+        h1: 'West Pune Real Estate: Luxury Residences',
+        keywords: ['West Pune Real Estate', 'Property In West Pune', 'West Pune Real Estate Market', 'Luxury Real Estate West Pune', 'Top Builders In West Pune'],
+        filters: { locationMatch: 'Hinjewadi|Bavdhan', typeMatch: '' }
+    },
+    {
+        slug: 'hadapsar-real-estate-townships',
+        title: 'Hadapsar Real Estate | Mega Townships & Premium Homes East Pune',
+        description: 'Explore Hadapsar real estate. Invest in premium townships and luxury homes near SP Infocity by Shapoorji Pallonji in Pune East.',
+        h1: 'Hadapsar Real Estate & Mega Townships',
+        keywords: ['Hadapsar Real Estate', 'Hadapsar Property', 'Property In Hadapsar', 'Real Estate In Hadapsar', 'Pune East Real Estate'],
+        filters: { locationMatch: 'Hadapsar|Shewalewadi', typeMatch: '' }
+    },
+    {
+        slug: 'magarpatta-real-estate-nearby-flats',
+        title: 'Real Estate Near Magarpatta City | Premium Flats in Pune East',
+        description: 'Looking for Magarpatta real estate? Discover Joyville Hadapsar Annexe and Celestia, offering luxury living just minutes from Magarpatta City.',
+        h1: 'Premium Real Estate Near Magarpatta City',
+        keywords: ['Magarpatta Real Estate', 'Magarpatta City Real Estate', 'Property Near Magarpatta', 'Flats Near Magarpatta City', 'Apartments Near Magarpatta'],
+        filters: { locationMatch: 'Hadapsar|Shewalewadi', typeMatch: '' }
+    },
+    {
+        slug: 'shapoorji-pallonji-joyville-homes-hinjewadi-pune',
+        title: 'Shapoorji Pallonji Joyville Homes Hinjewadi Pune',
+        description: 'Discover Shapoorji Pallonji Joyville Homes in Hinjewadi, Pune. Explore premium 2 & 3 BHK luxury apartments, smart homes, and biophilic living in Phase 1.',
+        h1: 'Shapoorji Pallonji Joyville Homes Hinjewadi Pune',
+        keywords: ['Shapoorji Pallonji Joyville Homes Hinjewadi Pune', 'Joyville Hinjewadi', 'Shapoorji Pallonji Hinjewadi', 'Joyville Homes Pune'],
         filters: { locationMatch: 'Hinjewadi', typeMatch: '' }
     }
 ];

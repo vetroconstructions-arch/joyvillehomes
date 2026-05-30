@@ -30,6 +30,12 @@ export default function robots(): MetadataRoute.Robots {
                 disallow: commonDisallow,
             },
             {
+                userAgent: ['bingbot', 'YandexBot', 'Slurp'],
+                allow: '/',
+                disallow: commonDisallow,
+                crawlDelay: 2, // Respect secondary engine crawl budgets
+            },
+            {
                 userAgent: 'Google-InspectionTool',
                 allow: '/',
                 disallow: [], // Full access for visual/technical inspection (SGE/Rich Results)

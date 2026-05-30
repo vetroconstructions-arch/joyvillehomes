@@ -152,6 +152,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 "url": `${siteUrl}/projects/${project.slug}`,
                 "name": `${project.title} | ${project.location}`,
                 "description": project.description,
+                "publisher": { "@id": `${siteUrl}/#organization` },
+                "author": { "@id": `${siteUrl}/#organization` },
                 "breadcrumb": { "@id": `${siteUrl}/projects/${project.slug}/#breadcrumb` },
                 "primaryImageOfPage": {
                     "@type": "ImageObject",

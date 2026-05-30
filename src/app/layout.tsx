@@ -33,6 +33,12 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://joyville-homes.com'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-IN': '/',
+    },
+  },
   title: {
     template: "%s | Joyville Homes Pune | Shapoorji Pallonji",
     default: "Joyville Homes Pune | Shapoorji Pallonji | Top Real Estate in Pune",
@@ -215,14 +221,41 @@ export default function RootLayout({
                 "foundingDate": ENTITIES.DEVELOPER.foundingDate,
                 "description": "Official Shapoorji Pallonji Joyville Homes Pune platform. Providing premium 1, 2 & 3 BHK residences across Hinjewadi, Hadapsar, and Bavdhan.",
                 "telephone": "+912067210000",
-                "sameAs": ENTITIES.DEVELOPER.sameAs,
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "SP Infocity, Phursungi IT Park",
+                  "addressLocality": "Pune",
+                  "addressRegion": "Maharashtra",
+                  "postalCode": "412308",
+                  "addressCountry": "IN"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": 18.4900,
+                  "longitude": 73.9700
+                },
+                "openingHoursSpecification": {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                  "opens": "09:30",
+                  "closes": "18:30"
+                },
+                "sameAs": [
+                  ...ENTITIES.DEVELOPER.sameAs,
+                  "https://en.wikipedia.org/wiki/Shapoorji_Pallonji_Group",
+                  "https://www.linkedin.com/company/shapoorjipallonjirealestate",
+                  "https://www.instagram.com/joyvillehomes",
+                  "https://www.youtube.com/c/ShapoorjiPallonjiRealEstate"
+                ],
                 "knowsAbout": [
                   "Pune Real Estate Market",
                   "Mivan Technology Construction",
-                  "NRI Property Investment India"
+                  "NRI Property Investment India",
+                  "EDGE Green Building Certification"
                 ],
                 "memberOf": [
-                  { "@type": "Organization", "name": "CREDAI Pune Metro", "url": "https://credaipune.org/" }
+                  { "@type": "Organization", "name": "CREDAI Pune Metro", "url": "https://credaipune.org/" },
+                  { "@type": "Organization", "name": "MahaRERA", "url": "https://maharera.mahaonline.gov.in/" }
                 ],
                 "aggregateRating": {
                   "@type": "AggregateRating",
@@ -238,6 +271,68 @@ export default function RootLayout({
                 "publisher": { "@id": "https://joyville-homes.com/#organization" },
                 "datePublished": "2024-01-01",
                 "dateModified": new Date().toISOString().split('T')[0]
+              },
+              {
+                "@type": "BreadcrumbList",
+                "@id": "https://joyville-homes.com/#breadcrumb",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://joyville-homes.com"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Projects",
+                    "item": "https://joyville-homes.com/projects"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Market Insights",
+                    "item": "https://joyville-homes.com/insights"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://joyville-homes.com/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Who is the builder of Joyville Pune?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Joyville Pune is developed by Shapoorji Pallonji Real Estate, a highly reputable developer with over 150 years of legacy in construction and real estate in India."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the price of flats in Joyville Hinjewadi?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "The price of flats in Joyville Hinjewadi starts from approximately ₹52 Lakhs for 1 BHK, ₹84 Lakhs for 2 BHK, and goes up to ₹1.4 Cr+ for premium 3 BHK duplexes."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Is Shapoorji Pallonji a reliable developer?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes, Shapoorji Pallonji is one of India's most trusted and reliable real estate developers, renowned for delivering premium, RERA-compliant projects on time."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What are the RERA registered projects by Joyville?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Key RERA registered Joyville projects in Pune include Joyville Sensorium (Hinjewadi), Joyville Vyomora (Hinjewadi), Joyville Hadapsar Annexe, Joyville Celestia (Hadapsar), and Vanaha (Bavdhan)."
+                    }
+                  }
+                ]
               }
             ]
           })

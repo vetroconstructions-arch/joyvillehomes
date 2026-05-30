@@ -157,14 +157,16 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
     const speakableJsonLd = {
         "@context": "https://schema.org",
         "@type": "WebPage",
+        "url": `${siteUrl}/properties/${routeData.slug}`,
+        "publisher": { "@id": `${siteUrl}/#organization` },
+        "author": { "@id": `${siteUrl}/#organization` },
         "speakable": {
             "@type": "SpeakableSpecification",
             "cssSelector": [
                 "h1",
                 ".header-description"
             ]
-        },
-        "url": `${siteUrl}/properties/${routeData.slug}`
+        }
     };
 
     const jsonLd = {
