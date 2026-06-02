@@ -15,21 +15,23 @@ interface IntentLinkClusterProps {
     nris?: IntentLink[];
 }
 
+import { SEO_ROUTES } from '@/data/seo-routes';
+
 export default function IntentLinkCluster({
     upgraders = [
-        { label: "3 BHK Luxury Apartments Pune West", href: "/properties/3-bhk-luxury-apartments-pune-west" },
-        { label: "Townships Near Magarpatta City", href: "/properties/townships-near-magarpatta-city" },
-        { label: "Spacious Flats in Bavdhan", href: "/properties/spacious-flats-bavdhan-pune" }
+        { label: "Pune Real Estate Premium Projects", href: "/properties/pune-real-estate-premium-projects" },
+        { label: "West Pune Real Estate Luxury Homes", href: "/properties/west-pune-real-estate-luxury-homes" },
+        { label: "3 BHK Luxury Apartments Pune West", href: "/properties/3-bhk-luxury-apartments-pune-west" }
     ],
     investors = [
-        { label: "High Rental Yield Flats Hinjewadi", href: "/properties/high-rental-yield-flats-hinjewadi" },
-        { label: "New Launch Projects Pune 2026", href: "/properties/new-launch-projects-pune-2026" },
-        { label: "Pre Launch Offers Undri", href: "/properties/pre-launch-offers-undri-pune" }
+        { label: "Hinjewadi Real Estate Investment", href: "/properties/hinjewadi-real-estate-investment" },
+        { label: "Hadapsar Real Estate Townships", href: "/properties/hadapsar-real-estate-townships" },
+        { label: "Magarpatta Real Estate Nearby Flats", href: "/properties/magarpatta-real-estate-nearby-flats" }
     ],
     nris = [
-        { label: "NRI Investment Flats Pune", href: "/properties/nri-investment-flats-pune" },
-        { label: "Premium Gated Communities Hadapsar", href: "/properties/premium-gated-communities-hadapsar" },
-        { label: "Smart Home Apartments Pune East", href: "/properties/smart-home-apartments-pune-east" }
+        { label: "Shapoorji Pallonji Joyville Homes Hinjewadi", href: "/properties/shapoorji-pallonji-joyville-homes-hinjewadi-pune" },
+        { label: "Townships Near Magarpatta City", href: "/properties/townships-near-magarpatta-city" },
+        { label: "2 BHK Flats in Hinjewadi", href: "/properties/2-bhk-flats-in-hinjewadi" }
     ]
 }: IntentLinkClusterProps) {
     return (
