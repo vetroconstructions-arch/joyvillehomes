@@ -15,6 +15,7 @@ export default function robots(): MetadataRoute.Robots {
         '/*?sort=*',
         '/*?filter=*',
         '/*?ref=*',
+        '/*?action=*'
     ];
 
     return {
@@ -23,6 +24,11 @@ export default function robots(): MetadataRoute.Robots {
                 userAgent: '*',
                 allow: '/',
                 disallow: commonDisallow,
+            },
+            {
+                userAgent: ['GPTBot', 'ChatGPT-User', 'Anthropic-ai', 'Claude-Web', 'CCBot', 'Google-Extended'],
+                disallow: commonDisallow,
+                crawlDelay: 1, // Protect server bandwidth from AI scrapers
             },
             {
                 userAgent: ['Googlebot', 'Googlebot-Image'],

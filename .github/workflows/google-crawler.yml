@@ -38,6 +38,9 @@ jobs:
       - name: Execute Google Indexing API Sweep
         run: npm run index
 
+      - name: Ping IndexNow for Bing and Yandex
+        run: curl -X POST https://joyville-homes.com/api/indexnow -H "Authorization: Bearer dev_secret"
+
       - name: Commit Updated Indexing State
         run: |
           git config --global user.name "github-actions[bot]"
