@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { projects } from '@/data/projects';

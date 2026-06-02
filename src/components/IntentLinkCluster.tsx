@@ -15,8 +15,6 @@ interface IntentLinkClusterProps {
     nris?: IntentLink[];
 }
 
-import { SEO_ROUTES } from '@/data/seo-routes';
-
 export default function IntentLinkCluster({
     upgraders = [
         { label: "Pune Real Estate Premium Projects", href: "/properties/pune-real-estate-premium-projects" },
