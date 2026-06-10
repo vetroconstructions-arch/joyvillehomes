@@ -59,6 +59,8 @@ export default function ReviewWidget({ reviews, projectName }: ReviewWidgetProps
         "@context": "https://schema.org",
         "@type": "Product",
         "name": projectName || "Joyville by Shapoorji Pallonji Pune",
+        "image": "https://joyville-homes.com/og-image.jpg",
+        "description": "Premium 1, 2 & 3 BHK residences by Shapoorji Pallonji Real Estate.",
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",

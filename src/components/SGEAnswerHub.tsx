@@ -33,15 +33,7 @@ export default function SGEAnswerHub() {
                 "@type": "Answer",
                 "text": block.a
             }
-        })),
-        "publisher": {
-            "@type": "Organization",
-            "name": "Shapoorji Pallonji Real Estate Research Desk"
-        },
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": [".sge-question", ".sge-answer"]
-        }
+        }))
     };
 
     return (

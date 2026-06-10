@@ -221,6 +221,7 @@ export default function RootLayout({
                 "logo": "https://joyville-homes.com/logo.png",
                 "image": "https://joyville-homes.com/og-image.jpg",
                 "legalName": ENTITIES.DEVELOPER.legalName,
+                "priceRange": "₹65 Lakhs - ₹2.5 Cr",
                 "foundingDate": ENTITIES.DEVELOPER.foundingDate,
                 "description": "Official Shapoorji Pallonji Joyville Homes Pune platform. Providing premium 1, 2 & 3 BHK residences across Hinjewadi, Hadapsar, and Bavdhan.",
                 "telephone": "+912067210000",
