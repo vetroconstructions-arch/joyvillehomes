@@ -28,6 +28,7 @@ export default function ROICalculator() {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "Shapoorji Pallonji ROI & Appreciation Intelligence Engine",
+        "image": "https://joyville-homes.com/og-image.jpg",
         "operatingSystem": "Web-Based API",
         "applicationCategory": "FinanceApplication",
         "browserRequirements": "Requires JavaScript",

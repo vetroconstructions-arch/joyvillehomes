@@ -27,11 +27,7 @@ export default function FAQSection({ items, title = "Frequently Asked Questions"
                 "@type": "Answer",
                 "text": item.answer
             }
-        })),
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": [".faq-question", ".faq-answer"]
-        }
+        }))
     };
 
     return (

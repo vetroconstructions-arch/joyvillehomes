@@ -31,6 +31,7 @@ export default function GoogleBusinessAutomation({
         "@id": `https://joyville-homes.com/projects/${projectName.toLowerCase().replace(/\s+/g, '-')}/#site-office`,
         "name": `${projectName} Site Office`,
         "image": "https://joyville-homes.com/logo.png",
+        "priceRange": "₹65 Lakhs - ₹2.5 Cr",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": address,
