@@ -9,6 +9,7 @@
     "lint": "next lint",
     "index": "npx tsx scripts/google-indexing-api.ts",
     "blast": "npx tsx scripts/off-page-seo-blaster.ts",
+    "syndicate": "npx tsx scripts/ai-blogger-syndicator.ts",
     "postbuild": "npm run index"
   },
   "dependencies": {

@@ -43,6 +43,11 @@ jobs:
 
       - name: Automated Off-Page SEO Blaster
         run: npm run blast
+
+      - name: AI Autonomous Content Syndicator
+        run: npm run syndicate
+        env:
+          DEV_TO_API_KEY: ${{ secrets.DEV_TO_API_KEY }}
       - name: Commit Updated Indexing State
         run: |
           git config --global user.name "github-actions[bot]"
