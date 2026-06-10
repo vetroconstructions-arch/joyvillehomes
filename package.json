@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "index": "npx tsx scripts/google-indexing-api.ts",
+    "blast": "npx tsx scripts/off-page-seo-blaster.ts",
     "postbuild": "npm run index"
   },
   "dependencies": {

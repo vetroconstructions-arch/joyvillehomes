@@ -1,4 +1,4 @@
-name: Sovereign Google Indexing Crawler
+name: Apex SEO Automation Engine
 
 on:
   schedule:
@@ -41,11 +41,8 @@ jobs:
       - name: Ping IndexNow for Bing and Yandex
         run: curl -X POST https://joyville-homes.com/api/indexnow -H "Authorization: Bearer dev_secret"
 
-      - name: Automated Off-Page RPC Ping Broadcast
-        run: |
-          curl -s -X POST -H "Content-Type: text/xml" -d "<?xml version=\"1.0\"?><methodCall><methodName>weblogUpdates.ping</methodName><params><param><value>Joyville Homes Pune</value></param><param><value>https://joyville-homes.com</value></param></params></methodCall>" http://rpc.pingomatic.com/ > /dev/null
-          curl -s -X POST -H "Content-Type: text/xml" -d "<?xml version=\"1.0\"?><methodCall><methodName>weblogUpdates.ping</methodName><params><param><value>Joyville Homes Pune</value></param><param><value>https://joyville-homes.com</value></param></params></methodCall>" http://ping.feedburner.com/ > /dev/null
-
+      - name: Automated Off-Page SEO Blaster
+        run: npm run blast
       - name: Commit Updated Indexing State
         run: |
           git config --global user.name "github-actions[bot]"
