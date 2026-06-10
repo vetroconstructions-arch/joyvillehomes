@@ -48,6 +48,9 @@ jobs:
         run: npm run syndicate
         env:
           DEV_TO_API_KEY: ${{ secrets.DEV_TO_API_KEY }}
+
+      - name: AI Market Intelligence Scraper
+        run: npm run intelligence
       - name: Commit Updated Indexing State
         run: |
           git config --global user.name "github-actions[bot]"

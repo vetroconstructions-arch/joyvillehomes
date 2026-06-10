@@ -10,6 +10,7 @@
     "index": "npx tsx scripts/google-indexing-api.ts",
     "blast": "npx tsx scripts/off-page-seo-blaster.ts",
     "syndicate": "npx tsx scripts/ai-blogger-syndicator.ts",
+    "intelligence": "npx tsx scripts/market-intelligence-brain.ts",
     "postbuild": "npm run index"
   },
   "dependencies": {

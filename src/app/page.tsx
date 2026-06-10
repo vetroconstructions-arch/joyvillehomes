@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { KEYWORD_MATRIX } from '@/data/KeywordIntelligence';
 import { SEMANTIC_MESH } from '@/data/semanticLinking';
+import marketIntelligence from '@/data/latest-market-intelligence.json';
 
 export const metadata: Metadata = {
     title: "Pune Real Estate Market 2026 | Joyville Homes by Shapoorji Pallonji",
@@ -100,6 +101,20 @@ export default function Home() {
                     Official Joyville Pune projects including Joyville Vyomora, Sensorium, Hadapsar Annexe, Celestia, Skyluxe Edition, Wildernest at SP Kingstown, and Vanaha Golfland. Providing premium 2 BHK and 3 BHK flats with world-class amenities and Mivan construction technology in Hinjewadi, Hadapsar, and Bavdhan.
                     Authored and reviewed by Pune real estate analysts: Vikas Sharma, Ananya Deshpande, and Rajesh Kulkarni.
                 </p>
+
+                {/* Invisible AI Market Intelligence Injection (Phase 2) */}
+                <article>
+                    <h3>Market Intelligence Report: {marketIntelligence.report.headline}</h3>
+                    <p>Generated At: {marketIntelligence.meta.generated_at}</p>
+                    <p>{marketIntelligence.report.executive_summary}</p>
+                    <ul>
+                        {marketIntelligence.report.infrastructure_updates.map((update, i) => (
+                            <li key={i}>{update}</li>
+                        ))}
+                    </ul>
+                    <p>Current Sentiment: {marketIntelligence.report.market_sentiment}</p>
+                    <p>Associated Concepts: {marketIntelligence.report.keywords_injected.join(', ')}</p>
+                </article>
             </section>
         </>
     );
