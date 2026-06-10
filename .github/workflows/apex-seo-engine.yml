@@ -37,6 +37,7 @@ jobs:
 
       - name: Execute Google Indexing API Sweep
         run: npm run index
+        continue-on-error: true
 
       - name: Ping IndexNow for Bing and Yandex
         run: curl -X POST https://joyville-homes.com/api/indexnow -H "Authorization: Bearer dev_secret"

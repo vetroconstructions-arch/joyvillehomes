@@ -11,7 +11,8 @@
     "blast": "npx tsx scripts/off-page-seo-blaster.ts",
     "syndicate": "npx tsx scripts/ai-blogger-syndicator.ts",
     "intelligence": "npx tsx scripts/market-intelligence-brain.ts",
-    "postbuild": "npm run index"
+    "postbuild": "npm run index",
+    "prepare": "husky"
   },
   "dependencies": {
     "@next/third-parties": "^16.1.6",
@@ -30,8 +31,15 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.7",
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
   }
 }
