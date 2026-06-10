@@ -116,6 +116,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="geo.region" content="IN-MH" />
+        <meta name="geo.placename" content="Pune" />
+        <meta name="geo.position" content="18.5913;73.7389" />
+        <meta name="ICBM" content="18.5913, 73.7389" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://connect.facebook.net" />
