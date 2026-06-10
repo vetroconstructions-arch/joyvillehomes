@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, X, Send, Sparkles, ShieldCheck, User } from 'lucide-react';
+import { MessageSquare, X, Send, Sparkles, ShieldCheck } from 'lucide-react';
 
 const SUGGESTED_QUERIES = [
     "Best 2BHK for investment in Hinjewadi?",

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Activity, CheckCircle2, AlertCircle, Clock, Zap } from 'lucide-react';
+import { Activity, AlertCircle, Clock, Zap } from 'lucide-react';
 
 interface IndexingStatusProps {
     lastRun: string;

@@ -4,7 +4,6 @@ import Navigation from "@/components/Navigation";
 import MarketTicker from "@/components/MarketTicker";
 import PageTransition from "@/components/PageTransition";
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
-import IntentLinkCluster from '@/components/IntentLinkCluster';
 import GoogleProductBridge from '@/components/GoogleProductBridge';
 import SGEAnswerHub from '@/components/SGEAnswerHub';
 import DemandPulse from '@/components/DemandPulse';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { LucideIcon, TrendingUp, Shield, MapPin, Activity, Zap } from 'lucide-react';
+import { LucideIcon, Zap } from 'lucide-react';
 
 interface MatrixMetric {
     label: string;

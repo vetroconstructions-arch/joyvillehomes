@@ -373,6 +373,24 @@ export default function HomeClient() {
                   </div>
 
                   <div className="lg:col-span-5 order-1 lg:order-2">
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: JSON.stringify({
+                                "@context": "https://schema.org",
+                                "@type": "RealEstateListing",
+                                "name": "2 BHK Premium Flats at Joyville Hinjewadi",
+                                "description": "Premium 2 BHK apartments in Hinjewadi Phase 1 with 750-850 sq.ft carpet area.",
+                                "offers": {
+                                    "@type": "Offer",
+                                    "price": "11000000",
+                                    "priceCurrency": "INR",
+                                    "availability": "https://schema.org/InStock"
+                                },
+                                "datePosted": new Date().toISOString().split('T')[0]
+                            })
+                        }}
+                    />
                     <h3 className="text-3xl lg:text-4xl font-serif mb-4 text-[#323334] font-light">2 BHK Joyville Flats</h3>
                     <p className="text-2xl text-[#1D4F9C] mb-10 font-serif italic text-gradient">
                       Starting <PriceDisplay price="₹1.10 Cr*" />
@@ -419,6 +437,24 @@ export default function HomeClient() {
                   </div>
 
                   <div className="lg:col-span-5 order-1 lg:order-2">
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: JSON.stringify({
+                                "@context": "https://schema.org",
+                                "@type": "RealEstateListing",
+                                "name": "3 BHK Luxury Apartments at Joyville Hinjewadi",
+                                "description": "Luxury 3 BHK apartments in Hinjewadi Phase 1 with 1050-1200 sq.ft carpet area.",
+                                "offers": {
+                                    "@type": "Offer",
+                                    "price": "14500000",
+                                    "priceCurrency": "INR",
+                                    "availability": "https://schema.org/PreOrder"
+                                },
+                                "datePosted": new Date().toISOString().split('T')[0]
+                            })
+                        }}
+                    />
                     <h3 className="text-3xl lg:text-4xl font-serif mb-4 text-[#323334] font-light">3 BHK Luxury Apartments</h3>
                     <p className="text-2xl text-[#1D4F9C] mb-10 font-serif italic text-gradient">
                       Starting <PriceDisplay price="₹1.45 Cr*" />

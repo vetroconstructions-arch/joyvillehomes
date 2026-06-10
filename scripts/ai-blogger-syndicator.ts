@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { SEO_ROUTES } from '../src/data/seo-routes';
-import { SEMANTIC_BLOCKS, getSemanticContentForSlug } from '../src/data/semantic-content';
+import { getSemanticContentForSlug } from '../src/data/semantic-content';
 
 const DEV_TO_API_URL = 'https://dev.to/api/articles';
 const DEV_TO_API_KEY = process.env.DEV_TO_API_KEY || 'demo_key'; // Fallback for dry runs

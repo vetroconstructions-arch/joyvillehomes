@@ -1,5 +1,4 @@
 import { projects } from '@/data/projects';
-import { SEO_ROUTES } from '@/data/seo-routes';
 
 export const dynamic = 'force-static';
 

@@ -2,10 +2,10 @@ import { Metadata } from 'next';
 export const dynamic = 'force-static';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BookOpen, Map, Calculator, ShieldCheck, TrendingUp, Info } from 'lucide-react';
+import { BookOpen, Map, ShieldCheck, TrendingUp, Info } from 'lucide-react';
 import BrochureButton from '@/components/BrochureButton';
 import ROICalculator from '@/components/ROICalculator';
-import { Zap, ShieldCheck as ShieldIcon, BarChart3, Users } from 'lucide-react';
+import { BarChart3, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: "Pune Real Estate Guide 2025 | Investment Analysis & Homebuyer Tips",

@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { projects } from '@/data/projects';
 
 export default function SGEAnswerHub() {
     // Generate high-authority Q&A pairs for SGE extraction

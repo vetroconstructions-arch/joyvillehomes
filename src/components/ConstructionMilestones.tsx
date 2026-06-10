@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, CheckCircle2, PlayCircle, Loader2 } from 'lucide-react';
+import { CheckCircle2, PlayCircle, Loader2 } from 'lucide-react';
 
 interface Milestone {
     date: string;

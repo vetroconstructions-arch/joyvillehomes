@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mic, ChevronRight, MessageSquare, Play, Volume2 } from 'lucide-react';
+import { Mic, Play, Volume2 } from 'lucide-react';
 
 interface AnswerItem {
     q: string;

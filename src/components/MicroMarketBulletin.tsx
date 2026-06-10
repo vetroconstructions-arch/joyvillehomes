@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Radio, ArrowUpRight, Zap, Clock } from 'lucide-react';
+import { ArrowUpRight, Zap, Clock } from 'lucide-react';
 import { localities } from '@/data/localities';
 
 export default function MicroMarketBulletin() {
