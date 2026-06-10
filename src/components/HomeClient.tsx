@@ -6,7 +6,8 @@ import Link from "next/link";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { ArrowRight, MapPin, PhoneCall, CheckCircle2, Building2, Trees, ShieldCheck, Landmark } from "lucide-react";
 import ReviewWidget from "@/components/ReviewWidget";
-import BrochureButton from "@/components/BrochureButton";
+import BrochureButton from './BrochureButton';
+import InteractiveFloorPlan from './InteractiveFloorPlan';
 import GlobalFAQ from "@/components/GlobalFAQ";
 import TrustBanner from "@/components/TrustBanner";
 import MarketTicker from "@/components/MarketTicker";
@@ -365,9 +366,9 @@ export default function HomeClient() {
                   transition={{ duration: 0.6 }}
                   className="grid lg:grid-cols-12 gap-16 items-center"
                 >
-                  <div className="lg:col-span-7 order-2 lg:order-1 aspect-[4/3] bg-[#EEF2F6] border border-[#C5A059]/60 p-8 relative group overflow-hidden flex items-center justify-center">
-                    <Image src="/images/joyville_sensorium_projectcard.webp" fill alt="2 BHK Floor Plan" className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" priority />
-                    <div className="relative z-10 w-full h-full border border-[#C5A059]/60 flex items-center justify-center bg-[#FFFFFF]/50 backdrop-blur-sm">
+                  <div className="lg:col-span-7 order-2 lg:order-1 aspect-[4/3] bg-[#EEF2F6] border border-[#C5A059]/60 p-2 relative group overflow-hidden flex items-center justify-center">
+                    <InteractiveFloorPlan src="/images/joyville_sensorium_projectcard.webp" alt="2 BHK Floor Plan" />
+                    <div className="absolute top-4 right-4 z-10 border border-[#C5A059]/60 flex items-center justify-center bg-[#FFFFFF]/50 backdrop-blur-sm pointer-events-none">
                       <span className="text-[#1D4F9C] text-xs tracking-[0.3em] uppercase border border-[#C5A059]/60 px-6 py-2">Floor Plan View</span>
                     </div>
                   </div>
@@ -429,9 +430,9 @@ export default function HomeClient() {
                   transition={{ duration: 0.6 }}
                   className="grid lg:grid-cols-12 gap-16 items-center"
                 >
-                  <div className="lg:col-span-7 order-2 lg:order-1 aspect-[4/3] bg-[#EEF2F6] border border-[#C5A059]/60 p-8 relative group overflow-hidden flex items-center justify-center">
-                    <Image src="/images/joyville_hinjawadi_projectcard.webp" fill alt="3 BHK Floor Plan" className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" priority />
-                    <div className="relative z-10 w-full h-full border border-[#C5A059]/60 flex items-center justify-center bg-[#FFFFFF]/50 backdrop-blur-sm">
+                  <div className="lg:col-span-7 order-2 lg:order-1 aspect-[4/3] bg-[#EEF2F6] border border-[#C5A059]/60 p-2 relative group overflow-hidden flex items-center justify-center">
+                    <InteractiveFloorPlan src="/images/joyville_hinjawadi_projectcard.webp" alt="3 BHK Floor Plan" />
+                    <div className="absolute top-4 right-4 z-10 border border-[#C5A059]/60 flex items-center justify-center bg-[#FFFFFF]/50 backdrop-blur-sm pointer-events-none">
                       <span className="text-[#1D4F9C] text-xs tracking-[0.3em] uppercase border border-[#C5A059]/60 px-6 py-2">Floor Plan View</span>
                     </div>
                   </div>
