@@ -366,7 +366,7 @@ export default function HomeClient() {
                   className="grid lg:grid-cols-12 gap-16 items-center"
                 >
                   <div className="lg:col-span-7 order-2 lg:order-1 aspect-[4/3] bg-[#EEF2F6] border border-[#C5A059]/60 p-8 relative group overflow-hidden flex items-center justify-center">
-                    <div className="absolute inset-0 bg-[url('/images/joyville_sensorium_projectcard.webp')] bg-cover bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                    <Image src="/images/joyville_sensorium_projectcard.webp" fill alt="2 BHK Floor Plan" className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" priority />
                     <div className="relative z-10 w-full h-full border border-[#C5A059]/60 flex items-center justify-center bg-[#FFFFFF]/50 backdrop-blur-sm">
                       <span className="text-[#1D4F9C] text-xs tracking-[0.3em] uppercase border border-[#C5A059]/60 px-6 py-2">Floor Plan View</span>
                     </div>
@@ -412,7 +412,7 @@ export default function HomeClient() {
                   className="grid lg:grid-cols-12 gap-16 items-center"
                 >
                   <div className="lg:col-span-7 order-2 lg:order-1 aspect-[4/3] bg-[#EEF2F6] border border-[#C5A059]/60 p-8 relative group overflow-hidden flex items-center justify-center">
-                    <div className="absolute inset-0 bg-[url('/images/joyville_hinjawadi_projectcard.webp')] bg-cover bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                    <Image src="/images/joyville_hinjawadi_projectcard.webp" fill alt="3 BHK Floor Plan" className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" priority />
                     <div className="relative z-10 w-full h-full border border-[#C5A059]/60 flex items-center justify-center bg-[#FFFFFF]/50 backdrop-blur-sm">
                       <span className="text-[#1D4F9C] text-xs tracking-[0.3em] uppercase border border-[#C5A059]/60 px-6 py-2">Floor Plan View</span>
                     </div>

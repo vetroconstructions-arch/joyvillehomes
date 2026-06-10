@@ -137,7 +137,7 @@ export default function Navigation() {
                         <Link href="/locality/compare" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4 font-bold border-b-2 border-[#1D4F9C]/0 hover:border-[#1D4F9C]/100">Market Matrix</Link>
                         <Link href="/press-research" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4">Research Hub</Link>
                         <Link href="/location" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4">Location</Link>
-                        <Link href="/#floor-plans" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4">Floor Plans</Link>
+                        <a href="/#floor-plans" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4">Floor Plans</a>
                     </div>
 
                     {/* Currency, Enquire Button & Mobile Toggle */}

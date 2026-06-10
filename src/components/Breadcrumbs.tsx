@@ -56,17 +56,21 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
                         className="flex items-center gap-2"
                     >
                         <ChevronRight size={10} className="text-[#323334]/20" />
-                        <Link 
-                            href={item.href} 
-                            className={`transition-colors ${
-                                index === items.length - 1 
-                                ? "text-[#1D4F9C] cursor-default" 
-                                : "text-[#323334]/40 hover:text-[#1D4F9C]"
-                            }`}
-                            aria-current={index === items.length - 1 ? "page" : undefined}
-                        >
-                            {item.label}
-                        </Link>
+                        {index === items.length - 1 ? (
+                            <span 
+                                className="text-[#1D4F9C] cursor-default"
+                                aria-current="page"
+                            >
+                                {item.label}
+                            </span>
+                        ) : (
+                            <Link 
+                                href={item.href} 
+                                className="transition-colors text-[#323334]/40 hover:text-[#1D4F9C]"
+                            >
+                                {item.label}
+                            </Link>
+                        )}
                     </motion.li>
                 ))}
             </ol>
