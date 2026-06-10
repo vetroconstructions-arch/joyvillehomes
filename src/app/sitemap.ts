@@ -110,6 +110,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'weekly',
             priority: 0.8,
         },
+        {
+            url: `${baseUrl}/ar/projects`,
+            lastModified: today,
+            changeFrequency: 'daily',
+            priority: 0.9, // High priority for localized Middle East traffic
+        },
     ];
 
     // Phase 38: Per-project lastModified — capped to prevent future dates
@@ -127,7 +133,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const programmaticRoutes: MetadataRoute.Sitemap = SEO_ROUTES.map((route) => {
         const isCorporate = route.slug.includes('wipro') || route.slug.includes('infosys') || route.slug.includes('tcs') || route.slug.includes('cognizant');
         return {
-            url: `${baseUrl}/properties/${route.slug}`,
+            url: `${baseUrl}/flats-near-${route.slug}`,
             lastModified: today,
             changeFrequency: 'weekly',
             priority: isCorporate ? 0.92 : 0.75, // Higher priority for high-intent corporate routes

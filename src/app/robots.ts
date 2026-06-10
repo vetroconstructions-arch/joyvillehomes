@@ -6,6 +6,8 @@ export default function robots(): MetadataRoute.Robots {
     const commonDisallow = [
         '/_next/',
         '/api/',
+        '/api/og/',
+        '/api/concierge/',
         '/admin/',
         '/cgi-bin/',
         // Targeted block for tracking/sorting/non-content parameters
