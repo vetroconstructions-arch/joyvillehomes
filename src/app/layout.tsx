@@ -248,9 +248,17 @@ export default function RootLayout({
                 "sameAs": [
                   ...ENTITIES.DEVELOPER.sameAs,
                   "https://en.wikipedia.org/wiki/Shapoorji_Pallonji_Group",
+                  "https://www.wikidata.org/wiki/Q15380",
+                  "https://www.wikidata.org/wiki/Q5766299",
+                  "https://www.wikidata.org/wiki/Q747099",
                   "https://www.linkedin.com/company/shapoorjipallonjirealestate",
                   "https://www.instagram.com/joyvillehomes",
                   "https://www.youtube.com/c/ShapoorjiPallonjiRealEstate"
+                ],
+                "mentions": [
+                  { "@id": "https://www.wikidata.org/wiki/Q15380", "name": "Pune" },
+                  { "@id": "https://www.wikidata.org/wiki/Q5766299", "name": "Hinjewadi" },
+                  { "@id": "https://www.wikidata.org/wiki/Q747099", "name": "Real estate" }
                 ],
                 "knowsAbout": [
                   "Pune Real Estate Market",

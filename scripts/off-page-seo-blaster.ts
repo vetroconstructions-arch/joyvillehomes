@@ -74,6 +74,34 @@ async function pingRpcAggregators() {
     }
 }
 
+async function pingWebSubHub() {
+    console.log(`\n🚀 Initializing Off-Page SEO Blaster Phase 3: Real-Time WebSub Push`);
+    
+    const WEBSUB_HUB = 'https://pubsubhubbub.appspot.com/';
+    
+    try {
+        console.log(`📡 Pushing feed to WebSub Hub: ${WEBSUB_HUB}`);
+        const response = await fetch(WEBSUB_HUB, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: new URLSearchParams({
+                'hub.mode': 'publish',
+                'hub.url': FEED_URL
+            })
+        });
+        
+        if (response.ok || response.status === 204) {
+            console.log(`✅ [SUCCESS] WebSub accepted the payload! Real-time indexing triggered.`);
+        } else {
+            console.log(`⚠️ [WARNING] WebSub rejected payload: Status ${response.status}`);
+        }
+    } catch (error: any) {
+        console.log(`❌ [ERROR] WebSub Unreachable: ${error.message}`);
+    }
+}
+
 async function executeBlaster() {
     console.log(`====================================================`);
     console.log(`🔥 STARTING OFF-PAGE SEO BLASTER ENGINE 🔥`);
@@ -81,6 +109,7 @@ async function executeBlaster() {
     
     await pingSitemaps();
     await pingRpcAggregators();
+    await pingWebSubHub();
     
     console.log(`\n🎉 Off-Page SEO Blaster sweep complete! Thousands of passive scraper bots have been notified.`);
 }
