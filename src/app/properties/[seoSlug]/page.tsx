@@ -12,6 +12,7 @@ import LiveActivityFeed from '@/components/LiveActivityFeed';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { KEYWORD_MATRIX, SITE_WIDE_HARDENED_KEYWORDS } from '@/data/KeywordIntelligence';
 import { SEO_ROUTES } from '@/data/seo-routes';
+import SemanticSynthesizer from '@/components/SemanticSynthesizer';
 
 // Define the supported SEO Slugs based on our strategy matrix
 const siteUrl = 'https://joyville-homes.com';
@@ -272,6 +273,9 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
                     </div>
                 )}
             </header>
+
+            {/* HCU Hardening: Dynamic Deep Content Injection */}
+            <SemanticSynthesizer slug={routeData.slug} />
 
             {/* Rich Comparison Content for vs Pages */}
             {routeData.slug.includes('-vs-') && (

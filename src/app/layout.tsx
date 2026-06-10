@@ -240,6 +240,7 @@ export default function RootLayout({
                   "opens": "09:30",
                   "closes": "18:30"
                 },
+                "hasMap": "https://www.google.com/search?q=joyville+homes+hinjewadi&sca_esv=4a455b0f3ad2390b&rlz=1C5CHFA_enIN1014IN1014&sxsrf=ANbL-n4Jy1DKQW1N50K2I4DwVCJ3nxTm4w:1781074254163&udm=1&lsack=TgkpavHOCdHm2roPiZ6g4Qg&sa=X&ved=2ahUKEwjxrfPRivyUAxVRs1YBHQkPKIwQjGp6BAgsEAA&biw=1440&bih=778&dpr=2#sv=CAwS3QIKBmxjbF9wdhIbCgNwdnESFENnMHZaeTh4TVhkeGJtNXpaelZ3EoYBCgNscWkSf0NoaHFiM2wyYVd4c1pTQm9iMjFsY3lCb2FXNXFaWGRoWkdsSXRmR3d5dHE3Z0lBSVdpSVFBQkFCR0FBWUFpSVlhbTk1ZG1sc2JHVWdhRzl0WlhNZ2FHbHVhbVYzWVdScGtnRVVZMjl1YzNSeWRXTjBhVzl1WDJOdmJYQmhibmsSegoDdGJzEnNscmY6ITJtNCExZTE3ITRtMiExN20xITFlMiEybTQhMWUxNSE0bTIhMTVtMSExc2hhc18xd2hlZWxjaGFpcl8xYWNjZXNzaWJsZV8xZW50cmFuY2UhMm0xITFlMiEybTEhMWU4ITJtMSExZTMhM3NJQUU9Eh0KAXESGGpveXZpbGxlIGhvbWVzIGhpbmpld2FkaRoSbG9jYWwtcGxhY2Utdmlld2VyGAogu767_gs",
                 "sameAs": [
                   ...ENTITIES.DEVELOPER.sameAs,
                   "https://en.wikipedia.org/wiki/Shapoorji_Pallonji_Group",

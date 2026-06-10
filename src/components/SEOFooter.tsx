@@ -246,6 +246,37 @@ export default function SEOFooter() {
                     </div>
                 </div>
 
+                {/* Local Business Map Embed & GMB Entity Link */}
+                <div className="border-t border-[#FFFFFF]/10 pt-12 pb-8 mb-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div className="lg:col-span-1 flex flex-col justify-center">
+                        <h3 className="text-[14px] tracking-[0.25em] uppercase font-bold text-[#C5A059] mb-4">Visit Us</h3>
+                        <p className="text-[12px] text-[#FFFFFF]/60 leading-relaxed font-light mb-6">
+                            Experience the premium lifestyle at our flagship development. Joyville Homes is strategically located in the heart of Hinjewadi.
+                        </p>
+                        <a 
+                            href="https://www.google.com/search?q=joyville+homes+hinjewadi&sca_esv=4a455b0f3ad2390b&rlz=1C5CHFA_enIN1014IN1014&sxsrf=ANbL-n4Jy1DKQW1N50K2I4DwVCJ3nxTm4w:1781074254163&udm=1&lsack=TgkpavHOCdHm2roPiZ6g4Qg&sa=X&ved=2ahUKEwjxrfPRivyUAxVRs1YBHQkPKIwQjGp6BAgsEAA&biw=1440&bih=778&dpr=2#sv=CAwS3QIKBmxjbF9wdhIbCgNwdnESFENnMHZaeTh4TVhkeGJtNXpaelZ3EoYBCgNscWkSf0NoaHFiM2wyYVd4c1pTQm9iMjFsY3lCb2FXNXFaWGRoWkdsSXRmR3d5dHE3Z0lBSVdpSVFBQkFCR0FBWUFpSVlhbTk1ZG1sc2JHVWdhRzl0WlhNZ2FHbHVhbVYzWVdScGtnRVVZMjl1YzNSeWRXTjBhVzl1WDJOdmJYQmhibmsSegoDdGJzEnNscmY6ITJtNCExZTE3ITRtMiExN20xITFlMiEybTQhMWUxNSE0bTIhMTVtMSExc2hhc18xd2hlZWxjaGFpcl8xYWNjZXNzaWJsZV8xZW50cmFuY2UhMm0xITFlMiEybTEhMWU4ITJtMSExZTMhM3NJQUU9Eh0KAXESGGpveXZpbGxlIGhvbWVzIGhpbmpld2FkaRoSbG9jYWwtcGxhY2Utdmlld2VyGAogu767_gs" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="inline-block px-6 py-3 border border-[#C5A059] text-[#C5A059] text-[10px] tracking-widest uppercase hover:bg-[#C5A059] hover:text-[#0A1628] transition-all w-max"
+                        >
+                            View Google Reviews
+                        </a>
+                    </div>
+                    <div className="lg:col-span-2">
+                        <iframe 
+                            title="Joyville Homes Hinjewadi Location"
+                            src="https://maps.google.com/maps?q=joyville+homes+hinjewadi&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="250" 
+                            style={{ border: 0, opacity: 0.8 }} 
+                            allowFullScreen={false} 
+                            loading="lazy" 
+                            referrerPolicy="no-referrer-when-downgrade"
+                            className="rounded-sm grayscale hover:grayscale-0 transition-all duration-500"
+                        ></iframe>
+                    </div>
+                </div>
+
                 {/* Phase 38: Crawler Intelligence & Site Authority Hub */}
                 <div className="border-t border-[#FFFFFF]/10 pt-8 pb-8 mb-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                     <div className="col-span-1">
