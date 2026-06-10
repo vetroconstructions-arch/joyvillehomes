@@ -25,25 +25,29 @@ export default function AIConcierge() {
         }
     }, [messages]);
 
-    const handleSend = (text: string = input) => {
-        if (!text.trim()) return;
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleSend = async (text: string = input) => {
+        if (!text.trim() || isLoading) return;
         
         const newMessages = [...messages, { role: 'user', content: text }];
         setMessages(newMessages);
         setInput('');
+        setIsLoading(true);
 
-        // Simulate AI Response based on project logic
-        setTimeout(() => {
-            let response = "That's a great question! Based on current market data, I recommend looking at Joyville Sensorium for Hinjewadi or Hadapsar Annexe for East Pune. Would you like to see the price list?";
-            
-            if (text.toLowerCase().includes('hinjewadi')) {
-                response = "For Hinjewadi, Joyville Sensorium and Vyomora are top choices. Sensorium is 84% complete and offers riverfront views, while Vyomora is the latest luxury addition. Both are 5 mins from the Metro station.";
-            } else if (text.toLowerCase().includes('price') || text.toLowerCase().includes('lakhs')) {
-                response = "Joyville projects start at ₹65 Lakhs for 1 BHKs and go up to ₹1.5 Cr+ for luxury 3 BHKs. Which project or configuration should I share the cost sheet for?";
-            }
-            
-            setMessages([...newMessages, { role: 'assistant', content: response }]);
-        }, 800);
+        try {
+            const res = await fetch('/api/concierge', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ messages: newMessages })
+            });
+            const data = await res.json();
+            setMessages([...newMessages, { role: 'assistant', content: data.response }]);
+        } catch {
+            setMessages([...newMessages, { role: 'assistant', content: "I'm having trouble connecting to the network right now. Please try again in a moment." }]);
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (

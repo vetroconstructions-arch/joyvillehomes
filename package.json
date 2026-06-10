@@ -15,6 +15,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@google/genai": "^2.8.0",
     "@next/third-parties": "^16.1.6",
     "framer-motion": "^12.34.3",
     "googleapis": "^171.4.0",
