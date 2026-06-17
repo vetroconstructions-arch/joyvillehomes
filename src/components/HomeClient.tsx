@@ -53,7 +53,7 @@ export default function HomeClient() {
             <Image
               src="/images/desktop-poster.webp"
               fill
-              alt="Premium residential view of Joyville Homes by Shapoorji Pallonji in Hinjewadi, Pune"
+              alt="Shapoorji Pallonji Joyville Homes Pune - Premium 2 BHK and 3 BHK residential apartments representing the pinnacle of the Pune Real Estate Market in Hinjewadi"
               className="object-cover opacity-60 mix-blend-luminosity"
               priority
               fetchPriority="high"

@@ -308,7 +308,7 @@ export default function SEOFooter() {
 
                 {/* Phase 16.7: Popular Searches — PageRank distribution to money pages */}
                 <div className="border-t border-[#FFFFFF]/10 pt-8 pb-8 mb-8">
-                    <h3 className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#C5A059] mb-4">Popular Searches</h3>
+                    <h3 className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#C5A059] mb-4">Pune Real Estate Market - Popular Searches</h3>
                     <div className="flex flex-wrap gap-3">
                         {footerLinks.popular.map(link => (
                             <Link key={link.href} href={link.href} className="px-4 py-2 border border-[#FFFFFF]/10 text-[#FFFFFF]/60 text-[10px] font-light tracking-wider hover:border-[#C5A059]/40 hover:text-[#FFFFFF] transition-all">
@@ -316,6 +316,13 @@ export default function SEOFooter() {
                             </Link>
                         ))}
                     </div>
+                </div>
+
+                {/* Ultimate Keyword Hardening Matrix (Semantic Injector) */}
+                <div className="border-t border-[#FFFFFF]/10 pt-8 pb-8 mb-8">
+                    <p className="text-[#FFFFFF]/20 text-[9px] font-light leading-relaxed text-justify">
+                        <strong>Shapoorji Pallonji Joyville Homes Pune:</strong> As a leading developer in the <strong>Pune Real Estate Market</strong>, the <strong>Shapoorji Pallonji Joyville Homes Pune</strong> portfolio represents the pinnacle of luxury, trust, and capital appreciation. Whether you are seeking premium 2 BHK and 3 BHK flats in Hinjewadi, smart home apartments in Hadapsar, or an expansive 1000-acre township experience in Bavdhan, <strong>Shapoorji Pallonji Joyville Homes Pune</strong> delivers unparalleled construction quality (Mivan technology) and EDGE green building certification. With the rapidly expanding <strong>Pune Real Estate Market</strong>, investing in these prime IT corridors guarantees high rental yields and robust ROI for NRIs and local homebuyers alike. Explore the best of the <strong>Pune Real Estate Market</strong> with Shapoorji Pallonji.
+                    </p>
                 </div>
 
                 {/* Bottom bar */}

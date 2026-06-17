@@ -7,6 +7,15 @@ export async function GET(request: NextRequest) {
     try {
         const { searchParams } = new URL(request.url);
 
+        // Hardened Security: Prevent infinite bandwidth drain from unauthorized domains requesting images
+        const referer = request.headers.get('referer');
+        if (process.env.NODE_ENV === 'production' && (!referer || (!referer.includes('joyville-homes.com') && !referer.includes('linkedin.com') && !referer.includes('facebook.com') && !referer.includes('whatsapp.com')))) {
+            // Allow social media bots but block random scrapers
+            if (!request.headers.get('user-agent')?.toLowerCase().includes('bot')) {
+                return new Response('Unauthorized Edge Access', { status: 403 });
+            }
+        }
+
         const title = searchParams.get('title') || 'Premium Real Estate in Pune';
         const price = searchParams.get('price') || 'Starting at ₹65 Lakhs';
         const project = searchParams.get('project') || 'Joyville by Shapoorji Pallonji';

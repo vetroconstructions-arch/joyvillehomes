@@ -37,6 +37,19 @@ export async function GET() {
       <Point>
         <coordinates>${lng},${lat},0</coordinates>
       </Point>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              ${lng - 0.005},${lat - 0.005},0
+              ${lng + 0.005},${lat - 0.005},0
+              ${lng + 0.005},${lat + 0.005},0
+              ${lng - 0.005},${lat + 0.005},0
+              ${lng - 0.005},${lat - 0.005},0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
     </Placemark>`;
     });
 

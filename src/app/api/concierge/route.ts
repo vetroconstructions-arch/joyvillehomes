@@ -18,6 +18,12 @@ RULES:
 
 export async function POST(req: NextRequest) {
     try {
+        // Hardened Security: Block unauthorized cross-origin bot abuse
+        const referer = req.headers.get('referer');
+        if (process.env.NODE_ENV === 'production' && (!referer || !referer.includes('joyville-homes.com'))) {
+            return NextResponse.json({ error: 'Unauthorized origin' }, { status: 403 });
+        }
+
         const { messages } = await req.json();
         const apiKey = process.env.GEMINI_API_KEY;
 

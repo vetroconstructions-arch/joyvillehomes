@@ -52,11 +52,21 @@ export async function POST(req: Request) {
             body: JSON.stringify(payload)
         });
 
+        // Ping Seznam (European Universe)
+        const seznamRes = await fetch('https://search.seznam.cz/indexnow', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+            body: JSON.stringify(payload)
+        });
+
         return NextResponse.json({
             success: true,
             urlsSubmitted: urlList.length,
             bingStatus: bingRes.status,
-            yandexStatus: yandexRes.status
+            yandexStatus: yandexRes.status,
+            seznamStatus: seznamRes.status
         });
 
     } catch (error) {

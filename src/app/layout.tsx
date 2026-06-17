@@ -115,6 +115,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="preload" href="/images/desktop-poster.webp" as="image" type="image/webp" />
         <meta name="geo.region" content="IN-MH" />
         <meta name="geo.placename" content="Pune" />
         <meta name="geo.position" content="18.5913;73.7389" />
