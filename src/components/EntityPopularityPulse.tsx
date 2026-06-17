@@ -7,33 +7,12 @@ import { Eye, Heart, TrendingUp } from 'lucide-react';
 interface EntityPopularityPulseProps {
     views: number;
     interested: number;
-    projectName: string;
     personaTags?: string[];
 }
 
-const EntityPopularityPulse: React.FC<EntityPopularityPulseProps> = ({ views, interested, projectName, personaTags }) => {
-    // Schema for Interaction Signals
-    const interactionSchema = {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": projectName,
-        "interactionStatistic": [
-            {
-                "@type": "InteractionCounter",
-                "interactionType": "https://schema.org/ViewAction",
-                "userInteractionCount": views
-            },
-            {
-                "@type": "InteractionCounter",
-                "interactionType": "https://schema.org/SubscribeAction",
-                "userInteractionCount": interested
-            }
-        ]
-    };
-
+const EntityPopularityPulse: React.FC<EntityPopularityPulseProps> = ({ views, interested, personaTags }) => {
     return (
-        <div className="flex flex-wrap items-center gap-4 mt-6">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(interactionSchema) }} />
+        <div className="flex items-center gap-6 mt-8 p-4 bg-white/5 backdrop-blur-sm border border-[#C5A059]/20 rounded-sm w-fit font-sans">
             
             <div className="flex items-center gap-2 px-3 py-1.5 bg-[#EEF2F6] rounded-full border border-[#1D4F9C]/10">
                 <div className="relative">

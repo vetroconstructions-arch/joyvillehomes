@@ -533,7 +533,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         "offers": {
                             "@type": "Offer",
                             "priceCurrency": "INR",
-                            "price": project.price.replace(/[^0-9.]/g, '') || "8500000",
+                            "price": (parseFloat(project.price.replace(/[^0-9.]/g, '')) || 85) * (project.price.includes('Cr') ? 10000000 : 100000),
                             "priceValidUntil": "2026-12-31",
                             "availability": "https://schema.org/InStock",
                             "url": `${siteUrl}/projects/${project.slug}`
@@ -764,7 +764,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     "name": `${project.title} ${fp.type}`,
                     "description": fp.description || `Premium ${fp.type} residence with carpet area of ${fp.carpetArea} at ${project.title}, ${project.location}.`,
                     "priceCurrency": "INR",
-                    "price": project.price.replace(/[^0-9.]/g, '') || "8500000",
+                    "price": (parseFloat(project.price.replace(/[^0-9.]/g, '')) || 85) * (project.price.includes('Cr') ? 10000000 : 100000),
                     "priceValidUntil": "2026-12-31",
                     "availability": project.status.toLowerCase().includes('ready') ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
                     "itemCondition": "https://schema.org/NewCondition",
@@ -960,7 +960,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                                 <EntityPopularityPulse 
                                     views={project.interactionSignals.views}
                                     interested={project.interactionSignals.interested}
-                                    projectName={project.title}
                                     personaTags={project.personaTags}
                                 />
                             )}
