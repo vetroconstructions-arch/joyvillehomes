@@ -9,10 +9,9 @@ interface ProximityIndexProps {
         ringRoad: number;
         itHub: number;
     };
-    projectName: string;
 }
 
-export default function ProximityIndex({ scores, projectName }: ProximityIndexProps) {
+export default function ProximityIndex({ scores }: ProximityIndexProps) {
     const averageScore = ((scores.metro + scores.ringRoad + scores.itHub) / 3).toFixed(1);
 
     const scoreItems = [

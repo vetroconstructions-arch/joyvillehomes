@@ -14,13 +14,11 @@ interface ProjectComparatorProps {
 export default function ProjectComparator({ currentProject }: ProjectComparatorProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [compareProject, setCompareProject] = useState<Project | null>(null);
-    const [showPicker, setShowPicker] = useState(false);
 
     const otherProjects = projects.filter(p => p.id !== currentProject.id);
 
     const selectProject = (p: Project) => {
         setCompareProject(p);
-        setShowPicker(false);
     };
 
     const renderMetricRow = (label: string, valA: string, valB: string, highlight?: 'a' | 'b' | null) => (
@@ -100,7 +98,7 @@ export default function ProjectComparator({ currentProject }: ProjectComparatorP
                                     <div className="py-4 px-4 text-center relative">
                                         <Link href={`/projects/${compareProject.slug}`} className="text-sm font-serif text-[#1D4F9C] hover:underline">{compareProject.title}</Link>
                                         <div className="text-[9px] text-[#323334]/40 flex items-center justify-center gap-1 mt-1"><MapPin size={8} />{compareProject.location.split(',')[0]}</div>
-                                        <button onClick={() => { setCompareProject(null); setShowPicker(true); }} className="absolute top-2 right-2 text-[#323334]/30 hover:text-red-500 transition-colors" aria-label="Change project">
+                                        <button onClick={() => setCompareProject(null)} className="absolute top-2 right-2 text-[#323334]/30 hover:text-red-500 transition-colors" aria-label="Change project">
                                             <X size={14} />
                                         </button>
                                     </div>

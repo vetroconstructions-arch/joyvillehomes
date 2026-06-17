@@ -18,7 +18,7 @@ interface ConstructionMilestonesProps {
 const ConstructionMilestones: React.FC<ConstructionMilestonesProps> = ({ projectName, milestones }) => {
     if (!milestones || milestones.length === 0) return null;
 
-    const milestonesJsonLd = milestones.map((m, idx) => ({
+    const milestonesJsonLd = milestones.map((m) => ({
         "@context": "https://schema.org",
         "@type": "UpdateAction",
         "name": `${projectName} Construction Milestone: ${m.title}`,

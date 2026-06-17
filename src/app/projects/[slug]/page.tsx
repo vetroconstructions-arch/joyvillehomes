@@ -1690,7 +1690,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                             infrastructureScores={project.infrastructureScores}
                         />
 
-                        <ProximityIndex scores={project.infrastructureScores} projectName={project.title} />
+                        <ProximityIndex scores={project.infrastructureScores} />
 
                         <div className="bg-[#EEF2F6]/80 backdrop-blur-xl border border-[#C5A059]/60 p-10 rounded-sm shadow-2xl">
                             <h3 className="text-xl font-serif text-[#323334] font-light mb-8 flex items-center gap-3">

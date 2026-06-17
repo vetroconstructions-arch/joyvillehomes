@@ -9,7 +9,7 @@ interface PredictiveNavigationProps {
     localityName?: string;
 }
 
-export default function PredictiveNavigation({ context, currentSlug, localityName }: PredictiveNavigationProps) {
+export default function PredictiveNavigation({ context, localityName }: PredictiveNavigationProps) {
     let suggestion = {
         title: "Next Logical Step",
         description: "Continue your journey with our curated recommendations.",

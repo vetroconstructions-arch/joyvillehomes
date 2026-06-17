@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
         console.error("🚨 [TELEMETRY_ALERT] Client-Side Crash Detected:", JSON.stringify(payload, null, 2));
 
         return NextResponse.json({ status: "logged" }, { status: 200 });
-    } catch (e) {
+    } catch {
         return NextResponse.json({ error: "Invalid payload" }, { status: 400 });
     }
 }

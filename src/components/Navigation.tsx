@@ -8,7 +8,6 @@ import { PhoneCall, Menu, X, ChevronDown, MapPin } from "lucide-react";
 import dynamic from "next/dynamic";
 import { projects } from "@/data/projects";
 
-import { useCurrency } from "@/context/CurrencyContext";
 import CurrencyToggle from "./CurrencyToggle";
 
 const QuickEnquireModal = dynamic(() => import("./QuickEnquireModal"), {
@@ -16,7 +15,6 @@ const QuickEnquireModal = dynamic(() => import("./QuickEnquireModal"), {
 });
 
 export default function Navigation() {
-    const { currency, setCurrency } = useCurrency();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isProjectsHovered, setIsProjectsHovered] = useState(false);

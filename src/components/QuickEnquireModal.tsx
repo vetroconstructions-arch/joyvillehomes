@@ -97,7 +97,7 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
                     const vault = JSON.parse(localStorage.getItem('sovereign_vault') || '[]');
                     const updatedVault = vault.map((l: any) => l.id === leadId ? { ...l, synced: true } : l);
                     localStorage.setItem('sovereign_vault', JSON.stringify(updatedVault));
-                } catch (e) {}
+                } catch {}
 
                 setStatus('success');
                 sendGAEvent('event', 'generate_lead', {
