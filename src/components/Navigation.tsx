@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { PhoneCall, Menu, X, ChevronDown, MapPin } from "lucide-react";
@@ -61,13 +62,15 @@ export default function Navigation() {
                 <nav aria-label="Main Navigation" className="max-w-7xl mx-auto flex justify-between items-center relative">
 
                     {/* Logo & Branding */}
-                    <Link href="/" aria-label="Joyville Pune Home" className="flex flex-col z-20 focus:outline-none group">
-                        <span className="text-2xl font-serif font-light tracking-widest text-[#1D4F9C] group-hover:text-[#323334] transition-colors duration-500">
-                            JOYVILLE
-                        </span>
-                        <span className={`text-[10px] font-sans tracking-[0.4em] font-medium uppercase mt-1 transition-colors duration-500 ${(isScrolled || !isHomePage) ? 'text-[#323334] group-hover:text-[#1D4F9C]' : 'text-[#323334] group-hover:text-[#1D4F9C]'}`}>
-                            Pune • Hinjewadi
-                        </span>
+                    <Link href="/" aria-label="Joyville Pune Home" className="flex flex-col z-20 focus:outline-none group mt-2 mb-2">
+                        <Image 
+                            src="/logo.svg" 
+                            alt="Joyville by Shapoorji Pallonji" 
+                            width={160} 
+                            height={60} 
+                            className="object-contain transition-opacity duration-500 group-hover:opacity-80"
+                            priority
+                        />
                     </Link>
 
                     {/* Desktop Navigation Links */}
