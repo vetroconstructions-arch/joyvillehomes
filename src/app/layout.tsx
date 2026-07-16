@@ -14,7 +14,6 @@ import ClientWrapper from "@/components/ClientWrapper";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
 import SovereignExitIntent from "@/components/SovereignExitIntent";
-import AIConcierge from "@/components/AIConcierge";
 import { ENTITIES } from '@/data/entities';
 import { experts } from "@/data/experts";
 import { KEYWORD_MATRIX } from "@/data/KeywordIntelligence";
@@ -367,7 +366,6 @@ export default function RootLayout({
           </div>
           <SEOFooter />
           <SovereignExitIntent />
-          <AIConcierge />
           <CookieConsent />
         </ClientWrapper>
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ""} />
