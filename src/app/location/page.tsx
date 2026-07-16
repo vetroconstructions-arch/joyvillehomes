@@ -77,7 +77,7 @@ export default function LocationPage() {
     ];
 
     return (
-        <article className="min-h-screen bg-[#FFFFFF] pt-32 pb-24 text-[#323334] selection:bg-[#1D4F9C] selection:text-[#FFFFFF]">
+        <article className="min-h-[100dvh] bg-[#FFFFFF] pt-32 pb-24 text-[#323334] selection:bg-[#1D4F9C] selection:text-[#FFFFFF]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             <header className="max-w-7xl mx-auto px-6 mb-24 text-center">

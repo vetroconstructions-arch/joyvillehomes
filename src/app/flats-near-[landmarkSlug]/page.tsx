@@ -42,7 +42,7 @@ export default async function ProgrammaticLandingPage({ params }: { params: { la
     if (!landmark) return <div className="p-20 text-center">Location not found.</div>;
 
     return (
-        <main className="min-h-screen bg-[#F8FAFC]">
+        <main className="min-h-[100dvh] bg-[#F8FAFC]">
             {/* SEO Hero Section */}
             <section className="relative pt-32 pb-20 px-6 bg-[#1D4F9C] text-white">
                 <div className="absolute inset-0 z-0 opacity-20">

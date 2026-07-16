@@ -3,7 +3,7 @@ import { Home, Search, Building2, FileText, ArrowRight } from 'lucide-react';
 
 export default function NotFound() {
     return (
-        <div className="min-h-screen bg-[#EEF2F6] flex items-center justify-center px-6">
+        <div className="min-h-[100dvh] bg-[#EEF2F6] flex items-center justify-center px-6">
             <div className="max-w-2xl w-full text-center">
                 <div className="mb-8">
                     <span className="text-8xl font-serif text-[#1D4F9C]/20 font-light">404</span>

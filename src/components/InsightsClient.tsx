@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Calendar, User, Tag } from "lucide-react";
@@ -10,6 +12,10 @@ export default function InsightsClient() {
   const sortedBlogs = [...blogs].sort((a, b) => 
     new Date(b.date).getTime() - new Date(a.date).getTime()
   );
+
+  const ITEMS_PER_PAGE = 3;
+  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+  const currentBlogs = sortedBlogs.slice(0, visibleCount);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -38,7 +44,7 @@ export default function InsightsClient() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFFFFF] pt-32 pb-24 text-[#323334] selection:bg-[#1D4F9C] selection:text-[#FFFFFF]">
+    <div className="min-h-[100dvh] bg-[#FFFFFF] pt-32 pb-24 text-[#323334] selection:bg-[#1D4F9C] selection:text-[#FFFFFF]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -57,7 +63,7 @@ export default function InsightsClient() {
       </header>
 
       <main className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-        {sortedBlogs.map((blog) => (
+        {currentBlogs.map((blog) => (
           <Link 
             key={blog.id} 
             href={`/insights/${blog.slug}`}
@@ -108,6 +114,18 @@ export default function InsightsClient() {
           </Link>
         ))}
       </main>
+
+      {visibleCount < sortedBlogs.length && (
+        <div className="flex justify-center mt-16 mb-8">
+            <button
+                onClick={() => setVisibleCount(prev => prev + ITEMS_PER_PAGE)}
+                className="px-8 py-4 bg-transparent border border-[#C5A059] text-[#1D4F9C] font-semibold tracking-widest uppercase text-sm hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all duration-500 rounded-sm"
+                aria-label="Load More Insights"
+            >
+                Load More Insights
+            </button>
+        </div>
+      )}
     </div>
   );
 }

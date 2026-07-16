@@ -37,11 +37,11 @@ export default function HomeClient() {
   const [activeFloorPlan, setActiveFloorPlan] = useState<"2BHK" | "3BHK">("2BHK");
 
   return (
-    <main className="bg-[#FFFFFF] min-h-screen text-[#323334] selection:bg-[#1D4F9C] selection:text-[#FFFFFF] overflow-hidden font-sans">
+    <main className="bg-[#FFFFFF] min-h-[100dvh] text-[#323334] selection:bg-[#1D4F9C] selection:text-[#FFFFFF] overflow-hidden font-sans">
       {/* RealEstateAgent schema provided by layout.tsx @graph — no duplicate needed */}
 
       {/* --- Ultra-Modern Hero Layout (Phase 3) --- */}
-      <section className="relative h-screen w-full flex items-center overflow-hidden bg-[#EEF2F6]">
+      <section className="relative h-[100dvh] w-full flex items-center overflow-hidden bg-[#EEF2F6]">
         {/* Animated Background Parallax */}
         <div className="absolute inset-0 z-0">
           <motion.div
@@ -136,7 +136,7 @@ export default function HomeClient() {
       </section>
 
       {/* --- Brand New Launch Feature (Vyomora) --- */}
-      <section className="py-24 px-6 bg-[#FFFFFF] relative z-10" aria-labelledby="new-launch-heading">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#FFFFFF] relative z-10" aria-labelledby="new-launch-heading">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -196,7 +196,7 @@ export default function HomeClient() {
       </section>
 
       {/* --- Shapoorji Pallonji Legacy (Trust Factor) --- */}
-      <section id="legacy" className="py-32 px-6 bg-[#EEF2F6] border-b border-[#C5A059]/60 relative z-10 overflow-hidden">
+      <section id="legacy" className="py-32 px-4 sm:px-6 lg:px-8 bg-[#EEF2F6] border-b border-[#C5A059]/60 relative z-10 overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[#1D4F9C]/5 blur-[120px] pointer-events-none rounded-bl-full" />
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -316,7 +316,7 @@ export default function HomeClient() {
       </section>
 
       {/* --- Detailed Floor Plans (Dark Theme) --- */}
-      <section id="floor-plans" className="py-32 px-6 bg-[#EEF2F6] border-y border-[#C5A059]/60">
+      <section id="floor-plans" className="py-32 px-4 sm:px-6 lg:px-8 bg-[#EEF2F6] border-y border-[#C5A059]/60">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col xl:flex-row xl:items-end justify-between mb-20 gap-10">
             <motion.div
@@ -537,7 +537,7 @@ export default function HomeClient() {
       </aside>
 
       {/* Phase 16.7: Internal Link Equity Grid — distributes homepage authority to money pages */}
-      <section className="bg-[#FFFFFF] py-16 px-6 border-b border-[#C5A059]/20 content-defer" aria-label="Quick Property Searches">
+      <section className="bg-[#FFFFFF] py-16 px-4 sm:px-6 lg:px-8 border-b border-[#C5A059]/20 content-defer" aria-label="Quick Property Searches">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-4 mb-8">
             <span className="w-8 h-[1px] bg-[#1D4F9C]" />

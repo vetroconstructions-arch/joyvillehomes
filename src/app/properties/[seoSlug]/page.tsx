@@ -241,7 +241,7 @@ export default async function ProgrammaticSEOPage({ params }: { params: Promise<
     };
 
     return (
-        <main className="min-h-screen bg-[#EEF2F6] pt-32 pb-24 text-[#323334]">
+        <main className="min-h-[100dvh] bg-[#EEF2F6] pt-32 pb-24 text-[#323334]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}

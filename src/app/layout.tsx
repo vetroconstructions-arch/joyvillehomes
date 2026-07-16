@@ -193,7 +193,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} antialiased selection:bg-accent selection:text-white`}>
+      <body className={`${inter.variable} ${playfair.variable} antialiased selection:bg-accent selection:text-white overflow-x-hidden`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -361,7 +361,7 @@ export default function RootLayout({
           <MarketTicker />
           <DemandPulse />
           <FloatingWhatsApp />
-          <div className="min-h-screen flex flex-col relative text-foreground">
+          <div className="min-h-[100dvh] flex flex-col relative text-foreground">
             <Navigation />
             <PageTransition>{children}</PageTransition>
           </div>

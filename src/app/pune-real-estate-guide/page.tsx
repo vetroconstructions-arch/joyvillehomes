@@ -89,7 +89,7 @@ export default async function HomebuyersGuide({
     };
 
     return (
-        <article className="min-h-screen bg-white pt-32 pb-24 font-sans text-foreground">
+        <article className="min-h-[100dvh] bg-white pt-32 pb-24 font-sans text-foreground">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",

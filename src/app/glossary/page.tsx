@@ -28,7 +28,7 @@ export default function GlossaryPage() {
     };
 
     return (
-        <main className="min-h-screen bg-[#FFFFFF]">
+        <main className="min-h-[100dvh] bg-[#FFFFFF]">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

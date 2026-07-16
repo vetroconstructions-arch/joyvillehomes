@@ -102,7 +102,7 @@ export default async function ExpertProfilePage({ params }: { params: Promise<{ 
     };
 
     return (
-        <main className="min-h-screen bg-[#EEF2F6] text-[#323334]">
+        <main className="min-h-[100dvh] bg-[#EEF2F6] text-[#323334]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />

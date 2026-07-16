@@ -126,7 +126,7 @@ export default async function RegionalNRIHub({ params }: { params: Promise<{ reg
     };
 
     return (
-        <main className="min-h-screen bg-[#EEF2F6] text-[#323334]">
+        <main className="min-h-[100dvh] bg-[#EEF2F6] text-[#323334]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(projectListLd) }} />

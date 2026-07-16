@@ -141,7 +141,7 @@ export default async function UnitDetailPage({ params }: { params: Promise<{ uni
     };
 
     return (
-        <main className="min-h-screen bg-[#EEF2F6] pt-32 pb-24 text-[#323334]">
+        <main className="min-h-[100dvh] bg-[#EEF2F6] pt-32 pb-24 text-[#323334]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             
             <div className="max-w-7xl mx-auto px-6 mb-8 pt-6">

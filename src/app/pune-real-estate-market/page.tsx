@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function PuneRealEstateMarket() {
     return (
-        <main className="min-h-screen bg-neutral pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <main className="min-h-[100dvh] bg-neutral pt-24 pb-16 px-4 sm:px-6 lg:px-8">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",

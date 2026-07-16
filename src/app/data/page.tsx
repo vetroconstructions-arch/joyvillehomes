@@ -41,7 +41,7 @@ export default function DataHubPage() {
     };
 
     return (
-        <main className="min-h-screen bg-[#F9FAFB] pt-24 pb-16">
+        <main className="min-h-[100dvh] bg-[#F9FAFB] pt-24 pb-16">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}

@@ -44,7 +44,7 @@ export default function MatchmakerPage() {
     };
 
     return (
-        <main className="min-h-screen bg-[#EEF2F6] text-[#323334] pb-24">
+        <main className="min-h-[100dvh] bg-[#EEF2F6] text-[#323334] pb-24">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             
             {/* Matchmaker Hero */}

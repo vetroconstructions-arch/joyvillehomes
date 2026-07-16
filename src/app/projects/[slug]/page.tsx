@@ -722,7 +722,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
     const calculatedBasePrice = parseBasePrice(project.price);
 
     return (
-        <article className="min-h-screen bg-[#FFFFFF] pt-32 pb-24 text-[#323334] selection:bg-[#1D4F9C] selection:text-[#FFFFFF]">
+        <article className="min-h-[100dvh] bg-[#FFFFFF] pt-32 pb-24 text-[#323334] selection:bg-[#1D4F9C] selection:text-[#FFFFFF]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             {answerGraphJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(answerGraphJsonLd) }} />}
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />

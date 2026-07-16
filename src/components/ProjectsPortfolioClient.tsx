@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import PriceDisplay from "@/components/PriceDisplay";
 import { projects } from "@/data/projects";
 import { generateUnitSlug } from "@/utils/seo-utils";
@@ -11,11 +11,8 @@ import { generateUnitSlug } from "@/utils/seo-utils";
 const ITEMS_PER_PAGE = 2; // Strict pagination constraint for elegant display
 
 export default function ProjectsPortfolioClient() {
-    const [currentPage, setCurrentPage] = useState(1);
-
-    const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
-    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const currentProjects = projects.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+    const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+    const currentProjects = projects.slice(0, visibleCount);
 
     // Dynamic JSON-LD for the Portfolio
     const jsonLd = {
@@ -50,7 +47,7 @@ export default function ProjectsPortfolioClient() {
     };
 
     return (
-        <article className="min-h-screen bg-[#FFFFFF] pt-32 pb-24 text-[#323334] selection:bg-[#1D4F9C] selection:text-[#FFFFFF]">
+        <article className="min-h-[100dvh] bg-[#FFFFFF] pt-32 pb-24 text-[#323334] selection:bg-[#1D4F9C] selection:text-[#FFFFFF]">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             <header className="max-w-7xl mx-auto px-6 mb-24 text-center">
@@ -134,41 +131,14 @@ export default function ProjectsPortfolioClient() {
                 ))}
             </main>
 
-            {totalPages > 1 && (
-                <div className="max-w-5xl mx-auto px-6 flex justify-center items-center gap-6 pb-12">
+            {visibleCount < projects.length && (
+                <div className="flex justify-center mt-12 mb-12">
                     <button
-                        onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
-                        disabled={currentPage === 1}
-                        className="w-12 h-12 flex items-center justify-center border border-[#C5A059]/60 text-[#1D4F9C] disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all duration-300 rounded-sm"
-                        aria-label="Previous Page"
+                        onClick={() => setVisibleCount(prev => prev + ITEMS_PER_PAGE)}
+                        className="px-8 py-4 bg-transparent border border-[#C5A059] text-[#1D4F9C] font-semibold tracking-widest uppercase text-sm hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all duration-500 rounded-sm"
+                        aria-label="Load More Projects"
                     >
-                        <ChevronLeft size={20} strokeWidth={1} />
-                    </button>
-
-                    <div className="flex gap-3 text-sm tracking-[0.2em] text-[#323334]">
-                        {Array.from({ length: totalPages }).map((_, i) => (
-                            <button
-                                key={i}
-                                aria-label={`Go to page ${i + 1}`}
-                                onClick={() => setCurrentPage(i + 1)}
-                                className={`w-10 h-10 flex items-center justify-center border transition-all duration-300 rounded-sm
-                                    ${currentPage === i + 1
-                                        ? 'border-[#C5A059] text-[#FFFFFF] bg-[#1D4F9C] font-bold shadow-md'
-                                        : 'border-[#C5A059]/60 hover:border-[#C5A059] hover:bg-[#1D4F9C]/5 text-[#1D4F9C] font-medium'
-                                    }`}
-                            >
-                                {i + 1}
-                            </button>
-                        ))}
-                    </div>
-
-                    <button
-                        onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
-                        disabled={currentPage === totalPages}
-                        className="w-12 h-12 flex items-center justify-center border border-[#C5A059]/60 text-[#1D4F9C] disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all duration-300 rounded-sm"
-                        aria-label="Next Page"
-                    >
-                        <ChevronRight size={20} strokeWidth={1} />
+                        Load More Projects
                     </button>
                 </div>
             )}

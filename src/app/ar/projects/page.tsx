@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function ArabicProjectsLanding() {
     return (
-        <main dir="rtl" className="min-h-screen bg-[#F8FAFC] font-sans">
+        <main dir="rtl" className="min-h-[100dvh] bg-[#F8FAFC] font-sans">
             <section className="relative pt-32 pb-20 px-6 bg-[#1D4F9C] text-white">
                 <div className="absolute inset-0 z-0 opacity-20">
                     <Image src="/images/hero_bg.webp" fill alt="Background" className="object-cover" priority />

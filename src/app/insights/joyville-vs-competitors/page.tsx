@@ -106,7 +106,7 @@ export default function ComparisonMatrix() {
     };
 
     return (
-        <article className="min-h-screen bg-[#FFFFFF] pt-32 pb-24 text-[#323334] font-sans">
+        <article className="min-h-[100dvh] bg-[#FFFFFF] pt-32 pb-24 text-[#323334] font-sans">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(tableJsonLd) }}
