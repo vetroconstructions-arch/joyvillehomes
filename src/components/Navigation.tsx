@@ -45,15 +45,15 @@ export default function Navigation() {
     }, [isMobileMenuOpen]);
 
     const navBackground = (isScrolled || !isHomePage)
-        ? 'bg-[#EEF2F6]/90 backdrop-blur-2xl backdrop-saturate-[1.8] border-b border-[#C5A059]/50 shadow-[0_15px_40px_rgba(0,0,0,0.1)] py-4'
-        : 'bg-transparent py-8';
+        ? 'bg-[#EEF2F6]/95 backdrop-blur-2xl backdrop-saturate-[1.8] border border-[#C5A059]/50 shadow-[0_15px_40px_rgba(0,0,0,0.1)] py-2'
+        : 'bg-[#FFFFFF]/90 backdrop-blur-md border border-[#C5A059]/30 shadow-md py-2';
 
     const textColor = (isScrolled || !isHomePage) ? 'text-[#323334] font-medium' : 'text-[#323334] font-medium';
 
     return (
         <>
             <header
-                className={`fixed w-full z-[100] transition-all duration-700 ease-out px-6 md:px-12 ${navBackground}`}
+                className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-[100] transition-all duration-700 ease-out px-5 md:px-8 rounded-full ${navBackground}`}
                 onMouseLeave={() => {
                     setIsProjectsHovered(false);
                     setIsDecisionHovered(false);
@@ -62,12 +62,12 @@ export default function Navigation() {
                 <nav aria-label="Main Navigation" className="max-w-7xl mx-auto flex justify-between items-center relative">
 
                     {/* Logo & Branding */}
-                    <Link href="/" aria-label="Joyville Pune Home" className="flex flex-col z-20 focus:outline-none group mt-2 mb-2">
+                    <Link href="/" aria-label="Joyville Pune Home" className="flex flex-col z-20 focus:outline-none group">
                         <Image 
                             src="/logo.svg" 
                             alt="Joyville by Shapoorji Pallonji" 
-                            width={160} 
-                            height={60} 
+                            width={130} 
+                            height={45} 
                             className="object-contain transition-opacity duration-500 group-hover:opacity-80"
                             priority
                         />
@@ -156,7 +156,7 @@ export default function Navigation() {
                         </button>
 
                         <button
-                            className={`lg:hidden flex items-center justify-center w-12 h-12 border rounded-sm transition-colors duration-300 ${(isScrolled || !isHomePage || isMobileMenuOpen) ? 'border-[#C5A059]/30 text-[#1D4F9C] hover:bg-[#1D4F9C] hover:text-[#FFFFFF]' : 'border-[#323334]/30 text-[#323334] hover:border-[#C5A059] hover:text-[#1D4F9C]'}`}
+                            className={`lg:hidden flex items-center justify-center w-10 h-10 border rounded-full transition-colors duration-300 ${(isScrolled || !isHomePage || isMobileMenuOpen) ? 'border-[#C5A059]/30 text-[#1D4F9C] hover:bg-[#1D4F9C] hover:text-[#FFFFFF]' : 'border-[#323334]/30 text-[#323334] hover:border-[#C5A059] hover:text-[#1D4F9C]'}`}
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                             aria-label="Toggle Menu"
                         >

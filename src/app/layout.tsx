@@ -143,7 +143,6 @@ export default function RootLayout({
             category="Real Estate > Residential"
           />
         ))}
-        <SGEAnswerHub />
         <script
           type="speculationrules"
           dangerouslySetInnerHTML={{
@@ -355,6 +354,7 @@ export default function RootLayout({
             <p>Official Joyville Pune platform. Explore premium 2 &amp; 3 BHK flats across Hinjewadi, Hadapsar &amp; Bavdhan.</p>
           </div>
         </noscript>
+        <SGEAnswerHub />
         <ClientWrapper>
           <DemandPulse />
           <FloatingWhatsApp />

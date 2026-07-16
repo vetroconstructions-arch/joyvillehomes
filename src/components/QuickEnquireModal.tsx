@@ -144,7 +144,7 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
                         initial={{ opacity: 0, scale: 0.9, y: 40 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 40 }}
-                        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] max-w-lg bg-[#FFFFFF] z-[101] border border-[#C5A059]/40 shadow-[0_30px_70px_rgba(0,0,0,0.6)] rounded-sm overflow-hidden"
+                        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] max-w-lg max-h-[95dvh] overflow-y-auto bg-[#FFFFFF] z-[101] border border-[#C5A059]/40 shadow-[0_30px_70px_rgba(0,0,0,0.6)] rounded-sm"
                     >
                         <div className="grid md:grid-cols-5 h-full">
                             {/* Visual Trust Sidecar */}
