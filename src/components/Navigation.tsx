@@ -66,10 +66,11 @@ export default function Navigation() {
                         <Image 
                             src="/logo.svg" 
                             alt="Joyville by Shapoorji Pallonji" 
-                            width={130} 
+                            width={120} 
                             height={45} 
                             className="object-contain transition-opacity duration-500 group-hover:opacity-80"
                             priority
+                            unoptimized
                         />
                     </Link>
 

@@ -181,28 +181,28 @@ export const projects: Project[] = [
         price: "₹84.99 L Onwards",
         type: "2, 3 BHK & 3 BHK Duplex",
         status: "Brand New Launch",
-        reraNumber: "Coming Soon",
-        image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/1.webp", // Will update with generated image later if possible or stay with placeholder
+        reraNumber: "PR1260002600999",
+        image: "/images/joyville_hinjawadi_projectcard.webp",
         highlights: [
             "Premium IT Lifeline Location (High ROI)",
             "3 BHK Duplex Configurations",
             "Mivan Technology Construction",
             "24/7 Elite Security & Smart Surge"
         ],
-        description: "A new landmark of luxury in Hinjewadi Phase 1. Joyville Vyomora by Shapoorji Pallonji offers thoughtfully designed 2 & 3 BHK residences and exclusive 3 BHK duplexes. Perfectly positioned for Pune's IT professionals seeking high capital appreciation, premium rental yield, and walk-to-work convenience near Rajiv Gandhi Infotech Park.",
+        description: "Premium large-format residential community spread across 25 acres in Hinjawadi, Pune by Shapoorji Pallonji Real Estate. Spacious flats and duplexes of 685 sq. ft. and 1434 sq. ft., minutes from Hinjewadi Phase 1 and the Mumbai-Pune Expressway.",
         overview: [
-            "Joyville Vyomora is the latest residential marvel by Shapoorji Pallonji in Hinjewadi Phase 1, Pune's primary IT lifeline.",
-            "Strategically located near major tech giants like Wipro, Infosys, and Cognizant, it offers unmatched connectivity and a premium lifestyle.",
-            "Choose from a range of configurations including space-optimized 2 BHKs, spacious 3 BHKs, and elite 3 BHK duplex apartments, all within a RERA-approved gated community."
+            "Vyomora by Shapoorji Pallonji is envisioned as a large-format residential community spread across 25 acres of thoughtfully planned land.",
+            "In a neighbourhood defined by vertical growth, Vyomora brings horizontal breathing space. It is not just apartments within a cluster of towers – it is a master-planned environment shaped around openness, structure, and everyday ease.",
+            "Vyomora offers flats and duplexes ranging from 685 sq. ft. to 1434 sq. ft., perfectly positioned minutes from Hinjewadi Phase 1 and the Mumbai-Pune Expressway."
         ],
         amenities: [
             {
-                category: "Lifestyle & Fitness",
-                items: ["Modern Clubhouse", "Gymnasium", "Swimming Pool", "Squash Court", "Yoga & Meditation Area"]
+                category: "The 32,000+ Sq. Ft. Clubhouse",
+                items: ["Lap Pool", "Gymnasium", "Spa", "Mini Theatre", "Digital Dome", "Co-working Lounge"]
             },
             {
-                category: "Outdoors",
-                items: ["Landscaped Parks", "Jogging Tracks", "Children's Play Area", "Walking Pathways"]
+                category: "Sports & Fitness",
+                items: ["Pickleball Courts", "Mini Football Turf", "Yoga Studio", "Walking Pathways"]
             },
             {
                 category: "Safety & Utility",
@@ -220,11 +220,11 @@ export const projects: Project[] = [
             }
         ],
         floorPlans: [
-            { type: "2 BHK Premium", carpetArea: "685 - 837 sq. ft.", intelligence: { roi: "7.2%", rentalYield: "4.5%", appreciation: "12% YoY" } },
-            { type: "3 BHK Luxury", carpetArea: "1052 - 1088 sq. ft.", intelligence: { roi: "6.8%", rentalYield: "4.2%", appreciation: "11% YoY" } },
-            { type: "3 BHK Duplex", carpetArea: "1190 - 1434 sq. ft.", intelligence: { roi: "8.5%", rentalYield: "5.2%", appreciation: "15% YoY" } }
+            { type: "2 BHK Premium", carpetArea: "685 - 837 sq. ft.", image: "/images/joyville_hinjawadi_projectcard.webp", description: "Premium 2 BHK layout optimized for IT professionals.", spatialDimension: "Two Dimensional", category: "Apartment", intelligence: { roi: "7.2%", rentalYield: "4.5%", appreciation: "12% YoY" } },
+            { type: "3 BHK Luxury", carpetArea: "1052 - 1088 sq. ft.", image: "/images/joyville_hinjawadi_projectcard.webp", description: "Spacious 3 BHK luxury flats with large decks.", spatialDimension: "Two Dimensional", category: "Apartment", intelligence: { roi: "6.8%", rentalYield: "4.2%", appreciation: "11% YoY" } },
+            { type: "3 BHK Duplex", carpetArea: "1190 - 1434 sq. ft.", image: "/images/joyville_hinjawadi_projectcard.webp", description: "Exclusive 3 BHK duplexes offering villa-like living.", spatialDimension: "Two Dimensional", category: "Duplex", intelligence: { roi: "8.5%", rentalYield: "5.2%", appreciation: "15% YoY" } }
         ],
-        masterLayout: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/2.webp",
+        masterLayout: "/images/joyville_hinjawadi_projectcard.webp",
         gallery: [
             "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/3.webp",
             "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/4.webp"
@@ -421,10 +421,10 @@ export const projects: Project[] = [
             { platform: 'Instagram', url: 'https://instagram.com/joyvillehomes' }
         ],
         atAGlance: {
-            totalArea: "3.5 Acres",
-            towers: "3 Towers",
-            units: "350+ Units",
-            openSpace: "65%"
+            totalArea: "25 Acres",
+            towers: "Multiple Towers",
+            units: "Premium Residences",
+            openSpace: "Horizontal Breathing Space"
         },
         amenityEntityLinks: [
             { name: "Smart Home", wikidataUri: "https://www.wikidata.org/wiki/Q104840845" },
