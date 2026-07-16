@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Navigation from "@/components/Navigation";
-import MarketTicker from "@/components/MarketTicker";
 import PageTransition from "@/components/PageTransition";
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import GoogleProductBridge from '@/components/GoogleProductBridge';
@@ -357,7 +356,6 @@ export default function RootLayout({
           </div>
         </noscript>
         <ClientWrapper>
-          <MarketTicker />
           <DemandPulse />
           <FloatingWhatsApp />
           <div className="min-h-[100dvh] flex flex-col relative text-foreground">
