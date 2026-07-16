@@ -88,8 +88,13 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/favicon.ico',
-    apple: '/icon-192.png',
+    icon: [
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: [
+      { url: '/icon-192.png' },
+    ],
   },
   appleWebApp: {
     capable: true,
