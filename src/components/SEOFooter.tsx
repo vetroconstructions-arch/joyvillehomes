@@ -239,9 +239,9 @@ export default function SEOFooter() {
                         {/* RERA & Authority Silo */}
                         <div className="space-y-3">
                             <p className="text-[9px] font-bold text-[#FFFFFF]/40 uppercase tracking-widest border-b border-[#FFFFFF]/10 pb-2">RERA & Wikidata</p>
-                            <a href="https://maharera.mahaonline.gov.in/" target="_blank" rel="noopener noreferrer" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">MahaRERA Official</a>
-                            <a href="https://www.wikidata.org/wiki/Q183" target="_blank" rel="noopener noreferrer" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">India Geo-Entity</a>
-                            <a href="https://www.wikidata.org/wiki/Q1515" target="_blank" rel="noopener noreferrer" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">Pune City Authority</a>
+                            <span className="block text-[10px] text-[#FFFFFF]/60">MahaRERA Official</span>
+                            <span className="block text-[10px] text-[#FFFFFF]/60">India Geo-Entity</span>
+                            <span className="block text-[10px] text-[#FFFFFF]/60">Pune City Authority</span>
                         </div>
                     </div>
                 </div>
@@ -253,14 +253,7 @@ export default function SEOFooter() {
                         <p className="text-[12px] text-[#FFFFFF]/60 leading-relaxed font-light mb-6">
                             Experience the premium lifestyle at our flagship development. Joyville Homes is strategically located in the heart of Hinjewadi.
                         </p>
-                        <a 
-                            href="https://www.google.com/search?q=joyville+homes+hinjewadi&sca_esv=4a455b0f3ad2390b&rlz=1C5CHFA_enIN1014IN1014&sxsrf=ANbL-n4Jy1DKQW1N50K2I4DwVCJ3nxTm4w:1781074254163&udm=1&lsack=TgkpavHOCdHm2roPiZ6g4Qg&sa=X&ved=2ahUKEwjxrfPRivyUAxVRs1YBHQkPKIwQjGp6BAgsEAA&biw=1440&bih=778&dpr=2#sv=CAwS3QIKBmxjbF9wdhIbCgNwdnESFENnMHZaeTh4TVhkeGJtNXpaelZ3EoYBCgNscWkSf0NoaHFiM2wyYVd4c1pTQm9iMjFsY3lCb2FXNXFaWGRoWkdsSXRmR3d5dHE3Z0lBSVdpSVFBQkFCR0FBWUFpSVlhbTk1ZG1sc2JHVWdhRzl0WlhNZ2FHbHVhbVYzWVdScGtnRVVZMjl1YzNSeWRXTjBhVzl1WDJOdmJYQmhibmsSegoDdGJzEnNscmY6ITJtNCExZTE3ITRtMiExN20xITFlMiEybTQhMWUxNSE0bTIhMTVtMSExc2hhc18xd2hlZWxjaGFpcl8xYWNjZXNzaWJsZV8xZW50cmFuY2UhMm0xITFlMiEybTEhMWU4ITJtMSExZTMhM3NJQUU9Eh0KAXESGGpveXZpbGxlIGhvbWVzIGhpbmpld2FkaRoSbG9jYWwtcGxhY2Utdmlld2VyGAogu767_gs" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="inline-block px-6 py-3 border border-[#C5A059] text-[#C5A059] text-[10px] tracking-widest uppercase hover:bg-[#C5A059] hover:text-[#0A1628] transition-all w-max"
-                        >
-                            View Google Reviews
-                        </a>
+                        View Google Reviews
                     </div>
                     <div className="lg:col-span-2">
                         <iframe 
@@ -336,7 +329,7 @@ export default function SEOFooter() {
                     </div>
                     <p className="text-[#FFFFFF]/30 text-[9px] tracking-[0.2em] uppercase text-center max-w-md">
                         Digital presence managed by Authorized Channel Partners. All projects are MahaRERA Registered. 
-                        Official verification: <a href="https://maharera.mahaonline.gov.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#C5A059]">MahaRERA Portal</a>. 
+                        Official verification: <span className="text-[#1D4F9C] font-semibold">MahaRERA Portal</span>. 
                         © {new Date().getFullYear()} Shapoorji Pallonji Real Estate.
                     </p>
                     <div className="flex flex-wrap gap-6 text-[#FFFFFF]/40 text-[10px] uppercase tracking-widest font-light">
@@ -356,7 +349,7 @@ export default function SEOFooter() {
                         The content provided on this website is for informational purposes only and does not constitute an offer, invitation, or solicitation to purchase properties. This is not the official developer website; it is managed by Authorized Channel Partners for marketing, education, and information dissemination. All project information, including but not limited to brochures, floor plans, pricing, layouts, and availability, is subject to change at the sole discretion of the developer without prior notice. 
                     </p>
                     <p>
-                        The images, renders, and virtual tours shown are artistic impressions and representational in nature. Actual deliveries may vary. We do not guarantee the accuracy or completeness of the data presented and shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use of this information. All projects listed are MahaRERA registered. Prospective buyers are strongly advised to independently verify all details, including RERA registration numbers, property approvals, and terms of sale, by visiting the official MahaRERA website (<a href="https://maharera.mahaonline.gov.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#C5A059] transition-colors">https://maharera.mahaonline.gov.in</a>) before making any booking or investment decision. By providing your contact details, you authorize us to contact you via Whatsapp, SMS, Phone Call, or Email.
+                        The images, renders, and virtual tours shown are artistic impressions and representational in nature. Actual deliveries may vary. We do not guarantee the accuracy or completeness of the data presented and shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use of this information. All projects listed are MahaRERA registered. Prospective buyers are strongly advised to independently verify all details, including RERA registration numbers, property approvals, and terms of sale, by visiting the official MahaRERA website (<span className="text-[#1D4F9C] font-semibold">https://maharera.mahaonline.gov.in</span>) before making any booking or investment decision. By providing your contact details, you authorize us to contact you via Whatsapp, SMS, Phone Call, or Email.
                     </p>
                 </div>
             </div>
