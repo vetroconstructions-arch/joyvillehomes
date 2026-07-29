@@ -2,8 +2,28 @@
 
 import { MessageCircle } from 'lucide-react';
 import { sendGAEvent } from '@next/third-parties/google';
+import { usePathname } from 'next/navigation';
+import { projects } from '@/data/projects';
+import { useMemo } from 'react';
 
 export default function FloatingWhatsApp() {
+    const pathname = usePathname();
+
+    const whatsappMessage = useMemo(() => {
+        let message = "Hi, I'm interested in Joyville Homes Pune.";
+        
+        // Detect if we are on a project page
+        if (pathname?.startsWith('/projects/')) {
+            const slug = pathname.split('/').pop();
+            const project = projects.find(p => p.slug === slug);
+            if (project) {
+                message = `Hi, I'm interested in ${project.title}. Could you share more details?`;
+            }
+        }
+        
+        return encodeURIComponent(message);
+    }, [pathname]);
+
     const handleWhatsAppClick = () => {
         sendGAEvent('event', 'whatsapp_click', {
             event_category: 'Lead Generation',
@@ -20,7 +40,7 @@ export default function FloatingWhatsApp() {
 
     return (
         <a
-            href="https://wa.me/917744009295?text=I'm%20interested%20in%20Joyville%20Homes%20Pune."
+            href={`https://wa.me/917744009295?text=${whatsappMessage}`}
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleWhatsAppClick}

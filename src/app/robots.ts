@@ -3,63 +3,62 @@ import { MetadataRoute } from 'next';
 export default function robots(): MetadataRoute.Robots {
     const siteUrl = 'https://joyville-homes.com';
 
+    // Disallow parameters to prevent infinite crawl spaces
     const commonDisallow = [
         '/_next/',
         '/api/',
-        '/api/og/',
-        '/api/concierge/',
         '/admin/',
         '/cgi-bin/',
-        // Targeted block for tracking/sorting/non-content parameters
-        '/*?utm_*',
-        '/*?fbclid=*',
-        '/*?gclid=*',
-        '/*?sort=*',
-        '/*?filter=*',
-        '/*?ref=*',
-        '/*?action=*'
+        // Tracking & query params
+        '/*?*utm_*',
+        '/*?*fbclid=*',
+        '/*?*gclid=*',
+        '/*?*sort=*',
+        '/*?*filter=*',
+        '/*?*ref=*',
+        '/*?*action=*',
+        '/*?*session=*',
+        '/*?*search=*'
     ];
 
     return {
         rules: [
+            // Standard Global Rules
             {
                 userAgent: '*',
                 allow: '/',
                 disallow: commonDisallow,
             },
+            // Primary Search Engines (Google/Bing)
             {
-                userAgent: ['GPTBot', 'ChatGPT-User', 'Anthropic-ai', 'Claude-Web', 'CCBot', 'Google-Extended'],
-                disallow: commonDisallow,
-                crawlDelay: 1, // Protect server bandwidth from AI scrapers
-            },
-            {
-                userAgent: ['Googlebot', 'Googlebot-Image'],
+                userAgent: ['Googlebot', 'Googlebot-Image', 'Googlebot-Video', 'Googlebot-News', 'bingbot', 'YandexBot', 'Slurp'],
                 allow: '/',
                 disallow: commonDisallow,
             },
+            // Google Advanced Inspection & AI Overviews
             {
-                userAgent: ['bingbot', 'YandexBot', 'Slurp'],
+                userAgent: ['Google-InspectionTool', 'Google-Extended'],
                 allow: '/',
-                disallow: commonDisallow,
-                crawlDelay: 2, // Respect secondary engine crawl budgets
+                disallow: ['/_next/', '/api/', '/admin/'], // Minimal blocks to allow full rendering evaluation
             },
+            // AI Agents & LLM Scrapers (Throttled but allowed for knowledge graph)
             {
-                userAgent: 'Google-InspectionTool',
-                allow: '/',
-                disallow: [], // Full access for visual/technical inspection (SGE/Rich Results)
-            },
-            // Secure SGE & AI Search presence (Gemini, ChatGPT, Claude)
-            {
-                userAgent: ['GPTBot', 'ChatGPT-User', 'anthropic-ai', 'ClaudeBot', 'Google-Extended', 'OAI-SearchBot', 'PerplexityBot', 'YouBot', 'clark', 'Crystale', 'FacebookBot', 'ImagesiftBot', 'PetalBot'], 
+                userAgent: ['GPTBot', 'ChatGPT-User', 'anthropic-ai', 'ClaudeBot', 'OAI-SearchBot', 'PerplexityBot', 'YouBot'], 
                 allow: ['/', '/ai-manifest.json'],
+                disallow: commonDisallow,
+                crawlDelay: 2, // Protect server bandwidth
             },
-            // Block invasive/low-value scrapers
+            // Block invasive/low-value aggregators
             {
-                userAgent: ['CCBot', 'Omigili', 'Twitterbot', 'GPTBot-Mobile'],
+                userAgent: ['CCBot', 'Omigili', 'Twitterbot', 'GPTBot-Mobile', 'PetalBot', 'ImagesiftBot'],
                 disallow: ['/'],
             }
         ],
-        sitemap: `${siteUrl}/sitemap.xml`,
+        sitemap: [
+            `${siteUrl}/sitemap.xml`,
+            `${siteUrl}/google-products.xml`,
+            `${siteUrl}/aggregator-feed.xml`
+        ],
         host: siteUrl,
     };
 }

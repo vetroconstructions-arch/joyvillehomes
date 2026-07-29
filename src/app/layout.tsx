@@ -30,12 +30,6 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://joyville-homes.com'),
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en-IN': '/',
-    },
-  },
   title: {
     template: "%s | Joyville Homes Pune | Shapoorji Pallonji",
     default: "Joyville Homes Pune | Shapoorji Pallonji | Top Real Estate in Pune",

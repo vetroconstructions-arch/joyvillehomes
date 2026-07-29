@@ -121,12 +121,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Phase 38: Per-project lastModified — capped to prevent future dates
     const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => {
         const rawDate = project.lastDataAudit ? new Date(project.lastDataAudit) : generalLastMod;
-        return {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const sitemapEntry: any = {
             url: `${baseUrl}/projects/${project.slug}`,
             lastModified: capDate(rawDate),
             changeFrequency: 'weekly',
             priority: 0.9,
         };
+        // Safely add images (Next 14+ natively supports this in XML generation)
+        if (project.gallery && project.gallery.length > 0) {
+            sitemapEntry.images = project.gallery.map(url => url);
+        } else if (project.image) {
+            sitemapEntry.images = [project.image];
+        }
+        return sitemapEntry;
     });
 
     // Phase 38: PSEO routes — tiered down from 1.0 to prevent priority dilution
