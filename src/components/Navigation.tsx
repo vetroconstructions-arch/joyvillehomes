@@ -142,6 +142,7 @@ export default function Navigation() {
                         </div>
 
                         <Link href="/amenities" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4 focus-visible:ring-2 focus-visible:ring-[#1D4F9C] focus-visible:outline-none rounded-sm px-1">Amenities</Link>
+                        <Link href="/roi-calculator" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4 focus-visible:ring-2 focus-visible:ring-[#1D4F9C] focus-visible:outline-none rounded-sm px-1">ROI Calculator</Link>
                         <Link href="/locality/compare" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4 font-bold border-b-2 border-[#1D4F9C]/0 hover:border-[#1D4F9C]/100 focus-visible:ring-2 focus-visible:ring-[#1D4F9C] focus-visible:outline-none rounded-sm px-1">Market Matrix</Link>
                         <Link href="/press-research" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4 focus-visible:ring-2 focus-visible:ring-[#1D4F9C] focus-visible:outline-none rounded-sm px-1">Research Hub</Link>
                         <Link href="/location" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4 focus-visible:ring-2 focus-visible:ring-[#1D4F9C] focus-visible:outline-none rounded-sm px-1">Location</Link>
@@ -243,6 +244,12 @@ export default function Navigation() {
                             </motion.div>
                             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }}>
                                 <Link onClick={() => setIsMobileMenuOpen(false)} href="/projects" className="text-4xl sm:text-5xl font-serif text-[#323334] font-light hover:text-[#1D4F9C] transition-colors inline-block py-2">Portfolios</Link>
+                            </motion.div>
+                            <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.6 }}>
+                                <Link onClick={() => setIsMobileMenuOpen(false)} href="/amenities" className="text-4xl sm:text-5xl font-serif text-[#323334] font-light hover:text-[#1D4F9C] transition-colors inline-block py-2">Amenities</Link>
+                            </motion.div>
+                            <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.6 }}>
+                                <Link onClick={() => setIsMobileMenuOpen(false)} href="/roi-calculator" className="text-4xl sm:text-5xl font-serif text-[#323334] font-light hover:text-[#1D4F9C] transition-colors inline-block py-2">ROI Calculator</Link>
                             </motion.div>
                             <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.6 }}>
                                 <Link onClick={() => setIsMobileMenuOpen(false)} href="/locality/compare" className="text-4xl sm:text-5xl font-serif text-[#1D4F9C] font-bold inline-block py-2 italic underline underline-offset-8 decoration-[#C5A059]">Market Matrix</Link>
