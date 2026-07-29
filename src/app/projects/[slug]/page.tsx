@@ -143,6 +143,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
     const siteUrl = 'https://joyville-homes.com';
     const locality = localities.find(l => l.name.toLowerCase() === project.location.toLowerCase());
+    const expandedKeywords = GET_EXPANDED_KEYWORDS(project.title, project.location);
 
     const jsonLd = {
         "@context": "https://schema.org",
@@ -1919,6 +1920,34 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                         </p>
                     </div>
                 </div>
+            </section>
+
+            {/* Project-Level Shadow Index (Crawler Visible for Long-Tail Searchability) */}
+            <section className="sr-only" aria-hidden="true">
+                <h2>{project.title} Detailed Property Index and Search Data</h2>
+                
+                <h3>Core Project Keywords</h3>
+                <ul>
+                    {project.seoKeywords.map((kw, i) => (
+                        <li key={`kw-${i}`}>{kw}</li>
+                    ))}
+                    {expandedKeywords.map((kw, i) => (
+                        <li key={`ekw-${i}`}>{kw}</li>
+                    ))}
+                </ul>
+
+                <h3>Configuration & Pricing Data</h3>
+                <p>
+                    {project.title} offers premium configurations including: 
+                    {project.floorPlans.map(fp => `${fp.type} (${fp.carpetArea})`).join(', ')}.
+                    The official price starts from ${project.price}. For exact cost sheets, payment plans, and floor plan PDFs, please schedule a site visit.
+                </p>
+
+                <h3>Location & Infrastructure</h3>
+                <p>
+                    Located in {project.location}, this Shapoorji Pallonji Joyville project is in close proximity to:
+                    {project.nearbyEntities ? project.nearbyEntities.join(', ') : 'major IT parks, schools, and hospitals.'}
+                </p>
             </section>
 
         </article>
