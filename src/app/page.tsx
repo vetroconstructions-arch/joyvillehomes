@@ -80,6 +80,58 @@ export default function Home() {
 
             <SGEAnswerHub />
 
+            {/* Rank #1 Visible Semantic Authority Injection */}
+            <section className="bg-white py-16 md:py-24 border-t border-[#C5A059]/10">
+                <div className="max-w-4xl mx-auto px-6 text-center">
+                    <h2 className="text-3xl font-serif mb-6 text-[#1D4F9C]">Shapoorji Pallonji Real Estate: Defining Pune&apos;s Skyline</h2>
+                    <div className="space-y-6 text-sm md:text-base font-light text-[#323334]/80 leading-relaxed text-left">
+                        <p>
+                            As Pune rapidly expands into a global IT and manufacturing powerhouse, the demand for premium, reliable housing has never been higher. <strong>Shapoorji Pallonji Real Estate Pune</strong> stands at the forefront of this transformation, delivering unparalleled luxury and trust through the <strong>Joyville Homes</strong> portfolio. Whether you are looking to <Link href="/flats-in-pune" className="text-[#C5A059] underline hover:text-[#1D4F9C]">buy flats in Pune</Link> or seeking high-yield real estate investments, our projects offer the perfect blend of modern architecture and natural serenity.
+                        </p>
+                        <p>
+                            Our footprint covers the city&apos;s most high-growth corridors. In the West, <strong>Joyville Sensorium</strong> and the sprawling <strong>Vanaha Bavdhan</strong> township (featuring Golfland and Springs) offer residents immediate access to the Hinjewadi IT Park and Mumbai-Bengaluru highway. For those seeking absolute exclusivity, <strong>Joyville Vyomora</strong> represents the pinnacle of luxury living in Pune. In the East, <strong>Joyville Hadapsar Annexe</strong>, <strong>Joyville Celestia</strong>, and <strong>Joyville Skyluxe Edition</strong> provide unparalleled connectivity to SP Infocity and Magarpatta, making them the ultimate choice for IT professionals.
+                        </p>
+                        <p>
+                            Every Shapoorji Pallonji project in Pune is strictly RERA-approved, backed by a 150+ year legacy of construction excellence. From expansive 2 BHK and 3 BHK flats to exclusive townhomes, we build more than just houses; we build generational wealth and vibrant communities. Explore our <Link href="/projects" className="text-[#C5A059] underline hover:text-[#1D4F9C]">official price list and floor plans</Link> to secure your future today.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* FAQ Schema Payload for PAA Snippets */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "What are the top Shapoorji Pallonji projects in Pune?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Top Shapoorji Pallonji projects in Pune include Joyville Vyomora, Joyville Sensorium in Hinjewadi, Vanaha (Golfland and Springs) in Bavdhan, and Joyville Hadapsar Annexe, Celestia, and Skyluxe Edition near SP Infocity."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Why buy flats in Pune with Joyville Homes?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Joyville Homes by Shapoorji Pallonji offers premium 2 & 3 BHK flats with world-class amenities, Mivan construction quality, strategic locations near IT hubs (Hinjewadi and Hadapsar), and strict RERA compliance."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "What is the starting price of Joyville Pune flats?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Premium 2 BHK flats at Joyville Pune start from approximately ₹65 Lakhs, scaling up to ultra-luxury 3 BHKs and townhomes depending on the project (Vyomora, Vanaha, etc.) and configuration."
+                            }
+                        }
+                    ]
+                })
+            }} />
+
             {/* Task 3: Homepage Technical SEO Mesh — Shadow Indexing (Crawler Visible) */}
             <section className="sr-only" aria-hidden="true">
                 <h2>Shapoorji Pallonji Joyville Pune Search Index 2026</h2>

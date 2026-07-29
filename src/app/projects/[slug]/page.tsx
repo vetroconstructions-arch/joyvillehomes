@@ -1901,6 +1901,26 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 </div>
             </aside>
 
+            {/* Rank #1 Micro-Market Dominance Injection */}
+            <section className="max-w-7xl mx-auto px-6 mt-16 mb-8 border-t border-[#C5A059]/20 pt-16">
+                <div className="bg-[#EEF2F6] p-8 md:p-12 rounded-sm border border-[#1D4F9C]/5 shadow-inner">
+                    <h2 className="text-2xl font-serif text-[#1D4F9C] mb-6">
+                        Why Invest in {project.title} by Shapoorji Pallonji?
+                    </h2>
+                    <div className="space-y-4 text-sm font-light text-[#323334]/80 leading-relaxed">
+                        <p>
+                            Strategically positioned in the heart of <strong>{project.location}</strong>, {project.title} represents a masterclass in urban planning and luxury real estate. As property values in Pune continue their upward trajectory, securing a <strong>{project.title} flat</strong> offers not just a premium lifestyle but a high-yield asset.
+                        </p>
+                        <p>
+                            For IT professionals and families looking to <strong>buy a 2 BHK or 3 BHK in {project.location.split(',')[0]}</strong>, Shapoorji Pallonji Real Estate delivers unmatched build quality with Mivan technology and robust infrastructure. {project.title} provides seamless connectivity to key commercial hubs, renowned educational institutions, and healthcare facilities.
+                        </p>
+                        <p>
+                            Backed by the 150-year legacy of the Shapoorji Pallonji Group, this RERA-approved development is designed for absolute transparency. Explore the detailed <strong>{project.title} floor plans, master layout, and the official price list</strong> to make an informed investment decision today.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
         </article>
     );
 }
