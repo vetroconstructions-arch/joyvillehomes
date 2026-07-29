@@ -87,7 +87,7 @@ export default function MediaPRPage() {
                                 <span className="text-[#1D4F9C]">{pr.outlet}</span>
                             </div>
                             <h3 className="text-xl font-serif text-[#323334] mb-6 leading-snug group-hover:text-[#1D4F9C] transition-colors">{pr.title}</h3>
-                            <Link href="#" className="mt-auto inline-flex items-center gap-2 text-[#1D4F9C] text-[10px] uppercase tracking-[0.2em] font-bold">
+                            <Link href="/insights" className="mt-auto inline-flex items-center gap-2 text-[#1D4F9C] text-[10px] uppercase tracking-[0.2em] font-bold">
                                 Read Press Release <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                             </Link>
                         </div>

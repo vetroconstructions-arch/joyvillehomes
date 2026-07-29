@@ -226,12 +226,12 @@ export const projects: Project[] = [
         ],
         masterLayout: "/images/joyville_hinjawadi_projectcard.webp",
         gallery: [
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/3.webp",
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/4.webp"
+            "/images/desktop-poster.webp",
+            "/images/desktop-poster.webp"
         ],
         galleryItems: [
-            { url: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/1.webp", caption: "Joyville Vyomora Hinjewadi Exterior View", alt: "Joyville Vyomora Luxury 2 & 3 BHK Apartments Hinjewadi", category: "Exterior" },
-            { url: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/3.webp", caption: "Premium Living Room Design Vyomora", alt: "Spacious Living Area Vyomora Hinjewadi", category: "Interior" }
+            { url: "/images/desktop-poster.webp", caption: "Joyville Vyomora Hinjewadi Exterior View", alt: "Joyville Vyomora Luxury 2 & 3 BHK Apartments Hinjewadi", category: "Exterior" },
+            { url: "/images/desktop-poster.webp", caption: "Premium Living Room Design Vyomora", alt: "Spacious Living Area Vyomora Hinjewadi", category: "Interior" }
         ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.9!2d73.7!3d18.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bb!2sJoyville%20Sensorium!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin",
@@ -325,7 +325,7 @@ export const projects: Project[] = [
         featuredAmenities: ["Smart Home Automation", "Infinity Pool", "Electric Vehicle Charging", "Sky Lounge"],
         lastPriceUpdate: "2026-03-01",
         videoUrl: "https://www.youtube.com/watch?v=mock_vyomora",
-        videoThumbnail: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/1.webp",
+        videoThumbnail: "/images/desktop-poster.webp",
         siteOffice: {
             address: "Joyville Vyomora Sales Gallery, Hinjewadi Phase 1, Pune 411057",
             tel: "+91-20-6743-1149",
@@ -504,15 +504,15 @@ export const projects: Project[] = [
                 intelligence: { roi: "7.2%", rentalYield: "4.5%", appreciation: "12% YoY" }
             }
         ],
-        masterLayout: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/2.webp",
+        masterLayout: "/images/desktop-poster.webp",
         gallery: [
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/3.webp",
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/4.webp",
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/5.webp"
+            "/images/desktop-poster.webp",
+            "/images/desktop-poster.webp",
+            "/images/desktop-poster.webp"
         ],
         galleryItems: [
-            { url: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/1.webp", caption: "Joyville Sensorium Master Clubhouse", alt: "Joyville Sensorium Amenities and Lifestyle", category: "Amenity" },
-            { url: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/3.webp", caption: "Sunken Garden View", alt: "Joyville Sensorium Biophilic Design Garden", category: "Nature" }
+            { url: "/images/desktop-poster.webp", caption: "Joyville Sensorium Master Clubhouse", alt: "Joyville Sensorium Amenities and Lifestyle", category: "Amenity" },
+            { url: "/images/desktop-poster.webp", caption: "Sunken Garden View", alt: "Joyville Sensorium Biophilic Design Garden", category: "Nature" }
         ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.980646012613!2d73.723826!3d18.559385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bbc6da6fcb2b%3A0xcdaaaadd11c2e47c!2sJoyville%20Sensorium!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
@@ -605,7 +605,7 @@ export const projects: Project[] = [
             }
         ],
         videoUrl: "https://www.youtube.com/watch?v=mock_sensorium",
-        videoThumbnail: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/1.webp",
+        videoThumbnail: "/images/desktop-poster.webp",
         featuredAmenities: ["Infinity Edge Pool", "2.8-acre Sunken Garden", "1.8 km Walking Boulevard", "Electric Vehicle Charging Stations"],
         technicalSpecs: [
             { label: "Structural Integrity", value: "Mivan Monolithic Pour" },
@@ -781,10 +781,10 @@ export const projects: Project[] = [
                 intelligence: { roi: "7.5%", rentalYield: "4.5%", appreciation: "12% YoY" }
             }
         ],
-        masterLayout: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/banner/desktop/desktop_banner.webp",
+        masterLayout: "/images/desktop-poster.webp",
         gallery: [
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/1.webp",
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/2.webp",
+            "/images/desktop-poster.webp",
+            "/images/desktop-poster.webp",
             "/images/joyville_hadapsar_projectcard.webp"
         ],
         locationDetails: {
@@ -855,7 +855,7 @@ export const projects: Project[] = [
             }
         ],
         videoUrl: "https://www.youtube.com/watch?v=mock_hadapsar_annexe",
-        videoThumbnail: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/1.webp",
+        videoThumbnail: "/images/desktop-poster.webp",
         featuredAmenities: ["35,000 sq. ft. Grand Clubhouse", "8.8 Acres of Open Space", "Miyawaki Forest", "Swimming Pool"],
         technicalSpecs: [
             { label: "Construction Technology", value: "Mivan Pre-cast / Monolithic" },
@@ -1006,13 +1006,13 @@ export const projects: Project[] = [
                 intelligence: { roi: "7.5%", rentalYield: "4.0%", appreciation: "14% YoY" }
             }
         ],
-        masterLayout: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/sensorium/banner/desktop/desktop_banner.webp",
+        masterLayout: "/images/desktop-poster.webp",
         gallery: [
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/sensorium/gallery/1.webp",
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/sensorium/gallery/2.webp"
+            "/images/desktop-poster.webp",
+            "/images/desktop-poster.webp"
         ],
         galleryItems: [
-            { url: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/sensorium/banner/desktop/desktop_banner.webp", caption: "Joyville Celestia Sky-High Residences", alt: "Joyville Celestia Luxury Apartments Pune East", category: "Hero" }
+            { url: "/images/desktop-poster.webp", caption: "Joyville Celestia Sky-High Residences", alt: "Joyville Celestia Luxury Apartments Pune East", category: "Hero" }
         ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5042!2d73.9786!3d18.5042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1c!2sJoyville%20Hadapsar!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin",
@@ -1213,11 +1213,11 @@ export const projects: Project[] = [
             { type: "3 BHK Skyluxe", carpetArea: "1,250 sq. ft." },
             { type: "3 BHK Penthouse", carpetArea: "1,850 sq. ft." }
         ],
-        masterLayout: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/1.webp",
+        masterLayout: "/images/desktop-poster.webp",
         gallery: [
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/2.webp",
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/3.webp",
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/5.webp"
+            "/images/desktop-poster.webp",
+            "/images/desktop-poster.webp",
+            "/images/desktop-poster.webp"
         ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.33748259646!2d73.967471!3d18.494437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e9d2b291a271%3A0x6bba41a5d2cf5913!2sJoyville%20Hadapsar%20Annexe!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
@@ -1414,8 +1414,8 @@ export const projects: Project[] = [
         ],
         masterLayout: "/images/desktop-poster.webp",
         gallery: [
-            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/wildernest/gallery/1.webp",
-            "https://shapoorjirealestate.com/files/assets/jpegs/wildernest/gallery/2.webp"
+            "/images/desktop-poster.webp",
+            "/images/desktop-poster.webp"
         ],
         galleryItems: [
             { url: "/images/desktop-poster.webp", caption: "Wildernest at SP Kingstown Biophilic Living", alt: "Wildernest Luxury Apartments Hadapsar Pune", category: "Exterior" }
@@ -1593,13 +1593,13 @@ export const projects: Project[] = [
                 intelligence: { roi: "9.5%", rentalYield: "6.0%", appreciation: "15% YoY" }
             }
         ],
-        masterLayout: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp",
+        masterLayout: "/images/desktop-poster.webp",
         gallery: [
-            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/gallery/1.webp",
-            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/gallery/2.webp"
+            "/images/desktop-poster.webp",
+            "/images/desktop-poster.webp"
         ],
         galleryItems: [
-            { url: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp", caption: "Vanaha Golfland Resort-Style Living", alt: "Vanaha Golfland Luxury Apartments Bavdhan Pune", category: "Hero" }
+            { url: "/images/desktop-poster.webp", caption: "Vanaha Golfland Resort-Style Living", alt: "Vanaha Golfland Luxury Apartments Bavdhan Pune", category: "Hero" }
         ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5!2d73.7!3d18.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bb!2sVanaha%20Bavdhan!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin",
@@ -1766,13 +1766,13 @@ export const projects: Project[] = [
                 intelligence: { roi: "8.2%", rentalYield: "4.8%", appreciation: "12% YoY" }
             }
         ],
-        masterLayout: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp",
+        masterLayout: "/images/desktop-poster.webp",
         gallery: [
-            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha_springs/desktop/banner.jpg",
-            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/gallery/photo_gallery_building_facade1_v2.webp"
+            "/images/desktop-poster.webp",
+            "/images/desktop-poster.webp"
         ],
         galleryItems: [
-            { url: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha_springs/desktop/banner.jpg", caption: "Vanaha Springs Valley View Apartments", alt: "Vanaha Springs Eco-Friendly Homes Bavdhan", category: "Exterior" }
+            { url: "/images/desktop-poster.webp", caption: "Vanaha Springs Valley View Apartments", alt: "Vanaha Springs Eco-Friendly Homes Bavdhan", category: "Exterior" }
         ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5!2d73.7!3d18.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bb!2sVanaha%20Bavdhan!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin",
@@ -2141,8 +2141,8 @@ export const projects: Project[] = [
         ],
         masterLayout: "/images/desktop-poster.webp",
         gallery: [
-            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/gallery/1.webp",
-            "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/gallery/2.webp"
+            "/images/desktop-poster.webp",
+            "/images/desktop-poster.webp"
         ],
         galleryItems: [
             { url: "/images/desktop-poster.webp", caption: "Shapoorji Pallonji Treetopia Villa Plots", alt: "Treetopia NA Bungalow Plots Saswad Pune", category: "Plotting" }
