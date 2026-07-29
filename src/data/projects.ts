@@ -785,7 +785,7 @@ export const projects: Project[] = [
         gallery: [
             "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/1.webp",
             "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/2.webp",
-            "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/3.webp"
+            "/images/joyville_hadapsar_projectcard.webp"
         ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.33748259646!2d73.967471!3d18.494437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e9d2b291a271%3A0x6bba41a5d2cf5913!2sJoyville%20Hadapsar%20Annexe!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
@@ -1168,7 +1168,7 @@ export const projects: Project[] = [
         type: "3 BHK Ultra-Luxury",
         status: "Pre-Launch",
         reraNumber: "P52100048338",
-        image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/3.webp",
+        image: "/images/joyville_hadapsar_projectcard.webp",
         highlights: [
             "Private Terrace Masterclass",
             "Italian Marble (Ultra-Premium ROI)",
@@ -1373,7 +1373,7 @@ export const projects: Project[] = [
         type: "Residential Apartments",
         status: "Ongoing",
         reraNumber: ["P52100052683", "P52100053177", "P52100053966", "P52100054077"],
-        image: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/wildernest/desktop/wildernest_desktop_banner.webp",
+        image: "/images/desktop-poster.webp",
         highlights: [
             "Part of SP Kingstown (Asset Integrity)",
             "Lush Green Surroundings (Biophilic ROI)",
@@ -1412,13 +1412,13 @@ export const projects: Project[] = [
         floorPlans: [
             { type: "Premium Residences", carpetArea: "Available on request" }
         ],
-        masterLayout: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/wildernest/desktop/wildernest_desktop_banner.webp",
+        masterLayout: "/images/desktop-poster.webp",
         gallery: [
             "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/wildernest/gallery/1.webp",
             "https://shapoorjirealestate.com/files/assets/jpegs/wildernest/gallery/2.webp"
         ],
         galleryItems: [
-            { url: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/wildernest/desktop/wildernest_desktop_banner.webp", caption: "Wildernest at SP Kingstown Biophilic Living", alt: "Wildernest Luxury Apartments Hadapsar Pune", category: "Exterior" }
+            { url: "/images/desktop-poster.webp", caption: "Wildernest at SP Kingstown Biophilic Living", alt: "Wildernest Luxury Apartments Hadapsar Pune", category: "Exterior" }
         ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5042!2d73.9786!3d18.5042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1c!2sJoyville%20Hadapsar!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin",
@@ -1553,7 +1553,7 @@ export const projects: Project[] = [
             "Vanaha Golfland all inclusive price", "Vanaha Golfland cost sheet", "Vanaha Golfland payment plan", "Vanaha Golfland ROI analysis", "Vanaha Golfland ROI analysis 18 hole view"
         ],
         reraNumber: "P52100052531",
-        image: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-golfland/desktop/vanaha-golfland_desktop_banner.webp",
+        image: "/images/dl_vanaha-pune.jpg",
         highlights: [
             "Golf Course ROI Dominance",
             "Expansive 1000-Acre Township",
@@ -1730,7 +1730,7 @@ export const projects: Project[] = [
         type: "Premium Residences",
         status: "Available",
         reraNumber: ["P52100028031", "P52100028082", "P52100028033"],
-        image: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-springs/desktop/vanaha-springs_desktop_banner.webp",
+        image: "/images/dl_vanaha-pune.jpg",
         highlights: [
             "Part of 1000-Acre Mega Township",
             "Valley Views (Asset Preservation)",
@@ -1923,7 +1923,7 @@ export const projects: Project[] = [
         type: "Residential Township",
         status: "Available",
         reraNumber: ["P52100028031", "P52100028082", "P52100028033"],
-        image: "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha-pune.jpg",
+        image: "/images/dl_vanaha-pune.jpg",
         highlights: [
             "Massive Integrated Township ROI",
             "Surrounded by Hills (Biophilic Authority)",
@@ -1965,12 +1965,12 @@ export const projects: Project[] = [
                 intelligence: { roi: "8.5%", rentalYield: "5.0%", appreciation: "11% YoY" }
             }
         ],
-        masterLayout: "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha-pune.jpg",
+        masterLayout: "/images/dl_vanaha-pune.jpg",
         gallery: [
-            "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha-pune.jpg"
+            "/images/dl_vanaha-pune.jpg"
         ],
         galleryItems: [
-            { url: "https://www.shapoorjipallonji.com/assets/Desktop/Projects/640x640/vanaha-pune.jpg", caption: "Vanaha Integrated Township Pune", alt: "Vanaha Bavdhan Self-Sustaining Ecosystem", category: "Masterplan" }
+            { url: "/images/dl_vanaha-pune.jpg", caption: "Vanaha Integrated Township Pune", alt: "Vanaha Bavdhan Self-Sustaining Ecosystem", category: "Masterplan" }
         ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5!2d73.7!3d18.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bb!2sVanaha%20Bavdhan!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin",
@@ -2098,7 +2098,7 @@ export const projects: Project[] = [
         type: "NA Bungalow Plots",
         status: "Under Construction",
         reraNumber: "PP1261012501803",
-        image: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/desktop/treetopia_desktop_banner.webp",
+        image: "/images/desktop-poster.webp",
         highlights: [
             "Exotic Villa Plots (High Liquidity)",
             "Biophilic Landscapes (E-E-A-T Signal)",
@@ -2139,13 +2139,13 @@ export const projects: Project[] = [
                 intelligence: { roi: "22.0%", rentalYield: "N/A (Land)", appreciation: "25% YoY (Custom Villa Premium)" }
             }
         ],
-        masterLayout: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/desktop/treetopia_desktop_banner.webp",
+        masterLayout: "/images/desktop-poster.webp",
         gallery: [
             "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/gallery/1.webp",
             "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/gallery/2.webp"
         ],
         galleryItems: [
-            { url: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/treetopia/desktop/treetopia_desktop_banner.webp", caption: "Shapoorji Pallonji Treetopia Villa Plots", alt: "Treetopia NA Bungalow Plots Saswad Pune", category: "Plotting" }
+            { url: "/images/desktop-poster.webp", caption: "Shapoorji Pallonji Treetopia Villa Plots", alt: "Treetopia NA Bungalow Plots Saswad Pune", category: "Plotting" }
         ],
         locationDetails: {
             iframeSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5!2d73.9!3d18.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bb!2sTreetopia!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin",

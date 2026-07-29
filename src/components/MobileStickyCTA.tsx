@@ -1,11 +1,15 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Phone, MessageCircle } from 'lucide-react';
 import { sendGAEvent } from '@next/third-parties/google';
+import { usePathname } from 'next/navigation';
+import { projects } from '@/data/projects';
 
 export default function MobileStickyCTA() {
     const [isVisible, setIsVisible] = useState(false);
+
+    const pathname = usePathname();
 
     useEffect(() => {
         const toggleVisibility = () => {
@@ -19,6 +23,18 @@ export default function MobileStickyCTA() {
         window.addEventListener('scroll', toggleVisibility);
         return () => window.removeEventListener('scroll', toggleVisibility);
     }, []);
+
+    const whatsappMessage = useMemo(() => {
+        let message = "Hi, I'm interested in Joyville Homes Pune.";
+        if (pathname?.startsWith('/projects/')) {
+            const slug = pathname.split('/').pop();
+            const project = projects.find(p => p.slug === slug);
+            if (project) {
+                message = `Hi, I'm interested in ${project.title}. Could you share more details?`;
+            }
+        }
+        return encodeURIComponent(message);
+    }, [pathname]);
 
     if (!isVisible) return null;
 
@@ -47,7 +63,7 @@ export default function MobileStickyCTA() {
                 <Phone size={16} className="text-[#1D4F9C]" /> Call Now
             </a>
             <a
-                href="https://wa.me/917744009295?text=I'm%20interested%20in%20Joyville%20Homes%20Pune."
+                href={`https://wa.me/917744009295?text=${whatsappMessage}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleWhatsAppClick}
