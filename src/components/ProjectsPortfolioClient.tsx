@@ -63,6 +63,13 @@ export default function ProjectsPortfolioClient() {
             </header>
 
             <main className="max-w-5xl mx-auto px-6 space-y-16 mb-24">
+                {currentProjects.length === 0 && (
+                    <div className="flex flex-col items-center justify-center py-20 text-center bg-[#F8FAFC] border border-[#C5A059]/20 rounded-sm">
+                        <MapPin size={48} className="text-[#C5A059] mb-4 opacity-50" />
+                        <h3 className="text-2xl font-serif text-[#323334] mb-2">No Projects Found</h3>
+                        <p className="text-[#323334]/70 font-light text-sm max-w-md">We couldn&apos;t find any projects matching your current criteria. Please adjust your filters or check back later.</p>
+                    </div>
+                )}
                 {currentProjects.map((project) => (
                     <div key={project.id} className="group flex flex-col md:flex-row bg-[#FFFFFF] border border-[#C5A059]/30 shadow-lg hover:shadow-2xl overflow-hidden rounded-sm hover:border-[#C5A059]/80 transition-all duration-500 block relative">
                         <div className="md:w-5/12 relative aspect-[4/3] md:min-h-[300px] overflow-hidden bg-[#F8FAFC]">
@@ -78,10 +85,10 @@ export default function ProjectsPortfolioClient() {
                             <div className="absolute top-6 left-6 flex gap-3 z-10">
                                 <span className="px-4 py-1.5 bg-[#1D4F9C] text-[#FFFFFF] text-[10px] uppercase tracking-[0.2em] font-bold shadow-lg shadow-[#1D4F9C]/30 rounded-sm">{project.status}</span>
                             </div>
-                            <div className="absolute top-6 right-6 flex flex-col items-end z-10 text-right">
-                                <span className="px-3 py-1.5 bg-[#1A1A2E]/80 backdrop-blur-md text-[#FFFFFF] text-[10px] uppercase tracking-wider font-bold shadow-lg rounded-sm border border-[#C5A059]/60 flex items-center gap-2">
-                                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_5px_#22c55e]"></span>
-                                    MahaRERA: {Array.isArray(project.reraNumber) ? project.reraNumber[0] + (project.reraNumber.length > 1 ? ', ...' : '') : project.reraNumber}
+                            <div className="absolute top-6 right-6 flex flex-col items-end z-10 text-right max-w-[60%] sm:max-w-none">
+                                <span className="px-3 py-1.5 bg-[#1A1A2E]/80 backdrop-blur-md text-[#FFFFFF] text-[10px] uppercase tracking-wider font-bold shadow-lg rounded-sm border border-[#C5A059]/60 flex items-center gap-2 max-w-full">
+                                    <span className="w-1.5 h-1.5 flex-shrink-0 bg-green-500 rounded-full animate-pulse shadow-[0_0_5px_#22c55e]"></span>
+                                    <span className="truncate">MahaRERA: {Array.isArray(project.reraNumber) ? project.reraNumber[0] + (project.reraNumber.length > 1 ? ', ...' : '') : project.reraNumber}</span>
                                 </span>
                             </div>
                         </div>
@@ -113,7 +120,7 @@ export default function ProjectsPortfolioClient() {
                                     <Link 
                                         key={i} 
                                         href={`/properties/unit/${generateUnitSlug(project.title, plan.type, project.location)}`}
-                                        className="px-3 py-1.5 bg-[#EEF2F6] border border-[#C5A059]/30 text-[#1D4F9C] text-[9px] font-bold uppercase tracking-wider hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all rounded-sm"
+                                        className="px-3 py-3 md:py-1.5 min-h-[44px] md:min-h-0 flex items-center justify-center bg-[#EEF2F6] border border-[#C5A059]/30 text-[#1D4F9C] text-[9px] font-bold uppercase tracking-wider hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A059]"
                                     >
                                         {plan.type} Floor Plan
                                     </Link>
@@ -135,7 +142,7 @@ export default function ProjectsPortfolioClient() {
                 <div className="flex justify-center mt-12 mb-12">
                     <button
                         onClick={() => setVisibleCount(prev => prev + ITEMS_PER_PAGE)}
-                        className="px-8 py-4 bg-transparent border border-[#C5A059] text-[#1D4F9C] font-semibold tracking-widest uppercase text-sm hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all duration-500 rounded-sm"
+                        className="px-8 py-4 bg-transparent border border-[#C5A059] text-[#1D4F9C] font-semibold tracking-widest uppercase text-sm hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all duration-500 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4F9C] focus-visible:ring-offset-4"
                         aria-label="Load More Projects"
                     >
                         Load More Projects

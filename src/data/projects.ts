@@ -443,7 +443,7 @@ export const projects: Project[] = [
         type: "2 & 3 BHK Luxury Apartments",
         status: "Under Construction",
         reraNumber: ["P52100027234", "P52100024965", "P52100024963", "P52100027244", "P52100024964", "P52100045257", "P52100049547"],
-        image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/1.webp",
+        image: "/images/joyville_sensorium_projectcard.webp",
         highlights: [
             "10.5 Acres Biophilic Development",
             "75% Open Green Spaces (QDF Signal)",
@@ -711,7 +711,7 @@ export const projects: Project[] = [
         type: "1, 2 & 3 BHK Premium Township Flats",
         status: "Ready to Move Options",
         reraNumber: ["P52100026451", "P52100026479", "P52100026480", "P52100026478", "P52100026452", "P52100026800", "P52100026785", "P52100026797", "P52100026795", "P52100028311", "P52100028308", "P52100031391", "P52100031515", "P52100034911"],
-        image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/1.webp",
+        image: "/images/joyville_hadapsar_projectcard.webp",
         highlights: [
             "21 Acres Mega Township (High Liquidity)",
             "8.8 Acres of Open Space (Physical E-E-A-T)",
@@ -756,7 +756,7 @@ export const projects: Project[] = [
             {
                 type: "1 BHK Joy",
                 carpetArea: "450 sq.ft.",
-                image: "/images/joyville_sensorium_projectcard.webp",
+                image: "/images/joyville_hadapsar_projectcard.webp",
                 description: "Efficient 1 BHK floor plan optimized for first-time homebuyers and high rental yield.",
                 spatialDimension: "Two Dimensional",
                 category: "Apartment",
@@ -765,7 +765,7 @@ export const projects: Project[] = [
             {
                 type: "2 BHK Delight",
                 carpetArea: "650 - 720 sq.ft.",
-                image: "/images/joyville_sensorium_projectcard.webp",
+                image: "/images/joyville_hadapsar_projectcard.webp",
                 description: "Spacious 2 BHK layout featuring dedicated utility zones and master balcony.",
                 spatialDimension: "Two Dimensional",
                 category: "Apartment",
@@ -774,7 +774,7 @@ export const projects: Project[] = [
             {
                 type: "3 BHK Grande",
                 carpetArea: "850 - 950 sq.ft.",
-                image: "/images/joyville_sensorium_projectcard.webp",
+                image: "/images/joyville_hadapsar_projectcard.webp",
                 description: "Large 3 BHK unit designed for multi-generational families with maximized privacy.",
                 spatialDimension: "Two Dimensional",
                 category: "Apartment",
@@ -948,7 +948,7 @@ export const projects: Project[] = [
         type: "2 & 3 BHK Apartments",
         status: "New Launch",
         reraNumber: "P52100048338",
-        image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/sensorium/banner/desktop/desktop_banner.webp",
+        image: "/images/joyville_celestia_projectcard.webp",
         highlights: [
             "Premium Club Life (Elite ROI)",
             "Vastu Compliant Homes (Energy Integrity)",
@@ -1168,7 +1168,7 @@ export const projects: Project[] = [
         type: "3 BHK Ultra-Luxury",
         status: "Pre-Launch",
         reraNumber: "P52100048338",
-        image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hinjewadi/gallery/4.webp",
+        image: "https://www.joyvillehomes.com/files/assets/jpegs/all_projects/hadapsar-pune/gallery/3.webp",
         highlights: [
             "Private Terrace Masterclass",
             "Italian Marble (Ultra-Premium ROI)",
@@ -1552,7 +1552,7 @@ export const projects: Project[] = [
             "Vanaha Golfland all inclusive price", "Vanaha Golfland cost sheet", "Vanaha Golfland payment plan", "Vanaha Golfland ROI analysis", "Vanaha Golfland ROI analysis 18 hole view"
         ],
         reraNumber: "P52100052531",
-        image: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp",
+        image: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-golfland/desktop/vanaha-golfland_desktop_banner.webp",
         highlights: [
             "Golf Course ROI Dominance",
             "Expansive 1000-Acre Township",
@@ -1729,7 +1729,7 @@ export const projects: Project[] = [
         type: "Premium Residences",
         status: "Available",
         reraNumber: ["P52100028031", "P52100028082", "P52100028033"],
-        image: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-verdant/desktop/vanaha-verdant_desktop_banner.webp",
+        image: "https://shapoorjirealestate.com/files/assets/jpegs/all_projects/vanaha-springs/desktop/vanaha-springs_desktop_banner.webp",
         highlights: [
             "Part of 1000-Acre Mega Township",
             "Valley Views (Asset Preservation)",

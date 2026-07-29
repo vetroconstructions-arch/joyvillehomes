@@ -34,15 +34,15 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
     };
 
     return (
-        <nav aria-label="Breadcrumb" className="mb-8">
+        <nav aria-label="Breadcrumb" className="mb-6 w-full overflow-x-auto whitespace-nowrap scrollbar-hide py-2">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <ol className="flex items-center flex-wrap gap-2 text-[10px] uppercase tracking-[0.2em] font-bold">
-                <li className="flex items-center gap-2">
-                    <Link href="/" className="text-[#323334]/40 hover:text-[#1D4F9C] transition-colors flex items-center gap-1">
-                        <Home size={12} strokeWidth={2} />
+            <ol className="flex items-center gap-2 text-xs md:text-sm font-medium text-[#323334]/60">
+                <li className="flex items-center gap-2 shrink-0">
+                    <Link href="/" className="hover:text-[#1D4F9C] transition-colors flex items-center gap-1.5">
+                        <Home size={14} strokeWidth={2} />
                         <span>Home</span>
                     </Link>
                 </li>
@@ -53,12 +53,12 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
                         initial={{ opacity: 0, x: -5 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.1 }}
-                        className="flex items-center gap-2"
+                        className="flex items-center gap-2 shrink-0"
                     >
-                        <ChevronRight size={10} className="text-[#323334]/20" />
+                        <ChevronRight size={14} className="text-[#323334]/30" />
                         {index === items.length - 1 ? (
                             <span 
-                                className="text-[#1D4F9C] cursor-default"
+                                className="text-[#1D4F9C] font-semibold cursor-default"
                                 aria-current="page"
                             >
                                 {item.label}
@@ -66,7 +66,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
                         ) : (
                             <Link 
                                 href={item.href} 
-                                className="transition-colors text-[#323334]/40 hover:text-[#1D4F9C]"
+                                className="transition-colors hover:text-[#1D4F9C]"
                             >
                                 {item.label}
                             </Link>

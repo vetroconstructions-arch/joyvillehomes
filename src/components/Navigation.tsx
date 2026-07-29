@@ -59,6 +59,20 @@ export default function Navigation() {
                     setIsDecisionHovered(false);
                 }}
             >
+                {/* Backdrop Overlay when menus are open */}
+                <AnimatePresence>
+                    {(isProjectsHovered || isDecisionHovered) && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="fixed inset-0 w-screen h-[100dvh] bg-[#323334]/10 backdrop-blur-[2px] -z-10 top-full -left-1/2 translate-x-1/2 pointer-events-none"
+                            style={{ position: 'fixed', top: '100%', left: '50%', transform: 'translateX(-50%)', width: '100vw', height: '100vh', zIndex: -10 }}
+                        />
+                    )}
+                </AnimatePresence>
+
                 <nav aria-label="Main Navigation" className="max-w-7xl mx-auto flex justify-between items-center relative">
 
                     {/* Logo & Branding */}
@@ -78,34 +92,24 @@ export default function Navigation() {
                     <div className={`hidden lg:flex items-center gap-12 text-xs tracking-[0.2em] uppercase font-light ${textColor}`}>
                         {/* Mega Menu Trigger */}
                         <div
-                            className="relative h-full py-4 cursor-pointer flex items-center gap-1 group/trigger"
+                            className="relative h-full py-4 flex items-center gap-1 group/trigger"
                             onMouseEnter={() => setIsProjectsHovered(true)}
-                            onClick={() => setIsProjectsHovered(!isProjectsHovered)}
-                            role="button"
-                            aria-haspopup="true"
-                            aria-expanded={isProjectsHovered ? "true" : "false"}
-                            tabIndex={0}
-                            onKeyDown={(e) => {
-                                if (e.key === 'Enter' || e.key === ' ') {
-                                    setIsProjectsHovered(!isProjectsHovered);
-                                    e.preventDefault();
-                                }
-                            }}
+                            onMouseLeave={() => setIsProjectsHovered(false)}
+                            onFocus={() => setIsProjectsHovered(true)}
+                            onBlur={() => setIsProjectsHovered(false)}
                         >
-                            <Link href="/projects" className="hover:text-[#1D4F9C] transition-colors duration-300">Portfolios</Link>
+                            <Link href="/projects" className="hover:text-[#1D4F9C] transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-[#1D4F9C] focus-visible:outline-none rounded-sm px-1">Portfolios</Link>
                             <ChevronDown size={14} className={`transition-transform duration-300 ${isProjectsHovered ? 'rotate-180 text-[#1D4F9C]' : ''}`} />
                         </div>
 
                         <div
-                            className="relative h-full py-4 cursor-pointer flex items-center gap-1 group/trigger"
+                            className="relative h-full py-4 flex items-center gap-1 group/trigger"
                             onMouseEnter={() => setIsDecisionHovered(true)}
-                            onClick={() => setIsDecisionHovered(!isDecisionHovered)}
-                            role="button"
-                            aria-haspopup="true"
-                            aria-expanded={isDecisionHovered ? "true" : "false"}
-                            tabIndex={0}
+                            onMouseLeave={() => setIsDecisionHovered(false)}
+                            onFocus={() => setIsDecisionHovered(true)}
+                            onBlur={() => setIsDecisionHovered(false)}
                         >
-                            <span className="hover:text-[#1D4F9C] transition-colors duration-300">Decision Hub</span>
+                            <span className="hover:text-[#1D4F9C] transition-colors duration-300 cursor-pointer">Decision Hub</span>
                             <ChevronDown size={14} className={`transition-transform duration-300 ${isDecisionHovered ? 'rotate-180 text-[#1D4F9C]' : ''}`} />
                             
                             <AnimatePresence>
@@ -114,9 +118,11 @@ export default function Navigation() {
                                         initial={{ opacity: 0, y: 10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: 5 }}
-                                        className="absolute top-full left-0 w-64 bg-white border border-[#C5A059]/20 shadow-2xl p-4 mt-2 rounded-sm"
+                                        className="absolute top-full left-0 w-64 pt-2"
+                                        onMouseEnter={() => setIsDecisionHovered(true)}
+                                        onMouseLeave={() => setIsDecisionHovered(false)}
                                     >
-                                        <div className="space-y-4">
+                                        <div className="bg-white border border-[#C5A059]/20 shadow-2xl p-4 rounded-sm space-y-4">
                                             <Link href="/insights/matchmaker" className="block p-3 hover:bg-[#EEF2F6] rounded-sm transition-colors group/item">
                                                 <span className="block text-[10px] font-bold text-[#1D4F9C] mb-1">Investment Matchmaker</span>
                                                 <span className="block text-[9px] text-[#323334]/60 normal-case tracking-normal">60-second persona-based project matching.</span>
@@ -135,12 +141,12 @@ export default function Navigation() {
                             </AnimatePresence>
                         </div>
 
-                        <Link href="/amenities" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4">Amenities</Link>
-                        <Link href="/locality/compare" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4 font-bold border-b-2 border-[#1D4F9C]/0 hover:border-[#1D4F9C]/100">Market Matrix</Link>
-                        <Link href="/press-research" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4">Research Hub</Link>
-                        <Link href="/location" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4">Location</Link>
+                        <Link href="/amenities" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4 focus-visible:ring-2 focus-visible:ring-[#1D4F9C] focus-visible:outline-none rounded-sm px-1">Amenities</Link>
+                        <Link href="/locality/compare" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4 font-bold border-b-2 border-[#1D4F9C]/0 hover:border-[#1D4F9C]/100 focus-visible:ring-2 focus-visible:ring-[#1D4F9C] focus-visible:outline-none rounded-sm px-1">Market Matrix</Link>
+                        <Link href="/press-research" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4 focus-visible:ring-2 focus-visible:ring-[#1D4F9C] focus-visible:outline-none rounded-sm px-1">Research Hub</Link>
+                        <Link href="/location" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4 focus-visible:ring-2 focus-visible:ring-[#1D4F9C] focus-visible:outline-none rounded-sm px-1">Location</Link>
                         {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-                        <a href="/#floor-plans" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4">Floor Plans</a>
+                        <a href="/#floor-plans" className="hover:text-[#1D4F9C] hover:font-bold transition-all duration-300 py-4 focus-visible:ring-2 focus-visible:ring-[#1D4F9C] focus-visible:outline-none rounded-sm px-1">Floor Plans</a>
                     </div>
 
                     {/* Currency, Enquire Button & Mobile Toggle */}
@@ -174,8 +180,10 @@ export default function Navigation() {
                                 exit={{ opacity: 0, y: 10 }}
                                 transition={{ duration: 0.3, ease: "easeOut" }}
                                 className="absolute top-[100%] left-0 w-full pt-2"
+                                onMouseEnter={() => setIsProjectsHovered(true)}
+                                onMouseLeave={() => setIsProjectsHovered(false)}
                             >
-                                <div className="bg-[#FFFFFF] border border-[#C5A059]/20 shadow-[0_20px_50px_rgba(29,79,156,0.15)] rounded-sm overflow-hidden p-6 grid grid-cols-4 gap-4 relative">
+                                <div className="bg-[#FFFFFF] border border-[#C5A059]/20 shadow-[0_20px_50px_rgba(29,79,156,0.15)] rounded-sm overflow-hidden p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 relative">
                                     {projects.map((proj) => (
                                         <Link href={`/projects/${proj.slug}`} key={proj.id} className="group/dropdown overflow-hidden block relative border border-[#E0E5EC] hover:border-[#C5A059]/50 bg-[#FFFFFF] rounded-sm transition-all duration-300 hover:shadow-lg" onClick={() => setIsProjectsHovered(false)}>
                                             <div className="aspect-[4/3] relative overflow-hidden">
@@ -192,8 +200,8 @@ export default function Navigation() {
                                             </div>
                                         </Link>
                                     ))}
-                                    <div className="col-span-4 flex justify-end mt-4 pt-4 border-t border-[#C5A059]/30">
-                                        <Link href="/projects" aria-label="View Full Joyville Portfolio" className="text-xs uppercase tracking-[0.2em] text-[#1D4F9C] hover:text-[#323334] font-medium flex items-center gap-2 group/all">
+                                    <div className="md:col-span-2 lg:col-span-4 flex justify-end mt-4 pt-4 border-t border-[#C5A059]/30">
+                                        <Link href="/projects" aria-label="View Full Joyville Portfolio" className="text-xs uppercase tracking-[0.2em] text-[#1D4F9C] hover:text-[#323334] font-medium flex items-center gap-2 group/all focus-visible:ring-2 focus-visible:ring-[#1D4F9C] focus-visible:outline-none rounded-sm px-2 py-1">
                                             View Full Portfolio <span className="w-6 h-[1px] bg-[#1D4F9C] group-hover/all:w-10 transition-all duration-300" />
                                         </Link>
                                     </div>

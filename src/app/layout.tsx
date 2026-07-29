@@ -195,7 +195,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} antialiased selection:bg-accent selection:text-white overflow-x-hidden`}>
+      <body className={`${inter.variable} ${playfair.variable} antialiased selection:bg-accent selection:text-white`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -363,9 +363,11 @@ export default function RootLayout({
         <ClientWrapper>
           <DemandPulse />
           <FloatingWhatsApp />
-          <div className="min-h-[100dvh] flex flex-col relative text-foreground">
+          <div className="min-h-[100dvh] flex flex-col relative text-foreground w-full overflow-x-hidden">
             <Navigation />
-            <PageTransition>{children}</PageTransition>
+            <main className="flex-grow flex flex-col">
+              <PageTransition>{children}</PageTransition>
+            </main>
           </div>
           <SEOFooter />
           <SovereignExitIntent />
