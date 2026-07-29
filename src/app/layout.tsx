@@ -122,6 +122,8 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://api.whatsapp.com" />
+        <link rel="dns-prefetch" href="https://wa.me" />
         <link rel="prefetch" href="/projects" />
         <link rel="prefetch" href="/press-research" />
         <link rel="prefetch" href="/locality/compare" />
