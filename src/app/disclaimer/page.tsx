@@ -22,7 +22,7 @@ export default function DisclaimerPage() {
                     <section>
                         <h2 className="text-xl font-serif text-[#1D4F9C] mb-4">RERA Compliance</h2>
                         <p>
-                            All projects listed are registered with MahaRERA. Registration numbers are displayed on individual project pages. Intending buyers are advised to verify all project details, including title, floor plans, and stage-wise progress, on the official MahaRERA website (<span className="text-[#1D4F9C] font-semibold">maharerait.mahaonline.gov.in</span>) before making a purchase decision.
+                            All projects listed are registered with MahaRERA. Registration numbers are displayed on individual project pages. Intending buyers are advised to verify all project details, including title, floor plans, and stage-wise progress, on the official MahaRERA website (<a href="https://maharera.mahaonline.gov.in" target="_blank" rel="noopener noreferrer" className="text-[#1D4F9C] underline">maharerait.mahaonline.gov.in</a>) before making a purchase decision.
                         </p>
                     </section>
 

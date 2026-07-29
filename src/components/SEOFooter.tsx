@@ -239,7 +239,7 @@ export default function SEOFooter() {
                         {/* RERA & Authority Silo */}
                         <div className="space-y-3">
                             <p className="text-[9px] font-bold text-[#FFFFFF]/40 uppercase tracking-widest border-b border-[#FFFFFF]/10 pb-2">RERA & Wikidata</p>
-                            <span className="block text-[10px] text-[#FFFFFF]/60">MahaRERA Official</span>
+                            <a href="https://maharera.mahaonline.gov.in/" target="_blank" rel="noopener noreferrer" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">MahaRERA Official</a>
                             <span className="block text-[10px] text-[#FFFFFF]/60">India Geo-Entity</span>
                             <span className="block text-[10px] text-[#FFFFFF]/60">Pune City Authority</span>
                         </div>
@@ -329,7 +329,7 @@ export default function SEOFooter() {
                     </div>
                     <p className="text-[#FFFFFF]/30 text-[9px] tracking-[0.2em] uppercase text-center max-w-md">
                         Digital presence managed by Authorized Channel Partners. All projects are MahaRERA Registered. 
-                        Official verification: <span className="text-[#1D4F9C] font-semibold">MahaRERA Portal</span>. 
+                        Official verification: <a href="https://maharera.mahaonline.gov.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#C5A059]">MahaRERA Portal</a>. 
                         © {new Date().getFullYear()} Shapoorji Pallonji Real Estate.
                     </p>
                     <div className="flex flex-wrap gap-6 text-[#FFFFFF]/40 text-[10px] uppercase tracking-widest font-light">
@@ -349,7 +349,7 @@ export default function SEOFooter() {
                         The content provided on this website is for informational purposes only and does not constitute an offer, invitation, or solicitation to purchase properties. This is not the official developer website; it is managed by Authorized Channel Partners for marketing, education, and information dissemination. All project information, including but not limited to brochures, floor plans, pricing, layouts, and availability, is subject to change at the sole discretion of the developer without prior notice. 
                     </p>
                     <p>
-                        The images, renders, and virtual tours shown are artistic impressions and representational in nature. Actual deliveries may vary. We do not guarantee the accuracy or completeness of the data presented and shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use of this information. All projects listed are MahaRERA registered. Prospective buyers are strongly advised to independently verify all details, including RERA registration numbers, property approvals, and terms of sale, by visiting the official MahaRERA website (<span className="text-[#1D4F9C] font-semibold">https://maharera.mahaonline.gov.in</span>) before making any booking or investment decision. By providing your contact details, you authorize us to contact you via Whatsapp, SMS, Phone Call, or Email.
+                        The images, renders, and virtual tours shown are artistic impressions and representational in nature. Actual deliveries may vary. We do not guarantee the accuracy or completeness of the data presented and shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use of this information. All projects listed are MahaRERA registered. Prospective buyers are strongly advised to independently verify all details, including RERA registration numbers, property approvals, and terms of sale, by visiting the official MahaRERA website (<a href="https://maharera.mahaonline.gov.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#C5A059] transition-colors">https://maharera.mahaonline.gov.in</a>) before making any booking or investment decision. By providing your contact details, you authorize us to contact you via Whatsapp, SMS, Phone Call, or Email.
                     </p>
                 </div>
             </div>
