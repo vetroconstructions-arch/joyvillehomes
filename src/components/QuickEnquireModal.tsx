@@ -22,8 +22,7 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
         phone: '',
         company: '', // honeypot field
     });
-    const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-    
+    const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error' | 'invalid_phone'>('idle');
     // Find project data for RERA injection
     const projectData = projects.find(p => p.title === projectName || projectName.includes(p.title));
     const reraDisplay = projectData?.reraNumber 
@@ -39,7 +38,7 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
         // Strict phone validation: 10-15 digits
         const phoneClean = formData.phone.replace(/\D/g, '');
         if (phoneClean.length < 10 || phoneClean.length > 15) {
-            setStatus('error');
+            setStatus('invalid_phone');
             return;
         }
 
@@ -188,7 +187,7 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
                                         <p className="text-[10px] font-bold text-[#1D4F9C] uppercase tracking-[0.2em] mb-1">{projectName}</p>
                                         <h3 className="text-2xl font-serif text-[#323334]">Request Intelligence</h3>
                                     </div>
-                                    <button onClick={onClose} title="Close enquiry form" aria-label="Close enquiry form" className="p-2 hover:bg-[#1D4F9C]/5 rounded-full transition-colors">
+                                    <button onClick={onClose} title="Close enquiry form" aria-label="Close enquiry form" className="p-2 hover:bg-[#1D4F9C]/5 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4F9C]">
                                         <X size={20} className="text-[#323334]/40" />
                                     </button>
                                 </div>
@@ -207,7 +206,7 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
                                     <div className="space-y-6">
                                         <button 
                                             onClick={handleWhatsAppDirect}
-                                            className="w-full flex items-center justify-center gap-3 bg-[#25D366] text-white py-4 rounded-sm shadow-lg hover:shadow-xl transition-all group scale-100 hover:scale-[1.02] active:scale-95"
+                                            className="w-full flex items-center justify-center gap-3 bg-[#25D366] text-white py-4 rounded-sm shadow-lg hover:shadow-xl transition-all group scale-100 hover:scale-[1.02] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2"
                                         >
                                             <MessageCircle size={18} fill="white" />
                                             <span className="text-[10px] font-bold uppercase tracking-widest">Fast-Track via WhatsApp</span>
@@ -226,7 +225,7 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
                                                 placeholder="Full Name"
                                                 value={formData.name}
                                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                                className="w-full px-4 py-3 bg-white border border-[#C5A059]/30 text-[#1A1A1A] text-sm focus:outline-none focus:border-[#1D4F9C] transition-colors"
+                                                className="w-full px-4 py-3 bg-white border border-[#C5A059]/30 text-[#1A1A1A] text-sm focus:outline-none focus:border-[#1D4F9C] focus-visible:ring-2 focus-visible:ring-[#1D4F9C] transition-colors"
                                             />
                                             <input
                                                 type="email"
@@ -234,7 +233,7 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
                                                 placeholder="Email ID (For Official Docs)"
                                                 value={formData.email}
                                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                                className="w-full px-4 py-3 bg-white border border-[#C5A059]/30 text-[#1A1A1A] text-sm focus:outline-none focus:border-[#1D4F9C] transition-colors"
+                                                className="w-full px-4 py-3 bg-white border border-[#C5A059]/30 text-[#1A1A1A] text-sm focus:outline-none focus:border-[#1D4F9C] focus-visible:ring-2 focus-visible:ring-[#1D4F9C] transition-colors"
                                             />
                                             <div className="relative">
                                                 <input
@@ -243,8 +242,11 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
                                                     placeholder="Phone Number"
                                                     pattern="[0-9]{10,15}"
                                                     value={formData.phone}
-                                                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                                    className="w-full px-4 py-3 bg-white border border-[#C5A059]/30 text-[#1A1A1A] text-sm focus:outline-none focus:border-[#1D4F9C] transition-colors pl-12"
+                                                    onChange={(e) => {
+                                                        setFormData({ ...formData, phone: e.target.value });
+                                                        if (status === 'invalid_phone') setStatus('idle');
+                                                    }}
+                                                    className={`w-full px-4 py-3 bg-white border ${status === 'invalid_phone' ? 'border-red-500 ring-1 ring-red-500' : 'border-[#C5A059]/30'} text-[#1A1A1A] text-sm focus:outline-none focus:border-[#1D4F9C] focus-visible:ring-2 focus-visible:ring-[#1D4F9C] transition-colors pl-12`}
                                                 />
                                                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[10px] text-[#323334]/40 font-bold border-r border-[#323334]/10 pr-2">+</span>
                                             </div>
@@ -260,14 +262,17 @@ export default function QuickEnquireModal({ isOpen, onClose, projectName, source
                                                 />
                                             </div>
 
+                                            {status === 'invalid_phone' && (
+                                                <p className="text-red-500 text-[10px] text-center font-medium bg-red-50 py-1 rounded-sm">Please enter a valid 10 to 15-digit phone number.</p>
+                                            )}
                                             {status === 'error' && (
-                                                <p className="text-red-500 text-[10px] text-center italic">API Connection Interrupted. Please retry or use WhatsApp Fast-Track.</p>
+                                                <p className="text-red-500 text-[10px] text-center italic bg-red-50 py-1 rounded-sm">API Connection Interrupted. Please retry or use WhatsApp Fast-Track.</p>
                                             )}
 
                                             <button
                                                 type="submit"
                                                 disabled={status === 'submitting'}
-                                                className="w-full bg-[#1D4F9C] text-[#FFFFFF] py-4 text-[10px] tracking-[0.2em] font-bold uppercase hover:bg-[#323334] transition-all disabled:opacity-70 mt-2 shadow-md hover:shadow-lg"
+                                                className="w-full bg-[#1D4F9C] text-[#FFFFFF] py-4 text-[10px] tracking-[0.2em] font-bold uppercase hover:bg-[#323334] transition-all disabled:opacity-70 mt-2 shadow-md hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#323334] focus-visible:ring-offset-2"
                                             >
                                                 {status === 'submitting' ? 'Authenticating...' : (source === 'Cost Sheet Unlock' ? 'Generate 2026 Cost Sheet' : 'Download Master Brochure')}
                                             </button>

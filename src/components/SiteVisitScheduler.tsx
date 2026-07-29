@@ -57,7 +57,7 @@ export default function SiteVisitScheduler({ projectName, location }: SiteVisitS
                             
                             <button
                                 onClick={() => { setVisitType('in-person'); setStep(2); }}
-                                className="w-full flex items-start gap-4 p-4 border border-[#C5A059]/40 bg-[#FFFFFF] hover:border-[#1D4F9C] transition-all group rounded-sm text-left"
+                                className="w-full flex items-start gap-4 p-4 border border-[#C5A059]/40 bg-[#FFFFFF] hover:border-[#1D4F9C] transition-all group rounded-sm text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4F9C]"
                             >
                                 <div className="p-2 bg-[#EEF2F6] group-hover:bg-[#1D4F9C] group-hover:text-white text-[#1D4F9C] rounded-full transition-colors">
                                     <MapPin size={20} />
@@ -70,7 +70,7 @@ export default function SiteVisitScheduler({ projectName, location }: SiteVisitS
 
                             <button
                                 onClick={() => { setVisitType('virtual'); setStep(2); }}
-                                className="w-full flex items-start gap-4 p-4 border border-[#C5A059]/40 bg-[#FFFFFF] hover:border-[#1D4F9C] transition-all group rounded-sm text-left"
+                                className="w-full flex items-start gap-4 p-4 border border-[#C5A059]/40 bg-[#FFFFFF] hover:border-[#1D4F9C] transition-all group rounded-sm text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4F9C]"
                             >
                                 <div className="p-2 bg-[#EEF2F6] group-hover:bg-[#1D4F9C] group-hover:text-white text-[#1D4F9C] rounded-full transition-colors">
                                     <Video size={20} />
@@ -110,7 +110,7 @@ export default function SiteVisitScheduler({ projectName, location }: SiteVisitS
                                             <button
                                                 key={i}
                                                 onClick={() => setSelectedDate(d)}
-                                                className={`flex-shrink-0 w-[60px] py-3 border rounded-sm flex flex-col items-center gap-1 transition-all ${
+                                                className={`flex-shrink-0 w-[60px] py-3 border rounded-sm flex flex-col items-center gap-1 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4F9C] ${
                                                     isSelected 
                                                         ? 'bg-[#1D4F9C] border-[#1D4F9C] text-white' 
                                                         : 'bg-white border-[#C5A059]/30 text-[#323334] hover:border-[#1D4F9C]'
@@ -141,7 +141,7 @@ export default function SiteVisitScheduler({ projectName, location }: SiteVisitS
                                                 <button
                                                     key={time}
                                                     onClick={() => setSelectedTime(time)}
-                                                    className={`py-2 text-xs border rounded-sm transition-all ${
+                                                    className={`py-2 text-xs border rounded-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4F9C] ${
                                                         selectedTime === time
                                                             ? 'bg-[#1D4F9C] border-[#1D4F9C] text-white'
                                                             : 'bg-white border-[#C5A059]/30 text-[#323334] hover:border-[#1D4F9C]'
@@ -158,10 +158,10 @@ export default function SiteVisitScheduler({ projectName, location }: SiteVisitS
                             <button
                                 disabled={!selectedDate || !selectedTime}
                                 onClick={() => setStep(3)}
-                                className={`w-full py-3 flex items-center justify-center gap-2 text-xs uppercase tracking-widest font-bold transition-all ${
+                                className={`w-full py-3 flex items-center justify-center gap-2 text-xs uppercase tracking-widest font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A059] focus-visible:ring-offset-2 ${
                                     selectedDate && selectedTime
                                         ? 'bg-[#C5A059] text-[#FFFFFF] hover:bg-[#a88647]'
-                                        : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                                        : 'bg-gray-300 text-gray-500 cursor-not-allowed opacity-80'
                                 }`}
                             >
                                 Confirm Slot <ArrowRight size={14} />

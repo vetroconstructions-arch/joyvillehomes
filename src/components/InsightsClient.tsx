@@ -63,6 +63,13 @@ export default function InsightsClient() {
       </header>
 
       <main className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        {currentBlogs.length === 0 && (
+            <div className="md:col-span-2 lg:col-span-3 flex flex-col items-center justify-center py-20 text-center bg-[#F8FAFC] border border-[#C5A059]/20 rounded-sm">
+                <Tag size={48} className="text-[#C5A059] mb-4 opacity-50" />
+                <h3 className="text-2xl font-serif text-[#323334] mb-2">No Insights Available</h3>
+                <p className="text-[#323334]/70 font-light text-sm max-w-md">Our research team is currently preparing new market analysis reports. Please check back shortly.</p>
+            </div>
+        )}
         {currentBlogs.map((blog) => (
           <Link 
             key={blog.id} 
@@ -119,7 +126,7 @@ export default function InsightsClient() {
         <div className="flex justify-center mt-16 mb-8">
             <button
                 onClick={() => setVisibleCount(prev => prev + ITEMS_PER_PAGE)}
-                className="px-8 py-4 bg-transparent border border-[#C5A059] text-[#1D4F9C] font-semibold tracking-widest uppercase text-sm hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all duration-500 rounded-sm"
+                className="px-8 py-4 bg-transparent border border-[#C5A059] text-[#1D4F9C] font-semibold tracking-widest uppercase text-sm hover:bg-[#1D4F9C] hover:text-[#FFFFFF] transition-all duration-500 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4F9C] focus-visible:ring-offset-4"
                 aria-label="Load More Insights"
             >
                 Load More Insights
