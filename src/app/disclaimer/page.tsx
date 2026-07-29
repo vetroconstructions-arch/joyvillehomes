@@ -3,7 +3,10 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
     title: "Disclaimer | Joyville Homes Pune",
     description: "Official legal disclaimer for real estate information and project details on the Joyville Homes Pune platform.",
-    robots: { index: false, follow: true }
+    robots: { index: false, follow: true },
+    alternates: {
+        canonical: "https://joyville-homes.com/disclaimer"
+    }
 };
 
 export default function DisclaimerPage() {

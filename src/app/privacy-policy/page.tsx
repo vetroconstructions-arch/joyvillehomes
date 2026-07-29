@@ -3,7 +3,10 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
     title: "Privacy Policy | Joyville Homes Pune",
     description: "Our privacy policy details how we collect, use, and protect your information at Joyville Homes by Shapoorji Pallonji.",
-    robots: { index: false, follow: true }
+    robots: { index: false, follow: true },
+    alternates: {
+        canonical: "https://joyville-homes.com/privacy-policy"
+    }
 };
 
 export default function PrivacyPolicy() {

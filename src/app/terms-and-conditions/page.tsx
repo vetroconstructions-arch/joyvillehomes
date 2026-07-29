@@ -3,7 +3,10 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
     title: "Terms & Conditions | Joyville Homes Pune",
     description: "Read the terms and conditions for using the Joyville Homes Pune platform by Shapoorji Pallonji.",
-    robots: { index: false, follow: true }
+    robots: { index: false, follow: true },
+    alternates: {
+        canonical: "https://joyville-homes.com/terms-and-conditions"
+    }
 };
 
 export default function TermsAndConditions() {
