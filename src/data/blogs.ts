@@ -32,7 +32,7 @@ export interface BlogPost {
     topicID?: string[]; // Added Phase 26
 }
 
-export const blogs: BlogPost[] = [
+const baseBlogs: BlogPost[] = [
     {
         id: "insights-001",
         slug: "rental-yields-hinjewadi-2025-nri-investment-guide",
@@ -985,6 +985,9 @@ export const blogs: BlogPost[] = [
     }
 ];
 
+import { generatedBlogs } from './generated-blogs';
+
+export const blogs: BlogPost[] = [...baseBlogs, ...generatedBlogs];
 
 export function getBlogBySlug(slug: string): BlogPost | undefined {
     return blogs.find(blog => blog.slug === slug);
