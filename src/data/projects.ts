@@ -272,7 +272,7 @@ export const projects: Project[] = [
         },
         nearbyEntities: ["Wipro Circle", "Rajiv Gandhi Infotech Park", "Pune Metro Line 3", "Maan Village"],
         seoKeywords: [
-            ...KEYWORD_MATRIX.PROJECT_SPECIFIC_CLUSTERS.VYOMORA,
+            ...KEYWORD_MATRIX.PROJECT_EXPANSIONS.VYOMORA,
             "shapoorji pallonji joyville homes hinjewadi pune",
             "Joyville Vyomora Hinjewadi price", "Joyville Vyomora Hinjewadi floor plan", "Joyville Vyomora brochure PDF", "Joyville Vyomora Hinjewadi possession date", "Joyville Vyomora amenities list", "Joyville Vyomora Hinjewadi reviews", "2 BHK flats in Hinjewadi Phase 1", "3 BHK duplex Hinjewadi", "Joyville Hinjewadi new launch", "Joyville Vyomora booking price",
             "ready possession flats in Hinjewadi", "Joyville Vyomora investment ROI", "Shapoorji Pallonji Hinjewadi contact", "best 2BHK flats under 90 lakhs Pune",
@@ -546,7 +546,7 @@ export const projects: Project[] = [
             { name: "National Education Policy - Pune Hub", wikidataUri: "https://www.wikidata.org/wiki/Q97585521", impact: "Institutional Anchoring" }
         ],
         seoKeywords: [
-            ...KEYWORD_MATRIX.PROJECT_SPECIFIC_CLUSTERS.SENSORIUM,
+            ...KEYWORD_MATRIX.PROJECT_EXPANSIONS.SENSORIUM,
             "shapoorji pallonji joyville homes hinjewadi pune",
             "Joyville Sensorium Hinjewadi price", "Joyville Sensorium floor plan", "Joyville Sensorium brochure", "Joyville Sensorium Hinjewadi possession date", "Joyville Sensorium amenities", "Joyville Sensorium reviews", "flats near Rajiv Gandhi Infotech Park", "3 BHK luxury apartments Hinjewadi", "ready to move flats Hinjewadi", "Joyville Sensorium booking contact",
             "joyville sensorium pune", "joyville sensorium price list", "joyville sensorium brochure", "joyville sensorium master plan", "joyville sensorium location", "joyville sensorium 2 bhk price", "joyville sensorium 3 bhk price", "joyville sensorium hinjewadi investment", "joyville sensorium amenities", "shapoorji pallonji pune projects", "shapoorji pallonji joyville pune", "joyville homes pune", "joyville shapoorji pallonji pune", "joyville projects pune", "joyville apartments pune", "joyville residential projects pune", "joyville real estate pune", "joyville township pune", "flats in hinjewadi", "apartments in hinjewadi", "luxury flats hinjewadi", "flats near hinjewadi phase 1", "flats near hinjewadi phase 2", "flats near hinjewadi it park", "flats near rajiv gandhi infotech park", "apartments near hinjewadi it park", "property investment hinjewadi", "best investment flats pune", "buy flats in hinjewadi", "buy joyville apartments pune", "joyville flats for sale pune", "joyville booking pune",
@@ -802,7 +802,7 @@ export const projects: Project[] = [
             itHub: 8.8
         },
         seoKeywords: [
-            ...KEYWORD_MATRIX.PROJECT_SPECIFIC_CLUSTERS.HADAPSAR_ANNEXE,
+            ...KEYWORD_MATRIX.PROJECT_EXPANSIONS.HADAPSAR_ANNEXE,
             "Joyville Hadapsar Annexe price", "Joyville Hadapsar Annexe floor plan", "Joyville Hadapsar Annexe brochure", "Joyville Hadapsar Annexe possession date", "Joyville Hadapsar Annexe amenities", "Joyville Hadapsar Annexe reviews", "flats near Magarpatta City", "flats near SP Infocity Pune", "1 BHK flats Hadapsar under 70 lakhs", "ready possession flats Hadapsar",
             "joyville hadapsar annexe pune", "joyville hadapsar annexe price list", "joyville hadapsar annexe brochure", "joyville hadapsar annexe master plan", "joyville hadapsar annexe location", "joyville hadapsar annexe amenities", "joyville hadapsar annexe investment", "joyville hadapsar annexe 2 bhk price", "joyville hadapsar annexe 3 bhk price", "shapoorji pallonji pune projects", "shapoorji pallonji joyville pune", "joyville homes pune", "joyville shapoorji pallonji pune", "joyville projects pune", "joyville apartments pune", "joyville residential projects pune", "joyville real estate pune", "joyville township pune", "flats in hadapsar", "apartments in hadapsar", "residential projects hadapsar", "flats near magarpatta city", "apartments near sp infocity", "flats in manjri pune", "apartments manjri hadapsar", "residential projects manjri", "flats near rajiv gandhi infotech park", "property investment hadapsar", "real estate investment hadapsar", "best investment flats pune", "buy flats in hadapsar", "buy joyville apartments pune", "joyville booking pune",
             "Joyville Hadapsar Annexe site office address", "Hadapsar property appreciation 2026", "Joyville Hadapsar 2BHK ROI", "Shapoorji Pallonji Hadapsar project price",
@@ -1052,7 +1052,7 @@ export const projects: Project[] = [
         },
         nearbyEntities: ["SP Infocity", "Magarpatta City", "Hadapsar", "Pune Solapur Highway"],
         seoKeywords: [
-            ...KEYWORD_MATRIX.PROJECT_SPECIFIC_CLUSTERS.CELESTIA,
+            ...KEYWORD_MATRIX.PROJECT_EXPANSIONS.CELESTIA,
             "Joyville Celestia Hadapsar price", "Joyville Celestia floor plan", "Joyville Celestia brochure PDF", "Joyville Celestia possession date", "Joyville Celestia amenities list", "Joyville Celestia reviews", "2 BHK luxury flats in Hadapsar", "3 BHK flats in Hadapsar Pune", "Joyville Hadapsar new launch", "Joyville Celestia booking price",
             "joyville celestia hadapsar pune", "joyville celestia price list", "joyville celestia brochure", "joyville celestia master plan", "joyville celestia amenities", "joyville celestia 2 bhk price", "joyville celestia 3 bhk price", "joyville celestia investment", "shapoorji pallonji pune projects", "shapoorji pallonji joyville pune", "joyville homes pune", "joyville shapoorji pallonji pune", "joyville projects pune", "joyville apartments pune", "joyville residential projects pune", "joyville real estate pune", "joyville township pune", "flats in hadapsar", "apartments in hadapsar", "residential projects hadapsar", "flats near magarpatta city", "apartments near sp infocity", "flats in manjri pune", "apartments manjri hadapsar", "residential projects manjri", "flats near rajiv gandhi infotech park", "property investment hadapsar", "real estate investment hadapsar", "best investment flats pune", "buy flats in hadapsar", "buy joyville apartments pune", "joyville booking pune",
             "Vastu compliant 2BHK Hadapsar", "Vastu compliant 3BHK Hadapsar", "Shapoorji Pallonji Celestia reviews", "Joyville Celestia floor plan 3BHK", "celestial themed homes Pune", "sky high residences Hadapsar", "luxury living East Pune", "Joyville Celestia construction status", "ready possession near SP Infocity", "premium Vastu homes Pune", "Hadapsar new residential launch", "Joyville Celestia site office", "booking Joyville Celestia Pune", "Joyville Celestia brochure download PDF", "possession date Joyville Celestia", "Shapoorji Pallonji Pune east projects", "flats near Magarpatta city price", "3 BHK luxury apartments Hadapsar", "2 BHK premium flats Hadapsar", "Joyville Celestia amenities list", "clubhouse at Joyville Celestia", "Joyville Celestia RERA status",
@@ -1453,7 +1453,7 @@ export const projects: Project[] = [
             { name: "SP Kingstown Mega-Township Plan", wikidataUri: "https://www.wikidata.org/wiki/Q16950284", impact: "Self-Sustaining Economy Trigger" }
         ],
         seoKeywords: [
-            ...KEYWORD_MATRIX.PROJECT_SPECIFIC_CLUSTERS.SP_KINGSTOWN,
+            ...KEYWORD_MATRIX.PROJECT_EXPANSIONS.WILDERNEST,
             "Wildernest at SP Kingstown price", "Wildernest SP Kingstown floor plan", "Wildernest SP Kingstown brochure", "Wildernest SP Kingstown possession date", "Wildernest SP Kingstown amenities", "Wildernest SP Kingstown reviews", "premium apartments Manjri Pune", "nature living residences Pune", "flats near Lexicon School Hadapsar", "Wildernest Kingstown site visit",
             "Shapoorji Pallonji Kingstown Pune price", "SP Kingstown township layout", "Wildernest Hadapsar new launch",
             "biophilic residences Pune", "nature integrated homes Hadapsar", "Shapoorji Pallonji Kingstown reviews", "Wildernest tower plan", "premium flats in Manjri area", "SP Kingstown master plan", "Wildernest construction update", "sustainable living Pune east", "eco friendly homes Pune", "Wildernest possession status", "Kingstown Pune site office", "SP Infocity township Wildernest", "Wildernest brochure download", "RERA registered projects Manjri", "best investment in Pune east township", "Shapoorji Pallonji new township Pune", "Wildernest price list 2026", "amenities at SP Kingstown", "forest themed homes Pune",
@@ -1546,6 +1546,7 @@ export const projects: Project[] = [
         type: "Luxury Residences",
         status: "New Launch",
         seoKeywords: [
+            ...KEYWORD_MATRIX.PROJECT_EXPANSIONS.VANAHA_GOLFLAND,
             "Vanaha Golfland price", "Vanaha Golfland floor plan", "Vanaha Golfland brochure PDF", "Vanaha Golfland possession date", "Vanaha Golfland amenities", "Vanaha Golfland reviews", "golf course view apartments Pune", "flats near Oxford Golf Resort", "luxury apartments Bavdhan", "nature living Bavdhan", "Vanaha Golfland site visit",
             "Shapoorji Pallonji Bavdhan Golfland price", "Vanaha Golfland Bavdhan floor plan", "2 BHK flats Bavdhan under 1 crore",
             "golf view luxury homes Pune", "resort style living Pune", "Vanaha Golfland construction update", "18 hole golf course view Pune", "premium residences Bavdhan", "Shapoorji Pallonji Vanaha Golfland brochure", "golf course villa apartments Pune", "Bavdhan real estate growth", "Vanaha Golfland sample flat video", "investment in Bavdhan Pune", "Vanaha Golfland RERA status", "possession timeline Vanaha Golfland", "Oxford golf resort residential projects", "luxury living in western Pune", "Shapoorji Pallonji Pune west luxury", "best golf view flats India", "Bavdhan upcoming residential projects", "Vanaha Golfland price list download",
@@ -1811,6 +1812,7 @@ export const projects: Project[] = [
         },
         nearbyEntities: ["Oxford Golf Resort", "Bavdhan Hills", "Chandni Chowk", "Kothrud"],
         seoKeywords: [
+            ...KEYWORD_MATRIX.PROJECT_EXPANSIONS.VANAHA,
             "Vanaha Springs floor plan", "Vanaha Springs price", "Vanaha Springs brochure", "Vanaha Springs possession date", "Vanaha Springs amenities", "Vanaha Springs reviews", "apartments near Chandni Chowk Pune", "flats surrounded by hills Pune", "townships in Bavdhan", "valley view apartments Pune", "Vanaha Springs Bavdhan site visit",
             "Shapoorji Pallonji Vanaha Springs Bavdhan", "Vanaha Springs 3BHK price", "Bavdhan valley view flats",
             "nature centric homes Pune west", "Vanaha Springs construction status", "ready to move flats near Chandni Chowk", "apartments with valley views Pune", "eco friendly residences Bavdhan", "Vanaha Springs brochure download PDF", "Shapoorji Pallonji springs bavdhan price", "Bavdhan hillside apartments", "Vanaha Springs tower heights", "valley view 2BHK Bavdhan", "valley view 3BHK Bavdhan", "best nature homes Pune", "Vanaha Springs reviews 2026", "Shapoorji Pallonji Pune projects Bavdhan", "investment in Pune hill side properties", "Vanaha Springs possession update", "RERA verified flats Bavdhan",
@@ -2183,6 +2185,7 @@ export const projects: Project[] = [
         },
         nearbyEntities: ["Proposed Purandar Airport", "Saswad", "Pune Ring Road", "Jadhavwadi"],
         seoKeywords: [
+            ...KEYWORD_MATRIX.PROJECT_EXPANSIONS.TREETOPIA,
             "Shapoorji Pallonji Treetopia price", "Treetopia floor plan", "Treetopia plot layout", "Treetopia brochure PDF", "Treetopia possession date", "Treetopia amenities", "Treetopia reviews", "NA bungalow plots Purandar Pune", "investment plots Purandar", "Treetopia site visit",
             "NA plots near Purandar Airport", "bungalow plots in Saswad Pune", "Saswad Road land investment", "Shapoorji Pallonji Treetopia brochure", "Treetopia Jadhavwadi price", "Purandar growth corridor residential plots", "clear title NA plots Pune", "gated community plots in East Pune", "Treetopia booking price", "regal plots Treetopia", "grand plots Treetopia",
             "Shapoorji Pallonji land projects Pune", "Treetopia project address", "NA bungalow land Pune South", "Saswad plotting projects", "plots near Pune ring road Purandar", "investment land near Saswad", "Treetopia construction status 2026", "Treetopia MahaRERA number", "branded plotting projects Pune", "Shapoorji real estate plots", "Pune Purandar corridor real estate", "buy land in Saswad", "buy NA plots in Purandar", "Treetopia master plan", "NA plot appreciation trends Pune", "best plotting project in Pune East", "legal title NA land Pune",

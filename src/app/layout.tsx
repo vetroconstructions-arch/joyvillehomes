@@ -42,8 +42,7 @@ export const metadata: Metadata = {
   },
   description: "Official Joyville Pune by Shapoorji Pallonji Real Estate. Explore 9 premium projects across Hinjewadi, Hadapsar & Bavdhan. 2 & 3 BHK flats starting ₹65 Lakhs. RERA approved. Dive into the Pune real estate market today.",
   keywords: [
-    ...KEYWORD_MATRIX.MACRO_PUNE,
-    ...KEYWORD_MATRIX.SITE_WIDE_HARDENED_KEYWORDS,
+    ...KEYWORD_MATRIX.SITE_WIDE_MASTER,
     "Joyville Vyomora Hinjewadi price", "Joyville Sensorium for sale", "Vanaha Golfland Bavdhan floor plan", 
     "Joyville Hadapsar Annexe ready possession", "Joyville Celestia new launch", "Joyville Skyluxe Edition ultra luxury",
     "Wildernest at SP Kingstown Pune", "Pune real estate investment 2026", "flats near Hinjewadi Metro Station",
