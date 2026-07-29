@@ -239,9 +239,9 @@ export default function SEOFooter() {
                         {/* RERA & Authority Silo */}
                         <div className="space-y-3">
                             <p className="text-[9px] font-bold text-[#FFFFFF]/40 uppercase tracking-widest border-b border-[#FFFFFF]/10 pb-2">RERA & Wikidata</p>
-                            <a href="https://maharera.mahaonline.gov.in/" target="_blank" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">MahaRERA Official</a>
-                            <a href="https://www.wikidata.org/wiki/Q183" target="_blank" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">India Geo-Entity</a>
-                            <a href="https://www.wikidata.org/wiki/Q1515" target="_blank" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">Pune City Authority</a>
+                            <a href="https://maharera.mahaonline.gov.in/" target="_blank" rel="noopener noreferrer" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">MahaRERA Official</a>
+                            <a href="https://www.wikidata.org/wiki/Q183" target="_blank" rel="noopener noreferrer" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">India Geo-Entity</a>
+                            <a href="https://www.wikidata.org/wiki/Q1515" target="_blank" rel="noopener noreferrer" className="block text-[10px] text-[#FFFFFF]/60 hover:text-[#C5A059]">Pune City Authority</a>
                         </div>
                     </div>
                 </div>
